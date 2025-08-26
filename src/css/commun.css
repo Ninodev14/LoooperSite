@@ -1,0 +1,48 @@
+body{
+background-color: var(--backgroundColor);
+}
+
+
+.scroll-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  line-height: 1.5;
+  max-width: 900px;
+  margin: 100px auto;
+}
+
+.highlight {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+
+.highlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1s ease-out;
+  z-index: -1; /* Derrière le texte */
+}
+
+.highlight.orange::before {
+  background-image: url("/src/svg/higlightType1.svg"); /* ton SVG orange */
+}
+
+.highlight.violet::before {
+  background-image: url("/src/svg/higlightType2.svg"); /* ton SVG violet */
+}
+
+.highlight.blue::before {
+  background-image: url("/src/svg/higlightType3.svg"); /* ton SVG bleu */
+}
+
+.highlight.visible::before {
+  transform: scaleX(1);
+}
