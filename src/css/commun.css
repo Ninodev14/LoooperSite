@@ -1,48 +1,78 @@
-body{
-background-color: var(--backgroundColor);
+body {
+    background-color: var(--backgroundColor);
+}
+
+/*CONTAINER*/
+.container-width {
+    width: calc(100vw - 16vw);
+    margin-left: 8vw;
+}
+
+.white-container {
+    border-radius: 120px;
+    background: #FDFDFD;
 }
 
 
-.scroll-text {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  line-height: 1.5;
-  max-width: 900px;
-  margin: 100px auto;
-}
-
+/*ANNIMATION HIGLIGHT*/
 .highlight {
-  position: relative;
-  z-index: 1;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
+    z-index: -1;
 }
 
 .highlight::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 1s ease-out;
-  z-index: -1; /* Derrière le texte */
-}
-
-.highlight.orange::before {
-  background-image: url("/src/svg/higlightType1.svg"); /* ton SVG orange */
-}
-
-.highlight.violet::before {
-  background-image: url("/src/svg/higlightType2.svg"); /* ton SVG violet */
-}
-
-.highlight.blue::before {
-  background-image: url("/src/svg/higlightType3.svg"); /* ton SVG bleu */
+    content: "";
+    position: absolute;
+    inset: -0.5em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1s ease-out;
 }
 
 .highlight.visible::before {
-  transform: scaleX(1);
+    clip-path: inset(0 0 0 0);
+}
+
+.highlight.orange::before {
+
+    background-image: url("/src/svg/higlightType1.svg");
+}
+
+.highlight.violet::before {
+    scale: 110%;
+    background-image: url("/src/svg/higlightType2.svg");
+}
+
+.highlight.blue::before {
+    scale: 110%;
+    background-image: url("/src/svg/higlightType3.svg");
+}
+
+/*ESPACEMENT*/
+.text-spacing {
+    margin-top: 2rem;
+}
+
+.headerSpacing {
+    margin-top: calc(70px + 10vh);
+}
+
+/* EFFECT */
+.reflect{
+  transform: scaleX(-1);
+}
+
+/* BTN */
+.btn-project{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-project img{
+height: 100%;
 }
