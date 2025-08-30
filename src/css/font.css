@@ -16,7 +16,7 @@ h2 {
   line-height: normal;
 }
 
-h3 {
+h3, .header-typo-tel {
   color: white;
   font-family: "Titan One";
   font-size: 1.75rem;
@@ -25,13 +25,17 @@ h3 {
   line-height: normal;
 }
 
-p {
+
+p, .header-typo-pc {
   color: white;
   font-family: Poppins;
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
   line-height: 2.125rem;
+}
+.header-typo-pc {
+  color: black;
 }
 
 .footerTitle {
@@ -49,15 +53,6 @@ header p {
 
 html {
   font-size: 10px;
-}
-
-.tilte-footer {
-  color: #000;
-  font-family: "Titan One";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 @media (min-width: 768px) {
