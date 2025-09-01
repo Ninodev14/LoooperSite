@@ -56,6 +56,12 @@ body {
 .text-spacing {
     margin-top: 2rem;
 }
+.footer-spacing{
+   margin-top: 4rem; 
+}
+.block-spacing {
+    margin-top: 16rem;
+}
 
 .headerSpacing {
     margin-top: calc(70px + 10vh);
@@ -67,6 +73,7 @@ body {
 }
 
 /* BTN */
+
 .btn-project{
     display: flex;
     align-items: center;
