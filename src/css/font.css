@@ -1,4 +1,4 @@
-h1 {
+.title {
   color: white;
   font-family: "Titan One";
   font-size: 6rem;
@@ -26,7 +26,7 @@ h3, .header-typo-tel {
 }
 
 
-p, .header-typo-pc, .footer-typo {
+p, .header-typo-pc, .text-typo {
   color: white;
   font-family: Poppins;
   font-size: 1.25rem;
@@ -34,6 +34,13 @@ p, .header-typo-pc, .footer-typo {
   font-weight: 400;
   line-height: 2.125rem;
 }
+input, textarea{
+  font-family: Poppins;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
 .header-typo-pc {
   color: black;
 }

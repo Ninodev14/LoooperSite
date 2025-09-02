@@ -86,44 +86,88 @@
         </section>
     </main>
 
-    <div class="block-spacing"></div>
+    <div class="footer-spacing"></div>
+
+    <section class="contact">
+        <div class="contact-container">
+            <h2 class="title">Nous contacter</h2>
+
+            <form name="contact" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contact">
+
+                <fieldset>
+                    <div class="form-group">
+                        <label class="text-typo" for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Votre email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="tel">Téléphone</label>
+                        <input type="tel" id="tel" name="tel" placeholder="Votre téléphone">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div class="form-group">
+                        <label class="text-typo" for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Votre message..."
+                            required></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-submit">Envoyer ma demande</button>
+            </form>
+        </div>
+    </section>
+
+
 
     <footer>
         <div class="container-width footer-container">
             <nav class="footer-nav">
                 <div class="footer-nav-row">
                     <a href="index.html" class="footerTitle">Accueil</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
                 </div>
                 <div class="footer-nav-row">
                     <a href="propositions.html" class="footerTitle">Nos propositions</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
                 </div>
                 <div class="footer-nav-row">
                     <a href="équipe.html" class="footerTitle">Notre équipe</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
                 </div>
                 <div class="footer-nav-row">
                     <a href="réalisations.html" class="footerTitle">Nos réalisations</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
                 </div>
                 <div class="footer-nav-row">
                     <a href="blog.html" class="footerTitle">Notre blog</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
-                    <a href="" class="footer-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
                 </div>
             </nav>
             <div class="footer-spacing"></div>
-            <a href="projet.html" class="footer-typo btn-project">
+            <a href="projet.html" class="text-typo btn-project">
                 <span>J’ai un projet !</span>
                 <img src="src/svg/arrowW.svg" alt="fleche">
             </a>
@@ -134,8 +178,8 @@
                     <a href=""><img src="src/img/insta.png" alt="Notre compte Intagram"></a>
                     <a href=""><img src="src/img/insta.png" alt="Notre compte Linkedin"></a>
                 </div>
-                <div class="footerLogo"><img src="src/img/logo.png" class="logo-jump" alt="Logo de loooper"></div>  
-                <a href="" class="footer-typo">Mentions Legals</a>
+                <div class="footerLogo"><img src="src/img/logo.png" class="logo-jump" alt="Logo de loooper"></div>
+                <a href="" class="text-typo">Mentions Legals</a>
             </div>
 
             <div class="footer-spacing"></div>
