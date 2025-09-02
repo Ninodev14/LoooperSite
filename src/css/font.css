@@ -52,12 +52,12 @@ header p {
 }
 
 html {
-  font-size: 10px;
+  font-size: 14px;
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 
