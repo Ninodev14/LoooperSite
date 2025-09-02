@@ -88,47 +88,170 @@
 
     <div class="footer-spacing"></div>
 
-    <section class="contact">
-        <div class="contact-container">
-            <h2 class="title">Nous contacter</h2>
+<section class="contact">
+    <div class="contact-container">
+        <h2 class="title">Nous contacter</h2>
 
-            <form name="contact" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="contact">
+        <form name="contact" method="POST" data-netlify="true" id="contactForm">
+            <input type="hidden" name="form-name" value="contact">
 
-                <fieldset>
-                    <div class="form-group">
-                        <label class="text-typo" for="nom">Nom</label>
-                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-                    </div>
+            <fieldset>
+                <div class="form-group">
+                    <label class="text-typo" for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                </div>
 
-                    <div class="form-group">
-                        <label class="text-typo" for="prenom">Prénom</label>
-                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
-                    </div>
+                <div class="form-group">
+                    <label class="text-typo" for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                </div>
 
-                    <div class="form-group">
-                        <label class="text-typo" for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Votre email" required>
-                    </div>
+                <div class="form-group">
+                    <label class="text-typo" for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Votre email" required>
+                </div>
 
-                    <div class="form-group">
-                        <label class="text-typo" for="tel">Téléphone</label>
-                        <input type="tel" id="tel" name="tel" placeholder="Votre téléphone">
-                    </div>
-                </fieldset>
+                <div class="form-group">
+                    <label class="text-typo" for="tel">Téléphone</label>
+                    <input type="tel" id="tel" name="tel" placeholder="Votre téléphone">
+                </div>
+            </fieldset>
 
-                <fieldset>
-                    <div class="form-group">
-                        <label class="text-typo" for="message">Message</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Votre message..."
-                            required></textarea>
-                    </div>
-                </fieldset>
+            <fieldset>
+                <div class="form-group">
+                    <label class="text-typo" for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
+                </div>
+            </fieldset>
 
-                <button type="submit" class="btn-submit">Envoyer ma demande</button>
-            </form>
+            <button type="submit" class="btn-submit">Envoyer ma demande</button>
+        </form>
+
+        <!-- Animation après envoi -->
+        <div id="animation" style="display:none;">
+            <div class="envelope">
+                <div class="letter"></div>
+            </div>
+            <p>Merci ! Votre message a été envoyé.</p>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+.contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 6em;
+    padding-bottom: 6em;
+}
+
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    max-width: 60rem;
+}
+
+form fieldset {
+    border: none;
+    margin-bottom: 15px;
+    padding: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+    text-align: left;
+}
+
+label {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+input,
+textarea {
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn-submit {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+}
+
+/* Animation de la lettre */
+#animation {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.envelope {
+    position: relative;
+    width: 100px;
+    height: 60px;
+    margin: 0 auto 20px;
+    background: #f5f5f5;
+    border: 2px solid #333;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.letter {
+    position: absolute;
+    width: 80px;
+    height: 50px;
+    background: #fff;
+    top: 5px;
+    left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    transform: translateY(0);
+    animation: fly 2s forwards;
+}
+
+@keyframes fly {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    50% { transform: translateY(-150px) rotate(-15deg); opacity: 0.8; }
+    100% { transform: translateY(-300px) rotate(-30deg); opacity: 0; }
+}
+</style>
+
+<script>
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', function(e) {
+    e.preventDefault(); // Empêche le rechargement
+    const data = new FormData(form);
+
+    // Envoi du formulaire à Netlify
+    fetch('/', { method: 'POST', body: data })
+        .then(() => {
+            // Cache le formulaire et montre l'animation
+            form.style.display = 'none';
+            document.getElementById('animation').style.display = 'block';
+        })
+        .catch(err => alert('Erreur : ' + err));
+});
+</script>
+
 
 
 
