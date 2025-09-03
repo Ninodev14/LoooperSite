@@ -41,14 +41,14 @@
         <nav>
             <div id="menu-tel">
                 <div class="menu-tel-nav">
-                    <a href="index.html" class="header-typo-tel link-actif">Accueil</a>
-                    <a href="propositions.html" class="header-typo-tel">Nos propositions</a>
-                    <a href="équipe.html" class="header-typo-tel">Notre équipe</a>
-                    <a href="réalisations.html" class="header-typo-tel">Nos réalisations</a>
-                    <a href="blog.html" class="header-typo-tel">Notre blog</a>
-                    <a href="projet.html" class="header-typo-tel btn-project">
+                    <a href="index.html" class="h3 link-actif">Accueil</a>
+                    <a href="propositions.html" class="h3">Nos propositions</a>
+                    <a href="équipe.html" class="h3">Notre équipe</a>
+                    <a href="réalisations.html" class="h3">Nos réalisations</a>
+                    <a href="blog.html" class="h3">Notre blog</a>
+                    <a href="projet.html" class="h3 btn-project">
                         <span>J’ai un projet !</span>
-                        <img src="src/svg/arrow.svg" alt="fleche">
+                        <img src="src/svg/arrowW.svg" alt="fleche">
                     </a>
                     <div class="img-container-header">
                         <a href="index.html"><img src="src/img/logoSMP.png" alt="logo simplifier de loooper"
@@ -67,12 +67,12 @@
                 <h3>
                     Loooper!, c'est <span class="highlight orange">la gamification</span> au service de vos contenus.
                 </h3>
-                <div class="text-spacing"></div>
+                <div class="small-spacing"></div>
                 <h3>
                     Loooper!, c'est l'alliance de <span class="highlight violet">trois amis réunis</span> pour créer des
                     moments vivants, engageants et inoubliables.
                 </h3>
-                <div class="text-spacing"></div>
+                <div class="small-spacing"></div>
                 <h3>
                     Loooper!, c'est transformer n'importe quel contenu en <span class="highlight blue">solutions
                         interactives</span> sur mesure...
@@ -80,180 +80,90 @@
             </section>
             <img class="backgroundType1Annim leftbackgroundType1 " src="src/svg/backgroundType1.svg" alt=" ">
         </section>
+        <div class="large-spacing"></div>
+        <div class="white-container-center">
+            <div class="white-container">
+                <section class="container-width">
+                    <article class="memory-game">
+                        <h1 class="h2 black">Mais qu’est-ce qui rend LOOOPER! unique ? </h1>
+                        <div class="small-medium-spacing"></div>
+                        <div class="memory-game-container">
+                            <div class="game-board">
+                                <div class="card" data-image="/src/svg/guyMemories.svg" alt="Carte 1 du mémories"></div>
+                                <div class="card" data-image="/src/svg/linkMemories.svg" alt="Carte 2 du mémories">
+                                </div>
+                                <div class="card" data-image="/src/svg/guyMemories.svg" alt="Carte 3 du mémories"></div>
+                                <div class="card" data-image="/src/svg/targetMemories.svg" alt="Carte 4 du mémories">
+                                </div>
+                                <div class="card" data-image="/src/svg/linkMemories.svg" alt="Carte 5 du mémories">
+                                </div>
+                                <div class="card" data-image="/src/svg/targetMemories.svg" alt="Carte 6 du mémories">
+                                </div>
+                            </div>
+                            <div class="game-info">
+                                <img id="game-image" src="/src/svg/interogationMemories.svg" alt="Image de la paire trouvée">
+                                <h2 id="game-message-title" class="black h3">Petit jeu ?</h2>
+                                <p id="game-message" class="black">Regleeee svp en attendant une paire.</p>
+                            </div>
+                        </div>
+                    </article>
 
-        <section class="container-width">
-            <article></article>
-        </section>
+                </section>
+            </div>
+        </div>
     </main>
 
-    <div class="footer-spacing"></div>
+    <div class="large-spacing"></div>
 
-<section class="contact">
-    <div class="contact-container">
-        <h2 class="title">Nous contacter</h2>
+    <section class="contact">
+        <div class="contact-container">
+            <h2 class="h1">Nous contacter</h2>
 
-        <form name="contact" method="POST" data-netlify="true" id="contactForm">
-            <input type="hidden" name="form-name" value="contact">
+            <form name="contact" method="POST" data-netlify="true" id="contactForm">
+                <input type="hidden" name="form-name" value="contact">
 
-            <fieldset>
-                <div class="form-group">
-                    <label class="text-typo" for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                <fieldset>
+                    <div class="form-group">
+                        <label class="text-typo" for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Votre email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="tel">Téléphone</label>
+                        <input type="tel" id="tel" name="tel" placeholder="Votre téléphone">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div class="form-group">
+                        <label class="text-typo" for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Votre message..."
+                            required></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-submit">Envoyer ma demande</button>
+            </form>
+
+            <!-- Animation  -->
+            <div id="animation" style="display:none;">
+                <div class="envelope">
+                    <div class="letter"> <img src="src/img/insta.png" alt=""></div>
                 </div>
-
-                <div class="form-group">
-                    <label class="text-typo" for="prenom">Prénom</label>
-                    <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
-                </div>
-
-                <div class="form-group">
-                    <label class="text-typo" for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Votre email" required>
-                </div>
-
-                <div class="form-group">
-                    <label class="text-typo" for="tel">Téléphone</label>
-                    <input type="tel" id="tel" name="tel" placeholder="Votre téléphone">
-                </div>
-            </fieldset>
-
-            <fieldset>
-                <div class="form-group">
-                    <label class="text-typo" for="message">Message</label>
-                    <textarea id="message" name="message" rows="6" placeholder="Votre message..." required></textarea>
-                </div>
-            </fieldset>
-
-            <button type="submit" class="btn-submit">Envoyer ma demande</button>
-        </form>
-
-        <!-- Animation après envoi -->
-        <div id="animation" style="display:none;">
-            <div class="envelope">
-                <div class="letter"></div>
+                <p>Merci ! Votre message a été envoyé.</p>
             </div>
-            <p>Merci ! Votre message a été envoyé.</p>
         </div>
-    </div>
-</section>
-
-<style>
-.contact {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding-top: 6em;
-    padding-bottom: 6em;
-}
-
-.contact-container {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    max-width: 60rem;
-}
-
-form fieldset {
-    border: none;
-    margin-bottom: 15px;
-    padding: 0;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 12px;
-    text-align: left;
-}
-
-label {
-    font-size: 0.9rem;
-    margin-bottom: 4px;
-}
-
-input,
-textarea {
-    padding: 10px;
-    border: 1px solid #999;
-    border-radius: 6px;
-    font-size: 1rem;
-    outline: none;
-}
-
-textarea {
-    resize: vertical;
-}
-
-.btn-submit {
-    font-size: 1.2rem;
-    font-weight: bold;
-    background: white;
-    border: none;
-    border-radius: 30px;
-    padding: 12px 25px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: all 0.2s ease;
-}
-
-/* Animation de la lettre */
-#animation {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.envelope {
-    position: relative;
-    width: 100px;
-    height: 60px;
-    margin: 0 auto 20px;
-    background: #f5f5f5;
-    border: 2px solid #333;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.letter {
-    position: absolute;
-    width: 80px;
-    height: 50px;
-    background: #fff;
-    top: 5px;
-    left: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    transform: translateY(0);
-    animation: fly 2s forwards;
-}
-
-@keyframes fly {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    50% { transform: translateY(-150px) rotate(-15deg); opacity: 0.8; }
-    100% { transform: translateY(-300px) rotate(-30deg); opacity: 0; }
-}
-</style>
-
-<script>
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', function(e) {
-    e.preventDefault(); // Empêche le rechargement
-    const data = new FormData(form);
-
-    // Envoi du formulaire à Netlify
-    fetch('/', { method: 'POST', body: data })
-        .then(() => {
-            // Cache le formulaire et montre l'animation
-            form.style.display = 'none';
-            document.getElementById('animation').style.display = 'block';
-        })
-        .catch(err => alert('Erreur : ' + err));
-});
-</script>
-
-
-
+    </section>
 
     <footer>
         <div class="container-width footer-container">
@@ -289,12 +199,12 @@ form.addEventListener('submit', function(e) {
                     <a href="" class="text-typo">lorel ipsum</a>
                 </div>
             </nav>
-            <div class="footer-spacing"></div>
+            <div class="medium-spacing"></div>
             <a href="projet.html" class="text-typo btn-project">
                 <span>J’ai un projet !</span>
                 <img src="src/svg/arrowW.svg" alt="fleche">
             </a>
-            <div class="footer-spacing"></div>
+            <div class="medium-spacing"></div>
             <div class="footer-bot-container">
                 <div class="footer-bot-img-container">
                     <a href=""><img src="src/img/insta.png" alt="Notre compte Facebook"></a>
@@ -305,11 +215,14 @@ form.addEventListener('submit', function(e) {
                 <a href="" class="text-typo">Mentions Legals</a>
             </div>
 
-            <div class="footer-spacing"></div>
+            <div class="medium-spacing"></div>
         </div>
     </footer>
 
     <script src="src/js/logoJump.js"></script>
+    <script src="src/js/memories.js"></script>
+    <script src="src/js/scrollAnnim.js"></script>
+    <script src="src/js/annimForm.js"></script>
     <script src="src/js/annimOnScroll.js"></script>
     <script src="src/js/responsiveHeader.js"></script>
 </body>

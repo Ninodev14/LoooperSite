@@ -1,4 +1,4 @@
-.title {
+.h1 {
   color: white;
   font-family: "Titan One";
   font-size: 6rem;
@@ -7,7 +7,7 @@
   line-height: normal;
 }
 
-h2 {
+h2, .h2{
   color: white;
   font-family: "Titan One";
   font-size: 2.875rem;
@@ -16,7 +16,7 @@ h2 {
   line-height: normal;
 }
 
-h3, .header-typo-tel {
+h3, .h3 {
   color: white;
   font-family: "Titan One";
   font-size: 1.75rem;
@@ -55,6 +55,10 @@ input, textarea{
 }
 
 header p {
+  color: black;
+}
+
+.black{
   color: black;
 }
 
