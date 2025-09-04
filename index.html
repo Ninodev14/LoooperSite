@@ -64,19 +64,19 @@
             <img class="backgroundType1Annim rightbackgroundType1 reflect" src="src/svg/backgroundType1.svg" alt=" ">
             <section class="intro-paragraphe">
 
-                <h3>
+                <h1 class="h3">
                     Loooper!, c'est <span class="highlight orange">la gamification</span> au service de vos contenus.
-                </h3>
+                </h1>
                 <div class="small-spacing"></div>
-                <h3>
+                <h2 class="h3">
                     Loooper!, c'est l'alliance de <span class="highlight violet">trois amis réunis</span> pour créer des
                     moments vivants, engageants et inoubliables.
-                </h3>
+                </h2>
                 <div class="small-spacing"></div>
-                <h3>
+                <h2 class="h3">
                     Loooper!, c'est transformer n'importe quel contenu en <span class="highlight blue">solutions
                         interactives</span> sur mesure...
-                </h3>
+                </h2>
             </section>
             <img class="backgroundType1Annim leftbackgroundType1 " src="src/svg/backgroundType1.svg" alt=" ">
         </section>
@@ -85,8 +85,8 @@
             <div class="white-container">
                 <section class="container-width">
                     <article class="memory-game">
-                        <h1 class="h2 black">Mais qu’est-ce qui rend LOOOPER! unique ? </h1>
-                        <div class="small-medium-spacing"></div>
+                        <h1 class="h2 black">Mais qu’est-ce qui rend LOOOPER! unique ?</h1>
+                        <div class="medium-spacing"></div>
                         <div class="memory-game-container">
                             <div class="game-board">
                                 <div class="card" data-image="/src/svg/guyMemories.svg" alt="Carte 1 du mémories"></div>
@@ -101,7 +101,8 @@
                                 </div>
                             </div>
                             <div class="game-info">
-                                <img id="game-image" src="/src/svg/interogationMemories.svg" alt="Image de la paire trouvée">
+                                <img id="game-image" src="/src/svg/interogationMemories.svg"
+                                    alt="Image de la paire trouvée">
                                 <h2 id="game-message-title" class="black h3">Petit jeu ?</h2>
                                 <p id="game-message" class="black">Regleeee svp en attendant une paire.</p>
                             </div>
@@ -111,7 +112,57 @@
                 </section>
             </div>
         </div>
+
+        <div class="large-spacing"></div>
+
+        <section class="container-width">
+            <article class="work-carousel-container">
+                <h1 class="h2">Notre savoir-faire en action !</h1>
+                <div class="medium-spacing"></div>
+
+                <div class="carousel">
+
+                    <div class="carousel-track">
+
+                        <!-- Carte 1 -->
+                        <div class="carousel-card">
+                            <div class="carousel-caption">
+                                <h3 class="h3 black">La Zizanie</h3>
+                                <p class="black">Expérience interactive | MUSBA</p>
+                            </div>
+                            <div class="small-spacing"></div>
+                            <img src="src/img/carousel/zizanie.jpg" alt="La Zizanie">
+                        </div>
+
+                        <!-- Carte 2 -->
+                        <div class="carousel-card">
+                            <div class="carousel-caption">
+                                <h3 class="h3 black">Biker contre le harcèlement</h3>
+                                <p class="black">Jeu de société | Association</p>
+                            </div>
+                            <div class="small-spacing"></div>
+                            <img src="src/img/carousel/biker.jpg" alt="Biker contre le harcèlement">
+                        </div>
+
+                        <!-- Carte 3 -->
+                        <div class="carousel-card">
+                            <div class="carousel-caption">
+                                <h3 class="h3 black">Save Seamulator</h3>
+                                <p class="black">Type | Client</p>
+                            </div>
+                            <div class="small-spacing"></div>
+                            <img src="src/img/carousel/saveseamulator.jpg" alt="Save Seamulator">
+                        </div>
+                    </div>
+                    <div class="carousel-btn-container">
+                        <button class="carousel-btn prev">&#10094;</button>
+                        <button class="carousel-btn next">&#10095;</button>
+                    </div>
+                </div>
+            </article>
+        </section>
     </main>
+
 
     <div class="large-spacing"></div>
 
@@ -219,10 +270,11 @@
         </div>
     </footer>
 
+    <script src="src/js/carousel.js"></script>
     <script src="src/js/3DEffect.js"></script>
     <script src="src/js/logoJump.js"></script>
     <script src="src/js/memories.js"></script>
-    <script src="src/js/scrollAnnim.js"></script>
+    <script src="src/js/scrollAnnimWhiteContainer.js"></script>
     <script src="src/js/annimForm.js"></script>
     <script src="src/js/annimOnScroll.js"></script>
     <script src="src/js/responsiveHeader.js"></script>

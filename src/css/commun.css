@@ -68,15 +68,18 @@ body {
 }
 
 .small-medium-spacing {
-    margin-top: 4rem;
-}
-
-.medium-spacing {
     margin-top: 6rem;
 }
 
-.large-spacing {
+.medium-spacing {
     margin-top: 10rem;
+}
+
+.medium-large-spacing {
+    margin-top: 14rem;
+}
+.large-spacing {
+    margin-top: 18rem;
 }
 
 .headerSpacing {
