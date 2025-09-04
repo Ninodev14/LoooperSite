@@ -16,8 +16,13 @@ cards.forEach((card) => {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const rotateX = ((y - centerY) / centerY) * -30;
-      const rotateY = ((x - centerX) / centerX) * 30;
+      let rotateX = ((y - centerY) / centerY) * -30;
+      let rotateY = ((x - centerX) / centerX) * 30;
+
+      // Limiter les angles pour éviter que la carte "retourne"
+      const maxAngle = 15; // tu peux ajuster (10-20 max)
+      rotateX = Math.max(-maxAngle, Math.min(maxAngle, rotateX));
+      rotateY = Math.max(-maxAngle, Math.min(maxAngle, rotateY));
 
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.06)`;
     });
@@ -27,10 +32,10 @@ cards.forEach((card) => {
       card.style.transform = "rotateX(0) rotateY(0)";
     });
   } else {
-    // 📱 Mobile (tactile) → tilt avec le doigt
+    // 📱 Mobile (tactile) → tilt avec le doigt, angles limités
     card.addEventListener("touchmove", (e) => {
       if (card.classList.contains("flipped")) return;
-      e.preventDefault(); // ⛔ empêche le scroll mais pas le click
+      e.preventDefault();
 
       const touch = e.touches[0];
       const rect = card.getBoundingClientRect();
@@ -40,19 +45,23 @@ cards.forEach((card) => {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const rotateX = ((y - centerY) / centerY) * -30;
-      const rotateY = ((x - centerX) / centerX) * 30;
+      let rotateX = ((y - centerY) / centerY) * -50;
+      let rotateY = ((x - centerX) / centerX) * 50;
+
+      // Limiter les angles
+      const maxAngle = 80;
+      rotateX = Math.max(-maxAngle, Math.min(maxAngle, rotateX));
+      rotateY = Math.max(-maxAngle, Math.min(maxAngle, rotateY));
 
       card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.06)`;
     }, { passive: false });
 
     card.addEventListener("touchend", () => {
       if (card.classList.contains("flipped")) return;
-      // ⚡ pas de preventDefault ici → le click peut se déclencher
       card.style.transition = "transform 0.2s ease-out";
       card.style.transform = "rotateX(0) rotateY(0)";
       setTimeout(() => {
-        card.style.transition = ""; // reset pour garder l’effet fluide
+        card.style.transition = "";
       }, 200);
     });
   }
