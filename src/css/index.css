@@ -60,7 +60,6 @@
 
 /* Memories */
 
-
 .memory-game {
   text-align: center;
 }
@@ -83,23 +82,22 @@
   height: 14vw;
   cursor: pointer;
   user-select: none;
-   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
   background-image: url(/src/svg/carteMemories.svg);
   background-size: cover;
   background-position: center;
-  border-radius: 20px;
+
+  transform-style: preserve-3d;
 }
 
 .card:hover {
   transform: scale(1.02);
-  box-shadow: 0 0 35px rgba(246, 178, 84, 0.7); 
 }
 
 .card.flipped {
-  transform: rotateY(180deg);
-  box-shadow: none; 
+  transform: rotateY(180deg) !important;
+  box-shadow: none;
 }
-
 
 .game-info {
   width: 30vw;
@@ -111,4 +109,26 @@
   max-width: 16vw;
   border-radius: 10px;
   margin-bottom: 15px;
+}
+
+@media screen and (max-width: 960px) {
+  .memory-game-container {
+    flex-direction: column;
+  }
+
+  .game-board {
+    display: grid;
+
+    grid-template-columns: repeat(2, 40vw);
+    gap: 15px;
+  }
+
+  .game-info {
+    width: 100%;
+  }
+
+  .card {
+    width: 40vw;
+    height: 40vw;
+  }
 }

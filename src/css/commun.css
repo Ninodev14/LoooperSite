@@ -8,16 +8,19 @@ body {
     margin-left: 8vw;
 }
 
-.white-container-center{
+.white-container-center {
     display: flex;
     justify-content: center;
 }
+
 .white-container {
     border-radius: 120px;
-    width: 90%;
+    width: 100%;
     background: #fff;
-    padding: 10em 0 10em 0;
-    transition: width 0.2s ease-out;
+    padding: 10em 0;
+    transition: transform 0.2s ease-out;
+    transform-origin: center;
+    transform: scaleX(0.9);
 }
 
 
@@ -63,6 +66,7 @@ body {
 .small-spacing {
     margin-top: 2rem;
 }
+
 .small-medium-spacing {
     margin-top: 4rem;
 }
@@ -235,7 +239,18 @@ textarea {
 }
 
 @keyframes fly {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    50% { transform: translateY(-150px) rotate(-15deg); opacity: 0.8; }
-    100% { transform: translateY(-300px) rotate(-30deg); opacity: 1; }
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(-150px) rotate(-15deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-300px) rotate(-30deg);
+        opacity: 1;
+    }
 }

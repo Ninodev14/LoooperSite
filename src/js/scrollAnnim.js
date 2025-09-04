@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
       let progress = visible / targetRatio;
       progress = Math.min(progress, 1);
 
-      // largeur 90% -> 100%
-      const newWidth = 90 + 10 * progress;
-      container.style.width = newWidth.toFixed(2) + '%';
+      // scale 0.9 -> 1
+      const newScale = 0.9 + 0.1 * progress;
+      container.style.transform = `scaleX(${newScale})`;
     });
   }, {
     root: null,
