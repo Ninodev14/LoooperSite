@@ -26,6 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  Object.keys(contentsByImage).forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+
   cards.forEach(card => {
     card.addEventListener("click", () => {
       if (lockBoard || card.classList.contains("flipped")) return;
