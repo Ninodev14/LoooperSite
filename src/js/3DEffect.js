@@ -32,7 +32,7 @@ cards.forEach((card) => {
       card.style.transform = "rotateX(0) rotateY(0)";
     });
   } else {
-    // 📱 Mobile (tactile) → tilt avec le doigt, angles limités
+
     card.addEventListener("touchmove", (e) => {
       if (card.classList.contains("flipped")) return;
       e.preventDefault();
@@ -48,8 +48,7 @@ cards.forEach((card) => {
       let rotateX = ((y - centerY) / centerY) * -50;
       let rotateY = ((x - centerX) / centerX) * 50;
 
-      // Limiter les angles
-      const maxAngle = 80;
+      const maxAngle = 70;
       rotateX = Math.max(-maxAngle, Math.min(maxAngle, rotateX));
       rotateY = Math.max(-maxAngle, Math.min(maxAngle, rotateY));
 
