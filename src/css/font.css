@@ -7,7 +7,7 @@
   line-height: normal;
 }
 
-.h2{
+.h2 {
   color: white;
   font-family: "Titan One";
   font-size: 2.875rem;
@@ -26,7 +26,9 @@
 }
 
 
-p, .header-typo-pc, .text-typo {
+p,
+.header-typo-pc,
+.text-typo {
   color: white;
   font-family: Poppins;
   font-size: 1.25rem;
@@ -34,7 +36,9 @@ p, .header-typo-pc, .text-typo {
   font-weight: 400;
   line-height: 2.125rem;
 }
-input, textarea{
+
+input,
+textarea {
   font-family: Poppins;
   font-size: 1rem;
   font-style: normal;
@@ -58,8 +62,28 @@ header p {
   color: black;
 }
 
-.black{
+.black {
   color: black;
+}
+
+.white-border {
+  text-shadow:
+    1px 0 #fff, -1px 0 #fff,
+    0 1px #fff, 0 -1px #fff,
+    1px 1px #fff, -1px -1px #fff,
+    1px -1px #fff, -1px 1px #fff,
+    2px 0 #fff, -2px 0 #fff,
+    0 2px #fff, 0 -2px #fff,
+    2px 2px #fff, -2px -2px #fff,
+    2px -2px #fff, -2px 2px #fff,
+    3px 0 #fff, -3px 0 #fff,
+    0 3px #fff, 0 -3px #fff,
+    3px 3px #fff, -3px -3px #fff,
+    3px -3px #fff, -3px 3px #fff;
+}
+
+b {
+  font-weight: bold;
 }
 
 html {

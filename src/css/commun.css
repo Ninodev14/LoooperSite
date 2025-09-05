@@ -23,6 +23,9 @@ body {
     transform: scaleX(0.9);
 }
 
+.text-basical-container{
+    
+}
 
 /*ANNIMATION HIGLIGHT*/
 .highlight {
@@ -79,7 +82,7 @@ body {
     margin-top: 14rem;
 }
 .large-spacing {
-    margin-top: 18rem;
+    margin-top: 20rem;
 }
 
 .headerSpacing {
