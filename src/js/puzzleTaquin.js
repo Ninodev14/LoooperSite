@@ -1,5 +1,5 @@
 const puzzle = document.getElementById("puzzle");
-const taille = 4; // 4x4 = 16 cases
+const taille = 3; // 4x4 = 16 cases
 let positions = [];
 
 function initPuzzle() {
