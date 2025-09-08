@@ -7,7 +7,7 @@ function initPuzzle() {
     for (let i = 0; i < taille * taille; i++) {
         positions.push(i);
     }
-    positions.sort(() => Math.random() - 0.5); 
+    positions.sort(() => Math.random() - 0.5);
     afficherPuzzle();
 }
 
@@ -17,7 +17,7 @@ function afficherPuzzle() {
         const div = document.createElement("div");
         div.classList.add("piece");
 
-        if (pos === taille * taille - 1) {
+        if (pos === 0) {
             div.classList.add("vide");
         } else {
             const x = pos % taille;
@@ -31,13 +31,34 @@ function afficherPuzzle() {
 }
 
 function deplacer(i) {
-    const vide = positions.indexOf(taille * taille - 1);
+    const vide = positions.indexOf(0);
 
-    const voisins = [vide - 1, vide + 1, vide - taille, vide + taille];
-    if (voisins.includes(i)) {
+    const memeLigneGauche = (i === vide - 1 && Math.floor(i / taille) === Math.floor(vide / taille));
+    const memeLigneDroite = (i === vide + 1 && Math.floor(i / taille) === Math.floor(vide / taille));
+    const auDessus = (i === vide - taille);
+    const enDessous = (i === vide + taille);
+
+    if (memeLigneGauche || memeLigneDroite || auDessus || enDessous) {
         [positions[i], positions[vide]] = [positions[vide], positions[i]];
         afficherPuzzle();
+        verifierVictoire();
     }
+}
+
+function verifierVictoire() {
+    const estGagne = positions.every((val, idx) => val === idx);
+    if (estGagne) {
+        lancerConfettis();
+    }
+}
+
+function lancerConfettis() {
+    confetti({
+        particleCount: 500, 
+        spread: 360,      
+        startVelocity: 20,   
+        origin: { y: 0.5 }    
+    });
 }
 
 initPuzzle();
