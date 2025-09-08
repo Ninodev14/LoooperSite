@@ -134,6 +134,29 @@
   }
 }
 
-/* CAROUSEL */
+/* puzzle taquin */
+
+ .puzzle {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      grid-template-rows: repeat(4, 100px);
+      gap: 2px;
+      background: #ccc;
+      border: 4px solid #333;
+    }
+
+    .piece {
+      width: 100px;
+      height: 100px;
+      background-image: url("/src/img/loooperFonder.jpg"); /* Mets ton image ici */
+      background-size: 400px 400px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .vide {
+      background: #eee;
+      cursor: default;
+    }
 
 
