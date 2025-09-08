@@ -12,23 +12,28 @@ function initPuzzle() {
 }
 
 function afficherPuzzle() {
-    puzzle.innerHTML = "";
-    positions.forEach((pos, i) => {
-        const div = document.createElement("div");
-        div.classList.add("piece");
+  puzzle.innerHTML = "";
+  positions.forEach((pos, i) => {
+    const div = document.createElement("div");
+    div.classList.add("piece");
 
-        if (pos === 0) {
-            div.classList.add("vide");
-        } else {
-            const x = pos % taille;
-            const y = Math.floor(pos / taille);
-            div.style.backgroundPosition = `-${x * 100}px -${y * 100}px`;
-            div.addEventListener("click", () => deplacer(i));
-        }
+    if (pos === 0) {
+      div.classList.add("vide");
+    } else {
+      const x = pos % taille;
+      const y = Math.floor(pos / taille);
 
-        puzzle.appendChild(div);
-    });
+
+      div.style.backgroundSize = `${taille * 100}% ${taille * 100}%`;
+      div.style.backgroundPosition = `${(x * 100) / (taille - 1)}% ${(y * 100) / (taille - 1)}%`;
+
+      div.addEventListener("click", () => deplacer(i));
+    }
+
+    puzzle.appendChild(div);
+  });
 }
+
 
 function deplacer(i) {
     const vide = positions.indexOf(0);
@@ -55,7 +60,7 @@ function verifierVictoire() {
 function lancerConfettis() {
     confetti({
         particleCount: 500, 
-        spread: 360,      
+        spread: 36000,      
         startVelocity: 20,   
         origin: { y: 0.5 }    
     });

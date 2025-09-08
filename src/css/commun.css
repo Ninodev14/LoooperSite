@@ -24,7 +24,12 @@ body {
 }
 
 .text-basical-container{
-    
+    display: flex;
+    gap: 10vw;
+}
+
+.text-basical-container-text{
+    width: 60vw;
 }
 
 /*ANNIMATION HIGLIGHT*/
