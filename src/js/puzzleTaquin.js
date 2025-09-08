@@ -1,5 +1,5 @@
 const puzzle = document.getElementById("puzzle");
-const taille = 3; // 4x4 = 16 cases
+const taille = 3;
 let positions = [];
 
 function initPuzzle() {
@@ -7,7 +7,7 @@ function initPuzzle() {
     for (let i = 0; i < taille * taille; i++) {
         positions.push(i);
     }
-    positions.sort(() => Math.random() - 0.5); // mélange simple
+    positions.sort(() => Math.random() - 0.5); 
     afficherPuzzle();
 }
 
