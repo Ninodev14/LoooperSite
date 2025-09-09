@@ -59,7 +59,7 @@ function deplacer(i, div) {
       [positions[i], positions[vide]] = [positions[vide], positions[i]];
       afficherPuzzle();
       verifierVictoire();
-    }, 300);
+    }, 200);
   }
 }
 

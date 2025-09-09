@@ -8,12 +8,12 @@ body {
     margin-left: 8vw;
 }
 
-.white-container-center {
+.zoom-container-center {
     display: flex;
     justify-content: center;
 }
 
-.white-container {
+.zoom-container {
     border-radius: 120px;
     width: 100%;
     background: #fff;

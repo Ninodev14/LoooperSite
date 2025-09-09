@@ -127,14 +127,22 @@ header {
 
 /* FOOTER */
 
+footer {
+    background-color: var(--darkBackgroundColor) !important;
+    border-radius: 120px 120px 0 0 !important;
+    padding: 8em 0 0px 0px !important;
+}
+
 .footer-nav {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     align-items: center;
     gap: 60px;
+    text-align: center;
 }
+
 
 .footer-nav-row {
     display: flex;
@@ -177,6 +185,11 @@ header {
 
 .footerTitle {
     margin-bottom: 6px;
+}
+
+.footerLogoImg {
+    width: 8rem;
+    margin-bottom: 8rem;
 }
 
 @media screen and (max-width: 960px) {
