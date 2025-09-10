@@ -13,7 +13,7 @@ body {
     justify-content: center;
 }
 
-.zoom-container {
+.zoom-container {   
     border-radius: 120px;
     width: 100%;
     background: #fff;
@@ -23,14 +23,57 @@ body {
     transform: scaleX(0.9);
 }
 
-.text-basical-container{
+.text-basical-container {
     display: flex;
     gap: 10vw;
 }
 
-.text-basical-container-text{
+.text-basical-container-text {
     width: 60vw;
 }
+
+@media screen and (max-width: 960px) {
+    .container-width {
+        width: calc(100vw - 6vw);
+        margin-left: 3vw;
+    }
+    .text-basical-container {
+    display: flex;
+    flex-direction: column;
+}
+.text-basical-container-text {
+    width: 100%;
+}
+
+}
+
+
+/* Boutton */
+.btn-submit {
+    background: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 25px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+}
+
+.btn-project {
+    padding: 6px 10px;
+    border-radius: 26px;
+    border: 1px solid #000;
+    background: #FFF;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: fit-content;
+}
+
+.btn-project img {
+    height: 100%;
+}
+
 
 /*ANNIMATION HIGLIGHT*/
 .highlight {
@@ -86,6 +129,7 @@ body {
 .medium-large-spacing {
     margin-top: 14rem;
 }
+
 .large-spacing {
     margin-top: 20rem;
 }
@@ -141,18 +185,6 @@ body {
 }
 
 
-/* BTN */
-
-.btn-project {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.btn-project img {
-    height: 100%;
-}
-
 /* CONTACT */
 
 
@@ -161,9 +193,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding-top: 6em;
-    padding-bottom: 6em;
 }
 
 .contact-container {
@@ -181,10 +210,23 @@ form fieldset {
     padding: 0;
 }
 
+.form-group-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    border: none;
+    padding: 0;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
-    margin-bottom: 12px;
     text-align: left;
 }
 
@@ -206,16 +248,14 @@ textarea {
     resize: vertical;
 }
 
-.btn-submit {
-    font-size: 1.2rem;
-    font-weight: bold;
-    background: white;
-    border: none;
-    border-radius: 30px;
-    padding: 12px 25px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: all 0.2s ease;
+@media screen and (max-width: 960px) {
+    .form-group-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        border: none;
+        padding: 0;
+    }
 }
 
 
@@ -264,4 +304,15 @@ textarea {
         transform: translateY(-300px) rotate(-30deg);
         opacity: 1;
     }
+}
+
+.test {
+  background-image: url(/src/svg/bluepatern.svg);
+  background-size: auto;
+  background-repeat: repeat;
+  background-position: center;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  
 }

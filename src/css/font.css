@@ -1,7 +1,7 @@
 .h1 {
   color: white;
   font-family: "Titan One";
-  font-size: 6rem;
+  font-size: 4rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -94,10 +94,21 @@ html {
   html {
     font-size: 15px;
   }
+    .h1 {
+
+    font-size: 5rem;
+
+  }
 }
 
 @media (min-width: 1200px) {
   html {
     font-size: 16px;
+  }
+
+  .h1 {
+
+    font-size: 5rem;
+
   }
 }

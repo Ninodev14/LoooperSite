@@ -202,3 +202,14 @@ footer {
     }
 
 }
+
+@media screen and (max-width: 460px) {
+    .footer-nav {
+
+        display: flex;
+        flex-direction: column;
+
+
+    }
+
+}

@@ -181,3 +181,21 @@
   background-size: 30vw 30vw;
 }
 
+@media screen and (max-width: 960px) {
+  .puzzle {
+  grid-template-columns: repeat(3, 30vw);
+  grid-template-rows: repeat(3, 30vw);
+}
+
+.piece {
+  width: 30vw;
+  height: 30vw;
+  background-size: 90vw 90vw;
+}
+
+.puzzle.gagne .vide {
+
+  background-size: 90vw 90vw;
+}
+}
+
