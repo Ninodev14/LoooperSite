@@ -65,6 +65,15 @@ header p {
 .black {
   color: black;
 }
+.paterneTitle {
+    background-image: url(/src/svg/bluepatern.svg);
+    background-size: auto;
+    background-repeat: repeat;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
 
 .white-border {
   text-shadow:

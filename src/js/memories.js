@@ -34,8 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   cards.forEach(card => {
     card.addEventListener("click", () => {
       if (lockBoard || card.classList.contains("flipped")) return;
-
-      // Retourne la carte
       card.classList.add("flipped");
       card.style.backgroundImage = `url(${card.dataset.image})`;
 
@@ -59,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
             card2.classList.remove("flipped");
             card1.style.backgroundImage = "url(/src/svg/carteMemories.svg)";
             card2.style.backgroundImage = "url(/src/svg/carteMemories.svg)";
+            card1.style.transform = "rotateY(0) rotateX(0)";
+            card2.style.transform = "rotateY(0) rotateX(0)";
             flippedCards = [];
             lockBoard = false;
           }, 1000);

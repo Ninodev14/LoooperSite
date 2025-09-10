@@ -7,7 +7,7 @@ const observer = new IntersectionObserver((entries, observer) => {
       const target = entry.target;
 
       if (target.classList.contains("backgroundType1Annim")) {
-        target.classList.add("visible");
+        target.classList.add("visibleBackgroundType1Annim");
       }
 
       if (target.classList.contains("highlight")) {
@@ -18,7 +18,7 @@ const observer = new IntersectionObserver((entries, observer) => {
 
         highlightsInView.forEach((el, i) => {
           setTimeout(() => {
-            el.classList.add("visible");
+            el.classList.add("visibleHighlight");
           }, i * 500);
         });
 

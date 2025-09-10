@@ -13,7 +13,7 @@ body {
     justify-content: center;
 }
 
-.zoom-container {   
+.zoom-container {
     border-radius: 120px;
     width: 100%;
     background: #fff;
@@ -37,13 +37,15 @@ body {
         width: calc(100vw - 6vw);
         margin-left: 3vw;
     }
+
     .text-basical-container {
-    display: flex;
-    flex-direction: column;
-}
-.text-basical-container-text {
-    width: 100%;
-}
+        display: flex;
+        flex-direction: column;
+    }
+
+    .text-basical-container-text {
+        width: 100%;
+    }
 
 }
 
@@ -94,7 +96,7 @@ body {
     transition: clip-path 1s ease-out;
 }
 
-.highlight.visible::before {
+.highlight.visibleHighlight::before {
     clip-path: inset(0 0 0 0);
 }
 
@@ -144,14 +146,24 @@ body {
 }
 
 
-.logo-spin {
-    display: block;
-    transition: transform 0.5s ease;
+.logo-bump {
+  display: block;
+  transition: transform 0.2s ease;
 }
 
-.logo-spin:hover {
-    transform: rotate(720deg);
+.logo-bump.bump {
+  animation: bump 0.4s ease forwards;
 }
+
+@keyframes bump {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.2); }
+  50%  { transform: scale(0.9); }
+  70%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
 
 .logo-jump {
     display: block;
@@ -306,13 +318,3 @@ textarea {
     }
 }
 
-.test {
-  background-image: url(/src/svg/bluepatern.svg);
-  background-size: auto;
-  background-repeat: repeat;
-  background-position: center;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  
-}
