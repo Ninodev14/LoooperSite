@@ -41,7 +41,8 @@
   transform: translateX(30%);
   opacity: 1;
 }
-.visibleHighlight{
+
+.visibleHighlight {
 
   opacity: 1;
 }
@@ -78,10 +79,12 @@
   gap: 15px;
 }
 
+
 .memory-game-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 100px;
 }
 
 .card {
@@ -110,13 +113,38 @@
   width: 30vw;
   margin-top: 20px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .game-info img {
-      transform: rotateY(180deg) ;
+  transform: rotateY(180deg);
   width: 16vw;
   border-radius: 10px;
   margin-bottom: 15px;
+}
+
+.game-button-nav {
+  gap: 30px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.game-button {
+  width: fit-content;
+  all: unset;
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-button img {
+  width: 4vw !important;
+  min-width: 50px;
+  border-radius: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 @media screen and (max-width: 960px) {
@@ -142,9 +170,14 @@
   }
 
   .game-info img {
-    width: 60vw;
+    width: 45vw;
     border-radius: 10px;
     margin-bottom: 15px;
+  }
+
+  .game-button img {
+    width: 10vw !important;
+
   }
 }
 

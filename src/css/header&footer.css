@@ -18,7 +18,7 @@ header {
 #menu-toggle {
     margin-top: 20px;
     height: 20px;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     right: 20px;
@@ -98,6 +98,16 @@ header {
     margin-bottom: 20px;
 }
 
+.logoHeaderPhone {
+    position: fixed;
+    width: 30vw;
+    left: 20px;
+    top: 20px;
+}
+
+#menu-centrage-toggle {
+    display: none;
+}
 
 @media screen and (max-width: 960px) {
     header {
@@ -105,9 +115,8 @@ header {
         margin-left: 0;
     }
 
-    #menu-toggle {
+    #menu-centrage-toggle {
         display: flex;
-        cursor: pointer;
     }
 
     .menu-pc-container {

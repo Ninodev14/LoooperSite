@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const gameImage = document.getElementById("game-image");
   const gameTitle = document.getElementById("game-message-title");
   const gameMessage = document.getElementById("game-message");
+  const gameButtons = document.querySelectorAll(".game-button img");
 
   let flippedCards = [];
   let lockBoard = false;
@@ -26,11 +27,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // Précharge les images
   Object.keys(contentsByImage).forEach((src) => {
     const img = new Image();
     img.src = src;
   });
 
+  // Gère le clic sur une carte
   cards.forEach(card => {
     card.addEventListener("click", () => {
       if (lockBoard || card.classList.contains("flipped")) return;
@@ -42,16 +45,42 @@ document.addEventListener("DOMContentLoaded", () => {
       if (flippedCards.length === 2) {
         lockBoard = true;
         const [card1, card2] = flippedCards;
+
+        // Si c'est une paire
         if (card1.dataset.image === card2.dataset.image) {
           const content = contentsByImage[card1.dataset.image];
           if (content) {
             gameTitle.textContent = content.title;
             gameMessage.textContent = content.text;
             gameImage.src = content.image;
+
+            // Met à jour les boutons
+            for (let btn of gameButtons) {
+              if (btn.src.includes("interogationMemories.svg")) {
+                btn.src = content.image;
+                btn.style.cursor = "pointer";
+                btn.dataset.image = content.image;
+                break;
+              }
+            }
+
+            [card1, card2].forEach(card => {
+              card.addEventListener("click", () => {
+                const imgSrc = card.dataset.image;
+                if (imgSrc && contentsByImage[imgSrc]) {
+                  const c = contentsByImage[imgSrc];
+                  gameTitle.textContent = c.title;
+                  gameMessage.textContent = c.text;
+                  gameImage.src = c.image;
+                }
+              });
+            });
           }
           flippedCards = [];
           lockBoard = false;
+
         } else {
+          // Sinon on retourne les cartes après un délai
           setTimeout(() => {
             card1.classList.remove("flipped");
             card2.classList.remove("flipped");
@@ -63,6 +92,19 @@ document.addEventListener("DOMContentLoaded", () => {
             lockBoard = false;
           }, 1000);
         }
+      }
+    });
+  });
+
+  // Gère le clic sur les boutons
+  gameButtons.forEach(btn => {
+    btn.parentElement.addEventListener("click", () => {
+      const imgSrc = btn.dataset.image;
+      if (imgSrc && contentsByImage[imgSrc]) {
+        const content = contentsByImage[imgSrc];
+        gameTitle.textContent = content.title;
+        gameMessage.textContent = content.text;
+        gameImage.src = content.image;
       }
     });
   });
