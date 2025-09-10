@@ -1,11 +1,11 @@
 const puzzle = document.getElementById("puzzle");
 const taille = 3;
 let positions = [];
-let estGagne = false; // <--- flag pour bloquer les mouvements
+let estGagne = false;
 
 function initPuzzle() {
   positions = [];
-  estGagne = false; // reset à chaque init
+  estGagne = false; 
   for (let i = 0; i < taille * taille; i++) {
     positions.push(i);
   }
@@ -36,7 +36,7 @@ function afficherPuzzle() {
 }
 
 function deplacer(i, div) {
-  if (estGagne) return; // <--- bloque tout si gagné
+  if (estGagne) return; 
 
   const vide = positions.indexOf(0);
 
@@ -73,12 +73,26 @@ function verifierVictoire() {
 }
 
 function lancerConfettis() {
-  confetti({
-    particleCount: 500,
-    spread: 360,
-    startVelocity: 20,
-    origin: { y: 0.5 }
-  });
-}
+  const duration = 2 * 1000;
+  const end = Date.now() + duration;
 
+  (function frame() {
+    confetti({
+      particleCount: 5,
+      startVelocity: 60,
+      spread: 120,
+      gravity: 3,         
+      ticks: 400,       
+      origin: {
+        x: Math.random(),
+        y: 0
+      },
+      colors: ['#3C61F5', '#BB6EF6', '#F6B254']
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  })();
+}
 initPuzzle();
