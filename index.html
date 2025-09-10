@@ -28,8 +28,8 @@
             <nav class="nav-pc">
                 <a href="index.html" class="header-typo-pc link-actif">Accueil</a>
                 <a href="propositions.html" class="header-typo-pc">Nos propositions</a>
-                <a href="équipe.html" class="header-typo-pc">Notre équipe</a>
-                <a href="réalisations.html" class="header-typo-pc">Nos réalisations</a>
+                <a href="equipe.html" class="header-typo-pc">Notre equipe</a>
+                <a href="realisations.html" class="header-typo-pc">Nos realisations</a>
                 <a href="blog.html" class="header-typo-pc">Notre blog</a>
                 <a href="projet.html" class="header-typo-pc btn-project">
                     <span>J’ai un projet !</span>
@@ -53,8 +53,8 @@
                 <div class="menu-tel-nav">
                     <a href="index.html" class="h3 link-actif">Accueil</a>
                     <a href="propositions.html" class="h3">Nos propositions</a>
-                    <a href="équipe.html" class="h3">Notre équipe</a>
-                    <a href="réalisations.html" class="h3">Nos réalisations</a>
+                    <a href="equipe.html" class="h3">Notre equipe</a>
+                    <a href="realisations.html" class="h3">Nos realisations</a>
                     <a href="blog.html" class="h3">Notre blog</a>
                     <a href="projet.html" class="h3 btn-project">
                         <span>J’ai un projet !</span>
@@ -71,7 +71,7 @@
     <main>
         <div class="headerSpacing"></div>
         <section class="intro-paragraphe-container">
-            <img class="backgroundType1Annim rightbackgroundType1 reflect" src="src/svg/backgroundType1.svg" alt=" ">
+            <img class="backgroundType1Annim rightbackgroundType1 reflect" src="src/svg/backgroundType1.svg" alt="">
             <section class="intro-paragraphe">
 
                 <h1 class="h3">
@@ -88,7 +88,7 @@
                         interactives</span> sur mesure...
                 </h2>
             </section>
-            <img class="backgroundType1Annim leftbackgroundType1 " src="src/svg/backgroundType1.svg" alt=" ">
+            <img class="backgroundType1Annim leftbackgroundType1 " src="src/svg/backgroundType1.svg" alt="">
         </section>
 
         <div class="large-spacing"></div>
@@ -98,6 +98,13 @@
                     <article class="memory-game">
                         <h2 class="h2 black">Mais qu’est-ce qui rend LOOOPER! unique ?</h2>
                         <div class="medium-spacing"></div>
+                        <div class="switch-container">
+                            <input type="checkbox" id="toggleGameMemories" class="toggle-checkbox">
+                            <label for="toggleGameMemories" class="toggle-label">
+                                <span class="toggle-ball"></span>
+                            </label>
+                        </div>
+
                         <div class="memory-game-container">
                             <div class="game-board">
                                 <div class="card" data-image="/src/svg/guyMemories.svg" alt="Carte 1 du mémories"></div>
@@ -124,6 +131,30 @@
                                     “Loooper!”</p>
                             </div>
                         </div>
+
+                        <div class="memory-no-game-container" style="display:none;">
+                            <article class="memory-no-game">
+                                <div class="memory-item">
+                                    <img src="/src/svg/guyMemories.svg" alt="Pensé pour tous les publics">
+                                    <h3>Pensé pour tous les publics</h3>
+                                    <p>De 1 à 111 ans, chacun trouve sa place dans nos expériences interactives;
+                                        ludiques, inclusives, accessibles.</p>
+                                </div>
+                                <div class="memory-item">
+                                    <img src="/src/svg/linkMemories.svg" alt="Expérience créatrice de lien">
+                                    <h3>Expérience créatrice de lien</h3>
+                                    <p>Le jeu est un langage universel. Loooper! s’en sert pour tisser un lien vivant et
+                                        unique avec votre public.</p>
+                                </div>
+                                <div class="memory-item">
+                                    <img src="/src/svg/targetMemories.svg" alt="Solutions adaptées sur mesure">
+                                    <h3>Solutions adaptées sur mesure</h3>
+                                    <p>De l’idée à la mise en place, nous vous accompagnons de A à Z dans la création de
+                                        formats ludiques alignés avec vos objectifs.</p>
+                                </div>
+                            </article>
+                        </div>
+
                         <div class="small-medium-spacing"></div>
                         <a href="projet.html" class="text-typo btn-project black">
                             <span>Voir ce qu’on peut créer ensemble</span>
@@ -189,7 +220,7 @@
         <div class="large-spacing"></div>
         <section class="container-width text-basical-container">
             <article class="text-basical-container-text">
-                <h2 class="h2 black white-border">L’équipe LOOOPER!</h2>
+                <h2 class="h2 black white-border">L’equipe LOOOPER!</h2>
                 <div class="small-medium-spacing"></div>
                 <p>Nos chemins se sont croisés pendant nos études en <b>BUT MMI à Bordeaux</b>. Très vite, on a appris à
                     travailler ensemble et surtout à <b>rêver ensemble.</b></p>
@@ -197,6 +228,12 @@
                 <p>Ce qui nous unit ? L’envie de <b>transmettre, d’émerveiller, de créer du lien…</b> et de faire vivre
                     la <b>ludification</b> sous toutes ses formes.</p>
                 <div class="small-spacing"></div>
+                            <div class="switch-container">
+                <input type="checkbox" id="toggleGamepuzzle" class="toggle-checkbox">
+                <label for="toggleGamepuzzle" class="toggle-label">
+                    <span class="toggle-ball"></span>
+                </label>
+            </div>
                 <a href="projet.html" class="text-typo btn-project black">
                     <span>J’ai un projet !</span>
                     <img src="src/svg/arrowB.svg" alt="fleche">
@@ -280,13 +317,13 @@
                     <a href="" class="text-typo">lorel ipsum</a>
                 </div>
                 <div class="footer-nav-row">
-                    <a href="équipe.html" class="footerTitle">Notre équipe</a>
+                    <a href="equipe.html" class="footerTitle">Notre equipe</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                 </div>
                 <div class="footer-nav-row">
-                    <a href="réalisations.html" class="footerTitle">Nos réalisations</a>
+                    <a href="realisations.html" class="footerTitle">Nos realisations</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>

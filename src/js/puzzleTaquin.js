@@ -95,4 +95,23 @@ function lancerConfettis() {
     }
   })();
 }
+
 initPuzzle();
+
+const togglePuzzle = document.getElementById("toggleGamepuzzle");
+togglePuzzle.addEventListener("change", () => {
+  if (togglePuzzle.checked) {
+
+    positions = [];
+    for (let i = 0; i < taille * taille; i++) {
+      positions.push(i);
+    }
+    estGagne = true;
+    puzzle.classList.add("gagne"); 
+    afficherPuzzle();
+  } else {
+
+    initPuzzle();
+    puzzle.classList.remove("gagne");
+  }
+});

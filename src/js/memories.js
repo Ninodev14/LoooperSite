@@ -109,3 +109,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("toggleGameMemories");
+  const gameContainer = document.querySelector(".memory-game-container");
+  const noGameContainer = document.querySelector(".memory-no-game-container");
+
+  toggle.addEventListener("change", () => {
+    if (toggle.checked) {
+      gameContainer.style.display = "none";
+      noGameContainer.style.display = "block";
+    } else {
+      gameContainer.style.display = "flex";
+      noGameContainer.style.display = "none";
+    }
+  });
+});

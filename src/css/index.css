@@ -147,6 +147,53 @@
   margin-bottom: 0 !important;
 }
 
+.memory-no-game-container {
+  display: none;
+}
+
+.toggle-checkbox:checked ~ .memory-game-container {
+  display: none;
+}
+
+.toggle-checkbox:checked ~ .memory-no-game-container {
+  display: block;
+}
+
+/* Style du contenu détaillé */
+.memory-no-game-container {
+  margin-top: 20px;
+}
+
+.memory-no-game {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.memory-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.memory-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.memory-item h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #111;
+}
+
+.memory-item p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+
 @media screen and (max-width: 960px) {
   .memory-game-container {
     flex-direction: column;
