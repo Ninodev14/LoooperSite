@@ -140,16 +140,18 @@ body {
 }
 
 .highlight::before {
-    content: "";
-    position: absolute;
-    inset: -0.5em;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: -1;
-    clip-path: inset(0 100% 0 0);
-    transition: clip-path 1s ease-out;
+  content: "";
+  position: absolute;
+  inset: -0.3em;
+  background-image: url("/src/svg/ton-fichier.svg");
+  background-size: 100% 100%; 
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1s ease-out;
 }
+
 
 .highlight.visibleHighlight::before {
     clip-path: inset(0 0 0 0);
@@ -161,12 +163,12 @@ body {
 }
 
 .highlight.violet::before {
-    scale: 110%;
+    
     background-image: url("/src/svg/higlightType2.svg");
 }
 
 .highlight.blue::before {
-    scale: 110%;
+    
     background-image: url("/src/svg/higlightType3.svg");
 }
 

@@ -92,6 +92,8 @@ header p {
     3px 3px #fff, -3px -3px #fff,
     3px -3px #fff, -3px 3px #fff;
   z-index: 1;
+    user-select: none;    
+  pointer-events: none; 
 }
 
 .paterneTitle {
