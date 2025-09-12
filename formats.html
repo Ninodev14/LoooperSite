@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&display=swap"
+        rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Loooper! - Nos Format</title>
+</head>
+
+<body>
+    <header>
+        <div class="menu-pc-container">
+            <div class="img-container-header"><a href="index.html"><img src="src/img/logoSMP.png"
+                        alt="logo simplifier de loooper" class="logo-bump"></a></div>
+            <nav class="nav-pc">
+                <a href="index.html" class="header-typo-pc link-actif">Accueil</a>
+                <a href="formats.html" class="header-typo-pc">Nos formats</a>
+                <a href="equipe.html" class="header-typo-pc">Notre equipe</a>
+                <a href="realisations.html" class="header-typo-pc">Nos realisations</a>
+                <a href="blog.html" class="header-typo-pc">Notre blog</a>
+                <a href="projet.html" class="header-typo-pc btn-project">
+                    <span>J’ai un projet !</span>
+                    <img src="src/svg/arrowB.svg" alt="fleche">
+                </a>
+            </nav>
+            <div class="img-container-header"><a href="index.html"><img src="src/img/logo.png" alt="Logo de loooper"
+                        class="logo-jump"></a></div>
+        </div>
+        <div id="menu-centrage-toggle">
+            <a href="index.html"><img class="logoHeaderPhone" src="src/img/logo.png" alt="Logo de loooper"></a>
+            <div id="menu-toggle">
+                <div class="barre-toggle"></div>
+                <div class="barre-toggle"></div>
+                <div class="barre-toggle"></div>
+            </div>
+        </div>
+
+        <nav>
+            <div id="menu-tel">
+                <div class="menu-tel-nav">
+                    <a href="index.html" class="h3 link-actif">Accueil</a>
+                    <a href="formats.html" class="h3">Nos formats</a>
+                    <a href="equipe.html" class="h3">Notre equipe</a>
+                    <a href="realisations.html" class="h3">Nos realisations</a>
+                    <a href="blog.html" class="h3">Notre blog</a>
+                    <a href="projet.html" class="h3 btn-project">
+                        <span>J’ai un projet !</span>
+                        <img src="src/svg/arrowW.svg" alt="fleche">
+                    </a>
+                    <div class="img-container-header">
+                        <a href="index.html"><img src="src/img/logoSMP.png" alt="logo simplifier de loooper"
+                                class="logo-bump"></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+        <section class="mainPageTitle">
+            <h1 class="h1 container-width white-border black">Loooper!, c’est des formats qui s’adaptent pour devenir
+                <div class="paterneTitleContainer"><span class="paterneTitle">le vôtre</span><span class="paterneTitleContour">le vôtre</span></div>
+            </h1>
+        </section>
+
+        <div class="large-spacing"></div>
+
+        <section class="container-width text-basical-container">
+            <article class="text-basical-container-text">
+                <h2 class="h2 black white-border">Découvrez notre univers et nos valeurs !</h2>
+                <div class="small-medium-spacing"></div>
+                <p>Nos chemins se sont croisés pendant nos études en <b>BUT MMI à Bordeaux</b>. Très vite, on a appris à
+                    travailler ensemble et surtout à <b>rêver ensemble.</b></p>
+                <div class="small-spacing"></div>
+                <p>Ce qui nous unit ? L’envie de <b>transmettre, d’émerveiller, de créer du lien…</b> et de faire vivre
+                    la <b>ludification</b> sous toutes ses formes.</p>
+                <div class="small-spacing"></div>
+
+                <a href="projet.html" class="text-typo btn-project black">
+                    <span>J’ai un projet !</span>
+                    <img src="src/svg/arrowB.svg" alt="fleche">
+                </a>
+            </article>
+            <article class="puzzle" id="puzzle">
+            </article>
+        </section>
+    </main>
+
+
+    <div class="large-spacing"></div>
+
+    <section class="contact container-width">
+        <div class="contact-container">
+            <h2 class="h1 black white-border">Nous contacter</h2>
+            <div class="small-medium-spacing"></div>
+            <form name="contact" method="POST" data-netlify="true" id="contactForm">
+                <input type="hidden" name="form-name" value="contact">
+
+                <fieldset class="form-group-container">
+                    <div class="form-group">
+                        <label class="text-typo" for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="prenom">Prénom</label>
+                        <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Votre email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="tel">Téléphone</label>
+                        <input type="tel" id="tel" name="tel" placeholder="Votre téléphone">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <div class="form-group">
+                        <label class="text-typo" for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Votre message..."
+                            required></textarea>
+                    </div>
+                </fieldset>
+
+                <button type="submit" class="btn-submit h2 black">Envoyer ma demande</button>
+            </form>
+
+            <!-- Animation  -->
+            <div id="animation" style="display:none;">
+                <div class="envelope">
+                    <div class="letter"> <img src="src/img/insta.png" alt=""></div>
+                </div>
+                <p>Merci ! Votre message a été envoyé.</p>
+            </div>
+
+        </div>
+    </section>
+    <div class="medium-spacing"></div>
+
+    <footer class="zoom-container">
+        <div class="container-width footer-container">
+            <a href="index.html"><img src="src/img/logoSMP.png" alt="logo simplifier de loooper"
+                    class="logo-bump footerLogoImg"></a>
+            <nav class="footer-nav">
+                <div class="footer-nav-row">
+                    <a href="index.html" class="footerTitle">Accueil</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                </div>
+                <div class="footer-nav-row">
+                    <a href="formats.html" class="footerTitle">Nos formats</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                </div>
+                <div class="footer-nav-row">
+                    <a href="equipe.html" class="footerTitle">Notre equipe</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                </div>
+                <div class="footer-nav-row">
+                    <a href="realisations.html" class="footerTitle">Nos realisations</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                </div>
+                <div class="footer-nav-row">
+                    <a href="blog.html" class="footerTitle">Notre blog</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="" class="text-typo">lorel ipsum</a>
+                </div>
+            </nav>
+            <div class="medium-spacing"></div>
+            <a href="projet.html" class="text-typo btn-project black">
+                <span>J’ai un projet !</span>
+                <img src="src/svg/arrowB.svg" alt="fleche">
+            </a>
+            <div class="medium-spacing"></div>
+            <div class="footer-bot-container">
+                <div class="footer-bot-img-container">
+
+                    <a href=""><img src="src/svg/insta.svg" alt="Notre compte Intagram"></a>
+                    <a href=""><img src="src/svg/linkdin.svg" alt="Notre compte Linkedin"></a>
+                </div>
+                <div class="footerLogo"><img src="src/img/logo.png" class="logo-jump" alt="Logo de loooper">
+                </div>
+                <a href="" class="text-typo">Mentions Legals</a>
+            </div>
+
+            <div class="small-medium-spacing"></div>
+        </div>
+    </footer>
+
+
+    <script src="src/js/logoAnnim.js"></script>
+    <script src="src/js/annimForm.js"></script>
+    <script src="src/js/scrollAnnimWhiteContainer.js"></script>
+    <script src="src/js/responsiveHeader.js"></script>
+</body>
+
+</html>

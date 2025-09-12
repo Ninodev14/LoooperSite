@@ -65,15 +65,49 @@ header p {
 .black {
   color: black;
 }
-.paterneTitle {
-    background-image: url(/src/svg/bluepatern.svg);
-    background-size: auto;
-    background-repeat: repeat;
-    background-position: center;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
+
+.paterneTitleContainer {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
 }
+
+.paterneTitleContour {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  text-shadow:
+    1px 0 #fff, -1px 0 #fff,
+    0 1px #fff, 0 -1px #fff,
+    1px 1px #fff, -1px -1px #fff,
+    1px -1px #fff, -1px 1px #fff,
+    2px 0 #fff, -2px 0 #fff,
+    0 2px #fff, 0 -2px #fff,
+    2px 2px #fff, -2px -2px #fff,
+    2px -2px #fff, -2px 2px #fff,
+    3px 0 #fff, -3px 0 #fff,
+    0 3px #fff, 0 -3px #fff,
+    3px 3px #fff, -3px -3px #fff,
+    3px -3px #fff, -3px 3px #fff;
+  z-index: 1;
+}
+
+.paterneTitle {
+position: relative;
+  background-image: url(/src/svg/bluepaternFull.svg);
+  background-size: auto;
+  background-repeat: repeat;
+  background-position: center;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  z-index: 2;
+  text-shadow: none;
+}
+
+
 
 .white-border {
   text-shadow:
@@ -103,14 +137,16 @@ html {
   html {
     font-size: 15px;
   }
-    .h1 {
+
+  .h1 {
 
     font-size: 5rem;
 
   }
+
   .h2 {
-  font-size: 2.875rem;
-}
+    font-size: 2.875rem;
+  }
 
 }
 
@@ -124,7 +160,8 @@ html {
     font-size: 5rem;
 
   }
-    .h2 {
-  font-size: 2.875rem;
-}
+
+  .h2 {
+    font-size: 2.875rem;
+  }
 }

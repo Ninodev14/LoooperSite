@@ -8,6 +8,15 @@ body {
     margin-left: 8vw;
 }
 
+.mainPageTitle{
+    background-image: url(/src/svg/purpelPatern.svg);
+    background-repeat: repeat;
+    background-position:bottom;
+    background-size: auto;
+    padding-top: calc(70px + 10vh);
+    padding-bottom: 20px;
+}
+
 .zoom-container-center {
     display: flex;
     justify-content: center;
