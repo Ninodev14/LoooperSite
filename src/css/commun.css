@@ -8,10 +8,10 @@ body {
     margin-left: 8vw;
 }
 
-.mainPageTitle{
+.mainPageTitle {
     background-image: url(/src/svg/purpelPatern.svg);
     background-repeat: repeat;
-    background-position:bottom;
+    background-position: bottom;
     background-size: auto;
     padding-top: calc(70px + 10vh);
     padding-bottom: 20px;
@@ -62,48 +62,49 @@ body {
 /* Boutton */
 
 .switch-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .toggle-checkbox {
-  display: none; /* masque la checkbox réelle */
+    display: none;
+    /* masque la checkbox réelle */
 }
 
 .toggle-label {
-  position: relative;
-  width: 50px;
-  height: 28px;
-  background-color: #ccc;
-  border-radius: 28px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    position: relative;
+    width: 50px;
+    height: 28px;
+    background-color: #ccc;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .toggle-label .toggle-ball {
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 22px;
-  height: 22px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.3s;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
 }
 
-.toggle-checkbox:checked + .toggle-label {
-  background-color: #2196F3;
+.toggle-checkbox:checked+.toggle-label {
+    background-color: #2196F3;
 }
 
-.toggle-checkbox:checked + .toggle-label .toggle-ball {
-  transform: translateX(22px);
+.toggle-checkbox:checked+.toggle-label .toggle-ball {
+    transform: translateX(22px);
 }
 
 .toggle-text {
-  font-size: 14px;
-  color: #333;
+    font-size: 14px;
+    color: #333;
 }
 
 .btn-submit {
@@ -119,12 +120,20 @@ body {
 .btn-project {
     padding: 6px 10px;
     border-radius: 26px;
-    border: 1px solid #000;
-    background: #FFF;
+    border: 3px solid #FFF;
+    color: white;
+    background: #000;
+    box-shadow: 0 6px 0 0 #FFF;
     display: flex;
     align-items: center;
     gap: 1.5rem;
     width: fit-content;
+}
+.btn-white-background{
+    border: 3px solid #000000;
+    color: #000000;
+    background: #ffffff;
+    box-shadow: 0 6px 0 0 #000000;
 }
 
 .btn-project img {
@@ -140,16 +149,16 @@ body {
 }
 
 .highlight::before {
-  content: "";
-  position: absolute;
-  inset: -0.3em;
-  background-image: url("/src/svg/ton-fichier.svg");
-  background-size: 100% 100%; 
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1;
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 1s ease-out;
+    content: "";
+    position: absolute;
+    inset: -0.3em;
+    background-image: url("/src/svg/ton-fichier.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 1s ease-out;
 }
 
 
@@ -163,12 +172,12 @@ body {
 }
 
 .highlight.violet::before {
-    
+
     background-image: url("/src/svg/higlightType2.svg");
 }
 
 .highlight.blue::before {
-    
+
     background-image: url("/src/svg/higlightType3.svg");
 }
 
@@ -204,20 +213,34 @@ body {
 
 
 .logo-bump {
-  display: block;
-  transition: transform 0.2s ease;
+    display: block;
+    transition: transform 0.2s ease;
 }
 
 .logo-bump.bump {
-  animation: bump 0.4s ease forwards;
+    animation: bump 0.4s ease forwards;
 }
 
 @keyframes bump {
-  0%   { transform: scale(1); }
-  30%  { transform: scale(1.2); }
-  50%  { transform: scale(0.9); }
-  70%  { transform: scale(1.05); }
-  100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(0.9);
+    }
+
+    70% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 
@@ -374,4 +397,3 @@ textarea {
         opacity: 1;
     }
 }
-

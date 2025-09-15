@@ -33,12 +33,12 @@
             <nav class="nav-pc">
                 <a href="index.html" class="header-typo-pc link-actif">Accueil</a>
                 <a href="formats.html" class="header-typo-pc">Nos formats</a>
-                <a href="equipe.html" class="header-typo-pc">Notre equipe</a>
-                <a href="realisations.html" class="header-typo-pc">Nos realisations</a>
+                <a href="equipe.html" class="header-typo-pc">Notre équipe</a>
+                <a href="realisations.html" class="header-typo-pc">Nos réalisations</a>
                 <a href="blog.html" class="header-typo-pc">Notre blog</a>
                 <a href="test.html" class="header-typo-pc btn-project">
                     <span>J’ai un projet !</span>
-                    <img src="src/svg/arrowB.svg" alt="fleche">
+                    <img src="src/svg/arrowW.svg" alt="fleche">
                 </a>
             </nav>
             <div class="img-container-header"><a href="index.html"><img src="src/img/logo.png" alt="Logo de loooper"
@@ -92,6 +92,11 @@
                     Loooper!, c'est transformer n'importe quel contenu en <span class="highlight blue">solutions
                         interactives</span> sur mesure...
                 </h2>
+                <div class="small-medium-spacing"></div>
+                <a href="test.html" class="header-typo-pc btn-project btn-white-background">
+                    <span>J’ai un projet !</span>
+                    <img src="src/svg/arrowB.svg" alt="fleche">
+                </a>
             </section>
             <img class="backgroundType1Annim leftbackgroundType1 " src="src/svg/backgroundType1.svg" alt="">
         </section>
@@ -161,9 +166,8 @@
                         </div>
 
                         <div class="small-medium-spacing"></div>
-                        <a href="projet.html" class="text-typo btn-project black">
+                        <a href="projet.html" class="text-typo btn-project btn-white-background">
                             <span>Voir ce qu’on peut créer ensemble</span>
-                            <img src="src/svg/arrowB.svg" alt="fleche">
                         </a>
                     </article>
 
@@ -239,9 +243,8 @@
                         <span class="toggle-ball"></span>
                     </label>
                 </div>
-                <a href="projet.html" class="text-typo btn-project black">
+                <a href="projet.html" class="text-typo btn-project btn-white-background">
                     <span>J’ai un projet !</span>
-                    <img src="src/svg/arrowB.svg" alt="fleche">
                 </a>
             </article>
             <article class="puzzle" id="puzzle">
@@ -322,13 +325,13 @@
                     <a href="" class="text-typo">lorel ipsum</a>
                 </div>
                 <div class="footer-nav-row">
-                    <a href="equipe.html" class="footerTitle">Notre equipe</a>
+                    <a href="equipe.html" class="footerTitle">Notre équipe</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                 </div>
                 <div class="footer-nav-row">
-                    <a href="realisations.html" class="footerTitle">Nos realisations</a>
+                    <a href="realisations.html" class="footerTitle">Nos réalisations</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
@@ -343,7 +346,7 @@
             <div class="medium-spacing"></div>
             <a href="projet.html" class="text-typo btn-project black">
                 <span>J’ai un projet !</span>
-                <img src="src/svg/arrowB.svg" alt="fleche">
+                <img src="src/svg/arrowW.svg" alt="fleche">
             </a>
             <div class="medium-spacing"></div>
             <div class="footer-bot-container">
@@ -362,27 +365,27 @@
     </footer>
 
 
-<div id="accessibility-btn">♿</div>
+    <div id="accessibility-btn">♿</div>
 
 
-<div id="focus-top"></div>
-<div id="focus-bottom"></div>
+    <div id="focus-top"></div>
+    <div id="focus-bottom"></div>
 
-<div id="accessibility-menu">
-    <button onclick="toggleOpendyslexic()">Police OpenDyslexic</button>
-    <button onclick="toggleReading()">Police Lecture</button>
-    <button onclick="toggleContrast()">Contraste élevé</button>
-    <button onclick="toggleBigCursor()">Curseur agrandi</button>
-    <button class="focus-bar-btn" onclick="toggleFocusBar()">Barre de lecture</button>
-    <div style="margin-top:10px;">
-        <button onclick="zoomOut()">-</button>
-        <span id="zoom-level">100%</span>
-        <button onclick="zoomIn()">+</button>
+    <div id="accessibility-menu">
+        <button onclick="toggleOpendyslexic()">Police OpenDyslexic</button>
+        <button onclick="toggleReading()">Police Lecture</button>
+        <button onclick="toggleContrast()">Contraste élevé</button>
+        <button onclick="toggleBigCursor()">Curseur agrandi</button>
+        <button class="focus-bar-btn" onclick="toggleFocusBar()">Barre de lecture</button>
+        <div style="margin-top:10px;">
+            <button onclick="zoomOut()">-</button>
+            <span id="zoom-level">100%</span>
+            <button onclick="zoomIn()">+</button>
+        </div>
+
+        <button onclick="resetZoom()">Réinitialiser zoom</button>
+        <button onclick="resetSettings()">Réinitialiser tout</button>
     </div>
-    
-    <button onclick="resetZoom()">Réinitialiser zoom</button>
-    <button onclick="resetSettings()">Réinitialiser tout</button>
-</div>
 
     <script src="src/js/accessibility.js"></script>
 
