@@ -8,6 +8,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/embla-carousel/embla-carousel.css" />
+    <link href="https://fonts.cdnfonts.com/css/open-dyslexic" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
     <script type="module">
         import EmblaCarousel from 'https://unpkg.com/embla-carousel/embla-carousel.umd.js'
@@ -31,7 +36,7 @@
                 <a href="equipe.html" class="header-typo-pc">Notre equipe</a>
                 <a href="realisations.html" class="header-typo-pc">Nos realisations</a>
                 <a href="blog.html" class="header-typo-pc">Notre blog</a>
-                <a href="projet.html" class="header-typo-pc btn-project">
+                <a href="test.html" class="header-typo-pc btn-project">
                     <span>J’ai un projet !</span>
                     <img src="src/svg/arrowB.svg" alt="fleche">
                 </a>
@@ -228,12 +233,12 @@
                 <p>Ce qui nous unit ? L’envie de <b>transmettre, d’émerveiller, de créer du lien…</b> et de faire vivre
                     la <b>ludification</b> sous toutes ses formes.</p>
                 <div class="small-spacing"></div>
-                            <div class="switch-container">
-                <input type="checkbox" id="toggleGamepuzzle" class="toggle-checkbox">
-                <label for="toggleGamepuzzle" class="toggle-label">
-                    <span class="toggle-ball"></span>
-                </label>
-            </div>
+                <div class="switch-container">
+                    <input type="checkbox" id="toggleGamepuzzle" class="toggle-checkbox">
+                    <label for="toggleGamepuzzle" class="toggle-label">
+                        <span class="toggle-ball"></span>
+                    </label>
+                </div>
                 <a href="projet.html" class="text-typo btn-project black">
                     <span>J’ai un projet !</span>
                     <img src="src/svg/arrowB.svg" alt="fleche">
@@ -355,6 +360,30 @@
             <div class="small-medium-spacing"></div>
         </div>
     </footer>
+
+
+<div id="accessibility-btn">♿</div>
+
+
+<div id="focus-top"></div>
+<div id="focus-bottom"></div>
+
+<div id="accessibility-menu">
+    <button onclick="toggleOpendyslexic()">Police OpenDyslexic</button>
+    <button onclick="toggleReading()">Police Lecture</button>
+    <button onclick="toggleContrast()">Contraste élevé</button>
+    <button class="focus-bar-btn" onclick="toggleFocusBar()">Barre de lecture</button>
+    <div style="margin-top:10px;">
+        <button onclick="zoomOut()">-</button>
+        <span id="zoom-level">100%</span>
+        <button onclick="zoomIn()">+</button>
+    </div>
+    
+    <button onclick="resetZoom()">Réinitialiser zoom</button>
+    <button onclick="resetSettings()">Réinitialiser tout</button>
+</div>
+
+    <script src="src/js/accessibility.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="src/js/puzzleTaquin.js"></script>
