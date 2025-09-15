@@ -25,7 +25,13 @@
  }
 
 
+ body {
+     cursor: default;
+ }
 
+ body.big-cursor {
+     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" > <circle cx="1000" cy="1000" r="500" fill="black" /> </svg>') 40 40, auto;
+ }
 
  /* Bouton */
  #accessibility-btn {
@@ -67,38 +73,40 @@
      background-image: none !important;
  }
 
-#focus-top,
-#focus-bottom {
-    position: fixed;
-    left: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.8);
-    filter: saturate(200); 
-    pointer-events: none;
-    display: none;
-    z-index: 9999;
-    transition: height 0.05s linear;
-}
+ #focus-top,
+ #focus-bottom {
+     position: fixed;
+     left: 0;
+     width: 100%;
+     background: rgba(0, 0, 0, 0.8);
+     filter: saturate(200);
+     pointer-events: none;
+     display: none;
+     z-index: 9999;
+     transition: height 0.05s linear;
+ }
 
-#focus-top {
-    top: 0;
-    height: 0;
-}
+ #focus-top {
+     top: 0;
+     height: 0;
+ }
 
-#focus-bottom {
-    bottom: 0;
-    height: 0;
-}
+ #focus-bottom {
+     bottom: 0;
+     height: 0;
+ }
 
-body.focus-bar-active #focus-top,
-body.focus-bar-active #focus-bottom {
-    display: block;
-}
-    .focus-bar-btn{
-        display: block ;
-    }
-@media (max-width: 768px) {
-    .focus-bar-btn{
-        display: none !important;
-    }
-}
+ body.focus-bar-active #focus-top,
+ body.focus-bar-active #focus-bottom {
+     display: block;
+ }
+
+ .focus-bar-btn {
+     display: block;
+ }
+
+ @media (max-width: 768px) {
+     .focus-bar-btn {
+         display: none !important;
+     }
+ }

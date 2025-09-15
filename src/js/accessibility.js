@@ -20,6 +20,7 @@ window.onload = () => {
     if (!("ontouchstart" in window) && localStorage.getItem("focusBar") === "on") {
         body.classList.add("focus-bar-active");
     }
+    if (localStorage.getItem("cursor") === "big") body.classList.add("big-cursor");
 };
 
 function toggleOpendyslexic() {
@@ -56,7 +57,6 @@ function resetZoom() {
     applyZoom();
 }
 
-// ⚡ Activer la barre uniquement sur PC
 if (!("ontouchstart" in window)) {
     const focusTop = document.getElementById("focus-top");
     const focusBottom = document.getElementById("focus-bottom");
@@ -99,9 +99,18 @@ if (!("ontouchstart" in window)) {
     window.toggleFocusBar = toggleFocusBar;
 }
 
-// Reset complet
+function toggleBigCursor() {
+    body.classList.toggle("big-cursor");
+    if (body.classList.contains("big-cursor")) {
+        localStorage.setItem("cursor", "big");
+    } else {
+        localStorage.removeItem("cursor");
+    }
+}
+
+
 function resetSettings() {
-    body.classList.remove("opendyslexic", "high-contrast", "reading", "focus-bar-active");
+    body.classList.remove("opendyslexic", "high-contrast", "reading", "focus-bar-active", "big-cursor");
     localStorage.clear();
     resetZoom();
 }
