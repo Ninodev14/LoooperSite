@@ -3,7 +3,7 @@
   font-family: "Titan One";
   font-size: 4rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100;
   line-height: normal;
 }
 
@@ -12,7 +12,7 @@
   font-family: "Titan One";
   font-size: 2.5rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100;
   line-height: normal;
 }
 
@@ -21,7 +21,7 @@
   font-family: "Titan One";
   font-size: 1.75rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100;
   line-height: normal;
 }
 
@@ -31,22 +31,26 @@ p,
 .text-typo {
   color: white;
   font-family: Poppins;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-style: normal;
-  font-weight: 400;
-  line-height: 2.125rem;
+  font-weight: 100;
+  line-height: 1rem;
+}
+.header-typo-pc{
+   font-size: 0.8rem;
+  
 }
 
 input,
 textarea {
   font-family: Poppins;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100;
 }
 
 .header-typo-pc {
-  color: black;
+  color: white;
 }
 
 .footerTitle {
@@ -54,12 +58,12 @@ textarea {
   font-family: "Titan One";
   font-size: 1.5rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100;
   line-height: normal;
 }
 
 header p {
-  color: black;
+  color: white;
 }
 
 .black {
@@ -132,12 +136,12 @@ b {
 }
 
 html {
-  font-size: 14px;
+  font-size: 13px;
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .h1 {
@@ -154,7 +158,7 @@ html {
 
 @media (min-width: 1200px) {
   html {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .h1 {
