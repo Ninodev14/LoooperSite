@@ -93,7 +93,8 @@
                 <div class="small-spacing"></div>
                 <h2 class="h3">
                     Loooper!, c'est transformer n'importe quel contenu en <span class="highlight blue">solutions
-                        interactives</span> sur mesure pour mieux apprendre, mieux communiquer et s’émerveiller autrement.
+                        interactives</span> sur mesure pour mieux apprendre, mieux communiquer et s’émerveiller
+                    autrement.
                 </h2>
                 <div class="small-medium-spacing"></div>
                 <a href="test.html" class="text-typo btn-project btn-white-background">
@@ -105,7 +106,7 @@
         </section>
 
         <div class="large-spacing"></div>
-        
+
         <div class="zoom-container-center target-content-index">
             <div class="zoom-container">
                 <section class="container-width">
@@ -115,10 +116,12 @@
                         <div class="switch-container">
                             <input type="checkbox" id="toggleGameMemories" class="toggle-checkbox">
                             <label for="toggleGameMemories" class="toggle-label">
-                                <span class="toggle-ball"></span>
+                                <span class="toggle-ball">
+                                    <div class="line1"></div>
+                                    <div class="line2"></div>
+                                </span>
                             </label>
                         </div>
-
                         <div class="memory-game-container">
                             <div class="game-board">
                                 <div class="card" data-image="/src/svg/guyMemories.svg" alt="Carte 1 du mémories"></div>
@@ -269,30 +272,34 @@
                 <fieldset class="form-group-container">
                     <div class="form-group">
                         <label class="text-typo" for="nom">Nom</label>
-                        <input class="target-content-index" type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                        <input class="target-content-index" type="text" id="nom" name="nom" placeholder="Votre nom"
+                            required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="prenom">Prénom</label>
-                        <input class="target-content-index" type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                        <input class="target-content-index" type="text" id="prenom" name="prenom"
+                            placeholder="Votre prénom" required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="email">Email</label>
-                        <input class="target-content-index" type="email" id="email" name="email" placeholder="Votre email" required>
+                        <input class="target-content-index" type="email" id="email" name="email"
+                            placeholder="Votre email" required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="tel">Téléphone</label>
-                        <input class="target-content-index" type="tel" id="tel" name="tel" placeholder="Votre téléphone">
+                        <input class="target-content-index" type="tel" id="tel" name="tel"
+                            placeholder="Votre téléphone">
                     </div>
                 </fieldset>
 
                 <fieldset>
                     <div class="form-group">
                         <label class="text-typo" for="message">Message</label>
-                        <textarea class="target-content-index" id="message" name="message" rows="6" placeholder="Votre message..."
-                            required></textarea>
+                        <textarea class="target-content-index" id="message" name="message" rows="6"
+                            placeholder="Votre message..." required></textarea>
                     </div>
                 </fieldset>
 
@@ -375,22 +382,22 @@
     <div id="focus-top"></div>
     <div id="focus-bottom"></div>
 
-<div id="accessibility-menu">
-    <button onclick="toggleOpendyslexic()">Police OpenDyslexic</button>
-    <button onclick="toggleReading()">Police Lecture</button>
-    <button onclick="toggleContrast()">Contraste élevé</button>
-    <button onclick="toggleLinkOutline()">Encadrer les liens</button>
-<button onclick="toggleLinkOutlineHover()">Encadrer les liens au survol</button>
+    <div id="accessibility-menu">
+        <button onclick="toggleOpendyslexic()">Police OpenDyslexic</button>
+        <button onclick="toggleReading()">Police Lecture</button>
+        <button onclick="toggleContrast()">Contraste élevé</button>
+        <button onclick="toggleLinkOutline()">Encadrer les liens</button>
+        <button onclick="toggleLinkOutlineHover()">Encadrer les liens au survol</button>
 
-    <div style="margin-top:10px;">
-        <button onclick="zoomOut()">-</button>
-        <span id="zoom-level">100%</span>
-        <button onclick="zoomIn()">+</button>
+        <div style="margin-top:10px;">
+            <button onclick="zoomOut()">-</button>
+            <span id="zoom-level">100%</span>
+            <button onclick="zoomIn()">+</button>
+        </div>
+
+        <button onclick="resetZoom()">Réinitialiser zoom</button>
+        <button onclick="resetSettings()">Réinitialiser tout</button>
     </div>
-    
-    <button onclick="resetZoom()">Réinitialiser zoom</button>
-    <button onclick="resetSettings()">Réinitialiser tout</button>
-</div>
 
 
     <script src="src/js/accessibility.js"></script>

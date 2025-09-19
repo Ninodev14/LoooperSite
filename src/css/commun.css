@@ -65,14 +65,14 @@ body {
     .text-basical-container-text {
         width: 100%;
     }
-.zoom-container {
-    border-radius: 60px;
-}
+
+    .zoom-container {
+        border-radius: 60px;
+    }
 }
 
 
 /* Boutton */
-
 .switch-container {
     display: flex;
     align-items: center;
@@ -82,7 +82,6 @@ body {
 
 .toggle-checkbox {
     display: none;
-    /* masque la checkbox réelle */
 }
 
 .toggle-label {
@@ -96,15 +95,65 @@ body {
     transition: background-color 0.3s;
 }
 
-.toggle-label .toggle-ball {
+.toggle-ball {
     position: absolute;
     top: 2px;
     left: 3px;
     width: 22px;
     height: 22px;
-    background-color: white;
+        background-color: #000;
+    border: solid 2px #fff;
     border-radius: 50%;
-    transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+/* Lignes pour croix / check */
+.toggle-ball .line1,
+.toggle-ball .line2 {
+
+    position: absolute;
+    width: 2px;
+    height: 14px;
+    background-color: #ffffff;
+    border-radius: 1px;
+    transition: all 0.3s;
+}
+
+/* Croix par défaut */
+.toggle-ball .line1 {
+    transform: rotate(45deg);
+}
+
+.toggle-ball .line2 {
+    transform: rotate(-45deg);
+}
+
+/* État coché = check */
+.toggle-checkbox:checked+.toggle-label .toggle-ball .line1 {
+    width: 2px;
+    height: 10px;
+    border-radius: 2px;
+    top: 50%;
+    left: 62%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.toggle-checkbox:checked+.toggle-label .toggle-ball .line2 {
+    width: 6px;
+    height: 2px;
+    border-radius: 2px;
+    top: 58%;
+    left: 38%;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* boule glissante */
+.toggle-checkbox:checked+.toggle-label .toggle-ball {
+    transform: translateX(22px);
+
 }
 
 .toggle-checkbox:checked+.toggle-label {
@@ -112,13 +161,6 @@ body {
     background-size: 200%;
 }
 
-.toggle-checkbox:checked+.toggle-label .toggle-ball {
-    background-color: crimson;
-}
-
-.toggle-checkbox:checked+.toggle-label .toggle-ball {
-    transform: translateX(22px);
-}
 
 .toggle-text {
     font-size: 14px;
@@ -151,6 +193,7 @@ body {
 .btn-project img {
     width: 2rem;
 }
+
 .header-typo-pc img {
     width: 1.5rem;
 }
@@ -299,35 +342,35 @@ body {
 }
 
 .link-underline-fill {
-  --underline-color: white;
-  --underline-height: 1px;
-  --underline-duration: .75s;
-  --underline-easing: cubic-bezier(.2,.9,.2,1);
+    --underline-color: white;
+    --underline-height: 1px;
+    --underline-duration: .75s;
+    --underline-easing: cubic-bezier(.2, .9, .2, 1);
 
-  position: relative;
-  display: inline-block; 
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .link-underline-fill::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: var(--underline-height);
-  width: 100%;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: var(--underline-height);
+    width: 100%;
 
-  background: var(--underline-color);
-  transform-origin: left center;
-  transform: scaleX(0);
-  transition: transform var(--underline-duration) var(--underline-easing);
-  pointer-events: none;
+    background: var(--underline-color);
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform var(--underline-duration) var(--underline-easing);
+    pointer-events: none;
 }
 
 .link-underline-fill:hover::after,
 .link-underline-fill:focus-visible::after {
-  transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 
