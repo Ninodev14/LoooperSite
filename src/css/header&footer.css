@@ -184,6 +184,7 @@ footer {
 .footer-nav-row {
     display: flex;
     flex-direction: column;
+    gap: 6px;
 }
 
 .footer-container {
@@ -227,6 +228,10 @@ footer {
 .footerLogoImg {
     width: 8rem;
     margin-bottom: 8rem;
+}
+
+.footerLogoImg img{
+    width: 100%;
 }
 
 @media screen and (max-width: 960px) {

@@ -22,6 +22,7 @@
         const emblaApi = EmblaCarousel(viewportNode, { loop: true })
     </script>
     <link rel="stylesheet" href="src/css/style.css">
+    <link rel="icon" href="src/img/looperIco.ico" type="image/x-icon">
     <title>Loooper!</title>
 </head>
 
@@ -81,7 +82,7 @@
             <img class="backgroundType1Annim rightbackgroundType1 reflect" src="src/svg/backgroundType1.svg" alt="">
             <section class="intro-paragraphe">
 
-                <h1 class="h3">
+                <h1 class="h2">
                     Loooper!, c'est <span class="highlight orange">la gamification</span> au service de vos contenus.
                 </h1>
                 <div class="small-spacing"></div>
@@ -92,11 +93,11 @@
                 <div class="small-spacing"></div>
                 <h2 class="h3">
                     Loooper!, c'est transformer n'importe quel contenu en <span class="highlight blue">solutions
-                        interactives</span> sur mesure...
+                        interactives</span> sur mesure pour mieux apprendre, mieux communiquer et s’émerveiller autrement.
                 </h2>
                 <div class="small-medium-spacing"></div>
                 <a href="test.html" class="text-typo btn-project btn-white-background">
-                    <span>J’ai un projet !</span>
+                    <span>Lancer mon projet !</span>
                     <img src="src/svg/arrowB.svg" alt="fleche">
                 </a>
             </section>
@@ -104,6 +105,7 @@
         </section>
 
         <div class="large-spacing"></div>
+        
         <div class="zoom-container-center target-content-index">
             <div class="zoom-container">
                 <section class="container-width">
@@ -311,8 +313,8 @@
 
     <footer class="zoom-container">
         <div class="container-width footer-container">
-            <a href="index.html"><img src="src/img/logoSMP.png" alt="logo simplifier de loooper"
-                    class="logo-bump footerLogoImg"></a>
+            <a href="index.html" class="footerLogoImg"><img src="src/img/logoSMP.png" alt="logo simplifier de loooper"
+                    class="logo-bump"></a>
             <nav class="footer-nav">
                 <div class="footer-nav-row">
                     <a href="index.html" class="footerTitle">Accueil</a>
@@ -373,21 +375,23 @@
     <div id="focus-top"></div>
     <div id="focus-bottom"></div>
 
-    <div id="accessibility-menu">
-        <button onclick="toggleOpendyslexic()">Police OpenDyslexic</button>
-        <button onclick="toggleReading()">Police Lecture</button>
-        <button onclick="toggleContrast()">Contraste élevé</button>
-        <button onclick="toggleBigCursor()">Curseur agrandi</button>
-        <button class="focus-bar-btn" onclick="toggleFocusBar()">Barre de lecture</button>
-        <div style="margin-top:10px;">
-            <button onclick="zoomOut()">-</button>
-            <span id="zoom-level">100%</span>
-            <button onclick="zoomIn()">+</button>
-        </div>
+<div id="accessibility-menu">
+    <button onclick="toggleOpendyslexic()">Police OpenDyslexic</button>
+    <button onclick="toggleReading()">Police Lecture</button>
+    <button onclick="toggleContrast()">Contraste élevé</button>
+    <button onclick="toggleLinkOutline()">Encadrer les liens</button>
+<button onclick="toggleLinkOutlineHover()">Encadrer les liens au survol</button>
 
-        <button onclick="resetZoom()">Réinitialiser zoom</button>
-        <button onclick="resetSettings()">Réinitialiser tout</button>
+    <div style="margin-top:10px;">
+        <button onclick="zoomOut()">-</button>
+        <span id="zoom-level">100%</span>
+        <button onclick="zoomIn()">+</button>
     </div>
+    
+    <button onclick="resetZoom()">Réinitialiser zoom</button>
+    <button onclick="resetSettings()">Réinitialiser tout</button>
+</div>
+
 
     <script src="src/js/accessibility.js"></script>
 

@@ -16,7 +16,6 @@ window.onload = () => {
     if (localStorage.getItem("font") === "reading") body.classList.add("reading");
     if (localStorage.getItem("contrast") === "high") body.classList.add("high-contrast");
 
-    // ⚡ Charger focusBar seulement si PC (pas tactile)
     if (!("ontouchstart" in window) && localStorage.getItem("focusBar") === "on") {
         body.classList.add("focus-bar-active");
     }
@@ -108,9 +107,48 @@ function toggleBigCursor() {
     }
 }
 
+function toggleLinkOutline() {
+    document.body.classList.toggle('link-outline');
+    if (document.body.classList.contains('link-outline')) {
+        localStorage.setItem('linkOutline', 'on');
+    } else {
+        localStorage.removeItem('linkOutline');
+    }
+}
+window.toggleLinkOutline = toggleLinkOutline;
+
+if (localStorage.getItem('linkOutline') === 'on') {
+    document.body.classList.add('link-outline');
+}
+function toggleLinkOutlineHover() {
+    document.body.classList.toggle('link-outline-hover');
+    if (document.body.classList.contains('link-outline-hover')) {
+        localStorage.setItem('linkOutlineHover', 'on');
+    } else {
+        localStorage.removeItem('linkOutlineHover');
+    }
+}
+window.toggleLinkOutlineHover = toggleLinkOutlineHover;
+
+
+if (localStorage.getItem('linkOutlineHover') === 'on') {
+    document.body.classList.add('link-outline-hover');
+}
+
 
 function resetSettings() {
-    body.classList.remove("opendyslexic", "high-contrast", "reading", "focus-bar-active", "big-cursor");
+    body.classList.remove(
+        "opendyslexic",
+        "high-contrast",
+        "reading",
+        "focus-bar-active",
+        "big-cursor",
+        "link-outline",
+        "link-outline-hover"
+    );
     localStorage.clear();
     resetZoom();
 }
+
+
+

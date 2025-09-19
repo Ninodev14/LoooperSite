@@ -110,3 +110,20 @@
          display: none !important;
      }
  }
+
+
+.link-outline a {
+  outline: 3px solid var(--link-outline-color, #ffdd00);
+  outline-offset: 3px;
+  border-radius: 4px; 
+}
+
+.link-outline a.small {
+  outline-offset: 4px;
+}
+
+.link-outline-hover a:hover {
+  outline: 3px solid var(--link-outline-color, #ff6600);
+  outline-offset: 3px;
+  border-radius: 4px;
+}

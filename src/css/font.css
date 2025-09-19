@@ -10,7 +10,7 @@
 .h2 {
   color: white;
   font-family: "Titan One";
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-style: normal;
   font-weight: 100;
   line-height: normal;
@@ -19,7 +19,7 @@
 .h3 {
   color: white;
   font-family: "Titan One";
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   font-style: normal;
   font-weight: 100;
   line-height: normal;
@@ -151,7 +151,7 @@ html {
   }
 
   .h2 {
-    font-size: 2.875rem;
+    font-size: 2rem;
   }
 
 }
@@ -168,6 +168,6 @@ html {
   }
 
   .h2 {
-    font-size: 2.875rem;
+    font-size: 2rem;
   }
 }
