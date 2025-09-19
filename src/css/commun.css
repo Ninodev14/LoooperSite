@@ -65,7 +65,9 @@ body {
     .text-basical-container-text {
         width: 100%;
     }
-
+.zoom-container {
+    border-radius: 60px;
+}
 }
 
 
@@ -166,7 +168,6 @@ body {
 .highlight {
     position: relative;
     display: inline-block;
-    z-index: -1;
 }
 
 .highlight::before {
@@ -296,6 +297,39 @@ body {
         transform: translateY(0);
     }
 }
+
+.link-underline-fill {
+  --underline-color: white;
+  --underline-height: 1px;
+  --underline-duration: .75s;
+  --underline-easing: cubic-bezier(.2,.9,.2,1);
+
+  position: relative;
+  display: inline-block; 
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.link-underline-fill::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: var(--underline-height);
+  width: 100%;
+
+  background: var(--underline-color);
+  transform-origin: left center;
+  transform: scaleX(0);
+  transition: transform var(--underline-duration) var(--underline-easing);
+  pointer-events: none;
+}
+
+.link-underline-fill:hover::after,
+.link-underline-fill:focus-visible::after {
+  transform: scaleX(1);
+}
+
 
 
 /* CONTACT */
