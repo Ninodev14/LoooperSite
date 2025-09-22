@@ -50,6 +50,12 @@ body {
 .text-basical-container-text {
     width: 60vw;
 }
+.ludique-toggle{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
 
 @media screen and (max-width: 960px) {
     .container-width {
@@ -74,10 +80,10 @@ body {
 
 /* Boutton */
 .switch-container {
+    scale: 1.5;
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 20px;
 }
 
 .toggle-checkbox {
@@ -101,18 +107,17 @@ body {
     inset: 0;
     background-image: url(/src/svg/fullPatern.svg);
     background-size: 200%;
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.3s;
 }
 
 .toggle-checkbox:checked + .toggle-label::before {
-    opacity: 1;
+    opacity: 0;
 }
 
 .toggle-ball {
     position: absolute;
     top: 50%;
-    transform: translate(0%, -50%);
     left: 2px;
     width: 22px;
     height: 22px;
@@ -122,6 +127,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: translate(21px, -50%);
     transition: transform 0.3s, background-color 0.3s;
 }
 
@@ -130,28 +136,16 @@ body {
     position: absolute;
     background-color: #fff;
     border-radius: 2px;
-
 }
 
 .toggle-ball .line1 {
-    width: 2px;
-    height: 14px;
-    transform: rotate(45deg);
-}
-.toggle-ball .line2 {
-    width: 2px;
-    height: 14px;
-    transform: rotate(-45deg);
-}
-
-.toggle-checkbox:checked + .toggle-label .toggle-ball .line1 {
     width: 2px;
     height: 10px;
     top: 50%;
     left: 62%;
     transform: translate(-50%, -50%) rotate(45deg);
 }
-.toggle-checkbox:checked + .toggle-label .toggle-ball .line2 {
+.toggle-ball .line2 {
     width: 6px;
     height: 2px;
     top: 58%;
@@ -160,13 +154,28 @@ body {
 }
 
 .toggle-checkbox:checked + .toggle-label .toggle-ball {
-    transform: translate(21px, -50%);
+    transform: translate(0%, -50%);
+}
+.toggle-checkbox:checked + .toggle-label .toggle-ball .line1 {
+    width: 2px;
+    height: 14px;
+    top: auto;
+    left: auto;
+    transform: rotate(45deg);
+}
+.toggle-checkbox:checked + .toggle-label .toggle-ball .line2 {
+    width: 2px;
+    height: 14px;
+    top: auto;
+    left: auto;
+    transform: rotate(-45deg);
 }
 
 .toggle-text {
     font-size: 14px;
     color: #333;
 }
+
 
 
 .btn-submit {

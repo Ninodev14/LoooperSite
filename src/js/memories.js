@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let flippedCards = [];
   let lockBoard = false;
 
-  // Associe chaque image de paire à un contenu personnalisé
   const contentsByImage = {
     "/src/svg/guyMemories.svg": {
       title: "Pensé pour tous les publics",
@@ -33,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     img.src = src;
   });
 
-  // Gère le clic sur une carte
   cards.forEach(card => {
     card.addEventListener("click", () => {
       if (lockBoard || card.classList.contains("flipped")) return;
@@ -46,7 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
         lockBoard = true;
         const [card1, card2] = flippedCards;
 
-        // Si c'est une paire
         if (card1.dataset.image === card2.dataset.image) {
           const content = contentsByImage[card1.dataset.image];
           if (content) {
@@ -54,7 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
             gameMessage.textContent = content.text;
             gameImage.src = content.image;
 
-            // Met à jour les boutons
             for (let btn of gameButtons) {
               if (btn.src.includes("interogationMemories.svg")) {
                 btn.src = content.image;
@@ -80,7 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
           lockBoard = false;
 
         } else {
-          // Sinon on retourne les cartes après un délai
           setTimeout(() => {
             card1.classList.remove("flipped");
             card2.classList.remove("flipped");
@@ -96,7 +91,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Gère le clic sur les boutons
   gameButtons.forEach(btn => {
     btn.parentElement.addEventListener("click", () => {
       const imgSrc = btn.dataset.image;

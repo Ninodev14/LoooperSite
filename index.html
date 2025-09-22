@@ -112,16 +112,7 @@
                 <section class="container-width">
                     <article class="memory-game">
                         <h2 class="h2 black">Mais qu’est-ce qui rend LOOOPER! unique ?</h2>
-                        <div class="medium-spacing"></div>
-                        <div class="switch-container">
-                            <input type="checkbox" id="toggleGameMemories" class="toggle-checkbox">
-                            <label for="toggleGameMemories" class="toggle-label">
-                                <span class="toggle-ball">
-                                    <div class="line1"></div>
-                                    <div class="line2"></div>
-                                </span>
-                            </label>
-                        </div>
+                        <div class="small-medium-spacing"></div>
                         <div class="memory-game-container">
                             <div class="game-board">
                                 <div class="card" data-image="/src/svg/guyMemories.svg" alt="Carte 1 du mémories"></div>
@@ -143,39 +134,66 @@
                                 </nav>
                                 <img id="game-image" src="/src/svg/interogationMemories.svg"
                                     alt="Image de la paire trouvée">
-                                <h3 id="game-message-title" class="black h3">Un petit jeu ?</h3>
-                                <p id="game-message" class="black">Trouve les paires pour découvrir la philosophie de
-                                    “Loooper!”</p>
+                                <div class="game-info-text">
+                                    <h3 id="game-message-title" class="black h3">Un petit jeu ?</h3>
+                                    <p id="game-message" class="black">Trouve les paires pour découvrir la philosophie
+                                        de
+                                        “Loooper!”</p>
+                                </div>
                             </div>
                         </div>
 
                         <div class="memory-no-game-container" style="display:none;">
                             <article class="memory-no-game">
                                 <div class="memory-item">
+
                                     <img src="/src/svg/guyMemories.svg" alt="Pensé pour tous les publics">
-                                    <h3>Pensé pour tous les publics</h3>
-                                    <p>De 1 à 111 ans, chacun trouve sa place dans nos expériences interactives;
-                                        ludiques, inclusives, accessibles.</p>
+                                    <div class="memory-item-text orange-shadow-box">
+                                        <h3 class="h3">Pensé pour tous les publics</h3>
+                                        <p>De 1 à 111 ans, chacun trouve sa place dans nos expériences interactives;
+                                            ludiques, inclusives, accessibles.</p>
+                                    </div>
                                 </div>
                                 <div class="memory-item">
                                     <img src="/src/svg/linkMemories.svg" alt="Expérience créatrice de lien">
-                                    <h3>Expérience créatrice de lien</h3>
-                                    <p>Le jeu est un langage universel. Loooper! s’en sert pour tisser un lien vivant et
-                                        unique avec votre public.</p>
+                                    <div class="memory-item-text purple-shadow-box">
+                                        <h3 class="h3">Expérience créatrice de lien</h3>
+                                        <p>Le jeu est un langage universel. Loooper! s’en sert pour tisser un lien
+                                            vivant et
+                                            unique avec votre public.</p>
+                                    </div>
                                 </div>
                                 <div class="memory-item">
                                     <img src="/src/svg/targetMemories.svg" alt="Solutions adaptées sur mesure">
-                                    <h3>Solutions adaptées sur mesure</h3>
-                                    <p>De l’idée à la mise en place, nous vous accompagnons de A à Z dans la création de
-                                        formats ludiques alignés avec vos objectifs.</p>
+                                    <div class="memory-item-text blueu-shadow-box">
+                                        <h3 class="h3">Solutions adaptées sur mesure</h3>
+                                        <p>De l’idée à la mise en place, nous vous accompagnons de A à Z dans la
+                                            création de
+                                            formats ludiques alignés avec vos objectifs.</p>
+                                    </div>
                                 </div>
                             </article>
                         </div>
 
                         <div class="small-medium-spacing"></div>
-                        <a href="projets.html" class="text-typo btn-project btn-white-background">
-                            <span>Voir ce qu’on peut créer ensemble</span>
-                        </a>
+                        <div class="memory-no-game-container-footer">
+                            <a href="projets.html" class="text-typo btn-project btn-white-background">
+                                <span>Voir ce qu’on peut créer ensemble</span>
+                            </a>
+                            <div class="ludique-toggle">
+                                <p class="black">Mode ludique :</p>
+                                <div class="switch-container">
+                                    <input type="checkbox" id="toggleGameMemories" class="toggle-checkbox">
+                                    <label for="toggleGameMemories" class="toggle-label">
+                                        <span class="toggle-ball">
+                                            <div class="line1"></div>
+                                            <div class="line2"></div>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
                     </article>
 
                 </section>
@@ -244,11 +262,14 @@
                 <p>Ce qui nous unit ? L’envie de <b>transmettre, d’émerveiller, de créer du lien…</b> et de faire vivre
                     la <b>ludification</b> sous toutes ses formes.</p>
                 <div class="small-spacing"></div>
-                <div class="switch-container">
-                    <input type="checkbox" id="toggleGamepuzzle" class="toggle-checkbox">
-                    <label for="toggleGamepuzzle" class="toggle-label">
-                        <span class="toggle-ball"></span>
-                    </label>
+                <div class="ludique-toggle">
+                    <p class="">Mode ludique :</p>
+                    <div class="switch-container">
+                        <input type="checkbox" id="toggleGamepuzzle" class="toggle-checkbox">
+                        <label for="toggleGamepuzzle" class="toggle-label">
+                            <span class="toggle-ball"></span>
+                        </label>
+                    </div>
                 </div>
                 <a href="projets.html" class="text-typo btn-project btn-white-background">
                     <span>Page equipe</span>
