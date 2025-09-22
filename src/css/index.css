@@ -168,6 +168,7 @@
   justify-content: space-between;
   width: 100%;
   height: fit-content;
+  align-items: end;
 }
 
 .memory-no-game {
@@ -289,7 +290,7 @@
   width: fit-content;
   height: fit-content;
   transition: border 0.6s ease, background 0.6s ease;
-  /* <--- transition du puzzle */
+  
 }
 
 .piece {
@@ -313,11 +314,13 @@
   background: transparent;
   gap: 0px;
   cursor: default;
+  scale: 1.04;
 }
 
 .puzzle.gagne .piece {
   border: 0px solid transparent;
   cursor: default;
+  scale: 1.01;
 }
 
 .puzzle.gagne .vide {
