@@ -35,13 +35,14 @@ body {
 .text-basical-container {
     display: flex;
     gap: 10vw;
+}
+.backgroundBrushType1{
     background-image: url(/src/svg/brush-background-takin.svg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-clip: padding-box;
-}
 
+}
 .mentions-legales-text-container {
     flex-direction: column;
 }
