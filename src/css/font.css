@@ -36,9 +36,14 @@ p,
   font-weight: 100;
   line-height: 1rem;
 }
-.header-typo-pc{
-   font-size: 0.8rem;
-  
+
+.header-typo-pc {
+  font-size: 0.8rem;
+  color: white;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 100;
+  line-height: 0.8rem;
 }
 
 input,
@@ -141,33 +146,47 @@ html {
 
 @media (min-width: 768px) {
   html {
-    font-size: 14px;
+    font-size: 14px !important;
   }
 
   .h1 {
 
-    font-size: 5rem;
+    font-size: 5rem !important;
 
   }
 
   .h2 {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
 
 }
 
 @media (min-width: 1200px) {
   html {
-    font-size: 15px;
+    font-size: 15px !important;
   }
 
   .h1 {
 
-    font-size: 5rem;
+    font-size: 5rem !important;
 
   }
 
   .h2 {
-    font-size: 2rem;
+    font-size: 2rem !important;
   }
+}
+
+@media (min-width: 1600px) {
+  html {
+    font-size: 17px !important;
+  }
+
+}
+
+@media (min-width: 1900px) {
+  html {
+    font-size: 18px !important;
+  }
+
 }

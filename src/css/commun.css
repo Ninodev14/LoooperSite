@@ -44,15 +44,15 @@ body {
 .backgroundBrushType1::before {
     content: "";
     position: absolute;
-    top: -100%;   /* dépasse en haut */
-    left: 0px;  /* dépasse à gauche */
-    right: 0px; /* dépasse à droite */
-    bottom: -100%;/* dépasse en bas */
+    top: -100%;
+    left: 0px;
+    right: 0px;
+    bottom: -100%;
     background-image: url(/src/svg/brush-background-takin.svg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: -1; /* derrière le contenu */
+    z-index: -1;
 }
 
 .mentions-legales-text-container {
