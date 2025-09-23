@@ -11,14 +11,3 @@ form.addEventListener('submit', function (e) {
         .catch(err => alert('Erreur : ' + err));
 });
 
-const autreCheckbox = document.getElementById('objectif-autre-checkbox');
-const autreInput = document.getElementById('objectif-autre-input');
-
-autreCheckbox.addEventListener('change', () => {
-    if (autreCheckbox.checked) {
-        autreInput.style.display = 'block';
-    } else {
-        autreInput.style.display = 'none';
-        autreInput.value = '';
-    }
-});

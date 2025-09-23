@@ -327,120 +327,59 @@
         <div class="contact-container">
             <h2 class="h1 black white-border">Nous contacter</h2>
             <div class="small-medium-spacing"></div>
-            <form name="contact" method="POST" data-netlify="true" id="contactForm">
-                <input type="hidden" name="form-name" value="contact">
+<form name="contact" method="POST" data-netlify="true" id="contactForm">
+  <input type="hidden" name="form-name" value="contact">
 
-            <!-- Qui suis-je ? -->
-            <fieldset class="form-group-container">
-                <legend class="text-typo">Qui suis-je ?</legend>
+  <!-- Qui suis-je ? -->
+  <fieldset>
+    <legend>Qui suis-je ?</legend>
+    <input type="text" name="prenom" placeholder="Votre prénom" required>
+    <input type="text" name="nom" placeholder="Votre nom" required>
+    <input type="text" name="entreprise" placeholder="Nom de votre entreprise" required>
+    <input type="text" name="statut" placeholder="Votre statut">
+  </fieldset>
 
-                <div class="form-group">
-                    <label class="text-typo" for="prenom">Prénom*</label>
-                    <input class="target-content-index" type="text" id="prenom" name="prenom" placeholder="Votre prénom"
-                        required>
-                </div>
+  <!-- Mes coordonnées -->
+  <fieldset>
+    <legend>Mes coordonnées</legend>
+    <input type="email" name="email" placeholder="Votre email" required>
+    <input type="tel" name="tel" placeholder="Votre téléphone">
+  </fieldset>
 
-                <div class="form-group">
-                    <label class="text-typo" for="nom">Nom*</label>
-                    <input class="target-content-index" type="text" id="nom" name="nom" placeholder="Votre nom"
-                        required>
-                </div>
+  <!-- Mon projet -->
+  <fieldset>
+    <legend>Mon projet</legend>
 
-                <div class="form-group">
-                    <label class="text-typo" for="entreprise">Entreprise / Organisation*</label>
-                    <input class="target-content-index" type="text" id="entreprise" name="entreprise"
-                        placeholder="Nom de votre entreprise" required>
-                </div>
+    <!-- Objectifs -->
+    <p>Pourquoi souhaitez-vous créer ce projet ?</p>
+    <label><input type="checkbox" name="objectif[]" value="Communication interne"> Communication interne</label>
+    <label><input type="checkbox" name="objectif[]" value="Communication externe"> Communication externe</label>
+    <label><input type="checkbox" name="objectif[]" value="Formation"> Formation</label>
+    <label><input type="checkbox" name="objectif[]" value="Pédagogie"> Pédagogie</label>
+    <label><input type="checkbox" name="objectif[]" value="Sensibilisation"> Sensibilisation</label>
+    <label><input type="checkbox" name="objectif[]" value="Team building"> Team building</label>
+    <label>Autre : <input type="text" name="objectif_autre" placeholder="Précisez..."></label>
 
-                <div class="form-group">
-                    <label class="text-typo" for="statut">Statut</label>
-                    <input class="target-content-index" type="text" id="statut" name="statut"
-                        placeholder="Votre statut">
-                </div>
-            </fieldset>
+    <!-- Formats -->
+    <p>Quel format d’expérience imaginez-vous ?</p>
+    <label><input type="checkbox" name="format[]" value="Escape game"> Escape game</label>
+    <label><input type="checkbox" name="format[]" value="Geocaching"> Geocaching</label>
+    <label><input type="checkbox" name="format[]" value="Histoire interactive"> Histoire interactive</label>
+    <label><input type="checkbox" name="format[]" value="Jeu de société"> Jeu de société</label>
+    <label><input type="checkbox" name="format[]" value="Jeu vidéo"> Jeu vidéo</label>
+    <label><input type="checkbox" name="format[]" value="Quizz"> Quizz</label>
+    <label><input type="checkbox" name="format[]" value="Mini-jeu sur site web"> Mini-jeu sur site web</label>
+    <label>Autre : <input type="text" name="format_autre" placeholder="Précisez..."></label>
+  </fieldset>
 
-            <!-- Mes coordonnées -->
-            <fieldset class="form-group-container">
-                <legend class="text-typo">Mes coordonnées</legend>
+  <!-- Message -->
+  <fieldset>
+    <textarea name="message" placeholder="Votre message..." required></textarea>
+  </fieldset>
 
-                <div class="form-group">
-                    <label class="text-typo" for="email">Email*</label>
-                    <input class="target-content-index" type="email" id="email" name="email" placeholder="Votre email"
-                        required>
-                </div>
+  <button type="submit">Envoyer ma demande</button>
+</form>
 
-                <div class="form-group">
-                    <label class="text-typo" for="tel">Téléphone</label>
-                    <input class="target-content-index" type="tel" id="tel" name="tel" placeholder="Votre téléphone">
-                </div>
-            </fieldset>
-
-            <!-- Mon projet -->
-            <fieldset class="form-group-container">
-                <legend class="text-typo">Mon projet</legend>
-
-                <!-- Pourquoi souhaitez-vous créer ce projet ? -->
-                <div class="form-group">
-                    <label class="text-typo">Pourquoi souhaitez-vous créer ce projet ?</label>
-                    <div class="dropdown-multi">
-                        <button type="button" class="dropdown-toggle">Sélectionnez vos objectifs</button>
-                        <div class="dropdown-menu">
-                            <label><input type="checkbox" name="objectif[]" value="Communication interne">
-                                Communication interne</label>
-                            <label><input type="checkbox" name="objectif[]" value="Communication externe">
-                                Communication externe</label>
-                            <label><input type="checkbox" name="objectif[]" value="Formation"> Formation</label>
-                            <label><input type="checkbox" name="objectif[]" value="Pédagogie"> Pédagogie</label>
-                            <label><input type="checkbox" name="objectif[]" value="Sensibilisation">
-                                Sensibilisation</label>
-                            <label><input type="checkbox" name="objectif[]" value="Team building"> Team
-                                building</label>
-                            <label>
-                                Autre :
-                                <input type="text" name="objectif_autre" placeholder="Précisez...">
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Quel format d’expérience imaginez-vous ? -->
-                <div class="form-group">
-                    <label class="text-typo">Quel format d’expérience imaginez-vous ?</label>
-                    <div class="dropdown-multi">
-                        <button type="button" class="dropdown-toggle">Sélectionnez un ou plusieurs formats</button>
-                        <div class="dropdown-menu">
-                            <label><input type="checkbox" name="format[]" value="Escape game"> Escape game</label>
-                            <label><input type="checkbox" name="format[]" value="Geocaching"> Geocaching</label>
-                            <label><input type="checkbox" name="format[]" value="Histoire interactive"> Histoire
-                                interactive</label>
-                            <label><input type="checkbox" name="format[]" value="Jeu de société"> Jeu de
-                                société</label>
-                            <label><input type="checkbox" name="format[]" value="Jeu vidéo"> Jeu vidéo</label>
-                            <label><input type="checkbox" name="format[]" value="Quizz"> Quizz</label>
-                            <label><input type="checkbox" name="format[]" value="Mini-jeu sur site web"> Mini-jeu
-                                sur site web</label>
-                            <label>
-                                Autre :
-                                <input type="text" name="format_autre" placeholder="Précisez...">
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-            </fieldset>
-
-            <!-- Un détail, une idée ou une question particulière -->
-            <fieldset>
-                <div class="form-group">
-                    <label class="text-typo" for="message">Un détail, une idée ou une question particulière à
-                        ajouter ?</label>
-                    <textarea class="target-content-index" id="message" name="message" rows="6"
-                        placeholder="Votre message..." required></textarea>
-                </div>
-            </fieldset>
-
-            <button type="submit" class="btn-submit h2 black target-content-index">Envoyer ma demande</button>
-            </form>
         </div>
     </section>
 
