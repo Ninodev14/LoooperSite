@@ -16,8 +16,7 @@ exports.handler = async (event) => {
                     { name: "Statut", value: fields["Statut"] || "Non précisé", inline: true },
                     { name: "Email", value: fields["Email"] || "Non précisé", inline: true },
                     { name: "Téléphone", value: fields["Téléphone"] || "Non précisé", inline: true },
-                    { name: "Objectifs", value: fields["Objectif(s)"] || "Non précisé" },
-                    { name: "Formats", value: fields["Format(s)"] || "Non précisé" },
+
                     { name: "Message", value: fields["Message"] || "Aucun" }
                 ],
                 color: 5814783
