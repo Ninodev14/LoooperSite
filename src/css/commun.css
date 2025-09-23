@@ -184,8 +184,8 @@ body {
 .toggle-ball .line2 {
     width: 6px;
     height: 2px;
-    top: 58%;
-    left: 38%;
+    top: 55%;
+    left: 34%;
     transform: translate(-50%, -50%) rotate(45deg);
 }
 
