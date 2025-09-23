@@ -2,19 +2,20 @@ exports.handler = async (event) => {
     if (event.httpMethod !== "POST") {
         return { statusCode: 405, body: "Méthode non autorisée" };
     }
-  console.log(event.body);
+    console.log(event.body);
     const body = JSON.parse(event.body);
-    const data = body.payload?.data || body.data || {};
+    const humanFields = body.human_fields || {};
+
 
     const objectifs = []
-        .concat(data["objectif[]"] || [])
-        .concat(data.objectif_autre || [])
+        .concat(body.data?.["objectif[]"] || [])
+        .concat(body.data?.objectif_autre || [])
         .filter(Boolean)
         .join(", ") || "Non précisé";
 
     const formats = []
-        .concat(data["format[]"] || [])
-        .concat(data.format_autre || [])
+        .concat(body.data?.["format[]"] || [])
+        .concat(body.data?.format_autre || [])
         .filter(Boolean)
         .join(", ") || "Non précisé";
 
@@ -22,15 +23,15 @@ exports.handler = async (event) => {
         content: "🚀 Nouvelle demande !",
         embeds: [
             {
-                title: `${data.prenom || ""} ${data.nom || ""}`,
+                title: `${humanFields["Prénom"] || ""} ${humanFields["Nom"] || ""}`,
                 fields: [
-                    { name: "Entreprise", value: data.entreprise || "Non précisé", inline: true },
-                    { name: "Statut", value: data.statut || "Non précisé", inline: true },
-                    { name: "Email", value: data.email || "Non précisé", inline: true },
-                    { name: "Téléphone", value: data.tel || "Non précisé", inline: true },
+                    { name: "Entreprise", value: humanFields["Entreprise"] || "Non précisé", inline: true },
+                    { name: "Statut", value: humanFields["Statut"] || "Non précisé", inline: true },
+                    { name: "Email", value: humanFields["Email"] || "Non précisé", inline: true },
+                    { name: "Téléphone", value: humanFields["Téléphone"] || "Non précisé", inline: true },
                     { name: "Objectifs", value: objectifs },
                     { name: "Formats", value: formats },
-                    { name: "Message", value: data.message || "Aucun" }
+                    { name: "Message", value: humanFields["Message"] || "Aucun" }
                 ],
                 color: 5814783
             }
