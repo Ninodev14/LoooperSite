@@ -5,6 +5,8 @@ exports.handler = async (event) => {
         return { statusCode: 405, body: "Méthode non autorisée" };
     }
 
+    console.log(event.body);
+
     const data = querystring.parse(event.body);
 
     const objectifs = []
@@ -37,13 +39,12 @@ exports.handler = async (event) => {
             }
         ]
     };
-    await fetch("https://discord.com/api/webhooks/1412352742088769596/pVZ586uEiVZs1fJ7rjyi6iqz-rzxGwyYeFX7M0PconGDQmMGvnaZAccgBIjZ8OJfqpq7",
-        {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(message)
-        }
-    );
+
+    await fetch("https://discord.com/api/webhooks/1412352742088769596/pVZ586uEiVZs1fJ7rjyi6iqz-rzxGwyYeFX7M0PconGDQmMGvnaZAccgBIjZ8OJfqpq7", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(message)
+    });
 
     return { statusCode: 200, body: "Sent to Discord!" };
 };
