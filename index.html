@@ -330,21 +330,41 @@
             <form name="contact" method="POST" data-netlify="true" id="contactForm">
                 <input type="hidden" name="form-name" value="contact">
 
+                <!-- Qui suis-je ? -->
                 <fieldset class="form-group-container">
-                    <div class="form-group">
-                        <label class="text-typo" for="nom">Nom</label>
-                        <input class="target-content-index" type="text" id="nom" name="nom" placeholder="Votre nom"
-                            required>
-                    </div>
+                    <legend class="text-typo">Qui suis-je ?</legend>
 
                     <div class="form-group">
-                        <label class="text-typo" for="prenom">Prénom</label>
+                        <label class="text-typo" for="prenom">Prénom*</label>
                         <input class="target-content-index" type="text" id="prenom" name="prenom"
                             placeholder="Votre prénom" required>
                     </div>
 
                     <div class="form-group">
-                        <label class="text-typo" for="email">Email</label>
+                        <label class="text-typo" for="nom">Nom*</label>
+                        <input class="target-content-index" type="text" id="nom" name="nom" placeholder="Votre nom"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="entreprise">Entreprise / Organisation</label>
+                        <input class="target-content-index" type="text" id="entreprise" name="entreprise"
+                            placeholder="Nom de votre entreprise">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="statut">Statut</label>
+                        <input class="target-content-index" type="text" id="statut" name="statut"
+                            placeholder="Votre statut">
+                    </div>
+                </fieldset>
+
+                <!-- Mes coordonnées -->
+                <fieldset class="form-group-container">
+                    <legend class="text-typo">Mes coordonnées</legend>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="email">Email*</label>
                         <input class="target-content-index" type="email" id="email" name="email"
                             placeholder="Votre email" required>
                     </div>
@@ -356,9 +376,41 @@
                     </div>
                 </fieldset>
 
+                <!-- Mon projet -->
+                <fieldset class="form-group-container">
+                    <legend class="text-typo">Mon projet</legend>
+
+                    <!-- Pourquoi souhaitez-vous créer ce projet ? -->
+                    <div class="form-group">
+                        <label class="text-typo">Pourquoi souhaitez-vous créer ce projet ?</label>
+                        <div class="dropdown-multi">
+                            <button type="button" class="dropdown-toggle">Sélectionnez vos objectifs</button>
+                            <div class="dropdown-menu">
+                                <label><input type="checkbox" name="objectif[]" value="Communication interne">
+                                    Communication interne</label>
+                                <label><input type="checkbox" name="objectif[]" value="Communication externe">
+                                    Communication externe</label>
+                                <label><input type="checkbox" name="objectif[]" value="Formation"> Formation</label>
+                                <label><input type="checkbox" name="objectif[]" value="Pédagogie"> Pédagogie</label>
+                                <label><input type="checkbox" name="objectif[]" value="Sensibilisation">
+                                    Sensibilisation</label>
+                                <label><input type="checkbox" name="objectif[]" value="Team building"> Team
+                                    building</label>
+                                <label>
+                                    <input type="checkbox" id="objectif-autre-checkbox"> Autre
+                                    <input type="text" name="objectif_autre" id="objectif-autre-input"
+                                        placeholder="Précisez..." style="display:none; margin-top:5px;">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- Un détail, une idée ou une question particulière -->
                 <fieldset>
                     <div class="form-group">
-                        <label class="text-typo" for="message">Message</label>
+                        <label class="text-typo" for="message">Un détail, une idée ou une question particulière à
+                            ajouter ?</label>
                         <textarea class="target-content-index" id="message" name="message" rows="6"
                             placeholder="Votre message..." required></textarea>
                     </div>
@@ -366,16 +418,19 @@
 
                 <button type="submit" class="btn-submit h2 black target-content-index">Envoyer ma demande</button>
             </form>
-
-            <!-- Animation  -->
-            <div id="animation" style="display:none;">
-                <div class="envelope">
-                    <div class="letter"> <img src="src/img/insta.png" alt=""></div>
-                </div>
-                <p>Merci ! Votre message a été envoyé.</p>
-            </div>
-
         </div>
+    </section>
+
+
+    <!-- Animation  -->
+    <div id="animation" style="display:none;">
+        <div class="envelope">
+            <div class="letter"> <img src="src/img/insta.png" alt=""></div>
+        </div>
+        <p>Merci ! Votre message a été envoyé.</p>
+    </div>
+
+    </div>
     </section>
     <div class="medium-spacing"></div>
 

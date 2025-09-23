@@ -485,6 +485,36 @@ textarea {
 textarea {
     resize: vertical;
 }
+.dropdown-multi {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.dropdown-multi:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu label {
+  display: block;
+  margin-bottom: 5px;
+}
+
 
 @media screen and (max-width: 960px) {
     .form-group-container {
