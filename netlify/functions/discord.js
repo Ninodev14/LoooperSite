@@ -37,7 +37,7 @@ exports.handler = async (event) => {
             }
         ]
     };
-
+ 
     await fetch("https://discord.com/api/webhooks/1412352742088769596/pVZ586uEiVZs1fJ7rjyi6iqz-rzxGwyYeFX7M0PconGDQmMGvnaZAccgBIjZ8OJfqpq7",
         {
             method: "POST",
