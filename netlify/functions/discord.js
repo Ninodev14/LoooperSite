@@ -1,11 +1,11 @@
+const querystring = require("querystring");
+
 exports.handler = async (event) => {
     if (event.httpMethod !== "POST") {
         return { statusCode: 405, body: "Méthode non autorisée" };
     }
 
-    // Toujours parser le JSON envoyé par Netlify
-    const body = JSON.parse(event.body);
-    const data = body.payload?.data || body.data || {};
+    const data = querystring.parse(event.body);
 
     const objectifs = []
         .concat(data["objectif[]"] || [])
@@ -37,7 +37,6 @@ exports.handler = async (event) => {
             }
         ]
     };
-
     await fetch("https://discord.com/api/webhooks/1412352742088769596/pVZ586uEiVZs1fJ7rjyi6iqz-rzxGwyYeFX7M0PconGDQmMGvnaZAccgBIjZ8OJfqpq7",
         {
             method: "POST",
