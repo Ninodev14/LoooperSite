@@ -2,36 +2,23 @@ exports.handler = async (event) => {
     if (event.httpMethod !== "POST") {
         return { statusCode: 405, body: "Méthode non autorisée" };
     }
-    console.log(event.body);
+
     const body = JSON.parse(event.body);
-    const humanFields = body.human_fields || {};
-
-
-    const objectifs = []
-        .concat(body.data?.["objectif[]"] || [])
-        .concat(body.data?.objectif_autre || [])
-        .filter(Boolean)
-        .join(", ") || "Non précisé";
-
-    const formats = []
-        .concat(body.data?.["format[]"] || [])
-        .concat(body.data?.format_autre || [])
-        .filter(Boolean)
-        .join(", ") || "Non précisé";
+    const fields = body.human_fields || {};
 
     const message = {
         content: "🚀 Nouvelle demande !",
         embeds: [
             {
-                title: `${humanFields["Prénom"] || ""} ${humanFields["Nom"] || ""}`,
+                title: `${fields["Prénom"] || ""} ${fields["Nom"] || ""}`,
                 fields: [
-                    { name: "entreprise", value: humanFields["entreprise"] || "Non précisé", inline: true },
-                    { name: "Statut", value: humanFields["Statut"] || "Non précisé", inline: true },
-                    { name: "Email", value: humanFields["Email"] || "Non précisé", inline: true },
-                    { name: "Téléphone", value: humanFields["Téléphone"] || "Non précisé", inline: true },
-                    { name: "Objectifs", value: objectifs },
-                    { name: "Formats", value: formats },
-                    { name: "Message", value: humanFields["Message"] || "Aucun" }
+                    { name: "Entreprise", value: fields["Entreprise"] || "Non précisé", inline: true },
+                    { name: "Statut", value: fields["Statut"] || "Non précisé", inline: true },
+                    { name: "Email", value: fields["Email"] || "Non précisé", inline: true },
+                    { name: "Téléphone", value: fields["Téléphone"] || "Non précisé", inline: true },
+                    { name: "Objectifs", value: fields["Objectif(s)"] || "Non précisé" },
+                    { name: "Formats", value: fields["Format(s)"] || "Non précisé" },
+                    { name: "Message", value: fields["Message"] || "Aucun" }
                 ],
                 color: 5814783
             }
