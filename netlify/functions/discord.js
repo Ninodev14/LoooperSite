@@ -2,22 +2,21 @@ exports.handler = async (event) => {
     if (event.httpMethod !== "POST") {
         return { statusCode: 405, body: "Méthode non autorisée" };
     }
-
+    console.log(event.body);
     const body = JSON.parse(event.body);
-    const fields = body.human_fields || {};
+    const humanFields = body.human_fields || {};
 
     const message = {
         content: "🚀 Nouvelle demande !",
         embeds: [
             {
-                title: `${fields["Prénom"] || ""} ${fields["Nom"] || ""}`,
+                title: `${humanFields["Prénom"] || ""} ${humanFields["Nom"] || ""}`,
                 fields: [
-                    { name: "Entreprise", value: fields["Entreprise"] || "Non précisé", inline: true },
-                    { name: "Statut", value: fields["Statut"] || "Non précisé", inline: true },
-                    { name: "Email", value: fields["Email"] || "Non précisé", inline: true },
-                    { name: "Téléphone", value: fields["Téléphone"] || "Non précisé", inline: true },
-
-                    { name: "Message", value: fields["Message"] || "Aucun" }
+                    { name: "entreprise", value: humanFields["entreprise"] || "Non précisé", inline: true },
+                    { name: "Statut", value: humanFields["Statut"] || "Non précisé", inline: true },
+                    { name: "Email", value: humanFields["Email"] || "Non précisé", inline: true },
+                    { name: "Téléphone", value: humanFields["Téléphone"] || "Non précisé", inline: true },
+                    { name: "Message", value: humanFields["Message"] || "Aucun" }
                 ],
                 color: 5814783
             }
