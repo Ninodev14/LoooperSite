@@ -44,7 +44,7 @@ function applyZoom() {
     zoomDisplay.textContent = Math.round(zoomLevel * 100) + "%";
 }
 function zoomIn() {
-    zoomLevel = Math.min(3, zoomLevel + 0.1);
+    zoomLevel = Math.min(2, zoomLevel + 0.1);
     applyZoom();
 }
 function zoomOut() {
