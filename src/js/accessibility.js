@@ -38,23 +38,6 @@ function toggleContrast() {
     else localStorage.removeItem("contrast");
 }
 
-function applyZoom() {
-    document.documentElement.style.fontSize = zoomLevel * 100 + "%";
-    localStorage.setItem("zoom", zoomLevel);
-    zoomDisplay.textContent = Math.round(zoomLevel * 100) + "%";
-}
-function zoomIn() {
-    zoomLevel = Math.min(2, zoomLevel + 0.1);
-    applyZoom();
-}
-function zoomOut() {
-    zoomLevel = Math.max(0.5, zoomLevel - 0.1);
-    applyZoom();
-}
-function resetZoom() {
-    zoomLevel = 1;
-    applyZoom();
-}
 
 if (!("ontouchstart" in window)) {
     const focusTop = document.getElementById("focus-top");
@@ -147,7 +130,6 @@ function resetSettings() {
         "link-outline-hover"
     );
     localStorage.clear();
-    resetZoom();
 }
 
 
