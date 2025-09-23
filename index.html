@@ -208,7 +208,7 @@
                         <img src="src/img/carousel/zizanie.jpg" alt="La Zizanie">
                     </div>
                     <div class="slide-caption">
-                        <h3 class="h3  highlight orange">La Zizanie</h3>
+                        <h3 class="h3  highlight-no-annim orange">La Zizanie</h3>
                         <p class="">Expérience interactive | MUSBA</p>
                     </div>
                 </article>
@@ -218,7 +218,7 @@
                         <img src="src/img/carousel/biker.jpg" alt="Biker contre le harcèlement">
                     </div>
                     <div class="slide-caption">
-                        <h3 class="h3 highlight violet">Biker contre le harcèlement</h3>
+                        <h3 class="h3 highlight-no-annim violet">Biker contre le harcèlement</h3>
                         <p class="">Jeu de société | Association</p>
                     </div>
                 </article>
@@ -228,7 +228,7 @@
                         <img src="src/img/carousel/saveseamulator.jpg" alt="Save Seamulator">
                     </div>
                     <div class="slide-caption">
-                        <h3 class="h3 highlight blue">Save Seamulator</h3>
+                        <h3 class="h3 highlight-no-annim blue">Save Seamulator</h3>
                         <p class="">Type | Client</p>
                     </div>
                 </article>
@@ -237,7 +237,7 @@
                         <img src="src/img/carousel/zizanie.jpg" alt="La Zizanie">
                     </div>
                     <div class="slide-caption">
-                        <h3 class="h3  highlight orange">La Zizanie</h3>
+                        <h3 class="h3  highlight-no-annim orange">La Zizanie</h3>
                         <p class="">Expérience interactive | MUSBA</p>
                     </div>
                 </article>
@@ -247,7 +247,7 @@
                         <img src="src/img/carousel/biker.jpg" alt="Biker contre le harcèlement">
                     </div>
                     <div class="slide-caption">
-                        <h3 class="h3 highlight violet">Biker contre le harcèlement</h3>
+                        <h3 class="h3 highlight-no-annim violet">Biker contre le harcèlement</h3>
                         <p class="">Jeu de société | Association</p>
                     </div>
                 </article>
@@ -257,7 +257,7 @@
                         <img src="src/img/carousel/saveseamulator.jpg" alt="Save Seamulator">
                     </div>
                     <div class="slide-caption">
-                        <h3 class="h3 highlight blue">Save Seamulator</h3>
+                        <h3 class="h3 highlight-no-annim blue">Save Seamulator</h3>
                         <p class="">Type | Client</p>
                     </div>
                 </article>
@@ -327,7 +327,7 @@
         <div class="contact-container">
             <h2 class="h1 black white-border">Nous contacter</h2>
             <div class="small-medium-spacing"></div>
-            <form name="contact" method="POST" data-netlify="true" id="contactForm">
+            <form name="contact" method="POST" data-netlify="true" id="contactForm" action="/.netlify/functions/discord">
                 <input type="hidden" name="form-name" value="contact">
 
                 <!-- Qui suis-je ? -->
@@ -347,9 +347,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="text-typo" for="entreprise">Entreprise / Organisation</label>
+                        <label class="text-typo" for="entreprise">Entreprise / Organisation*</label>
                         <input class="target-content-index" type="text" id="entreprise" name="entreprise"
-                            placeholder="Nom de votre entreprise">
+                            placeholder="Nom de votre entreprise" required>
                     </div>
 
                     <div class="form-group">
@@ -397,13 +397,37 @@
                                 <label><input type="checkbox" name="objectif[]" value="Team building"> Team
                                     building</label>
                                 <label>
-                                    <input type="checkbox" id="objectif-autre-checkbox"> Autre
-                                    <input type="text" name="objectif_autre" id="objectif-autre-input"
-                                        placeholder="Précisez..." style="display:none; margin-top:5px;">
+                                    Autre :
+                                    <input type="text" name="objectif_autre" placeholder="Précisez...">
                                 </label>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Quel format d’expérience imaginez-vous ? -->
+                    <div class="form-group">
+                        <label class="text-typo">Quel format d’expérience imaginez-vous ?</label>
+                        <div class="dropdown-multi">
+                            <button type="button" class="dropdown-toggle">Sélectionnez un ou plusieurs formats</button>
+                            <div class="dropdown-menu">
+                                <label><input type="checkbox" name="format[]" value="Escape game"> Escape game</label>
+                                <label><input type="checkbox" name="format[]" value="Geocaching"> Geocaching</label>
+                                <label><input type="checkbox" name="format[]" value="Histoire interactive"> Histoire
+                                    interactive</label>
+                                <label><input type="checkbox" name="format[]" value="Jeu de société"> Jeu de
+                                    société</label>
+                                <label><input type="checkbox" name="format[]" value="Jeu vidéo"> Jeu vidéo</label>
+                                <label><input type="checkbox" name="format[]" value="Quizz"> Quizz</label>
+                                <label><input type="checkbox" name="format[]" value="Mini-jeu sur site web"> Mini-jeu
+                                    sur site web</label>
+                                <label>
+                                    Autre :
+                                    <input type="text" name="format_autre" placeholder="Précisez...">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
                 </fieldset>
 
                 <!-- Un détail, une idée ou une question particulière -->
@@ -422,6 +446,7 @@
     </section>
 
 
+
     <!-- Animation  -->
     <div id="animation" style="display:none;">
         <div class="envelope">
@@ -430,8 +455,7 @@
         <p>Merci ! Votre message a été envoyé.</p>
     </div>
 
-    </div>
-    </section>
+
     <div class="medium-spacing"></div>
 
     <footer class="zoom-container">
@@ -519,7 +543,7 @@
     <script src="src/js/logoAnnim.js"></script>
     <script src="src/js/memories.js"></script>
     <script src="src/js/scrollAnnimWhiteContainer.js"></script>
-    <script src="src/js/annimForm.js"></script>
+    <script src="src/js/form.js"></script>
     <script src="src/js/annimOnScroll.js"></script>
     <script src="src/js/responsiveHeader.js"></script>
 </body>

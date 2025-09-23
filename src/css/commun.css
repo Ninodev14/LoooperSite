@@ -256,12 +256,12 @@ body {
 
 
 /*ANNIMATION HIGLIGHT*/
-.highlight {
+.highlight, .highlight-no-annim {
     position: relative;
     display: inline-block;
 }
 
-.highlight::before {
+.highlight::before{
     content: "";
     position: absolute;
     inset: -0.3em;
@@ -274,22 +274,34 @@ body {
     transition: clip-path 1s ease-out;
 }
 
+.highlight-no-annim::before {
+        content: "";
+    position: absolute;
+    inset: -0.3em;
+    background-image: url("/src/svg/ton-fichier.svg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 1s ease-out;
+}
 
 .highlight.visibleHighlight::before {
     clip-path: inset(0 0 0 0);
 }
 
-.highlight.orange::before {
+.highlight.orange::before, .highlight-no-annim.orange::before {
 
     background-image: url("/src/svg/higlightType1.svg");
 }
 
-.highlight.violet::before {
+.highlight.violet::before, .highlight-no-annim.violet::before {
 
     background-image: url("/src/svg/higlightType2.svg");
 }
 
-.highlight.blue::before {
+.highlight.blue::before, .highlight-no-annim.blue::before {
 
     background-image: url("/src/svg/higlightType3.svg");
 }
