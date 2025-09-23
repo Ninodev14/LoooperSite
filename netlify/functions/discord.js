@@ -12,7 +12,7 @@ exports.handler = async (event) => {
             {
                 title: `${humanFields["Prénom"] || ""} ${humanFields["Nom"] || ""}`,
                 fields: [
-                    { name: "entreprise", value: humanFields["entreprise"] || "Non précisé", inline: true },
+                    { name: "Entreprise", value: humanFields["Entreprise"] || "Non précisé", inline: true },
                     { name: "Statut", value: humanFields["Statut"] || "Non précisé", inline: true },
                     { name: "Email", value: humanFields["Email"] || "Non précisé", inline: true },
                     { name: "Téléphone", value: humanFields["Téléphone"] || "Non précisé", inline: true },
