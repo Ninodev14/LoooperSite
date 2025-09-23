@@ -10,13 +10,13 @@ exports.handler = async (event) => {
         content: "🚀 Nouvelle demande !",
         embeds: [
             {
-                title: `${humanFields["Prénom"] || ""} ${humanFields["Nom"] || ""}`,
+                title: `${humanFields["prenom"] || ""} ${humanFields["nom"] || ""}`,
                 fields: [
-                    { name: "Entreprise", value: humanFields["Entreprise"] || "Non précisé", inline: true },
-                    { name: "Statut", value: humanFields["Statut"] || "Non précisé", inline: true },
-                    { name: "Email", value: humanFields["Email"] || "Non précisé", inline: true },
-                    { name: "Téléphone", value: humanFields["Téléphone"] || "Non précisé", inline: true },
-                    { name: "Message", value: humanFields["Message"] || "Aucun" }
+                    { name: "entreprise", value: humanFields["entreprise"] || "Non précisé", inline: true },
+                    { name: "statut", value: humanFields["statut"] || "Non précisé", inline: true },
+                    { name: "email", value: humanFields["email"] || "Non précisé", inline: true },
+                    { name: "telephone", value: humanFields["telephone"] || "Non précisé", inline: true },
+                    { name: "message", value: humanFields["message"] || "Aucun" }
                 ],
                 color: 5814783
             }
