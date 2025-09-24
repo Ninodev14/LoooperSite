@@ -336,7 +336,7 @@
                         <input class="target-content-index" type="text" id="nom" name="nom" placeholder="Votre nom"
                             required>
                     </div>
-  
+
                     <div class="form-group">
                         <label class="text-typo" for="prenom">Prénom</label>
                         <input class="target-content-index" type="text" id="prenom" name="prenom"
@@ -352,7 +352,7 @@
                     <div class="form-group">
                         <label class="text-typo" for="telephone">Téléphone</label>
                         <input class="target-content-index" type="tel" id="telephone" name="telephone"
-                            placeholder="Votre téléphone" required> 
+                            placeholder="Votre téléphone" required>
                     </div>
 
                     <div class="form-group">
@@ -366,7 +366,66 @@
                         <input class="target-content-index" type="text" id="statut" name="statut"
                             placeholder="Votre Statut" required>
                     </div>
-                </fieldset> 
+                </fieldset>
+
+                <!-- Cases à cocher : Pourquoi souhaitez-vous créer ce projet ? -->
+                <fieldset>
+                    <legend class="text-typo">Pourquoi souhaitez-vous créer ce projet ?</legend>
+                    <div class="form-group">
+                        <label><input type="checkbox" name="objectif[]" value="communication_interne"> Communication
+                            interne</label><br>
+                        <label><input type="checkbox" name="objectif[]" value="communication_externe"> Communication
+                            externe</label><br>
+                        <label><input type="checkbox" name="objectif[]" value="formation"> Formation</label><br>
+                        <label><input type="checkbox" name="objectif[]" value="pedagogie"> Pédagogie</label><br>
+                        <label><input type="checkbox" name="objectif[]" value="sensibilisation">
+                            Sensibilisation</label><br>
+                        <label><input type="checkbox" name="objectif[]" value="team_building"> Team building</label><br>
+                        <label>
+                            <input type="checkbox" id="objectif_autre_checkbox"> Autre
+                        </label>
+                        <input type="text" id="objectif_autre_text" name="objectif_autre" placeholder="Précisez..."
+                            style="display:none; margin-top:5px;">
+                    </div>
+                </fieldset>
+
+                <!-- Cases à cocher : Quel format d’expérience imaginez-vous ? -->
+                <fieldset>
+                    <legend class="text-typo">Quel format d’expérience imaginez-vous ?</legend>
+                    <div class="form-group">
+                        <label><input type="checkbox" name="format[]" value="escape_game"> Escape game</label><br>
+                        <label><input type="checkbox" name="format[]" value="geocaching"> Geocaching</label><br>
+                        <label><input type="checkbox" name="format[]" value="histoire_interactive"> Histoire
+                            interactive</label><br>
+                        <label><input type="checkbox" name="format[]" value="jeu_societe"> Jeu de société</label><br>
+                        <label><input type="checkbox" name="format[]" value="jeu_video"> Jeu vidéo</label><br>
+                        <label><input type="checkbox" name="format[]" value="quizz"> Quizz</label><br>
+                        <label><input type="checkbox" name="format[]" value="mini_jeu"> Mini-jeu sur site
+                            web</label><br>
+                        <label>
+                            <input type="checkbox" id="format_autre_checkbox"> Autre
+                        </label>
+                        <input type="text" id="format_autre_text" name="format_autre" placeholder="Précisez..."
+                            style="display:none; margin-top:5px;">
+                    </div>
+                </fieldset>
+
+                <!-- Cases à cocher : Quel format d’expérience imaginez-vous ? -->
+                <fieldset>
+                    <legend class="text-typo">Quel format d’expérience imaginez-vous ?</legend>
+                    <div class="form-group">
+                        <label><input type="checkbox" name="format[]" value="escape_game"> Escape game</label><br>
+                        <label><input type="checkbox" name="format[]" value="geocaching"> Geocaching</label><br>
+                        <label><input type="checkbox" name="format[]" value="histoire_interactive"> Histoire
+                            interactive</label><br>
+                        <label><input type="checkbox" name="format[]" value="jeu_societe"> Jeu de société</label><br>
+                        <label><input type="checkbox" name="format[]" value="jeu_video"> Jeu vidéo</label><br>
+                        <label><input type="checkbox" name="format[]" value="quizz"> Quizz</label><br>
+                        <label><input type="checkbox" name="format[]" value="mini_jeu"> Mini-jeu sur site
+                            web</label><br>
+                        <label><input type="checkbox" name="format[]" value="autre"> Autre</label>
+                    </div>
+                </fieldset>
 
                 <fieldset>
                     <div class="form-group">
@@ -378,16 +437,19 @@
 
                 <button type="submit" class="btn-submit h2 black target-content-index">Envoyer ma demande</button>
             </form>
-
-            <!-- Animation  -->
-            <div id="animation" style="display:none;">
-                <div class="envelope">
-                    <div class="letter"> <img src="src/img/insta.png" alt=""></div>
-                </div>
-                <p>Merci ! Votre message a été envoyé.</p>
-            </div>
-
         </div>
+    </section>
+
+
+    <!-- Animation  -->
+    <div id="animation" style="display:none;">
+        <div class="envelope">
+            <div class="letter"> <img src="src/img/insta.png" alt=""></div>
+        </div>
+        <p>Merci ! Votre message a été envoyé.</p>
+    </div>
+
+    </div>
     </section>
 
 
