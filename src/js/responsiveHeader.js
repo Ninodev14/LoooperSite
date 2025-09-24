@@ -8,70 +8,70 @@ document.addEventListener('DOMContentLoaded', function () {
     let lastClickTime = 0;
     const minDelay = 300;
 
-menuToggle.addEventListener('click', function () {
-    const now = Date.now();
-    if (now - lastClickTime < minDelay) return;
-    lastClickTime = now;
-
-    if (!isMenuOpen) {
-        menu.style.display = 'flex';
-        html.style.overflow = 'hidden';
-        menuToggle.classList.add("active");
-        barreToggles.forEach(barre => barre.style.backgroundColor = '#fff');
-
-        setTimeout(() => {
-            menu.classList.add('open');
-            isMenuOpen = true;
-        }, 1);
-
-    } else {
-        menu.classList.remove('open');
-        menuToggle.classList.remove("active");
-        html.style.overflow = 'auto';
-        isMenuOpen = false;
-
-        setTimeout(() => {
-            menu.style.display = 'none';
-        }, 400);
-    }
-});
-
-const btnSlide = document.getElementById('btn-slide');
-const btnBack = document.getElementById('btn-back');
-
-btnSlide.addEventListener('click', () => {
-    menu.classList.add('slide-sub');
-});
-
-btnBack.addEventListener('click', () => {
-    menu.classList.remove('slide-sub');
-});
-
-
-    function checkIntersection() {
-        const stickyRect = menuToggle.getBoundingClientRect();
-        const targetDivs = document.querySelectorAll('.target-content-index');
-        let touching = false;
-
-        for (const targetDiv of targetDivs) {
-            const targetRect = targetDiv.getBoundingClientRect();
-            if (
-                stickyRect.bottom > targetRect.top &&
-                stickyRect.top < targetRect.bottom &&
-                stickyRect.right > targetRect.left &&
-                stickyRect.left < targetRect.right
-            ) {
-                touching = true;
-                break;
-            }
-        }
+    menuToggle.addEventListener('click', function () {
+        const now = Date.now();
+        if (now - lastClickTime < minDelay) return;
+        lastClickTime = now;
 
         if (!isMenuOpen) {
-            barreToggles.forEach(barre =>
-                barre.style.backgroundColor = touching ? '#000' : '#fff'
-            );
+            menu.style.display = 'flex';
+            html.style.overflow = 'hidden';
+            menuToggle.classList.add("active");
+            barreToggles.forEach(barre => barre.style.backgroundColor = '#fff');
+
+            setTimeout(() => {
+                menu.classList.add('open');
+                isMenuOpen = true;
+            }, 1);
+
+        } else {
+            menu.classList.remove('open');
+            menuToggle.classList.remove("active");
+            html.style.overflow = 'auto';
+            isMenuOpen = false;
+
+            setTimeout(() => {
+                menu.style.display = 'none';
+            }, 400);
         }
-    }
+    });
+
+    const btnSlide = document.getElementById('btn-slide');
+    const btnBack = document.getElementById('btn-back');
+
+    btnSlide.addEventListener('click', () => {
+        menu.classList.add('slide-sub');
+    });
+
+    btnBack.addEventListener('click', () => {
+        menu.classList.remove('slide-sub');
+    });
+
+
+    // function checkIntersection() {
+    //     const stickyRect = menuToggle.getBoundingClientRect();
+    //     const targetDivs = document.querySelectorAll('.target-content-index');
+    //     let touching = false;
+
+    //     for (const targetDiv of targetDivs) {
+    //         const targetRect = targetDiv.getBoundingClientRect();
+    //         if (
+    //             stickyRect.bottom > targetRect.top &&
+    //             stickyRect.top < targetRect.bottom &&
+    //             stickyRect.right > targetRect.left &&
+    //             stickyRect.left < targetRect.right
+    //         ) {
+    //             touching = true;
+    //             break;
+    //         }
+    //     }
+
+    //     if (!isMenuOpen) {
+    //         barreToggles.forEach(barre =>
+    //             barre.style.backgroundColor = touching ? '#000' : '#fff'
+    //         );
+    //     }
+    // }
 
 
     //let ticking = false;
