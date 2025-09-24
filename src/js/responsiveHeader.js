@@ -8,28 +8,45 @@ document.addEventListener('DOMContentLoaded', function () {
     let lastClickTime = 0;
     const minDelay = 300;
 
-    menuToggle.addEventListener('click', function () {
-        const now = Date.now();
-        if (now - lastClickTime < minDelay) return;
-        lastClickTime = now;
+menuToggle.addEventListener('click', function () {
+    const now = Date.now();
+    if (now - lastClickTime < minDelay) return;
+    lastClickTime = now;
 
-        if (!isMenuOpen) {
-            menu.style.display = 'flex';
-            html.style.overflow = 'hidden';
-            menuToggle.classList.add("active");
-            barreToggles.forEach(barre => barre.style.backgroundColor = '#fff');
-            setTimeout(() => {
-                menu.style.opacity = '1';
-                isMenuOpen = true;
-            }, 1);
-        } else {
-            setTimeout(() => menu.style.display = 'none', 300);
-            menuToggle.classList.remove("active");
-            isMenuOpen = false;
-            menu.style.opacity = '0';
-            html.style.overflow = 'auto';
-        }
-    });
+    if (!isMenuOpen) {
+        menu.style.display = 'flex';
+        html.style.overflow = 'hidden';
+        menuToggle.classList.add("active");
+        barreToggles.forEach(barre => barre.style.backgroundColor = '#fff');
+
+        setTimeout(() => {
+            menu.classList.add('open');
+            isMenuOpen = true;
+        }, 1);
+
+    } else {
+        menu.classList.remove('open');
+        menuToggle.classList.remove("active");
+        html.style.overflow = 'auto';
+        isMenuOpen = false;
+
+        setTimeout(() => {
+            menu.style.display = 'none';
+        }, 400);
+    }
+});
+
+const btnSlide = document.getElementById('btn-slide');
+const btnBack = document.getElementById('btn-back');
+
+btnSlide.addEventListener('click', () => {
+    menu.classList.add('slide-sub');
+});
+
+btnBack.addEventListener('click', () => {
+    menu.classList.remove('slide-sub');
+});
+
 
     function checkIntersection() {
         const stickyRect = menuToggle.getBoundingClientRect();
@@ -56,18 +73,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    let ticking = false;
-    function onScroll() {
-        if (!ticking) {
-            requestAnimationFrame(() => {
-                checkIntersection();
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }
 
-    document.body.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', checkIntersection);
-    checkIntersection();
+    //let ticking = false;
+    //function onScroll() {
+    //   if (!ticking) {
+    //      requestAnimationFrame(() => {
+    //          checkIntersection();
+    //        ticking = false;
+    //      });
+    // ticking = true;
+    //   }
+    // }
+
+    // document.body.addEventListener('scroll', onScroll, { passive: true });
+    // window.addEventListener('resize', checkIntersection);
+    // checkIntersection();
 });
