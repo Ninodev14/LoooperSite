@@ -103,24 +103,33 @@ header {
 
 
 #menu-tel {
-
-    overflow-y: auto;
+    margin-top: -10px;
     display: none;
     flex-direction: column;
-    height: calc(100vh - 80px);
-    max-width: calc(100vh - 20vw);
+    height: calc(100vh - 20vw + 10px);
+    min-height: calc(100vh - 70px);
     width: 100vw;
     background: rgba(6, 0, 19, 0.90);
     backdrop-filter: blur(11px);
     transition: transform 0.4s ease-in-out;
     position: relative;
+    overflow: hidden;
     transform: translateY(-100%);
 }
 
-#menu-tel {
-    position: relative;
-    overflow: hidden;
+#btn-slide {
+    all: unset;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
+
+.btn-slide-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 
 .menu-tel-nav,
 .menu-tel-sub {
@@ -130,6 +139,7 @@ header {
     width: 100%;
     height: 100%;
     transition: transform 0.4s ease;
+    margin-top: 10px;
 }
 
 .menu-tel-nav {
@@ -255,7 +265,7 @@ html {
     display: flex;
     align-items: center;
     gap: 8px;
-    
+
 }
 
 .dropdown-arrow .line1,
@@ -273,10 +283,12 @@ html {
 .dropdown-arrow .line2 {
     transform: rotate(-45deg) translate(2px, -2px);
 }
+
 .dropdown .dropdown-arrow {
     transition: all 0.2s ease;
     transform: rotate(90deg);
 }
+
 .dropdown:hover .dropdown-arrow {
     transform: rotate(270deg);
 }

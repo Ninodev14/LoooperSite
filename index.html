@@ -42,13 +42,15 @@
                             </div>
                         </div>
                         <div class="dropdown-menu">
-                            <a class="header-typo-pc" href="#">Apprendre avec le ludique</a>
-                            <a class="header-typo-pc" href="#">Sensibiliser et faire réfléchir</a>
-                            <a class="header-typo-pc" href="#">Créer de l'interaction sociale</a>
-                            <a class="header-typo-pc" href="#">Renforcer la cohésion</a>
-                            <a class="header-typo-pc" href="#">Engager et motiver</a>
-                            <a class="header-typo-pc" href="#">Former efficacement</a>
-                            <a class="header-typo-pc" href="#">Communiquer autrement</a>
+                            <a class="header-typo-pc" href="apprendre-ludique.html">Apprendre avec le ludique</a>
+                            <a class="header-typo-pc" href="sensibiliser-reflechir.html">Sensibiliser et faire réfléchir</a>
+                            <a class="header-typo-pc" href="creer-interaction-sociale.html">Créer de l'interaction
+                                sociale</a>
+                            <a class="header-typo-pc" href="renforcer-cohesion.html">Renforcer la cohésion</a>
+                            <a class="header-typo-pc" href="engager-motiver.html">Engager et motiver</a>
+                            <a class="header-typo-pc" href="former-efficacement.html">Former efficacement</a>
+                            <a class="header-typo-pc" href="communiquer-autrement.html">Communiquer autrement</a>
+
                         </div>
                     </div>
 
@@ -80,25 +82,30 @@
                 <div class="menu-tel-nav">
                     <a href="index.html" class="h3 highlight blue">Accueil</a>
                     <a href="formats.html" class="h3">Nos formats</a>
-                    <button id="btn-slide">quelque chose</button>
-                    <a href="besoins.html" class="h3">Vos besoins</a>
+                    <div class="btn-slide-container">
+                        <a href="besoins.html" class="h3">Vos besoins</a>
+                        <button id="btn-slide"><img src="src/svg/arrowW.svg" alt="fleche"></button>
+                    </div>
                     <a href="equipe.html" class="h3">Notre equipe</a>
                     <a href="projets.html" class="h3">Nos projet</a>
                     <a href="#contactForm" class="h3 btn-project" id="btn-close">
                         <span>J’ai un projet !</span>
                         <img src="src/svg/arrowW.svg" alt="fleche">
                     </a>
-                    <div class="img-container-header-tel">
-                        <a href="index.html">
-                            <img src="src/img/logoSMP.png" alt="logo simplifier de loooper" class="logo-bump">
-                        </a>
-                    </div>
+                    <div class="null-object"></div>
                 </div>
 
                 <div class="menu-tel-sub">
                     <button id="btn-back">← Retour</button>
                     <h3>Contenu secondaire</h3>
-                    <p>Ici tu peux mettre ce que tu veux.</p>
+                    <a class="header-typo-pc" href="apprendre-ludique.html">Apprendre avec le ludique</a>
+                    <a class="header-typo-pc" href="sensibiliser-reflechir.html">Sensibiliser et faire réfléchir</a>
+                    <a class="header-typo-pc" href="creer-interaction-sociale.html">Créer de l'interaction sociale</a>
+                    <a class="header-typo-pc" href="renforcer-cohesion.html">Renforcer la cohésion</a>
+                    <a class="header-typo-pc" href="engager-motiver.html">Engager et motiver</a>
+                    <a class="header-typo-pc" href="former-efficacement.html">Former efficacement</a>
+                    <a class="header-typo-pc" href="communiquer-autrement.html">Communiquer autrement</a>
+
                 </div>
             </div>
 
@@ -356,44 +363,40 @@
         <div class="contact-container">
             <h2 class="h1 black white-border">Nous contacter</h2>
             <div class="small-medium-spacing"></div>
-            <form name="contactformV2" method="POST" data-netlify="true" >
+            <form name="contactformV2" method="POST" data-netlify="true">
                 <input type="hidden" name="form-name" value="contactformV2">
 
                 <fieldset class="form-group-container">
                     <div class="form-group">
                         <label class="text-typo" for="nom">Nom</label>
-                        <input class="" type="text" id="nom" name="nom" placeholder="Votre nom"
-                            required>
+                        <input class="" type="text" id="nom" name="nom" placeholder="Votre nom" required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="prenom">Prénom</label>
-                        <input class="" type="text" id="prenom" name="prenom"
-                            placeholder="Votre prénom" required>
+                        <input class="" type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="email">Email</label>
-                        <input class="" type="email" id="email" name="email"
-                            placeholder="Votre email" required>
+                        <input class="" type="email" id="email" name="email" placeholder="Votre email" required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="telephone">Téléphone</label>
-                        <input class="" type="tel" id="telephone" name="telephone"
-                            placeholder="Votre téléphone" required>
+                        <input class="" type="tel" id="telephone" name="telephone" placeholder="Votre téléphone"
+                            required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="entreprise">Entreprise</label>
-                        <input class="" type="text" id="entreprise" name="entreprise"
-                            placeholder="Votre entreprise" required>
+                        <input class="" type="text" id="entreprise" name="entreprise" placeholder="Votre entreprise"
+                            required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="statut">Statut</label>
-                        <input class="" type="text" id="statut" name="statut"
-                            placeholder="Votre Statut" required>
+                        <input class="" type="text" id="statut" name="statut" placeholder="Votre Statut" required>
                     </div>
                 </fieldset>
 
@@ -444,8 +447,8 @@
                 <fieldset>
                     <div class="form-group">
                         <label class="text-typo" for="message">Message</label>
-                        <textarea class="" id="message" name="message" rows="6"
-                            placeholder="Votre message..." required></textarea>
+                        <textarea class="" id="message" name="message" rows="6" placeholder="Votre message..."
+                            required></textarea>
                     </div>
                 </fieldset>
 
