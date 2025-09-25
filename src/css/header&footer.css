@@ -117,11 +117,14 @@ header {
     transform: translateY(-100%);
 }
 
-#btn-slide {
+#btn-slide, #btn-back {
     all: unset;
     cursor: pointer;
     display: flex;
     align-items: center;
+}
+#btn-back {
+    transform: rotate(-180deg)
 }
 
 .btn-slide-container {
@@ -140,10 +143,20 @@ header {
     height: 100%;
     transition: transform 0.4s ease;
     margin-top: 10px;
+    
+}
+.menu-tel-sub-container{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
 }
 
 .menu-tel-nav {
-    transform: translateX(0);
+    
 }
 
 .menu-tel-sub {
@@ -164,7 +177,7 @@ header {
 }
 
 
-.menu-tel-nav a {
+.menu-tel-nav a, .menu-tel-sub a {
     font-family: Poppins !important;
 }
 
@@ -285,7 +298,7 @@ html {
 }
 
 .dropdown .dropdown-arrow {
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     transform: rotate(90deg);
 }
 
