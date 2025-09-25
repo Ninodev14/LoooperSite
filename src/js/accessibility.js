@@ -5,7 +5,7 @@ const zoomDisplay = document.getElementById("zoom-level");
 
 let zoomLevel = parseFloat(localStorage.getItem("zoom")) || 1;
 
-applyZoom();
+
 
 btn.addEventListener("click", () => {
     menu.style.display = menu.style.display === "block" ? "none" : "block";

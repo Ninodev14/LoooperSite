@@ -103,7 +103,7 @@ header {
 
 
 #menu-tel {
-    
+
     overflow-y: auto;
     display: none;
     flex-direction: column;
@@ -116,36 +116,36 @@ header {
     position: relative;
     transform: translateY(-100%);
 }
+
 #menu-tel {
-  position: relative;
-  overflow: hidden;
+    position: relative;
+    overflow: hidden;
 }
 
 .menu-tel-nav,
 .menu-tel-sub {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.4s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease;
 }
 
 .menu-tel-nav {
-  transform: translateX(0);
+    transform: translateX(0);
 }
 
 .menu-tel-sub {
-  transform: translateX(100%); /* caché à droite au début */
+    transform: translateX(100%);
 }
 
-/* Quand on slide vers le sub */
 #menu-tel.slide-sub .menu-tel-nav {
-  transform: translateX(-100%); /* part à gauche */
+    transform: translateX(-100%);
 }
 
 #menu-tel.slide-sub .menu-tel-sub {
-  transform: translateX(0); /* vient de la droite */
+    transform: translateX(0);
 }
 
 
@@ -178,50 +178,108 @@ header {
     width: 30vw;
     max-width: 200px;
 }
+
 /* Container pour garder le hover */
 .dropdown {
-  position: relative;
-  display: inline-block;
+    position: relative;
+    display: inline-block;
 }
 
 /* Sous-menu caché par défaut */
 .dropdown-menu {
-  position: absolute;
-  top: 100%; /* juste en dessous du lien */
-  left: 0;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  padding: 10px 0;
-  display: flex;
-  flex-direction: column;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(10px);
-  transition: all 0.3s ease;
-  min-width: 250px;
-  z-index: 999;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    border-radius: 0px 0px 8px 8px;
+    background: rgba(6, 0, 19, 0.80);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.15), 0 -4px 6px 0 rgba(0, 0, 0, 0.10) inset;
+    backdrop-filter: blur(11px);
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    min-width: 250px;
+    z-index: 999;
+}
+
+/* Scrollbar personnalisé (Chrome, Edge, Safari) */
+.dropdown-menu::-webkit-scrollbar,
+html::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown-menu::-webkit-scrollbar-track,
+html::-webkit-scrollbar {
+    background: transparent;
+    /* fond invisible */
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Scrollbar Firefox */
+.dropdown-menu,
+html {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
 }
 
 .dropdown-menu a {
-  padding: 10px 16px;
-  color: #000;
-  text-decoration: none;
-  font-size: 14px;
-  transition: background 0.2s ease;
+    padding: 10px 16px;
+    transition: background 0.2s ease;
 }
 
 .dropdown-menu a:hover {
-  background: #f0f0f0;
+    background: #3C61F5;
 }
 
-/* Quand on hover sur le container */
 .dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
+.dropdown-text-arrow {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    
+}
+
+.dropdown-arrow .line1,
+.dropdown-arrow .line2 {
+    height: 2px;
+    width: 7px;
+    background: white;
+    border-radius: 2px;
+}
+
+.dropdown-arrow .line1 {
+    transform: rotate(45deg) translate(2px, 2px);
+}
+
+.dropdown-arrow .line2 {
+    transform: rotate(-45deg) translate(2px, -2px);
+}
+.dropdown .dropdown-arrow {
+    transition: all 0.2s ease;
+    transform: rotate(90deg);
+}
+.dropdown:hover .dropdown-arrow {
+    transform: rotate(270deg);
+}
 
 #menu-centrage-toggle {
     display: none;
@@ -235,8 +293,9 @@ header {
     position: relative;
     z-index: 1000;
 }
+
 #menu-centrage-toggle a {
-   display: flex;
+    display: flex;
 
 }
 
