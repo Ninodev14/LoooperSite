@@ -58,7 +58,7 @@
                 <div class="nav-pc-container-end">
                     <a href="equipe.html" class="header-typo-pc link-underline-fill">Notre équipe</a>
                     <a href="projets.html" class="header-typo-pc link-underline-fill">Nos projets</a>
-                    <a href="test.html" class="header-typo-pc link-underline-fill btn-project">
+                    <a href="#contactForm" class="header-typo-pc link-underline-fill btn-project">
                         <span>J’ai un projet !</span>
                         <img src="src/svg/arrowW.svg" alt="fleche">
                     </a>
@@ -84,7 +84,7 @@
                     <a href="besoins.html" class="h3">Vos besoins</a>
                     <a href="equipe.html" class="h3">Notre equipe</a>
                     <a href="projets.html" class="h3">Nos projet</a>
-                    <a href="projets.html" class="h3 btn-project">
+                    <a href="#contactForm" class="h3 btn-project" id="btn-close">
                         <span>J’ai un projet !</span>
                         <img src="src/svg/arrowW.svg" alt="fleche">
                     </a>
@@ -126,7 +126,7 @@
                     autrement.
                 </h2>
                 <div class="small-medium-spacing"></div>
-                <a href="test.html" class="text-typo btn-project btn-white-background">
+                <a href="#contactForm" class="text-typo btn-project btn-white-background">
                     <span>Lancer mon projet !</span>
                     <img src="src/svg/arrowB.svg" alt="fleche">
                 </a>
@@ -136,7 +136,7 @@
 
         <div class="large-spacing"></div>
 
-        <div class="zoom-container-center target-content-index">
+        <div class="zoom-container-center ">
             <div class="zoom-container">
                 <section class="container-width">
                     <article class="memory-game">
@@ -352,47 +352,47 @@
 
     <div class="large-spacing"></div>
 
-    <section class="contact container-width">
+    <section class="contact container-width" id="contactForm">
         <div class="contact-container">
             <h2 class="h1 black white-border">Nous contacter</h2>
             <div class="small-medium-spacing"></div>
-            <form name="contactformV2" method="POST" data-netlify="true" id="contactForm">
+            <form name="contactformV2" method="POST" data-netlify="true" >
                 <input type="hidden" name="form-name" value="contactformV2">
 
                 <fieldset class="form-group-container">
                     <div class="form-group">
                         <label class="text-typo" for="nom">Nom</label>
-                        <input class="target-content-index" type="text" id="nom" name="nom" placeholder="Votre nom"
+                        <input class="" type="text" id="nom" name="nom" placeholder="Votre nom"
                             required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="prenom">Prénom</label>
-                        <input class="target-content-index" type="text" id="prenom" name="prenom"
+                        <input class="" type="text" id="prenom" name="prenom"
                             placeholder="Votre prénom" required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="email">Email</label>
-                        <input class="target-content-index" type="email" id="email" name="email"
+                        <input class="" type="email" id="email" name="email"
                             placeholder="Votre email" required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="telephone">Téléphone</label>
-                        <input class="target-content-index" type="tel" id="telephone" name="telephone"
+                        <input class="" type="tel" id="telephone" name="telephone"
                             placeholder="Votre téléphone" required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="entreprise">Entreprise</label>
-                        <input class="target-content-index" type="text" id="entreprise" name="entreprise"
+                        <input class="" type="text" id="entreprise" name="entreprise"
                             placeholder="Votre entreprise" required>
                     </div>
 
                     <div class="form-group">
                         <label class="text-typo" for="statut">Statut</label>
-                        <input class="target-content-index" type="text" id="statut" name="statut"
+                        <input class="" type="text" id="statut" name="statut"
                             placeholder="Votre Statut" required>
                     </div>
                 </fieldset>
@@ -444,12 +444,12 @@
                 <fieldset>
                     <div class="form-group">
                         <label class="text-typo" for="message">Message</label>
-                        <textarea class="target-content-index" id="message" name="message" rows="6"
+                        <textarea class="" id="message" name="message" rows="6"
                             placeholder="Votre message..." required></textarea>
                     </div>
                 </fieldset>
 
-                <button type="submit" class="btn-submit h2 black target-content-index">Envoyer ma demande</button>
+                <button type="submit" class="btn-submit h2 black ">Envoyer ma demande</button>
             </form>
 
             <!-- Animation  -->

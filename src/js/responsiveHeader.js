@@ -6,7 +6,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let isMenuOpen = false;
     let lastClickTime = 0;
-    const minDelay = 300;
+    const minDelay = 500;
+
+    function openMenu() {
+        menu.style.display = 'flex';
+        html.style.overflow = 'hidden';
+        menuToggle.classList.add("active");
+        barreToggles.forEach(barre => barre.style.backgroundColor = '#fff');
+
+        setTimeout(() => {
+            menu.classList.add('open');
+            isMenuOpen = true;
+        }, 1);
+    }
+
+    function closeMenu() {
+        menu.classList.remove('open');
+        menuToggle.classList.remove("active");
+        html.style.overflow = 'auto';
+        isMenuOpen = false;
+
+        setTimeout(() => {
+            menu.style.display = 'none';
+        }, 400);
+    }
 
     menuToggle.addEventListener('click', function () {
         const now = Date.now();
@@ -14,38 +37,34 @@ document.addEventListener('DOMContentLoaded', function () {
         lastClickTime = now;
 
         if (!isMenuOpen) {
-            menu.style.display = 'flex';
-            html.style.overflow = 'hidden';
-            menuToggle.classList.add("active");
-            barreToggles.forEach(barre => barre.style.backgroundColor = '#fff');
-
-            setTimeout(() => {
-                menu.classList.add('open');
-                isMenuOpen = true;
-            }, 1);
-
+            openMenu();
         } else {
-            menu.classList.remove('open');
-            menuToggle.classList.remove("active");
-            html.style.overflow = 'auto';
-            isMenuOpen = false;
-
-            setTimeout(() => {
-                menu.style.display = 'none';
-            }, 400);
+            closeMenu();
         }
     });
 
+    const btnClose = document.getElementById('btn-close');
+    if (btnClose) {
+        btnClose.addEventListener('click', () => {
+            if (isMenuOpen) closeMenu();
+        });
+    }
+
+    // Navigation slide
     const btnSlide = document.getElementById('btn-slide');
     const btnBack = document.getElementById('btn-back');
 
-    btnSlide.addEventListener('click', () => {
-        menu.classList.add('slide-sub');
-    });
+    if (btnSlide) {
+        btnSlide.addEventListener('click', () => {
+            menu.classList.add('slide-sub');
+        });
+    }
 
-    btnBack.addEventListener('click', () => {
-        menu.classList.remove('slide-sub');
-    });
+    if (btnBack) {
+        btnBack.addEventListener('click', () => {
+            menu.classList.remove('slide-sub');
+        });
+    }
 
 
     // function checkIntersection() {

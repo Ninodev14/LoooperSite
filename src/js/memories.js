@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Précharge les images
   Object.keys(contentsByImage).forEach((src) => {
     const img = new Image();
     img.src = src;
