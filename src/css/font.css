@@ -33,7 +33,7 @@ p,
   font-size: 1rem;
   font-style: normal;
   font-weight: 100;
-  line-height: 1rem;
+  line-height: 1.3rem;
 }
 
 .header-typo-pc {
@@ -106,7 +106,6 @@ header p {
 
 .paterneTitle {
   position: relative;
-  background-image: url(/src/svg/bluepaternFull.svg);
   background-size: auto;
   background-repeat: repeat;
   background-position: center;
@@ -115,6 +114,16 @@ header p {
   background-clip: text;
   z-index: 2;
   text-shadow: none;
+}
+
+.paterneTitleOrange {
+  background-image: url(/src/svg/OrangePaternFull.svg);
+}
+.paterneTitle {
+  background-image: url(/src/svg/bluePaternFull.svg);
+}
+.paterneTitlePurple {
+  background-image: url(/src/svg/purplePaternFull.svg);
 }
 
 
