@@ -9,7 +9,6 @@ body {
 }
 
 .mainPageTitle {
-    background-image: url(/src/svg/purpelPatern.svg);
     background-repeat: repeat;
     background-position: bottom;
     background-size: auto;
@@ -17,6 +16,15 @@ body {
     padding-bottom: 20px;
 }
 
+.mainPageTitlePurple{
+    background-image: url(/src/svg/purpelPatern.svg);
+}
+.mainPageTitleOrange{
+    background-image: url(/src/svg/orangePatern.svg);
+}
+.mainPageTitleBlue{
+    background-image: url(/src/svg/bluePatern.svg);
+}
 .zoom-container-center {
     display: flex;
     justify-content: center;

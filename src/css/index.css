@@ -69,7 +69,6 @@
   transform: translateY(-10%) rotate(90deg) scaleX(-1);
 }
 
-/* état visible (descend + devient opaque) */
 .backgroundType2Annim.visibleBackgroundType2Annim.left {
   transform: translateY(0) rotate(-90deg);
   opacity: 1;

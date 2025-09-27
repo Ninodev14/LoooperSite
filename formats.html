@@ -14,21 +14,44 @@
 <body>
     <header>
         <div class="menu-pc-container">
-            <div class="img-container-header"><a href="index.html"><img src="src/img/logoSMP.png"
-                        alt="logo simplifier de loooper" class="logo-bump"></a></div>
             <nav class="nav-pc">
-                <a href="index.html" class="header-typo-pc link-actif">Accueil</a>
-                <a href="formats.html" class="header-typo-pc">Nos formats</a>
-                <a href="equipe.html" class="header-typo-pc">Notre equipe</a>
-                <a href="realisations.html" class="header-typo-pc">Nos realisations</a>
-                <a href="blog.html" class="header-typo-pc">Notre blog</a>
-                <a href="projet.html" class="header-typo-pc btn-project">
-                    <span>J’ai un projet !</span>
-                    <img src="src/svg/arrowB.svg" alt="fleche">
-                </a>
+                <div class="nav-pc-container">
+                    <a href="index.html" class="header-typo-pc link-underline-fill">Accueil</a>
+                    <a href="formats.html" class="header-typo-pc link-underline-fill highlight orange">Nos formats</a>
+                    <div class="dropdown">
+                        <div class="dropdown-text-arrow">
+                            <a href="besoins.html" class="header-typo-pc link-underline-fill">Vos besoins</a>
+                            <div class="dropdown-arrow">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu">
+                            <a class="header-typo-pc" href="apprendre-ludique.html">Apprendre avec le ludique</a>
+                            <a class="header-typo-pc" href="sensibiliser-reflechir.html">Sensibiliser et faire
+                                réfléchir</a>
+                            <a class="header-typo-pc" href="creer-interaction-sociale.html">Créer de l'interaction
+                                sociale</a>
+                            <a class="header-typo-pc" href="renforcer-cohesion.html">Renforcer la cohésion</a>
+                            <a class="header-typo-pc" href="engager-motiver.html">Engager et motiver</a>
+                            <a class="header-typo-pc" href="former-efficacement.html">Former efficacement</a>
+                            <a class="header-typo-pc" href="communiquer-autrement.html">Communiquer autrement</a>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="img-container-header"><a href="index.html"><img src="src/img/logo.png" alt="Logo de loooper"
+                            class="logo-jump"></a></div>
+                <div class="nav-pc-container-end">
+                    <a href="equipe.html" class="header-typo-pc link-underline-fill">Notre équipe</a>
+                    <a href="projets.html" class="header-typo-pc link-underline-fill">Nos projets</a>
+                    <a href="#contactForm" class="header-typo-pc btn-project">
+                        <span>J’ai un projet !</span>
+                        <img src="src/svg/arrowW.svg" alt="fleche">
+                    </a>
+                </div>
             </nav>
-            <div class="img-container-header"><a href="index.html"><img src="src/img/logo.png" alt="Logo de loooper"
-                        class="logo-jump"></a></div>
         </div>
         <div id="menu-centrage-toggle">
             <a href="index.html"><img class="logoHeaderPhone" src="src/img/logo.png" alt="Logo de loooper"></a>
@@ -41,27 +64,46 @@
 
         <nav>
             <div id="menu-tel">
+
                 <div class="menu-tel-nav">
-                    <a href="index.html" class="h3 link-actif">Accueil</a>
-                    <a href="formats.html" class="h3">Nos formats</a>
+                    <a href="index.html" class="h3">Accueil</a>
+                    <a href="formats.html" class="h3 highlight orange">Nos formats</a>
+                    <div class="btn-slide-container">
+                        <a href="besoins.html" class="h3">Vos besoins</a>
+                        <button id="btn-slide"><img src="src/svg/arrowW.svg" alt="fleche"></button>
+                    </div>
                     <a href="equipe.html" class="h3">Notre equipe</a>
-                    <a href="realisations.html" class="h3">Nos realisations</a>
-                    <a href="blog.html" class="h3">Notre blog</a>
-                    <a href="projet.html" class="h3 btn-project">
+                    <a href="projets.html" class="h3">Nos projet</a>
+                    <a href="#contactForm" class="h3 btn-project" id="btn-close">
                         <span>J’ai un projet !</span>
                         <img src="src/svg/arrowW.svg" alt="fleche">
                     </a>
-                    <div class="img-container-header">
-                        <a href="index.html"><img src="src/img/logoSMP.png" alt="logo simplifier de loooper"
-                                class="logo-bump"></a>
+                    <div class="null-object"></div>
+                </div>
+
+                <div class="menu-tel-sub">
+                    <div class="menu-tel-sub-container">
+                        <button id="btn-back"><img src="src/svg/arrowW.svg" alt="fleche"></button>
+                        <a class="h3" href="apprendre-ludique.html">Apprendre avec le ludique</a>
+                        <a class="h3" href="sensibiliser-reflechir.html">Sensibiliser et faire réfléchir</a>
+                        <a class="h3" href="creer-interaction-sociale.html">Créer de l'interaction
+                            sociale</a>
+                        <a class="h3" href="renforcer-cohesion.html">Renforcer la cohésion</a>
+                        <a class="h3" href="engager-motiver.html">Engager et motiver</a>
+                        <a class="h3" href="former-efficacement.html">Former efficacement</a>
+                        <a class="h3" href="communiquer-autrement.html">Communiquer autrement</a>
+                        <div class="null-object"></div>
+                        <div class="null-object"></div>
                     </div>
                 </div>
             </div>
+
         </nav>
     </header>
-    <main>
 
-        <section class="mainPageTitle">
+
+    <main>
+        <section class="mainPageTitle mainPageTitleOrange">
             <h1 class="h1 container-width white-border black">Loooper!, c’est des formats qui s’adaptent pour devenir
                 <div class="paterneTitleContainer"><span class="paterneTitle">le vôtre</span><span
                         class="paterneTitleContour">le vôtre</span></div>
@@ -74,11 +116,14 @@
             <article class="text-basical-container-text">
                 <h2 class="h2 black white-border">Découvrez notre univers et nos valeurs</h2>
                 <div class="small-medium-spacing"></div>
-                <p>Loooper! transforme vos idées en <span class="highlight violet">formats interactifs sur mesure.</span></p>
+                <p>Loooper! transforme vos idées en <span class="highlight violet">formats interactifs sur
+                        mesure.</span></p>
                 <p>Chaque projet devient unique, pensé pour s’adapter à votre image… et captiver votre public.
-                    <span class="highlight blue">La ludification</span> est notre moteur : apprendre, découvrir, s’amuser autrement.
+                    <span class="highlight blue">La ludification</span> est notre moteur : apprendre, découvrir,
+                    s’amuser autrement.
                     Pour vous donner un aperçu de nos possibilités, explorez tous les formats que nous pouvons
-                    développer ensemble.</p>
+                    développer ensemble.
+                </p>
                 <p>Avec nous, la seule limite… c’est votre <span class="highlight orange">imagination !</span></p>
                 <div class="small-spacing"></div>
 
