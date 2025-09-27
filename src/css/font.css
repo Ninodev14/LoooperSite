@@ -25,6 +25,10 @@
   line-height: normal;
 }
 
+li {
+  margin-left: 14px;
+  list-style: disc;
+}
 
 p,
 .text-typo {
@@ -119,9 +123,11 @@ header p {
 .paterneTitleOrange {
   background-image: url(/src/svg/OrangePaternFull.svg);
 }
+
 .paterneTitle {
   background-image: url(/src/svg/bluePaternFull.svg);
 }
+
 .paterneTitlePurple {
   background-image: url(/src/svg/purplePaternFull.svg);
 }
@@ -194,7 +200,8 @@ html {
   html {
     font-size: 18px;
   }
-  body{
+
+  body {
     background-color: black
   }
 }
