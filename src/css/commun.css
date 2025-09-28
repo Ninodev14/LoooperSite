@@ -33,6 +33,11 @@ body {
     justify-content: center;
 }
 
+.backgroundInterogation {
+    background-image: url(/src/svg/interogation.svg);
+    background-size: contain;
+}
+
 .zoom-container {
     border-radius: 120px;
     width: 100%;
@@ -133,9 +138,21 @@ body {
     border-radius: 30px;
     border: 5px solid #000;
     background: #FFF;
-    box-shadow: 12px 12px 0 0 #F6B254;
     overflow: hidden;
 }
+
+.card-info-container-orange {
+    box-shadow: 12px 12px 0 0 #F6B254;
+}
+
+.card-info-container-purple {
+    box-shadow: 12px 12px 0 0 #BB6EF6;
+}
+
+.card-info-container-blue {
+    box-shadow: 12px 12px 0 0 #3C61F5;
+}
+
 
 .card-info-container-text {
     gap: 20px;
