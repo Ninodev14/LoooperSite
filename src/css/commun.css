@@ -33,19 +33,15 @@ body {
     justify-content: center;
 }
 
-.backgroundInterogation {
-    background-image: url(/src/svg/interogation.svg);
-    background-size: contain;
-}
 
 .zoom-container {
     border-radius: 120px;
     width: 100%;
-    background: #fff;
     padding: 10em 0;
     transition: transform 0.2s ease-out;
     transform-origin: center;
     transform: scaleX(0.9);
+    background-color: #fff;
 }
 
 .text-basical-container {
@@ -125,12 +121,12 @@ body {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 3rem 20px;
+    gap: 4rem 20px;
     justify-content: space-evenly;
 }
 
 .card-info-container {
-    width: 300px;
+    width: 280px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -155,10 +151,18 @@ body {
 
 
 .card-info-container-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.card-info-container-text-alignement {
     gap: 20px;
     display: flex;
     flex-direction: column;
-    padding: 20px;
 }
 
 .card-info-container-text h3 {
@@ -173,7 +177,6 @@ body {
 
 .card-info-container-text-center-btn {
     display: flex;
-    margin-top: 30px;
     justify-content: center;
     align-items: center;
 }
@@ -335,6 +338,12 @@ body {
     align-items: center;
     gap: 1rem;
     width: fit-content;
+    transition: all 0.3s;
+}
+
+.btn-project:hover {
+    background: #BB6EF6;
+    color: white;
 }
 
 .btn-project img {
@@ -536,7 +545,119 @@ body {
     transform: scaleX(1);
 }
 
+/* FAQ */
+.backgroundInterogation {
+    background-image: url(/src/svg/interogation.svg);
+    background-size: auto 80%;
+    background-position: right center;
+    background-position: right;
+    background-color: #fff;
+    background-repeat: no-repeat;
+}
 
+.wrapper-faq-container-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+}
+
+.faq-container-info {
+    width: calc(50% - 20px);
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    height: fit-content;
+}
+
+.faq-header {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* Flèche */
+.faq-arrow {
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    border-radius: 50px;
+    border: #000 solid 3px;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform: rotate(90deg);
+}
+
+.faq-arrow-orange {
+    background-color: #F6B254;
+}
+
+.faq-arrow-purple {
+    background-color: #BB6EF6;
+}
+
+.faq-arrow-blue {
+    background-color: #3C61F5;
+}
+
+/* premier trait */
+.faq-arrow-1 {
+    border-radius: 30px;
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background: #000;
+    transform: rotate(45deg) translateY(2px) translateX(1px);
+    transition: 0.3s ease;
+}
+
+/* deuxième trait */
+.faq-arrow-2 {
+    border-radius: 30px;
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background: #000;
+    transform: rotate(-45deg) translateY(-2px) translateX(1px);
+    transition: 0.3s ease;
+}
+
+/* quand actif → flèche vers le bas */
+.faq-container-info.active .faq-arrow {
+    transform: rotate(270deg);
+}
+
+
+/* Animation du texte */
+.faq-container-info p {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    opacity: 0;
+    margin: 0;
+}
+
+.faq-container-info.active p {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 8px;
+}
+
+@media screen and (max-width: 650px) {
+    .faq-container-info {
+        width: 100%;
+
+    }
+
+    .backgroundInterogation {
+        background-image: none;
+    }
+}
 
 /* CONTACT */
 
