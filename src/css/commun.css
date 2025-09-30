@@ -118,11 +118,12 @@ body {
 }
 
 .card-info-wrap {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 4rem 20px;
     justify-content: space-evenly;
+    max-width: calc((350px * 4) + (20px * 3));
+    margin: 0 auto;
 }
 
 .card-info-container {
@@ -659,9 +660,62 @@ body {
     }
 }
 
+/* MODAL */
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 600px;
+    width: 90%;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.modal p {
+    margin: 1rem 0;
+}
+
+.modal .btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.modal-orange {
+    border: 3px solid #F6B254;
+    box-shadow: 0 8px 24px rgba(246, 178, 84, 0.5);
+}
+
+.modal-purple {
+    border: 3px solid #9B59B6;
+    box-shadow: 0 8px 24px rgba(155, 89, 182, 0.5);
+}
+
+.modal-blue {
+    border: 3px solid #3498DB;
+    box-shadow: 0 8px 24px rgba(52, 152, 219, 0.5);
+}
+
+
 /* CONTACT */
-
-
 
 .contact {
     display: flex;
