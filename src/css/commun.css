@@ -108,6 +108,17 @@ body {
     justify-content: space-between;
 }
 
+.text-basical-container-img{
+    display: flex;
+    align-items: center;
+}
+
+.text-basical-container-img img{
+    height: auto;
+    width: 30vw;
+    border-radius: 8px;
+}
+
 .ludique-toggle {
     display: flex;
     align-items: center;
@@ -211,6 +222,9 @@ body {
         width: 100%;
 
     }
+    .text-basical-container-img img{
+    width: 100%;
+}
 }
 
 
@@ -708,9 +722,11 @@ body {
     flex-direction: column;
     gap: 10px;
 }
-.header-modal-tilte{
+
+.header-modal-tilte {
     text-align: center;
 }
+
 .modal-container-info {
     top: 0;
     height: 100%;
@@ -806,7 +822,7 @@ body {
         justify-content: normal;
         gap: 30px;
         width: 100%;
-height: fit-content;
+        height: fit-content;
     }
 
     .modal-container-info {
@@ -815,6 +831,7 @@ height: fit-content;
         height: fit-content;
         text-align: left;
     }
+
     .modal-container {
         height: fit-content;
     }

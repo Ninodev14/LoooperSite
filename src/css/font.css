@@ -120,10 +120,10 @@ header p {
 }
 
 .paterneTitleOrange {
-  background-image: url(/src/svg/OrangePaternFull.svg);
+  background-image: url(/src/svg/orangePaternFull.svg);
 }
 
-.paterneTitle {
+.paterneTitleBlue {
   background-image: url(/src/svg/bluePaternFull.svg);
 }
 

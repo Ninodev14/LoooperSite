@@ -1,0 +1,48 @@
+.protagonistes-card {
+    stroke-width: 5px;
+    stroke: #000;
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    background-color: #FFF;
+stroke-width: 12px;
+stroke: #FFF;
+    max-width: 380px;
+}
+
+.protagonistes-card-img-and-patern {
+    padding: 2vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-image: url(/src/svg/bluePaternFull.svg);
+}
+
+.protagonistes-card-img {
+    border-radius: 135px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 8.8vw;
+    width: 8.8vw;
+    border: 6px solid #FFF;
+}
+
+.protagonistes-card-img img {
+    width: 8vw;
+    height: auto;
+    border-radius: 80px;
+    border-radius: 135px;
+    border: 4.5px solid #000;
+}
+
+.protagonistes-card-text {
+    display: flex;
+    gap: 4px;
+    flex-direction: column;
+    padding: 0px 3vw;
+}
