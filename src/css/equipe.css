@@ -1,6 +1,4 @@
 .protagonistes-card {
-    stroke-width: 5px;
-    stroke: #000;
     width: 30vw;
     display: flex;
     align-items: center;
@@ -8,13 +6,81 @@
     align-content: center;
     text-align: center;
     background-color: #FFF;
-stroke-width: 12px;
-stroke: #FFF;
     max-width: 380px;
+    position: relative;
+    border: 6px solid #FFF;
+    border-radius: 8px;
 }
+
+.protagonistes-card::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    right: 0;
+    width: 60px;
+    height: 40px;
+
+    background: linear-gradient(145deg,
+            #3B82F6 50%,
+            var(--backgroundColor) 50%
+        );
+
+    border: 3px solid #000;
+    border-bottom: none;
+    border-right: none;
+    border-radius: 8px 0 0 0;
+    z-index: 1;
+}
+
+.protagonistes-card-null-background {
+    position: absolute;
+    bottom: -46px;
+    right: -20px;
+    width: 130px;
+    height: 100px;
+    transform: rotate(180deg);
+    background: linear-gradient(145deg,
+            var(--backgroundColor) 50%,
+            transparent 50%
+        );
+    z-index: 4;
+}
+
+.protagonistes-card-null-background-black {
+    position: absolute;
+    bottom: 0px;
+    right: 1px;
+    width: 61px;
+    height: 43px;
+    z-index: 2;
+    transform: rotate(180deg);
+    background: linear-gradient(145deg,
+            #000 50%,
+            transparent 50%
+        );
+}
+
+.protagonistes-card-null-background-white {
+    position: absolute;
+    bottom: -5.9px;
+    right: -5.2px;
+    width: 72px;
+    height: 52px;
+    transform: rotate(180deg);
+    background: linear-gradient(145deg,
+            #fff 50%,
+            transparent 50%
+        );
+    z-index: 3;
+
+}
+
 
 .protagonistes-card-img-and-patern {
     padding: 2vw 0;
+    border: 3px solid #000;
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,6 +109,10 @@ stroke: #FFF;
 .protagonistes-card-text {
     display: flex;
     gap: 4px;
+    border: 3px solid #000;
+    border-radius: 0px 0px 0px 8px;
+    border-top: 0;
     flex-direction: column;
     padding: 0px 3vw;
+    padding-bottom: calc(60px + 2vw);
 }
