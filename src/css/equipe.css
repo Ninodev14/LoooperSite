@@ -12,6 +12,14 @@
     border-radius: 8px;
 }
 
+.protagonistes-card-text .h3 {
+    margin-top: 18px;
+}
+
+.protagonistes-card-text .h2 {
+    margin-bottom: 14px;
+}
+
 .protagonistes-card::after {
     content: "";
     position: absolute;
@@ -22,8 +30,7 @@
 
     background: linear-gradient(145deg,
             #3B82F6 50%,
-            var(--backgroundColor) 50%
-        );
+            var(--backgroundColor) 50%);
 
     border: 3px solid #000;
     border-bottom: none;
@@ -35,14 +42,13 @@
 .protagonistes-card-null-background {
     position: absolute;
     bottom: -46px;
-    right: -20px;
-    width: 130px;
+    right: -8px;
+    width: 100px;
     height: 100px;
     transform: rotate(180deg);
     background: linear-gradient(145deg,
             var(--backgroundColor) 50%,
-            transparent 50%
-        );
+            transparent 50%);
     z-index: 4;
 }
 
@@ -56,8 +62,7 @@
     transform: rotate(180deg);
     background: linear-gradient(145deg,
             #000 50%,
-            transparent 50%
-        );
+            transparent 50%);
 }
 
 .protagonistes-card-null-background-white {
@@ -69,10 +74,16 @@
     transform: rotate(180deg);
     background: linear-gradient(145deg,
             #fff 50%,
-            transparent 50%
-        );
+            transparent 50%);
     z-index: 3;
 
+}
+
+.protagonistes-containe-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 
@@ -85,6 +96,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+    background-size: cover;
     background-image: url(/src/svg/bluePaternFull.svg);
 }
 
@@ -115,4 +127,16 @@
     flex-direction: column;
     padding: 0px 3vw;
     padding-bottom: calc(60px + 2vw);
+}
+
+@media screen and (max-width: 750px) {
+    .protagonistes-containe-wrapper {
+        flex-direction: column;
+        gap: 40px;
+
+    }
+    .protagonistes-card {
+        width: 90vw;
+        max-width: 300px;
+    }
 }
