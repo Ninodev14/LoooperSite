@@ -217,14 +217,38 @@
 
         <section class="container-width book-container">
             <h2 class="h2 black white-border">Notre chemin de travail ensemble</h2>
-            <div class="book-container-center">
-                <article class="book-page">
-                    <h3 class="h2 black">Chapitre I</h3>
-                    <p class="h2 black">La rencontre</p>
-                </article>
-                <article class="book-page reverse-page"></article>
+            <div class="small-spacing"></div>
+            <div class="book-container-center-base">
+                <div class="book-container-center">
+                    <article class="book-page">
+                        <div class="book-page-part-1-container">
+                            <h3 class="h2 black" id="book-page-part-1-container-chapitre">Chapitre I</h3>
+                            <h4 class="h2 black white-border highlight-no-annim orange"
+                                id="book-page-part-1-container-title">La rencontre</h4>
+                        </div>
+                    </article>
+
+                    <article class="book-page">
+                        <div class="book-page-part-2-container">
+                            <img id="book-page-part-2-container-img" src="src/svg/book/table.svg"
+                                alt="Image representant 4 personne assise">
+                            <p class="black" id="book-page-part-2-container-text">
+                                Tout commence par un moment d’échange. On prend le temps d’écouter vos besoins, vos
+                                envies et vos objectifs afin de poser les bases d’un concept sur mesure.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <button class="book-nav book-nav-prev" aria-label="Slide précédent" title="Précédent">‹</button>
+                <button class="book-nav book-nav-next" aria-label="Slide suivant" title="Suivant">›</button>
+
+                <div class="book-dots" role="tablist" aria-label="Navigation des chapitres">
+                </div>
+
             </div>
         </section>
+
 
     </main>
     <div class="large-spacing"></div>
@@ -338,9 +362,8 @@
         </div>
     </footer>
 
-    <script src="src/js/modal.js"></script>
+    <script src="src/js/book.js"></script>
     <script src="src/js/logoAnnim.js"></script>
-    <script src="src/js/faq.js"></script>
     <script src="src/js/annimForm.js"></script>
     <script src="src/js/scrollAnnimWhiteContainer.js"></script>
     <script src="src/js/annimOnScroll.js"></script>
