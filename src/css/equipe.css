@@ -28,15 +28,29 @@
     width: 60px;
     height: 40px;
 
-    background: linear-gradient(145deg,
-            #3B82F6 50%,
-            var(--backgroundColor) 50%);
-
     border: 3px solid #000;
     border-bottom: none;
     border-right: none;
     border-radius: 8px 0 0 0;
     z-index: 1;
+}
+
+.protagonistes-card-blue::after {
+    background: linear-gradient(145deg,
+            #3B82F6 50%,
+            var(--backgroundColor) 50%);
+}
+
+.protagonistes-card-purple::after {
+    background: linear-gradient(145deg,
+            #BB6EF6 50%,
+            var(--backgroundColor) 50%);
+}
+
+.protagonistes-card-orange::after {
+    background: linear-gradient(145deg,
+            #F6B254 50%,
+            var(--backgroundColor) 50%);
 }
 
 .protagonistes-card-null-background {
@@ -82,6 +96,7 @@
 .protagonistes-containe-wrapper {
     display: flex;
     align-items: center;
+    align-items: stretch;
     gap: 20px;
     justify-content: space-between;
 }
@@ -96,8 +111,20 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-size: cover;
+    background-size: 120%;
+    background-position: center;
+}
+
+.protagonistes-card-img-and-patern-blue {
     background-image: url(/src/svg/bluePaternFull.svg);
+}
+
+.protagonistes-card-img-and-patern-purple {
+    background-image: url(/src/svg/purplePaternFull.svg);
+}
+
+.protagonistes-card-img-and-patern-orange {
+    background-image: url(/src/svg/orangePaternFull.svg);
 }
 
 .protagonistes-card-img {
@@ -105,13 +132,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 8.8vw;
-    width: 8.8vw;
+    height: fit-content;
+    width: 40%;
     border: 6px solid #FFF;
 }
 
 .protagonistes-card-img img {
-    width: 8vw;
+    width: 100%;
     height: auto;
     border-radius: 80px;
     border-radius: 135px;
@@ -119,6 +146,7 @@
 }
 
 .protagonistes-card-text {
+    height: 100%;
     display: flex;
     gap: 4px;
     border: 3px solid #000;
@@ -133,10 +161,27 @@
     .protagonistes-containe-wrapper {
         flex-direction: column;
         gap: 40px;
-
+        align-items: center;
     }
+
     .protagonistes-card {
         width: 90vw;
         max-width: 300px;
     }
+}
+
+.book-container-center{
+    display: flex;
+    align-items: center;
+
+}
+
+.book-page {
+    aspect-ratio: 594 / 782;
+    max-width: 45vw;
+    height: 80vh;
+    background-image: url(/src/img/book-page.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
