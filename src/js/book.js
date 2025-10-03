@@ -70,43 +70,86 @@ function initDots() {
 
 /* mise à jour du contenu visible */
 function render() {
-  const s = slides[current];
+    const s = slides[current];
 
-  if (chapitreEl) chapitreEl.textContent = s.chapitre;
-  if (titleEl) {
-    titleEl.textContent = s.title;
-    // on retire les anciennes couleurs
-    titleEl.classList.remove("orange", "purple", "blue");
-    // et on ajoute la nouvelle
-    if (s.color) titleEl.classList.add(s.color);
-  }
-  if (imgEl) {
-    imgEl.src = s.img;
-    imgEl.alt = s.alt || '';
-  }
-  if (textEl) textEl.textContent = s.text;
+    if (chapitreEl) chapitreEl.textContent = s.chapitre;
+    if (titleEl) {
+        titleEl.textContent = s.title;
+        // on retire les anciennes couleurs
+        titleEl.classList.remove("orange", "purple", "blue");
+        // et on ajoute la nouvelle
+        if (s.color) titleEl.classList.add(s.color);
+    }
+    if (imgEl) {
+        imgEl.src = s.img;
+        imgEl.alt = s.alt || '';
+    }
+    if (textEl) textEl.textContent = s.text;
 
-  // mise à jour des dots
-  const dots = dotsContainer.querySelectorAll('.book-dot');
-  dots.forEach((d, i) =>
-    d.setAttribute('aria-selected', i === current ? 'true' : 'false')
-  );
+    // mise à jour des dots
+    const dots = dotsContainer.querySelectorAll('.book-dot');
+    dots.forEach((d, i) =>
+        d.setAttribute('aria-selected', i === current ? 'true' : 'false')
+    );
+}
+function animateTurn(direction) {
+    const page = direction === 'next'
+        ? document.querySelector('.book-page-2')
+        : document.querySelector('.book-page-1');
+
+    if (!page) return;
+
+    const content = page.querySelector('div');
+
+    // Précharger verso
+    const backImg = new Image();
+    backImg.src = '/src/img/book-page-back.png';
+
+    page.style.zIndex = 20;
+
+    // Appliquer la classe turning (CSS gère le flip)
+    page.classList.add('turning');
+
+    setTimeout(() => {
+        page.style.backgroundImage = 'url(/src/img/book-page-back.png)';
+        if (content) content.classList.add('hidden');
+    }, 200);
+
+    setTimeout(() => {
+        if (direction === 'next') {
+            current = (current + 1) % slides.length;
+        } else {
+            current = (current - 1 + slides.length) % slides.length;
+        }
+        render();
+    }, 300);
+
+    page.addEventListener('transitionend', () => {
+        setTimeout(() => {
+            page.style.backgroundImage = 'url(/src/img/book-page.png)';
+            if (content) content.classList.remove('hidden');
+        }, 200);
+        page.classList.remove('turning');
+        page.style.zIndex = 10;
+
+        const otherPage = direction === 'next'
+            ? document.querySelector('.book-page-1')
+            : document.querySelector('.book-page-2');
+        if (otherPage) otherPage.style.zIndex = 5;
+    }, { once: true });
 }
 
 
-/* navigation */
-function prev() {
-    current = (current - 1 + slides.length) % slides.length;
-    render();
-}
-function next() {
-    current = (current + 1) % slides.length;
-    render();
-}
+
+
+function prev() { animateTurn('prev'); }
+function next() { animateTurn('next'); }
+
 function goToSlide(index) {
     current = Math.max(0, Math.min(index, slides.length - 1));
     render();
 }
+
 
 /* events */
 if (prevBtn) prevBtn.addEventListener('click', prev);
