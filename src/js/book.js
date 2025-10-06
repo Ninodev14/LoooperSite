@@ -41,7 +41,6 @@ const slides = [
     }
 ];
 
-/* == Sélecteurs DOM == */
 const chapitreEl = document.getElementById('book-page-part-1-container-chapitre');
 const titleEl = document.getElementById('book-page-part-1-container-title');
 const imgEl = document.getElementById('book-page-part-2-container-img');
@@ -53,7 +52,6 @@ const dotsContainer = document.querySelector('.book-dots');
 
 let current = 0;
 
-/* initialisation : créer les dots */
 function initDots() {
     dotsContainer.innerHTML = '';
     slides.forEach((_, i) => {
@@ -68,16 +66,13 @@ function initDots() {
     });
 }
 
-/* mise à jour du contenu visible */
 function render() {
     const s = slides[current];
 
     if (chapitreEl) chapitreEl.textContent = s.chapitre;
     if (titleEl) {
         titleEl.textContent = s.title;
-        // on retire les anciennes couleurs
         titleEl.classList.remove("orange", "purple", "blue");
-        // et on ajoute la nouvelle
         if (s.color) titleEl.classList.add(s.color);
     }
     if (imgEl) {
@@ -86,7 +81,6 @@ function render() {
     }
     if (textEl) textEl.textContent = s.text;
 
-    // mise à jour des dots
     const dots = dotsContainer.querySelectorAll('.book-dot');
     dots.forEach((d, i) =>
         d.setAttribute('aria-selected', i === current ? 'true' : 'false')
@@ -101,13 +95,10 @@ function animateTurn(direction) {
 
     const content = page.querySelector('div');
 
-    // Précharger verso
     const backImg = new Image();
     backImg.src = '/src/img/book-page-back.png';
 
     page.style.zIndex = 20;
-
-    // Appliquer la classe turning (CSS gère le flip)
     page.classList.add('turning');
 
     setTimeout(() => {
@@ -146,22 +137,51 @@ function prev() { animateTurn('prev'); }
 function next() { animateTurn('next'); }
 
 function goToSlide(index) {
-    current = Math.max(0, Math.min(index, slides.length - 1));
-    render();
+    if (index === current) return;
+
+    const direction = index > current ? 'next' : 'prev';
+    const page = direction === 'next'
+        ? document.querySelector('.book-page-2')
+        : document.querySelector('.book-page-1');
+
+    if (!page) return;
+
+    const content = page.querySelector('div');
+    const backImg = new Image();
+    backImg.src = '/src/img/book-page-back.png';
+
+    page.style.zIndex = 20;
+    page.classList.add('turning');
+
+    setTimeout(() => {
+        page.style.backgroundImage = 'url(/src/img/book-page-back.png)';
+        if (content) content.classList.add('hidden');
+    }, 200);
+
+    setTimeout(() => {
+        current = Math.max(0, Math.min(index, slides.length - 1));
+        render();
+    }, 300);
+
+    page.addEventListener('transitionend', () => {
+        setTimeout(() => {
+            page.style.backgroundImage = 'url(/src/img/book-page.png)';
+            if (content) content.classList.remove('hidden');
+        }, 200);
+        page.classList.remove('turning');
+        page.style.zIndex = 10;
+
+        const otherPage = direction === 'next'
+            ? document.querySelector('.book-page-1')
+            : document.querySelector('.book-page-2');
+        if (otherPage) otherPage.style.zIndex = 5;
+    }, { once: true });
 }
 
-
-/* events */
 if (prevBtn) prevBtn.addEventListener('click', prev);
 if (nextBtn) nextBtn.addEventListener('click', next);
 
-// clavier : flèches gauche / droite
-document.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowLeft') prev();
-    if (e.key === 'ArrowRight') next();
-});
 
-/* swipe mobile facultatif (simple) */
 (function addSwipe() {
     const el = document.querySelector('.book-container-center');
     if (!el) return;
