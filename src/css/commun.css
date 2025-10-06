@@ -584,6 +584,12 @@ body {
     justify-content: space-between;
 }
 
+.faq-text-espacement {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .faq-container-info {
     width: calc(50% - 20px);
     border-bottom: 1px solid #ddd;
@@ -602,8 +608,8 @@ body {
 
 /* Flèche */
 .faq-arrow {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     padding: 4px;
     border-radius: 50px;
     border: #000 solid 3px;
@@ -1007,6 +1013,19 @@ textarea {
     z-index: 0;
     overflow: hidden;
 }
+
+.long-card-orange {
+    box-shadow: 12px 12px 0 0 #F6B254;
+}
+
+.long-card-purple {
+    box-shadow: 12px 12px 0 0 #BB6EF6;
+}
+
+.long-card-blue {
+    box-shadow: 12px 12px 0 0 #3C61F5;
+}
+
 
 .long-card img {
     height: 100%;
