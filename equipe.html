@@ -281,7 +281,7 @@
 
         <section class="container-width book-container">
             <h2 class="h2 black white-border">Notre chemin de travail ensemble</h2>
-            <div class="small-spacing"></div>
+            <div class="small-medium-spacing"></div>
             <div class="book-container-center-base">
                 <div class="book-container-center">
                     <article class="book-page book-page-1">
@@ -303,14 +303,55 @@
                         </div>
                     </article>
                 </div>
+                
+                <div class="small-spacing"></div>
 
-                <button class="book-nav book-nav-prev" aria-label="Slide précédent" title="Précédent">‹</button>
-                <button class="book-nav book-nav-next" aria-label="Slide suivant" title="Suivant">›</button>
-
-                <div class="book-dots" role="tablist" aria-label="Navigation des chapitres">
+                <div class="book-mobile-nav-container">
+                    <button class="book-nav prev book-nav-prev" aria-label="Slide précédent" title="Précédent">
+                        <div class="barArrow  barArrow1"></div>
+                        <div class="barArrow  barArrow2"></div>
+                    </button>
+                    <div class="book-dots" role="tablist" aria-label="Navigation des chapitres"></div>
+                    <button class="book-nav next book-nav-next" aria-label="Slide suivant" title="Suivant">
+                        <div class="barArrow  barArrow1"></div>
+                        <div class="barArrow  barArrow2"></div>
+                    </button>
                 </div>
-
             </div>
+            </div>
+
+            <div class="book-mobile-container">
+                <article class="book-mobile-page">
+                    <div class="book-mobile-content">
+                        <h3 class="h2 black" id="mobile-chapitre">Chapitre I</h3>
+                        <h4 class="h2 black white-border highlight-no-annim orange" id="mobile-title">La rencontre</h4>
+
+
+                        <img id="mobile-img" src="src/svg/book/table.svg" alt="4 personnes assises">
+
+
+                        <p class="black" id="mobile-text">
+                            Tout commence par un moment d’échange. On prend le temps d’écouter vos besoins, vos envies
+                            et vos objectifs afin de poser les bases d’un concept sur mesure.
+                        </p>
+                    </div>
+                </article>
+
+                <div class="small-spacing"></div>
+
+                <div class="book-mobile-nav-container">
+                    <button class="book-mobile-nav prev" aria-label="Page précédente">
+                        <div class="barArrow  barArrow1"></div>
+                        <div class="barArrow  barArrow2"></div>
+                    </button>
+                    <div class="book-mobile-dots" role="tablist" aria-label="Navigation des chapitres"></div>
+                    <button class="book-mobile-nav next" aria-label="Page suivante">
+                        <div class="barArrow  barArrow1"></div>
+                        <div class="barArrow  barArrow2"></div>
+                    </button>
+                </div>
+            </div>
+
         </section>
 
 

@@ -206,3 +206,97 @@ if (nextBtn) nextBtn.addEventListener('click', next);
 
 initDots();
 render();
+
+const mobileChapitre = document.getElementById('mobile-chapitre');
+const mobileTitle = document.getElementById('mobile-title');
+const mobileImg = document.getElementById('mobile-img');
+const mobileText = document.getElementById('mobile-text');
+const mobileDots = document.querySelector('.book-mobile-dots');
+const bookMobileContent = document.querySelector('.book-mobile-content ');
+const mobilePrev = document.querySelector('.book-mobile-nav.prev');
+const mobileNext = document.querySelector('.book-mobile-nav.next');
+const mobilePage = document.querySelector('.book-mobile-page');
+
+let currentMobile = 0;
+
+function initMobileDots() {
+  mobileDots.innerHTML = '';
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+    dot.addEventListener('click', () => goToMobileSlide(i));
+    mobileDots.appendChild(dot);
+  });
+}
+
+function renderMobile() {
+  const s = slides[currentMobile];
+  mobileChapitre.textContent = s.chapitre;
+  mobileTitle.textContent = s.title;
+  mobileTitle.classList.remove('orange', 'purple', 'blue');
+  if (s.color) mobileTitle.classList.add(s.color);
+  mobileImg.src = s.img;
+  mobileImg.alt = s.alt;
+  mobileText.textContent = s.text;
+
+  mobileDots.querySelectorAll('button').forEach((dot, i) => {
+    dot.setAttribute('aria-selected', i === currentMobile ? 'true' : 'false');
+  });
+}
+
+function animateMobile(direction, targetIndex = null) {
+  bookMobileContent.classList.add('fading-out');
+
+  setTimeout(() => {
+    if (targetIndex !== null) {
+      currentMobile = targetIndex;
+    } else if (direction === 'next') {
+      currentMobile = (currentMobile + 1) % slides.length;
+    } else {
+      currentMobile = (currentMobile - 1 + slides.length) % slides.length;
+    }
+
+    renderMobile();
+    bookMobileContent.classList.remove('fading-out');
+  }, 400);
+}
+
+function nextMobile() {
+  animateMobile('next');
+}
+
+function prevMobile() {
+  animateMobile('prev');
+}
+
+function goToMobileSlide(i) {
+  if (i === currentMobile) return;
+  animateMobile(null, i);
+}
+
+
+mobileNext.addEventListener('click', nextMobile);
+mobilePrev.addEventListener('click', prevMobile);
+
+// swipe sur mobile
+(function addSwipe() {
+  const el = document.querySelector('.book-mobile-container');
+  let startX = 0, startY = 0;
+  el.addEventListener('touchstart', e => {
+    const t = e.touches[0];
+    startX = t.clientX;
+    startY = t.clientY;
+  }, { passive: true });
+  el.addEventListener('touchend', e => {
+    const t = e.changedTouches[0];
+    const dx = t.clientX - startX;
+    const dy = t.clientY - startY;
+    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) nextMobile();
+      else prevMobile();
+    }
+  });
+})();
+
+initMobileDots();
+renderMobile();
