@@ -59,12 +59,11 @@
     background: #FFF;
     transform: rotateY(180deg);
     display: flex;
-    align-items: center;
     justify-content: center;
 }
 
 .back-content {
-    margin-top: -2rem;
+
     display: flex;
     flex-direction: column;
     gap: 1rem;
