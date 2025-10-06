@@ -568,13 +568,22 @@ body {
 }
 
 /* FAQ */
-.backgroundInterogation {
-    background-image: url(/src/svg/interogation.svg);
+.background-interogation {
     background-size: auto 80%;
     background-position: right center;
     background-position: right;
     background-color: #fff;
     background-repeat: no-repeat;
+}
+
+.background-interogation-blue {
+    background-image: url(/src/svg/interogation-blue.svg);
+}
+.background-interogation-purple {
+    background-image: url(/src/svg/interogation-purple.svg);
+}
+.background-interogation-orange {
+    background-image: url(/src/svg/interogation-orange.svg);
 }
 
 .wrapper-faq-container-info {
