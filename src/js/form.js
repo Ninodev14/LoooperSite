@@ -1,5 +1,5 @@
 const form = document.getElementById('contactForm');
-form.addEventListener('submit', function (e) {
+form.addEventListener('submit', function(e) {
     e.preventDefault();
     const data = new FormData(form);
 
@@ -10,6 +10,7 @@ form.addEventListener('submit', function (e) {
         })
         .catch(err => alert('Erreur : ' + err));
 });
+
 
 document.getElementById("objectif_autre_checkbox").addEventListener("change", function () {
     const input = document.getElementById("objectif_autre_text");
@@ -29,7 +30,7 @@ document.querySelectorAll('.contact .dropdown').forEach(dropdown => {
 
     toggle.addEventListener('click', (e) => {
         e.stopPropagation(); 
-        const isOpen = dropdown.classList.toggle('open');
+        const isOpen = dropdown.classList.toggle('  ');
         dropdown.closest('.contact').querySelectorAll('.dropdown').forEach(other => {
             if (other !== dropdown) other.classList.remove('open');
         });
