@@ -1,0 +1,48 @@
+.modal-container-img {
+    width: 50%;
+    height: 90%;
+}
+
+.modal-container-img img {
+    height: auto;
+    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.modal-container-project {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-container-project-info {
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.modal-container{
+    overflow-y: auto;
+}
+.modal .modal-container-project-info .btn-project {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 960px) {
+    .modal-container-img {
+        width: 80%;
+    }
+
+    .modal-container-project {
+        flex-direction: column;
+    }
+.modal-container-project-info {
+    width: 80%;
+}
+
+}
