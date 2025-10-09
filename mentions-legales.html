@@ -14,21 +14,45 @@
 <body>
     <header>
         <div class="menu-pc-container">
-            <div class="img-container-header"><a href="index.html"><img src="src/img/logoSMP.png"
-                        alt="logo simplifier de loooper" class="logo-bump"></a></div>
             <nav class="nav-pc">
-                <a href="index.html" class="header-typo-pc link-actif">Accueil</a>
-                <a href="formats.html" class="header-typo-pc">Nos formats</a>
-                <a href="equipe.html" class="header-typo-pc">Notre equipe</a>
-                <a href="realisations.html" class="header-typo-pc">Nos realisations</a>
-                <a href="blog.html" class="header-typo-pc">Notre blog</a>
-                <a href="projet.html" class="header-typo-pc btn-project">
-                    <span>J’ai un projet !</span>
-                    <img src="src/svg/arrowB.svg" alt="fleche">
-                </a>
+                <div class="nav-pc-container">
+                    <a href="index.html" class="header-typo-pc link-underline-fill">Accueil</a>
+                    <a href="formats.html" class="header-typo-pc  link-underline-fill">Nos
+                        formats</a>
+                    <div class="dropdown">
+                        <div class="dropdown-text-arrow">
+                            <a href="besoins.html" class="header-typo-pc link-underline-fill">Vos besoins</a>
+                            <div class="dropdown-arrow">
+                                <div class="line1"></div>
+                                <div class="line2"></div>
+                            </div>
+                        </div>
+                        <div class="dropdown-menu">
+                            <a class="header-typo-pc" href="apprendre-ludique.html">Apprendre avec le ludique</a>
+                            <a class="header-typo-pc" href="sensibiliser-reflechir.html">Sensibiliser et faire
+                                réfléchir</a>
+                            <a class="header-typo-pc" href="creer-interaction-sociale.html">Créer de l'interaction
+                                sociale</a>
+                            <a class="header-typo-pc" href="renforcer-cohesion.html">Renforcer la cohésion</a>
+                            <a class="header-typo-pc" href="engager-motiver.html">Engager et motiver</a>
+                            <a class="header-typo-pc" href="former-efficacement.html">Former efficacement</a>
+                            <a class="header-typo-pc" href="communiquer-autrement.html">Communiquer autrement</a>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="img-container-header"><a href="index.html"><img src="src/img/logo.png" alt="Logo de loooper"
+                            class="logo-jump"></a></div>
+                <div class="nav-pc-container-end">
+                    <a href="equipe.html" class="header-typo-pc link-underline-fill">Notre équipe</a>
+                    <a href="projets.html" class="header-typo-pc link-underline-fill">Nos projets</a>
+                    <a href="#contactForm" class="header-typo-pc btn-project">
+                        <span>J’ai un projet !</span>
+                        <img src="src/svg/arrowW.svg" alt="fleche">
+                    </a>
+                </div>
             </nav>
-            <div class="img-container-header"><a href="index.html"><img src="src/img/logo.png" alt="Logo de loooper"
-                        class="logo-jump"></a></div>
         </div>
         <div id="menu-centrage-toggle">
             <a href="index.html"><img class="logoHeaderPhone" src="src/img/logo.png" alt="Logo de loooper"></a>
@@ -41,32 +65,53 @@
 
         <nav>
             <div id="menu-tel">
+
                 <div class="menu-tel-nav">
-                    <a href="index.html" class="h3 link-actif">Accueil</a>
+                    <a href="index.html" class="h3">Accueil</a>
                     <a href="formats.html" class="h3">Nos formats</a>
+                    <div class="btn-slide-container">
+                        <a href="besoins.html" class="h3">Vos besoins</a>
+                        <button id="btn-slide"><img src="src/svg/arrowW.svg" alt="fleche"></button>
+                    </div>
                     <a href="equipe.html" class="h3">Notre equipe</a>
-                    <a href="realisations.html" class="h3">Nos realisations</a>
-                    <a href="blog.html" class="h3">Notre blog</a>
-                    <a href="projet.html" class="h3 btn-project">
+                    <a href="projets.html" class="h3">Nos projet</a>
+                    <a href="#contactForm" class="h3 btn-project" id="btn-close">
                         <span>J’ai un projet !</span>
                         <img src="src/svg/arrowW.svg" alt="fleche">
                     </a>
-                    <div class="img-container-header">
-                        <a href="index.html"><img src="src/img/logoSMP.png" alt="logo simplifier de loooper"
-                                class="logo-bump"></a>
+                    <div class="null-object"></div>
+                </div>
+
+                <div class="menu-tel-sub">
+                    <div class="menu-tel-sub-container">
+                        <button id="btn-back"><img src="src/svg/arrowW.svg" alt="fleche"></button>
+                        <a class="h3" href="apprendre-ludique.html">Apprendre avec le ludique</a>
+                        <a class="h3" href="sensibiliser-reflechir.html">Sensibiliser et faire réfléchir</a>
+                        <a class="h3" href="creer-interaction-sociale.html">Créer de l'interaction
+                            sociale</a>
+                        <a class="h3" href="renforcer-cohesion.html">Renforcer la cohésion</a>
+                        <a class="h3" href="engager-motiver.html">Engager et motiver</a>
+                        <a class="h3" href="former-efficacement.html">Former efficacement</a>
+                        <a class="h3" href="communiquer-autrement.html">Communiquer autrement</a>
+                        <div class="null-object"></div>
+                        <div class="null-object"></div>
                     </div>
                 </div>
             </div>
+
         </nav>
     </header>
     <main>
 
-        <section class="mainPageTitle">
-            <h1 class="h1 container-width white-border black">Mentions
-                <div class="paterneTitleContainer"><span class="paterneTitle">légales</span><span
-                        class="paterneTitleContour">légales</span></div>
-            </h1>
+        <section class="mainPageTitle mainPageTitleOrange">
+            <h1 class="h1 container-width white-border black">Mentions légales</h1>
         </section>
+        <div class="container-width ariane-net h3"><a href="index.html">Accueil </a>
+            <p class="h3">></p> <a href="mentions-legales.html" class="end-chield">Mentions légales</a>
+        </div>
+
+
+        <div class="large-spacing"></div>
 
         <div class="medium-spacing"></div>
 
@@ -186,13 +231,152 @@
 
     <div class="large-spacing"></div>
 
-    
+    <section class="contact container-width" id="contactForm">
+        <div class="contact-container">
+            <h2 class="h1 black white-border">Nous contacter</h2>
+            <div class="small-medium-spacing"></div>
+            <form name="contactformV2" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="contactformV2">
+
+                <fieldset class="form-group-container">
+                    <div class="form-group">
+                        <label class="text-typo" for="nom">Nom</label>
+                        <input class="" type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="prenom">Prénom</label>
+                        <input class="" type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="email">Email</label>
+                        <input class="" type="email" id="email" name="email" placeholder="Votre email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="telephone">Téléphone</label>
+                        <input class="" type="tel" id="telephone" name="telephone" placeholder="Votre téléphone"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="entreprise">Entreprise</label>
+                        <input class="" type="text" id="entreprise" name="entreprise" placeholder="Votre entreprise"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="text-typo" for="statut">Statut</label>
+                        <input class="" type="text" id="statut" name="statut" placeholder="Votre Statut" required>
+                    </div>
+                </fieldset>
+
+                <div class="form-group-container dropdown-toggle-container">
+                    <fieldset>
+                        <legend class="text-typo">Pourquoi souhaitez-vous créer ce projet ?</legend>
+                        <div class="dropdown">
+                            <div class="dropdown-arrow-container">
+                                <div class="dropdown-toggle">Aucun sélectionné</div>
+                                <div class="dropdown-arrow-contact">
+                                    <div class="line1"></div>
+                                    <div class="line2"></div>
+                                </div>
+                            </div>
+                            <div class="dropdown-content">
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="communication_interne">
+                                    Communication
+                                    interne</label>
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="communication_externe">
+                                    Communication
+                                    externe</label>
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="formation"> Formation</label>
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="pedagogie"> Pédagogie</label>
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="sensibilisation">
+                                    Sensibilisation</label>
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="team_building"> Team
+                                    building</label>
+                                <label class="text-typo black"><input type="checkbox" id="objectif_autre_checkbox">
+                                    Autre</label>
+                                <input type="text" id="objectif_autre_text" name="objectif_autre"
+                                    placeholder="Précisez..." style="display:none; margin-top:5px;">
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- DEUXIÈME MENU -->
+                    <fieldset>
+                        <legend class="text-typo">Quel format d’expérience imaginez-vous ?</legend>
+                        <div class="dropdown">
+                            <div class="dropdown-arrow-container">
+                                <div class="dropdown-toggle">Aucun sélectionné</div>
+                                <div class="dropdown-arrow-contact">
+                                    <div class="line1"></div>
+                                    <div class="line2"></div>
+                                </div>
+                            </div>
+                            <div class="dropdown-content">
+                                <label class="text-typo black"><input type="checkbox" name="format[]"
+                                        value="escape_game"> Escape game</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]"
+                                        value="geocaching"> Geocaching</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]"
+                                        value="histoire_interactive"> Histoire
+                                    interactive</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]"
+                                        value="jeu_societe"> Jeu de
+                                    société</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]" value="jeu_video">
+                                    Jeu vidéo</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]" value="quiz">
+                                    Quiz</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]" value="mini_jeu">
+                                    Mini-jeu sur site
+                                    web</label>
+                                <label class="text-typo black"><input type="checkbox" id="format_autre_checkbox">
+                                    Autre</label>
+                                <input type="text" id="format_autre_text" name="format_autre" placeholder="Précisez..."
+                                    style="display:none; margin-top:5px;">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <fieldset>
+                    <div class="form-group">
+                        <label class="text-typo" for="message">Message</label>
+                        <textarea class="" id="message" name="message" rows="6" placeholder="Votre message..."
+                            required></textarea>
+                    </div>
+                </fieldset>
+                <div class="small-spacing"></div>
+                <button type="submit" class="btn-submit h2 black ">Envoyer ma demande</button>
+            </form>
+
+            <!-- Animation  -->
+            <div id="animation" style="display:none;">
+                <div class="envelope">
+                    <div class="letter"> <img src="src/img/insta.png" alt=""></div>
+                </div>
+                <p>Merci ! Votre message a été envoyé.</p>
+            </div>
+
+        </div>
+    </section>
+
+
     <div class="medium-spacing"></div>
 
     <footer class="zoom-container">
         <div class="container-width footer-container">
-            <a href="index.html"><img src="src/img/logoSMP.png" alt="logo simplifier de loooper"
-                    class="logo-bump footerLogoImg"></a>
+            <a href="index.html" class="footerLogoImg"><img src="src/img/logoSMP.png" alt="logo simplifier de loooper"
+                    class="logo-bump"></a>
             <nav class="footer-nav">
                 <div class="footer-nav-row">
                     <a href="index.html" class="footerTitle">Accueil</a>
@@ -207,28 +391,29 @@
                     <a href="" class="text-typo">lorel ipsum</a>
                 </div>
                 <div class="footer-nav-row">
-                    <a href="equipe.html" class="footerTitle">Notre equipe</a>
+                    <a href="besoins.html" class="footerTitle">Vos besoins</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                 </div>
                 <div class="footer-nav-row">
-                    <a href="realisations.html" class="footerTitle">Nos realisations</a>
+                    <a href="equipe.html" class="footerTitle">Notre équipe</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                 </div>
                 <div class="footer-nav-row">
-                    <a href="blog.html" class="footerTitle">Notre blog</a>
+                    <a href="projets.html" class="footerTitle">Nos projets</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                     <a href="" class="text-typo">lorel ipsum</a>
                 </div>
+
             </nav>
             <div class="medium-spacing"></div>
-            <a href="projet.html" class="text-typo btn-project black">
+            <a href="projets.html" class="text-typo btn-project black">
                 <span>J’ai un projet !</span>
-                <img src="src/svg/arrowB.svg" alt="fleche">
+                <img src="src/svg/arrowW.svg" alt="fleche">
             </a>
             <div class="medium-spacing"></div>
             <div class="footer-bot-container">
@@ -239,7 +424,7 @@
                 </div>
                 <div class="footerLogo"><img src="src/img/logo.png" class="logo-jump" alt="Logo de loooper">
                 </div>
-                <a href="" class="text-typo">Mentions Legals</a>
+                <a href="mentions-legales.html" class="text-typo">Mentions Legals</a>
             </div>
 
             <div class="small-medium-spacing"></div>
@@ -250,6 +435,7 @@
     <script src="src/js/logoAnnim.js"></script>
     <script src="src/js/annimForm.js"></script>
     <script src="src/js/scrollAnnimWhiteContainer.js"></script>
+    <script src="src/js/form.js"></script>
     <script src="src/js/annimOnScroll.js"></script>
     <script src="src/js/responsiveHeader.js"></script>
 </body>

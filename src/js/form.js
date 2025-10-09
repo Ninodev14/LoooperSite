@@ -27,24 +27,20 @@ document.querySelectorAll('.contact .dropdown').forEach(dropdown => {
     const content = dropdown.querySelector('.dropdown-content');
     const checkboxes = content.querySelectorAll('input[type="checkbox"]');
 
-    // Ouvrir / fermer le menu
     toggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // évite de fermer immédiatement
+        e.stopPropagation(); 
         const isOpen = dropdown.classList.toggle('open');
-        // Fermer les autres menus de la même section contact
         dropdown.closest('.contact').querySelectorAll('.dropdown').forEach(other => {
             if (other !== dropdown) other.classList.remove('open');
         });
     });
 
-    // Fermer si clic à l’extérieur
     document.addEventListener('click', e => {
         if (!dropdown.contains(e.target)) {
             dropdown.classList.remove('open');
         }
     });
 
-    // Mettre à jour le texte du bouton
     const updateSummary = () => {
         const checkedCount = [...checkboxes].filter(c => c.checked).length;
         toggle.textContent = checkedCount > 0
@@ -56,10 +52,9 @@ document.querySelectorAll('.contact .dropdown').forEach(dropdown => {
         checkbox.addEventListener('change', updateSummary);
     });
 
-    updateSummary(); // Initialisation
+    updateSummary(); 
 });
 
-// Gestion des champs "Autre" uniquement dans .contact
 const contact = document.querySelector('.contact');
 if (contact) {
     const objectifAutre = contact.querySelector('#objectif_autre_checkbox');
