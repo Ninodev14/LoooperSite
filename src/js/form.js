@@ -30,7 +30,7 @@ document.querySelectorAll('.contact .dropdown').forEach(dropdown => {
 
     toggle.addEventListener('click', (e) => {
         e.stopPropagation(); 
-        const isOpen = dropdown.classList.toggle('  ');
+        const isOpen = dropdown.classList.toggle('open');
         dropdown.closest('.contact').querySelectorAll('.dropdown').forEach(other => {
             if (other !== dropdown) other.classList.remove('open');
         });
