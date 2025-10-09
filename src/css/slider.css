@@ -79,6 +79,7 @@ p.lead {
 
 .slide-caption h3 {
     width: fit-content;
+    padding: 10px;
 }
 
 /* --- Arrows --- */
@@ -97,6 +98,7 @@ p.lead {
     cursor: pointer;
 }
 
+
 /* --- Barres de la flèche --- */
 .barArrow {
     position: absolute;
@@ -105,12 +107,15 @@ p.lead {
     background-color: #fff;
     border-radius: 2px;
 }
+
 .barArrow1 {
     top: 20.5px;
 }
+
 .barArrow2 {
     bottom: 20.5px;
 }
+
 /* Flèche Next */
 .swiper-button-next .barArrow1 {
     transform: rotate(135deg);
@@ -131,7 +136,6 @@ p.lead {
 }
 
 
-
 .swiper-button-next::after,
 .swiper-button-prev::after {
     display: none;
@@ -143,13 +147,16 @@ p.lead {
 
 /* --- Dots --- */
 .swiper-pagination-bullet {
-    background: var(--fg);
-    opacity: .5;
+    background: #5D507C;
+    width: 12px;
+    height: 12px;
+    border-radius: 50px;
+    transition: background 0.3s;
 }
 
 .swiper-pagination-bullet-active {
-    background: var(--accent);
-    opacity: 1;
+    transform: scale(1.2);
+    background: #fff;
 }
 
 @media (min-width: 640px) {
@@ -167,12 +174,13 @@ p.lead {
     align-items: center;
     justify-content: center;
 }
-.swiper-pagination{
+
+.swiper-pagination {
     width: fit-content !important;
     position: static;
 }
 
-.swiper-btn-container{
+.swiper-btn-container {
     display: flex;
     align-items: center;
     gap: 40px;

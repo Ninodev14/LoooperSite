@@ -8,6 +8,21 @@ body {
     margin-left: 8vw;
 }
 
+.ariane-net {
+    display: flex;
+    gap: 5px;
+    color: #fff;
+}
+
+.ariane-net a {
+    color: #fff;
+}
+
+.ariane-net .end-chield {
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
+
 .mainPageTitle {
     background-repeat: repeat;
     background-position: bottom;
@@ -169,6 +184,12 @@ body {
     height: 100%;
     justify-content: space-between;
     padding: 20px;
+}
+
+.card-info-container-text-interogation {
+    background-color: #080808;
+    position: relative;
+    z-index: 0;
 }
 
 .card-info-container-text-alignement {
@@ -579,9 +600,11 @@ body {
 .background-interogation-blue {
     background-image: url(/src/svg/interogation-blue.svg);
 }
+
 .background-interogation-purple {
     background-image: url(/src/svg/interogation-purple.svg);
 }
+
 .background-interogation-orange {
     background-image: url(/src/svg/interogation-orange.svg);
 }
@@ -801,6 +824,13 @@ body {
 
 .btn-close:hover {
     transform: scale(1.15);
+}
+.aligne-btn-center{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-container {
@@ -1064,4 +1094,56 @@ textarea {
         margin-left: 0;
         padding: 2rem 1rem 2rem 1rem;
     }
+}
+
+/* Mini Card */
+
+
+.mini-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: calc(4 * 14rem + 3 * 3rem);
+}
+
+.mini-card,
+.revers-mini-card {
+    display: flex;
+    flex: 0 0 14rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    border: 4px solid #000;
+    background: #FFF;
+    width: 14rem;
+    height: 14rem;
+    padding: 1rem;
+    aspect-ratio: 1;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.revers-mini-card {
+    flex-direction: column-reverse;
+
+}
+
+.mini-card img,
+.revers-mini-card img {
+    width: 50%;
+}
+
+.mini-card-orange {
+    box-shadow: 0 12px 0 0 #F6B254;
+}
+
+.mini-card-purple {
+    box-shadow: 0 12px 0 0 #BB6EF6;
+}
+
+.mini-card-blue {
+    box-shadow: 0 12px 0 0 #3C61F5;
 }

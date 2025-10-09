@@ -153,6 +153,23 @@ header p {
     3px -3px #fff, -3px 3px #fff;
 }
 
+.white-border-small {
+  text-shadow:
+    0.5px 0 #fff, -0.5px 0 #fff,
+    0 0.5px #fff, 0 -0.5px #fff,
+    0.5px 0.5px #fff, -0.5px -0.5px #fff,
+    0.5px -0.5px #fff, -0.5px 0.5px #fff,
+    1px 0 #fff, -1px 0 #fff,
+    0 1px #fff, 0 -1px #fff,
+    1px 1px #fff, -1px -1px #fff,
+    1px -1px #fff, -1px 1px #fff,
+    1.5px 0 #fff, -1.5px 0 #fff,
+    0 1.5px #fff, 0 -1.5px #fff,
+    1.5px 1.5px #fff, -1.5px -1.5px #fff,
+    1.5px -1.5px #fff, -1.5px 1.5px #fff;
+}
+
+
 b {
   font-weight: bold;
 }
