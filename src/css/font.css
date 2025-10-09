@@ -50,11 +50,14 @@ p,
 }
 
 input,
-textarea {
+textarea,.dropdown-toggle {
   font-family: Poppins;
   font-size: 0.85rem;
   font-style: normal;
   font-weight: 100;
+}
+.dropdown-toggle-container .dropdown-toggle {
+ color: #8D8D8D;
 }
 
 .header-typo-pc {

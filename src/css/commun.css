@@ -825,7 +825,8 @@ body {
 .btn-close:hover {
     transform: scale(1.15);
 }
-.aligne-btn-center{
+
+.aligne-btn-center {
     width: 100%;
     height: fit-content;
     display: flex;
@@ -908,11 +909,6 @@ body {
     max-width: 60rem;
 }
 
-form fieldset {
-    border: none;
-    margin-bottom: 15px;
-    padding: 0;
-}
 
 .form-group-container {
     display: grid;
@@ -934,7 +930,8 @@ form fieldset {
     text-align: left;
 }
 
-.form-group label {
+.form-group label,
+.contact legend {
     font-size: 0.9rem;
     margin-bottom: 4px;
 }
@@ -960,6 +957,7 @@ textarea {
 .dropdown-toggle {
     padding: 8px 12px;
     cursor: pointer;
+
 }
 
 .dropdown-menu {
@@ -981,6 +979,128 @@ textarea {
     display: block;
     margin-bottom: 5px;
 }
+
+.contact .dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+}
+
+/* Bouton d'ouverture */
+.contact .dropdown summary,
+.contact .dropdown .dropdown-toggle {
+    background: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+
+    cursor: pointer;
+    list-style: none;
+
+    user-select: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Icône flèche */
+.contact .dropdown .dropdown-toggle::after {
+    content: "▼";
+    font-size: 0.8em;
+    transition: transform 0.3s;
+}
+
+.contact .dropdown.open .dropdown-toggle::after {
+    transform: rotate(180deg);
+}
+
+/* Contenu du menu déroulant */
+.contact .dropdown .dropdown-content {
+    position: absolute;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    z-index: 1;
+}
+
+.contact .dropdown.open .dropdown-content {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.contact .dropdown label {
+    display: block;
+    margin: 5px 0;
+}
+
+.dropdown-toggle-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+.dropdown-toggle-container fieldset legend {
+    text-align: left;
+}
+
+#objectif_autre_text, #format_autre_text{
+    width: 100%;
+}
+
+.dropdown-content input[type="checkbox"] {
+    appearance: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 22px;
+    height: 22px;
+    border: 2px solid #555;
+    border-radius: 6px;
+    background-color: transparent;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-right: 8px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.dropdown-content input[type="checkbox"]:hover {
+    border-color: #333;
+    transform: scale(1.05);
+}
+
+.dropdown-content input[type="checkbox"]:checked {
+    background-color: #555;
+    border-color: #555;
+}
+
+.dropdown-content input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    top: 2px;
+    left: 7px;
+    transform: rotate(45deg) scale(0);
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
 
 
 @media screen and (max-width: 960px) {
@@ -1150,22 +1270,19 @@ textarea {
 
 .mini-card,
 .revers-mini-card {
-  transition: transform 2.2s cubic-bezier(0.25, 1.5, 0.5, 1);
-  will-change: transform;
+    transition: transform 2.2s cubic-bezier(0.25, 1.5, 0.5, 1);
+    will-change: transform;
 }
 
 /* état initial : en bazar */
 .mini-card-container.mix-active .mini-card,
 .mini-card-container.mix-active .revers-mini-card {
-  transform: translate(
-      calc(var(--random-x) * 1px),
-      calc(var(--random-y) * 1px)
-    )
-    rotate(calc(var(--random-rot) * 1deg));
+    transform: translate(calc(var(--random-x) * 1px),
+            calc(var(--random-y) * 1px)) rotate(calc(var(--random-rot) * 1deg));
 }
 
 /* état final : bien rangé */
 .mini-card-container .mini-card,
 .mini-card-container .revers-mini-card {
-  transform: none;
+    transform: none;
 }

@@ -288,23 +288,20 @@
                 document.addEventListener("DOMContentLoaded", () => {
                     const container = document.querySelector(".mini-card-container");
                     const cards = container.querySelectorAll(".mini-card, .revers-mini-card");
-
-                    // 1️⃣ Dès le chargement, on place les cartes en désordre
                     container.classList.add("mix-active");
                     cards.forEach(card => {
-                        const randomX = (Math.random() - 0.5) * 600; // ±300px
-                        const randomY = (Math.random() - 0.5) * 600; // ±300px
-                        const randomRot = (Math.random() - 0.5) * 200; // ±100°
+                        const randomX = (Math.random() - 0.5) * 600;
+                        const randomY = (Math.random() - 0.5) * 600;
+                        const randomRot = (Math.random() - 0.5) * 200;
                         card.style.setProperty("--random-x", randomX);
                         card.style.setProperty("--random-y", randomY);
                         card.style.setProperty("--random-rot", randomRot);
                     });
 
-                    // 2️⃣ Quand on scrolle jusqu'au conteneur, elles se "rangent"
                     const observer = new IntersectionObserver((entries) => {
                         if (entries[0].isIntersecting) {
                             container.classList.remove("mix-active");
-                            observer.unobserve(container); // ne rejoue pas
+                            observer.unobserve(container);
                         }
                     }, { threshold: 0.3 });
 
@@ -488,49 +485,69 @@
                     </div>
                 </fieldset>
 
-                <!-- Cases à cocher : Pourquoi souhaitez-vous créer ce projet ? -->
-                <fieldset>
-                    <legend class="text-typo">Pourquoi souhaitez-vous créer ce projet ?</legend>
-                    <div class="form-group">
-                        <label><input type="checkbox" name="objectif[]" value="communication_interne"> Communication
-                            interne</label><br>
-                        <label><input type="checkbox" name="objectif[]" value="communication_externe"> Communication
-                            externe</label><br>
-                        <label><input type="checkbox" name="objectif[]" value="formation"> Formation</label><br>
-                        <label><input type="checkbox" name="objectif[]" value="pedagogie"> Pédagogie</label><br>
-                        <label><input type="checkbox" name="objectif[]" value="sensibilisation">
-                            Sensibilisation</label><br>
-                        <label><input type="checkbox" name="objectif[]" value="team_building"> Team building</label><br>
-                        <label>
-                            <input type="checkbox" id="objectif_autre_checkbox"> Autre
-                        </label>
-                        <input type="text" id="objectif_autre_text" name="objectif_autre" placeholder="Précisez..."
-                            style="display:none; margin-top:5px;">
-                    </div>
-                </fieldset>
+                <div class="form-group-container dropdown-toggle-container">
+                    <fieldset>
+                        <legend class="text-typo">Pourquoi souhaitez-vous créer ce projet ?</legend>
+                        <div class="dropdown">
+                            <div class="dropdown-toggle">Aucun sélectionné</div>
+                            <div class="dropdown-content">
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="communication_interne">
+                                    Communication
+                                    interne</label>
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="communication_externe">
+                                    Communication
+                                    externe</label>
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="formation"> Formation</label>
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="pedagogie"> Pédagogie</label>
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="sensibilisation">
+                                    Sensibilisation</label>
+                                <label class="text-typo black"><input type="checkbox" name="objectif[]"
+                                        value="team_building"> Team
+                                    building</label>
+                                <label class="text-typo black"><input type="checkbox" id="objectif_autre_checkbox">
+                                    Autre</label>
+                                <input type="text" id="objectif_autre_text" name="objectif_autre"
+                                    placeholder="Précisez..." style="display:none; margin-top:5px;">
+                            </div>
+                        </div>
+                    </fieldset>
 
-                <!-- Cases à cocher : Quel format d’expérience imaginez-vous ? -->
-                <fieldset>
-                    <legend class="text-typo">Quel format d’expérience imaginez-vous ?</legend>
-                    <div class="form-group">
-                        <label><input type="checkbox" name="format[]" value="escape_game"> Escape game</label><br>
-                        <label><input type="checkbox" name="format[]" value="geocaching"> Geocaching</label><br>
-                        <label><input type="checkbox" name="format[]" value="histoire_interactive"> Histoire
-                            interactive</label><br>
-                        <label><input type="checkbox" name="format[]" value="jeu_societe"> Jeu de société</label><br>
-                        <label><input type="checkbox" name="format[]" value="jeu_video"> Jeu vidéo</label><br>
-                        <label><input type="checkbox" name="format[]" value="quiz"> quiz</label><br>
-                        <label><input type="checkbox" name="format[]" value="mini_jeu"> Mini-jeu sur site
-                            web</label><br>
-                        <label>
-                            <input type="checkbox" id="format_autre_checkbox"> Autre
-                        </label>
-                        <input type="text" id="format_autre_text" name="format_autre" placeholder="Précisez..."
-                            style="display:none; margin-top:5px;">
-                    </div>
-                </fieldset>
-
-                <!-- Cases à cocher : Quel format d’expérience imaginez-vous ? -->
+                    <!-- DEUXIÈME MENU -->
+                    <fieldset>
+                        <legend class="text-typo">Quel format d’expérience imaginez-vous ?</legend>
+                        <div class="dropdown">
+                            <div class="dropdown-toggle">Aucun sélectionné</div>
+                            <div class="dropdown-content">
+                                <label class="text-typo black"><input type="checkbox" name="format[]"
+                                        value="escape_game"> Escape game</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]"
+                                        value="geocaching"> Geocaching</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]"
+                                        value="histoire_interactive"> Histoire
+                                    interactive</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]"
+                                        value="jeu_societe"> Jeu de
+                                    société</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]" value="jeu_video">
+                                    Jeu vidéo</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]" value="quiz">
+                                    Quiz</label>
+                                <label class="text-typo black"><input type="checkbox" name="format[]" value="mini_jeu">
+                                    Mini-jeu sur site
+                                    web</label>
+                                <label class="text-typo black"><input type="checkbox" id="format_autre_checkbox">
+                                    Autre</label>
+                                <input type="text" id="format_autre_text" name="format_autre" placeholder="Précisez..."
+                                    style="display:none; margin-top:5px;">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
 
                 <fieldset>
                     <div class="form-group">
@@ -539,7 +556,7 @@
                             required></textarea>
                     </div>
                 </fieldset>
-
+                <div class="small-spacing"></div>
                 <button type="submit" class="btn-submit h2 black ">Envoyer ma demande</button>
             </form>
 
