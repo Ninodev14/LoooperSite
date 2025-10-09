@@ -1147,3 +1147,25 @@ textarea {
 .mini-card-blue {
     box-shadow: 0 12px 0 0 #3C61F5;
 }
+
+.mini-card,
+.revers-mini-card {
+  transition: transform 2.2s cubic-bezier(0.25, 1.5, 0.5, 1);
+  will-change: transform;
+}
+
+/* état initial : en bazar */
+.mini-card-container.mix-active .mini-card,
+.mini-card-container.mix-active .revers-mini-card {
+  transform: translate(
+      calc(var(--random-x) * 1px),
+      calc(var(--random-y) * 1px)
+    )
+    rotate(calc(var(--random-rot) * 1deg));
+}
+
+/* état final : bien rangé */
+.mini-card-container .mini-card,
+.mini-card-container .revers-mini-card {
+  transform: none;
+}

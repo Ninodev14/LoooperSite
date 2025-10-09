@@ -284,6 +284,35 @@
                     <img src="src/svg/pictoMiniCard/bullTalking.svg" alt="Image representant des bulle de texte">
                 </article>
             </div>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const container = document.querySelector(".mini-card-container");
+                    const cards = container.querySelectorAll(".mini-card, .revers-mini-card");
+
+                    // 1️⃣ Dès le chargement, on place les cartes en désordre
+                    container.classList.add("mix-active");
+                    cards.forEach(card => {
+                        const randomX = (Math.random() - 0.5) * 600; // ±300px
+                        const randomY = (Math.random() - 0.5) * 600; // ±300px
+                        const randomRot = (Math.random() - 0.5) * 200; // ±100°
+                        card.style.setProperty("--random-x", randomX);
+                        card.style.setProperty("--random-y", randomY);
+                        card.style.setProperty("--random-rot", randomRot);
+                    });
+
+                    // 2️⃣ Quand on scrolle jusqu'au conteneur, elles se "rangent"
+                    const observer = new IntersectionObserver((entries) => {
+                        if (entries[0].isIntersecting) {
+                            container.classList.remove("mix-active");
+                            observer.unobserve(container); // ne rejoue pas
+                        }
+                    }, { threshold: 0.3 });
+
+                    observer.observe(container);
+                });
+
+
+            </script>
 
             <div class="small-medium-spacing"></div>
 
