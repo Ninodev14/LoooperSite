@@ -25,24 +25,52 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.modal-container{
-    overflow-y: auto;
-}
+
 .modal .modal-container-project-info .btn-project {
     margin-top: 0px;
     margin-bottom: 10px;
 }
 
+.modal {
+    overflow-y: auto;
+}
+
 @media screen and (max-width: 960px) {
     .modal-container-img {
         width: 80%;
+        height: fit-content;
     }
 
     .modal-container-project {
         flex-direction: column;
+        gap: 2rem;
+        justify-content: start;
+        height: fit-content;
     }
-.modal-container-project-info {
-    width: 80%;
-}
 
+    .modal-container-project-info {
+        width: 80%;
+        height: fit-content;
+        gap: 2rem;
+    }
+
+    .modal {
+        justify-content: start;
+    }
+
+    .btn-close {
+        scale: 0.8;
+    }
+
+    .modal-header {
+        width: 90vw;
+    }
+
+    .modal-container {
+        margin-bottom: 26px;
+    }
+
+    .modal-orange {
+        box-shadow: 0 12px 0 0 #F6B254;
+    }
 }

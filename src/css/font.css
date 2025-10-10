@@ -1,7 +1,7 @@
 .h1 {
   color: white;
   font-family: "Titan One";
-  font-size: 4rem;
+  font-size: 2.25rem;
   font-style: normal;
   font-weight: 100;
   line-height: normal;
@@ -10,7 +10,7 @@
 .h2 {
   color: white;
   font-family: "Titan One";
-  font-size: 2rem;
+  font-size: 1.50rem;
   font-style: normal;
   font-weight: 100;
   line-height: normal;
@@ -50,14 +50,16 @@ p,
 }
 
 input,
-textarea,.dropdown-toggle {
+textarea,
+.dropdown-toggle {
   font-family: Poppins;
   font-size: 0.85rem;
   font-style: normal;
   font-weight: 100;
 }
+
 .dropdown-toggle-container .dropdown-toggle {
- color: #8D8D8D;
+  color: #8D8D8D;
 }
 
 .header-typo-pc {
@@ -134,7 +136,7 @@ header p {
   background-image: url(/src/svg/purplePaternFull.svg);
 }
 
-.uderline{
+.uderline {
   text-decoration-line: underline;
 }
 
@@ -179,6 +181,13 @@ b {
 
 html {
   font-size: 13px;
+}
+
+
+@media(max-width: 768px) {
+  .modal .highlight-no-annim::before {
+    display: none;
+  }
 }
 
 /* Tablette ≥ 768px */
