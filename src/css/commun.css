@@ -32,10 +32,10 @@ body {
 }
 
 .intro-paragraphe-container-no-annim {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
@@ -599,11 +599,45 @@ body {
 /* FAQ */
 .background-interogation {
     background-size: auto 80%;
-    background-position: right center;
     background-position: right;
     background-color: #fff;
     background-repeat: no-repeat;
 }
+
+.background-guillemet {
+    position: relative;
+}
+
+.background-guillemet::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 2%;
+    width: 100%;
+    height: 100%;
+    background-size: auto 30%;
+    background-position: top left;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(/src/svg/guillemet.svg);
+    pointer-events: none;
+}
+
+.background-guillemet::before {
+    content: "";
+    position: absolute;
+    bottom: 5%;
+    right: 2%;
+    width: 100%;
+    height: 100%;
+    background-size: auto 30%;
+    background-position: bottom right;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(/src/svg/guillemet.svg);
+    pointer-events: none;
+}
+
 
 .background-interogation-blue {
     background-image: url(/src/svg/interogation-blue.svg);
@@ -705,7 +739,23 @@ body {
 .faq-container-info p {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.3s ease;
+    transition: 0.3s ease;
+    opacity: 0;
+    margin: 0;
+}
+
+.faq-container-info a {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
+    opacity: 0;
+    margin: 0;
+}
+
+.faq-container-info .faq-text-espacement {
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s ease;
     opacity: 0;
     margin: 0;
 }
@@ -714,6 +764,22 @@ body {
     max-height: 500px;
     opacity: 1;
     margin-top: 8px;
+}
+
+.faq-container-info.active a {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 8px;
+}
+
+.faq-container-info.active .faq-text-espacement {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 8px;
+}
+
+.faq-container-info .btn-project {
+    margin-bottom: 20px;
 }
 
 @media screen and (max-width: 650px) {
@@ -897,10 +963,11 @@ body {
     .modal-container {
         height: fit-content;
     }
+
     .modal .btn-project {
-    margin-top: 0px;
-    margin-bottom: 40px;
-}
+        margin-top: 0px;
+        margin-bottom: 40px;
+    }
 }
 
 
