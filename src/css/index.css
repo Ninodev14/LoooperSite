@@ -120,6 +120,9 @@
   gap: 7vw 5vw;
 }
 
+.intro-paragraphe .h2, .intro-paragraphe .h3{
+  line-height: 20px;
+}
 
 .memory-game-container {
   display: flex;
