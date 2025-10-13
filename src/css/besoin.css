@@ -17,16 +17,22 @@
 
 .mini-card-info-besoin::after {
     content: "";
-    background-image: url("/src/svg/book/ampoule.svg");
+    background-image: url("/src/svg/pictoMiniCard/contour/bullTalking.png");
     background-size: contain;
     background-repeat: no-repeat;
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     position: absolute;
     z-index: 1;
     top: -3rem;
-    left: 0;
+    left: 1rem;
 }
+
+.apprendre::after {
+    background-image: url("/src/svg/pictoMiniCard/contour/idea.png");
+}
+
+.mini-card-info-besoin::after {}
 
 
 .mini-card-info-besoin-orange {
