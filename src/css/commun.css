@@ -96,8 +96,8 @@ body {
 
 .backgroundBrushType1 {
     position: relative;
-    /* nécessaire pour contenir le pseudo-élément */
-    z-index: 0;
+
+    z-index: -1;
 }
 
 .backgroundBrushType1::before {
@@ -111,7 +111,7 @@ body {
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
-    z-index: -1;
+    z-index: -100;
 }
 
 .mentions-legales-text-container {
