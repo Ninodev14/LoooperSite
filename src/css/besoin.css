@@ -40,14 +40,14 @@
 }
 
 .cree:after {
-        top: -3.4rem;
+    top: -3.4rem;
     width: 5.4rem;
     height: 5.4rem;
     background-image: url("/src/svg/pictoMiniCard/contour/connection.png");
 }
 
 .former:after {
-        top: -3.1rem;
+    top: -3.1rem;
     width: 5.4rem;
     height: 5.4rem;
     background-image: url("/src/svg/pictoMiniCard/contour/teach.png");
@@ -58,7 +58,7 @@
 }
 
 .engager:after {
-        top: -3.4rem;
+    top: -3.4rem;
     width: 5.4rem;
     height: 5.4rem;
     background-image: url("/src/svg/pictoMiniCard/contour/starPodium.png");
@@ -105,5 +105,88 @@
 
         height: 14rem;
 
+    }
+}
+
+.emojie-img-line-container-besoin-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.emojie-img-line-besoin-child {
+    width: 60%;
+    height: auto;
+    animation: float 6s ease-in-out infinite;
+    display: inline-block;
+}
+
+.star,
+.star2 {
+    width: 14%;
+    height: auto;
+    display: flex;
+}
+
+.star img,
+.star2 img {
+    width: 100%;
+    height: auto;
+
+}
+
+.star {
+    align-items: flex-end;
+
+
+}
+
+.star2 {
+    align-items: flex-start;
+}
+
+
+
+.emojie-img-line-container-besoin-child img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.emojie-img-line-container-besoin-child img:nth-child(2) {
+    animation-delay: 1.2s;
+}
+
+.emojie-img-line-container-besoin-child img:nth-child(3) {
+    animation-delay: 1.9s;
+}
+
+.backgroundBrushType2 {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.backgroundBrushType2::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0px;
+    right: 0px;
+    bottom: -100%;
+    background-image: url(/src/svg/backgroundType2.svg);
+    background-size: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+}
+
+@media screen and (max-width: 960px) {
+
+
+    .backgroundBrushType2::before {
+        top: 0%;
+        bottom: 0%;
+        background-size: cover;
     }
 }

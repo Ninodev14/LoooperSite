@@ -225,6 +225,14 @@ html {
   html {
     font-size: 17px;
   }
+    .h1 {
+    font-size: 5rem;
+  }
+
+  .h2 {
+    font-size: 2rem;
+  }
+
 }
 
 /* Ultra large ≥ 1900px */
@@ -241,7 +249,4 @@ html {
     font-size: 2rem;
   }
 
-  body {
-    background-color: black
-  }
 }
