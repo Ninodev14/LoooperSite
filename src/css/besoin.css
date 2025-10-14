@@ -29,20 +29,63 @@
 }
 
 .apprendre::after {
+    top: -3.4rem;
+    width: 5.4rem;
+    height: 5.4rem;
     background-image: url("/src/svg/pictoMiniCard/contour/idea.png");
 }
 
-.mini-card-info-besoin::after {}
+.sensibiliser:after {
+    background-image: url("/src/svg/pictoMiniCard/contour/annonce.png");
+}
+
+.cree:after {
+        top: -3.4rem;
+    width: 5.4rem;
+    height: 5.4rem;
+    background-image: url("/src/svg/pictoMiniCard/contour/connection.png");
+}
+
+.former:after {
+        top: -3.1rem;
+    width: 5.4rem;
+    height: 5.4rem;
+    background-image: url("/src/svg/pictoMiniCard/contour/teach.png");
+}
+
+.renforcer:after {
+    background-image: url("/src/svg/pictoMiniCard/contour/table.png");
+}
+
+.engager:after {
+        top: -3.4rem;
+    width: 5.4rem;
+    height: 5.4rem;
+    background-image: url("/src/svg/pictoMiniCard/contour/starPodium.png");
+}
+
+.communiquer:after {
+    background-image: url("/src/svg/pictoMiniCard/contour/bullTalking.png");
+}
+
 
 
 .mini-card-info-besoin-orange {
     box-shadow: 0 12px 0 0 #F6B254;
 }
 
+.mini-card-info-besoin-purple {
+    box-shadow: 0 12px 0 0 #BB6EF6;
+}
+
+.mini-card-info-besoin-blue {
+    box-shadow: 0 12px 0 0 #3C61F5;
+}
+
 .mini-card-besoin-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 4rem 2rem;
+    gap: 5rem 2rem;
     justify-content: center;
     margin: 0 auto;
     max-width: calc(4 * 17rem + 3 * 3rem);
