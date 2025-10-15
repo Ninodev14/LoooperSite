@@ -37,7 +37,8 @@
                                 sociale</a>
                             <a class="header-typo-pc" href="renforcer-cohesion.html">Renforcer la cohésion</a>
                             <a class="header-typo-pc" href="engager-motiver.html">Engager et motiver</a>
-                            <a class="header-typo-pc link-underline" href="former-efficacement.html">Former efficacement</a>
+                            <a class="header-typo-pc link-underline" href="former-efficacement.html">Former
+                                efficacement</a>
                             <a class="header-typo-pc" href="communiquer-autrement.html">Communiquer autrement</a>
 
                         </div>
@@ -171,9 +172,10 @@
                             <p class="black">Testez et renforcez les connaissances sur une thématique précise. En solo
                                 ou en groupe, en coopération ou en compétition, le quiz transforme l’apprentissage en un
                                 défi motivant et stimulant.</p>
-                            <a href="#" class="text-typo btn-project btn-white-background">
-                                <span>En savoir plus</span>
-                            </a>
+                            <button data-modal="modal-quiz" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-white-background"
+                                aria-label="En savoir plus sur le quiz">
+                                <span>En savoir plus</span> </button>
                         </div>
                     </article>
 
@@ -188,9 +190,10 @@
                             <p class="black">Plongez dans un univers virtuel où chaque mécanique ludique a un objectif
                                 pédagogique clair. Ce format immersif permet d’apprendre différemment et de retenir en
                                 expérimentant</p>
-                            <a href="#" class="text-typo btn-project btn-white-background">
-                                <span>En savoir plus</span>
-                            </a>
+                            <button data-modal="modal-jeu-video" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-white-background"
+                                aria-label="En savoir plus sur les jeux video">
+                                <span>En savoir plus</span> </button>
                         </div>
                     </article>
 
@@ -205,9 +208,10 @@
                             <p class="black">Encouragez la réflexion, la discussion et l’apprentissage collectif dans
                                 une atmosphère conviviale et engageante
                             </p>
-                            <a href="#" class="text-typo btn-project btn-white-background">
-                                <span>En savoir plus</span>
-                            </a>
+                            <button data-modal="modal-jeu-societe" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-white-background"
+                                aria-label="En savoir plus sur les Jeu de société">
+                                <span>En savoir plus</span> </button>
                         </div>
                     </article>
                 </div>
@@ -299,6 +303,183 @@
                     </div>
                 </section>
             </div>
+        </div>
+
+        <div id="modal-jeu-societe" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-jeu-societe-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Jeu de société</span><span class="paterneTitleContour">Jeu
+                            de société</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+
+            <div class="modal-container modal-purple">
+
+                <h3 id="modal-histoire-interactive" class="h2 black sub-title-modal">À vous de <span
+                        class="highlight-no-annim purple">
+                        <div class="paterneTitleContainer"><span>jouer !</span><span class="paterneTitleContour">jouer
+                                !</span></div>
+                    </span></h3>
+                <div class="modal-container-text">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">C’est quoi ?</h4>
+                        <p class="black">Un jeu de société, c’est un format physique avec des cartes, plateau ou pions,
+                            pensé pour créer un moment convivial et engageant autour d’une table.</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Pourquoi ?</h4>
+                        <p class="black">Ce format capte l’attention, stimule les échanges et permet d’aborder un sujet
+                            de manière ludique. Parfait pour apprendre, sensibiliser ou renforcer la cohésion dans un
+                            cadre accessible et fun.</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="modal-container-info">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Support</h4>
+                        <p class="black">Physique</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Durée</h4>
+                        <p class="black">15 minutes à 1 heure</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Nombre de participants</h4>
+                        <p class="black">2 à 8 personne par jeu</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#contactForm" class="text-typo  btn-project">
+                <span>Je crée mon jeu de société</span>
+                <img src="src/svg/arrowW.svg" alt="fleche">
+            </a>
+        </div>
+
+
+        <div id="modal-quiz" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-quiz-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>quiz</span><span class="paterneTitleContour">quiz</span>
+                    </div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+
+
+            <div class="modal-container modal-purple">
+
+                <h3 id="modal-quiz" class="h2 black sub-title-modal">Qui remportera <span
+                        class="highlight-no-annim purple">
+                        <div class="paterneTitleContainer"><span>la manche ?</span><span class="paterneTitleContour">la
+                                manche ?</span></div>
+                    </span></h3>
+                <div class="modal-container-text">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">C’est quoi ?</h4>
+                        <p class="black">Le quiz, c’est le jeu universel pour tester ses connaissances en s’amusant.
+                            Défiez-vous autour d’une série de questions personnalisées sur le sujet de votre choix.
+                            Scores, défis, classements… les mécaniques s’adaptent pour captiver et faire vibrer votre
+                            public.</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Pourquoi ?</h4>
+                        <p class="black">Plus qu’un simple jeu, le quiz est une activité fédératrice : il renforce la
+                            complicité des participants, encourage la réflexion et permet d’apprendre différemment. Un
+                            outil parfait pour créer du lien, transmettre vos messages et valoriser vos contenus.</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="modal-container-info">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Support</h4>
+                        <p class="black">100 % numérique, ou hybride avec participants en présentiel</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Durée</h4>
+                        <p class="black">10 à 30 minutes</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Nombre de participants</h4>
+                        <p class="black">Illimité en digital, 5 à 50 en présentiel.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#contactForm" class="text-typo  btn-project">
+                <span>Je lance mon quiz</span>
+                <img src="src/svg/arrowW.svg" alt="fleche">
+            </a>
+        </div>
+
+        <div id="modal-jeu-video" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-jeu-video-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Jeu vidéo</span><span class="paterneTitleContour">Jeu
+                            vidéo</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div class="modal-container modal-orange">
+
+                <h3 id="modal-jeu-video-title" class="h2 black sub-title-modal">Et si votre idée devenait <span
+                        class="highlight-no-annim orange">
+                        <div class="paterneTitleContainer"><span>un monde à explorer ?</span><span
+                                class="paterneTitleContour">un monde à explorer ?</span></div>
+                    </span></h3>
+                <div class="modal-container-text">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">C’est quoi ?</h4>
+                        <p class="black">Le jeu vidéo, c’est une aventure interactive qui prend vie sur ordinateur,
+                            console
+                            ou
+                            mobile. Avec ses
+                            graphismes et ses mécaniques, ce format crée une expérience captivante et inoubliable.</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Pourquoi ?</h4>
+                        <p class="black">Idéal pour apprendre, sensibiliser ou faire découvrir autrement, le jeu vidéo
+                            plonge
+                            vos
+                            participants
+                            dans un univers unique sur mesure qui met  en avant vos contenus et vos valeurs. 100 %
+                            numérique, il
+                            peut toucher un large public et intégrer des mécaniques pédagogiques.
+                            Numérique pur et peut être accompagné d’un kit pédagogique physique</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="modal-container-info">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Support</h4>
+                        <p class="black">Numérique pur et peut être accompagné d’un kit pédagogique physique</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Durée</h4>
+                        <p class="black">De 10 min à 1h</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Nombre de participants</h4>
+                        <p class="black">Jeu individuel ou multijoueur</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#contactForm" class="text-typo  btn-project">
+                <span>Je transforme mon idée en jeu</span>
+                <img src="src/svg/arrowW.svg" alt="fleche">
+            </a>
         </div>
     </main>
 
@@ -504,6 +685,7 @@
         </div>
     </footer>
 
+    <script src="src/js/modal.js"></script>
     <script src="src/js/logoAnnim.js"></script>
     <script src="src/js/faq.js"></script>
     <script src="src/js/annimForm.js"></script>

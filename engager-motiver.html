@@ -172,9 +172,10 @@
                             </div>
                             <p class="black">Dynamisez un site web, une application ou un support de communication. Le
                                 mini-jeu ludique capte l’attention, crée une affection et génère de l’amusement.</p>
-                            <a href="#" class="text-typo btn-project btn-white-background">
-                                <span>En savoir plus</span>
-                            </a>
+                            <button data-modal="modal-mini-jeu" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-white-background"
+                                aria-label="En savoir plus sur les Mini-jeu">
+                                <span>En savoir plus</span> </button>
                         </div>
                     </article>
 
@@ -189,9 +190,10 @@
                             <p class="black">Plongez vos publics dans un univers narratif immersif. Les choix qu’ils
                                 effectuent créent une expérience mémorable et favorisent un fort attachement émotionnel.
                             </p>
-                            <a href="#" class="text-typo btn-project btn-white-background">
-                                <span>En savoir plus</span>
-                            </a>
+                            <button data-modal="modal-histoire-interactive" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-white-background"
+                                aria-label="En savoir plus sur les Histoire interactive">
+                                <span>En savoir plus</span> </button>
                         </div>
                     </article>
 
@@ -207,9 +209,10 @@
                                 d’énigmes. Ce format suscite curiosité et engagement, parfait pour animer une communauté
                                 ou un événement.
                             </p>
-                            <a href="#" class="text-typo btn-project btn-white-background">
-                                <span>En savoir plus</span>
-                            </a>
+                            <button data-modal="modal-geocaching" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-white-background"
+                                aria-label="En savoir plus sur le Géocaching">
+                                <span>En savoir plus</span> </button>
                         </div>
                     </article>
                 </div>
@@ -270,6 +273,173 @@
                 </section>
             </div>
         </div>
+
+        <div id="modal-mini-jeu" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-mini-jeu-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Mini-jeu</span><span
+                            class="paterneTitleContour">Mini-jeu</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+
+            <div class="modal-container modal-orange">
+
+                <h3 id="modal-mini-jeu-interactive" class="h2 black sub-title-modal">Transformez une visite en <span
+                        class="highlight-no-annim orange">
+                        <div class="paterneTitleContainer"><span>aventure !</span><span
+                                class="paterneTitleContour">aventure !</span></div>
+                    </span></h3>
+                <div class="modal-container-text">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">C’est quoi ?</h4>
+                        <p class="black">Un mini-jeu, c’est est une expérience ludique intégrée à votre site web. Rapide
+                            et simple, il transforme la navigation en moment interactif et mémorable.</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Pourquoi ?</h4>
+                        <p class="black">Avec un mini-jeu, votre site passe de fonctionnel à captivant. Il attire
+                            l’attention, fidélise vos visiteurs et crée un lien immédiat avec votre univers.</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="modal-container-info">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Support</h4>
+                        <p class="black">Numérique, intégré à un site web</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Durée</h4>
+                        <p class="black">5 à 20 minutes</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Nombre de participants</h4>
+                        <p class="black">Jeu individuel ou multijoueur</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#contactForm" class="text-typo  btn-project">
+                <span>Je crée mon mini-jeu web</span>
+                <img src="src/svg/arrowW.svg" alt="fleche">
+            </a>
+        </div>
+
+        <div id="modal-histoire-interactive" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-histoire-interactive-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Histoire interactive</span><span
+                            class="paterneTitleContour">Histoire interactive</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+
+            <div class="modal-container modal-blue">
+
+                <h3 id="modal-histoire-interactive" class="h2 black sub-title-modal">Quel <span
+                        class="highlight-no-annim blue">
+                        <div class="paterneTitleContainer"><span>chemin</span><span
+                                class="paterneTitleContour">chemin</span></div>
+                    </span> prendrez-vous ?</h3>
+                <div class="modal-container-text">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">C’est quoi ?</h4>
+                        <p class="black">Une histoire interactive, c’est un récit narratif où le lecteur devient acteur.
+                            Chaque décision qu’il prend impacte le déroulement, rendant chaque lecture unique.</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Pourquoi ?</h4>
+                        <p class="black">À travers ses choix, le joueur développe un attachement au récit et à ses
+                            personnages. L’impact de ses actions lui permet de s’identifier pleinement, transformant
+                            l’expérience en moment émotionnel et mémorable.</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="modal-container-info">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Support</h4>
+                        <p class="black">Numérique</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Durée</h4>
+                        <p class="black">20 minutes à 1 heure</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Nombre de participants</h4>
+                        <p class="black">Individuel</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#contactForm" class="text-typo  btn-project">
+                <span>J'écris mon histoire</span>
+                <img src="src/svg/arrowW.svg" alt="fleche">
+            </a>
+        </div>
+
+        <div id="modal-geocaching" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-geocaching-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Geocaching</span><span
+                            class="paterneTitleContour">Geocaching</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div class="modal-container modal-blue">
+
+                <h3 id="modal-histoire-interactive" class="h2 black sub-title-modal">Où se cache <span
+                        class="highlight-no-annim blue">
+                        <div class="paterneTitleContainer"><span>le trésor ?</span><span class="paterneTitleContour">le
+                                trésor ?</span></div>
+                    </span></h3>
+                <div class="modal-container-text">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">C’est quoi ?</h4>
+                        <p class="black">Le géocaching, c’est une chasse au trésor interactive où les participants
+                            suivent des indices ou coordonnées GPS pour retrouver des objets, des lieux ou des
+                            informations cachées.</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Pourquoi ?</h4>
+                        <p class="black">Ce format invite les joueurs à explorer un espace réel et à en apprendre
+                            davantage sur un lieu, une histoire ou un patrimoine, tout en vivant une aventure
+                            collective.</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="modal-container-info">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Support</h4>
+                        <p class="black">Hybride (application mobile + exploration réelle)</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Durée</h4>
+                        <p class="black">30 minutes à 2 heures</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Nombre de participants</h4>
+                        <p class="black">Un seul téléphone suffit, activité réalisable seul ou en groupe</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#contactForm" class="text-typo  btn-project">
+                <span>Je lance mon géocaching</span>
+                <img src="src/svg/arrowW.svg" alt="fleche">
+            </a>
+        </div>
+
     </main>
 
     <div class="large-spacing"></div>
@@ -474,6 +644,7 @@
         </div>
     </footer>
 
+    <script src="src/js/modal.js"></script>
     <script src="src/js/logoAnnim.js"></script>
     <script src="src/js/faq.js"></script>
     <script src="src/js/annimForm.js"></script>

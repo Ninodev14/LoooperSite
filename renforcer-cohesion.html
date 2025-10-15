@@ -35,7 +35,8 @@
                                 réfléchir</a>
                             <a class="header-typo-pc" href="creer-interaction-sociale.html">Créer de l'interaction
                                 sociale</a>
-                            <a class="header-typo-pc link-underline" href="renforcer-cohesion.html">Renforcer la cohésion</a>
+                            <a class="header-typo-pc link-underline" href="renforcer-cohesion.html">Renforcer la
+                                cohésion</a>
                             <a class="header-typo-pc" href="engager-motiver.html">Engager et motiver</a>
                             <a class="header-typo-pc" href="former-efficacement.html">Former efficacement</a>
                             <a class="header-typo-pc" href="communiquer-autrement.html">Communiquer autrement</a>
@@ -173,9 +174,10 @@
                             </div>
                             <p class="black">Un format idéal pour développer la coopération. Les joueurs doivent
                                 communiquer, s’entraider et unir leurs forces pour atteindre un objectif commun.</p>
-                            <a href="#" class="text-typo btn-project btn-white-background">
-                                <span>En savoir plus</span>
-                            </a>
+                            <button data-modal="modal-escape-game" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-white-background"
+                                aria-label="En savoir plus sur les Escape game">
+                                <span>En savoir plus</span> </button>
                         </div>
                     </article>
 
@@ -190,9 +192,10 @@
                             <p class="black">Stimulez la compétitivité bienveillante ! Les quiz favorisent l’interaction
                                 et permettent de se défier autour de thématiques variées, tout en créant des moments de
                                 complicité.</p>
-                            <a href="#" class="text-typo btn-project btn-white-background">
-                                <span>En savoir plus</span>
-                            </a>
+                            <button data-modal="modal-quiz" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-white-background"
+                                aria-label="En savoir plus sur le quiz">
+                                <span>En savoir plus</span> </button>
                         </div>
                     </article>
 
@@ -208,9 +211,10 @@
                                 découvrez du contenu en équipe. Un format parfait pour renforcer les liens à travers la
                                 collaboration.
                             </p>
-                            <a href="#" class="text-typo btn-project btn-white-background">
+                            <button data-modal="modal-geocaching" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-white-background"
+                                aria-label="En savoir plus sur le Géocaching">
                                 <span>En savoir plus</span>
-                            </a>
                         </div>
                     </article>
                 </div>
@@ -271,6 +275,175 @@
                     </div>
                 </section>
             </div>
+        </div>
+
+        <div id="modal-escape-game" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-escape-game-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Escape game</span><span class="paterneTitleContour">Escape
+                            game</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+
+            <div class="modal-container modal-orange">
+
+                <h3 id="modal-histoire-interactive" class="h2 black sub-title-modal">Vous avez <span
+                        class="highlight-no-annim orange">
+                        <div class="paterneTitleContainer"><span>1 minute</span><span class="paterneTitleContour">1
+                                minute</span></div>
+                    </span> pour décider !</h3>
+                <div class="modal-container-text">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">C’est quoi ?</h4>
+                        <p class="black">Un escape game, c’est une expérience grandeur nature où un groupe doit résoudre
+                            énigmes et défis dans un temps limité pour “s’échapper” ou atteindre un objectif.</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Pourquoi ?</h4>
+                        <p class="black">Idéal pour renforcer la cohésion d’équipe, développer la collaboration et créer
+                            un moment immersif et mémorable.</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="modal-container-info">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Support</h4>
+                        <p class="black">Physique</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Durée</h4>
+                        <p class="black">20 minutes à 1 heure</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Nombre de participants</h4>
+                        <p class="black">3 à 6 personnes</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#contactForm" class="text-typo  btn-project">
+                <span>Je mets en place mon escape game</span>
+                <img src="src/svg/arrowW.svg" alt="fleche">
+            </a>
+        </div>
+
+        <div id="modal-geocaching" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-geocaching-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Geocaching</span><span
+                            class="paterneTitleContour">Geocaching</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div class="modal-container modal-blue">
+
+                <h3 id="modal-histoire-interactive" class="h2 black sub-title-modal">Où se cache <span
+                        class="highlight-no-annim blue">
+                        <div class="paterneTitleContainer"><span>le trésor ?</span><span class="paterneTitleContour">le
+                                trésor ?</span></div>
+                    </span></h3>
+                <div class="modal-container-text">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">C’est quoi ?</h4>
+                        <p class="black">Le géocaching, c’est une chasse au trésor interactive où les participants
+                            suivent des indices ou coordonnées GPS pour retrouver des objets, des lieux ou des
+                            informations cachées.</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Pourquoi ?</h4>
+                        <p class="black">Ce format invite les joueurs à explorer un espace réel et à en apprendre
+                            davantage sur un lieu, une histoire ou un patrimoine, tout en vivant une aventure
+                            collective.</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="modal-container-info">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Support</h4>
+                        <p class="black">Hybride (application mobile + exploration réelle)</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Durée</h4>
+                        <p class="black">30 minutes à 2 heures</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Nombre de participants</h4>
+                        <p class="black">Un seul téléphone suffit, activité réalisable seul ou en groupe</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#contactForm" class="text-typo  btn-project">
+                <span>Je lance mon géocaching</span>
+                <img src="src/svg/arrowW.svg" alt="fleche">
+            </a>
+        </div>
+
+        <div id="modal-quiz" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-quiz-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>quiz</span><span class="paterneTitleContour">quiz</span>
+                    </div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+
+
+            <div class="modal-container modal-purple">
+
+                <h3 id="modal-quiz" class="h2 black sub-title-modal">Qui remportera <span
+                        class="highlight-no-annim purple">
+                        <div class="paterneTitleContainer"><span>la manche ?</span><span class="paterneTitleContour">la
+                                manche ?</span></div>
+                    </span></h3>
+                <div class="modal-container-text">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">C’est quoi ?</h4>
+                        <p class="black">Le quiz, c’est le jeu universel pour tester ses connaissances en s’amusant.
+                            Défiez-vous autour d’une série de questions personnalisées sur le sujet de votre choix.
+                            Scores, défis, classements… les mécaniques s’adaptent pour captiver et faire vibrer votre
+                            public.</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Pourquoi ?</h4>
+                        <p class="black">Plus qu’un simple jeu, le quiz est une activité fédératrice : il renforce la
+                            complicité des participants, encourage la réflexion et permet d’apprendre différemment. Un
+                            outil parfait pour créer du lien, transmettre vos messages et valoriser vos contenus.</p>
+                    </div>
+                    <div></div>
+                </div>
+                <div class="modal-container-info">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Support</h4>
+                        <p class="black">100 % numérique, ou hybride avec participants en présentiel</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Durée</h4>
+                        <p class="black">10 à 30 minutes</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Nombre de participants</h4>
+                        <p class="black">Illimité en digital, 5 à 50 en présentiel.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#contactForm" class="text-typo  btn-project">
+                <span>Je lance mon quiz</span>
+                <img src="src/svg/arrowW.svg" alt="fleche">
+            </a>
         </div>
     </main>
 
@@ -476,6 +649,7 @@
         </div>
     </footer>
 
+    <script src="src/js/modal.js"></script>
     <script src="src/js/logoAnnim.js"></script>
     <script src="src/js/faq.js"></script>
     <script src="src/js/annimForm.js"></script>

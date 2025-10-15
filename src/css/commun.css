@@ -99,8 +99,7 @@ body {
 
 .backgroundBrushType1 {
     position: relative;
-
-    z-index: -1;
+    z-index: 0;
 }
 
 .backgroundBrushType1::before {
@@ -473,6 +472,7 @@ body {
     gap: 1rem;
     width: fit-content;
     transition: all 0.3s;
+    cursor: pointer;
 }
 
 .btn-project:hover {
