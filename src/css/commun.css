@@ -12,6 +12,9 @@ body {
     display: flex;
     gap: 5px;
     color: #fff;
+    align-items: center;
+    flex-wrap: wrap;
+
 }
 
 .ariane-net a {
