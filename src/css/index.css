@@ -43,6 +43,7 @@
   transform: translateX(30%);
   opacity: 1;
 }
+
 .backgroundType2Annim {
   position: absolute;
   top: -75vh;
@@ -85,7 +86,9 @@
 }
 
 @media screen and (max-width: 960px) {
-  .backgroundType1Annim, .backgroundType2Annim {
+
+  .backgroundType1Annim,
+  .backgroundType2Annim {
     width: 0;
 
   }
@@ -120,7 +123,7 @@
   gap: 7vw 5vw;
 }
 
- .intro-paragraphe .h3{
+.intro-paragraphe .h3 {
   line-height: 24px;
 }
 
@@ -257,15 +260,11 @@
 }
 
 .memory-item h3 {
-  margin: 0;
-  font-size: 18px;
-  color: #111;
+  color: #000;
 }
 
 .memory-item p {
-  margin: 0;
-  font-size: 14px;
-  color: #555;
+  color: #000;
 }
 
 @media screen and (max-width: 650px) {

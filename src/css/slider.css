@@ -148,6 +148,7 @@ p.lead {
 /* --- Dots --- */
 .swiper-pagination-bullet {
     background: #5D507C;
+    opacity: 1;
     width: 12px;
     height: 12px;
     border-radius: 50px;
