@@ -38,31 +38,48 @@
      position: fixed;
      bottom: 20px;
      right: 20px;
-     background: #333;
-     color: #fff;
-     padding: 10px 15px;
-     border-radius: 8px;
+     width: 50px;
+     height: 50px;
      cursor: pointer;
+     z-index: 1;
+ }
+
+ #accessibility-btn img {
+     width: 100%;
+     height: 100%;
  }
 
  /* Menu d’options */
  #accessibility-menu {
+     z-index: 1;
      display: none;
      position: fixed;
-     bottom: 60px;
+     bottom: 70px;
      right: 20px;
      background: #fff;
-     border: 1px solid #ccc;
+     border: 2px solid #000000;
+     gap: 14px;
+     flex-direction: column;
      border-radius: 10px;
-     padding: 10px;
+     padding: 20px 16px;
      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
  }
 
- #accessibility-menu button {
-     display: block;
-     margin: 5px 0;
-     width: 100%;
+ #accessibility-menu input[type="checkbox"] {
+     padding: 0;
+     width: 18px;
+     height: 18px;
  }
+
+ #accessibility-menu label {
+     font-size: 0.8rem;
+ }
+
+ #accessibility-menu button {
+     margin-top: 10px;
+     font-size: 0.8rem;
+ }
+
 
  .high-contrast {
      background-color: #000;
@@ -112,18 +129,18 @@
  }
 
 
-.link-outline a {
-  outline: 3px solid var(--link-outline-color, #ffdd00);
-  outline-offset: 3px;
-  border-radius: 4px; 
-}
+ .link-outline a {
+     outline: 3px solid var(--link-outline-color, #ffdd00);
+     outline-offset: 3px;
+     border-radius: 4px;
+ }
 
-.link-outline a.small {
-  outline-offset: 4px;
-}
+ .link-outline a.small {
+     outline-offset: 4px;
+ }
 
-.link-outline-hover a:hover {
-  outline: 3px solid var(--link-outline-color, #ff6600);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
+ .link-outline-hover a:hover {
+     outline: 3px solid var(--link-outline-color, #ff6600);
+     outline-offset: 3px;
+     border-radius: 4px;
+ }

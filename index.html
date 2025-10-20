@@ -223,18 +223,7 @@
                             <a href="projets.html" class="text-typo btn-project btn-white-background">
                                 <span>Voir ce qu’on peut créer ensemble</span>
                             </a>
-                            <div class="ludique-toggle">
-                                <p class="black">Mode ludique :</p>
-                                <div class="switch-container">
-                                    <input type="checkbox" id="toggleGameMemories" class="toggle-checkbox">
-                                    <label for="toggleGameMemories" class="toggle-label">
-                                        <span class="toggle-ball">
-                                            <div class="line1"></div>
-                                            <div class="line2"></div>
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
+
                         </div>
 
                     </article>
@@ -404,7 +393,7 @@
         </section>
 
         <div class="large-spacing"></div>
-        <div class="backgroundBrushType1" >
+        <div class="backgroundBrushType1">
             <section class="container-width text-basical-container">
                 <article class="text-basical-container-text">
                     <div>
@@ -449,7 +438,7 @@
         <div class="contact-container">
             <h2 class="h1 black white-border">Nous contacter</h2>
             <div class="small-medium-spacing"></div>
-           <form id="contactForm" name="contactformV2" method="POST" data-netlify="true">
+            <form id="contactForm" name="contactformV2" method="POST" data-netlify="true">
                 <input type="hidden" name="form-name" value="contactformV2">
 
                 <fieldset class="form-group-container">
@@ -646,23 +635,54 @@
     </footer>
 
 
-    <div id="accessibility-btn">♿</div>
+    <div id="accessibility-btn"><img src="src/svg/handicap.svg" alt="Boutton handicap"></div>
 
 
     <div id="focus-top"></div>
     <div id="focus-bottom"></div>
 
     <div id="accessibility-menu">
-        <button onclick="toggleOpendyslexic()">Police OpenDyslexic</button>
-        <button onclick="toggleReading()">Police Lecture</button>
-        <button onclick="toggleContrast()">Contraste élevé</button>
-        <button onclick="toggleFocusBar()">Bar de concentration</button>
-        <button onclick="toggleLinkOutline()">Encadrer les liens</button>
-        <button onclick="toggleLinkOutlineHover()">Encadrer les liens au survol</button>
-        <button onclick="resetSettings()">Réinitialiser tout</button>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkOpendyslexic" onchange="toggleOpendyslexic()">
+            Police OpenDyslexic
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkReading" onchange="toggleReading()">
+            Police Lecture
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkContrast" onchange="toggleContrast()">
+            Contraste élevé
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkFocusBar" onchange="toggleFocusBar()">
+            Barre de concentration
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkLinkOutline" onchange="toggleLinkOutline()">
+            Encadrer les liens
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkLinkOutlineHover" onchange="toggleLinkOutlineHover()">
+            Encadrer les liens au survol
+        </label>
+        <button class=" btn-project btn-white-background" onclick="resetSettings()">Réinitialiser tout</button>
     </div>
-
-
+    
+    <div id="ludique-menue">
+        <div class="ludique-toggle">
+            <p class="black">Mode ludique :</p>
+            <div class="switch-container">
+                <input type="checkbox" id="toggleGameMemories" class="toggle-checkbox">
+                <label for="toggleGameMemories" class="toggle-label">
+                    <span class="toggle-ball">
+                        <div class="line1"></div>
+                        <div class="line2"></div>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
     <script src="src/js/accessibility.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>

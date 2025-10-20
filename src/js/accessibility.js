@@ -6,22 +6,43 @@ const zoomDisplay = document.getElementById("zoom-level");
 let zoomLevel = parseFloat(localStorage.getItem("zoom")) || 1;
 
 
-
 btn.addEventListener("click", () => {
-    menu.style.display = menu.style.display === "block" ? "none" : "block";
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
 });
 
+
 window.onload = () => {
-    if (localStorage.getItem("font") === "opendyslexic") body.classList.add("opendyslexic");
-    if (localStorage.getItem("font") === "reading") body.classList.add("reading");
-    if (localStorage.getItem("contrast") === "high") body.classList.add("high-contrast");
+    // --- Lecture depuis localStorage
+    if (localStorage.getItem("font") === "opendyslexic") {
+        body.classList.add("opendyslexic");
+        document.getElementById("chkOpendyslexic").checked = true;
+    }
+
+    if (localStorage.getItem("font") === "reading") {
+        body.classList.add("reading");
+        document.getElementById("chkReading").checked = true;
+    }
+
+    if (localStorage.getItem("contrast") === "high") {
+        body.classList.add("high-contrast");
+        document.getElementById("chkContrast").checked = true;
+    }
 
     if (!("ontouchstart" in window) && localStorage.getItem("focusBar") === "on") {
         body.classList.add("focus-bar-active");
+        document.getElementById("chkFocusBar").checked = true;
     }
-    if (localStorage.getItem("cursor") === "big") body.classList.add("big-cursor");
-};
 
+    if (localStorage.getItem("linkOutline") === "on") {
+        body.classList.add("link-outline");
+        document.getElementById("chkLinkOutline").checked = true;
+    }
+
+    if (localStorage.getItem("linkOutlineHover") === "on") {
+        body.classList.add("link-outline-hover");
+        document.getElementById("chkLinkOutlineHover").checked = true;
+    }
+};
 function toggleOpendyslexic() {
     body.classList.toggle("opendyslexic");
     if (body.classList.contains("opendyslexic")) localStorage.setItem("font", "opendyslexic");
@@ -119,6 +140,18 @@ if (localStorage.getItem('linkOutlineHover') === 'on') {
 }
 
 
+function toggleLinkOutline() {
+    const checked = document.getElementById("chkLinkOutline").checked;
+    body.classList.toggle("link-outline", checked);
+    checked ? localStorage.setItem("linkOutline", "on") : localStorage.removeItem("linkOutline");
+}
+
+function toggleLinkOutlineHover() {
+    const checked = document.getElementById("chkLinkOutlineHover").checked;
+    body.classList.toggle("link-outline-hover", checked);
+    checked ? localStorage.setItem("linkOutlineHover", "on") : localStorage.removeItem("linkOutlineHover");
+}
+
 function resetSettings() {
     body.classList.remove(
         "opendyslexic",
@@ -130,7 +163,5 @@ function resetSettings() {
         "link-outline-hover"
     );
     localStorage.clear();
+    document.querySelectorAll("#accessibility-menu input[type='checkbox']").forEach((chk) => (chk.checked = false));
 }
-
-
-

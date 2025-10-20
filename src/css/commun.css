@@ -1214,7 +1214,7 @@ textarea {
     width: 100%;
 }
 
-.dropdown-content input[type="checkbox"] {
+input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -1230,17 +1230,17 @@ textarea {
     position: relative;
 }
 
-.dropdown-content input[type="checkbox"]:hover {
+input[type="checkbox"]:hover {
     border-color: #333;
     transform: scale(1.05);
 }
 
-.dropdown-content input[type="checkbox"]:checked {
+input[type="checkbox"]:checked {
     background-color: #555;
     border-color: #555;
 }
 
-.dropdown-content input[type="checkbox"]::after {
+input[type="checkbox"]::after {
     content: "";
     position: absolute;
     width: 6px;
