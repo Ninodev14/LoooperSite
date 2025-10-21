@@ -1,167 +1,197 @@
 const body = document.body;
-const menu = document.getElementById("accessibility-menu");
-const btn = document.getElementById("accessibility-btn");
+const menuHandicap = document.getElementById("accessibility-menu");
+const menuLudique = document.getElementById("ludique-menue");
+const btnHandicap = document.getElementById("accessibility-btn");
+const btnLudique = document.getElementById("ludique-btn");
+const toggleGame = document.getElementById("toggleGame");
 const zoomDisplay = document.getElementById("zoom-level");
 
 let zoomLevel = parseFloat(localStorage.getItem("zoom")) || 1;
 
+// --- Boutons d’ouverture de menus
+if (btnHandicap) {
+  btnHandicap.addEventListener("click", () => {
+    const isVisible = menuHandicap.style.display === "flex";
+    menuHandicap.style.display = isVisible ? "none" : "flex";
 
-btn.addEventListener("click", () => {
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    if (!isVisible && menuLudique) menuLudique.style.display = "none";
+
+    if (!isVisible) {
+      btnHandicap.querySelector("img").style.filter = "invert(1)";
+      if (btnLudique) btnLudique.querySelector("img").style.filter = "invert(0)";
+    } else {
+      btnHandicap.querySelector("img").style.filter = "invert(0)";
+    }
+  });
+}
+
+if (btnLudique) {
+  btnLudique.addEventListener("click", () => {
+    const isVisible = menuLudique.style.display === "flex";
+    menuLudique.style.display = isVisible ? "none" : "flex";
+
+    if (!isVisible && menuHandicap) menuHandicap.style.display = "none";
+
+    if (!isVisible) {
+      btnLudique.querySelector("img").style.filter = "invert(1)";
+      if (btnHandicap) btnHandicap.querySelector("img").style.filter = "invert(0)";
+    } else {
+      btnLudique.querySelector("img").style.filter = "invert(0)";
+    }
+  });
+}
+
+// --- Chargement initial
+window.addEventListener("load", () => {
+  // Mode ludique (utilise sessionStorage)
+  if (toggleGame) {
+    const ludiqueMode = sessionStorage.getItem("ludiqueMode");
+
+    if (ludiqueMode === "on") {
+      toggleGame.checked = true;
+      body.classList.add("ludique-active");
+    } else {
+      toggleGame.checked = false;
+      body.classList.remove("ludique-active");
+    }
+
+    toggleGame.addEventListener("change", () => {
+      if (toggleGame.checked) {
+        body.classList.add("ludique-active");
+        sessionStorage.setItem("ludiqueMode", "on");
+      } else {
+        body.classList.remove("ludique-active");
+        sessionStorage.setItem("ludiqueMode", "off");
+      }
+    });
+  }
+
+  // --- Lecture depuis localStorage pour les options d’accessibilité
+  if (localStorage.getItem("font") === "opendyslexic") {
+    body.classList.add("opendyslexic");
+    const el = document.getElementById("chkOpendyslexic");
+    if (el) el.checked = true;
+  }
+
+  if (localStorage.getItem("font") === "reading") {
+    body.classList.add("reading");
+    const el = document.getElementById("chkReading");
+    if (el) el.checked = true;
+  }
+
+  if (localStorage.getItem("contrast") === "high") {
+    body.classList.add("high-contrast");
+    const el = document.getElementById("chkContrast");
+    if (el) el.checked = true;
+  }
+
+  if (!("ontouchstart" in window) && localStorage.getItem("focusBar") === "on") {
+    body.classList.add("focus-bar-active");
+    const el = document.getElementById("chkFocusBar");
+    if (el) el.checked = true;
+  }
+
+  if (localStorage.getItem("linkOutline") === "on") {
+    body.classList.add("link-outline");
+    const el = document.getElementById("chkLinkOutline");
+    if (el) el.checked = true;
+  }
+
+  if (localStorage.getItem("linkOutlineHover") === "on") {
+    body.classList.add("link-outline-hover");
+    const el = document.getElementById("chkLinkOutlineHover");
+    if (el) el.checked = true;
+  }
 });
 
-
-window.onload = () => {
-    // --- Lecture depuis localStorage
-    if (localStorage.getItem("font") === "opendyslexic") {
-        body.classList.add("opendyslexic");
-        document.getElementById("chkOpendyslexic").checked = true;
-    }
-
-    if (localStorage.getItem("font") === "reading") {
-        body.classList.add("reading");
-        document.getElementById("chkReading").checked = true;
-    }
-
-    if (localStorage.getItem("contrast") === "high") {
-        body.classList.add("high-contrast");
-        document.getElementById("chkContrast").checked = true;
-    }
-
-    if (!("ontouchstart" in window) && localStorage.getItem("focusBar") === "on") {
-        body.classList.add("focus-bar-active");
-        document.getElementById("chkFocusBar").checked = true;
-    }
-
-    if (localStorage.getItem("linkOutline") === "on") {
-        body.classList.add("link-outline");
-        document.getElementById("chkLinkOutline").checked = true;
-    }
-
-    if (localStorage.getItem("linkOutlineHover") === "on") {
-        body.classList.add("link-outline-hover");
-        document.getElementById("chkLinkOutlineHover").checked = true;
-    }
-};
+// --- Fonctions d’accessibilité
 function toggleOpendyslexic() {
-    body.classList.toggle("opendyslexic");
-    if (body.classList.contains("opendyslexic")) localStorage.setItem("font", "opendyslexic");
-    else localStorage.removeItem("font");
+  body.classList.toggle("opendyslexic");
+  if (body.classList.contains("opendyslexic")) localStorage.setItem("font", "opendyslexic");
+  else localStorage.removeItem("font");
 }
+
 function toggleReading() {
-    body.classList.toggle("reading");
-    if (body.classList.contains("reading")) localStorage.setItem("font", "reading");
-    else localStorage.removeItem("font");
+  body.classList.toggle("reading");
+  if (body.classList.contains("reading")) localStorage.setItem("font", "reading");
+  else localStorage.removeItem("font");
 }
+
 function toggleContrast() {
-    body.classList.toggle("high-contrast");
-    if (body.classList.contains("high-contrast")) localStorage.setItem("contrast", "high");
-    else localStorage.removeItem("contrast");
+  body.classList.toggle("high-contrast");
+  if (body.classList.contains("high-contrast")) localStorage.setItem("contrast", "high");
+  else localStorage.removeItem("contrast");
 }
 
-
+// --- Focus bar (PC uniquement)
 if (!("ontouchstart" in window)) {
-    const focusTop = document.getElementById("focus-top");
-    const focusBottom = document.getElementById("focus-bottom");
-    const focusHeight = 80;
+  const focusTop = document.getElementById("focus-top");
+  const focusBottom = document.getElementById("focus-bottom");
+  const focusHeight = 80;
 
-    let mouseY = 0;
-    let ticking = false;
+  let mouseY = 0;
+  let ticking = false;
 
-    document.addEventListener("mousemove", (e) => {
-        mouseY = e.clientY;
-        if (!ticking) {
-            requestAnimationFrame(updateFocusBar);
-            ticking = true;
-        }
-    });
-
-    function updateFocusBar() {
-        if (body.classList.contains("focus-bar-active")) {
-            const topHeight = Math.max(0, mouseY - focusHeight / 2);
-            const bottomHeight = window.innerHeight - (mouseY + focusHeight / 2);
-
-            focusTop.style.height = topHeight + "px";
-            focusBottom.style.height = bottomHeight + "px";
-        }
-        ticking = false;
+  document.addEventListener("mousemove", (e) => {
+    mouseY = e.clientY;
+    if (!ticking) {
+      requestAnimationFrame(updateFocusBar);
+      ticking = true;
     }
+  });
 
-    function toggleFocusBar() {
-        body.classList.toggle("focus-bar-active");
-        if (body.classList.contains("focus-bar-active")) localStorage.setItem("focusBar", "on");
-        else localStorage.removeItem("focusBar");
+  function updateFocusBar() {
+    if (body.classList.contains("focus-bar-active") && focusTop && focusBottom) {
+      const topHeight = Math.max(0, mouseY - focusHeight / 2);
+      const bottomHeight = window.innerHeight - (mouseY + focusHeight / 2);
+      focusTop.style.height = topHeight + "px";
+      focusBottom.style.height = bottomHeight + "px";
     }
+    ticking = false;
+  }
 
-    window.toggleFocusBar = toggleFocusBar;
+  window.toggleFocusBar = function () {
+    body.classList.toggle("focus-bar-active");
+    if (body.classList.contains("focus-bar-active")) localStorage.setItem("focusBar", "on");
+    else localStorage.removeItem("focusBar");
+  };
 } else {
-
-    function toggleFocusBar() {
-        alert("La barre de lecture est disponible uniquement sur ordinateur.");
-    }
-    window.toggleFocusBar = toggleFocusBar;
+  window.toggleFocusBar = function () {
+    alert("La barre de lecture est disponible uniquement sur ordinateur.");
+  };
 }
 
+// --- Autres fonctions
 function toggleBigCursor() {
-    body.classList.toggle("big-cursor");
-    if (body.classList.contains("big-cursor")) {
-        localStorage.setItem("cursor", "big");
-    } else {
-        localStorage.removeItem("cursor");
-    }
+  body.classList.toggle("big-cursor");
+  if (body.classList.contains("big-cursor")) localStorage.setItem("cursor", "big");
+  else localStorage.removeItem("cursor");
 }
 
 function toggleLinkOutline() {
-    document.body.classList.toggle('link-outline');
-    if (document.body.classList.contains('link-outline')) {
-        localStorage.setItem('linkOutline', 'on');
-    } else {
-        localStorage.removeItem('linkOutline');
-    }
-}
-window.toggleLinkOutline = toggleLinkOutline;
-
-if (localStorage.getItem('linkOutline') === 'on') {
-    document.body.classList.add('link-outline');
-}
-function toggleLinkOutlineHover() {
-    document.body.classList.toggle('link-outline-hover');
-    if (document.body.classList.contains('link-outline-hover')) {
-        localStorage.setItem('linkOutlineHover', 'on');
-    } else {
-        localStorage.removeItem('linkOutlineHover');
-    }
-}
-window.toggleLinkOutlineHover = toggleLinkOutlineHover;
-
-
-if (localStorage.getItem('linkOutlineHover') === 'on') {
-    document.body.classList.add('link-outline-hover');
-}
-
-
-function toggleLinkOutline() {
-    const checked = document.getElementById("chkLinkOutline").checked;
-    body.classList.toggle("link-outline", checked);
-    checked ? localStorage.setItem("linkOutline", "on") : localStorage.removeItem("linkOutline");
+  const el = document.getElementById("chkLinkOutline");
+  const checked = el ? el.checked : false;
+  body.classList.toggle("link-outline", checked);
+  checked ? localStorage.setItem("linkOutline", "on") : localStorage.removeItem("linkOutline");
 }
 
 function toggleLinkOutlineHover() {
-    const checked = document.getElementById("chkLinkOutlineHover").checked;
-    body.classList.toggle("link-outline-hover", checked);
-    checked ? localStorage.setItem("linkOutlineHover", "on") : localStorage.removeItem("linkOutlineHover");
+  const el = document.getElementById("chkLinkOutlineHover");
+  const checked = el ? el.checked : false;
+  body.classList.toggle("link-outline-hover", checked);
+  checked ? localStorage.setItem("linkOutlineHover", "on") : localStorage.removeItem("linkOutlineHover");
 }
 
 function resetSettings() {
-    body.classList.remove(
-        "opendyslexic",
-        "high-contrast",
-        "reading",
-        "focus-bar-active",
-        "big-cursor",
-        "link-outline",
-        "link-outline-hover"
-    );
-    localStorage.clear();
-    document.querySelectorAll("#accessibility-menu input[type='checkbox']").forEach((chk) => (chk.checked = false));
+  body.classList.remove(
+    "opendyslexic",
+    "high-contrast",
+    "reading",
+    "focus-bar-active",
+    "big-cursor",
+    "link-outline",
+    "link-outline-hover"
+  );
+  localStorage.clear();
+  document.querySelectorAll("#accessibility-menu input[type='checkbox']").forEach((chk) => (chk.checked = false));
 }

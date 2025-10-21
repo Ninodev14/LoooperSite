@@ -412,18 +412,6 @@
                         <a href="projets.html" class="text-typo btn-project btn-white-background">
                             <span>Rencontrer l’équipe</span>
                         </a>
-                        <div class="ludique-toggle">
-                            <p class="">Mode ludique :</p>
-                            <div class="switch-container">
-                                <input type="checkbox" id="toggleGamepuzzle" class="toggle-checkbox">
-                                <label for="toggleGamepuzzle" class="toggle-label">
-                                    <span class="toggle-ball">
-                                        <div class="line1"></div>
-                                        <div class="line2"></div>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
                     </div>
                 </article>
                 <article class="puzzle" id="puzzle">
@@ -636,8 +624,8 @@
 
 
     <div class="menue-nav-ludique-handicap">
-        <div id="accessibility-btn"><img src="src/svg/handicap.svg" alt="Boutton handicap"></div>
-        <div id="ludique-btn"><img src="src/svg/ludique_mode.svg" alt="Boutton handicap"></div>
+        <button id="ludique-btn"><img src="src/svg/ludique_mode.svg" alt="Boutton ludique"></button>
+        <button id="accessibility-btn"><img src="src/svg/handicap.svg" alt="Boutton handicap"></button>
     </div>
 
     <div id="focus-top"></div>
@@ -673,10 +661,10 @@
 
     <div id="ludique-menue">
         <div class="ludique-toggle">
-            <p class="black">Mode ludique :</p>
+            <p class="black">Activer le mode ludique sur le site ?</p>
             <div class="switch-container">
-                <input type="checkbox" id="toggleGameMemories" class="toggle-checkbox">
-                <label for="toggleGameMemories" class="toggle-label">
+                <input type="checkbox" id="toggleGame" class="toggle-checkbox">
+                <label for="toggleGame" class="toggle-label">
                     <span class="toggle-ball">
                         <div class="line1"></div>
                         <div class="line2"></div>
@@ -685,6 +673,7 @@
             </div>
         </div>
     </div>
+
     <script src="src/js/accessibility.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>

@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("toggleGameMemories");
+  const toggle = document.getElementById("toggleGame");
   const gameContainer = document.querySelector(".memory-game-container");
   const noGameContainer = document.querySelector(".memory-no-game-container");
 

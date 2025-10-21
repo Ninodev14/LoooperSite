@@ -310,57 +310,58 @@
         </div>
 
         <div id="modal-mini-jeu" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-mini-jeu-title">
-        <div class="modal-header">
-            <div class="modal-header-null-object"></div>
-            <h2 class="h1 black header-modal-tilte">
-                <div class="paterneTitleContainer"><span>Mini-jeu</span><span
-                        class="paterneTitleContour">Mini-jeu</span></div>
-            </h2><button class="btn-close" aria-label="Fermer">
-                <div class="close-line"></div>
-                <div class="close-line"></div>
-            </button>
-        </div>
-
-
-        <div class="modal-container modal-orange">
-
-            <h3 id="modal-mini-jeu-interactive" class="h2 black sub-title-modal">Transformez une visite en <span
-                    class="highlight-no-annim orange">
-                    <div class="paterneTitleContainer"><span>aventure !</span><span class="paterneTitleContour">aventure
-                            !</span></div>
-                </span></h3>
-            <div class="modal-container-text">
-                <div class="modal-container-text-paragraph">
-                    <h4 class="h3 black">C’est quoi ?</h4>
-                    <p class="black">Un mini-jeu, c’est est une expérience ludique intégrée à votre site web. Rapide
-                        et simple, il transforme la navigation en moment interactif et mémorable.</p>
-                </div>
-                <div class="modal-container-text-paragraph">
-                    <h4 class="h3 black">Pourquoi ?</h4>
-                    <p class="black">Avec un mini-jeu, votre site passe de fonctionnel à captivant. Il attire
-                        l’attention, fidélise vos visiteurs et crée un lien immédiat avec votre univers.</p>
-                </div>
-                <div></div>
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Mini-jeu</span><span
+                            class="paterneTitleContour">Mini-jeu</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
             </div>
-            <div class="modal-container-info">
-                <div class="modal-container-text-paragraph">
-                    <h4 class="h3 black">Support</h4>
-                    <p class="black">Numérique, intégré à un site web</p>
+
+
+            <div class="modal-container modal-orange">
+
+                <h3 id="modal-mini-jeu-interactive" class="h2 black sub-title-modal">Transformez une visite en <span
+                        class="highlight-no-annim orange">
+                        <div class="paterneTitleContainer"><span>aventure !</span><span
+                                class="paterneTitleContour">aventure
+                                !</span></div>
+                    </span></h3>
+                <div class="modal-container-text">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">C’est quoi ?</h4>
+                        <p class="black">Un mini-jeu, c’est est une expérience ludique intégrée à votre site web. Rapide
+                            et simple, il transforme la navigation en moment interactif et mémorable.</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Pourquoi ?</h4>
+                        <p class="black">Avec un mini-jeu, votre site passe de fonctionnel à captivant. Il attire
+                            l’attention, fidélise vos visiteurs et crée un lien immédiat avec votre univers.</p>
+                    </div>
+                    <div></div>
                 </div>
-                <div class="modal-container-text-paragraph">
-                    <h4 class="h3 black">Durée</h4>
-                    <p class="black">5 à 20 minutes</p>
-                </div>
-                <div class="modal-container-text-paragraph">
-                    <h4 class="h3 black">Nombre de participants</h4>
-                    <p class="black">Jeu individuel ou multijoueur</p>
+                <div class="modal-container-info">
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Support</h4>
+                        <p class="black">Numérique, intégré à un site web</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Durée</h4>
+                        <p class="black">5 à 20 minutes</p>
+                    </div>
+                    <div class="modal-container-text-paragraph">
+                        <h4 class="h3 black">Nombre de participants</h4>
+                        <p class="black">Jeu individuel ou multijoueur</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <a href="#contactForm" class="text-typo  btn-project">
-            <span>Je crée mon mini-jeu web</span>
-            <img src="src/svg/arrowW.svg" alt="fleche">
-        </a>
+            <a href="#contactForm" class="text-typo  btn-project">
+                <span>Je crée mon mini-jeu web</span>
+                <img src="src/svg/arrowW.svg" alt="fleche">
+            </a>
         </div>
 
         <div id="modal-histoire-interactive" class="modal" role="dialog" aria-modal="true"
@@ -680,6 +681,41 @@
         </div>
     </footer>
 
+    <div class="menue-nav-ludique-handicap">
+        <button id="accessibility-btn"><img src="src/svg/handicap.svg" alt="Boutton handicap"></button>
+    </div>
+
+    <div id="focus-top"></div>
+    <div id="focus-bottom"></div>
+
+    <div id="accessibility-menu">
+        <label class="text-typo black">
+            <input type="checkbox" id="chkOpendyslexic" onchange="toggleOpendyslexic()">
+            Police OpenDyslexic
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkReading" onchange="toggleReading()">
+            Police Lecture
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkContrast" onchange="toggleContrast()">
+            Contraste élevé
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkFocusBar" onchange="toggleFocusBar()">
+            Barre de concentration
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkLinkOutline" onchange="toggleLinkOutline()">
+            Encadrer les liens
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkLinkOutlineHover" onchange="toggleLinkOutlineHover()">
+            Encadrer les liens au survol
+        </label>
+        <button class=" btn-project btn-white-background" onclick="resetSettings()">Réinitialiser tout</button>
+    </div>
+    <script src="src/js/accessibility.js"></script>
     <script src="src/js/modal.js"></script>
     <script src="src/js/logoAnnim.js"></script>
     <script src="src/js/faq.js"></script>

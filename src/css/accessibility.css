@@ -40,17 +40,46 @@
      display: flex;
      bottom: 20px;
      right: 20px;
-     width: 110px;
-     gap: 10px;
+     width: fit-content;
+     gap: 20px;
      height: 50px;
      cursor: pointer;
      z-index: 1;
  }
 
- #accessibility-btn img, #ludique-btn img{
+ #ludique-menue {
+     z-index: 1;
+     display: none;
+     position: fixed;
+     bottom: 70px;
+     right: 20px;
+     background: #fff;
+     border: 2px solid #000000;
+     gap: 14px;
+     width: 160px;
+     flex-direction: column;
+     border-radius: 10px;
+     padding: 20px 16px;
+     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+ }
+
+ #accessibility-btn img,
+ #ludique-btn img {
      width: 50px;
      height: auto;
+      transition: filter 0.3s ease;
+      
  }
+
+
+ #accessibility-btn,
+ #ludique-btn {
+    transition: filter 0.3s ease;
+     all: unset;
+     cursor: pointer;
+     display: inline;
+ }
+
 
  /* Menu d’options */
  #accessibility-menu {
@@ -74,7 +103,8 @@
      height: 18px;
  }
 
- #accessibility-menu label {
+ #accessibility-menu label,
+ #ludique-menue p {
      font-size: 0.8rem;
  }
 

@@ -235,7 +235,7 @@
         <div class="contact-container">
             <h2 class="h1 black white-border">Nous contacter</h2>
             <div class="small-medium-spacing"></div>
-           <form id="contactForm" name="contactformV2" method="POST" data-netlify="true">
+            <form id="contactForm" name="contactformV2" method="POST" data-netlify="true">
                 <input type="hidden" name="form-name" value="contactformV2">
 
                 <fieldset class="form-group-container">
@@ -431,7 +431,41 @@
         </div>
     </footer>
 
+    <div class="menue-nav-ludique-handicap">
+        <button id="accessibility-btn"><img src="src/svg/handicap.svg" alt="Boutton handicap"></button>
+    </div>
 
+    <div id="focus-top"></div>
+    <div id="focus-bottom"></div>
+
+    <div id="accessibility-menu">
+        <label class="text-typo black">
+            <input type="checkbox" id="chkOpendyslexic" onchange="toggleOpendyslexic()">
+            Police OpenDyslexic
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkReading" onchange="toggleReading()">
+            Police Lecture
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkContrast" onchange="toggleContrast()">
+            Contraste élevé
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkFocusBar" onchange="toggleFocusBar()">
+            Barre de concentration
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkLinkOutline" onchange="toggleLinkOutline()">
+            Encadrer les liens
+        </label>
+        <label class="text-typo black">
+            <input type="checkbox" id="chkLinkOutlineHover" onchange="toggleLinkOutlineHover()">
+            Encadrer les liens au survol
+        </label>
+        <button class=" btn-project btn-white-background" onclick="resetSettings()">Réinitialiser tout</button>
+    </div>
+    <script src="src/js/accessibility.js"></script>
     <script src="src/js/logoAnnim.js"></script>
     <script src="src/js/annimForm.js"></script>
     <script src="src/js/scrollAnnimWhiteContainer.js"></script>

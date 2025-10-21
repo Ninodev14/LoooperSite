@@ -40,7 +40,10 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+.link-underline-black {
+    text-decoration-line: underline;
+    text-decoration-color: rgb(0, 0, 0);
+}
 .zoom-center-title {
     text-align: center;
     display: flex;

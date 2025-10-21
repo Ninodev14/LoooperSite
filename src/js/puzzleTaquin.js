@@ -98,7 +98,7 @@ function lancerConfettis() {
 
 initPuzzle();
 
-const togglePuzzle = document.getElementById("toggleGamepuzzle");
+const togglePuzzle = document.getElementById("toggleGame");
 togglePuzzle.addEventListener("change", () => {
   if (togglePuzzle.checked) {
 
