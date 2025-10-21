@@ -48,7 +48,9 @@ p,
   font-weight: 100;
   line-height: 0.8rem;
 }
-
+a {
+  color: #fff;
+}
 input,
 textarea,
 .dropdown-toggle {
