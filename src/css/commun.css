@@ -107,6 +107,7 @@ body {
     user-select: none;
     position: absolute;
     top: -100%;
+    pointer-events: none;
     left: 0px;
     right: 0px;
     bottom: -100%;
