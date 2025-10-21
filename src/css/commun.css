@@ -104,6 +104,7 @@ body {
 
 .backgroundBrushType1::before {
     content: "";
+    user-select: none;
     position: absolute;
     top: -100%;
     left: 0px;
