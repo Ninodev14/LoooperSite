@@ -309,14 +309,20 @@
                     const observer = new IntersectionObserver((entries) => {
                         if (entries[0].isIntersecting) {
                             container.classList.remove("mix-active");
+
+                            setTimeout(() => {
+                                cards.forEach(card => {
+                                    card.style.transition = "all 0.2s ease";
+                                    card.style.willChange = "auto";
+                                });
+                            }, 2200);
+
                             observer.unobserve(container);
                         }
                     }, { threshold: 0.3 });
 
                     observer.observe(container);
                 });
-
-
             </script>
 
             <div class="small-medium-spacing"></div>

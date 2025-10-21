@@ -40,10 +40,12 @@ body {
     align-items: center;
     justify-content: center;
 }
+
 .link-underline-black {
     text-decoration-line: underline;
     text-decoration-color: rgb(0, 0, 0);
 }
+
 .zoom-center-title {
     text-align: center;
     display: flex;
@@ -1424,8 +1426,67 @@ input[type="checkbox"]::after {
     max-width: calc(4 * 14rem + 3 * 3rem);
 }
 
+.mini-card-container a {
+    transition: all 0.2s;
+}
+
+.mini-card-container a:hover {
+    transform: scale(1.06);
+}
+
+.mini-card-container a:hover .mini-card,
+.mini-card-container a:hover .revers-mini-card {
+    transform: scale(1.03);
+    box-shadow: 0 12px 0 0 #000;
+
+}
+
+.mini-card-container a:hover .mini-card-purple {
+    background-color: #BB6EF6;
+}
+.mini-card-container a:hover .mini-card-orange {
+    background-color: #F6B254;
+}
+.mini-card-container a:hover .mini-card-blue {
+    background-color: #3C61F5;
+}
+
+.mini-card img,
+.revers-mini-card img {
+  transition: all 0.2s ease;
+}
+
+.mini-card:hover img,
+.revers-mini-card:hover img {
+  filter: brightness(6) ;
+}
+
+.mini-card h3,
+.revers-mini-card h3 {
+  transition: all 0.2s ease;
+}
+
+.mini-card:hover h3,
+.revers-mini-card:hover h3 {
+    text-shadow:
+    0.5px 0 #fff, -0.5px 0 #fff,
+    0 0.5px #fff, 0 -0.5px #fff,
+    0.5px 0.5px #fff, -0.5px -0.5px #fff,
+    0.5px -0.5px #fff, -0.5px 0.5px #fff,
+    1px 0 #fff, -1px 0 #fff,
+    0 1px #fff, 0 -1px #fff,
+    1px 1px #fff, -1px -1px #fff,
+    1px -1px #fff, -1px 1px #fff,
+    1.5px 0 #fff, -1.5px 0 #fff,
+    0 1.5px #fff, 0 -1.5px #fff,
+    1.5px 1.5px #fff, -1.5px -1.5px #fff,
+    1.5px -1.5px #fff, -1.5px 1.5px #fff; ;
+}
+
+
 .mini-card,
 .revers-mini-card {
+
     display: flex;
     flex: 0 0 14rem;
     flex-direction: column;
@@ -1433,7 +1494,7 @@ input[type="checkbox"]::after {
     align-items: center;
     border-radius: 40px;
     border: 4px solid #000;
-    background: #FFF;
+    background-color: #FFF;
     width: 14rem;
     height: 14rem;
     padding: 1rem;
@@ -1470,14 +1531,15 @@ input[type="checkbox"]::after {
     will-change: transform;
 }
 
-/* état initial : en bazar */
+/* état initial : cartes en bazar */
 .mini-card-container.mix-active .mini-card,
 .mini-card-container.mix-active .revers-mini-card {
     transform: translate(calc(var(--random-x) * 1px),
-            calc(var(--random-y) * 1px)) rotate(calc(var(--random-rot) * 1deg));
+                         calc(var(--random-y) * 1px))
+               rotate(calc(var(--random-rot) * 1deg));
 }
 
-/* état final : bien rangé */
+/* état final : cartes rangées */
 .mini-card-container .mini-card,
 .mini-card-container .revers-mini-card {
     transform: none;
