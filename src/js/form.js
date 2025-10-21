@@ -75,3 +75,13 @@ if (contact) {
         });
     }
 }
+
+document.querySelectorAll('a[href="#contactForm"]').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault(); // empêche le comportement par défaut
+    const target = document.querySelector('#contactForm');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});

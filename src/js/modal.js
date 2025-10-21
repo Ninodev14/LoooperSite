@@ -39,3 +39,28 @@ function closeModal(modal) {
   const trigger = modal.dataset.triggerButton;
   if (trigger) trigger.focus();
 }
+
+// Fermer la modal quand on clique sur un lien qui mène à une ancre (ex: #contactForm)
+document.querySelectorAll('.modal a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const modal = link.closest('.modal');
+    if (modal) {
+      closeModal(modal); // ferme la modal
+    }
+
+    // Laisse le comportement de l'ancre se produire après un léger délai
+    const targetId = link.getAttribute('href');
+    if (targetId && targetId.startsWith('#')) {
+      const target = document.querySelector(targetId);
+      if (target) {
+        // petit délai pour laisser la fermeture s'animer proprement
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth' });
+          target.focus?.(); // si focusable
+        }, 300);
+      }
+    }
+  });
+});
+
+
