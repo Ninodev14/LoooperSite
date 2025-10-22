@@ -42,12 +42,18 @@ document.querySelectorAll('.contact .dropdown').forEach(dropdown => {
         }
     });
 
-    const updateSummary = () => {
-        const checkedCount = [...checkboxes].filter(c => c.checked).length;
-        toggle.textContent = checkedCount > 0
-            ? `${checkedCount} sélectionné${checkedCount > 1 ? 's' : ''}`
-            : 'Aucun sélectionné';
-    };
+const updateSummary = () => {
+    const checkedCount = [...checkboxes].filter(c => c.checked).length;
+    if (checkedCount > 0) {
+        toggle.style.color = "#000";
+    } else {
+        toggle.style.color = "#8D8D8D";
+    }
+
+    toggle.textContent = checkedCount > 0
+        ? `${checkedCount} sélectionné${checkedCount > 1 ? 's' : ''}`
+        : 'Aucun sélectionné';
+};
 
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', updateSummary);
