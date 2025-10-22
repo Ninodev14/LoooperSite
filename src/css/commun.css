@@ -558,11 +558,11 @@ body {
 }
 
 .btn-project::after {
-    transform: translateX(-50%) translateY(90%);
+    transform: translateX(-50%) translateY(95%);
 }
 
 .btn-project span::before {
-    transform: translateX(-50%) translateY(100%);
+    transform: translateX(-50%) translateY(115%);
 }
 
 .btn-project::before {
