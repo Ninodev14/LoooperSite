@@ -189,11 +189,12 @@ body {
     display: inline-block;
 }
 
-.center-form-btn{
+.center-form-btn {
     display: flex;
     justify-content: center;
 }
-.obligatoireChamp{
+
+.obligatoireChamp {
     margin-top: -20px;
     display: flex;
     justify-content: end;
@@ -466,6 +467,8 @@ body {
 
 
 .btn-project {
+    position: relative;
+    overflow: hidden;
     height: fit-content;
     padding: 8px 16px;
     border-radius: 26px;
@@ -481,10 +484,115 @@ body {
     cursor: pointer;
 }
 
-.btn-project:hover {
-    background: #BB6EF6;
-    color: white;
+.btn-project span {
+    z-index: 1;
+    transition: all 0.8s ease;
 }
+
+.btn-project:hover span {
+    color: #fff;
+    transition: all 0.4s ease;
+}
+
+.btn-project img {
+    z-index: 1;
+    position: relative;
+    transition: none;
+    transition: filter 0.6s ease;
+}
+
+.arrow-container {
+    overflow: hidden;
+}
+
+/* Animation du tour complet */
+@keyframes arrow-loop {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    40% {
+        transform: translateX(120%);
+        /* sort à droite */
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateX(-120%);
+        /* revient par la gauche (hors du bouton) */
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.btn-project:hover img {
+    animation: arrow-loop 0.5s ease-in-out forwards;
+}
+
+.btn-project:hover .black-arrow img{
+    filter: invert(1);
+}
+
+
+
+/* Les cercles de fond (pseudo-éléments) */
+.btn-project::before,
+.btn-project::after,
+.btn-project span::before {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    border-radius: 50%;
+    transition: all 1s ease;
+    z-index: 0;
+}
+
+.btn-project::before {
+    transform: translateX(-50%) translateY(80%);
+}
+
+.btn-project::after {
+    transform: translateX(-50%) translateY(90%);
+}
+
+.btn-project span::before {
+    transform: translateX(-50%) translateY(100%);
+}
+
+.btn-project::before {
+    width: 120%;
+    height: 200px;
+    background: #3C61F5;
+}
+
+.btn-project::after {
+    width: 120%;
+    height: 200px;
+    background: #F6B254;
+}
+
+.btn-project span::before {
+    width: 120%;
+    height: 200px;
+    background: #BB6EF6;
+    z-index: -1;
+}
+
+.btn-project:hover::before,
+.btn-project:hover::after,
+.btn-project:hover span::before {
+    transform: translateX(-50%) translateY(30%);
+    bottom: 0;
+}
+
+
+
 
 .btn-project img {
     width: 2rem;
@@ -1443,43 +1551,46 @@ input[type="checkbox"]::after {
 .mini-card-container a:hover .mini-card-purple {
     background-color: #BB6EF6;
 }
+
 .mini-card-container a:hover .mini-card-orange {
     background-color: #F6B254;
 }
+
 .mini-card-container a:hover .mini-card-blue {
     background-color: #3C61F5;
 }
 
 .mini-card img,
 .revers-mini-card img {
-  transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .mini-card:hover img,
 .revers-mini-card:hover img {
-  filter: brightness(6) ;
+    filter: brightness(6);
 }
 
 .mini-card h3,
 .revers-mini-card h3 {
-  transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .mini-card:hover h3,
 .revers-mini-card:hover h3 {
     text-shadow:
-    0.5px 0 #fff, -0.5px 0 #fff,
-    0 0.5px #fff, 0 -0.5px #fff,
-    0.5px 0.5px #fff, -0.5px -0.5px #fff,
-    0.5px -0.5px #fff, -0.5px 0.5px #fff,
-    1px 0 #fff, -1px 0 #fff,
-    0 1px #fff, 0 -1px #fff,
-    1px 1px #fff, -1px -1px #fff,
-    1px -1px #fff, -1px 1px #fff,
-    1.5px 0 #fff, -1.5px 0 #fff,
-    0 1.5px #fff, 0 -1.5px #fff,
-    1.5px 1.5px #fff, -1.5px -1.5px #fff,
-    1.5px -1.5px #fff, -1.5px 1.5px #fff; ;
+        0.5px 0 #fff, -0.5px 0 #fff,
+        0 0.5px #fff, 0 -0.5px #fff,
+        0.5px 0.5px #fff, -0.5px -0.5px #fff,
+        0.5px -0.5px #fff, -0.5px 0.5px #fff,
+        1px 0 #fff, -1px 0 #fff,
+        0 1px #fff, 0 -1px #fff,
+        1px 1px #fff, -1px -1px #fff,
+        1px -1px #fff, -1px 1px #fff,
+        1.5px 0 #fff, -1.5px 0 #fff,
+        0 1.5px #fff, 0 -1.5px #fff,
+        1.5px 1.5px #fff, -1.5px -1.5px #fff,
+        1.5px -1.5px #fff, -1.5px 1.5px #fff;
+    ;
 }
 
 
@@ -1534,8 +1645,7 @@ input[type="checkbox"]::after {
 .mini-card-container.mix-active .mini-card,
 .mini-card-container.mix-active .revers-mini-card {
     transform: translate(calc(var(--random-x) * 1px),
-                         calc(var(--random-y) * 1px))
-               rotate(calc(var(--random-rot) * 1deg));
+            calc(var(--random-y) * 1px)) rotate(calc(var(--random-rot) * 1deg));
 }
 
 /* état final : cartes rangées */
