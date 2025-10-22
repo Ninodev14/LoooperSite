@@ -777,7 +777,7 @@ body {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -1px;
     height: var(--underline-height);
     width: 100%;
 
@@ -1238,6 +1238,7 @@ textarea {
 }
 
 .dropdown-menu {
+    margin-top: 4px;
     display: none;
     position: absolute;
     background-color: #fff;

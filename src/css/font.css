@@ -48,9 +48,11 @@ p,
   font-weight: 100;
   line-height: 0.8rem;
 }
+
 a {
   color: #fff;
 }
+
 input,
 textarea,
 .dropdown-toggle {
@@ -64,7 +66,8 @@ textarea,
   color: #8D8D8D;
 }
 
-.header-typo-pc, .white {
+.header-typo-pc,
+.white {
   color: white;
 }
 
@@ -176,6 +179,22 @@ header p {
     0.75px -0.75px #fff, -0.75px 0.75px #fff;
 }
 
+.nav-pc-container .white-border-small {
+  text-shadow:
+    0.25px 0 #fff, -0.25px 0 #fff,
+    0 0.25px #fff, 0 -0.25px #fff,
+    0.25px 0.25px #fff, -0.25px -0.25px #fff,
+    0.25px -0.25px #fff, -0.25px 0.25px #fff,
+    0.5px 0 #fff, -0.5px 0 #fff,
+    0 0.5px #fff, 0 -0.5px #fff,
+    0.5px 0.5px #fff, -0.5px -0.5px #fff,
+    0.5px -0.5px #fff, -0.5px 0.5px #fff,
+    0.6px 0 #fff, -0.6px 0 #fff,
+    0 0.6px #fff, 0 -0.6px #fff,
+    0.6px 0.6px #fff, -0.6px -0.6px #fff,
+    0.6px -0.6px #fff, -0.6px 0.6px #fff;
+}
+
 
 b {
   font-weight: bold;
@@ -227,7 +246,8 @@ html {
   html {
     font-size: 17px;
   }
-    .h1 {
+
+  .h1 {
     font-size: 5rem;
   }
 

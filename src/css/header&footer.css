@@ -61,6 +61,11 @@ header {
     margin-left: 2vw;
 }
 
+.nav-pc-container .highlight::before,
+.nav-pc-container-end .highlight::before {
+    inset: -0.5rem;
+}
+
 .nav-pc-container-end {
     margin-left: 0;
     margin-right: 2vw;
@@ -237,20 +242,19 @@ html::-webkit-scrollbar {
 }
 
 .dropdown-menu::-webkit-scrollbar-track,
-html::-webkit-scrollbar {
-    background: transparent;
-    /* fond invisible */
+html::-webkit-scrollbar-track {
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.500);
 }
 
 .dropdown-menu::-webkit-scrollbar-thumb,
-html::-webkit-scrollbar {
+html::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 4px;
     transition: background 0.2s;
 }
 
 .dropdown-menu::-webkit-scrollbar-thumb:hover,
-html::-webkit-scrollbar {
+html::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.6);
 }
 
@@ -258,8 +262,9 @@ html::-webkit-scrollbar {
 .dropdown-menu,
 html {
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    scrollbar-color: rgba(255, 255, 255, 0.3) rgba(0, 0, 0, 0.500);
 }
+
 
 .dropdown-menu a {
     padding: 10px 16px;

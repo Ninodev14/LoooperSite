@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
         isMenuOpen = false;
 
         setTimeout(() => {
+            menu.classList.remove('slide-sub');
             menu.style.display = 'none';
         }, 400);
     }
