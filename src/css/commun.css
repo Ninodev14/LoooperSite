@@ -189,6 +189,16 @@ body {
     display: inline-block;
 }
 
+.center-form-btn{
+    display: flex;
+    justify-content: center;
+}
+.obligatoireChamp{
+    margin-top: -20px;
+    display: flex;
+    justify-content: end;
+}
+
 @keyframes float {
 
     0%,
@@ -454,17 +464,6 @@ body {
     color: #333;
 }
 
-
-
-.btn-submit {
-    background: white;
-    border: none;
-    border-radius: 30px;
-    padding: 12px 25px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: all 0.2s ease;
-}
 
 .btn-project {
     height: fit-content;

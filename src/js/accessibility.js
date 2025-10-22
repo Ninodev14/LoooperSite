@@ -41,6 +41,25 @@ if (btnLudique) {
   });
 }
 
+document.addEventListener("click", (e) => {
+  const isClickInsideHandicap =
+    menuHandicap && menuHandicap.contains(e.target);
+  const isClickInsideLudique =
+    menuLudique && menuLudique.contains(e.target);
+  const isBtnHandicap = btnHandicap && btnHandicap.contains(e.target);
+  const isBtnLudique = btnLudique && btnLudique.contains(e.target);
+
+  if (!isClickInsideHandicap && !isClickInsideLudique && !isBtnHandicap && !isBtnLudique) {
+    if (menuHandicap) menuHandicap.style.display = "none";
+    if (menuLudique) menuLudique.style.display = "none";
+
+    // Réinitialiser les filtres des icônes
+    if (btnHandicap) btnHandicap.querySelector("img").style.filter = "invert(0)";
+    if (btnLudique) btnLudique.querySelector("img").style.filter = "invert(0)";
+  }
+});
+
+
 // --- Chargement initial
 window.addEventListener("load", () => {
   // Mode ludique (utilise sessionStorage)
