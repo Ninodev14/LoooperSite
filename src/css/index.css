@@ -129,9 +129,16 @@
 
 .memory-game-container {
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
   gap: 100px;
+}
+
+.game-info .text-typo {
+  color: #000;
+  width: 16vw;
+  margin-bottom: 10px;
 }
 
 .card {
@@ -158,7 +165,6 @@
 
 .game-info {
   width: 30vw;
-  margin-top: 20px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -256,7 +262,8 @@
 .game-info-text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  width: 100%;
+  gap: 20px;
 }
 
 .memory-item h3 {
@@ -282,7 +289,7 @@
 @media screen and (max-width: 960px) {
 
   .memory-game-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     gap: 40px;
   }
 
@@ -300,6 +307,15 @@
   .card {
     width: 40vw;
     height: 40vw;
+  }
+
+  .game-info .text-typo {
+    width: 60vw;
+    margin-bottom: 15px;
+  }
+
+  .game-info-text {
+    width: 80vw;
   }
 
   .game-info img {
