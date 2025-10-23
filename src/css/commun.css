@@ -1013,6 +1013,8 @@ body {
 }
 
 .modal-container {
+        position: relative;
+    z-index: -2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1026,7 +1028,9 @@ body {
     padding: 2rem;
     padding-bottom: 10px;
 }
-
+.modal-container .aligne-btn-center{
+    margin-bottom: 20px;
+}
 
 .sub-title-modal {
     text-align: center;
