@@ -486,6 +486,7 @@ body {
 
 .btn-project span {
     z-index: 1;
+    text-align: center;
     transition: all 0.8s ease;
 }
 
@@ -502,6 +503,8 @@ body {
 }
 
 .arrow-container {
+    width: fit-content;
+    padding-right: 4px;
     overflow: hidden;
 }
 
@@ -1031,7 +1034,7 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;
-    width: 50%;
+    width: 46%;
 }
 
 .modal-container-text-paragraph {
@@ -1045,14 +1048,14 @@ body {
 }
 
 .modal-container-info {
-    top: 0;
+    top: -20px;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 30px;
-    width: 48%;
-    text-align: right;
+    width: 46%;
+    text-align: left;
     position: absolute;
     right: 2rem;
 }
@@ -1141,6 +1144,16 @@ body {
     box-shadow: 0 24px 0 0 #3C61F5;
 }
 
+.text-paragraph-emojie{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.text-paragraph-emojie img{
+    max-width: 1.6rem;
+    max-height: 1.6rem;
+}
+
 @media screen and (max-width: 960px) {
     .modal-container-text {
         margin-top: 30px;
@@ -1151,20 +1164,18 @@ body {
     }
 
     .modal-container-info {
+        margin-top: 20px;
         width: 100%;
         position: static;
         height: fit-content;
         text-align: left;
+        margin-bottom: 20px;
     }
 
     .modal-container {
         height: fit-content;
     }
 
-    .modal .btn-project {
-        margin-top: 0px;
-        margin-bottom: 40px;
-    }
 }
 
 
