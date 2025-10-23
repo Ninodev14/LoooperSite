@@ -20,10 +20,6 @@
     align-items: flex-end;
 
 }
-.modal-container{
-    display: flex;
-    flex-direction: column;
-}
 
 .modal-container-project-info {
     width: 50%;
