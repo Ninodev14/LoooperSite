@@ -547,6 +547,7 @@ body {
 .btn-project::before,
 .btn-project::after,
 .btn-project span::before {
+     pointer-events: none;
     content: "";
     position: absolute;
     bottom: -50px;
@@ -1014,7 +1015,7 @@ body {
 
 .modal-container {
     position: relative;
-    z-index: -2;
+    z-index: -0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

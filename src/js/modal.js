@@ -1,4 +1,4 @@
-document.querySelectorAll('.btn-project').forEach(btn => {
+document.querySelectorAll('.btn-modal').forEach(btn => {
   btn.addEventListener('click', e => {
     e.preventDefault();
 
