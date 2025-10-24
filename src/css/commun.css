@@ -275,15 +275,17 @@ body {
     display: inline-block;
 }
 
-.center-form-btn{
+.center-form-btn {
     display: flex;
     justify-content: center;
 }
+
 .center-text {
     display: flex;
     justify-content: center;
     text-align: center;
 }
+
 .obligatoireChamp {
     margin-top: -20px;
     display: flex;
@@ -1521,6 +1523,8 @@ input[type="checkbox"]::after {
     width: fit-content;
     height: fit-content;
     scale: 1.5;
+    user-select: none;
+    pointer-events: none;
 }
 
 .dropdown.open .dropdown-arrow-contact {
