@@ -1084,6 +1084,10 @@ body {
     .background-interogation {
         background-image: none;
     }
+
+    .background-guillemet {
+        background-image: none;
+    }
 }
 
 /* MODAL */
