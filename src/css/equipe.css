@@ -19,7 +19,9 @@
 .protagonistes-card.flipped {
     transform: rotateY(180deg);
 }
-
+.protagonistes-card-text.flipped {
+display: none;
+}
 /* faces */
 .protagonistes-card-front,
 .protagonistes-card-back {
@@ -31,6 +33,10 @@
     backface-visibility: hidden;
     border-radius: 8px;
     overflow: hidden;
+}
+
+.protagonistes-card  .spament{
+    height: 10%;
 }
 
 .protagonistes-card::after {

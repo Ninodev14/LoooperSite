@@ -26,13 +26,99 @@ body {
     text-decoration-style: solid;
 }
 
-.mainPageTitle {
+.mainPageTitle .white-border {
     background-repeat: repeat;
     background-position: bottom;
     background-size: auto;
     padding-top: calc(70px + 10vh);
     padding-bottom: 20px;
+    text-shadow:
+        1px 0 #fff, -1px 0 #fff,
+        0 1px #fff, 0 -1px #fff,
+        1px 1px #fff, -1px -1px #fff,
+        1px -1px #fff, -1px 1px #fff,
+        2px 0 #fff, -2px 0 #fff,
+        0 2px #fff, 0 -2px #fff,
+        2px 2px #fff, -2px -2px #fff,
+        2px -2px #fff, -2px 2px #fff,
+        3px 0 #fff, -3px 0 #fff,
+        0 3px #fff, 0 -3px #fff,
+        3px 3px #fff, -3px -3px #fff,
+        3px -3px #fff, -3px 3px #fff,
+
+        4px 0 #180544, -4px 0 #180544,
+        0 4px #180544, 0 -4px #180544,
+        4px 4px #180544, -4px -4px #180544,
+        4px -4px #180544, -4px 4px #180544,
+        5px 0 #180544, -5px 0 #180544,
+        0 5px #180544, 0 -5px #180544,
+        5px 5px #180544, -5px -5px #180544,
+        5px -5px #180544, -5px 5px #180544,
+        6px 0 #180544, -6px 0 #180544,
+        0 6px #180544, 0 -6px #180544,
+        6px 6px #180544, -6px -6px #180544,
+        6px -6px #180544, -6px 6px #180544,
+        7px 0 #180544, -7px 0 #180544,
+        0 7px #180544, 0 -7px #180544,
+        7px 7px #180544, -7px -7px #180544,
+        7px -7px #180544, -7px 7px #180544,
+        8px 0 #180544, -8px 0 #180544,
+        0 8px #180544, 0 -8px #180544,
+        8px 8px #180544, -8px -8px #180544,
+        8px -8px #180544, -8px 8px #180544,
+        9px 0 #180544, -9px 0 #180544,
+        0 9px #180544, 0 -9px #180544,
+        9px 9px #180544, -9px -9px #180544,
+        9px -9px #180544, -9px 9px #180544;
+
+
 }
+
+.paterneTitleContour {
+
+    text-shadow:
+        3px 0 #fff, -3px 0 #fff,
+        0 3px #fff, 0 -3px #fff,
+        3px 3px #fff, -3px -3px #fff,
+        3px -3px #fff, -3px 3px #fff,
+        4px 0 #fff, -4px 0 #fff,
+        0 4px #fff, 0 -4px #fff,
+        4px 4px #fff, -4px -4px #fff,
+        4px -4px #fff, -4px 4px #fff,
+        5px 0 #fff, -5px 0 #fff,
+        0 5px #fff, 0 -5px #fff,
+        5px 5px #fff, -5px -5px #fff,
+        5px -5px #fff, -5px 5px #fff,
+
+        4px 0 #180544, -4px 0 #180544,
+        0 4px #180544, 0 -4px #180544,
+        4px 4px #180544, -4px -4px #180544,
+        4px -4px #180544, -4px 4px #180544,
+        5px 0 #180544, -5px 0 #180544,
+        0 5px #180544, 0 -5px #180544,
+        5px 5px #180544, -5px -5px #180544,
+        5px -5px #180544, -5px 5px #180544,
+        6px 0 #180544, -6px 0 #180544,
+        0 6px #180544, 0 -6px #180544,
+        6px 6px #180544, -6px -6px #180544,
+        6px -6px #180544, -6px 6px #180544,
+        7px 0 #180544, -7px 0 #180544,
+        0 7px #180544, 0 -7px #180544,
+        7px 7px #180544, -7px -7px #180544,
+        7px -7px #180544, -7px 7px #180544,
+        8px 0 #180544, -8px 0 #180544,
+        0 8px #180544, 0 -8px #180544,
+        8px 8px #180544, -8px -8px #180544,
+        8px -8px #180544, -8px 8px #180544,
+        9px 0 #180544, -9px 0 #180544,
+        0 9px #180544, 0 -9px #180544,
+        9px 9px #180544, -9px -9px #180544,
+        9px -9px #180544, -9px 9px #180544;
+
+
+}
+
+
 
 .intro-paragraphe-container-no-annim {
     width: 100%;
@@ -189,11 +275,15 @@ body {
     display: inline-block;
 }
 
-.center-form-btn {
+.center-form-btn{
     display: flex;
     justify-content: center;
 }
-
+.center-text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
 .obligatoireChamp {
     margin-top: -20px;
     display: flex;
@@ -547,7 +637,7 @@ body {
 .btn-project::before,
 .btn-project::after,
 .btn-project span::before {
-     pointer-events: none;
+    pointer-events: none;
     content: "";
     position: absolute;
     bottom: -50px;
