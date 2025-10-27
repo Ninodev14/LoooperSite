@@ -453,7 +453,8 @@ body {
         position: relative;
         width: 100%;
     }
-    .mainPageTitle{
+
+    .mainPageTitle {
         background-size: 600%;
     }
 }
@@ -1636,6 +1637,10 @@ input[type="checkbox"]::after {
     gap: 3rem;
 }
 
+.long-card-text-content p {
+    width: 90%;
+}
+
 @media screen and (max-width: 750px) {
     .long-card {
         flex-direction: column;
@@ -1651,6 +1656,9 @@ input[type="checkbox"]::after {
         margin-left: 0;
         padding: 2rem 1rem 2rem 1rem;
     }
+    .long-card-text-content p {
+    width: 100%;
+}
 }
 
 /* Mini Card */
