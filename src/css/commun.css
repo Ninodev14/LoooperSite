@@ -270,6 +270,12 @@ body {
     animation: float 6s ease-in-out infinite;
     display: inline-block;
 }
+.formatType{
+    flex-direction: row-reverse;
+}
+.formatType .emojie-img-line-besoin-child {
+    width: 60%;
+}
 
 .center-form-btn {
     display: flex;
