@@ -202,7 +202,13 @@ b {
 html {
   font-size: 13px;
 }
-
+.link-underline-black {
+    text-decoration-line: underline;
+    text-decoration-color: rgb(0, 0, 0);
+}
+.black .link-underline-black {
+color: black;
+}
 
 @media(max-width: 768px) {
   .modal .highlight-no-annim::before {
