@@ -98,12 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const savedMode = sessionStorage.getItem("ludiqueMode");
 
-  if (!savedMode) {
-    sessionStorage.setItem("ludiqueMode", "off");
-    togglePuzzle.checked = false;
-  } else {
-    togglePuzzle.checked = savedMode === "on";
-  }
 
   function updatePuzzleDisplay() {
     if (togglePuzzle.checked) {
@@ -114,15 +108,28 @@ document.addEventListener("DOMContentLoaded", () => {
       estGagne = true;
       puzzle.classList.add("gagne");
       afficherPuzzle();
-      sessionStorage.setItem("ludiqueMode", "on");
     } else {
       initPuzzle();
       puzzle.classList.remove("gagne");
-      sessionStorage.setItem("ludiqueMode", "off");
+    }
+  }
+  function startPuzzleDisplay() {
+    let ludiqueMode = sessionStorage.getItem("ludiqueMode");
+    if (ludiqueMode === "on") {
+      positions = [];
+      for (let i = 0; i < taille * taille; i++) {
+        positions.push(i);
+      }
+      estGagne = true;
+      puzzle.classList.add("gagne");
+      afficherPuzzle();
+    } else {
+      initPuzzle();
+      puzzle.classList.remove("gagne");
     }
   }
 
   togglePuzzle.addEventListener("change", updatePuzzleDisplay);
 
-  updatePuzzleDisplay();
+  startPuzzleDisplay();
 });

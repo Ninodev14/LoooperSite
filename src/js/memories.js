@@ -108,28 +108,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const gameContainer = document.querySelector(".memory-game-container");
   const noGameContainer = document.querySelector(".memory-no-game-container");
 
-  const savedMode = sessionStorage.getItem("ludiqueMode");
-
-  if (!savedMode) {
-    sessionStorage.setItem("ludiqueMode", "off");
-    toggle.checked = false;
-  } else {
-    toggle.checked = savedMode === "on";
-  }
-
+  let ludiqueMode = sessionStorage.getItem("ludiqueMode");
   function updateGameDisplay() {
     if (toggle.checked) {
       gameContainer.style.display = "none";
       noGameContainer.style.display = "block";
-      sessionStorage.setItem("ludiqueMode", "on");
     } else {
       gameContainer.style.display = "flex";
       noGameContainer.style.display = "none";
-      sessionStorage.setItem("ludiqueMode", "off");
+    }
+  }
+
+  function startGameDisplay() {
+      let ludiqueMode = sessionStorage.getItem("ludiqueMode");
+    if (ludiqueMode === "on") {
+      gameContainer.style.display = "none";
+      noGameContainer.style.display = "block";
+    } else {
+      gameContainer.style.display = "flex";
+      noGameContainer.style.display = "none";
     }
   }
 
   toggle.addEventListener("change", updateGameDisplay);
 
-  updateGameDisplay();
+  startGameDisplay();
 });
