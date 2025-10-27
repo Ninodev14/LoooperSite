@@ -1636,7 +1636,7 @@ input[type="checkbox"]::after {
     flex-direction: column;
     justify-content: space-around;
     margin-left: 2rem;
-    gap: 3rem;
+
     width: 100%;
 }
 
@@ -1658,6 +1658,7 @@ input[type="checkbox"]::after {
 
     .long-card-text-content {
         margin-left: 0;
+            gap: 3rem;
         padding: 2rem 1rem 2rem 1rem;
     }
 
