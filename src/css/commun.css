@@ -127,10 +127,6 @@ body {
     justify-content: center;
 }
 
-.link-underline-black {
-    text-decoration-line: underline;
-    text-decoration-color: rgb(0, 0, 0);
-}
 
 .zoom-center-title {
     text-align: center;
@@ -1636,7 +1632,6 @@ input[type="checkbox"]::after {
     flex-direction: column;
     justify-content: space-around;
     margin-left: 2rem;
-
     width: 100%;
 }
 
@@ -1658,7 +1653,7 @@ input[type="checkbox"]::after {
 
     .long-card-text-content {
         margin-left: 0;
-            gap: 3rem;
+        gap: 3rem;
         padding: 2rem 1rem 2rem 1rem;
     }
 
