@@ -1158,7 +1158,7 @@ body {
 }
 
 .modal-container-content {
-
+    justify-content: space-around;
     gap: 80px;
     display: flex;
 }
@@ -1609,6 +1609,8 @@ input[type="checkbox"]::after {
     display: flex;
     z-index: 0;
     overflow: hidden;
+    width: 70vw;
+    min-width: 800px;
 }
 
 .long-card-orange {
@@ -1635,17 +1637,19 @@ input[type="checkbox"]::after {
     justify-content: space-around;
     margin-left: 2rem;
     gap: 3rem;
+    width: 100%;
 }
 
 .long-card-text-content p {
-    width: 90%;
+    padding-right: 20%;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 850px) {
     .long-card {
         flex-direction: column;
         width: 100%;
         max-width: 400px;
+        min-width: auto;
     }
 
     .long-card-wrapper {
@@ -1656,9 +1660,10 @@ input[type="checkbox"]::after {
         margin-left: 0;
         padding: 2rem 1rem 2rem 1rem;
     }
+
     .long-card-text-content p {
-    width: 100%;
-}
+        width: 100%;
+    }
 }
 
 /* Mini Card */
