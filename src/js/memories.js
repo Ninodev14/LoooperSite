@@ -108,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const gameContainer = document.querySelector(".memory-game-container");
   const noGameContainer = document.querySelector(".memory-no-game-container");
 
-  let ludiqueMode = sessionStorage.getItem("ludiqueMode");
   function updateGameDisplay() {
     if (toggle.checked) {
       gameContainer.style.display = "none";
@@ -118,19 +117,18 @@ document.addEventListener("DOMContentLoaded", () => {
       noGameContainer.style.display = "none";
     }
   }
-
-  function startGameDisplay() {
-      let ludiqueMode = sessionStorage.getItem("ludiqueMode");
-    if (ludiqueMode === "on") {
-      gameContainer.style.display = "none";
-      noGameContainer.style.display = "block";
-    } else {
-      gameContainer.style.display = "flex";
-      noGameContainer.style.display = "none";
-    }
-  }
-
   toggle.addEventListener("change", updateGameDisplay);
+});
 
-  startGameDisplay();
+window.addEventListener("load", () => {
+  const gameContainer = document.querySelector(".memory-game-container");
+  const noGameContainer = document.querySelector(".memory-no-game-container");
+  let ludiqueMode = sessionStorage.getItem("ludiqueMode");
+  if (ludiqueMode === "on") {
+    gameContainer.style.display = "none";
+    noGameContainer.style.display = "block";
+  } else {
+    gameContainer.style.display = "flex";
+    noGameContainer.style.display = "none";
+  }
 });

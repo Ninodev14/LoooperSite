@@ -113,23 +113,25 @@ document.addEventListener("DOMContentLoaded", () => {
       puzzle.classList.remove("gagne");
     }
   }
-  function startPuzzleDisplay() {
-    let ludiqueMode = sessionStorage.getItem("ludiqueMode");
-    if (ludiqueMode === "on") {
-      positions = [];
-      for (let i = 0; i < taille * taille; i++) {
-        positions.push(i);
-      }
-      estGagne = true;
-      puzzle.classList.add("gagne");
-      afficherPuzzle();
-    } else {
-      initPuzzle();
-      puzzle.classList.remove("gagne");
-    }
-  }
+
 
   togglePuzzle.addEventListener("change", updatePuzzleDisplay);
 
-  startPuzzleDisplay();
+
+});
+
+window.addEventListener("load", () => {
+  let ludiqueMode = sessionStorage.getItem("ludiqueMode");
+  if (ludiqueMode === "on") {
+    positions = [];
+    for (let i = 0; i < taille * taille; i++) {
+      positions.push(i);
+    }
+    estGagne = true;
+    puzzle.classList.add("gagne");
+    afficherPuzzle();
+  } else {
+    initPuzzle();
+    puzzle.classList.remove("gagne");
+  }
 });
