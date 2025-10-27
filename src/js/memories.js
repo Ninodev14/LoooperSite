@@ -108,13 +108,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const gameContainer = document.querySelector(".memory-game-container");
   const noGameContainer = document.querySelector(".memory-no-game-container");
 
-  toggle.addEventListener("change", () => {
+  const savedMode = sessionStorage.getItem("ludiqueMode");
+
+  if (!savedMode) {
+    sessionStorage.setItem("ludiqueMode", "off");
+    toggle.checked = false;
+  } else {
+    toggle.checked = savedMode === "on";
+  }
+
+  function updateGameDisplay() {
     if (toggle.checked) {
       gameContainer.style.display = "none";
       noGameContainer.style.display = "block";
+      sessionStorage.setItem("ludiqueMode", "on");
     } else {
       gameContainer.style.display = "flex";
       noGameContainer.style.display = "none";
+      sessionStorage.setItem("ludiqueMode", "off");
     }
-  });
+  }
+
+  toggle.addEventListener("change", updateGameDisplay);
+
+  updateGameDisplay();
 });

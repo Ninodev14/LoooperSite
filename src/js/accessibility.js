@@ -53,39 +53,14 @@ document.addEventListener("click", (e) => {
     if (menuHandicap) menuHandicap.style.display = "none";
     if (menuLudique) menuLudique.style.display = "none";
 
-    // Réinitialiser les filtres des icônes
     if (btnHandicap) btnHandicap.querySelector("img").style.filter = "invert(0)";
     if (btnLudique) btnLudique.querySelector("img").style.filter = "invert(0)";
   }
 });
 
 
-// --- Chargement initial
 window.addEventListener("load", () => {
-  // Mode ludique (utilise sessionStorage)
-  if (toggleGame) {
-    const ludiqueMode = sessionStorage.getItem("ludiqueMode");
 
-    if (ludiqueMode === "on") {
-      toggleGame.checked = true;
-      body.classList.add("ludique-active");
-    } else {
-      toggleGame.checked = false;
-      body.classList.remove("ludique-active");
-    }
-
-    toggleGame.addEventListener("change", () => {
-      if (toggleGame.checked) {
-        body.classList.add("ludique-active");
-        sessionStorage.setItem("ludiqueMode", "on");
-      } else {
-        body.classList.remove("ludique-active");
-        sessionStorage.setItem("ludiqueMode", "off");
-      }
-    });
-  }
-
-  // --- Lecture depuis localStorage pour les options d’accessibilité
   if (localStorage.getItem("font") === "opendyslexic") {
     body.classList.add("opendyslexic");
     const el = document.getElementById("chkOpendyslexic");
@@ -214,3 +189,33 @@ function resetSettings() {
   localStorage.clear();
   document.querySelectorAll("#accessibility-menu input[type='checkbox']").forEach((chk) => (chk.checked = false));
 }
+
+window.addEventListener("load", () => {
+  if (toggleGame) {
+
+    let ludiqueMode = sessionStorage.getItem("ludiqueMode");
+
+    if (!ludiqueMode) {
+      sessionStorage.setItem("ludiqueMode", "on");
+      ludiqueMode = "on";
+    }
+
+    if (ludiqueMode === "on") {
+      toggleGame.checked = true;
+      body.classList.add("ludique-active");
+    } else {
+      toggleGame.checked = false;
+      body.classList.remove("ludique-active");
+    }
+
+    toggleGame.addEventListener("change", () => {
+      if (toggleGame.checked) {
+        body.classList.add("ludique-active");
+        sessionStorage.setItem("ludiqueMode", "on");
+      } else {
+        body.classList.remove("ludique-active");
+        sessionStorage.setItem("ludiqueMode", "off");
+      }
+    });
+  }
+});

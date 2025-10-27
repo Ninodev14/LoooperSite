@@ -5,7 +5,7 @@ let estGagne = false;
 
 function initPuzzle() {
   positions = [];
-  estGagne = false; 
+  estGagne = false;
   for (let i = 0; i < taille * taille; i++) {
     positions.push(i);
   }
@@ -27,7 +27,6 @@ function afficherPuzzle() {
 
       div.style.backgroundSize = `${taille * 100}% ${taille * 100}%`;
       div.style.backgroundPosition = `${(x * 100) / (taille - 1)}% ${(y * 100) / (taille - 1)}%`;
-
       div.addEventListener("click", () => deplacer(i, div));
     }
 
@@ -36,7 +35,7 @@ function afficherPuzzle() {
 }
 
 function deplacer(i, div) {
-  if (estGagne) return; 
+  if (estGagne) return;
 
   const vide = positions.indexOf(0);
 
@@ -73,7 +72,7 @@ function verifierVictoire() {
 }
 
 function lancerConfettis() {
-  const duration = 2 * 1000;
+  const duration = 2000;
   const end = Date.now() + duration;
 
   (function frame() {
@@ -81,8 +80,8 @@ function lancerConfettis() {
       particleCount: 5,
       startVelocity: 60,
       spread: 120,
-      gravity: 3,         
-      ticks: 400,       
+      gravity: 3,
+      ticks: 400,
       origin: {
         x: Math.random(),
         y: 0
@@ -90,28 +89,40 @@ function lancerConfettis() {
       colors: ['#3C61F5', '#BB6EF6', '#F6B254']
     });
 
-    if (Date.now() < end) {
-      requestAnimationFrame(frame);
-    }
+    if (Date.now() < end) requestAnimationFrame(frame);
   })();
 }
 
-initPuzzle();
+document.addEventListener("DOMContentLoaded", () => {
+  const togglePuzzle = document.getElementById("toggleGame");
 
-const togglePuzzle = document.getElementById("toggleGame");
-togglePuzzle.addEventListener("change", () => {
-  if (togglePuzzle.checked) {
+  const savedMode = sessionStorage.getItem("ludiqueMode");
 
-    positions = [];
-    for (let i = 0; i < taille * taille; i++) {
-      positions.push(i);
-    }
-    estGagne = true;
-    puzzle.classList.add("gagne"); 
-    afficherPuzzle();
+  if (!savedMode) {
+    sessionStorage.setItem("ludiqueMode", "off");
+    togglePuzzle.checked = false;
   } else {
-
-    initPuzzle();
-    puzzle.classList.remove("gagne");
+    togglePuzzle.checked = savedMode === "on";
   }
+
+  function updatePuzzleDisplay() {
+    if (togglePuzzle.checked) {
+      positions = [];
+      for (let i = 0; i < taille * taille; i++) {
+        positions.push(i);
+      }
+      estGagne = true;
+      puzzle.classList.add("gagne");
+      afficherPuzzle();
+      sessionStorage.setItem("ludiqueMode", "on");
+    } else {
+      initPuzzle();
+      puzzle.classList.remove("gagne");
+      sessionStorage.setItem("ludiqueMode", "off");
+    }
+  }
+
+  togglePuzzle.addEventListener("change", updatePuzzleDisplay);
+
+  updatePuzzleDisplay();
 });
