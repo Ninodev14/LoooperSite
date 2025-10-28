@@ -177,9 +177,11 @@ body {
     animation: float 6s ease-in-out infinite;
     display: inline-block;
 }
-.formatType{
+
+.formatType {
     flex-direction: row-reverse;
 }
+
 .formatType .emojie-img-line-besoin-child {
     width: 60%;
 }
@@ -254,7 +256,7 @@ body {
 }
 
 .card-info-container {
-    width: 280px;
+    width: 320px;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -1059,7 +1061,7 @@ body {
 .modal-container-text {
     margin-left: 20px;
     display: flex;
-    gap: 50px;
+    gap: 4rem;
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;

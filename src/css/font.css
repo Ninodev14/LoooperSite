@@ -118,49 +118,51 @@ header p {
 }
 
 .mainPageTitle .white-border {
-    background-repeat: repeat;
-    background-position: bottom;
-    background-size: auto;
-    padding-top: calc(3.89rem + 10vh); /* 70px → 3.89rem */
-    padding-bottom: 1.11rem; /* 20px → 1.11rem */
-    text-shadow:
-        0.0556rem 0 #fff, -0.0556rem 0 #fff,
-        0 0.0556rem #fff, 0 -0.0556rem #fff,
-        0.0556rem 0.0556rem #fff, -0.0556rem -0.0556rem #fff,
-        0.0556rem -0.0556rem #fff, -0.0556rem 0.0556rem #fff,
-        0.111rem 0 #fff, -0.111rem 0 #fff,
-        0 0.111rem #fff, 0 -0.111rem #fff,
-        0.111rem 0.111rem #fff, -0.111rem -0.111rem #fff,
-        0.111rem -0.111rem #fff, -0.111rem 0.111rem #fff,
-        0.167rem 0 #fff, -0.167rem 0 #fff,
-        0 0.167rem #fff, 0 -0.167rem #fff,
-        0.167rem 0.167rem #fff, -0.167rem -0.167rem #fff,
-        0.167rem -0.167rem #fff, -0.167rem 0.167rem #fff,
+  background-repeat: repeat;
+  background-position: bottom;
+  background-size: auto;
+  padding-top: calc(3.89rem + 10vh);
+  /* 70px → 3.89rem */
+  padding-bottom: 1.11rem;
+  /* 20px → 1.11rem */
+  text-shadow:
+    0.0556rem 0 #fff, -0.0556rem 0 #fff,
+    0 0.0556rem #fff, 0 -0.0556rem #fff,
+    0.0556rem 0.0556rem #fff, -0.0556rem -0.0556rem #fff,
+    0.0556rem -0.0556rem #fff, -0.0556rem 0.0556rem #fff,
+    0.111rem 0 #fff, -0.111rem 0 #fff,
+    0 0.111rem #fff, 0 -0.111rem #fff,
+    0.111rem 0.111rem #fff, -0.111rem -0.111rem #fff,
+    0.111rem -0.111rem #fff, -0.111rem 0.111rem #fff,
+    0.167rem 0 #fff, -0.167rem 0 #fff,
+    0 0.167rem #fff, 0 -0.167rem #fff,
+    0.167rem 0.167rem #fff, -0.167rem -0.167rem #fff,
+    0.167rem -0.167rem #fff, -0.167rem 0.167rem #fff,
 
-        0.222rem 0 #180544, -0.222rem 0 #180544,
-        0 0.222rem #180544, 0 -0.222rem #180544,
-        0.222rem 0.222rem #180544, -0.222rem -0.222rem #180544,
-        0.222rem -0.222rem #180544, -0.222rem 0.222rem #180544,
-        0.278rem 0 #180544, -0.278rem 0 #180544,
-        0 0.278rem #180544, 0 -0.278rem #180544,
-        0.278rem 0.278rem #180544, -0.278rem -0.278rem #180544,
-        0.278rem -0.278rem #180544, -0.278rem 0.278rem #180544,
-        0.333rem 0 #180544, -0.333rem 0 #180544,
-        0 0.333rem #180544, 0 -0.333rem #180544,
-        0.333rem 0.333rem #180544, -0.333rem -0.333rem #180544,
-        0.333rem -0.333rem #180544, -0.333rem 0.333rem #180544,
-        0.389rem 0 #180544, -0.389rem 0 #180544,
-        0 0.389rem #180544, 0 -0.389rem #180544,
-        0.389rem 0.389rem #180544, -0.389rem -0.389rem #180544,
-        0.389rem -0.389rem #180544, -0.389rem 0.389rem #180544,
-        0.444rem 0 #180544, -0.444rem 0 #180544,
-        0 0.444rem #180544, 0 -0.444rem #180544,
-        0.444rem 0.444rem #180544, -0.444rem -0.444rem #180544,
-        0.444rem -0.444rem #180544, -0.444rem 0.444rem #180544,
-        0.5rem 0 #180544, -0.5rem 0 #180544,
-        0 0.5rem #180544, 0 -0.5rem #180544,
-        0.5rem 0.5rem #180544, -0.5rem -0.5rem #180544,
-        0.5rem -0.5rem #180544, -0.5rem 0.5rem #180544;
+    0.222rem 0 #180544, -0.222rem 0 #180544,
+    0 0.222rem #180544, 0 -0.222rem #180544,
+    0.222rem 0.222rem #180544, -0.222rem -0.222rem #180544,
+    0.222rem -0.222rem #180544, -0.222rem 0.222rem #180544,
+    0.278rem 0 #180544, -0.278rem 0 #180544,
+    0 0.278rem #180544, 0 -0.278rem #180544,
+    0.278rem 0.278rem #180544, -0.278rem -0.278rem #180544,
+    0.278rem -0.278rem #180544, -0.278rem 0.278rem #180544,
+    0.333rem 0 #180544, -0.333rem 0 #180544,
+    0 0.333rem #180544, 0 -0.333rem #180544,
+    0.333rem 0.333rem #180544, -0.333rem -0.333rem #180544,
+    0.333rem -0.333rem #180544, -0.333rem 0.333rem #180544,
+    0.389rem 0 #180544, -0.389rem 0 #180544,
+    0 0.389rem #180544, 0 -0.389rem #180544,
+    0.389rem 0.389rem #180544, -0.389rem -0.389rem #180544,
+    0.389rem -0.389rem #180544, -0.389rem 0.389rem #180544,
+    0.444rem 0 #180544, -0.444rem 0 #180544,
+    0 0.444rem #180544, 0 -0.444rem #180544,
+    0.444rem 0.444rem #180544, -0.444rem -0.444rem #180544,
+    0.444rem -0.444rem #180544, -0.444rem 0.444rem #180544,
+    0.5rem 0 #180544, -0.5rem 0 #180544,
+    0 0.5rem #180544, 0 -0.5rem #180544,
+    0.5rem 0.5rem #180544, -0.5rem -0.5rem #180544,
+    0.5rem -0.5rem #180544, -0.5rem 0.5rem #180544;
 }
 
 
@@ -249,12 +251,14 @@ b {
 html {
   font-size: 13px;
 }
+
 .link-underline-black {
-    text-decoration-line: underline;
-    text-decoration-color: rgb(0, 0, 0);
+  text-decoration-line: underline;
+  text-decoration-color: rgb(0, 0, 0);
 }
+
 .black .link-underline-black {
-color: black;
+  color: black;
 }
 
 @media(max-width: 768px) {
@@ -323,4 +327,65 @@ color: black;
     font-size: 2rem;
   }
 
+}
+
+/* Très grand écran ≥ 1900px et < 2500px */
+@media (min-width: 1900px) and (max-width: 2499px) {
+  html {
+    font-size: 20px;
+  }
+
+  .h1 {
+    font-size: 5.5rem;
+  }
+
+  .h2 {
+    font-size: 2.5rem;
+  }
+
+}
+
+/* Écran ultra-large (2K / QHD) ≥ 2500px et < 3840px */
+@media (min-width: 2500px) and (max-width: 3839px) {
+  html {
+    font-size: 22px;
+  }
+
+  .h1 {
+    font-size: 6rem;
+  }
+
+  .h2 {
+    font-size: 2.75rem;
+  }
+}
+
+/* Téléviseur 4K ≥ 3840px et < 7680px */
+@media (min-width: 3840px) and (max-width: 7679px) {
+  html {
+    font-size: 30px;
+  }
+
+  .h1 {
+    font-size: 6.5rem;
+  }
+
+  .h2 {
+    font-size: 3rem;
+  }
+}
+
+/* Téléviseur 8K ≥ 7680px */
+@media (min-width: 7680px) {
+  html {
+    font-size: 26px;
+  }
+
+  .h1 {
+    font-size: 7rem;
+  }
+
+  .h2 {
+    font-size: 3.5rem;
+  }
 }

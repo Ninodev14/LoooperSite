@@ -1,0 +1,79 @@
+/*responcive */
+
+@media (min-width: 2500px) {
+
+    .card-info-container {
+        width: 20%;
+
+    }
+
+    .card-info-wrap {
+        max-width: calc((20% * 4) + (20px * 3));
+    }
+
+    .memory-item-text {
+        max-width: 20vw;
+    }
+
+    .mini-card-container {
+        max-width: calc(4 * 18rem + 3 * 3rem);
+    }
+
+    .mini-card,
+    .revers-mini-card {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .menue-nav-ludique-handicap {
+        height: 5rem;
+    }
+
+    #accessibility-btn img,
+    #ludique-btn img {
+        width: 5rem;
+        height: auto;
+        transition: filter 0.3s ease;
+    }
+
+    .mainPageTitle {
+        background-size: 200%;
+    }
+
+    .header-typo-pc {
+        font-size: 1rem;
+    }
+
+    .dropdown-menu {
+        padding: 0.5rem 0;
+        min-width: 14rem;
+
+    }
+
+    .btn-project {
+
+        padding: 1rem 2rem;
+        border-radius: 50vw;
+
+    }
+
+    .long-card img {
+        height: 20rem;
+        width: auto;
+    }
+
+    .protagonistes-card {
+        width: 26rem;
+        max-width: none;
+
+    }
+
+    .protagonistes-card-text {
+        height: 100%;
+
+    }
+
+    .back-content {
+        justify-content: space-around;
+    }
+}
