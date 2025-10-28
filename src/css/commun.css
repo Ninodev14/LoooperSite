@@ -1069,7 +1069,7 @@ body {
 }
 
 .modal-container-content {
-    justify-content: space-around;
+    justify-content: space-evenly;
     gap: 80px;
     display: flex;
 }
