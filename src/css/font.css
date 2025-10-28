@@ -94,29 +94,6 @@ header p {
   z-index: 1;
 }
 
-.paterneTitleContour {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  text-shadow:
-    3px 0 #fff, -3px 0 #fff,
-    0 3px #fff, 0 -3px #fff,
-    3px 3px #fff, -3px -3px #fff,
-    3px -3px #fff, -3px 3px #fff,
-    4px 0 #fff, -4px 0 #fff,
-    0 4px #fff, 0 -4px #fff,
-    4px 4px #fff, -4px -4px #fff,
-    4px -4px #fff, -4px 4px #fff,
-    5px 0 #fff, -5px 0 #fff,
-    0 5px #fff, 0 -5px #fff,
-    5px 5px #fff, -5px -5px #fff,
-    5px -5px #fff, -5px 5px #fff;
-  z-index: 1;
-  user-select: none;
-  pointer-events: none;
-}
-
 .mainPageTitle .white-border {
   background-repeat: repeat;
   background-position: bottom;
@@ -164,6 +141,53 @@ header p {
     0.5rem 0.5rem #180544, -0.5rem -0.5rem #180544,
     0.5rem -0.5rem #180544, -0.5rem 0.5rem #180544;
 }
+.paterneTitleContour {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-shadow:
+    0.0556rem 0 #fff, -0.0556rem 0 #fff,
+    0 0.0556rem #fff, 0 -0.0556rem #fff,
+    0.0556rem 0.0556rem #fff, -0.0556rem -0.0556rem #fff,
+    0.0556rem -0.0556rem #fff, -0.0556rem 0.0556rem #fff,
+    0.111rem 0 #fff, -0.111rem 0 #fff,
+    0 0.111rem #fff, 0 -0.111rem #fff,
+    0.111rem 0.111rem #fff, -0.111rem -0.111rem #fff,
+    0.111rem -0.111rem #fff, -0.111rem 0.111rem #fff,
+    0.167rem 0 #fff, -0.167rem 0 #fff,
+    0 0.167rem #fff, 0 -0.167rem #fff,
+    0.167rem 0.167rem #fff, -0.167rem -0.167rem #fff,
+    0.167rem -0.167rem #fff, -0.167rem 0.167rem #fff,
+
+    0.222rem 0 #180544, -0.222rem 0 #180544,
+    0 0.222rem #180544, 0 -0.222rem #180544,
+    0.222rem 0.222rem #180544, -0.222rem -0.222rem #180544,
+    0.222rem -0.222rem #180544, -0.222rem 0.222rem #180544,
+    0.278rem 0 #180544, -0.278rem 0 #180544,
+    0 0.278rem #180544, 0 -0.278rem #180544,
+    0.278rem 0.278rem #180544, -0.278rem -0.278rem #180544,
+    0.278rem -0.278rem #180544, -0.278rem 0.278rem #180544,
+    0.333rem 0 #180544, -0.333rem 0 #180544,
+    0 0.333rem #180544, 0 -0.333rem #180544,
+    0.333rem 0.333rem #180544, -0.333rem -0.333rem #180544,
+    0.333rem -0.333rem #180544, -0.333rem 0.333rem #180544,
+    0.389rem 0 #180544, -0.389rem 0 #180544,
+    0 0.389rem #180544, 0 -0.389rem #180544,
+    0.389rem 0.389rem #180544, -0.389rem -0.389rem #180544,
+    0.389rem -0.389rem #180544, -0.389rem 0.389rem #180544,
+    0.444rem 0 #180544, -0.444rem 0 #180544,
+    0 0.444rem #180544, 0 -0.444rem #180544,
+    0.444rem 0.444rem #180544, -0.444rem -0.444rem #180544,
+    0.444rem -0.444rem #180544, -0.444rem 0.444rem #180544,
+    0.5rem 0 #180544, -0.5rem 0 #180544,
+    0 0.5rem #180544, 0 -0.5rem #180544,
+    0.5rem 0.5rem #180544, -0.5rem -0.5rem #180544,
+    0.5rem -0.5rem #180544, -0.5rem 0.5rem #180544;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
 
 
 .paterneTitle {
@@ -197,50 +221,50 @@ header p {
 
 .white-border {
   text-shadow:
-    1px 0 #fff, -1px 0 #fff,
-    0 1px #fff, 0 -1px #fff,
-    1px 1px #fff, -1px -1px #fff,
-    1px -1px #fff, -1px 1px #fff,
-    2px 0 #fff, -2px 0 #fff,
-    0 2px #fff, 0 -2px #fff,
-    2px 2px #fff, -2px -2px #fff,
-    2px -2px #fff, -2px 2px #fff,
-    3px 0 #fff, -3px 0 #fff,
-    0 3px #fff, 0 -3px #fff,
-    3px 3px #fff, -3px -3px #fff,
-    3px -3px #fff, -3px 3px #fff;
+    0.0556rem 0 #fff, -0.0556rem 0 #fff,
+    0 0.0556rem #fff, 0 -0.0556rem #fff,
+    0.0556rem 0.0556rem #fff, -0.0556rem -0.0556rem #fff,
+    0.0556rem -0.0556rem #fff, -0.0556rem 0.0556rem #fff,
+    0.111rem 0 #fff, -0.111rem 0 #fff,
+    0 0.111rem #fff, 0 -0.111rem #fff,
+    0.111rem 0.111rem #fff, -0.111rem -0.111rem #fff,
+    0.111rem -0.111rem #fff, -0.111rem 0.111rem #fff,
+    0.167rem 0 #fff, -0.167rem 0 #fff,
+    0 0.167rem #fff, 0 -0.167rem #fff,
+    0.167rem 0.167rem #fff, -0.167rem -0.167rem #fff,
+    0.167rem -0.167rem #fff, -0.167rem 0.167rem #fff;
 }
 
 .white-border-small {
   text-shadow:
-    0.25px 0 #fff, -0.25px 0 #fff,
-    0 0.25px #fff, 0 -0.25px #fff,
-    0.25px 0.25px #fff, -0.25px -0.25px #fff,
-    0.25px -0.25px #fff, -0.25px 0.25px #fff,
-    0.5px 0 #fff, -0.5px 0 #fff,
-    0 0.5px #fff, 0 -0.5px #fff,
-    0.5px 0.5px #fff, -0.5px -0.5px #fff,
-    0.5px -0.5px #fff, -0.5px 0.5px #fff,
-    0.75px 0 #fff, -0.75px 0 #fff,
-    0 0.75px #fff, 0 -0.75px #fff,
-    0.75px 0.75px #fff, -0.75px -0.75px #fff,
-    0.75px -0.75px #fff, -0.75px 0.75px #fff;
+    0.0139rem 0 #fff, -0.0139rem 0 #fff,
+    0 0.0139rem #fff, 0 -0.0139rem #fff,
+    0.0139rem 0.0139rem #fff, -0.0139rem -0.0139rem #fff,
+    0.0139rem -0.0139rem #fff, -0.0139rem 0.0139rem #fff,
+    0.0278rem 0 #fff, -0.0278rem 0 #fff,
+    0 0.0278rem #fff, 0 -0.0278rem #fff,
+    0.0278rem 0.0278rem #fff, -0.0278rem -0.0278rem #fff,
+    0.0278rem -0.0278rem #fff, -0.0278rem 0.0278rem #fff,
+    0.0417rem 0 #fff, -0.0417rem 0 #fff,
+    0 0.0417rem #fff, 0 -0.0417rem #fff,
+    0.0417rem 0.0417rem #fff, -0.0417rem -0.0417rem #fff,
+    0.0417rem -0.0417rem #fff, -0.0417rem 0.0417rem #fff;
 }
 
 .nav-pc-container .white-border-small {
   text-shadow:
-    0.25px 0 #fff, -0.25px 0 #fff,
-    0 0.25px #fff, 0 -0.25px #fff,
-    0.25px 0.25px #fff, -0.25px -0.25px #fff,
-    0.25px -0.25px #fff, -0.25px 0.25px #fff,
-    0.5px 0 #fff, -0.5px 0 #fff,
-    0 0.5px #fff, 0 -0.5px #fff,
-    0.5px 0.5px #fff, -0.5px -0.5px #fff,
-    0.5px -0.5px #fff, -0.5px 0.5px #fff,
-    0.6px 0 #fff, -0.6px 0 #fff,
-    0 0.6px #fff, 0 -0.6px #fff,
-    0.6px 0.6px #fff, -0.6px -0.6px #fff,
-    0.6px -0.6px #fff, -0.6px 0.6px #fff;
+    0.0139rem 0 #fff, -0.0139rem 0 #fff,
+    0 0.0139rem #fff, 0 -0.0139rem #fff,
+    0.0139rem 0.0139rem #fff, -0.0139rem -0.0139rem #fff,
+    0.0139rem -0.0139rem #fff, -0.0139rem 0.0139rem #fff,
+    0.0278rem 0 #fff, -0.0278rem 0 #fff,
+    0 0.0278rem #fff, 0 -0.0278rem #fff,
+    0.0278rem 0.0278rem #fff, -0.0278rem -0.0278rem #fff,
+    0.0278rem -0.0278rem #fff, -0.0278rem 0.0278rem #fff,
+    0.0333rem 0 #fff, -0.0333rem 0 #fff,
+    0 0.0333rem #fff, 0 -0.0333rem #fff,
+    0.0333rem 0.0333rem #fff, -0.0333rem -0.0333rem #fff,
+    0.0333rem -0.0333rem #fff, -0.0333rem 0.0333rem #fff;
 }
 
 

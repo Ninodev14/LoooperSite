@@ -26,12 +26,12 @@
     }
 
     .menue-nav-ludique-handicap {
-        height: 5rem;
+        height: 4rem;
     }
 
     #accessibility-btn img,
     #ludique-btn img {
-        width: 5rem;
+        width: 4rem;
         height: auto;
         transition: filter 0.3s ease;
     }
@@ -52,7 +52,7 @@
 
     .btn-project {
 
-        padding: 1rem 2rem;
+        padding: 0.5rem 1rem;
         border-radius: 50vw;
 
     }
@@ -75,5 +75,8 @@
 
     .back-content {
         justify-content: space-around;
+    }
+    .card-info-container-text{
+     padding: 1rem;
     }
 }
