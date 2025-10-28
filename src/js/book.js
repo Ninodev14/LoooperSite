@@ -4,7 +4,7 @@ const slides = [
         title: "La rencontre",
         img: "src/svg/book/table.svg",
         alt: "4 personnes assises",
-        text: "Tout commence par un moment d’échange. On prend le temps d’écouter vos besoins, vos envies et vos objectifs afin de poser les bases d’un concept sur mesure.",
+        text: "Tout commence par <b>un moment d’échange</b>. On prend le temps d’écouter <b>vos besoins</b>, <b>vos envies</b> et <b>vos objectifs</b> afin de poser les bases <b>d’un concept sur mesure</b>.",
         color: "orange"
     },
     {
@@ -12,7 +12,7 @@ const slides = [
         title: "La réflexion",
         img: "src/svg/book/bulle.svg",
         alt: "bulle de réfléxion",
-        text: "A partir de vos idées, nous imaginons un scénario ludique et interactif pensé pour s'intégrer parfaitement à votre volonté et à votre public.",
+        text: "À partir de vos idées, nous imaginons <b>un scénario ludique et interactif</b> pensé pour s'intégrer parfaitement à <b>votre volonté</b> et à <b>votre public</b>.",
         color: "purple"
     },
     {
@@ -20,7 +20,7 @@ const slides = [
         title: "La création",
         img: "src/svg/book/ampoule.svg",
         alt: "Image d'ampoulle",
-        text: "Après validation, nous passons à la production des éléments : graphismes, développement, narration, chaque élément prend vie dans un planning clair et transparent.",
+        text: "Après validation, nous passons à <b>la production des éléments</b> : graphismes, développement, narration, chaque élément prend vie dans <b>un planning clair et transparent.</b>",
         color: "blue"
     },
     {
@@ -28,7 +28,7 @@ const slides = [
         title: "Les tests",
         img: "src/svg/book/list.svg",
         alt: "Une cecklist",
-        text: "Tout au long du processus, nous testons ensemble l’expérience afin de garantir qualité, fluidité et adéquation avec vos attentes.",
+        text: "Tout au long du processus, nous <b>testons</b> ensemble l’expérience afin de garantir <b>qualité, fluidité et adéquation avec vos attentes</b>.",
         color: "orange"
     },
     {
@@ -36,7 +36,7 @@ const slides = [
         title: "La livraison",
         img: "src/svg/book/livraison.svg",
         alt: "Livraison",
-        text: "Le projet final vous est livré prêt à l’emploi. Et parce qu’on ne s’arrête pas là, nous vous accompagnons aussi dans son déploiement pour en assurer le succès.",
+        text: "Le projet final vous est livré <b>prêt à l’emploi</b>. Et parce qu’on ne s’arrête pas là, nous vous accompagnons aussi dans <b>son déploiement</b> pour en assurer le succès.",
         color: "purple"
     }
 ];
