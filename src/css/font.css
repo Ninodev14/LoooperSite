@@ -117,6 +117,53 @@ header p {
   pointer-events: none;
 }
 
+.mainPageTitle .white-border {
+    background-repeat: repeat;
+    background-position: bottom;
+    background-size: auto;
+    padding-top: calc(3.89rem + 10vh); /* 70px → 3.89rem */
+    padding-bottom: 1.11rem; /* 20px → 1.11rem */
+    text-shadow:
+        0.0556rem 0 #fff, -0.0556rem 0 #fff,
+        0 0.0556rem #fff, 0 -0.0556rem #fff,
+        0.0556rem 0.0556rem #fff, -0.0556rem -0.0556rem #fff,
+        0.0556rem -0.0556rem #fff, -0.0556rem 0.0556rem #fff,
+        0.111rem 0 #fff, -0.111rem 0 #fff,
+        0 0.111rem #fff, 0 -0.111rem #fff,
+        0.111rem 0.111rem #fff, -0.111rem -0.111rem #fff,
+        0.111rem -0.111rem #fff, -0.111rem 0.111rem #fff,
+        0.167rem 0 #fff, -0.167rem 0 #fff,
+        0 0.167rem #fff, 0 -0.167rem #fff,
+        0.167rem 0.167rem #fff, -0.167rem -0.167rem #fff,
+        0.167rem -0.167rem #fff, -0.167rem 0.167rem #fff,
+
+        0.222rem 0 #180544, -0.222rem 0 #180544,
+        0 0.222rem #180544, 0 -0.222rem #180544,
+        0.222rem 0.222rem #180544, -0.222rem -0.222rem #180544,
+        0.222rem -0.222rem #180544, -0.222rem 0.222rem #180544,
+        0.278rem 0 #180544, -0.278rem 0 #180544,
+        0 0.278rem #180544, 0 -0.278rem #180544,
+        0.278rem 0.278rem #180544, -0.278rem -0.278rem #180544,
+        0.278rem -0.278rem #180544, -0.278rem 0.278rem #180544,
+        0.333rem 0 #180544, -0.333rem 0 #180544,
+        0 0.333rem #180544, 0 -0.333rem #180544,
+        0.333rem 0.333rem #180544, -0.333rem -0.333rem #180544,
+        0.333rem -0.333rem #180544, -0.333rem 0.333rem #180544,
+        0.389rem 0 #180544, -0.389rem 0 #180544,
+        0 0.389rem #180544, 0 -0.389rem #180544,
+        0.389rem 0.389rem #180544, -0.389rem -0.389rem #180544,
+        0.389rem -0.389rem #180544, -0.389rem 0.389rem #180544,
+        0.444rem 0 #180544, -0.444rem 0 #180544,
+        0 0.444rem #180544, 0 -0.444rem #180544,
+        0.444rem 0.444rem #180544, -0.444rem -0.444rem #180544,
+        0.444rem -0.444rem #180544, -0.444rem 0.444rem #180544,
+        0.5rem 0 #180544, -0.5rem 0 #180544,
+        0 0.5rem #180544, 0 -0.5rem #180544,
+        0.5rem 0.5rem #180544, -0.5rem -0.5rem #180544,
+        0.5rem -0.5rem #180544, -0.5rem 0.5rem #180544;
+}
+
+
 .paterneTitle {
   position: relative;
   background-size: auto;
