@@ -79,4 +79,13 @@
     .card-info-container-text{
      padding: 1rem;
     }
+
+    #accessibility-menu, #ludique-menue {
+
+     bottom: calc(20px + 4rem);
+
+ }
+ #ludique-menue {
+    width: calc(14px + 8rem);
+ }
 }

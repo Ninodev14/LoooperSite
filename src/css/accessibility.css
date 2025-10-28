@@ -25,9 +25,6 @@
  }
 
 
- body {
-     cursor: default;
- }
 
  body.big-cursor {
      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" > <circle cx="1000" cy="1000" r="500" fill="black" /> </svg>') 40 40, auto;
