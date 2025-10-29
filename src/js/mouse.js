@@ -12,11 +12,22 @@ document.addEventListener('mousemove', (e) => {
   cursor.style.top = `${mouseY}px`;
 
   detectBackgroundColor(mouseX, mouseY);
-  adaptCursorToElement(mouseX, mouseY); // <-- nouvelle fonction
+  adaptCursorToElement(mouseX, mouseY);
 });
 
+['scroll', 'wheel', 'touchmove'].forEach(evt => {
+  window.addEventListener(evt, handleScrollUpdate, { passive: true });
+  document.querySelectorAll('*').forEach(el => {
+    el.addEventListener(evt, handleScrollUpdate, { passive: true });
+  });
+});
+
+function handleScrollUpdate() {
+  detectBackgroundColor(mouseX, mouseY);
+  adaptCursorToElement(mouseX, mouseY);
+}
+
 function animate() {
-  // Si on n'est pas sur un élément cliquable, on fait suivre le ring normalement
   if (!ring.classList.contains('hover-pointer')) {
     ringX += (mouseX - ringX) * 0.15;
     ringY += (mouseY - ringY) * 0.15;
@@ -29,7 +40,6 @@ function animate() {
   }
   requestAnimationFrame(animate);
 }
-
 animate();
 
 document.addEventListener('mouseleave', () => {
@@ -48,10 +58,9 @@ function detectBackgroundColor(x, y) {
   if (!el) return;
 
   const style = window.getComputedStyle(el);
-  const bg = style.backgroundColor;
+  let computedBg = style.backgroundColor;
 
   let currentEl = el;
-  let computedBg = bg;
   while (
     currentEl &&
     (computedBg === 'rgba(0, 0, 0, 0)' || computedBg === 'transparent')
@@ -79,15 +88,13 @@ function detectBackgroundColor(x, y) {
   }
 }
 
-// ---------------------------
-// Nouvelle fonction
-// ---------------------------
 function adaptCursorToElement(x, y) {
   const el = document.elementFromPoint(x, y);
   if (!el) return;
 
   const style = window.getComputedStyle(el);
-  const isPointer = style.cursor === 'pointer' || el.tagName === 'A' || el.tagName === 'BUTTON';
+  const isPointer =
+    style.cursor === 'pointer' || el.tagName === 'A' || el.tagName === 'BUTTON';
 
   if (isPointer) {
     const rect = el.getBoundingClientRect();
@@ -95,7 +102,7 @@ function adaptCursorToElement(x, y) {
     ring.style.height = `${rect.height}px`;
     ring.style.left = `${rect.left}px`;
     ring.style.top = `${rect.top}px`;
-    ring.style.borderRadius = style.borderRadius || '0px';
+    ring.style.borderRadius = style.borderRadius || '0';
     ring.classList.add('hover-pointer');
   } else {
     ring.classList.remove('hover-pointer');
