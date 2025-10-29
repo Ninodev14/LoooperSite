@@ -5,7 +5,7 @@ body {
 
 .cursor,
 .cursor-ring {
-    transition: background-color 0.2s ease, border-color 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease ;
 }
 
 .cursor-ring {
@@ -44,11 +44,6 @@ body {
 
 .cursor-ring.light {
     border-color: var(--backgroundColor);
-}
-
-.cursor-ring,
-.cursor {
-  transition: none;
 }
 
 .cursor-ring.hovering-pointer {
