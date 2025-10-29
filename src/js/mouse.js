@@ -66,32 +66,49 @@ if (hasMouse) {
     if (!el) return;
 
     const style = window.getComputedStyle(el);
-    const pointerStyle = style.cursor;
-    const hasPointer = pointerStyle === 'pointer';
+    function isInteractive(el) {
+      while (el) {
+        const tag = el.tagName;
+        const interactiveTags = ['A', 'BUTTON', 'INPUT', 'TEXTAREA', 'SELECT', 'LABEL'];
+        const interactiveClasses = ['swiper-button-prev', 'swiper-button-next', 'dropdown-toggle', 'faq-header', 'protagonistes-card', 'swiper-pagination-bullet'];
 
-if (hasPointer && !isHoveringPointer) {
-  isHoveringPointer = true;
+        if (interactiveTags.includes(tag)) return true;
+        if (el.classList && interactiveClasses.some(cls => el.classList.contains(cls))) return true;
+        if (el.hasAttribute('onclick') || el.dataset.pointer === 'true') return true;
 
-  cursor.classList.remove('leaving-pointer');
-  ring.classList.remove('leaving-pointer');
+        el = el.parentElement;
+      }
+      return false;
+    }
 
-  cursor.classList.add('hovering-pointer');
-  ring.classList.add('hovering-pointer');
 
-} else if (!hasPointer && isHoveringPointer) {
-  isHoveringPointer = false;
 
-  cursor.classList.remove('hovering-pointer');
-  ring.classList.remove('hovering-pointer');
+    const hasPointer = isInteractive(el);
 
-  cursor.classList.add('leaving-pointer');
-  ring.classList.add('leaving-pointer');
 
-  setTimeout(() => {
-    cursor.classList.remove('leaving-pointer');
-    ring.classList.remove('leaving-pointer');
-  }, 800);
-}
+    if (hasPointer && !isHoveringPointer) {
+      isHoveringPointer = true;
+
+      cursor.classList.remove('leaving-pointer');
+      ring.classList.remove('leaving-pointer');
+
+      cursor.classList.add('hovering-pointer');
+      ring.classList.add('hovering-pointer');
+
+    } else if (!hasPointer && isHoveringPointer) {
+      isHoveringPointer = false;
+
+      cursor.classList.remove('hovering-pointer');
+      ring.classList.remove('hovering-pointer');
+
+      cursor.classList.add('leaving-pointer');
+      ring.classList.add('leaving-pointer');
+
+      setTimeout(() => {
+        cursor.classList.remove('leaving-pointer');
+        ring.classList.remove('leaving-pointer');
+      }, 800);
+    }
 
 
 
