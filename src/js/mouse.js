@@ -9,7 +9,8 @@ if (hasMouse) {
   let lastState = false;
   let isHoveringPointer = false;
 
-  document.addEventListener('mousemove', (e) => {
+  window.addEventListener('pointermove', (e) => {
+
     mouseX = e.clientX;
     mouseY = e.clientY;
 
@@ -18,6 +19,17 @@ if (hasMouse) {
 
     detectBackgroundColor(mouseX, mouseY);
   });
+
+  window.addEventListener('pointerdown', () => {
+    ring.classList.add('dragging');
+    cursor.classList.add('dragging');
+  });
+
+  window.addEventListener('pointerup', () => {
+    ring.classList.remove('dragging');
+    cursor.classList.remove('dragging');
+  });
+
 
   ['scroll', 'wheel', 'touchmove'].forEach(evt => {
     window.addEventListener(evt, handleScrollUpdate, { passive: true });
