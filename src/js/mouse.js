@@ -32,7 +32,7 @@ if (hasMouse) {
 
   function animate() {
     // 💡 Si on est en hover, suivre instantanément
-    const speed = isHoveringPointer ? 1 : 0.10;
+    const speed = isHoveringPointer ? 1 : 0.25;
 
     ringX += (mouseX - ringX) * speed;
     ringY += (mouseY - ringY) * speed;
