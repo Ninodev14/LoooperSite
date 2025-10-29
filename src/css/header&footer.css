@@ -369,7 +369,7 @@ footer {
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     gap: 60px;
     text-align: center;
 }
@@ -378,7 +378,7 @@ footer {
 .footer-nav-row {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 8px;
 }
 
 .footer-container {
