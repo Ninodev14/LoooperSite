@@ -79,10 +79,7 @@ body {
         height: 3rem;
     }
 
-    50% {
-        width: 4rem;
-        height: 4rem;
-    }
+
 
     100% {
         width: 1rem;
@@ -96,10 +93,7 @@ body {
         height: 1.4rem;
     }
 
-    50% {
-        width: 3rem;
-        height: 3rem;
-    }
+
 
     100% {
         width: 1rem;
