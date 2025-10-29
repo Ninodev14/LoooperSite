@@ -57,15 +57,15 @@ body {
 }
 
 .cursor-ring.hovering-pointer {
-    animation: hoverRing 0.8s forwards;
+    animation: hoverRing 0.6s forwards;
 }
 
 .cursor.hovering-pointer {
-    animation: HoverPointer 0.8s forwards;
+    animation: HoverPointer 0.6s forwards;
 }
 
 .cursor-ring.leaving-pointer {
-    animation: hoverRingReverse 0.8s forwards;
+    animation: hoverRingReverse 0.6s forwards;
 }
 
 .cursor.leaving-pointer {
