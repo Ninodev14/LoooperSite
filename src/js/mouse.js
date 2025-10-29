@@ -7,6 +7,7 @@ if (hasMouse) {
   let mouseX = 0, mouseY = 0;
   let ringX = 0, ringY = 0;
   let lastState = false;
+  let isHoveringPointer = false; // 👈 nouvelle variable
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -30,14 +31,15 @@ if (hasMouse) {
   }
 
   function animate() {
-    ringX += (mouseX - ringX) * 0.15;
-    ringY += (mouseY - ringY) * 0.15;
+    // 💡 Si on est en hover, suivre instantanément
+    const speed = isHoveringPointer ? 1 : 0.10;
+
+    ringX += (mouseX - ringX) * speed;
+    ringY += (mouseY - ringY) * speed;
 
     ring.style.left = `${ringX - ring.offsetWidth / 2}px`;
     ring.style.top = `${ringY - ring.offsetHeight / 2}px`;
     ring.style.borderRadius = '50%';
-    ring.style.width = '3rem';
-    ring.style.height = '3rem';
 
     requestAnimationFrame(animate);
   }
@@ -62,13 +64,18 @@ if (hasMouse) {
     const pointerStyle = style.cursor;
     const hasPointer = pointerStyle === 'pointer';
 
+    // ✅ On garde une variable pour savoir si on est sur un élément "pointer"
     if (hasPointer) {
+      isHoveringPointer = true;
       cursor.classList.add('hovering-pointer');
       ring.classList.add('hovering-pointer');
     } else {
+      isHoveringPointer = false;
       cursor.classList.remove('hovering-pointer');
       ring.classList.remove('hovering-pointer');
     }
+
+    // --- Détection du fond ---
     let computedBg = style.backgroundColor;
     let currentEl = el;
 
