@@ -7,7 +7,7 @@ if (hasMouse) {
   let mouseX = 0, mouseY = 0;
   let ringX = 0, ringY = 0;
   let lastState = false;
-  let isHoveringPointer = false; // 👈 nouvelle variable
+  let isHoveringPointer = false;
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -31,11 +31,17 @@ if (hasMouse) {
   }
 
   function animate() {
-    // 💡 Si on est en hover, suivre instantanément
-    const speed = isHoveringPointer ? 1 : 0.12;
+    const dx = mouseX - ringX;
+    const dy = mouseY - ringY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
 
-    ringX += (mouseX - ringX) * speed;
-    ringY += (mouseY - ringY) * speed;
+    let speed = 0.12;
+    if (isHoveringPointer) {
+      speed = distance < 8 ? 1 : 0.2;
+    }
+
+    ringX += dx * speed;
+    ringY += dy * speed;
 
     ring.style.left = `${ringX - ring.offsetWidth / 2}px`;
     ring.style.top = `${ringY - ring.offsetHeight / 2}px`;
@@ -60,20 +66,34 @@ if (hasMouse) {
     if (!el) return;
 
     const style = window.getComputedStyle(el);
-
     const pointerStyle = style.cursor;
     const hasPointer = pointerStyle === 'pointer';
 
-    // ✅ On garde une variable pour savoir si on est sur un élément "pointer"
-    if (hasPointer) {
-      isHoveringPointer = true;
-      cursor.classList.add('hovering-pointer');
-      ring.classList.add('hovering-pointer');
-    } else {
-      isHoveringPointer = false;
-      cursor.classList.remove('hovering-pointer');
-      ring.classList.remove('hovering-pointer');
-    }
+if (hasPointer && !isHoveringPointer) {
+  isHoveringPointer = true;
+
+  cursor.classList.remove('leaving-pointer');
+  ring.classList.remove('leaving-pointer');
+
+  cursor.classList.add('hovering-pointer');
+  ring.classList.add('hovering-pointer');
+
+} else if (!hasPointer && isHoveringPointer) {
+  isHoveringPointer = false;
+
+  cursor.classList.remove('hovering-pointer');
+  ring.classList.remove('hovering-pointer');
+
+  cursor.classList.add('leaving-pointer');
+  ring.classList.add('leaving-pointer');
+
+  setTimeout(() => {
+    cursor.classList.remove('leaving-pointer');
+    ring.classList.remove('leaving-pointer');
+  }, 800);
+}
+
+
 
     // --- Détection du fond ---
     let computedBg = style.backgroundColor;

@@ -46,47 +46,49 @@ body {
     border-color: var(--backgroundColor);
 }
 
+.cursor-ring,
+.cursor {
+  transition: none;
+}
+
 .cursor-ring.hovering-pointer {
-    animation: hoverRing 1s  forwards;
+  animation: hoverRing 0.8s forwards;
 }
 
 .cursor.hovering-pointer {
-    animation: HoverPointer 1s  forwards;
+  animation: HoverPointer 0.8s forwards;
 }
 
+.cursor-ring.leaving-pointer {
+  animation: hoverRingReverse 0.8s forwards;
+}
 
+.cursor.leaving-pointer {
+  animation: HoverPointerReverse 0.8s forwards;
+}
+
+/* --- Animations --- */
 @keyframes hoverRing {
-    0% {
-        width: 3rem;
-        height: 3rem;
-    }
-
-    50% {
-        width: 4rem;
-        height: 4rem;
-    }
-
-    100% {
-        width: 1rem;
-        height: 1rem;
-    }
+  0% { width: 3rem; height: 3rem; }
+  50% { width: 4rem; height: 4rem; }
+  100% { width: 1rem; height: 1rem; }
 }
 
 @keyframes HoverPointer {
-    0% {
-        width: 1.4rem;
-        height: 1.4rem;
-    }
+  0% { width: 1.4rem; height: 1.4rem; }
+  50% { width: 3rem; height: 3rem; }
+  100% { width: 1rem; height: 1rem; }
+}
 
-    50% {
-        width: 3rem;
-        height: 3rem;
-    }
+/* --- Versions inversées --- */
+@keyframes hoverRingReverse {
+  0% { width: 1rem; height: 1rem; }
+  100% { width: 3rem; height: 3rem; }
+}
 
-    100% {
-        width: 1rem;
-        height: 1rem;
-    }
+@keyframes HoverPointerReverse {
+  0% { width: 1rem; height: 1rem; }
+  100% { width: 1.4rem; height: 1.4rem; }
 }
 
 
