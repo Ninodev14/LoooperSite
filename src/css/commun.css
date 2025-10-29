@@ -2,13 +2,20 @@ body {
     background-color: var(--backgroundColor);
     cursor: none;
 }
+
 * {
     cursor: none !important;
 }
 
 .cursor,
 .cursor-ring {
-    transition: background-color 0.2s ease, border-color 0.2s ease ;
+    transition: background-color 0.2s ease, border-color 0.2s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.cursor.dragging,
+.cursor-ring.dragging {
+    width: 3rem;
+    height: 3rem;
 }
 
 .cursor-ring {
@@ -50,43 +57,79 @@ body {
 }
 
 .cursor-ring.hovering-pointer {
-  animation: hoverRing 0.8s forwards;
+    animation: hoverRing 0.8s forwards;
 }
 
 .cursor.hovering-pointer {
-  animation: HoverPointer 0.8s forwards;
+    animation: HoverPointer 0.8s forwards;
 }
 
 .cursor-ring.leaving-pointer {
-  animation: hoverRingReverse 0.8s forwards;
+    animation: hoverRingReverse 0.8s forwards;
 }
 
 .cursor.leaving-pointer {
-  animation: HoverPointerReverse 0.8s forwards;
+    animation: HoverPointerReverse 0.8s forwards;
 }
 
 /* --- Animations --- */
 @keyframes hoverRing {
-  0% { width: 3rem; height: 3rem; }
-  50% { width: 4rem; height: 4rem; }
-  100% { width: 1rem; height: 1rem; }
+    0% {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    50% {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    100% {
+        width: 1rem;
+        height: 1rem;
+    }
 }
 
 @keyframes HoverPointer {
-  0% { width: 1.4rem; height: 1.4rem; }
-  50% { width: 3rem; height: 3rem; }
-  100% { width: 1rem; height: 1rem; }
+    0% {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    50% {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    100% {
+        width: 1rem;
+        height: 1rem;
+    }
 }
 
 /* --- Versions inversées --- */
 @keyframes hoverRingReverse {
-  0% { width: 1rem; height: 1rem; }
-  100% { width: 3rem; height: 3rem; }
+    0% {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    100% {
+        width: 3rem;
+        height: 3rem;
+    }
 }
 
 @keyframes HoverPointerReverse {
-  0% { width: 1rem; height: 1rem; }
-  100% { width: 1.4rem; height: 1.4rem; }
+    0% {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    100% {
+        width: 1.4rem;
+        height: 1.4rem;
+    }
 }
 
 
