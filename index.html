@@ -22,8 +22,52 @@
         const emblaApi = EmblaCarousel(viewportNode, { loop: true })
     </script>
     <link rel="stylesheet" href="src/css/style.css">
-    <link rel="icon" href="src/img/looperIco.ico" type="image/x-icon">
     <title>Loooper!</title>
+    <link rel="icon" href="src/img/ico/looperIco.ico" type="image/x-icon">
+    <meta name="description"
+        content="Découvrez des expériences ludiques et interactives sur mesure. Notre objectif : transformer vos contenus en moments ludiques, engageants, mémorables.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="fr">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Loooper! – Ludification et expériences interactives sur mesure">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Loooper!">
+    <meta property="og:description"
+        content="Loooper! propose des expériences ludiques et interactives sur mesure. Découvrez comment transformer vos contenus en moments ludiques, engageants, mémorables.">
+    <meta property="og:image" content="src/img/ico/ACCUEIL.svg">
+    <meta property="og:url" content="https://loooper.netlify.app/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loooper! – Ludification et expériences interactives sur mesure">
+    <meta name="twitter:description" content=”Loooper! propose des expériences ludiques et interactives sur mesure pour
+        transformer vos contenus en moments ludiques, engageants, mémorables.">
+    <meta name="twitter:image" content="src/img/ico/ACCUEIL.svg">
+
+    <!-- <meta name="robots" content="all">// -->
+    <meta name="author" content="Loooper!">
+    <meta name="owner" content="Loooper!">
+    <!--  Askip cette ligne faut un truc dans google search consol pour valider que tu es proprio
+<meta name="google-site-verification" content="h5yYg1yV99OizP1d0HPCXKjnE3LP_IsiQXixrjJBI4M" />
+-->
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Loooper!",
+  "url": "https://loooper.netlify.app/",
+  "logo": "https://loooper.netlify.app/logo.png", /*CHANGER LE LIEN */
+  "sameAs": [
+   /* "https://www.linkedin.com/company/loooper",
+    "https://twitter.com/loooper"*/
+	/*METTRE LES BON LIEN QUAND OK*/
+  ],
+  "description": "Loooper! propose des expériences ludiques et interactives sur mesure. Notre objectif : transformer vos contenus en moments ludiques, engageants, mémorables."
+}
+</script>
+
 </head>
 
 <body style="position: relative;">
@@ -157,7 +201,7 @@
 
         <div class="large-spacing"></div>
 
-        <section class="zoom-container-center ">
+        <section id="foot-inx1" class="zoom-container-center ">
             <div class="zoom-container">
                 <div class="container-width">
                     <article class="memory-game">
@@ -243,7 +287,7 @@
 
         <div class="large-spacing"></div>
 
-        <section class="container-width">
+        <section id="foot-inx2" class="container-width">
             <h2 class="h2 black white-border">Des expériences qui répondent à vos besoins :</h2>
             <div class="small-medium-spacing"></div>
             <nav class="mini-card-container">
@@ -343,7 +387,7 @@
 
         <div class="large-spacing"></div>
 
-        <section class="swiper" aria-label="Galerie d'images en carrousel">
+        <section id="foot-inx3" class="swiper" aria-label="Galerie d'images en carrousel">
             <h2 class="h2 black white-border container-width">Notre savoir-faire en action !</h2>
             <div class="small-medium-spacing"></div>
             <div class="swiper-wrapper">
@@ -428,7 +472,7 @@
         </section>
 
         <div class="large-spacing"></div>
-        <div class="backgroundBrushType1">
+        <div id="foot-inx4" class="backgroundBrushType1">
             <section class="container-width text-basical-container">
                 <article class="text-basical-container-text">
                     <div>
@@ -614,34 +658,40 @@
                     class="logo-bump"></a>
             <nav class="footer-nav">
                 <div class="footer-nav-row">
-                    <a href="index.html" class="footerTitle">Accueil</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="index.html" class="footerTitle link-underline">Accueil</a>
+                    <a href="index.html#foot-inx1" class="text-typo link-underline">Ce qui rend Loooper! unique</a>
+                    <a href="index.html#foot-inx2" class="text-typo link-underline">Réondre à des besoins</a>
+                    <a href="index.html#foot-inx3" class="text-typo link-underline">L'équipe en bref</a>
+                    <a href="index.html#foot-inx4" class="text-typo link-underline">Nos projets phares</a>
+                    
                 </div>
                 <div class="footer-nav-row">
-                    <a href="formats.html" class="footerTitle">Nos formats</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="formats.html" class="footerTitle link-underline">Nos formats</a>
+                    <a href="formats.html#foot-form1" class="text-typo link-underline">Notre univers</a>
+                    <a href="formats.html#foot-form2" class="text-typo link-underline">Les atouts des formats</a>
+                    <a href="formats.html#foot-form3" class="text-typo link-underline">FAQ formats</a>
                 </div>
                 <div class="footer-nav-row">
-                    <a href="besoins.html" class="footerTitle">Vos besoins</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="besoins.html" class="footerTitle link-underline">Vos besoins</a>
+                    <a href="apprendre-ludique.html" class="text-typo link-underline">Apprendre avec le ludique</a>
+                    <a href="sensibiliser-reflechir.html" class="text-typo link-underline">Sensibiliser et faire réfléchir</a>
+                    <a href="creer-interaction-sociale.html" class="text-typo link-underline">Créer de l'interaction sociale</a>
+                    <a href="renforcer-cohesion.html" class="text-typo link-underline">Renforcer la cohésion</a>
+                    <a href="engager-motiver.html" class="text-typo link-underline">Engager et motiver</a>
+                    <a href="former-efficacement.html" class="text-typo link-underline">Former efficacement</a>
+                    <a href="communiquer-autrement.html" class="text-typo link-underline">Communiquer autrement</a>
                 </div>
                 <div class="footer-nav-row">
-                    <a href="equipe.html" class="footerTitle">Notre équipe</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="equipe.html" class="footerTitle link-underline">Notre équipe</a>
+                    <a href="equipe.html#foot-eqp1" class="text-typo link-underline">Notre volonté</a>
+                    <a href="equipe.html#foot-eqp2" class="text-typo link-underline">Les membres</a>
+                    <a href="equipe.html#foot-eqp3" class="text-typo link-underline">Notre chemin de travail</a>
+                    <a href="equipe.html#foot-eqp4" class="text-typo link-underline">FAQ équipe</a>
                 </div>
                 <div class="footer-nav-row">
-                    <a href="projets.html" class="footerTitle">Nos projets</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
-                    <a href="" class="text-typo">lorel ipsum</a>
+                    <a href="projets.html" class="footerTitle link-underline">Nos projets</a>
+                    <a href="projets.html#foot-prj1" class="text-typo link-underline">Nos productions</a>
+                    <a href="projets.html#foot-prj2" class="text-typo link-underline">Parutions médias</a>
                 </div>
 
             </nav>
@@ -659,8 +709,11 @@
                     <a href=""><img src="src/svg/insta.svg" alt="Notre compte Intagram"></a>
                     <a href=""><img src="src/svg/linkdin.svg" alt="Notre compte Linkedin"></a>
                 </div>
-                <div class="footerLogo"><img src="src/img/logo.png" class="logo-jump" alt="Logo de loooper">
+                <a href="index.html">
+                    <div class="footerLogo"><img src="src/img/logo.png" class="logo-jump" alt="Logo de loooper">
                 </div>
+                </a>
+                
                 <a href="mentions-legales.html" class="text-typo">Mentions Legals</a>
             </div>
 
@@ -719,7 +772,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="cursor-ring">
         <div class="cursor"></div>
     </div>
