@@ -46,15 +46,18 @@ body {
     border-color: var(--backgroundColor);
 }
 
-.hover-pointer .cursor{
-    transition: all;
-      transform: translate(-50%, -50%) scale(0);
+.cursor-ring.hovering-pointer {
+  animation: pulse 0.6s infinite alternate;
 }
 
-.cursor-ring.hover-pointer {
-    border-color: white;
-    transform: scale(1.1);
+@keyframes pulse {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(1.4); opacity: 0.7; }
+}
 
+
+.cursor.hovering-pointer {
+  animation: pulse 0.6s infinite alternate;
 }
 
 
@@ -1230,6 +1233,7 @@ body {
 }
 
 .text-paragraph-emojie img {
+    width: 1.6rem;
     max-width: 1.6rem;
     max-height: 1.6rem;
 }

@@ -58,9 +58,20 @@ if (hasMouse) {
     if (!el) return;
 
     const style = window.getComputedStyle(el);
-    let computedBg = style.backgroundColor;
 
+    const pointerStyle = style.cursor;
+    const hasPointer = pointerStyle === 'pointer';
+
+    if (hasPointer) {
+      cursor.classList.add('hovering-pointer');
+      ring.classList.add('hovering-pointer');
+    } else {
+      cursor.classList.remove('hovering-pointer');
+      ring.classList.remove('hovering-pointer');
+    }
+    let computedBg = style.backgroundColor;
     let currentEl = el;
+
     while (
       currentEl &&
       (computedBg === 'rgba(0, 0, 0, 0)' || computedBg === 'transparent')
@@ -87,7 +98,6 @@ if (hasMouse) {
       }
     }
   }
-
 } else {
   document.querySelectorAll('.cursor, .cursor-ring').forEach(el => el.style.display = 'none');
 }
