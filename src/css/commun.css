@@ -2,6 +2,9 @@ body {
     background-color: var(--backgroundColor);
     cursor: none;
 }
+* {
+    cursor: none !important;
+}
 
 .cursor,
 .cursor-ring {
