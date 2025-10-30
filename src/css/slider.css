@@ -52,6 +52,9 @@ p.lead {
     position: relative;
     padding-right: 20px;
     padding-bottom: 20px;
+    background: none;
+    border: none;
+
 
 }
 
