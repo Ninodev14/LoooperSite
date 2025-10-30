@@ -1122,13 +1122,10 @@ body {
 
     }
 
-    .background-interogation {
+    .background-interogation,.background-guillemet::before ,.background-guillemet::after {
         background-image: none;
     }
 
-    .background-guillemet {
-        background-image: none;
-    }
 }
 
 /* MODAL */
