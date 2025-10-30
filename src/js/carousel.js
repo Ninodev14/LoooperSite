@@ -1,16 +1,10 @@
-// palette qui suit ton exemple : 1 orange, 2 rose, 3 bleu, 4 orange, 5 rouge, puis répétition
-const colors = ['#F6B254', '#BB6EF6', '#3C61F5', '#BB6EF6'];
+const colors = ['#F6B254', '#BB6EF6', '#3C61F5'];
 
 function applyColors(swiper) {
-  // swiper.slides contient les slides + clones
   Array.from(swiper.slides).forEach(slide => {
     const img = slide.querySelector('.slide-media img');
     if (!img) return;
-
-    // Swiper ajoute data-swiper-slide-index aux clones — c'est l'index "réel"
     let origIndex = slide.getAttribute('data-swiper-slide-index');
-
-    // fallback si pas présent (peu probable), on prend l'index DOM
     if (origIndex === null) {
       origIndex = Array.from(swiper.slides).indexOf(slide);
     }
@@ -20,7 +14,6 @@ function applyColors(swiper) {
   });
 }
 
-// Initialisation du slider (ton config, avec hook init)
 const swiper = new Swiper('.swiper', {
   loop: true,
   grabCursor: true,
@@ -47,15 +40,13 @@ const swiper = new Swiper('.swiper', {
 
   on: {
     init() {
-      applyColors(this); // applique les couleurs dès la création (clones inclus)
+      applyColors(this);
     },
-    // Si tu ajoutes/enlèves dynamiquement des slides ou changes layout,
-    // tu peux rappeler applyColors après update
+
     observerUpdate() {
       applyColors(this);
     }
   }
 });
 
-// Au cas où (double sécurité) : appliquer aussi après l'instanciation
 applyColors(swiper);
