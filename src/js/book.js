@@ -79,7 +79,7 @@ function render() {
         imgEl.src = s.img;
         imgEl.alt = s.alt || '';
     }
-    if (textEl) textEl.textContent = s.text;
+    if (textEl) textEl.innerHTML = s.text;
 
     const dots = dotsContainer.querySelectorAll('.book-dot');
     dots.forEach((d, i) =>
@@ -237,7 +237,7 @@ function renderMobile() {
   if (s.color) mobileTitle.classList.add(s.color);
   mobileImg.src = s.img;
   mobileImg.alt = s.alt;
-  mobileText.textContent = s.text;
+ mobileText.innerHTML = s.text;
 
   mobileDots.querySelectorAll('button').forEach((dot, i) => {
     dot.setAttribute('aria-selected', i === currentMobile ? 'true' : 'false');
