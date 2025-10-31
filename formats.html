@@ -1336,6 +1336,11 @@
         <button id="accessibility-btn"><img src="src/svg/handicap.svg" alt="Boutton handicap"></button>
     </div>
 
+    
+    <div class="menue-nav-ludique-handicap">
+        <button id="accessibility-btn"><img src="src/svg/handicap.svg" alt="Boutton handicap"></button>
+    </div>
+
     <div id="focus-top"></div>
     <div id="focus-bottom"></div>
 
@@ -1353,22 +1358,29 @@
             Contraste élevé
         </label>
         <label class="text-typo black">
+            <input type="checkbox" id="chkNormalCursor" onchange="toggleNormalCursor()">
+            Curseur normal
+        </label>
+        <label class="text-typo black">
             <input type="checkbox" id="chkFocusBar" onchange="toggleFocusBar()">
             Barre de concentration
         </label>
         <label class="text-typo black">
             <input type="checkbox" id="chkLinkOutline" onchange="toggleLinkOutline()">
-            Encadrer les liens
+            Encadrer les boutton
         </label>
         <label class="text-typo black">
             <input type="checkbox" id="chkLinkOutlineHover" onchange="toggleLinkOutlineHover()">
-            Encadrer les liens au survol
+            Encadrer les boutton au survol
         </label>
-        <button class=" btn-project btn-white-background" onclick="resetSettings()">Réinitialiser tout</button>
+        <button class="text-typo btn-project btn-white-background" onclick="resetSettings()"><span>Réinitialiser
+                tout</span></button>
     </div>
+    
     <div class="cursor-ring">
         <div class="cursor"></div>
     </div>
+
     <script src="src/js/mouse.js"></script>
     <script src="src/js/accessibility.js"></script>
     <script src="src/js/modal.js"></script>
