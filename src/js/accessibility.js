@@ -58,7 +58,6 @@ document.addEventListener("click", (e) => {
   }
 });
 
-
 window.addEventListener("load", () => {
 
   if (localStorage.getItem("font") === "opendyslexic") {
@@ -96,19 +95,77 @@ window.addEventListener("load", () => {
     const el = document.getElementById("chkLinkOutlineHover");
     if (el) el.checked = true;
   }
+
+  const cursorSetting = localStorage.getItem("cursor");
+  if (cursorSetting === "normal") {
+    body.classList.add("normal-cursor");
+    const el = document.getElementById("chkNormalCursor");
+    if (el) el.checked = true;
+  }
+  if ("ontouchstart" in window) {
+    const disabledOptions = [
+      { id: "chkFocusBar", img: "src/img/Monitor.png" },
+      { id: "chkNormalCursor", img: "src/img/Monitor.png" },
+      { id: "chkLinkOutlineHover", img: "src/img/Monitor.png" }
+    ];
+
+    disabledOptions.forEach(opt => {
+      const label = document.querySelector(`label[for="${opt.id}"]`) || document.getElementById(opt.id)?.closest("label");
+      const checkbox = document.getElementById(opt.id);
+
+      if (label && checkbox) {
+        // Créer une image de remplacement
+        const img = document.createElement("img");
+        img.src = opt.img;
+        img.alt = "Option désactivée sur mobile";
+        img.style.width = "18px";
+        img.style.height = "18px";
+        img.style.opacity = "0.8";
+        img.style.filter = "grayscale(100%)";
+
+        // Remplacer la checkbox par l'image
+        checkbox.replaceWith(img);
+
+        // Rendre le texte grisé
+        label.style.opacity = "0.5";
+      }
+    });
+  }
 });
 
-// --- Fonctions d’accessibilité
 function toggleOpendyslexic() {
-  body.classList.toggle("opendyslexic");
-  if (body.classList.contains("opendyslexic")) localStorage.setItem("font", "opendyslexic");
-  else localStorage.removeItem("font");
+  const chkOpen = document.getElementById("chkOpendyslexic");
+  const chkRead = document.getElementById("chkReading");
+
+  if (chkOpen.checked) {
+    body.classList.remove("reading");
+    if (chkRead) chkRead.checked = false;
+    localStorage.removeItem("font");
+
+    body.classList.add("opendyslexic");
+    localStorage.setItem("font", "opendyslexic");
+  } else {
+    body.classList.remove("opendyslexic");
+    localStorage.removeItem("font");
+  }
 }
 
 function toggleReading() {
-  body.classList.toggle("reading");
-  if (body.classList.contains("reading")) localStorage.setItem("font", "reading");
-  else localStorage.removeItem("font");
+  const chkRead = document.getElementById("chkReading");
+  const chkOpen = document.getElementById("chkOpendyslexic");
+
+  if (chkRead.checked) {
+    body.classList.remove("opendyslexic");
+    if (chkOpen) chkOpen.checked = false;
+    localStorage.removeItem("font");
+
+    body.classList.add("reading");
+    localStorage.setItem("font", "reading");
+  } else {
+
+    body.classList.remove("reading");
+    localStorage.removeItem("font");
+  }
 }
 
 function toggleContrast() {
@@ -155,11 +212,17 @@ if (!("ontouchstart" in window)) {
   };
 }
 
-// --- Autres fonctions
-function toggleBigCursor() {
-  body.classList.toggle("big-cursor");
-  if (body.classList.contains("big-cursor")) localStorage.setItem("cursor", "big");
-  else localStorage.removeItem("cursor");
+// --- Curseur normal uniquement
+function toggleNormalCursor() {
+  const chkNormal = document.getElementById("chkNormalCursor");
+
+  if (chkNormal.checked) {
+    body.classList.add("normal-cursor");
+    localStorage.setItem("cursor", "normal");
+  } else {
+    body.classList.remove("normal-cursor");
+    localStorage.removeItem("cursor");
+  }
 }
 
 function toggleLinkOutline() {
@@ -182,7 +245,7 @@ function resetSettings() {
     "high-contrast",
     "reading",
     "focus-bar-active",
-    "big-cursor",
+    "normal-cursor",
     "link-outline",
     "link-outline-hover"
   );

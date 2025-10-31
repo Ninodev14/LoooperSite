@@ -1043,7 +1043,7 @@
                         </div>
                     </fieldset>
                     <div class="obligatoireChamp">
-                        <p>*Champ obligatoire</p>
+                        <p>*Champs obligatoires</p>
                     </div>
                     <div class="small-spacing"></div>
                     <div class="center-form-btn">
@@ -1162,18 +1162,23 @@
             Contraste élevé
         </label>
         <label class="text-typo black">
+            <input type="checkbox" id="chkNormalCursor" onchange="toggleNormalCursor()">
+            Curseur normal
+        </label>
+        <label class="text-typo black">
             <input type="checkbox" id="chkFocusBar" onchange="toggleFocusBar()">
             Barre de concentration
         </label>
         <label class="text-typo black">
             <input type="checkbox" id="chkLinkOutline" onchange="toggleLinkOutline()">
-            Encadrer les liens
+            Encadrer les boutton
         </label>
         <label class="text-typo black">
             <input type="checkbox" id="chkLinkOutlineHover" onchange="toggleLinkOutlineHover()">
-            Encadrer les liens au survol
+            Encadrer les boutton au survol
         </label>
-        <button class=" btn-project btn-white-background" onclick="resetSettings()">Réinitialiser tout</button>
+        <button class="text-typo btn-project btn-white-background" onclick="resetSettings()"><span>Réinitialiser
+                tout</span></button>
     </div>
 
     <div id="ludique-menue">

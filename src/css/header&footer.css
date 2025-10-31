@@ -184,7 +184,7 @@ header {
 
 .menu-tel-nav a,
 .menu-tel-sub a {
-    font-family: Poppins !important;
+    font-family: Poppins;
 }
 
 .menu-tel-nav {
@@ -403,6 +403,8 @@ footer {
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     text-align: right;
+    justify-items: center;
+    gap: 20%;
 }
 
 
@@ -427,6 +429,13 @@ footer {
 .footerLogoImg img {
     width: 100%;
 }
+.footer-bot-container a{
+    width: fit-content;
+}
+.footer-bot-container .link-underline{
+    text-align: end;
+}
+
 
 @media screen and (max-width: 960px) {
     .footer-bot-container {

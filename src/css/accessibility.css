@@ -7,6 +7,7 @@
  .opendyslexic p,
  .opendyslexic .h3,
  .opendyslexic .h2,
+ .opendyslexic .dropdown-toggle,
  .opendyslexic .h1 {
      font-family: "Open-dyslexic";
  }
@@ -24,10 +25,59 @@
      font-family: "Open Sans", sans-serif;
  }
 
+ body.normal-cursor * {
+     cursor: auto !important;
+ }
 
+ body.normal-cursor .cursor-ring {
+     display: none !important;
+ }
 
- body.big-cursor {
-     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" > <circle cx="1000" cy="1000" r="500" fill="black" /> </svg>') 40 40, auto;
+ body.normal-cursor a,
+ body.normal-cursor a *,
+ body.normal-cursor button,
+ body.normal-cursor button *,
+ body.normal-cursor [role="button"],
+ body.normal-cursor [role="button"] *,
+ body.normal-cursor input[type="button"],
+ body.normal-cursor input[type="submit"],
+ body.normal-cursor .toggle-labe,
+ body.normal-cursor .toggle-labe *,
+ body.normal-cursor .btn-project,
+ body.normal-cursor .btn-project *,
+ body.normal-cursor .faq-header,
+ body.normal-cursor .faq-header *,
+ body.normal-cursor .btn-close,
+ body.normal-cursor .btn-close *,
+ body.normal-cursor .dropdown-toggle,
+ body.normal-cursor .dropdown-toggle *,
+ body.normal-cursor .contact .dropdown summary,
+ body.normal-cursor .contact .dropdown summary *,
+ body.normal-cursor .protagonistes-card,
+ body.normal-cursor .protagonistes-card *,
+ body.normal-cursor .book-mobile-nav,
+ body.normal-cursor .book-mobile-nav *,
+ body.normal-cursor .book-nav,
+ body.normal-cursor .book-nav *,
+ body.normal-cursor .clickable,
+ body.normal-cursor .clickable *,
+ body.normal-cursor #menu-toggle,
+ body.normal-cursor #menu-toggle *,
+ body.normal-cursor #btn-slide,
+ body.normal-cursor #btn-slide *,
+ body.normal-cursor #btn-back,
+ body.normal-cursor #btn-back *,
+ body.normal-cursor .card,
+ body.normal-cursor .card *,
+ body.normal-cursor .piece,
+ body.normal-cursor .piece *,
+ body.normal-cursor .swiper-button-next,
+ body.normal-cursor .swiper-button-next *,
+ body.normal-cursor .swiper-button-prev,
+ body.normal-cursor .swiper-button-prev *,
+ body.normal-cursor [style*="cursor:pointer"],
+ body.normal-cursor [style*="cursor:pointer"] * {
+     cursor: pointer !important;
  }
 
  /* Bouton */
@@ -64,14 +114,14 @@
  #ludique-btn img {
      width: 50px;
      height: auto;
-      transition: filter 0.3s ease;
-      
+     transition: filter 0.3s ease;
+
  }
 
 
  #accessibility-btn,
  #ludique-btn {
-    transition: filter 0.3s ease;
+     transition: filter 0.3s ease;
      all: unset;
      cursor: pointer;
      display: inline;
@@ -103,8 +153,16 @@
  #accessibility-menu label,
  #ludique-menue p {
      font-size: 0.8rem;
- }
 
+ }
+  #accessibility-menu label{
+    display: flex;
+    align-items: center;
+  }
+ #accessibility-menu label img{
+    margin-left: 4px;
+    margin-right: 8px;
+ }
  #accessibility-menu button {
      margin-top: 10px;
      font-size: 0.8rem;
@@ -129,7 +187,7 @@
      filter: saturate(200);
      pointer-events: none;
      display: none;
-     z-index: 9999;
+     z-index: 999999;
      transition: height 0.05s linear;
  }
 
@@ -159,10 +217,39 @@
  }
 
 
- .link-outline a {
-     outline: 3px solid var(--link-outline-color, #ffdd00);
+
+ .link-outline a,
+ .link-outline button,
+ .link-outline [role="button"],
+ .link-outline input[type="button"],
+ .link-outline input[type="submit"],
+ .link-outline .toggle-labe,
+ .link-outline .btn-project,
+ .link-outline .faq-header,
+ .link-outline .btn-close,
+ .link-outline .dropdown-toggle,
+ .link-outline .contact .dropdown summary,
+ .link-outline .protagonistes-card,
+ .link-outline .book-mobile-nav,
+ .link-outline .book-nav,
+ .link-outline .clickable,
+ .link-outline #menu-toggle,
+ .link-outline #btn-slide,
+ .link-outline #btn-back,
+ .link-outline .card,
+ .link-outline .piece,
+ .link-outline .swiper-button-next,
+ .link-outline .swiper-button-prev,
+ .link-outline input,
+ .link-outline textarea,
+ .link-outline .img-container-header img,
+ .link-outline .dropdown,
+ #ludique-btn *,
+ #accessibility-btn *,
+ .link-outline [style*="cursor:pointer"] {
+     outline: 2px solid var(--link-outline-color, #00A5F7);
      outline-offset: 3px;
-     border-radius: 4px;
+
  }
 
  .link-outline a.small {
@@ -172,5 +259,4 @@
  .link-outline-hover a:hover {
      outline: 3px solid var(--link-outline-color, #ff6600);
      outline-offset: 3px;
-     border-radius: 4px;
  }

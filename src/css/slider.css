@@ -41,7 +41,6 @@ p.lead {
 }
 
 .swiper-slide {
-    overflow: hidden;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
