@@ -155,14 +155,17 @@
      font-size: 0.8rem;
 
  }
-  #accessibility-menu label{
-    display: flex;
-    align-items: center;
-  }
- #accessibility-menu label img{
-    margin-left: 4px;
-    margin-right: 8px;
+
+ #accessibility-menu label {
+     display: flex;
+     align-items: center;
  }
+
+ #accessibility-menu label img {
+     margin-left: 4px;
+     margin-right: 8px;
+ }
+
  #accessibility-menu button {
      margin-top: 10px;
      font-size: 0.8rem;
@@ -244,8 +247,8 @@
  .link-outline textarea,
  .link-outline .img-container-header img,
  .link-outline .dropdown,
- #ludique-btn *,
- #accessibility-btn *,
+ .link-outline #ludique-btn *,
+ .link-outline #accessibility-btn *,
  .link-outline [style*="cursor:pointer"] {
      outline: 2px solid var(--link-outline-color, #00A5F7);
      outline-offset: 3px;
@@ -256,7 +259,35 @@
      outline-offset: 4px;
  }
 
- .link-outline-hover a:hover {
+ .link-outline-hover a:hover,
+ .link-outline-hover button:hover,
+ .link-outline-hover [role="button"]:hover,
+ .link-outline-hover input[type="button"]:hover,
+ .link-outline-hover input[type="submit"]:hover,
+ .link-outline-hover .toggle-labe:hover,
+ .link-outline-hover .btn-project:hover,
+ .link-outline-hover .faq-header:hover,
+ .link-outline-hover .btn-close:hover,
+ .link-outline-hover .dropdown-toggle:hover,
+ .link-outline-hover .contact .dropdown summary:hover,
+ .link-outline-hover .protagonistes-card:hover,
+ .link-outline-hover .book-mobile-nav:hover,
+ .link-outline-hover .book-nav:hover,
+ .link-outline-hover .clickable:hover,
+ .link-outline-hover #menu-toggle:hover,
+ .link-outline-hover #btn-slide:hover,
+ .link-outline-hover #btn-back:hover,
+ .link-outline-hover .card:hover,
+ .link-outline-hover .piece:hover,
+ .link-outline-hover .swiper-button-next:hover,
+ .link-outline-hover .swiper-button-prev:hover,
+ .link-outline-hover input:hover,
+ .link-outline-hover textarea:hover,
+ .link-outline-hover .img-container-header img:hover,
+ .link-outline-hover .dropdown:hover,
+ .link-outline-hover #ludique-btn *:hover,
+ .link-outline-hover #accessibility-btn *:hover,
+ .link-outline-hover [style*="cursor:pointer"]:hover {
      outline: 3px solid var(--link-outline-color, #ff6600);
      outline-offset: 3px;
  }
