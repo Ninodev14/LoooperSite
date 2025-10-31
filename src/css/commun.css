@@ -827,7 +827,11 @@ body {
 .headerSpacing {
     margin-top: calc(70px + 10vh);
 }
-
+@media screen and (max-width: 960px) {
+.large-spacing {
+    margin-top: 16rem;
+}
+}
 /*EFFECT / ANNIMATION*/
 .reflect {
     transform: scaleX(-1);
