@@ -127,7 +127,7 @@ window.addEventListener("load", () => {
         checkbox.replaceWith(img);
 
         // Rendre le texte grisé
-        label.style.opacity = "0.5";
+        label.style.opacity = "0.4";
       }
     });
   }
