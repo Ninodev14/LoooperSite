@@ -1,3 +1,7 @@
+i{
+  font-style: italic !important;
+}
+
 .h1 {
   color: white;
   font-family: "Titan One";
@@ -219,7 +223,6 @@ header p {
   text-decoration-line: underline;
 }
 
-
 .white-border {
   text-shadow:
     0.0556rem 0 #fff, -0.0556rem 0 #fff,
@@ -300,6 +303,8 @@ html {
 .black .link-underline-black {
   color: black;
 }
+
+
 
 @media(max-width: 768px) {
   .modal .highlight-no-annim::before {
