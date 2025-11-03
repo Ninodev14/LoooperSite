@@ -139,23 +139,25 @@ body {
     width: calc(100vw - 16vw);
     margin-left: 8vw;
 }
-.mentions-legale-container{
+
+.mentions-legale-container {
     position: relative;
+    z-index: 1;
 }
 
-.mentions-legale-container ::after{
+.mentions-legale-container ::after {
     content: "";
     user-select: none;
     position: absolute;
-    top: -100%;
+    top: 0;
     pointer-events: none;
     right: 0px;
-    bottom: -100%;
     background-image: url(/src/svg/mentionsPatern.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position:center;
     width: 30vw;
+    height: 100%;
     z-index: -100;
 }
 
@@ -165,9 +167,7 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    flex-direction: column
-
-;
+    flex-direction: column;
 }
 
 .ariane-net {
@@ -490,16 +490,17 @@ body {
     flex-direction: column;
     gap: 2rem;
 }
+
 .external-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
- 
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
 }
 
 .external-icon {
-  width: fit-content !important;
-  height: 0.9em;
+    width: fit-content !important;
+    height: 0.9em;
 
 }
 
@@ -548,9 +549,10 @@ body {
     .mainPageTitle {
         background-size: 600%;
     }
-    .mentions-legale-container ::after{
-display: none;
-}
+
+    .mentions-legale-container ::after {
+        display: none;
+    }
 }
 
 
