@@ -251,6 +251,21 @@ header p {
     0.0417rem 0.0417rem #fff, -0.0417rem -0.0417rem #fff,
     0.0417rem -0.0417rem #fff, -0.0417rem 0.0417rem #fff;
 }
+.black-border-small {
+  text-shadow:
+    0.0139rem 0 #000, -0.0139rem 0 #000,
+    0 0.0139rem #000, 0 -0.0139rem #000,
+    0.0139rem 0.0139rem #000, -0.0139rem -0.0139rem #000,
+    0.0139rem -0.0139rem #000, -0.0139rem 0.0139rem #000,
+    0.0278rem 0 #000, -0.0278rem 0 #000,
+    0 0.0278rem #000, 0 -0.0278rem #000,
+    0.0278rem 0.0278rem #000, -0.0278rem -0.0278rem #000,
+    0.0278rem -0.0278rem #000, -0.0278rem 0.0278rem #000,
+    0.0417rem 0 #000, -0.0417rem 0 #000,
+    0 0.0417rem #000, 0 -0.0417rem #000,
+    0.0417rem 0.0417rem #000, -0.0417rem -0.0417rem #000,
+    0.0417rem -0.0417rem #000, -0.0417rem 0.0417rem #000;
+}
 
 .nav-pc-container .white-border-small {
   text-shadow:

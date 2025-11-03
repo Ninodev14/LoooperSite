@@ -142,6 +142,11 @@ body {
     flex-wrap: wrap;
 
 }
+.ariane-net a{
+
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+}
 
 .ariane-net a {
     color: #fff;
