@@ -490,6 +490,18 @@ body {
     flex-direction: column;
     gap: 2rem;
 }
+.external-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+ 
+}
+
+.external-icon {
+  width: fit-content !important;
+  height: 0.9em;
+
+}
 
 @media screen and (max-width: 960px) {
     .container-width {
