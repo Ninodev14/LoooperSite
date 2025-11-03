@@ -6,8 +6,8 @@ document.querySelectorAll('.protagonistes-card').forEach(card => {
 function adjustCardsHeight() {
     const cards = document.querySelectorAll('.protagonistes-card');
     let maxHeight = 0;
+ console.log("eee")
 
-    // trouver la hauteur la plus grande parmi toutes les cartes
     cards.forEach(card => {
         const front = card.querySelector('.protagonistes-card-front');
         const back = card.querySelector('.protagonistes-card-back');
@@ -17,7 +17,6 @@ function adjustCardsHeight() {
         }
     });
 
-    // appliquer la hauteur maximale à toutes les cartes
     cards.forEach(card => {
         card.style.height = maxHeight + 'px';
     });

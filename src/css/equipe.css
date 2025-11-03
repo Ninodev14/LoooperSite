@@ -1,6 +1,6 @@
 .protagonistes-card {
-    width: 30vw;
-    max-width: 380px;
+    width: 22vw;
+
 
     background-color: #fff;
     border: 6px solid #fff;
@@ -215,6 +215,12 @@
     border: 6px solid #FFF;
 }
 
+.last-item{
+    height: 10px;
+    width: 100%;
+    padding-top:2rem;
+}
+
 .protagonistes-card-img img {
     width: 100%;
     height: auto;
@@ -237,7 +243,7 @@
     padding-bottom: calc(60px + 2vw);
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 950px) {
     .protagonistes-containe-wrapper {
         flex-direction: column;
         gap: 40px;
