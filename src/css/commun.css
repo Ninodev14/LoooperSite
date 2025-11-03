@@ -1172,7 +1172,7 @@ body {
 }
 
 .faq-container-info.active .faq-text-espacement {
-    max-height: 500px;
+    max-height: 1000px;
     opacity: 1;
     margin-top: 8px;
 }
