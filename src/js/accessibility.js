@@ -114,7 +114,6 @@ window.addEventListener("load", () => {
       const checkbox = document.getElementById(opt.id);
 
       if (label && checkbox) {
-        // Créer une image de remplacement
         const img = document.createElement("img");
         img.src = opt.img;
         img.alt = "Option désactivée sur mobile";
@@ -123,10 +122,8 @@ window.addEventListener("load", () => {
         img.style.opacity = "0.8";
         img.style.filter = "grayscale(100%)";
 
-        // Remplacer la checkbox par l'image
         checkbox.replaceWith(img);
 
-        // Rendre le texte grisé
         label.style.opacity = "0.4";
       }
     });

@@ -7,8 +7,10 @@ document.querySelectorAll('.btn-modal').forEach(btn => {
     modal.classList.add('active');
     modal.setAttribute('aria-hidden', 'false');
 
+    // Sauvegarde du bouton déclencheur
     modal.dataset.triggerButton = btn;
 
+    // Focus sur le premier élément pertinent
     const focusable = modal.querySelector('h3, button, a, input, textarea, select, [tabindex]:not([tabindex="-1"])');
     if (focusable) {
       focusable.setAttribute('tabindex', '-1');
@@ -32,6 +34,15 @@ document.addEventListener('keydown', e => {
   }
 });
 
+document.querySelectorAll('.modal').forEach(modal => {
+  modal.addEventListener('click', e => {
+    const container = modal.querySelector('.modal-container');
+    if (!container.contains(e.target)) {
+      closeModal(modal);
+    }
+  });
+});
+
 function closeModal(modal) {
   modal.classList.remove('active');
   modal.setAttribute('aria-hidden', 'true');
@@ -40,27 +51,22 @@ function closeModal(modal) {
   if (trigger) trigger.focus();
 }
 
-// Fermer la modal quand on clique sur un lien qui mène à une ancre (ex: #contactForm)
 document.querySelectorAll('.modal a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const modal = link.closest('.modal');
     if (modal) {
-      closeModal(modal); // ferme la modal
+      closeModal(modal);
     }
 
-    // Laisse le comportement de l'ancre se produire après un léger délai
     const targetId = link.getAttribute('href');
     if (targetId && targetId.startsWith('#')) {
       const target = document.querySelector(targetId);
       if (target) {
-        // petit délai pour laisser la fermeture s'animer proprement
         setTimeout(() => {
           target.scrollIntoView({ behavior: 'smooth' });
-          target.focus?.(); // si focusable
+          target.focus?.();
         }, 300);
       }
     }
   });
 });
-
-
