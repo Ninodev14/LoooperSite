@@ -140,6 +140,19 @@ body {
     margin-left: 8vw;
 }
 
+
+
+.center-404 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column
+
+;
+}
+
 .ariane-net {
     display: flex;
     gap: 5px;
@@ -148,7 +161,8 @@ body {
     flex-wrap: wrap;
 
 }
-.ariane-net a{
+
+.ariane-net a {
 
     text-decoration-line: underline;
     text-decoration-style: solid;
@@ -838,11 +852,13 @@ body {
 .headerSpacing {
     margin-top: calc(70px + 10vh);
 }
+
 @media screen and (max-width: 960px) {
-.large-spacing {
-    margin-top: 16rem;
+    .large-spacing {
+        margin-top: 16rem;
+    }
 }
-}
+
 /*EFFECT / ANNIMATION*/
 .reflect {
     transform: scaleX(-1);
