@@ -18,6 +18,9 @@ function afficherPuzzle() {
   positions.forEach((pos, i) => {
     const div = document.createElement("div");
     div.classList.add("piece");
+    if (!estGagne) {
+      div.classList.add("enCours");
+    }
 
     if (pos === 0) {
       div.classList.add("vide");
