@@ -173,13 +173,27 @@
 
 
  .high-contrast {
-     background-color: #000;
+     background-color: #0B021F;
      color: #fff !important;
  }
 
+
+
+ .high-contrast .backgroundBrushType1::before {
+     display: none;
+ }
+
+ .high-contrast footer {
+     background-color: #03010A !important;
+ }
+
+ .high-contrast .mainPageTitle,
+ .high-contrast .paterneTitle,
+ .high-contrast .highlight-no-annim::before,
  .high-contrast .highlight::before {
      background-image: none !important;
  }
+
 
  #focus-top,
  #focus-bottom {
