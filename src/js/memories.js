@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  // Préchargement des images
   Object.keys(contentsByImage).forEach((src) => {
     const img = new Image();
     img.src = src;
@@ -55,6 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.src = content.image;
                 btn.style.cursor = "pointer";
                 btn.dataset.image = content.image;
+                btn.closest(".game-button").classList.add("discovered");
+
                 break;
               }
             }
@@ -71,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
               });
             });
           }
+
           flippedCards = [];
           lockBoard = false;
 
