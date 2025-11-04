@@ -1,4 +1,4 @@
-i{
+i {
   font-style: italic !important;
 }
 
@@ -99,6 +99,34 @@ header p {
   z-index: 1;
 }
 
+.paterneTitle {
+  position: relative;
+  background-size: auto;
+  background-repeat: repeat;
+  background-position: center;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  z-index: 2;
+  text-shadow: none;
+}
+
+.paterneTitleOrange {
+  background-image: url(/src/svg/orangePaternFull.svg);
+}
+
+.paterneTitleBlue {
+  background-image: url(/src/svg/bluePaternFull.svg);
+}
+
+.paterneTitlePurple {
+  background-image: url(/src/svg/purplePaternFull.svg);
+}
+
+.uderline {
+  text-decoration-line: underline;
+}
+
 .mainPageTitle .white-border {
   background-repeat: repeat;
   background-position: bottom;
@@ -146,6 +174,7 @@ header p {
     0.5rem 0.5rem #180544, -0.5rem -0.5rem #180544,
     0.5rem -0.5rem #180544, -0.5rem 0.5rem #180544;
 }
+
 .paterneTitleContour {
   position: absolute;
   top: 0;
@@ -195,34 +224,6 @@ header p {
 }
 
 
-.paterneTitle {
-  position: relative;
-  background-size: auto;
-  background-repeat: repeat;
-  background-position: center;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  z-index: 2;
-  text-shadow: none;
-}
-
-.paterneTitleOrange {
-  background-image: url(/src/svg/orangePaternFull.svg);
-}
-
-.paterneTitleBlue {
-  background-image: url(/src/svg/bluePaternFull.svg);
-}
-
-.paterneTitlePurple {
-  background-image: url(/src/svg/purplePaternFull.svg);
-}
-
-.uderline {
-  text-decoration-line: underline;
-}
-
 .white-border {
   text-shadow:
     0.0556rem 0 #fff, -0.0556rem 0 #fff,
@@ -254,6 +255,7 @@ header p {
     0.0417rem 0.0417rem #fff, -0.0417rem -0.0417rem #fff,
     0.0417rem -0.0417rem #fff, -0.0417rem 0.0417rem #fff;
 }
+
 .black-border-small {
   text-shadow:
     0.0139rem 0 #000, -0.0139rem 0 #000,
@@ -284,6 +286,170 @@ header p {
     0 0.0333rem #fff, 0 -0.0333rem #fff,
     0.0333rem 0.0333rem #fff, -0.0333rem -0.0333rem #fff,
     0.0333rem -0.0333rem #fff, -0.0333rem 0.0333rem #fff;
+}
+
+.opendyslexic .mainPageTitle .white-border,
+.reading .mainPageTitle .white-border {
+  background-repeat: repeat;
+  background-position: bottom;
+  background-size: auto;
+  padding-top: calc(1.945rem + 5vh);
+  padding-bottom: 0.555rem;
+  text-shadow:
+    0.0278rem 0 #fff, -0.0278rem 0 #fff,
+    0 0.0278rem #fff, 0 -0.0278rem #fff,
+    0.0278rem 0.0278rem #fff, -0.0278rem -0.0278rem #fff,
+    0.0278rem -0.0278rem #fff, -0.0278rem 0.0278rem #fff,
+    0.0555rem 0 #fff, -0.0555rem 0 #fff,
+    0 0.0555rem #fff, 0 -0.0555rem #fff,
+    0.0555rem 0.0555rem #fff, -0.0555rem -0.0555rem #fff,
+    0.0555rem -0.0555rem #fff, -0.0555rem 0.0555rem #fff,
+    0.0835rem 0 #fff, -0.0835rem 0 #fff,
+    0 0.0835rem #fff, 0 -0.0835rem #fff,
+    0.0835rem 0.0835rem #fff, -0.0835rem -0.0835rem #fff,
+    0.0835rem -0.0835rem #fff, -0.0835rem 0.0835rem #fff,
+
+    0.111rem 0 #180544, -0.111rem 0 #180544,
+    0 0.111rem #180544, 0 -0.111rem #180544,
+    0.111rem 0.111rem #180544, -0.111rem -0.111rem #180544,
+    0.111rem -0.111rem #180544, -0.111rem 0.111rem #180544,
+    0.139rem 0 #180544, -0.139rem 0 #180544,
+    0 0.139rem #180544, 0 -0.139rem #180544,
+    0.139rem 0.139rem #180544, -0.139rem -0.139rem #180544,
+    0.139rem -0.139rem #180544, -0.139rem 0.139rem #180544,
+    0.166rem 0 #180544, -0.166rem 0 #180544,
+    0 0.166rem #180544, 0 -0.166rem #180544,
+    0.166rem 0.166rem #180544, -0.166rem -0.166rem #180544,
+    0.166rem -0.166rem #180544, -0.166rem 0.166rem #180544,
+    0.194rem 0 #180544, -0.194rem 0 #180544,
+    0 0.194rem #180544, 0 -0.194rem #180544,
+    0.194rem 0.194rem #180544, -0.194rem -0.194rem #180544,
+    0.194rem -0.194rem #180544, -0.194rem 0.194rem #180544,
+    0.222rem 0 #180544, -0.222rem 0 #180544,
+    0 0.222rem #180544, 0 -0.222rem #180544,
+    0.222rem 0.222rem #180544, -0.222rem -0.222rem #180544,
+    0.222rem -0.222rem #180544, -0.222rem 0.222rem #180544,
+    0.25rem 0 #180544, -0.25rem 0 #180544,
+    0 0.25rem #180544, 0 -0.25rem #180544,
+    0.25rem 0.25rem #180544, -0.25rem -0.25rem #180544,
+    0.25rem -0.25rem #180544, -0.25rem 0.25rem #180544;
+}
+
+.opendyslexic .paterneTitleContour,
+.reading .paterneTitleContour {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-shadow:
+    0.0278rem 0 #fff, -0.0278rem 0 #fff,
+    0 0.0278rem #fff, 0 -0.0278rem #fff,
+    0.0278rem 0.0278rem #fff, -0.0278rem -0.0278rem #fff,
+    0.0278rem -0.0278rem #fff, -0.0278rem 0.0278rem #fff,
+    0.0555rem 0 #fff, -0.0555rem 0 #fff,
+    0 0.0555rem #fff, 0 -0.0555rem #fff,
+    0.0555rem 0.0555rem #fff, -0.0555rem -0.0555rem #fff,
+    0.0555rem -0.0555rem #fff, -0.0555rem 0.0555rem #fff,
+    0.0835rem 0 #fff, -0.0835rem 0 #fff,
+    0 0.0835rem #fff, 0 -0.0835rem #fff,
+    0.0835rem 0.0835rem #fff, -0.0835rem -0.0835rem #fff,
+    0.0835rem -0.0835rem #fff, -0.0835rem 0.0835rem #fff,
+
+    0.111rem 0 #180544, -0.111rem 0 #180544,
+    0 0.111rem #180544, 0 -0.111rem #180544,
+    0.111rem 0.111rem #180544, -0.111rem -0.111rem #180544,
+    0.111rem -0.111rem #180544, -0.111rem 0.111rem #180544,
+    0.139rem 0 #180544, -0.139rem 0 #180544,
+    0 0.139rem #180544, 0 -0.139rem #180544,
+    0.139rem 0.139rem #180544, -0.139rem -0.139rem #180544,
+    0.139rem -0.139rem #180544, -0.139rem 0.139rem #180544,
+    0.166rem 0 #180544, -0.166rem 0 #180544,
+    0 0.166rem #180544, 0 -0.166rem #180544,
+    0.166rem 0.166rem #180544, -0.166rem -0.166rem #180544,
+    0.166rem -0.166rem #180544, -0.166rem 0.166rem #180544,
+    0.194rem 0 #180544, -0.194rem 0 #180544,
+    0 0.194rem #180544, 0 -0.194rem #180544,
+    0.194rem 0.194rem #180544, -0.194rem -0.194rem #180544,
+    0.194rem -0.194rem #180544, -0.194rem 0.194rem #180544,
+    0.222rem 0 #180544, -0.222rem 0 #180544,
+    0 0.222rem #180544, 0 -0.222rem #180544,
+    0.222rem 0.222rem #180544, -0.222rem -0.222rem #180544,
+    0.222rem -0.222rem #180544, -0.222rem 0.222rem #180544,
+    0.25rem 0 #180544, -0.25rem 0 #180544,
+    0 0.25rem #180544, 0 -0.25rem #180544,
+    0.25rem 0.25rem #180544, -0.25rem -0.25rem #180544,
+    0.25rem -0.25rem #180544, -0.25rem 0.25rem #180544;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.opendyslexic .white-border,
+.reading .white-border {
+  text-shadow:
+    0.0278rem 0 #fff, -0.0278rem 0 #fff,
+    0 0.0278rem #fff, 0 -0.0278rem #fff,
+    0.0278rem 0.0278rem #fff, -0.0278rem -0.0278rem #fff,
+    0.0278rem -0.0278rem #fff, -0.0278rem 0.0278rem #fff,
+    0.0555rem 0 #fff, -0.0555rem 0 #fff,
+    0 0.0555rem #fff, 0 -0.0555rem #fff,
+    0.0555rem 0.0555rem #fff, -0.0555rem -0.0555rem #fff,
+    0.0555rem -0.0555rem #fff, -0.0555rem 0.0555rem #fff,
+    0.0835rem 0 #fff, -0.0835rem 0 #fff,
+    0 0.0835rem #fff, 0 -0.0835rem #fff,
+    0.0835rem 0.0835rem #fff, -0.0835rem -0.0835rem #fff,
+    0.0835rem -0.0835rem #fff, -0.0835rem 0.0835rem #fff;
+}
+
+.opendyslexic .white-border-small,
+.reading .white-border-small {
+  text-shadow:
+    0.00695rem 0 #fff, -0.00695rem 0 #fff,
+    0 0.00695rem #fff, 0 -0.00695rem #fff,
+    0.00695rem 0.00695rem #fff, -0.00695rem -0.00695rem #fff,
+    0.00695rem -0.00695rem #fff, -0.00695rem 0.00695rem #fff,
+    0.0139rem 0 #fff, -0.0139rem 0 #fff,
+    0 0.0139rem #fff, 0 -0.0139rem #fff,
+    0.0139rem 0.0139rem #fff, -0.0139rem -0.0139rem #fff,
+    0.0139rem -0.0139rem #fff, -0.0139rem 0.0139rem #fff,
+    0.02085rem 0 #fff, -0.02085rem 0 #fff,
+    0 0.02085rem #fff, 0 -0.02085rem #fff,
+    0.02085rem 0.02085rem #fff, -0.02085rem -0.02085rem #fff,
+    0.02085rem -0.02085rem #fff, -0.02085rem 0.02085rem #fff;
+}
+
+.opendyslexic .black-border-small,
+.reading .black-border-small {
+  text-shadow:
+    0.00695rem 0 #000, -0.00695rem 0 #000,
+    0 0.00695rem #000, 0 -0.00695rem #000,
+    0.00695rem 0.00695rem #000, -0.00695rem -0.00695rem #000,
+    0.00695rem -0.00695rem #000, -0.00695rem 0.00695rem #000,
+    0.0139rem 0 #000, -0.0139rem 0 #000,
+    0 0.0139rem #000, 0 -0.0139rem #000,
+    0.0139rem 0.0139rem #000, -0.0139rem -0.0139rem #000,
+    0.0139rem -0.0139rem #000, -0.0139rem 0.0139rem #000,
+    0.02085rem 0 #000, -0.02085rem 0 #000,
+    0 0.02085rem #000, 0 -0.02085rem #000,
+    0.02085rem 0.02085rem #000, -0.02085rem -0.02085rem #000,
+    0.02085rem -0.02085rem #000, -0.02085rem 0.02085rem #000;
+}
+
+.opendyslexic .nav-pc-container .white-border-small,
+.reading .nav-pc-container .white-border-small {
+  text-shadow:
+    0.00695rem 0 #fff, -0.00695rem 0 #fff,
+    0 0.00695rem #fff, 0 -0.00695rem #fff,
+    0.00695rem 0.00695rem #fff, -0.00695rem -0.00695rem #fff,
+    0.00695rem -0.00695rem #fff, -0.00695rem 0.00695rem #fff,
+    0.0139rem 0 #fff, -0.0139rem 0 #fff,
+    0 0.0139rem #fff, 0 -0.0139rem #fff,
+    0.0139rem 0.0139rem #fff, -0.0139rem -0.0139rem #fff,
+    0.0139rem -0.0139rem #fff, -0.0139rem 0.0139rem #fff,
+    0.01665rem 0 #fff, -0.01665rem 0 #fff,
+    0 0.01665rem #fff, 0 -0.01665rem #fff,
+    0.01665rem 0.01665rem #fff, -0.01665rem -0.01665rem #fff,
+    0.01665rem -0.01665rem #fff, -0.01665rem 0.01665rem #fff;
 }
 
 
