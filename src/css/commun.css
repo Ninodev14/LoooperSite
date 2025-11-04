@@ -155,7 +155,7 @@ body {
     background-image: url(/src/svg/mentionsPatern.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    background-position:center;
+    background-position: center;
     width: 30vw;
     height: 100%;
     z-index: -100;
@@ -1008,6 +1008,7 @@ body {
 }
 
 .background-guillemet::after {
+    z-index: -1;
     content: "";
     position: absolute;
     top: 5%;
@@ -1023,6 +1024,7 @@ body {
 }
 
 .background-guillemet::before {
+    z-index: -1;
     content: "";
     position: absolute;
     bottom: 5%;
