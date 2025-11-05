@@ -401,56 +401,6 @@ header p {
     0.0835rem -0.0835rem #fff, -0.0835rem 0.0835rem #fff;
 }
 
-.opendyslexic .white-border-small,
-.reading .white-border-small {
-  text-shadow:
-    0.00695rem 0 #fff, -0.00695rem 0 #fff,
-    0 0.00695rem #fff, 0 -0.00695rem #fff,
-    0.00695rem 0.00695rem #fff, -0.00695rem -0.00695rem #fff,
-    0.00695rem -0.00695rem #fff, -0.00695rem 0.00695rem #fff,
-    0.0139rem 0 #fff, -0.0139rem 0 #fff,
-    0 0.0139rem #fff, 0 -0.0139rem #fff,
-    0.0139rem 0.0139rem #fff, -0.0139rem -0.0139rem #fff,
-    0.0139rem -0.0139rem #fff, -0.0139rem 0.0139rem #fff,
-    0.02085rem 0 #fff, -0.02085rem 0 #fff,
-    0 0.02085rem #fff, 0 -0.02085rem #fff,
-    0.02085rem 0.02085rem #fff, -0.02085rem -0.02085rem #fff,
-    0.02085rem -0.02085rem #fff, -0.02085rem 0.02085rem #fff;
-}
-
-.opendyslexic .black-border-small,
-.reading .black-border-small {
-  text-shadow:
-    0.00695rem 0 #000, -0.00695rem 0 #000,
-    0 0.00695rem #000, 0 -0.00695rem #000,
-    0.00695rem 0.00695rem #000, -0.00695rem -0.00695rem #000,
-    0.00695rem -0.00695rem #000, -0.00695rem 0.00695rem #000,
-    0.0139rem 0 #000, -0.0139rem 0 #000,
-    0 0.0139rem #000, 0 -0.0139rem #000,
-    0.0139rem 0.0139rem #000, -0.0139rem -0.0139rem #000,
-    0.0139rem -0.0139rem #000, -0.0139rem 0.0139rem #000,
-    0.02085rem 0 #000, -0.02085rem 0 #000,
-    0 0.02085rem #000, 0 -0.02085rem #000,
-    0.02085rem 0.02085rem #000, -0.02085rem -0.02085rem #000,
-    0.02085rem -0.02085rem #000, -0.02085rem 0.02085rem #000;
-}
-
-.opendyslexic .nav-pc-container .white-border-small,
-.reading .nav-pc-container .white-border-small {
-  text-shadow:
-    0.00695rem 0 #fff, -0.00695rem 0 #fff,
-    0 0.00695rem #fff, 0 -0.00695rem #fff,
-    0.00695rem 0.00695rem #fff, -0.00695rem -0.00695rem #fff,
-    0.00695rem -0.00695rem #fff, -0.00695rem 0.00695rem #fff,
-    0.0139rem 0 #fff, -0.0139rem 0 #fff,
-    0 0.0139rem #fff, 0 -0.0139rem #fff,
-    0.0139rem 0.0139rem #fff, -0.0139rem -0.0139rem #fff,
-    0.0139rem -0.0139rem #fff, -0.0139rem 0.0139rem #fff,
-    0.01665rem 0 #fff, -0.01665rem 0 #fff,
-    0 0.01665rem #fff, 0 -0.01665rem #fff,
-    0.01665rem 0.01665rem #fff, -0.01665rem -0.01665rem #fff,
-    0.01665rem -0.01665rem #fff, -0.01665rem 0.01665rem #fff;
-}
 
 
 b {
