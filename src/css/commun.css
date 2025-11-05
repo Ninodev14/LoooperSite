@@ -729,7 +729,7 @@ body {
     animation: arrow-loop 0.5s ease-in-out forwards;
 }
 
-.btn-project:hover .black-arrow img {
+.btn-project:hover .black-arrow img, .btn-project:hover .external-icon  {
     filter: invert(1);
 }
 
@@ -1396,9 +1396,10 @@ body {
         gap: 0px;
         flex-direction: column;
     }
+
     .modal-container .aligne-btn-center {
-    margin-bottom: 30px;
-}
+        margin-bottom: 30px;
+    }
 
 }
 
@@ -1747,6 +1748,11 @@ input[type="checkbox"]::after {
 .long-card img {
     height: 100%;
     width: auto;
+}
+
+.long-card a img {
+    width: fit-content !important;
+    height: 0.9em;
 }
 
 .long-card-text-content {
