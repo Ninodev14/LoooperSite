@@ -177,13 +177,14 @@
      background-color: #0B021F;
      color: #fff !important;
  }
- .high-contrast .protagonistes-card-null-background{
-        background: linear-gradient(145deg, #0B021F 50%, transparent 50%);
+
+ .high-contrast .protagonistes-card-null-background {
+     background: linear-gradient(145deg, #0B021F 50%, transparent 50%);
  }
 
-  .high-contrast .book-container::after{
-    display: none;
-  }
+ .high-contrast .book-container::after {
+     display: none;
+ }
 
  .high-contrast .backgroundBrushType1::before {
      display: none;
@@ -200,6 +201,252 @@
      background-image: none !important;
  }
 
+
+ .high-contrast .mainPageTitle .white-border {
+     background-repeat: repeat;
+     background-position: bottom;
+     background-size: auto;
+     padding-top: calc(3.89rem + 10vh);
+     /* 70px → 3.89rem */
+     padding-bottom: 1.11rem;
+     /* 20px → 1.11rem */
+     text-shadow:
+         0.0556rem 0 #fff, -0.0556rem 0 #fff,
+         0 0.0556rem #fff, 0 -0.0556rem #fff,
+         0.0556rem 0.0556rem #fff, -0.0556rem -0.0556rem #fff,
+         0.0556rem -0.0556rem #fff, -0.0556rem 0.0556rem #fff,
+         0.111rem 0 #fff, -0.111rem 0 #fff,
+         0 0.111rem #fff, 0 -0.111rem #fff,
+         0.111rem 0.111rem #fff, -0.111rem -0.111rem #fff,
+         0.111rem -0.111rem #fff, -0.111rem 0.111rem #fff,
+         0.167rem 0 #fff, -0.167rem 0 #fff,
+         0 0.167rem #fff, 0 -0.167rem #fff,
+         0.167rem 0.167rem #fff, -0.167rem -0.167rem #fff,
+         0.167rem -0.167rem #fff, -0.167rem 0.167rem #fff,
+
+         0.222rem 0 #0B021F, -0.222rem 0 #0B021F,
+         0 0.222rem #0B021F, 0 -0.222rem #0B021F,
+         0.222rem 0.222rem #0B021F, -0.222rem -0.222rem #0B021F,
+         0.222rem -0.222rem #0B021F, -0.222rem 0.222rem #0B021F,
+         0.278rem 0 #0B021F, -0.278rem 0 #0B021F,
+         0 0.278rem #0B021F, 0 -0.278rem #0B021F,
+         0.278rem 0.278rem #0B021F, -0.278rem -0.278rem #0B021F,
+         0.278rem -0.278rem #0B021F, -0.278rem 0.278rem #0B021F,
+         0.333rem 0 #0B021F, -0.333rem 0 #0B021F,
+         0 0.333rem #0B021F, 0 -0.333rem #0B021F,
+         0.333rem 0.333rem #0B021F, -0.333rem -0.333rem #0B021F,
+         0.333rem -0.333rem #0B021F, -0.333rem 0.333rem #0B021F,
+         0.389rem 0 #0B021F, -0.389rem 0 #0B021F,
+         0 0.389rem #0B021F, 0 -0.389rem #0B021F,
+         0.389rem 0.389rem #0B021F, -0.389rem -0.389rem #0B021F,
+         0.389rem -0.389rem #0B021F, -0.389rem 0.389rem #0B021F,
+         0.444rem 0 #0B021F, -0.444rem 0 #0B021F,
+         0 0.444rem #0B021F, 0 -0.444rem #0B021F,
+         0.444rem 0.444rem #0B021F, -0.444rem -0.444rem #0B021F,
+         0.444rem -0.444rem #0B021F, -0.444rem 0.444rem #0B021F,
+         0.5rem 0 #0B021F, -0.5rem 0 #0B021F,
+         0 0.5rem #0B021F, 0 -0.5rem #0B021F,
+         0.5rem 0.5rem #0B021F, -0.5rem -0.5rem #0B021F,
+         0.5rem -0.5rem #0B021F, -0.5rem 0.5rem #0B021F;
+ }
+
+ .high-contrast .paterneTitleContour {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     text-shadow:
+         0.0556rem 0 #fff, -0.0556rem 0 #fff,
+         0 0.0556rem #fff, 0 -0.0556rem #fff,
+         0.0556rem 0.0556rem #fff, -0.0556rem -0.0556rem #fff,
+         0.0556rem -0.0556rem #fff, -0.0556rem 0.0556rem #fff,
+         0.111rem 0 #fff, -0.111rem 0 #fff,
+         0 0.111rem #fff, 0 -0.111rem #fff,
+         0.111rem 0.111rem #fff, -0.111rem -0.111rem #fff,
+         0.111rem -0.111rem #fff, -0.111rem 0.111rem #fff,
+         0.167rem 0 #fff, -0.167rem 0 #fff,
+         0 0.167rem #fff, 0 -0.167rem #fff,
+         0.167rem 0.167rem #fff, -0.167rem -0.167rem #fff,
+         0.167rem -0.167rem #fff, -0.167rem 0.167rem #fff,
+
+         0.222rem 0 #0B021F, -0.222rem 0 #0B021F,
+         0 0.222rem #0B021F, 0 -0.222rem #0B021F,
+         0.222rem 0.222rem #0B021F, -0.222rem -0.222rem #0B021F,
+         0.222rem -0.222rem #0B021F, -0.222rem 0.222rem #0B021F,
+         0.278rem 0 #0B021F, -0.278rem 0 #0B021F,
+         0 0.278rem #0B021F, 0 -0.278rem #0B021F,
+         0.278rem 0.278rem #0B021F, -0.278rem -0.278rem #0B021F,
+         0.278rem -0.278rem #0B021F, -0.278rem 0.278rem #0B021F,
+         0.333rem 0 #0B021F, -0.333rem 0 #0B021F,
+         0 0.333rem #0B021F, 0 -0.333rem #0B021F,
+         0.333rem 0.333rem #0B021F, -0.333rem -0.333rem #0B021F,
+         0.333rem -0.333rem #0B021F, -0.333rem 0.333rem #0B021F,
+         0.389rem 0 #0B021F, -0.389rem 0 #0B021F,
+         0 0.389rem #0B021F, 0 -0.389rem #0B021F,
+         0.389rem 0.389rem #0B021F, -0.389rem -0.389rem #0B021F,
+         0.389rem -0.389rem #0B021F, -0.389rem 0.389rem #0B021F,
+         0.444rem 0 #0B021F, -0.444rem 0 #0B021F,
+         0 0.444rem #0B021F, 0 -0.444rem #0B021F,
+         0.444rem 0.444rem #0B021F, -0.444rem -0.444rem #0B021F,
+         0.444rem -0.444rem #0B021F, -0.444rem 0.444rem #0B021F,
+         0.5rem 0 #0B021F, -0.5rem 0 #0B021F,
+         0 0.5rem #0B021F, 0 -0.5rem #0B021F,
+         0.5rem 0.5rem #0B021F, -0.5rem -0.5rem #0B021F,
+         0.5rem -0.5rem #0B021F, -0.5rem 0.5rem #0B021F;
+     z-index: 1;
+     user-select: none;
+     pointer-events: none;
+ }
+
+
+
+ .high-contrast .black-border-small {
+     text-shadow:
+         0.0139rem 0 #000, -0.0139rem 0 #000,
+         0 0.0139rem #000, 0 -0.0139rem #000,
+         0.0139rem 0.0139rem #000, -0.0139rem -0.0139rem #000,
+         0.0139rem -0.0139rem #000, -0.0139rem 0.0139rem #000,
+         0.0278rem 0 #000, -0.0278rem 0 #000,
+         0 0.0278rem #000, 0 -0.0278rem #000,
+         0.0278rem 0.0278rem #000, -0.0278rem -0.0278rem #000,
+         0.0278rem -0.0278rem #000, -0.0278rem 0.0278rem #000,
+         0.0417rem 0 #000, -0.0417rem 0 #000,
+         0 0.0417rem #000, 0 -0.0417rem #000,
+         0.0417rem 0.0417rem #000, -0.0417rem -0.0417rem #000,
+         0.0417rem -0.0417rem #000, -0.0417rem 0.0417rem #000;
+ }
+
+ .high-contrast .opendyslexic .mainPageTitle .white-border,
+ .high-contrast .reading .mainPageTitle .white-border {
+     background-repeat: repeat;
+     background-position: bottom;
+     background-size: auto;
+     padding-top: calc(1.945rem + 5vh);
+     padding-bottom: 0.555rem;
+     text-shadow:
+         0.0278rem 0 #fff, -0.0278rem 0 #fff,
+         0 0.0278rem #fff, 0 -0.0278rem #fff,
+         0.0278rem 0.0278rem #fff, -0.0278rem -0.0278rem #fff,
+         0.0278rem -0.0278rem #fff, -0.0278rem 0.0278rem #fff,
+         0.0555rem 0 #fff, -0.0555rem 0 #fff,
+         0 0.0555rem #fff, 0 -0.0555rem #fff,
+         0.0555rem 0.0555rem #fff, -0.0555rem -0.0555rem #fff,
+         0.0555rem -0.0555rem #fff, -0.0555rem 0.0555rem #fff,
+         0.0835rem 0 #fff, -0.0835rem 0 #fff,
+         0 0.0835rem #fff, 0 -0.0835rem #fff,
+         0.0835rem 0.0835rem #fff, -0.0835rem -0.0835rem #fff,
+         0.0835rem -0.0835rem #fff, -0.0835rem 0.0835rem #fff,
+
+         0.111rem 0 #0B021F, -0.111rem 0 #0B021F,
+         0 0.111rem #0B021F, 0 -0.111rem #0B021F,
+         0.111rem 0.111rem #0B021F, -0.111rem -0.111rem #0B021F,
+         0.111rem -0.111rem #0B021F, -0.111rem 0.111rem #0B021F,
+         0.139rem 0 #0B021F, -0.139rem 0 #0B021F,
+         0 0.139rem #0B021F, 0 -0.139rem #0B021F,
+         0.139rem 0.139rem #0B021F, -0.139rem -0.139rem #0B021F,
+         0.139rem -0.139rem #0B021F, -0.139rem 0.139rem #0B021F,
+         0.166rem 0 #0B021F, -0.166rem 0 #0B021F,
+         0 0.166rem #0B021F, 0 -0.166rem #0B021F,
+         0.166rem 0.166rem #0B021F, -0.166rem -0.166rem #0B021F,
+         0.166rem -0.166rem #0B021F, -0.166rem 0.166rem #0B021F,
+         0.194rem 0 #0B021F, -0.194rem 0 #0B021F,
+         0 0.194rem #0B021F, 0 -0.194rem #0B021F,
+         0.194rem 0.194rem #0B021F, -0.194rem -0.194rem #0B021F,
+         0.194rem -0.194rem #0B021F, -0.194rem 0.194rem #0B021F,
+         0.222rem 0 #0B021F, -0.222rem 0 #0B021F,
+         0 0.222rem #0B021F, 0 -0.222rem #0B021F,
+         0.222rem 0.222rem #0B021F, -0.222rem -0.222rem #0B021F,
+         0.222rem -0.222rem #0B021F, -0.222rem 0.222rem #0B021F,
+         0.25rem 0 #0B021F, -0.25rem 0 #0B021F,
+         0 0.25rem #0B021F, 0 -0.25rem #0B021F,
+         0.25rem 0.25rem #0B021F, -0.25rem -0.25rem #0B021F,
+         0.25rem -0.25rem #0B021F, -0.25rem 0.25rem #0B021F;
+ }
+
+ .high-contrast .opendyslexic .paterneTitleContour,
+ .high-contrast .reading .paterneTitleContour {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     text-shadow:
+         0.0278rem 0 #fff, -0.0278rem 0 #fff,
+         0 0.0278rem #fff, 0 -0.0278rem #fff,
+         0.0278rem 0.0278rem #fff, -0.0278rem -0.0278rem #fff,
+         0.0278rem -0.0278rem #fff, -0.0278rem 0.0278rem #fff,
+         0.0555rem 0 #fff, -0.0555rem 0 #fff,
+         0 0.0555rem #fff, 0 -0.0555rem #fff,
+         0.0555rem 0.0555rem #fff, -0.0555rem -0.0555rem #fff,
+         0.0555rem -0.0555rem #fff, -0.0555rem 0.0555rem #fff,
+         0.0835rem 0 #fff, -0.0835rem 0 #fff,
+         0 0.0835rem #fff, 0 -0.0835rem #fff,
+         0.0835rem 0.0835rem #fff, -0.0835rem -0.0835rem #fff,
+         0.0835rem -0.0835rem #fff, -0.0835rem 0.0835rem #fff,
+
+         0.111rem 0 #0B021F, -0.111rem 0 #0B021F,
+         0 0.111rem #0B021F, 0 -0.111rem #0B021F,
+         0.111rem 0.111rem #0B021F, -0.111rem -0.111rem #0B021F,
+         0.111rem -0.111rem #0B021F, -0.111rem 0.111rem #0B021F,
+         0.139rem 0 #0B021F, -0.139rem 0 #0B021F,
+         0 0.139rem #0B021F, 0 -0.139rem #0B021F,
+         0.139rem 0.139rem #0B021F, -0.139rem -0.139rem #0B021F,
+         0.139rem -0.139rem #0B021F, -0.139rem 0.139rem #0B021F,
+         0.166rem 0 #0B021F, -0.166rem 0 #0B021F,
+         0 0.166rem #0B021F, 0 -0.166rem #0B021F,
+         0.166rem 0.166rem #0B021F, -0.166rem -0.166rem #0B021F,
+         0.166rem -0.166rem #0B021F, -0.166rem 0.166rem #0B021F,
+         0.194rem 0 #0B021F, -0.194rem 0 #0B021F,
+         0 0.194rem #0B021F, 0 -0.194rem #0B021F,
+         0.194rem 0.194rem #0B021F, -0.194rem -0.194rem #0B021F,
+         0.194rem -0.194rem #0B021F, -0.194rem 0.194rem #0B021F,
+         0.222rem 0 #0B021F, -0.222rem 0 #0B021F,
+         0 0.222rem #0B021F, 0 -0.222rem #0B021F,
+         0.222rem 0.222rem #0B021F, -0.222rem -0.222rem #0B021F,
+         0.222rem -0.222rem #0B021F, -0.222rem 0.222rem #0B021F,
+         0.25rem 0 #0B021F, -0.25rem 0 #0B021F,
+         0 0.25rem #0B021F, 0 -0.25rem #0B021F,
+         0.25rem 0.25rem #0B021F, -0.25rem -0.25rem #0B021F,
+         0.25rem -0.25rem #0B021F, -0.25rem 0.25rem #0B021F;
+     z-index: 1;
+     user-select: none;
+     pointer-events: none;
+ }
+
+ .high-contrast .background-interogation,
+ .high-contrast .background-guillemet::after,
+ .high-contrast .background-guillemet::before,
+ .backgroundBrushType2::before {
+     background-image: none;
+ }
+
+ .high-contrast .btn-project::before {
+     width: 120%;
+     height: 200px;
+     background: #fff;
+ }
+
+ .high-contrast .btn-project::after {
+     width: 120%;
+     height: 200px;
+     background: #fff;
+ }
+
+ .high-contrast .btn-project span::before {
+     width: 120%;
+     height: 200px;
+     background: #fff;
+     z-index: -1;
+ }
+
+ .high-contrast .btn-project {
+     border: 3px solid #FFF;
+     color: #FFF;
+     background: #03010A;
+     box-shadow: 0 6px 0 0 #fff;
+ }
+  .high-contrast .btn-project .black-arrow{
+     filter: invert(1);
+ }
 
  #focus-top,
  #focus-bottom {

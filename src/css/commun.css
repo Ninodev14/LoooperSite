@@ -700,7 +700,6 @@ body {
     overflow: hidden;
 }
 
-/* Animation du tour complet */
 @keyframes arrow-loop {
     0% {
         transform: translateX(0);
@@ -709,13 +708,11 @@ body {
 
     40% {
         transform: translateX(120%);
-        /* sort à droite */
         opacity: 0;
     }
 
     60% {
         transform: translateX(-120%);
-        /* revient par la gauche (hors du bouton) */
         opacity: 0;
     }
 
