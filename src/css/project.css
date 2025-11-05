@@ -2,7 +2,7 @@
     width: 47%;
     height: 90%;
     display: flex;
-flex-direction: column;
+    flex-direction: column;
 }
 
 .modal-container-img img {
@@ -29,7 +29,7 @@ flex-direction: column;
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .modal .modal-container-project-info .btn-project {
@@ -42,7 +42,7 @@ flex-direction: column;
     justify-content: space-evenly;
 }
 
-.project-modal{
+.project-modal {
     min-height: auto;
     gap: 40px;
 }
@@ -59,7 +59,7 @@ flex-direction: column;
         justify-content: start;
         height: fit-content;
         align-items: center;
-        
+
     }
 
     .modal-container-project-info {
@@ -72,10 +72,11 @@ flex-direction: column;
     .modal {
         justify-content: start;
     }
-    .project-modal{
-    min-height: 70vh;
-    gap: 30px;
-}
+
+    .project-modal {
+        min-height: 70vh;
+        gap: 30px;
+    }
 
     .btn-close {
         scale: 0.8;

@@ -366,7 +366,7 @@ body {
 }
 
 .obligatoireChamp {
-    margin-top: -20px;
+    margin-top: 20px;
     display: flex;
     justify-content: end;
 }
@@ -729,7 +729,8 @@ body {
     animation: arrow-loop 0.5s ease-in-out forwards;
 }
 
-.btn-project:hover .black-arrow img, .btn-project:hover .external-icon  {
+.btn-project:hover .black-arrow img,
+.btn-project:hover .external-icon {
     filter: invert(1);
 }
 
@@ -1411,6 +1412,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 80%;
 
 }
 
@@ -1421,6 +1423,32 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.contact-background .backgroundType1Annim {
+    width: 40vw;
+    position: absolute;
+    z-index: -1;
+}
+
+.contact-background .leftbackgroundType1 {
+    right: 0;
+    transform: translateX(70%);
+}
+
+.contact-background .rightbackgroundType1 {
+    left: 0;
+    transform: translateX(-70%) scaleX(-1);
+}
+
+.contact-background .reflect.visibleBackgroundType1Annim {
+    transform: translateX(-60%) scaleX(-1);
+}
+
+.contact-background .visibleBackgroundType1Annim {
+    transform: translateX(60%);
+    opacity: 1;
+}
+
 
 .contact-container {
     display: flex;
@@ -1546,7 +1574,7 @@ textarea {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    z-index: 1;
+    z-index: 2;
 }
 
 .contact .dropdown.open .dropdown-content {
@@ -1654,6 +1682,11 @@ input[type="checkbox"]::after {
     transform: rotate(90deg);
 }
 
+@media screen and (max-width: 1365px) {
+    .contact {
+        width: 70%;
+    }
+}
 
 
 @media screen and (max-width: 960px) {
@@ -1668,7 +1701,12 @@ input[type="checkbox"]::after {
     .contact {
         width: calc(100vw - 6vw);
     }
+
+    .contact-background .backgroundType1Annim {
+        display: none;
+    }
 }
+
 
 
 /* Animation de la lettre */
