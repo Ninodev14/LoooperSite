@@ -82,7 +82,7 @@ if (hasMouse) {
       while (el) {
         const tag = el.tagName;
         const interactiveTags = ['A', 'BUTTON', 'INPUT', 'TEXTAREA', 'SELECT', 'LABEL'];
-        const interactiveClasses = ['swiper-button-prev', 'swiper-button-next', 'dropdown-toggle', 'faq-header', 'protagonistes-card', 'swiper-pagination-bullet', 'discovered', 'enCours'];
+        const interactiveClasses = ['swiper-button-prev', 'swiper-button-next', 'dropdown-toggle', 'faq-header', 'protagonistes-card', 'swiper-pagination-bullet', 'discovered', 'enCours', "card" ];
 
         if (interactiveTags.includes(tag)) return true;
         if (el.classList && interactiveClasses.some(cls => el.classList.contains(cls))) return true;

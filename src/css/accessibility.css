@@ -75,6 +75,7 @@
  body.normal-cursor .swiper-button-next *,
  body.normal-cursor .swiper-button-prev,
  body.normal-cursor .swiper-button-prev *,
+ body.normal-cursor .discovered *,
  body.normal-cursor [style*="cursor:pointer"],
  body.normal-cursor [style*="cursor:pointer"] * {
      cursor: pointer !important;
@@ -262,6 +263,7 @@
  .link-outline .img-container-header img,
  .link-outline .dropdown,
  .link-outline #ludique-btn *,
+ .link-outline .discovered *,
  .link-outline #accessibility-btn *,
  .link-outline [style*="cursor:pointer"] {
      outline: 2px solid var(--link-outline-color, #00A5F7);
@@ -300,6 +302,7 @@
  .link-outline-hover .img-container-header img:hover,
  .link-outline-hover .dropdown:hover,
  .link-outline-hover #ludique-btn *:hover,
+ .link-outline-hover .discovered *:hover,
  .link-outline-hover #accessibility-btn *:hover,
  .link-outline-hover [style*="cursor:pointer"]:hover {
      outline: 3px solid var(--link-outline-color, #ff6600);
