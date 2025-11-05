@@ -406,7 +406,9 @@ header p {
 b {
   font-weight: bold;
 }
-
+header .highlight{
+  font-weight: bold;
+}
 html {
   font-size: 13px;
 }

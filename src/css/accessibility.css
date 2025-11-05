@@ -177,8 +177,13 @@
      background-color: #0B021F;
      color: #fff !important;
  }
+ .high-contrast .protagonistes-card-null-background{
+        background: linear-gradient(145deg, #0B021F 50%, transparent 50%);
+ }
 
-
+  .high-contrast .book-container::after{
+    display: none;
+  }
 
  .high-contrast .backgroundBrushType1::before {
      display: none;
