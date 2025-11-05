@@ -1836,7 +1836,7 @@ input[type="checkbox"]::after {
 
 .mini-card:hover img,
 .revers-mini-card:hover img {
-    filter: brightness(6);
+    filter: brightness(10);
 }
 
 .mini-card h3,
