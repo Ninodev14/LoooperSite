@@ -70,6 +70,9 @@ function verifierVictoire() {
   if (gagne) {
     estGagne = true;
     puzzle.classList.add("gagne");
+    const piecesEnCours = puzzle.querySelectorAll(".piece.enCours");
+    piecesEnCours.forEach(p => p.classList.remove("enCours"));
+
     lancerConfettis();
   }
 }
