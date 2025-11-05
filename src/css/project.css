@@ -17,6 +17,7 @@ flex-direction: column;
     width: 100%;
     height: 100%;
     justify-content: space-between;
+    padding-bottom: 34px;
 }
 
 .modal-container {
@@ -43,7 +44,7 @@ flex-direction: column;
 
 .project-modal{
     min-height: auto;
-    gap: 80px;
+    gap: 40px;
 }
 
 @media screen and (max-width: 960px) {
@@ -58,12 +59,14 @@ flex-direction: column;
         justify-content: start;
         height: fit-content;
         align-items: center;
+        
     }
 
     .modal-container-project-info {
         width: 80%;
         height: fit-content;
         gap: 2rem;
+        padding-bottom: 0px;
     }
 
     .modal {

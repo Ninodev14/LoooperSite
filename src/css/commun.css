@@ -1222,7 +1222,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
     border-radius: 40px;
     border: 4px solid #000;
     background-color: #FFF;
@@ -1234,7 +1233,7 @@ body {
 }
 
 .modal-container .aligne-btn-center {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .sub-title-modal {
@@ -1397,6 +1396,10 @@ body {
         gap: 0px;
         flex-direction: column;
     }
+    .modal-container .aligne-btn-center {
+    margin-bottom: 30px;
+}
+
 }
 
 
