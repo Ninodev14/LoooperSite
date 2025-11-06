@@ -211,7 +211,7 @@
 
 .memory-no-game-container-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   height: fit-content;
   align-items: end;
