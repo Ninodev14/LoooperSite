@@ -28,7 +28,11 @@
     .menue-nav-ludique-handicap {
         height: 4rem;
     }
+ #ludique-menue {
 
+     right: calc(40px + 4rem);
+
+ }
     #accessibility-btn img,
     #ludique-btn img {
         width: 4rem;
