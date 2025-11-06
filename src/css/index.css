@@ -207,6 +207,9 @@
   display: none;
 }
 
+.memory-no-game img{
+ transform: scalex(-1);
+}
 
 
 .memory-no-game-container-footer {
