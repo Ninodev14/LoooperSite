@@ -108,19 +108,29 @@ header {
 
 
 #menu-tel {
-    margin-top: -10px;
-    display: none;
-    flex-direction: column;
-    height: calc(100vh - 20vw + 10px);
-    min-height: calc(100vh - 70px);
-    width: 100vw;
-    background: rgba(6, 0, 19, 0.90);
-    backdrop-filter: blur(11px);
-    transition: transform 0.4s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    transform: translateY(-100%);
+  margin-top: -10px;
+  display: none;
+  flex-direction: column;
+  height: calc(100vh - 20vw + 10px);
+  min-height: calc(100vh - 70px);
+  width: 100vw;
+  background-color: rgba(6, 0, 19, 1); 
+  transition: transform 0.4s ease-in-out;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(-100%);
 }
+
+#menu-tel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url(/src/svg/paternHeader.svg) center/cover no-repeat;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 0;
+}
+
 
 #btn-slide,
 #btn-back {
@@ -429,10 +439,12 @@ footer {
 .footerLogoImg img {
     width: 100%;
 }
-.footer-bot-container a{
+
+.footer-bot-container a {
     width: fit-content;
 }
-.footer-bot-container .link-underline{
+
+.footer-bot-container .link-underline {
     text-align: end;
 }
 
