@@ -171,6 +171,7 @@ body {
 }
 
 .ariane-net {
+    margin-top: 2rem;
     display: flex;
     gap: 5px;
     color: #fff;
