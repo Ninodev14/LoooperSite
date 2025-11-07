@@ -105,6 +105,8 @@
 
 /* Memories */
 
+
+
 .memory-game {
   text-align: center;
   display: flex;
@@ -207,8 +209,8 @@
   display: none;
 }
 
-.memory-no-game img{
- transform: scalex(-1);
+.memory-no-game img {
+  transform: scalex(-1);
 }
 
 
@@ -276,6 +278,20 @@
 .memory-item p {
   color: #000;
 }
+.game-button-arrow-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0px;
+  width: fit-content;
+}
+
+.game-btn-arrow{
+  height: 30px;
+  width: fit-content !important;
+}
+
 
 @media screen and (max-width: 650px) {
   .memory-no-game {
@@ -287,6 +303,11 @@
     width: 100%;
     ;
   }
+  .game-btn-arrow{
+  height: 30px;
+  width: fit-content !important;
+}
+
 }
 
 @media screen and (max-width: 960px) {
@@ -331,6 +352,11 @@
     width: 10vw !important;
 
   }
+  .game-btn-arrow {
+  height: 30px;
+  width: fit-content !important;
+}
+
 }
 
 /* puzzle taquin */
