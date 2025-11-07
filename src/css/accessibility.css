@@ -416,7 +416,7 @@
  .high-contrast .background-interogation,
  .high-contrast .background-guillemet::after,
  .high-contrast .background-guillemet::before,
- .backgroundBrushType2::before {
+  .high-contrast .backgroundBrushType2::before {
      background-image: none;
  }
 
