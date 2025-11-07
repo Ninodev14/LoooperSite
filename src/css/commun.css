@@ -1666,7 +1666,8 @@ input[type="checkbox"]::after {
 }
 
 .dropdown-arrow-contact {
-    top: 20px;
+    top: 50%;
+    transform: translateY( -50%);
     right: 13px;
     position: absolute;
     width: fit-content;
