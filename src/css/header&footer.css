@@ -82,12 +82,12 @@ header {
 .menu-tel-nav a {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 8px;
 }
 
 .menu-tel-nav .img-logo {
-    height: 40px;
-    width: 40px;
+    height: auto;
+    width: 30px;
 }
 
 .img-container-header {
