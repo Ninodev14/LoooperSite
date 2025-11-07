@@ -242,8 +242,33 @@
     padding: 0px 3vw;
     padding-bottom: calc(60px + 2vw);
 }
+.arrow-container-equipe{
+   width: 100%;
+   justify-content: space-between;
+   position: relative;
+}
+ .arrow-container-equipe img{
+    width: 38%;
+}
+.arrow-container-equipe p{
+    width: 20%;
+}
+.absolute-arrow{
+    top: 3.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5.4vw !important;
+    height: auto;
+    position: absolute;
+}
 
 @media screen and (max-width: 950px) {
+    .arrow-container-equipe img{
+        display: none;
+    }
+        .arrow-container-equipe p{
+        width: 100%;
+    }
     .protagonistes-containe-wrapper {
         flex-direction: column;
         gap: 40px;
@@ -505,6 +530,7 @@
     cursor: pointer;
     transition: background 0.3s;
 }
+
 
 .book-mobile-dots button[aria-selected="true"],
 .book-dot[aria-selected="true"] {
