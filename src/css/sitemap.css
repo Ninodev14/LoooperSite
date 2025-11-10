@@ -1,0 +1,13 @@
+.spacement-map{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.spacement-map-child{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+    margin-left: 40px;
+}
