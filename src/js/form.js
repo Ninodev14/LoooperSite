@@ -1,17 +1,3 @@
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const data = new FormData(form);
-
-    fetch('/', { method: 'POST', body: data })
-        .then(() => {
-            form.style.display = 'none';
-            document.getElementById('animation').style.display = 'block';
-        })
-        .catch(err => alert('Erreur : ' + err));
-});
-
-
 document.getElementById("objectif_autre_checkbox").addEventListener("change", function () {
     const input = document.getElementById("objectif_autre_text");
     input.style.display = this.checked ? "block" : "none";
@@ -84,10 +70,24 @@ if (contact) {
 
 document.querySelectorAll('a[href="#contactForm"]').forEach(link => {
   link.addEventListener('click', function(e) {
-    e.preventDefault(); // empêche le comportement par défaut
+    e.preventDefault();
     const target = document.querySelector('#contactForm');
     if (target) {
       target.scrollIntoView({ behavior: 'smooth' });
     }
+  });
+});
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.querySelector('form[name="contactformV2"]');
+  const button = form.querySelector('button[type="submit"]');
+  const animationDiv = document.getElementById("animation");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); 
+    button.classList.add("btn-hidden");
+    setTimeout(() => {
+      animationDiv.classList.add("show-animation");
+    }, 500);
+    
   });
 });

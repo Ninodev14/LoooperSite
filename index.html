@@ -360,38 +360,6 @@
                     </article>
                 </a>
             </nav>
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    const container = document.querySelector(".mini-card-container");
-                    const cards = container.querySelectorAll(".mini-card, .revers-mini-card");
-                    container.classList.add("mix-active");
-                    cards.forEach(card => {
-                        const randomX = (Math.random() - 0.5) * 600;
-                        const randomY = (Math.random() - 0.5) * 600;
-                        const randomRot = (Math.random() - 0.5) * 200;
-                        card.style.setProperty("--random-x", randomX);
-                        card.style.setProperty("--random-y", randomY);
-                        card.style.setProperty("--random-rot", randomRot);
-                    });
-
-                    const observer = new IntersectionObserver((entries) => {
-                        if (entries[0].isIntersecting) {
-                            container.classList.remove("mix-active");
-
-                            setTimeout(() => {
-                                cards.forEach(card => {
-                                    card.style.transition = "all 0.2s ease";
-                                    card.style.willChange = "auto";
-                                });
-                            }, 2200);
-
-                            observer.unobserve(container);
-                        }
-                    }, { threshold: 0.3 });
-
-                    observer.observe(container);
-                });
-            </script>
 
             <div class="small-medium-spacing"></div>
 
@@ -955,8 +923,7 @@
 
                         <div class="form-group">
                             <label class="text-typo" for="telephone">Téléphone</label>
-                            <input class="" type="tel" id="telephone" name="telephone" placeholder="Votre téléphone"
-                                required>
+                            <input class="" type="tel" id="telephone" name="telephone" placeholder="Votre téléphone">
                         </div>
 
                         <div class="form-group">
@@ -967,7 +934,7 @@
 
                         <div class="form-group">
                             <label class="text-typo" for="statut">Statut</label>
-                            <input class="" type="text" id="statut" name="statut" placeholder="Votre Statut" required>
+                            <input class="" type="text" id="statut" name="statut" placeholder="Votre Statut">
                         </div>
                     </fieldset>
 
@@ -1068,11 +1035,10 @@
                 </form>
 
                 <!-- Animation  -->
-                <div id="animation" style="display:none;">
-                    <div class="envelope">
-                        <div class="letter"> <img src="src/img/insta.png" alt=""></div>
-                    </div>
-                    <p>Merci ! Votre message a été envoyé.</p>
+                <div id="animation">
+                    <p><b>Envoi réussi !</b></p>
+                    <p>Nous vous remercions</p>
+                    <p>et vous recontacterons bientôt !</p>
                 </div>
 
             </div>
@@ -1216,6 +1182,7 @@
         <div class="cursor"></div>
     </div>
     <script src="src/js/mouse.js"></script>
+    <script src="src/js/ramdomAparition.js"></script>
     <script src="src/js/accessibility.js"></script>
     <script src="src/js/modal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>

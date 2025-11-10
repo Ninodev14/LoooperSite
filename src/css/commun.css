@@ -1680,6 +1680,50 @@ input[type="checkbox"]::after {
     transform: rotate(90deg);
 }
 
+/* Animation d'entrée et de sortie */
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+#animation {
+    text-align: center;
+    margin-top: -5rem;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s ease;
+}
+
+/* États actifs */
+.btn-hidden {
+    animation: slideOutRight 0.5s forwards;
+}
+
+.show-animation {
+    display: block;
+    animation: slideInRight 0.5s forwards;
+}
+
+
 @media screen and (max-width: 1365px) {
     .contact {
         width: 70%;
@@ -1706,53 +1750,6 @@ input[type="checkbox"]::after {
 }
 
 
-
-/* Animation de la lettre */
-#animation {
-    text-align: center;
-    margin-top: 50px;
-}
-
-.envelope {
-    position: relative;
-    width: 100px;
-    height: 60px;
-    margin: 0 auto 20px;
-    background: #f5f5f5;
-    border: 2px solid #333;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.letter {
-    position: absolute;
-    width: 80px;
-    height: 50px;
-    background: #fff;
-    top: 5px;
-    left: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    transform: translateY(0);
-    animation: fly 10s forwards;
-}
-
-@keyframes fly {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-    }
-
-    50% {
-        transform: translateY(-150px) rotate(-15deg);
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: translateY(-300px) rotate(-30deg);
-        opacity: 1;
-    }
-}
 
 /* Long Card */
 
