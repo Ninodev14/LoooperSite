@@ -78,7 +78,7 @@ document.querySelectorAll('a[href="#contactForm"]').forEach(link => {
   });
 });
 document.addEventListener("DOMContentLoaded", function() {
-  const form = document.querySelector('form[name="contactformV2"]');
+  const form = document.querySelector('form[name="contactformV3"]');
   const button = form.querySelector('button[type="submit"]');
   const animationDiv = document.getElementById("animation");
 
