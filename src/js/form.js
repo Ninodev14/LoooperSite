@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const animationDiv = document.getElementById("animation");
 
   form.addEventListener("submit", function(event) {
-    event.preventDefault(); 
+
     button.classList.add("btn-hidden");
     setTimeout(() => {
       animationDiv.classList.add("show-animation");
