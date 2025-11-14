@@ -9,6 +9,7 @@ document.getElementById("format_autre_checkbox").addEventListener("change", func
     input.style.display = this.checked ? "block" : "none";
     if (!this.checked) input.value = "";
 });
+
 document.querySelectorAll('.contact .dropdown').forEach(dropdown => {
     const toggle = dropdown.querySelector('.dropdown-toggle');
     const content = dropdown.querySelector('.dropdown-content');
@@ -28,18 +29,18 @@ document.querySelectorAll('.contact .dropdown').forEach(dropdown => {
         }
     });
 
-const updateSummary = () => {
-    const checkedCount = [...checkboxes].filter(c => c.checked).length;
-    if (checkedCount > 0) {
-        toggle.style.color = "#000";
-    } else {
-        toggle.style.color = "#8D8D8D";
-    }
+    const updateSummary = () => {
+        const checkedCount = [...checkboxes].filter(c => c.checked).length;
+        if (checkedCount > 0) {
+            toggle.style.color = "#000";
+        } else {
+            toggle.style.color = "#8D8D8D";
+        }
 
-    toggle.textContent = checkedCount > 0
-        ? `${checkedCount} sélectionné${checkedCount > 1 ? 's' : ''}`
-        : 'Aucun sélectionné';
-};
+        toggle.textContent = checkedCount > 0
+            ? `${checkedCount} sélectionné${checkedCount > 1 ? 's' : ''}`
+            : 'Aucun sélectionné';
+    };
 
     checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', updateSummary);
@@ -77,17 +78,31 @@ document.querySelectorAll('a[href="#contactForm"]').forEach(link => {
     }
   });
 });
+
 document.addEventListener("DOMContentLoaded", function() {
-  const form = document.querySelector('form[name="contactformV3"]');
-  const button = form.querySelector('button[type="submit"]');
-  const animationDiv = document.getElementById("animation");
+    const form = document.querySelector('form[name="contactformV3"]');
+    const button = form.querySelector('button[type="submit"]');
+    const animationDiv = document.getElementById("animation");
 
-  form.addEventListener("submit", function(event) {
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    button.classList.add("btn-hidden");
-    setTimeout(() => {
-      animationDiv.classList.add("show-animation");
-    }, 500);
-    
-  });
+        button.classList.add("btn-hidden");
+
+        const formData = new FormData(form);
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            animationDiv.classList.add("show-animation");
+            form.reset();
+        })
+        .catch((error) => {
+            console.error("Erreur d’envoi :", error);
+            alert("Une erreur est survenue.");
+        });
+    });
 });
