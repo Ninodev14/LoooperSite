@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /404
-Disallow: /mentions-legales
-
-Sitemap: https://loooper.fr/sitemap.xml
