@@ -1,16 +1,2 @@
 [functions]
   directory = "netlify/functions"
-
-[[redirects]]
-  from = "/*"
-  to = "https://loooper.fr/:splat"
-  status = 301
-  force = true
-  conditions = { Host = "loooper.netlify.app" }
-
-[[redirects]]
-  from = "/*"
-  to = "https://loooper.fr/:splat"
-  status = 301
-  force = true
-  conditions = { Host = "www.loooper.fr" }

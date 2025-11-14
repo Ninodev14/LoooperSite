@@ -1,0 +1,4 @@
+https://loooper.netlify.app/*   https://loooper.fr/:splat   301!
+
+# Redirection depuis www vers le domaine principal
+https://www.loooper.fr/*       https://loooper.fr/:splat   301!
