@@ -107,13 +107,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
             const webhookURL = "https://discord.com/api/webhooks/1412352742088769596/pVZ586uEiVZs1fJ7rjyi6iqz-rzxGwyYeFX7M0PconGDQmMGvnaZAccgBIjZ8OJfqpq7";
 
-            // Construit un message Discord propre
             const message = {
                 content: "**📩 Nouveau message reçu via le formulaire :**",
                 embeds: [
                     {
                         title: "Nouveau contact",
-                        color: 5814783, // bleu Discord
+                        color: 5814783,
                         fields: [
                             { name: "Nom", value: formData.get("nom") || "—" },
                             { name: "Prénom", value: formData.get("prenom") || "—" },
@@ -137,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 body: JSON.stringify(message)
             });
 
-            // Animation de succès
             animationDiv.classList.add("show-animation");
             form.reset();
         })
