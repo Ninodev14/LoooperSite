@@ -6,7 +6,6 @@ document.querySelectorAll('.protagonistes-card').forEach(card => {
 function adjustCardsHeight() {
     const cards = document.querySelectorAll('.protagonistes-card');
     let maxHeight = 0;
- console.log("eee")
 
     cards.forEach(card => {
         const front = card.querySelector('.protagonistes-card-front');

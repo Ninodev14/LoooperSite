@@ -91,12 +91,53 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const formData = new FormData(form);
 
+        // ============================
+        // 1️⃣ Envoi à NETLIFY
+        // ============================
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
         })
         .then(() => {
+            
+            // ============================
+            // 2️⃣ Envoi au DISCORD WEBHOOK
+            // ============================
+
+            const webhookURL = "https://discord.com/api/webhooks/1412352742088769596/pVZ586uEiVZs1fJ7rjyi6iqz-rzxGwyYeFX7M0PconGDQmMGvnaZAccgBIjZ8OJfqpq7";
+
+            // Construit un message Discord propre
+            const message = {
+                content: "**📩 Nouveau message reçu via le formulaire :**",
+                embeds: [
+                    {
+                        title: "Nouveau contact",
+                        color: 5814783, // bleu Discord
+                        fields: [
+                            { name: "Nom", value: formData.get("nom") || "—" },
+                            { name: "Prénom", value: formData.get("prenom") || "—" },
+                            { name: "Email", value: formData.get("email") || "—" },
+                            { name: "Téléphone", value: formData.get("telephone") || "—" },
+                            { name: "Entreprise", value: formData.get("entreprise") || "—" },
+                            { name: "Statut", value: formData.get("statut") || "—" },
+                            { name: "Objectifs", value: formData.getAll("objectif[]").join(", ") || "—" },
+                            { name: "Autre objectif", value: formData.get("objectif_autre") || "—" },
+                            { name: "Format", value: formData.getAll("format[]").join(", ") || "—" },
+                            { name: "Autre format", value: formData.get("format_autre") || "—" },
+                            { name: "Message", value: formData.get("message") || "—" }
+                        ]
+                    }
+                ]
+            };
+
+            fetch(webhookURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(message)
+            });
+
+            // Animation de succès
             animationDiv.classList.add("show-animation");
             form.reset();
         })
