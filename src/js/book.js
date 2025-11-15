@@ -278,6 +278,23 @@ function goToMobileSlide(i) {
 mobileNext.addEventListener('click', nextMobile);
 mobilePrev.addEventListener('click', prevMobile);
 
+// Click sur les pages → navigation
+const page1 = document.querySelector('.book-page-1');
+const page2 = document.querySelector('.book-page-2');
+
+if (page1) {
+    page1.addEventListener('click', () => {
+        prev(); // Page gauche = revenir en arrière
+    });
+}
+
+if (page2) {
+    page2.addEventListener('click', () => {
+        next(); // Page droite = aller en avant
+    });
+}
+
+
 // swipe sur mobile
 (function addSwipe() {
   const el = document.querySelector('.book-mobile-container');
