@@ -3,7 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!containers.length) return;
 
   const thresholds = Array.from({ length: 101 }, (_, i) => i / 100);
-  const targetRatio = 0.25;
+
+  let targetRatio;
+
+  if (window.innerWidth <= 600) {
+    targetRatio = 0.12; 
+  } else if (window.innerWidth <= 1024) {
+    targetRatio = 0.18; 
+  } else {
+    targetRatio = 0.25; 
+  }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -13,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let progress = visible / targetRatio;
       progress = Math.min(progress, 1);
 
-      const newScale = 0.9 + 0.1 * progress;
+      const newScale = 0.8 + 0.2 * progress;
       container.style.transform = `scaleX(${newScale})`;
     });
   }, {

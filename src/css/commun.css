@@ -239,7 +239,7 @@ body {
     padding: 10em 0;
     transition: transform 0.2s ease-out;
     transform-origin: center;
-    transform: scaleX(0.9);
+    transform: scaleX(0.8);
     background-color: #fff;
 }
 
