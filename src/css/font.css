@@ -132,9 +132,9 @@ header p {
   background-position: bottom;
   background-size: auto;
   padding-top: calc(3.89rem + 10vh);
-  /* 70px → 3.89rem */
+  -webkit-text-stroke: 0.1px #ffffff;
   padding-bottom: 1.11rem;
-  /* 20px → 1.11rem */
+
   text-shadow:
     0.0556rem 0 #fff, -0.0556rem 0 #fff,
     0 0.0556rem #fff, 0 -0.0556rem #fff,
@@ -180,6 +180,7 @@ header p {
   top: 0;
   left: 0;
   width: 100%;
+  -webkit-text-stroke: 0.1px #ffffff;
   text-shadow:
     0.0556rem 0 #fff, -0.0556rem 0 #fff,
     0 0.0556rem #fff, 0 -0.0556rem #fff,
@@ -225,6 +226,7 @@ header p {
 
 
 .white-border {
+  -webkit-text-stroke: 0.1px #ffffff;
   text-shadow:
     0.0556rem 0 #fff, -0.0556rem 0 #fff,
     0 0.0556rem #fff, 0 -0.0556rem #fff,
@@ -241,6 +243,7 @@ header p {
 }
 
 .white-border-small {
+  -webkit-text-stroke: 0.1px #ffffff;
   text-shadow:
     0.0139rem 0 #fff, -0.0139rem 0 #fff,
     0 0.0139rem #fff, 0 -0.0139rem #fff,
@@ -257,6 +260,7 @@ header p {
 }
 
 .black-border-small {
+  -webkit-text-stroke: 1px #000000;
   text-shadow:
     0.0139rem 0 #000, -0.0139rem 0 #000,
     0 0.0139rem #000, 0 -0.0139rem #000,
@@ -273,6 +277,7 @@ header p {
 }
 
 .nav-pc-container .white-border-small {
+  -webkit-text-stroke: 0.1px #ffffff;
   text-shadow:
     0.0139rem 0 #fff, -0.0139rem 0 #fff,
     0 0.0139rem #fff, 0 -0.0139rem #fff,
@@ -293,6 +298,7 @@ header p {
   background-repeat: repeat;
   background-position: bottom;
   background-size: auto;
+  -webkit-text-stroke: 0.1px #ffffff;
   padding-top: calc(1.945rem + 5vh);
   padding-bottom: 0.555rem;
   text-shadow:
@@ -341,6 +347,7 @@ header p {
   top: 0;
   left: 0;
   width: 100%;
+  -webkit-text-stroke: 0.1px #ffffff;
   text-shadow:
     0.0278rem 0 #fff, -0.0278rem 0 #fff,
     0 0.0278rem #fff, 0 -0.0278rem #fff,
@@ -386,6 +393,7 @@ header p {
 
 .opendyslexic .white-border,
 .reading .white-border {
+  -webkit-text-stroke: 0.1px #ffffff;
   text-shadow:
     0.0278rem 0 #fff, -0.0278rem 0 #fff,
     0 0.0278rem #fff, 0 -0.0278rem #fff,
@@ -406,9 +414,11 @@ header p {
 b {
   font-weight: bold;
 }
-header .highlight{
+
+header .highlight {
   font-weight: bold;
 }
+
 html {
   font-size: 13px;
 }
