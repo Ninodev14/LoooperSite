@@ -203,7 +203,7 @@ body {
     justify-content: center;
 }
 
-.intro-paragraphe{
+.intro-paragraphe {
     letter-spacing: 0.01rem;
 }
 
@@ -1443,13 +1443,43 @@ body {
 
 .contact-background .reflect.visibleBackgroundType1Annim {
     transform: translateX(-60%) scaleX(-1);
+    opacity: 1;
+    animation: bounceInStrayContactRight 1.5s ease;
 }
 
 .contact-background .visibleBackgroundType1Annim {
     transform: translateX(60%);
     opacity: 1;
+    animation: bounceInStrayContactLeft 1.5s ease;
 }
 
+@keyframes bounceInStrayContactRight {
+    0% {
+        transform: translateX(-90%) scaleX(-1);
+    }
+
+    50% {
+        transform: translateX(-58%) scaleX(-1);
+    }
+
+    100% {
+        transform: translateX(-60%) scaleX(-1);
+    }
+}
+
+@keyframes bounceInStrayContactLeft {
+    0% {
+        transform: translateX(90%);
+    }
+
+    50% {
+        transform: translateX(58%);
+    }
+
+    100% {
+        transform: translateX(60%);
+    }
+}
 
 .contact-container {
     display: flex;
