@@ -82,7 +82,7 @@ if (hasMouse) {
       while (el) {
         const tag = el.tagName;
         const interactiveTags = ['A', 'BUTTON', 'INPUT', 'TEXTAREA', 'SELECT', 'LABEL'];
-        const interactiveClasses = ['swiper-button-prev', 'swiper-button-next', 'dropdown-toggle', 'faq-header', 'protagonistes-card', 'swiper-pagination-bullet', 'discovered', 'enCours', "card" ];
+        const interactiveClasses = ['swiper-button-prev', 'swiper-button-next', 'dropdown-toggle', 'faq-header', 'protagonistes-card', 'swiper-pagination-bullet', 'discovered', 'enCours', "card", "book-page-1", "book-page-2"];
 
         if (interactiveTags.includes(tag)) return true;
         if (el.classList && interactiveClasses.some(cls => el.classList.contains(cls))) return true;
@@ -124,11 +124,21 @@ if (hasMouse) {
 
 
 
-    // --- Détection du fond ---
     let computedBg = style.backgroundColor;
     let currentEl = el;
 
+    const SPECIAL_CLASSES = ['cursor-dark-zone', 'cursor-light-zone'];
+
+    let overrideLightMode = null;
+
+    SPECIAL_CLASSES.forEach(cls => {
+      if (el.closest('.' + cls)) {
+        if (cls === 'cursor-dark-zone') overrideLightMode = false; 
+        if (cls === 'cursor-light-zone') overrideLightMode = true; 
+      }
+    });
     while (
+      overrideLightMode === null &&
       currentEl &&
       (computedBg === 'rgba(0, 0, 0, 0)' || computedBg === 'transparent')
     ) {
@@ -138,19 +148,28 @@ if (hasMouse) {
       }
     }
 
-    const rgb = computedBg.match(/\d+/g);
-    if (rgb) {
-      const brightness = 0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2];
-      const isLight = brightness > 200;
-      if (isLight !== lastState) {
-        lastState = isLight;
-        if (isLight) {
-          cursor.classList.add('light');
-          ring.classList.add('light');
-        } else {
-          cursor.classList.remove('light');
-          ring.classList.remove('light');
-        }
+    // 3) Calcul de la luminosité si pas overridé
+    let isLight = null;
+
+    if (overrideLightMode !== null) {
+      isLight = overrideLightMode;
+    } else {
+      const rgb = computedBg.match(/\d+/g);
+      if (rgb) {
+        const brightness = 0.299 * rgb[0] + 0.587 * rgb[1] + 0.114 * rgb[2];
+        isLight = brightness > 200;
+      }
+    }
+
+    // 4) Application du style si le résultat a changé
+    if (isLight !== null && isLight !== lastState) {
+      lastState = isLight;
+      if (isLight) {
+        cursor.classList.add('light');
+        ring.classList.add('light');
+      } else {
+        cursor.classList.remove('light');
+        ring.classList.remove('light');
       }
     }
   }
