@@ -24,7 +24,7 @@ const observer = new IntersectionObserver((entries) => {
         highlightsInView.forEach((el, i) => {
           setTimeout(() => {
             el.classList.add("visibleHighlight");
-          }, i * 500);
+          }, i * 200);
         });
       }
     }

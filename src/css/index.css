@@ -36,12 +36,44 @@
 }
 
 .reflect.visibleBackgroundType1Annim {
+  animation: bounceInStrayRight 1.5s ease;
   transform: translateX(-30%) scaleX(-1);
+  opacity: 1;
 }
 
 .visibleBackgroundType1Annim {
+  animation: bounceInStrayLeft 1.5s ease;
   transform: translateX(30%);
   opacity: 1;
+}
+
+
+@keyframes bounceInStrayRight {
+  0% {
+    transform: translateX(-90%) scaleX(-1);
+  }
+
+  50% {
+    transform: translateX(-25%) scaleX(-1);
+  }
+
+  100% {
+    transform: translateX(-30%) scaleX(-1);
+  }
+}
+
+@keyframes bounceInStrayLeft {
+  0% {
+    transform: translateX(90%);
+  }
+
+  50% {
+    transform: translateX(25%);
+  }
+
+  100% {
+    transform: translateX(30%);
+  }
 }
 
 .backgroundType2Annim {
@@ -58,7 +90,6 @@
   transition: transform 0.8s ease, opacity 0.8s ease;
 }
 
-/* état initial (hors écran, transparent) */
 .backgroundType2Annim.left {
   left: 0;
   transform: translateY(-10%) rotate(-90deg);
@@ -70,15 +101,45 @@
 }
 
 .backgroundType2Annim.visibleBackgroundType2Annim.left {
+
   transform: translateY(0) rotate(-90deg);
   opacity: 1;
+  animation: bounceInLeft 1.5s ease;
 }
 
 .backgroundType2Annim.visibleBackgroundType2Annim.right {
   transform: translateY(0) rotate(90deg) scaleX(-1);
   opacity: 1;
+  animation: bounceInRight 1.5s ease;
 }
 
+@keyframes bounceInRight {
+  0% {
+    transform: translateY(-10%) rotate(90deg) scaleX(-1);
+  }
+
+  50% {
+    transform: translateY(2%) rotate(90deg) scaleX(-1);
+  }
+
+  100% {
+    transform: translateY(0) rotate(90deg) scaleX(-1);
+  }
+}
+
+@keyframes bounceInLeft {
+  0% {
+    transform: translateY(-10%) rotate(-90deg);
+  }
+
+  50% {
+    transform: translateY(2%) rotate(-90deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(-90deg);
+  }
+}
 
 .visibleHighlight {
 
@@ -278,6 +339,7 @@
 .memory-item p {
   color: #000;
 }
+
 .game-button-arrow-container {
   display: flex;
   align-items: center;
@@ -287,7 +349,7 @@
   width: fit-content;
 }
 
-.game-btn-arrow{
+.game-btn-arrow {
   height: 30px;
   width: fit-content !important;
 }
@@ -303,10 +365,11 @@
     width: 100%;
     ;
   }
-  .game-btn-arrow{
-  height: 30px;
-  width: fit-content !important;
-}
+
+  .game-btn-arrow {
+    height: 30px;
+    width: fit-content !important;
+  }
 
 }
 
@@ -352,10 +415,11 @@
     width: 10vw !important;
 
   }
+
   .game-btn-arrow {
-  height: 30px;
-  width: fit-content !important;
-}
+    height: 30px;
+    width: fit-content !important;
+  }
 
 }
 
