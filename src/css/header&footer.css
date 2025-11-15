@@ -351,6 +351,13 @@ html {
     display: flex;
 
 }
+.nav-pc .header-typo-pc{
+    transition: transform 0.2s;
+}
+
+.nav-pc .header-typo-pc:hover{
+    transform: scale(1.02);
+}
 
 @media screen and (max-width: 960px) {
     header {
