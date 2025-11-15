@@ -1191,11 +1191,24 @@ body {
 
     }
 
-    .background-interogation,
-    .background-guillemet::before,
-    .background-guillemet::after {
-        background-image: none;
+    .background-interogation {
+        background-size: auto 20%;
+        background-position: right top;
+        top: 0;
     }
+
+.background-guillemet::after {
+
+    background-size: auto 10%;
+
+}
+
+.background-guillemet::before {
+
+    background-size: auto 10%;
+
+}
+
 
 }
 
