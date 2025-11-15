@@ -438,7 +438,7 @@
     gap: 1rem;
     padding: 6vw;
     opacity: 1;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.2s ease;
 }
 
 .book-mobile-content.fading-out {
