@@ -305,6 +305,7 @@ html {
 .dropdown-text-arrow {
     display: flex;
     align-items: center;
+    position: relative;
     gap: 8px;
 
 }
@@ -315,7 +316,39 @@ html {
     width: 7px;
     background: white;
     border-radius: 2px;
+    position: relative;
+    z-index: 0;
 }
+
+
+.highlight .dropdown-arrow::before {
+    top: 0;
+    position: absolute;
+    content: "";
+    height: 3px;
+    z-index: -1;
+    width: 8px;
+    background: rgb(0, 0, 0);
+    border-radius: 2px;
+    left: 50%;
+    transform: rotate(-135deg) translate(1px, -4.6px) ;
+}
+
+.highlight .dropdown-arrow::after {
+    top: 0;
+    position: absolute;
+    content: "";
+    height: 3px;
+    z-index: -1;
+    width: 8px;
+    background: rgb(0, 0, 0);
+    border-radius: 2px;
+    left: 0;
+    transform: rotate(135deg) translate(-0.2px, 0.8px) ;
+}
+
+
+
 
 .dropdown-arrow .line1 {
     transform: rotate(45deg) translate(2px, 2px);
@@ -351,11 +384,12 @@ html {
     display: flex;
 
 }
-.nav-pc .header-typo-pc{
+
+.nav-pc .header-typo-pc {
     transition: transform 0.2s;
 }
 
-.nav-pc .header-typo-pc:hover{
+.nav-pc .header-typo-pc:hover {
     transform: scale(1.02);
 }
 
@@ -466,10 +500,10 @@ footer {
     text-align: end;
 }
 
-.footer-map-legal{
-width: fit-content;
+.footer-map-legal {
+    width: fit-content;
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     gap: 8px;
 }
 
