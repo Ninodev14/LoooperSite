@@ -1055,10 +1055,16 @@ body {
 }
 
 .wrapper-faq-container-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4vw;
     justify-content: space-between;
+}
+
+.wrapper-faq-container-info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 .faq-text-espacement {
@@ -1068,7 +1074,7 @@ body {
 }
 
 .faq-container-info {
-    width: calc(50% - 20px);
+    width: 100%;
     border-bottom: 1px solid #ddd;
     padding: 10px 0;
     height: fit-content;
@@ -1080,6 +1086,7 @@ body {
     align-items: center;
     cursor: pointer;
     justify-content: flex-start;
+    height: 4rem;
     gap: 10px;
 }
 
@@ -1186,6 +1193,13 @@ body {
 }
 
 @media screen and (max-width: 650px) {
+    .wrapper-faq-container-info {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 4vw;
+        justify-content: space-between;
+    }
+
     .faq-container-info {
         width: 100%;
 
@@ -1197,17 +1211,17 @@ body {
         top: 0;
     }
 
-.background-guillemet::after {
+    .background-guillemet::after {
 
-    background-size: auto 10%;
+        background-size: auto 10%;
 
-}
+    }
 
-.background-guillemet::before {
+    .background-guillemet::before {
 
-    background-size: auto 10%;
+        background-size: auto 10%;
 
-}
+    }
 
 
 }
@@ -2011,4 +2025,3 @@ input[type="checkbox"]::after {
 .mini-card-container .revers-mini-card {
     transform: none;
 }
-
