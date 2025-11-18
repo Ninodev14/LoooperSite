@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 cards.forEach(card => {
                     card.style.transition = "all 0.2s ease";
                     card.style.willChange = "auto";
+                    container.classList.add("mix-done")
                 });
             }, 2200);
 
