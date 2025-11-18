@@ -12,6 +12,12 @@
      font-family: "Open-dyslexic";
  }
 
+
+  .opendyslexic header .highlight,  .opendyslexic  header .highlight-no-annim, header .highlight a {
+  font-weight: normal;
+}
+
+
  .reading p,
  .reading .footerTitle,
  .reading input,
