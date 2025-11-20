@@ -80,7 +80,7 @@ document.querySelectorAll('a[href="#contactForm"]').forEach(link => {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.querySelector('form[name="contactformV3"]');
+    const form = document.querySelector('form[name="contactformV4"]');
     const button = form.querySelector('button[type="submit"]');
     const animationDiv = document.getElementById("animation");
 
