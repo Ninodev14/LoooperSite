@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const formData = new FormData(form);
 
         // ============================
-        // 1️⃣ Envoi à NETLIFY
+        // Envoi à NETLIFY
         // ============================
         fetch("/", {
             method: "POST",
@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
         .then(() => {
             
             // ============================
-            // 2️⃣ Envoi au DISCORD WEBHOOK
+            // Envoi au DISCORD WEBHOOK
             // ============================
 
             const webhookURL = "https://discord.com/api/webhooks/1412352742088769596/pVZ586uEiVZs1fJ7rjyi6iqz-rzxGwyYeFX7M0PconGDQmMGvnaZAccgBIjZ8OJfqpq7";
