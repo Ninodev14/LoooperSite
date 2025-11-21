@@ -238,6 +238,8 @@ header {
 
 /* Sous-menu caché par défaut */
 .dropdown-menu {
+    overflow-y:auto;
+    overflow-x: hidden;
     position: absolute;
     top: 100%;
     left: 0;
