@@ -215,10 +215,10 @@
     border: 6px solid #FFF;
 }
 
-.last-item{
+.last-item {
     height: 10px;
     width: 100%;
-    padding-top:2rem;
+    padding-top: 2rem;
 }
 
 .protagonistes-card-img img {
@@ -242,18 +242,22 @@
     padding: 0px 3vw;
     padding-bottom: calc(60px + 2vw);
 }
-.arrow-container-equipe{
-   width: 100%;
-   justify-content: space-between;
-   position: relative;
+
+.arrow-container-equipe {
+    width: 100%;
+    justify-content: space-between;
+    position: relative;
 }
- .arrow-container-equipe img{
+
+.arrow-container-equipe img {
     width: 38%;
 }
-.arrow-container-equipe p{
+
+.arrow-container-equipe p {
     width: 20%;
 }
-.absolute-arrow{
+
+.absolute-arrow {
     top: 3.2rem;
     left: 50%;
     transform: translateX(-50%);
@@ -263,12 +267,14 @@
 }
 
 @media screen and (max-width: 950px) {
-    .arrow-container-equipe img{
+    .arrow-container-equipe img {
         display: none;
     }
-        .arrow-container-equipe p{
+
+    .arrow-container-equipe p {
         width: 100%;
     }
+
     .protagonistes-containe-wrapper {
         flex-direction: column;
         gap: 40px;
@@ -284,6 +290,10 @@
 .book-container {
     position: relative;
     overflow: visible;
+}
+
+.book-container .highlight-no-annim::before {
+    inset: -0.6em -0.4em;
 }
 
 .book-container::after {
