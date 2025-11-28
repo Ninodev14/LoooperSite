@@ -78,7 +78,7 @@
 
 .backgroundType2Annim {
   position: absolute;
-top: -37.2vw;
+  top: -37.2vw;
   width: 50vw;
   height: 50vw;
   background-image: url("/src/svg/backgroundType1.svg");
