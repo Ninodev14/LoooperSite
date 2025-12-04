@@ -442,7 +442,8 @@ footer {
 .footer-nav-row {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    width: 14rem;
+    gap: 0px;
 }
 
 .footer-container {
