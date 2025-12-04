@@ -414,7 +414,7 @@ b {
   font-weight: bold;
 }
 
-header .highlight, header .highlight-no-annim, header .highlight a {
+header .highlight, header .highlight-no-annim, header .highlight a,header .header-typo-pc .white-border-small {
   font-weight: bold;
 }
 

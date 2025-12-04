@@ -426,6 +426,8 @@
 /* puzzle taquin */
 
 .puzzle {
+  overflow: hidden;
+    border-radius: 20px;
   display: grid;
   grid-template-columns: repeat(3, 10vw);
   grid-template-rows: repeat(3, 10vw);

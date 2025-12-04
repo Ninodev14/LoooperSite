@@ -14,8 +14,7 @@
 
 
  .opendyslexic header .highlight,
- .opendyslexic header .highlight-no-annim,
- header .highlight a {
+ .opendyslexic header .highlight-no-annim, .opendyslexic header .highlight a {
      font-weight: normal;
  }
 
