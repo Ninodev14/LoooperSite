@@ -99,12 +99,12 @@
      gap: 20px;
      height: 50px;
      cursor: pointer;
-     z-index: 1;
+     z-index: 11;
  }
 
  #ludique-menue {
      text-align: center;
-     z-index: 1;
+     z-index: 11;
      display: none;
      position: fixed;
      bottom: 74px;
@@ -139,7 +139,7 @@
 
  /* Menu d’options */
  #accessibility-menu {
-     z-index: 1;
+     z-index: 11;
      display: none;
      position: fixed;
      bottom: 74px;
