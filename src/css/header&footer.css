@@ -2,7 +2,7 @@ header {
     top: 10px;
     width: 96vw;
     margin-left: 2vw;
-    height: 70px;
+    height: fit-content;
     position: fixed;
     z-index: 1001;
 }
