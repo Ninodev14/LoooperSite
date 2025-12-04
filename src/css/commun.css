@@ -1444,6 +1444,7 @@ body {
 
 }
 
+
 .backgroundType1AnnimContainer {
     position: relative;
     width: 100%;
@@ -1788,6 +1789,10 @@ input[type="checkbox"]::after {
 @media screen and (max-width: 1365px) {
     .contact {
         width: 70%;
+    }
+
+    .contact .small-medium-spacing{
+        margin-top: 2rem;
     }
 }
 
