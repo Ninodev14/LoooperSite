@@ -1930,6 +1930,10 @@ input[type="checkbox"]::after {
 .mix-done a:hover .mini-card-purple {
     background-color: #BB6EF6;
 }
+.mix-done a:hover .mini-card-red {
+    background-color: #F55765;
+}
+
 
 .mix-done a:hover .mini-card-orange {
     background-color: #F6B254;
