@@ -10,18 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const contentsByImage = {
     "/src/svg/guyMemories.svg": {
-      title: "Pensé pour tous les publics",
-      text: "De 1 à 111 ans, chacun trouve sa place dans nos expériences interactives; ludiques, inclusives, accessibles.",
+      title: "Formats hybrides",
+      text: "Numériques, physiques ou phygitaux, nos formats s’adaptent à vos usages. Conscients des enjeux liés aux écrans, nous veillons à proposer nos expériences sur le support le plus adapté aux besoins de chacun.",
       image: "/src/svg/guyMemories.svg"
     },
     "/src/svg/linkMemories.svg": {
-      title: "Expérience créatrice de lien",
-      text: "Le jeu est un langage universel. Loooper! s’en sert pour tisser un lien vivant et unique avec votre public.",
+      title: "Valeurs humaines",
+      text: "Chaque expérience est conçue pour être à la fois ludique, accessible et inclusive. Ces valeurs sont essentielles pour nous et guident chacune de nos créations.",
       image: "/src/svg/linkMemories.svg"
     },
     "/src/svg/targetMemories.svg": {
-      title: "Solutions adaptées sur mesure",
-      text: "De l’idée à la mise en place, nous vous accompagnons de A à Z dans la création de formats ludiques alignés avec vos objectifs.",
+      title: "Créations sur mesure",
+      text: "De l’idée à la mise en œuvre, nous vous accompagnons pour imaginer et réaliser des formats ludiques qui vous ressemblent afin donner vie à une expérience unique alignée avec vos attentes.",
       image: "/src/svg/targetMemories.svg"
     }
   };
