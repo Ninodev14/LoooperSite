@@ -1791,7 +1791,7 @@ input[type="checkbox"]::after {
         width: 70%;
     }
 
-    .contact .small-medium-spacing{
+    .contact .small-medium-spacing {
         margin-top: 2rem;
     }
 }
@@ -1930,9 +1930,7 @@ input[type="checkbox"]::after {
 .mix-done a:hover .mini-card-purple {
     background-color: #BB6EF6;
 }
-.mix-done a:hover .mini-card-red {
-    background-color: #F55765;
-}
+
 
 
 .mix-done a:hover .mini-card-orange {
@@ -2034,3 +2032,30 @@ input[type="checkbox"]::after {
 .mini-card-container .revers-mini-card {
     transform: none;
 }
+
+/*noel*/
+.mini-card-red {
+    height: 20rem;
+    overflow: hidden;
+}
+
+.mini-card-red img {
+    height: 60%;
+    width: auto;
+}
+
+.mix-done a:hover .mini-card-red {
+    background-color: #ffffff;
+    transform: none;
+}
+
+.mix-done .mini-card-red:hover img {
+    filter: brightness(1);
+
+
+}
+
+.mix-done .mini-card-red-link:hover {
+    transform: none;
+}
+
