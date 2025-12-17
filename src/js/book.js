@@ -51,6 +51,16 @@ const nextBtn = document.querySelector('.book-nav-next');
 const dotsContainer = document.querySelector('.book-dots');
 
 let current = 0;
+let isLocked = false;
+const LOCK_DURATION = 1000;
+
+function lock() {
+    isLocked = true;
+    setTimeout(() => {
+        isLocked = false;
+    }, LOCK_DURATION);
+}
+
 
 function initDots() {
     dotsContainer.innerHTML = '';
@@ -87,6 +97,9 @@ function render() {
     );
 }
 function animateTurn(direction) {
+    if (isLocked) return;
+    lock();
+
     const page = direction === 'next'
         ? document.querySelector('.book-page-2')
         : document.querySelector('.book-page-1');
@@ -107,11 +120,9 @@ function animateTurn(direction) {
     }, 200);
 
     setTimeout(() => {
-        if (direction === 'next') {
-            current = (current + 1) % slides.length;
-        } else {
-            current = (current - 1 + slides.length) % slides.length;
-        }
+        current = direction === 'next'
+            ? (current + 1) % slides.length
+            : (current - 1 + slides.length) % slides.length;
         render();
     }, 300);
 
@@ -137,6 +148,8 @@ function prev() { animateTurn('prev'); }
 function next() { animateTurn('next'); }
 
 function goToSlide(index) {
+    if (isLocked) return;
+    lock();
     if (index === current) return;
 
     const direction = index > current ? 'next' : 'prev';
@@ -220,58 +233,58 @@ const mobilePage = document.querySelector('.book-mobile-page');
 let currentMobile = 0;
 
 function initMobileDots() {
-  mobileDots.innerHTML = '';
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-    dot.addEventListener('click', () => goToMobileSlide(i));
-    mobileDots.appendChild(dot);
-  });
+    mobileDots.innerHTML = '';
+    slides.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        dot.addEventListener('click', () => goToMobileSlide(i));
+        mobileDots.appendChild(dot);
+    });
 }
 
 function renderMobile() {
-  const s = slides[currentMobile];
-  mobileChapitre.textContent = s.chapitre;
-  mobileTitle.textContent = s.title;
-  mobileTitle.classList.remove('orange', 'purple', 'blue');
-  if (s.color) mobileTitle.classList.add(s.color);
-  mobileImg.src = s.img;
-  mobileImg.alt = s.alt;
- mobileText.innerHTML = s.text;
+    const s = slides[currentMobile];
+    mobileChapitre.textContent = s.chapitre;
+    mobileTitle.textContent = s.title;
+    mobileTitle.classList.remove('orange', 'purple', 'blue');
+    if (s.color) mobileTitle.classList.add(s.color);
+    mobileImg.src = s.img;
+    mobileImg.alt = s.alt;
+    mobileText.innerHTML = s.text;
 
-  mobileDots.querySelectorAll('button').forEach((dot, i) => {
-    dot.setAttribute('aria-selected', i === currentMobile ? 'true' : 'false');
-  });
+    mobileDots.querySelectorAll('button').forEach((dot, i) => {
+        dot.setAttribute('aria-selected', i === currentMobile ? 'true' : 'false');
+    });
 }
 
 function animateMobile(direction, targetIndex = null) {
-  bookMobileContent.classList.add('fading-out');
+    bookMobileContent.classList.add('fading-out');
 
-  setTimeout(() => {
-    if (targetIndex !== null) {
-      currentMobile = targetIndex;
-    } else if (direction === 'next') {
-      currentMobile = (currentMobile + 1) % slides.length;
-    } else {
-      currentMobile = (currentMobile - 1 + slides.length) % slides.length;
-    }
+    setTimeout(() => {
+        if (targetIndex !== null) {
+            currentMobile = targetIndex;
+        } else if (direction === 'next') {
+            currentMobile = (currentMobile + 1) % slides.length;
+        } else {
+            currentMobile = (currentMobile - 1 + slides.length) % slides.length;
+        }
 
-    renderMobile();
-    bookMobileContent.classList.remove('fading-out');
-  }, 400);
+        renderMobile();
+        bookMobileContent.classList.remove('fading-out');
+    }, 400);
 }
 
 function nextMobile() {
-  animateMobile('next');
+    animateMobile('next');
 }
 
 function prevMobile() {
-  animateMobile('prev');
+    animateMobile('prev');
 }
 
 function goToMobileSlide(i) {
-  if (i === currentMobile) return;
-  animateMobile(null, i);
+    if (i === currentMobile) return;
+    animateMobile(null, i);
 }
 
 
@@ -296,22 +309,22 @@ if (page2) {
 
 // swipe sur mobile
 (function addSwipe() {
-  const el = document.querySelector('.book-mobile-container');
-  let startX = 0, startY = 0;
-  el.addEventListener('touchstart', e => {
-    const t = e.touches[0];
-    startX = t.clientX;
-    startY = t.clientY;
-  }, { passive: true });
-  el.addEventListener('touchend', e => {
-    const t = e.changedTouches[0];
-    const dx = t.clientX - startX;
-    const dy = t.clientY - startY;
-    if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
-      if (dx < 0) nextMobile();
-      else prevMobile();
-    }
-  });
+    const el = document.querySelector('.book-mobile-container');
+    let startX = 0, startY = 0;
+    el.addEventListener('touchstart', e => {
+        const t = e.touches[0];
+        startX = t.clientX;
+        startY = t.clientY;
+    }, { passive: true });
+    el.addEventListener('touchend', e => {
+        const t = e.changedTouches[0];
+        const dx = t.clientX - startX;
+        const dy = t.clientY - startY;
+        if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) {
+            if (dx < 0) nextMobile();
+            else prevMobile();
+        }
+    });
 })();
 
 initMobileDots();
