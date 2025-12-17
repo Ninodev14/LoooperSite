@@ -247,6 +247,9 @@ body {
     display: flex;
     gap: 10vw;
 }
+.text-basical-container-center{
+    align-items: center;
+}
 
 .text-center-container {
     justify-content: center;
