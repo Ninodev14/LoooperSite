@@ -245,9 +245,11 @@ body {
 
 .text-basical-container {
     display: flex;
+    align-items: center;
     gap: 10vw;
 }
-.text-basical-container-center{
+
+.text-basical-container-center {
     align-items: center;
 }
 
@@ -316,6 +318,14 @@ body {
     display: flex;
     align-items: end;
     justify-content: space-between;
+}
+
+.text-basical-container-footer-tel {
+    display: none;
+}
+
+.text-basical-container-footer-pc {
+    display: flex;
 }
 
 .text-basical-container-img {
@@ -512,6 +522,14 @@ body {
 }
 
 @media screen and (max-width: 960px) {
+    .text-basical-container-footer-tel {
+        display: flex;
+    }
+
+    .text-basical-container-footer-pc {
+        display: none;
+    }
+
     .container-width {
         width: calc(100vw - 6vw);
         margin-left: 3vw;
@@ -2035,5 +2053,3 @@ input[type="checkbox"]::after {
 .mini-card-container .revers-mini-card {
     transform: none;
 }
-
-
