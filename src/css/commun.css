@@ -2033,29 +2033,4 @@ input[type="checkbox"]::after {
     transform: none;
 }
 
-/*noel*/
-.mini-card-red {
-    height: 20rem;
-    overflow: hidden;
-}
-
-.mini-card-red img {
-    height: 60%;
-    width: auto;
-}
-
-.mix-done a:hover .mini-card-red {
-    background-color: #ffffff;
-    transform: none;
-}
-
-.mix-done .mini-card-red:hover img {
-    filter: brightness(1);
-
-
-}
-
-.mix-done .mini-card-red-link:hover {
-    transform: none;
-}
 
