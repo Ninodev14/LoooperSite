@@ -68,7 +68,10 @@ if (hasMouse) {
     cursor.classList.add('hidden');
   });
 
-  document.addEventListener('mouseenter', () => {
+  document.addEventListener('mouseenter', (e) => {
+    ringX = e.clientX;
+    ringY = e.clientY;
+    
     ring.classList.remove('hidden');
     cursor.classList.remove('hidden');
   });
@@ -148,7 +151,6 @@ if (hasMouse) {
       }
     }
 
-    // 3) Calcul de la luminosité si pas overridé
     let isLight = null;
 
     if (overrideLightMode !== null) {
@@ -161,7 +163,6 @@ if (hasMouse) {
       }
     }
 
-    // 4) Application du style si le résultat a changé
     if (isLight !== null && isLight !== lastState) {
       lastState = isLight;
       if (isLight) {
