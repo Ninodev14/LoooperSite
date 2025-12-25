@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.querySelector(".mini-card-container");
     const cards = container.querySelectorAll(".mini-card, .revers-mini-card");
     container.classList.add("mix-active");
+    
     cards.forEach(card => {
         const randomX = (Math.random() - 0.5) * 600;
         const randomY = (Math.random() - 0.5) * 600;
@@ -11,6 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.setProperty("--random-rot", randomRot);
     });
 
+    const isMobile = window.innerWidth < 768;
+    
     const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting) {
             container.classList.remove("mix-active");
@@ -25,7 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             observer.unobserve(container);
         }
-    }, { threshold: 0.3 });
+    }, { 
+        threshold: isMobile ? 0.05 : 0.3,
+        rootMargin: isMobile ? "0px 0px -50px 0px" : "0px"
+    });
 
     observer.observe(container);
 });
