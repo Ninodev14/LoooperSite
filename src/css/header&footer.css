@@ -469,9 +469,12 @@ footer {
     align-items: center;
     text-align: right;
     justify-items: center;
-    gap: 10%;
+    gap: 5%;
 }
 
+.small-medium-spacing{
+    margin-top: 50px;
+}
 
 .footer-bot-img-container {
     display: flex;
@@ -507,7 +510,7 @@ footer {
     width: fit-content;
     display: flex;
     flex-direction: row;
-    gap: 8px;
+    gap: 12px;
 }
 
 @media screen and (max-width: 960px) {
