@@ -442,6 +442,7 @@ body {
 }
 
 .card-info-container {
+    margin-left: -12px;
     width: 320px;
     display: flex;
     flex-direction: column;
@@ -1891,7 +1892,7 @@ input[type="checkbox"]::after {
     .long-card {
         flex-direction: column;
         width: 320px;
-
+        margin-left: -12px;
         min-width: auto;
     }
 
