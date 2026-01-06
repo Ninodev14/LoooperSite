@@ -224,6 +224,37 @@ header p {
   pointer-events: none;
 }
 
+.paterneTitleContourOnlyBlack {
+
+  -webkit-text-stroke: 0.1px #180544;
+  text-shadow:
+    0.111rem 0 #180544, -0.111rem 0 #180544,
+    0 0.111rem #180544, 0 -0.111rem #180544,
+    0.111rem 0.111rem #180544, -0.111rem -0.111rem #180544,
+    0.111rem -0.111rem #180544, -0.111rem 0.111rem #180544,
+    0.139rem 0 #180544, -0.139rem 0 #180544,
+    0 0.139rem #180544, 0 -0.139rem #180544,
+    0.139rem 0.139rem #180544, -0.139rem -0.139rem #180544,
+    0.139rem -0.139rem #180544, -0.139rem 0.139rem #180544,
+    0.1665rem 0 #180544, -0.1665rem 0 #180544,
+    0 0.1665rem #180544, 0 -0.1665rem #180544,
+    0.1665rem 0.1665rem #180544, -0.1665rem -0.1665rem #180544,
+    0.1665rem -0.1665rem #180544, -0.1665rem 0.1665rem #180544,
+    0.1945rem 0 #180544, -0.1945rem 0 #180544,
+    0 0.1945rem #180544, 0 -0.1945rem #180544,
+    0.1945rem 0.1945rem #180544, -0.1945rem -0.1945rem #180544,
+    0.1945rem -0.1945rem #180544, -0.1945rem 0.1945rem #180544,
+    0.222rem 0 #180544, -0.222rem 0 #180544,
+    0 0.222rem #180544, 0 -0.222rem #180544,
+    0.222rem 0.222rem #180544, -0.222rem -0.222rem #180544,
+    0.222rem -0.222rem #180544, -0.222rem 0.222rem #180544,
+    0.25rem 0 #180544, -0.25rem 0 #180544,
+    0 0.25rem #180544, 0 -0.25rem #180544,
+    0.25rem 0.25rem #180544, -0.25rem -0.25rem #180544,
+    0.25rem -0.25rem #180544, -0.25rem 0.25rem #180544;
+  z-index: 1;
+}
+
 
 .white-border {
   -webkit-text-stroke: 0.1px #ffffff;
@@ -414,7 +445,10 @@ b {
   font-weight: bold;
 }
 
-header .highlight, header .highlight-no-annim, header .highlight a,header .header-typo-pc .white-border-small {
+header .highlight,
+header .highlight-no-annim,
+header .highlight a,
+header .header-typo-pc .white-border-small {
   font-weight: bold;
 }
 
