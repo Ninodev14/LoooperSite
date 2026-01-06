@@ -227,6 +227,7 @@
 }
 
 .game-info {
+  height: calc(20vw + 280px);
   width: 30vw;
   text-align: center;
   display: flex;
@@ -356,6 +357,7 @@
 
 
 @media screen and (max-width: 650px) {
+
   .memory-no-game {
     flex-direction: column;
     gap: 100px
@@ -374,6 +376,10 @@
 }
 
 @media screen and (max-width: 960px) {
+    .game-info {
+    height: calc(55vw + 200px);
+    min-height: 460px;
+  }
 
   .memory-game-container {
     flex-direction: column-reverse;
