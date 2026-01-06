@@ -144,26 +144,6 @@ body {
     margin-left: 8vw;
 }
 
-.mentions-legale-container {
-    position: relative;
-    z-index: 1;
-}
-
-.mentions-legale-container ::after {
-    content: "";
-    user-select: none;
-    position: absolute;
-    top: 0;
-    pointer-events: none;
-    right: 0px;
-    background-image: url(/src/svg/mentionsPatern.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 30vw;
-    height: 100%;
-    z-index: -100;
-}
 
 .center-404 {
     width: 100%;
