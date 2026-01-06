@@ -238,7 +238,7 @@ header {
 
 /* Sous-menu caché par défaut */
 .dropdown-menu {
-    overflow-y:auto;
+    overflow-y: auto;
     overflow-x: hidden;
     position: absolute;
     top: 100%;
@@ -324,29 +324,32 @@ html {
 
 
 .highlight .dropdown-arrow::before {
-    top: 0;
+
     position: absolute;
     content: "";
-    height: 3px;
+    height: 4px;
     z-index: -1;
     width: 8px;
     background: rgb(0, 0, 0);
     border-radius: 2px;
-    left: 50%;
-    transform: rotate(-135deg) translate(1px, -4.6px) ;
+    top: -8%;
+    left: calc(50% + -0%);
+    transform: rotate(-135deg) translate(1px, -4.6px) scale(1.1);
+
 }
 
 .highlight .dropdown-arrow::after {
-    top: 0;
+
     position: absolute;
     content: "";
-    height: 3px;
+    height: 4px;
     z-index: -1;
     width: 8px;
     background: rgb(0, 0, 0);
     border-radius: 2px;
-    left: 0;
-    transform: rotate(135deg) translate(-0.2px, 0.8px) ;
+    left: -5%;
+    top: -38%;
+    transform: rotate(135deg) scale(1.1);
 }
 
 
@@ -472,7 +475,7 @@ footer {
     gap: 5%;
 }
 
-.small-medium-spacing{
+.small-medium-spacing {
     margin-top: 50px;
 }
 
