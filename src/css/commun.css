@@ -49,9 +49,6 @@ body {
     transform: translate(-50%, -50%);
 }
 
-.hidden .cursor-ring{
-    
-}
 
 .hidden {
     opacity: 0;
@@ -197,6 +194,13 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+.mainPageTitlePurple,
+.mainPageTitleOrange,
+.mainPageTitleBlue {
+    background-size: cover;
+    padding-bottom: 20px;
 }
 
 .mainPageTitlePurple {
@@ -554,10 +558,6 @@ body {
         align-items: center;
         position: relative;
         width: 100%;
-    }
-
-    .mainPageTitle {
-        background-size: 600%;
     }
 
     .mentions-legale-container ::after {
