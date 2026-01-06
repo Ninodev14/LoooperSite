@@ -10,7 +10,7 @@ function applyColors(swiper) {
     }
 
     const color = colors[Number(origIndex) % colors.length];
-    img.style.boxShadow = `20px 20px 0 0 ${color}`;
+    img.style.boxShadow = `10px 10px 0 0 ${color}`;
   });
 }
 
