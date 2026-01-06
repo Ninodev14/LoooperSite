@@ -81,8 +81,10 @@ if (hasMouse) {
     if (!el) return;
 
     const style = window.getComputedStyle(el);
-    function isInteractive(el) {
+function isInteractive(el) {
       while (el) {
+        if (el.classList && el.classList.contains('vide')) return false;
+        
         const tag = el.tagName;
         const interactiveTags = ['A', 'BUTTON', 'INPUT', 'TEXTAREA', 'SELECT', 'LABEL'];
         const interactiveClasses = ['swiper-button-prev', 'swiper-button-next', 'dropdown-toggle', 'faq-header', 'protagonistes-card', 'swiper-pagination-bullet', 'discovered', 'enCours', "card", "book-page-1", "book-page-2"];
