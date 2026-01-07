@@ -40,10 +40,6 @@
         transition: filter 0.3s ease;
     }
 
-    .mainPageTitle {
-        background-size: 200%;
-    }
-
     .header-typo-pc {
         font-size: 1rem;
     }

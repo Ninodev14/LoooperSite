@@ -541,7 +541,8 @@ body {
     .backgroundBrushType1::before {
         top: 0%;
         bottom: 0%;
-        background-size: cover;
+        background-image: url(/src/svg/brush-background-takin-mb.svg);
+        background-size: 200%;
     }
 
     .text-center-container-text {
@@ -563,6 +564,13 @@ body {
     .mentions-legale-container ::after {
         display: none;
     }
+
+    .mainPageTitlePurple,
+    .mainPageTitleOrange,
+    .mainPageTitleBlue {
+        background-position: center;
+    }
+
 }
 
 

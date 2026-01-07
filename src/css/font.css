@@ -131,9 +131,9 @@ header p {
   background-repeat: repeat;
   background-position: bottom;
   background-size: auto;
-  padding-top: calc(3.89rem + 10vh);
+  padding-top: 8rem;
   -webkit-text-stroke: 0.1px #ffffff;
-  padding-bottom: 1.11rem;
+  padding-bottom: 1.5rem;
 
   text-shadow:
     0.0556rem 0 #fff, -0.0556rem 0 #fff,
@@ -468,8 +468,16 @@ html {
 
 
 @media(max-width: 768px) {
+
   .modal .highlight-no-annim::before {
     display: none;
+  }
+
+  .mainPageTitle .white-border {
+
+    padding-top: 105px;
+
+    padding-bottom: 40px;
   }
 }
 
