@@ -486,6 +486,12 @@ footer {
 
 .footer-bot-img-container img {
     width: 4rem;
+    transition:  filter 0.3s ease;
+}
+
+.footer-bot-img-container img:hover {
+    filter: invert(1);
+
 }
 
 .footerTitle {
