@@ -17,10 +17,10 @@ if (btnHandicap) {
     if (!isVisible && menuLudique) menuLudique.style.display = "none";
 
     if (!isVisible) {
-      btnHandicap.querySelector("img").style.filter = "invert(1)";
-      if (btnLudique) btnLudique.querySelector("img").style.filter = "invert(0)";
+      btnHandicap.classList.add("filtre-activ");
+      if (btnLudique) btnLudique.classList.remove("filtre-activ");
     } else {
-      btnHandicap.querySelector("img").style.filter = "invert(0)";
+      btnHandicap.classList.remove("filtre-activ");
     }
   });
 }
@@ -33,10 +33,10 @@ if (btnLudique) {
     if (!isVisible && menuHandicap) menuHandicap.style.display = "none";
 
     if (!isVisible) {
-      btnLudique.querySelector("img").style.filter = "invert(1)";
-      if (btnHandicap) btnHandicap.querySelector("img").style.filter = "invert(0)";
+      btnLudique.classList.add("filtre-activ");
+      if (btnHandicap) btnHandicap.classList.remove("filtre-activ");
     } else {
-      btnLudique.querySelector("img").style.filter = "invert(0)";
+      btnLudique.classList.remove("filtre-activ");
     }
   });
 }
@@ -52,9 +52,8 @@ document.addEventListener("click", (e) => {
   if (!isClickInsideHandicap && !isClickInsideLudique && !isBtnHandicap && !isBtnLudique) {
     if (menuHandicap) menuHandicap.style.display = "none";
     if (menuLudique) menuLudique.style.display = "none";
-
-    if (btnHandicap) btnHandicap.querySelector("img").style.filter = "invert(0)";
-    if (btnLudique) btnLudique.querySelector("img").style.filter = "invert(0)";
+    btnHandicap.classList.remove("filtre-activ");
+    btnLudique.classList.remove("filtre-activ");
   }
 });
 
