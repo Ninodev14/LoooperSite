@@ -7,6 +7,7 @@
     <link href="https://fonts.cdnfonts.com/css/open-dyslexic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/style.css">
@@ -47,8 +48,33 @@
                     </div>
 
                 </div>
-                <div class="img-container-header"><a href="index.html"><img src="src/img/logo.png"
-                            alt="Logo de Loooper!" class="logo-jump"></a></div>
+                <div class="img-container-header" style="margin-top: -22px; margin-bottom: -5px;"><a href="index.html">
+                        <div id="LotiAnnim" ></div>
+                        <script>
+                            const animation = lottie.loadAnimation({
+                                container: document.getElementById('LotiAnnim'),
+                                renderer: 'svg',
+                                loop: false, // Pas de boucle
+                                autoplay: false,
+                                path: 'flow.json'
+                            });
+
+                            const container = document.getElementById('LotiAnnim');
+                            let hasPlayed = false; // Pour éviter de rejouer plusieurs fois
+
+                            container.addEventListener('mouseenter', () => {
+                                if (!hasPlayed) {
+                                     animation.goToAndPlay(0);
+                                    hasPlayed = true;
+                                }
+                            });
+
+                            // Réinitialiser après la fin de l'animation (optionnel)
+                            animation.addEventListener('complete', () => {
+                                hasPlayed = false; // Permet de rejouer au prochain survol
+                            });
+                        </script>
+                </div>
                 <div class="nav-pc-container-end">
                     <a href="equipe.html" class="header-typo-pc link-underline-fill ">Notre
                         équipe</a>
@@ -347,8 +373,8 @@
 
                     <a href="https://www.instagram.com/loooper_bdx/" target="_blank"><img src="src/svg/insta.svg"
                             alt="Notre compte Intagram"></a>
-                    <a href="https://www.linkedin.com/company/loooper" target="_blank" class="cursor-light-zone"><img src="src/svg/linkdin.svg"
-                            alt="Notre compte Linkedin"></a>
+                    <a href="https://www.linkedin.com/company/loooper" target="_blank" class="cursor-light-zone"><img
+                            src="src/svg/linkdin.svg" alt="Notre compte Linkedin"></a>
                 </div>
                 <a href="index.html">
                     <div class="footerLogo"><img src="src/img/logo.png" class="logo-jump" alt="Logo de Loooper!">
@@ -367,7 +393,8 @@
 
 
     <div class="menue-nav-ludique-handicap">
-        <button id="accessibility-btn" class="cursor-light-zone"><img src="src/svg/handicap.svg" alt="Boutton handicap"></button>
+        <button id="accessibility-btn" class="cursor-light-zone"><img src="src/svg/handicap.svg"
+                alt="Boutton handicap"></button>
     </div>
 
     <div id="focus-top"></div>
@@ -415,7 +442,6 @@
     <script src="src/js/accessibility.js"></script>
     <script src="src/js/flipCard.js"></script>
     <script src="src/js/faq.js"></script>
-    <script src="src/js/book.js"></script>
     <script src="src/js/logoAnnim.js"></script>
     <script src="src/js/scrollAnnimWhiteContainer.js"></script>
     <script src="src/js/annimOnScroll.js"></script>
