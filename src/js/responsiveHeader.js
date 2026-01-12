@@ -110,17 +110,33 @@ document.addEventListener('DOMContentLoaded', function () {
     // checkIntersection();
 });
 
-const container = document.querySelector('.img-container-header');
-const circles = document.querySelectorAll('.circle-group');
+function setupAnimation(containerSelector) {
+    const container = document.querySelector(containerSelector);
+    if (!container) return;
 
-container.addEventListener('mouseenter', () => {
-    circles.forEach(circle => {
-        if (circle.classList.contains('animate')) return;
+    const circles = container.querySelectorAll('.circle-group');
+    let canAnimate = true;
 
-        circle.classList.add('animate');
+    container.addEventListener('mouseenter', () => {
+        if (!canAnimate) return;
 
-        circle.addEventListener('animationend', () => {
-            circle.classList.remove('animate');
-        }, { once: true });
+        canAnimate = false;
+
+        circles.forEach(circle => {
+            circle.classList.add('animate');
+
+            circle.addEventListener('animationend', () => {
+                circle.classList.remove('animate');
+            }, { once: true });
+        });
+
+        setTimeout(() => {
+            canAnimate = true;
+        }, 1100); // délai entre deux animations
     });
-});
+}
+
+// Appliquer à plusieurs containers
+setupAnimation('.img-container-header');
+setupAnimation('.footerLogo');
+
