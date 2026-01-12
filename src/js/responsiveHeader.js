@@ -109,3 +109,18 @@ document.addEventListener('DOMContentLoaded', function () {
     // window.addEventListener('resize', checkIntersection);
     // checkIntersection();
 });
+
+const container = document.querySelector('.img-container-header');
+const circles = document.querySelectorAll('.circle-group');
+
+container.addEventListener('mouseenter', () => {
+    circles.forEach(circle => {
+        if (circle.classList.contains('animate')) return;
+
+        circle.classList.add('animate');
+
+        circle.addEventListener('animationend', () => {
+            circle.classList.remove('animate');
+        }, { once: true });
+    });
+});
