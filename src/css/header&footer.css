@@ -606,13 +606,14 @@ footer {
     animation-fill-mode: both;
 }
 
-.img-container-header {
+.img-container-header,.footerLogo {
     transition: transform 0.3s ease;
 }
 
-.img-container-header:hover {
+.img-container-header:hover,.footerLogo:hover {
 transform: scale(1.05);
 }
+
 
 #circle1 {
     animation-delay: 0s;
