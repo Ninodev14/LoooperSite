@@ -187,6 +187,7 @@
     .backgroundBrushType2::before {
         top: 0%;
         bottom: 0%;
-        background-size: cover;
+        background-image: url(/src/svg/backgroundType2-mb.svg);
+        background-size: 200%;
     }
 }

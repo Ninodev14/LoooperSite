@@ -545,6 +545,14 @@ body {
         background-size: 200%;
     }
 
+    .container-404 .backgroundBrushType1::before {
+        top: -100%;
+        bottom: -100%;
+        background-image: url(/src/svg/brush-background-takin-mb.svg);
+        background-size: cover;
+    }
+
+
     .text-center-container-text {
         width: 100%;
 
