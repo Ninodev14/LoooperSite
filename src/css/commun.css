@@ -1656,9 +1656,11 @@ textarea {
     flex-direction: column;
     align-items: flex-start;
     z-index: 2;
+    display: none;
 }
 
 .contact .dropdown.open .dropdown-content {
+    display: flex;
     max-height: 500px;
     opacity: 1;
 }

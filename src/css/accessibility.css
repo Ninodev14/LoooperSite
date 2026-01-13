@@ -601,3 +601,12 @@
      outline: 3px solid var(--link-outline-color, #ff6600);
      outline-offset: 3px;
  }
+
+
+ /* .no-animation *,
+.no-animation *::before,
+.no-animation *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+} */

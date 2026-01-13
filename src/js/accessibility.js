@@ -53,7 +53,7 @@ document.addEventListener("click", (e) => {
     if (menuHandicap) menuHandicap.style.display = "none";
     if (menuLudique) menuLudique.style.display = "none";
     btnHandicap.classList.remove("filtre-activ");
-    btnLudique.classList.remove("filtre-activ");
+    if (btnLudique) btnLudique.classList.remove("filtre-activ");
   }
 });
 
@@ -278,3 +278,31 @@ window.addEventListener("load", () => {
     });
   }
 });
+
+
+// // --- Toggle animations
+// function toggleAnimations() {
+//   const chkNoAnim = document.getElementById("chkNoAnimation");
+//   if (!chkNoAnim) return;
+
+//   if (chkNoAnim.checked) {
+//     body.classList.add("no-animation");
+//     localStorage.setItem("noAnimation", "on");
+//   } else {
+//     body.classList.remove("no-animation");
+//     localStorage.removeItem("noAnimation");
+//   }
+// }
+
+// // --- Charger l'état au chargement de la page
+// window.addEventListener("load", () => {
+//   const chkNoAnim = document.getElementById("chkNoAnimation");
+//   if (localStorage.getItem("noAnimation") === "on") {
+//     body.classList.add("no-animation");
+//     if (chkNoAnim) chkNoAnim.checked = true;
+//   }
+  
+//   if (chkNoAnim) {
+//     chkNoAnim.addEventListener("change", toggleAnimations);
+//   }
+// });
