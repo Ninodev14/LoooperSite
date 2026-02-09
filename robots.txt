@@ -1,5 +1,9 @@
 User-agent: *
 Disallow: /404
-Disallow: /mentions-legales
+
+Disallow: /src/svg/
+Disallow: /src/img/book-page-back.png
+Disallow: /src/img/book-page.png
+Disallow: /src/img/Monitor.png
 
 Sitemap: https://loooper.fr/sitemap.xml
