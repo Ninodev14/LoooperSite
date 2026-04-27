@@ -1871,7 +1871,7 @@ input[type="checkbox"]::after {
 
 .long-card img {
     height: 100%;
-    width: auto;
+    width: 100%;
 }
 
 .long-card a img {
