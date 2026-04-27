@@ -1,35 +1,45 @@
-<!DOCTYPE html>
-<html lang="fr">
-
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&display=swap"
-        rel="stylesheet">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/embla-carousel/embla-carousel.css" />
-    <link href="https://fonts.cdnfonts.com/css/open-dyslexic" rel="stylesheet">
+
+    <!-- Preconnect en premier -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" />
-    <script type="module">
-        import EmblaCarousel from 'https://unpkg.com/embla-carousel/embla-carousel.umd.js'
+    <link rel="preconnect" href="https://unpkg.com">
 
-        const emblaNode = document.querySelector('.embla')
-        const viewportNode = emblaNode.querySelector('.embla__viewport')
-        const emblaApi = EmblaCarousel(viewportNode, { loop: true })
-    </script>
+    <!-- Ton CSS unique, chargé en premier -->
     <link rel="stylesheet" href="src/css/style.css">
-    <title>Loooper!</title>
-    <link rel="icon" type="image/png" href="https://loooper.fr/src/img/logoSMP.png">
-    <link rel="icon" type="image/x-icon" href="https://loooper.fr/src/img/ico/looperIco.ico">
-    <link rel="icon" href="/favicon.ico">
+    
 
+    <!-- Google Fonts fusionnées en 1 seule requête -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">
+
+    <!-- OpenDyslexic chargée en différé car non critique -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-dyslexic" media="print" onload="this.media='all'">
+
+    <!-- Swiper CSS en différé -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css" media="print"
+        onload="this.media='all'">
+
+    <!-- Embla CSS en différé -->
+    <link rel="stylesheet" href="https://unpkg.com/embla-carousel/embla-carousel.css" media="print"
+        onload="this.media='all'">
+
+    <title>Loooper!</title>
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <!-- Meta -->
     <meta name="description"
         content="Découvrez des expériences ludiques et interactives sur mesure. Notre objectif : transformer vos contenus en moments ludiques, engageants, mémorables.">
     <meta http-equiv="Content-Language" content="fr">
+    <meta name="robots" content="all">
+    <meta name="author" content="Loooper!">
+    <meta name="owner" content="Loooper!">
+    <meta name="google-site-verification" content="AYNBA66uK_-BiUpB5GIUV_-pvvr_QCDc8_sAdodWSyY">
+    <meta name="msvalidate.01" content="9B285072E25EBB845606F3D998FC7233">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Loooper! – Ludification et expériences interactives sur mesure">
@@ -43,41 +53,49 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Loooper! – Ludification et expériences interactives sur mesure">
-    <meta name="twitter:description" content="Loooper! propose des expériences ludiques et interactives sur mesure pour
-        transformer vos contenus en moments ludiques, engageants, mémorables.">
+    <meta name="twitter:description"
+        content="Loooper! propose des expériences ludiques et interactives sur mesure pour transformer vos contenus en moments ludiques, engageants, mémorables.">
     <meta name="twitter:image" content="https://loooper.fr/src/img/ico/ACCUEIL.png">
 
-    <meta name="robots" content="all">
-    <meta name="author" content="Loooper!">
-    <meta name="owner" content="Loooper!">
-    <meta name="google-site-verification" content="AYNBA66uK_-BiUpB5GIUV_-pvvr_QCDc8_sAdodWSyY" />
-    <meta name="msvalidate.01" content="9B285072E25EBB845606F3D998FC7233" />
+    <!-- Schema.org -->
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Loooper!",
-  "url": "https://loooper.fr/",
-  "logo": "https://loooper.fr/src/img/logoSMP.png",
-  "sameAs": [
-    "https://www.linkedin.com/company/loooper",
-    "https://www.instagram.com/loooper_bdx/"
-  ],
-  "description": "Loooper! propose des expériences ludiques et interactives sur mesure. Notre objectif : transformer vos contenus en moments ludiques, engageants, mémorables."
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Loooper!",
+    "url": "https://loooper.fr/",
+    "logo": "https://loooper.fr/src/img/logoSMP.png",
+    "sameAs": [
+      "https://www.linkedin.com/company/loooper",
+      "https://www.instagram.com/loooper_bdx/"
+    ],
+    "description": "Loooper! propose des expériences ludiques et interactives sur mesure. Notre objectif : transformer vos contenus en moments ludiques, engageants, mémorables."
+  }
+  </script>
 
-    <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-                w[l] = w[l] || []; w[l].push({
-                    'gtm.start':
-                        new Date().getTime(), event: 'gtm.js'
-                }); var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-T4Q4NXNW');</script>
-    <!-- End Google Tag Manager -->
+    <!-- GTM différé -->
+    <script>
+        window.addEventListener('load', function () {
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                var f = d.getElementsByTagName(s)[0], j = d.createElement(s),
+                    dl = l != 'dataLayer' ? '&l=' + l : '';
+                j.async = true;
+                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-T4Q4NXNW');
+        });
+    </script>
 
+    <!-- Embla en module différé -->
+    <script type="module">
+        import EmblaCarousel from 'https://unpkg.com/embla-carousel/embla-carousel.umd.js'
+        const emblaNode = document.querySelector('.embla')
+        if (emblaNode) {
+            const viewportNode = emblaNode.querySelector('.embla__viewport')
+            EmblaCarousel(viewportNode, { loop: true })
+        }
+    </script>
 </head>
 
 <body style="position: relative;">
@@ -380,7 +398,8 @@
                 <article class="swiper-slide">
                     <button class="slide-media btn-modal" data-modal="modal-zizanie" aria-haspopup="dialog"
                         aria-label="En savoir plus sur La Zizanie">
-                        <img src="src/img/carousel/zizanie.jpg" alt="Image représentant le projet La Zizanie">
+                        <img src="src/img/carousel/zizanie.jpg" loading="lazy"
+                            alt="Image représentant le projet La Zizanie">
                     </button>
                     <div class="slide-caption">
                         <h3 class="h3  highlight-no-annim white-border-small black orange">La Zizanie</h3>
@@ -391,7 +410,7 @@
                 <article class="swiper-slide">
                     <button class="slide-media btn-modal" data-modal="modal-bikers" aria-haspopup="dialog"
                         aria-label="En savoir plus sur Bikers au Grand cœur">
-                        <img src="src/img/carousel/biker.jpg"
+                        <img src="src/img/carousel/biker.jpg" loading="lazy"
                             alt="Image représentant le projet Biker contre le harcèlement">
                     </button>
                     <div class="slide-caption">
@@ -404,7 +423,7 @@
                 <article class="swiper-slide">
                     <button class="slide-media btn-modal" data-modal="modal-save-seamulator" aria-haspopup="dialog"
                         aria-label="En savoir plus sur Save Seamulator">
-                        <img src="src/img/carousel/saveseamulator.jpg"
+                        <img src="src/img/carousel/saveseamulator.jpg" loading="lazy"
                             alt="Image représentant le projet Save Seamulator">
                     </button>
                     <div class="slide-caption">
@@ -415,7 +434,8 @@
                 <article class="swiper-slide">
                     <button class="slide-media btn-modal" data-modal="modal-zemblanite" aria-haspopup="dialog"
                         aria-label="En savoir plus sur Zemblanité">
-                        <img src="src/img/carousel/zemblanite.jpg" alt="Image représentant le projet Zemblanité">
+                        <img src="src/img/carousel/zemblanite.jpg" loading="lazy"
+                            alt="Image représentant le projet Zemblanité">
                     </button>
                     <div class="slide-caption">
                         <h3 class="h3  highlight-no-annim white-border-small black orange">Zemblanité</h3>
@@ -427,7 +447,8 @@
                     <button class="slide-media btn-modal" data-modal="modal-coop-cook" aria-haspopup="dialog"
                         class="text-typo btn-project btn-modal btn-white-background"
                         aria-label="En savoir plus sur le Coop’Cook">
-                        <img src="src/img/carousel/coopCook.jpg" alt="Image représentant le projet Coop’ Cook">
+                        <img src="src/img/carousel/coopCook.jpg" loading="lazy"
+                            alt="Image représentant le projet Coop’ Cook">
                     </button>
                     <div class="slide-caption">
                         <h3 class="h3 highlight-no-annim white-border-small black purple">Coop’ Cook
@@ -439,7 +460,8 @@
                 <article class="swiper-slide">
                     <button class="slide-media btn-modal" data-modal="modal-cartes-cartels" aria-haspopup="dialog"
                         aria-label="En savoir plus sur Cartes & Cartels">
-                        <img src="src/img/carousel/carteCartel.jpg" alt="Image représentant le projet Cartes & Cartels">
+                        <img src="src/img/carousel/carteCartel.jpg" loading="lazy"
+                            alt="Image représentant le projet Cartes & Cartels">
                     </button>
                     <div class="slide-caption">
                         <h3 class="h3 highlight-no-annim white-border-small black blue">Cartes & Cartels</h3>

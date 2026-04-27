@@ -1,0 +1,29 @@
+{
+  "name": "looopersite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "postcss src/css/style.css -o src/css/style.min.css",
+    "build:html": "node -e \"const fs=require('fs');const files=fs.readdirSync('.').filter(f=>f.endsWith('.html'));files.forEach(f=>fs.writeFileSync(f,fs.readFileSync(f,'utf8').replace('style.css','style.min.css')))\"",
+    "build": "npm run build:css && npm run build:html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ninodev14/LoooperSite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Ninodev14/LoooperSite/issues"
+  },
+  "homepage": "https://github.com/Ninodev14/LoooperSite#readme",
+  "devDependencies": {
+    "cssnano": "^7.1.7",
+    "postcss": "^8.5.12",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1"
+  }
+}

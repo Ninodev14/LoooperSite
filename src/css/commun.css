@@ -722,6 +722,7 @@ body {
 
 .arrow-container {
     width: fit-content;
+    height: auto;
     padding-right: 4px;
     overflow: hidden;
 }

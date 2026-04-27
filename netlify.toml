@@ -1,2 +1,9 @@
 [functions]
   directory = "netlify/functions"
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+[build]
+  command = "npm run build"
+  publish = "."
