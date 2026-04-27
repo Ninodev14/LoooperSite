@@ -1,12 +1,10 @@
 [build]
   command = "npm run build"
   publish = "."
-  
+
 [functions]
   directory = "netlify/functions"
 
 [[plugins]]
   package = "@netlify/plugin-lighthouse"
 
-[[plugins]]
-  package = "netlify-plugin-image-optim"
