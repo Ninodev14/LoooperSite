@@ -8,45 +8,43 @@ function applyColors(swiper) {
     if (origIndex === null) {
       origIndex = Array.from(swiper.slides).indexOf(slide);
     }
-
     const color = colors[Number(origIndex) % colors.length];
     img.style.boxShadow = `10px 10px 0 0 ${color}`;
   });
 }
 
-const swiper = new Swiper('.swiper', {
-  loop: true,
-  grabCursor: true,
-  slidesPerView: 1,
-  spaceBetween: 16,
-
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  autoplay: {
-    delay: 7000,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    640: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
-  },
-  a11y: { enabled: true },
-
-  on: {
-    init() {
-      applyColors(this);
+document.addEventListener('DOMContentLoaded', function () {
+  const swiper = new Swiper('.swiper', {
+    loop: true,
+    grabCursor: true,
+    slidesPerView: 1,
+    spaceBetween: 16,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
     },
-
-    observerUpdate() {
-      applyColors(this);
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 7000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      640: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+    a11y: { enabled: true },
+    on: {
+      init() {
+        applyColors(this);
+      },
+      observerUpdate() {
+        applyColors(this);
+      }
     }
-  }
-});
+  });
 
-applyColors(swiper);
+  applyColors(swiper);
+});
