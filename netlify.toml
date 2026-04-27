@@ -1,7 +1,7 @@
 [build]
-  command = "npm run build && npm run convert-images && npm run optimize-html"
+  command = "npm run build"
   publish = "."
-
+  
 [functions]
   directory = "netlify/functions"
 
