@@ -1,76 +1,56 @@
-/**
- * GESTIONNAIRE DE MODALES
- * Permet l'ouverture par clic, par URL (hash) et gère l'accessibilité.
- */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. SÉLECTEURS ET VARIABLES ---
     const allModals = document.querySelectorAll('.modal');
-    const modalButtons = document.querySelectorAll('.btn-modal');
-    const closeButtons = document.querySelectorAll('.btn-close');
 
-    // --- 2. FONCTIONS DE CŒUR ---
+    // --- 1. FONCTIONS DE CŒUR ---
 
-    /**
-     * Ouvre une modale spécifique
-     * @param {string} modalId - L'ID de la modale (avec ou sans #)
-     * @param {HTMLElement} triggerElement - Le bouton qui a déclenché l'ouverture
-     */
     function openModal(modalId, triggerElement = null) {
         const cleanId = modalId.replace('#', '');
         const modal = document.getElementById(cleanId);
 
         if (modal) {
-            // On ferme les éventuelles autres modales ouvertes d'abord
-            allModals.forEach(m => {
-                if (m !== modal) closeModal(m);
-            });
+            // Fermer les autres modals pour éviter les superpositions
+            allModals.forEach(m => closeModal(m, false)); 
 
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
 
-            // Mémorisation du bouton déclencheur pour le retour du focus
+            // Mémorise l'élément qui a ouvert la modal
             if (triggerElement) {
-                modal.setAttribute('data-last-focus', triggerElement.id);
+                modal.dataset.triggerId = triggerElement.id || "";
             }
 
-            // Focus sur le titre ou le premier élément interactif
+            // Focus accessibilité
             const focusable = modal.querySelector('h2, h3, button, a, input');
             if (focusable) {
-                setTimeout(() => focusable.focus(), 50); // Petit délai pour le rendu
+                setTimeout(() => focusable.focus(), 50);
             }
         }
     }
 
-    /**
-     * Ferme une modale
-     * @param {HTMLElement} modal - L'élément DOM de la modale
-     */
-    function closeModal(modal) {
+    function closeModal(modal, clearHash = true) {
         if (!modal || !modal.classList.contains('active')) return;
 
         modal.classList.remove('active');
         modal.setAttribute('aria-hidden', 'true');
 
-        // Nettoyage de l'URL (enlève le hash sans recharger la page)
-        if (window.location.hash === `#${modal.id}`) {
+        // Nettoyage URL si nécessaire
+        if (clearHash && window.location.hash === `#${modal.id}`) {
             history.replaceState(null, null, ' ');
         }
 
-        // Retour du focus sur le bouton d'origine s'il existe
-        const lastFocusId = modal.getAttribute('data-last-focus');
-        if (lastFocusId) {
-            const btn = document.getElementById(lastFocusId);
-            if (btn) btn.focus();
+        // Retour du focus au bouton d'origine
+        if (modal.dataset.triggerId) {
+            const trigger = document.getElementById(modal.dataset.triggerId);
+            if (trigger) trigger.focus();
         }
     }
 
-    // --- 3. ÉCOUTEURS D'ÉVÉNEMENTS ---
+    // --- 2. ÉCOUTEURS D'ÉVÉNEMENTS ---
 
-    // Clic sur les boutons de la page
-    modalButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    // Clic sur les boutons ouvrant une modal
+    document.querySelectorAll('.btn-modal').forEach(btn => {
+        btn.addEventListener('click', e => {
             e.preventDefault();
             const target = btn.getAttribute('data-modal') || btn.getAttribute('href');
             openModal(target, btn);
@@ -78,48 +58,65 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Clic sur les boutons de fermeture
-    closeButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            closeModal(btn.closest('.modal'));
-        });
+    document.querySelectorAll('.btn-close').forEach(btn => {
+        btn.addEventListener('click', () => closeModal(btn.closest('.modal')));
     });
 
-    // Fermeture par la touche Échap
-    document.addEventListener('keydown', (e) => {
-        if (e.key === "Escape") {
-            const activeModal = document.querySelector('.modal.active');
-            if (activeModal) closeModal(activeModal);
-        }
-    });
-
-    // Fermeture au clic sur l'overlay (fond sombre)
+    // Clic sur l'overlay (fond)
     allModals.forEach(modal => {
-        modal.addEventListener('click', (e) => {
-            // Si on clique sur .modal (le fond) et non sur .modal-container
-            if (e.target === modal) {
+        modal.addEventListener('click', e => {
+            const container = modal.querySelector('.modal-container');
+            // Si on clique sur le fond (modal) et pas sur le contenu (container)
+            if (container && !container.contains(e.target)) {
                 closeModal(modal);
             }
         });
     });
 
-    // --- 4. GESTION DU LIEN DIRECT (URL) ---
+    // Touche Échap
+    document.addEventListener('keydown', e => {
+        if (e.key === "Escape") {
+            const active = document.querySelector('.modal.active');
+            if (active) closeModal(active);
+        }
+    });
 
-    /**
-     * Vérifie si l'URL contient un hash correspondant à une modale
-     */
+    // --- 3. LIENS INTERNES À LA MODAL (C'est la partie qui manquait !) ---
+    // Gère le clic sur un lien qui pointe vers une ancre (ex: #contactForm)
+    document.querySelectorAll('.modal a[href^="#"]').forEach(link => {
+        link.addEventListener('click', e => {
+            const targetId = link.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            // Si la cible n'est pas une autre modal, on ferme l'actuelle et on scroll
+            if (targetElement && !targetElement.classList.contains('modal')) {
+                const currentModal = link.closest('.modal');
+                closeModal(currentModal);
+
+                setTimeout(() => {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    targetElement.focus();
+                }, 300); // Délai pour laisser la modal disparaître
+            }
+        });
+    });
+
+    // --- 4. GESTION DU HASH (Lien direct via URL) ---
     function handleHash() {
         const hash = window.location.hash;
         if (hash) {
-            // On vérifie que l'élément est bien une modale pour éviter les bugs
             const target = document.querySelector(hash);
-            if (target && target.classList.contains('modal')) {
-                openModal(hash);
+            if (target) {
+                if (target.classList.contains('modal')) {
+                    openModal(hash);
+                } else if (target.closest('.modal')) {
+                    // Si le lien pointe vers un titre à l'intérieur d'une modal
+                    openModal(target.closest('.modal').id);
+                }
             }
         }
     }
 
-    // On vérifie au chargement et si l'utilisateur change manuellement l'URL
-    handleHash();
+    window.addEventListener('DOMContentLoaded', handleHash);
     window.addEventListener('hashchange', handleHash);
-
 });
