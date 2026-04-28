@@ -2,21 +2,42 @@
 <html lang="fr">
 
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.cdnfonts.com/css/open-dyslexic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Preconnect aux origines critiques -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS principal -->
     <link rel="stylesheet" href="src/css/style.css">
+
+    <!-- Google Fonts : chargement non bloquant -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">
+    </noscript>
+
+    <!-- OpenDyslexic non critique, chargé en différé -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-dyslexic" media="print" onload="this.media='all'">
+
     <title>Nos formats - Loooper!</title>
+
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="https://loooper.fr/src/img/logoSMP.png">
     <link rel="icon" type="image/x-icon" href="https://loooper.fr/src/img/ico/looperIco.ico">
     <link rel="icon" href="/favicon.ico">
+
+    <!-- Meta SEO -->
     <meta name="description"
         content="Découvrez les formats personnalisables de Loooper! : serious games, expériences interactives, et parcours immersifs. Des solutions sur mesure pour apprendre, sensibiliser et créer du lien.">
     <meta http-equiv="Content-Language" content="fr">
+    <meta name="robots" content="all">
+    <meta name="author" content="Loooper!">
+    <meta name="owner" content="Loooper!">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Loooper! – Des formats interactifs sur mesure">
@@ -30,16 +51,11 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Loooper! – Des formats interactifs sur mesure">
-    <meta name="twitter:description" content="Découvrez les formats personnalisables de Loooper! : serious games,
-        expériences interactives, et parcours immersifs. Des solutions sur mesure pour apprendre, sensibiliser et créer
-        du lien.">
+    <meta name="twitter:description"
+        content="Découvrez les formats personnalisables de Loooper! : serious games, expériences interactives, et parcours immersifs. Des solutions sur mesure pour apprendre, sensibiliser et créer du lien.">
     <meta name="twitter:image" content="https://loooper.fr/src/img/ico/FORMATS.png">
 
-    <meta name="robots" content="all">
-    <meta name="author" content="Loooper!">
-    <meta name="owner" content="Loooper!">
-
-
+    <!-- Schema.org -->
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,8 +71,7 @@
     "sameAs": []
   }
 }
-
-</script>
+    </script>
 
 </head>
 
@@ -92,9 +107,8 @@
                     </div>
 
                 </div>
-<div class="img-container-header"><a href="index.html">
-                        <svg  viewBox="0 0 880 191" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                <div class="img-container-header"><a href="index.html">
+                        <svg viewBox="0 0 880 191" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path id="circle3" class="circle-group"
                                 d="M481.8 95.7272C481.8 84.0239 479.247 73.2634 474.143 63.4441L473.092 61.4898C467.284 51.1498 459.392 43.0172 449.418 37.0906C439.571 31.1641 428.839 28.2634 417.224 28.3895C405.357 28.3897 394.438 31.4185 384.465 37.4708C374.492 43.3972 366.663 51.4025 360.982 61.4898L359.95 63.3941C354.965 72.9548 352.53 83.291 352.648 94.4032C352.9 106.761 355.933 118.046 361.74 128.26C367.673 138.348 375.499 146.292 385.22 152.093C394.452 157.531 404.406 160.365 415.08 160.594L417.224 160.607C428.839 160.355 439.571 157.326 449.418 151.526C458.769 146.088 466.288 138.876 471.976 129.891L473.092 128.07C478.898 118.235 481.8 107.454 481.8 95.7272ZM509.223 95.7272C509.223 112.209 505.077 127.816 496.712 141.984C488.522 155.854 477.273 166.985 463.345 175.114L463.348 175.118C463.332 175.128 463.312 175.134 463.295 175.144C463.269 175.16 463.245 175.179 463.218 175.194L463.215 175.191C449.288 183.365 434.002 187.636 417.821 187.988C417.724 187.99 417.625 187.993 417.528 187.994C401.064 188.175 385.471 184.036 371.293 175.685C371.249 175.659 371.203 175.634 371.159 175.608C357.346 167.366 346.279 156.046 338.097 142.134C338.029 142.019 337.959 141.904 337.893 141.787C329.716 127.406 325.572 111.626 325.232 94.9635C325.23 94.8744 325.229 94.7825 325.228 94.6934C325.052 78.1597 328.985 62.4408 337.082 48.0629C345.076 33.8681 356.239 22.4262 370.224 14.0656V14.0622C384.481 5.41046 400.237 1.05686 416.927 1.00555C433.523 0.825367 449.217 5.03065 463.435 13.5553L463.439 13.552C463.455 13.5616 463.469 13.5756 463.485 13.5853C463.513 13.602 463.544 13.6153 463.572 13.632L463.569 13.6353C477.708 22.0683 488.928 33.7076 497.005 48.0896C505.235 62.7417 509.223 78.8082 509.223 95.7272Z"
                                 fill="white" />
@@ -282,9 +296,12 @@
 
     <main>
         <section class="mainPageTitle mainPageTitleOrange">
-            <h1 class="h1 container-width white-border black">Loooper!, c’est des formats qui s’adaptent pour devenir <span> </span>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">le </span><span class="paterneTitleContour">le </span></div>
-                    <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">vôtre !</span><span class="paterneTitleContour">vôtre !</span></div>
+            <h1 class="h1 container-width white-border black">Loooper!, c’est des formats qui s’adaptent pour devenir
+                <span> </span>
+                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">le </span><span
+                        class="paterneTitleContour">le </span></div>
+                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">vôtre !</span><span
+                        class="paterneTitleContour">vôtre !</span></div>
             </h1>
         </section>
         <div class="container-width ariane-net h3"><a href="index.html">Accueil </a>
@@ -549,7 +566,8 @@
                         </div>
                     </div>
                     <div class="aligne-btn-center">
-                        <a href="#contactForm" class="text-typo  btn-project btn-white-background" data-format="jeu_video">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background"
+                            data-format="jeu_video">
                             <span>Je transforme mon idée en jeu</span>
                             <div class="arrow-container black-arrow">
                                 <img src="src/svg/arrowB.svg" alt="fleche">
@@ -725,7 +743,8 @@
                         </div>
                     </div>
                     <div class="aligne-btn-center">
-                        <a href="#contactForm" class="text-typo  btn-project btn-white-background" data-format="histoire_interactive">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background"
+                            data-format="histoire_interactive">
                             <span> <span>J'écris mon histoire</span></span>
                             <div class="arrow-container black-arrow">
                                 <img src="src/svg/arrowB.svg" alt="fleche">
@@ -810,7 +829,8 @@
                         </div>
                     </div>
                     <div class="aligne-btn-center">
-                        <a href="#contactForm" class="text-typo  btn-project btn-white-background" data-format="mini_jeu">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background"
+                            data-format="mini_jeu">
                             <span>Je crée mon mini-jeu web</span>
                             <div class="arrow-container black-arrow">
                                 <img src="src/svg/arrowB.svg" alt="fleche">
@@ -896,7 +916,8 @@
                         </div>
                     </div>
                     <div class="aligne-btn-center">
-                        <a href="#contactForm" class="text-typo  btn-project btn-white-background" data-format="escape_game">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background"
+                            data-format="escape_game">
                             <span>Je mets en place mon escape game</span>
                             <div class="arrow-container black-arrow">
                                 <img src="src/svg/arrowB.svg" alt="fleche">
@@ -980,7 +1001,8 @@
                         </div>
                     </div>
                     <div class="aligne-btn-center">
-                        <a href="#contactForm" class="text-typo  btn-project btn-white-background" data-format="jeu_societe">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background"
+                            data-format="jeu_societe">
                             <span>Je crée mon jeu de société</span>
                             <div class="arrow-container black-arrow">
                                 <img src="src/svg/arrowB.svg" alt="fleche">
@@ -1063,7 +1085,8 @@
                         </div>
                     </div>
                     <div class="aligne-btn-center">
-                        <a href="#contactForm" class="text-typo  btn-project btn-white-background" data-format="geocaching">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background"
+                            data-format="geocaching">
                             <span>Je lance mon géocaching</span>
                             <div class="arrow-container black-arrow">
                                 <img src="src/svg/arrowB.svg" alt="fleche">
@@ -1303,7 +1326,7 @@
                                         <div class="line2"></div>
                                     </div>
                                 </div>
-                                 <div class="dropdown-content">
+                                <div class="dropdown-content">
                                     <label class="text-typo black"><input type="checkbox" name="objectif[]"
                                             value="communication_interne">
                                         Communication interne</label>
@@ -1411,7 +1434,7 @@
             <nav class="footer-nav">
                 <div class="footer-nav-row">
                     <a href="index.html" class="footerTitle link-underline">Accueil</a>
-                    <a href="index.html#foot-inx3"class="text-typo">L'équipe en bref</a> 
+                    <a href="index.html#foot-inx3" class="text-typo">L'équipe en bref</a>
                     <a href="index.html#foot-inx4" class="text-typo">Nos projets phares</a>
                     <a href="index.html#foot-inx1" class="text-typo">Ce qui rend Loooper! unique</a>
                     <a href="index.html#foot-inx2" class="text-typo">Répondre à des besoins</a>
@@ -1460,11 +1483,11 @@
 
                     <a href="https://www.instagram.com/loooper_bdx/" target="_blank"><img src="src/svg/insta.svg"
                             alt="Notre compte Intagram"></a>
-                    <a href="https://www.linkedin.com/company/loooper" target="_blank" class="cursor-light-zone"><img src="src/svg/linkdin.svg"
-                            alt="Notre compte Linkedin"></a>
+                    <a href="https://www.linkedin.com/company/loooper" target="_blank" class="cursor-light-zone"><img
+                            src="src/svg/linkdin.svg" alt="Notre compte Linkedin"></a>
                 </div>
                 <a href="index.html">
-<div class="footerLogo">
+                    <div class="footerLogo">
                         <svg viewBox="0 0 880 191" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path id="circle3" class="circle-group"
                                 d="M481.8 95.7272C481.8 84.0239 479.247 73.2634 474.143 63.4441L473.092 61.4898C467.284 51.1498 459.392 43.0172 449.418 37.0906C439.571 31.1641 428.839 28.2634 417.224 28.3895C405.357 28.3897 394.438 31.4185 384.465 37.4708C374.492 43.3972 366.663 51.4025 360.982 61.4898L359.95 63.3941C354.965 72.9548 352.53 83.291 352.648 94.4032C352.9 106.761 355.933 118.046 361.74 128.26C367.673 138.348 375.499 146.292 385.22 152.093C394.452 157.531 404.406 160.365 415.08 160.594L417.224 160.607C428.839 160.355 439.571 157.326 449.418 151.526C458.769 146.088 466.288 138.876 471.976 129.891L473.092 128.07C478.898 118.235 481.8 107.454 481.8 95.7272ZM509.223 95.7272C509.223 112.209 505.077 127.816 496.712 141.984C488.522 155.854 477.273 166.985 463.345 175.114L463.348 175.118C463.332 175.128 463.312 175.134 463.295 175.144C463.269 175.16 463.245 175.179 463.218 175.194L463.215 175.191C449.288 183.365 434.002 187.636 417.821 187.988C417.724 187.99 417.625 187.993 417.528 187.994C401.064 188.175 385.471 184.036 371.293 175.685C371.249 175.659 371.203 175.634 371.159 175.608C357.346 167.366 346.279 156.046 338.097 142.134C338.029 142.019 337.959 141.904 337.893 141.787C329.716 127.406 325.572 111.626 325.232 94.9635C325.23 94.8744 325.229 94.7825 325.228 94.6934C325.052 78.1597 328.985 62.4408 337.082 48.0629C345.076 33.8681 356.239 22.4262 370.224 14.0656V14.0622C384.481 5.41046 400.237 1.05686 416.927 1.00555C433.523 0.825367 449.217 5.03065 463.435 13.5553L463.439 13.552C463.455 13.5616 463.469 13.5756 463.485 13.5853C463.513 13.602 463.544 13.6153 463.572 13.632L463.569 13.6353C477.708 22.0683 488.928 33.7076 497.005 48.0896C505.235 62.7417 509.223 78.8082 509.223 95.7272Z"
@@ -1596,7 +1619,8 @@
 
 
     <div class="menue-nav-ludique-handicap">
-        <button id="accessibility-btn" class="cursor-light-zone"><img src="src/svg/handicap.svg" alt="Boutton handicap"></button>
+        <button id="accessibility-btn" class="cursor-light-zone"><img src="src/svg/handicap.svg"
+                alt="Boutton handicap"></button>
     </div>
 
     <div id="focus-top"></div>

@@ -2,21 +2,41 @@
 <html lang="fr">
 
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&display=swap"
-        rel="stylesheet">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.cdnfonts.com/css/open-dyslexic" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        rel="stylesheet">
+
+    <!-- Preconnect aux origines critiques -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- CSS principal -->
     <link rel="stylesheet" href="src/css/style.css">
+
+    <!-- Google Fonts : chargement non bloquant -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">
+    </noscript>
+
+    <!-- OpenDyslexic non critique, chargé en différé -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-dyslexic" media="print" onload="this.media='all'">
+
     <title>Former efficacement - Loooper!</title>
+
+    <!-- Favicons -->
     <link rel="icon" type="image/png" href="https://loooper.fr/src/img/logoSMP.png">
     <link rel="icon" type="image/x-icon" href="https://loooper.fr/src/img/ico/looperIco.ico">
     <link rel="icon" href="/favicon.ico">
+
+    <!-- Meta SEO -->
     <meta name="description"
         content="Loooper! conçoit des formations interactives et gamifiées pour apprendre autrement. Découvrez nos formats pédagogiques innovants.">
+    <meta name="robots" content="all">
+    <meta name="author" content="Loooper!">
+    <meta name="owner" content="Loooper!">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Loooper! – Former efficacement">
@@ -30,14 +50,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Loooper! – Former efficacement">
     <meta name="twitter:description"
-        content="Découvrez les formations gamifiées de Loooper! pour apprendre différemment grâce au jeu et à l’interactivité.">
+        content="Découvrez les formations gamifiées de Loooper! pour apprendre différemment grâce au jeu et à l'interactivité.">
     <meta name="twitter:image" content="https://loooper.fr/src/img/ico/BESOINS.png">
-
-    <meta name="robots" content="all">
-    <meta name="author" content="Loooper!">
-    <meta name="owner" content="Loooper!">
-
-
 
 </head>
 
