@@ -5,24 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Preconnect en premier -->
+    <!-- Preconnect aux origines critiques uniquement -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://unpkg.com">
 
-    <!-- Ton CSS unique, chargé en premier -->
+    <!-- Préchargement du CSS critique pour éviter le blocage rendu -->
+    <link rel="preload" href="src/css/style.css" as="style">
     <link rel="stylesheet" href="src/css/style.css">
-
-
-    <!-- Google Fonts fusionnées en 1 seule requête -->
+    <link rel="preload" href="/src/img/loooperFonder.webp" as="image" fetchpriority="high" type="image/webp">
+    <!-- Google Fonts : preload des woff2 critiques + swap -->
+    <link rel="preload" as="font" type="font/woff2"
+        href="https://fonts.gstatic.com/s/poppins/v24/pxiEyp8kv8JHgFVrJJfedA.woff2" crossorigin>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">
 
-    <!-- Embla CSS en différé car non utilisé sur cette page -->
-    <link rel="stylesheet" href="https://unpkg.com/embla-carousel/embla-carousel.css" media="print"
-        onload="this.media='all'">
-
-    <!-- OpenDyslexic en différé car non critique -->
+    <!-- OpenDyslexic non critique, chargé en différé -->
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-dyslexic" media="print" onload="this.media='all'">
 
     <title>Loooper!</title>
@@ -30,7 +27,7 @@
     <!-- Favicons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- Meta -->
+    <!-- Meta SEO -->
     <meta name="description"
         content="Découvrez des expériences ludiques et interactives sur mesure. Notre objectif : transformer vos contenus en moments ludiques, engageants, mémorables.">
     <meta http-equiv="Content-Language" content="fr">
@@ -72,12 +69,13 @@
   }
   </script>
 
-    <!-- GTM différé -->
     <script>
         window.addEventListener('load', function () {
             (function (w, d, s, l, i) {
-                w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-                var f = d.getElementsByTagName(s)[0], j = d.createElement(s),
+                w[l] = w[l] || [];
+                w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
                     dl = l != 'dataLayer' ? '&l=' + l : '';
                 j.async = true;
                 j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
@@ -86,15 +84,8 @@
         });
     </script>
 
-    <!-- Embla en module différé -->
-    <script type="module">
-        import EmblaCarousel from 'https://unpkg.com/embla-carousel/embla-carousel.umd.js'
-        const emblaNode = document.querySelector('.embla')
-        if (emblaNode) {
-            const viewportNode = emblaNode.querySelector('.embla__viewport')
-            EmblaCarousel(viewportNode, { loop: true })
-        }
-    </script>
+    <script defer src="src/js/embla-carousel.umd.js"></script>
+    <script defer src="src/js/carousel-init.js"></script>
 </head>
 
 <body style="position: relative;">
