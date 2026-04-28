@@ -738,10 +738,22 @@ body {
 }
 
 .arrow-container {
-    width: fit-content;
-    height: auto;
-    padding-right: 4px;
+    width: 20px; 
+    height: 10px;
+    
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    padding-right: 4px; 
     overflow: hidden;
+    flex-shrink: 0; 
+}
+
+.arrow-container img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 @keyframes arrow-loop {
