@@ -443,7 +443,6 @@
   width: fit-content;
   height: fit-content;
   transition: background 0.3s ease;
-
 }
 
 .piece {
@@ -453,11 +452,17 @@
   background-size: 30vw 30vw;
   cursor: pointer;
   transition: transform 0.3s ease, border 0.3s ease, background 0.3s ease;
+}
 
+@supports (background-image: url("/src/img/loooperFonder.webp")) {
+  .piece {
+    background-image: url("/src/img/loooperFonder.webp");
+  }
 }
 
 .vide {
-  background: transparent;
+  background: transparent !important;
+  background-image: none !important;
   cursor: default;
   transition: background 0.3s ease;
 }
@@ -466,7 +471,7 @@
   border: 0px solid transparent;
   background: transparent;
   cursor: default;
-  zoom: 1.02287;
+  zoom: 1.02287; 
 }
 
 .puzzle.gagne .piece {
@@ -476,8 +481,14 @@
 }
 
 .puzzle.gagne .vide {
-  background-image: url("/src/img/loooperFonder.jpg");
+  background-image: url("/src/img/loooperFonder.jpg") !important;
   background-size: 30vw 30vw;
+}
+
+@supports (background-image: url("/src/img/loooperFonder.webp")) {
+  .puzzle.gagne .vide {
+    background-image: url("/src/img/loooperFonder.webp") !important;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -493,7 +504,6 @@
   }
 
   .puzzle.gagne .vide {
-
     background-size: 90vw 90vw;
   }
 }
