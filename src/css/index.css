@@ -482,6 +482,7 @@ background: transparent;
 .puzzle.gagne .vide {
   background-image: url("/src/img/loooperFonder.jpg") !important;
   background-size: 30vw 30vw ;
+  background-position: 0% 100%;
 }
 @supports (background-image: url("/src/img/loooperFonder.webp")) {
   .puzzle.gagne .vide {

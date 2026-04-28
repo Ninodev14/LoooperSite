@@ -22,7 +22,7 @@ function afficherPuzzle() {
       div.classList.add("enCours");
     }
 
-    if (pos === 0) {
+    if (pos === 6) {
       div.classList.add("vide");
     } else {
       const x = pos % taille;
@@ -40,7 +40,7 @@ function afficherPuzzle() {
 function deplacer(i, div) {
   if (estGagne) return;
 
-  const vide = positions.indexOf(0);
+  const vide = positions.indexOf(6);
 
   const memeLigneGauche = (i === vide - 1 && Math.floor(i / taille) === Math.floor(vide / taille));
   const memeLigneDroite = (i === vide + 1 && Math.floor(i / taille) === Math.floor(vide / taille));
