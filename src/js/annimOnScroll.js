@@ -17,11 +17,7 @@ const observer = new IntersectionObserver((entries) => {
 
       if (target.classList.contains("highlight")) {
         const highlights = document.querySelectorAll(".highlight");
-        const highlightsInView = [...highlights].filter(
-          h => h.getBoundingClientRect().top < window.innerHeight
-        );
-
-        highlightsInView.forEach((el, i) => {
+        highlights.forEach((el, i) => {
           setTimeout(() => {
             el.classList.add("visibleHighlight");
           }, i * 200);
