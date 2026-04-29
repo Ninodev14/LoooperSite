@@ -228,6 +228,7 @@ header {
     width: 30vw;
     max-width: 200px;
     min-width: 115px;
+aspect-ratio: 115 / 25;
 }
 
 /* Container pour garder le hover */
