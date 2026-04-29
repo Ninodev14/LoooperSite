@@ -1652,13 +1652,12 @@ textarea {
 /* Bouton d'ouverture */
 .contact .dropdown summary,
 .contact .dropdown .dropdown-toggle {
-    background: #f5f5f5;
+    background: #f1f1f1;
     padding: 10px;
     border: 1px solid #999;
     border-radius: 6px;
     font-size: 1rem;
     outline: none;
-
     cursor: pointer;
     list-style: none;
 
@@ -1759,7 +1758,7 @@ input[type="checkbox"]::after {
 .dropdown-arrow-contact .line2 {
     height: 2px;
     width: 7px;
-    background: #8D8D8D;
+    background: #5a5a5a;
     border-radius: 2px;
 }
 

@@ -31,7 +31,7 @@ document.querySelectorAll('.contact .dropdown').forEach(dropdown => {
 
     const updateSummary = () => {
         const count = [...checkboxes].filter(c => c.checked).length;
-        toggle.style.color = count > 0 ? "#000" : "#8D8D8D";
+        toggle.style.color = count > 0 ? "#000" : "#5a5a5a";
         toggle.textContent = count > 0
             ? `${count} sélectionné${count > 1 ? 's' : ''}`
             : "Aucun sélectionné";

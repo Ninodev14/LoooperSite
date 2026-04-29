@@ -67,8 +67,14 @@ textarea,
   font-weight: 100;
 }
 
+input::placeholder,
+textarea::placeholder {
+  color: #5a5a5a;
+  opacity: 1;  
+}
+
 .dropdown-toggle-container .dropdown-toggle {
-  color: #8D8D8D;
+  color: #5a5a5a;
 }
 
 .header-typo-pc,
