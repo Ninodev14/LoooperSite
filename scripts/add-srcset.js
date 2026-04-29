@@ -6,24 +6,25 @@ const RESPONSIVE_DIRS = ['carousel'];
 const RESPONSIVE_SIZES = [400, 800];
 
 function addSrcset(html) {
-    // Regex qui matche les <img src="...carousel/xxx.webp"...>
+    // Regex qui matche les <img src="...carousel/xxx.(jpg|jpeg|png|webp)"...>
     return html.replace(
-        /<img([^>]*?)src="([^"]*\/carousel\/([^"]+\.webp))"([^>]*?)>/g,
-        (match, before, src, filename, after) => {
+        /<img([^>]*?)src="([^"]*\/carousel\/([^"]+)\.(jpg|jpeg|png|webp))"([^>]*?)>/g,
+        (match, before, src, basename, ext, after) => {
             // Ne pas traiter si srcset déjà présent
             if (match.includes('srcset=')) return match;
 
-            const base = filename.replace('.webp', '');
-            const dir = src.replace(filename, '');
+            const dir = src.replace(`${basename}.${ext}`, '');
+            // Toujours pointer vers le webp final (généré par build:images)
+            const srcWebp = `${dir}${basename}.webp`;
 
             const srcset = RESPONSIVE_SIZES
-                .map(w => `${dir}${base}-${w}w.webp ${w}w`)
-                .concat(`${src} 1002w`)
+                .map(w => `${dir}${basename}-${w}w.webp ${w}w`)
+                .concat(`${srcWebp} 1002w`)
                 .join(', ');
 
             const sizes = '(max-width: 480px) 400px, (max-width: 900px) 800px, 1002px';
 
-            return `<img${before}src="${src}" srcset="${srcset}" sizes="${sizes}"${after}>`;
+            return `<img${before}src="${srcWebp}" srcset="${srcset}" sizes="${sizes}"${after}>`;
         }
     );
 }
