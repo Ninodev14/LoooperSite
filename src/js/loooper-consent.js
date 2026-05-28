@@ -1,11 +1,3 @@
-/**
- * loooper-consent.js
- * Bandeau de consentement cookies RGPD — Loooper!
- * - Bloque GTM jusqu'au consentement explicite
- * - Mémorise le choix 6 mois (recommandation CNIL)
- * - Permet retrait du consentement depuis les Mentions Légales
- */
-
 (function () {
   'use strict';
 
@@ -13,7 +5,6 @@
   const CONSENT_KEY = 'loooper_cookie_consent';
   const CONSENT_EXPIRY_DAYS = 180;
 
-  /* ── Helpers ───────────────────────────────────────────── */
 
   function getConsent() {
     try {
@@ -24,7 +15,7 @@
         localStorage.removeItem(CONSENT_KEY);
         return null;
       }
-      return data.value; // 'accepted' | 'refused'
+      return data.value; 
     } catch (e) {
       return null;
     }
@@ -35,7 +26,6 @@
     localStorage.setItem(CONSENT_KEY, JSON.stringify({ value, expires }));
   }
 
-  /* ── GTM loader ─────────────────────────────────────────── */
 
   function loadGTM() {
     if (window.__gtmLoaded) return;
@@ -48,7 +38,6 @@
     document.head.appendChild(s);
   }
 
-  /* ── Bandeau HTML ───────────────────────────────────────── */
 
   function createBanner() {
     var banner = document.createElement('div');
@@ -81,9 +70,7 @@
   function removeBanner() {
     var b = document.getElementById('loooper-consent-banner');
     if (b) {
-      // On ajoute la classe CSS qui gère l'animation de sortie
       b.classList.add('lcb-closing');
-      // On attend la fin de l'animation (250ms) pour supprimer le nœud HTML
       setTimeout(function () {
         if (b.parentNode) b.parentNode.removeChild(b);
       }, 250);
@@ -111,7 +98,7 @@
     }
   }
 
-  /* ── Exposition publique (retrait consentement) ─────────── */
+
 
   window.LoooperConsent = {
     revoke: function () {
@@ -125,8 +112,6 @@
     },
   };
 
-  /* ── Init ───────────────────────────────────────────────── */
-
   var consent = getConsent();
 
   if (consent === 'accepted') {
@@ -134,6 +119,6 @@
   } else if (consent === null) {
     showBanner();
   }
-  // consent === 'refused' → ne rien faire
+
 
 })();
