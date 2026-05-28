@@ -113,17 +113,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 title: "Nouveau contact",
                 color: 5814783,
                 fields: [
-                    { name: "Nom",              value: formData.get("nom")                          || "—" },
-                    { name: "Prénom",           value: formData.get("prenom")                       || "—" },
-                    { name: "Email",            value: formData.get("email")                        || "—" },
-                    { name: "Téléphone",        value: formData.get("telephone")                    || "—" },
-                    { name: "Entreprise",       value: formData.get("entreprise")                   || "—" },
-                    { name: "Statut",           value: formData.get("statut")                       || "—" },
-                    { name: "Objectifs",        value: formData.getAll("objectif[]").join(", ")     || "—" },
-                    { name: "Autre objectif",   value: formData.get("objectif_autre")               || "—" },
-                    { name: "Format",           value: formData.getAll("format[]").join(", ")       || "—" },
-                    { name: "Autre format",     value: formData.get("format_autre")                 || "—" },
-                    { name: "Message",          value: formData.get("message")                      || "—" },
+                    { name: "Nom", value: formData.get("nom") || "—" },
+                    { name: "Prénom", value: formData.get("prenom") || "—" },
+                    { name: "Email", value: formData.get("email") || "—" },
+                    { name: "Téléphone", value: formData.get("telephone") || "—" },
+                    { name: "Entreprise", value: formData.get("entreprise") || "—" },
+                    { name: "Statut", value: formData.get("statut") || "—" },
+                    { name: "Objectifs", value: formData.getAll("objectif[]").join(", ") || "—" },
+                    { name: "Autre objectif", value: formData.get("objectif_autre") || "—" },
+                    { name: "Format", value: formData.getAll("format[]").join(", ") || "—" },
+                    { name: "Autre format", value: formData.get("format_autre") || "—" },
+                    { name: "Message", value: formData.get("message") || "—" },
                     { name: "Consentement RGPD", value: "✅ Accepté" }
                 ]
             }]
@@ -161,23 +161,22 @@ document.addEventListener("DOMContentLoaded", function () {
         // Netlify d'abord, Discord ensuite — les deux attendus
         fetch("/", {
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
+            body: formData  // ← on envoie directement le FormData, pas de sérialisation manuelle
         })
-        .then(() => sendToDiscord(formData))
-        .then(() => {
-            animationDiv.classList.add("show-animation");
-            form.reset();
-        })
-        .catch((error) => {
-            console.error("Erreur d'envoi :", error);
-            // Netlify a peut-être fonctionné même si Discord échoue
-            // On affiche quand même le succès mais on log l'erreur
-            animationDiv.classList.add("show-animation");
-            form.reset();
-        })
-        .finally(() => {
-            button.disabled = false;
-        });
+            .then(() => sendToDiscord(formData))
+            .then(() => {
+                animationDiv.classList.add("show-animation");
+                form.reset();
+            })
+            .catch((error) => {
+                console.error("Erreur d'envoi :", error);
+                // Netlify a peut-être fonctionné même si Discord échoue
+                // On affiche quand même le succès mais on log l'erreur
+                animationDiv.classList.add("show-animation");
+                form.reset();
+            })
+            .finally(() => {
+                button.disabled = false;
+            });
     });
 });
