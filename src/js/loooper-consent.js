@@ -81,8 +81,12 @@
   function removeBanner() {
     var b = document.getElementById('loooper-consent-banner');
     if (b) {
-      b.style.animation = 'lcb-slide-in .25s ease reverse';
-      setTimeout(function () { if (b.parentNode) b.parentNode.removeChild(b); }, 260);
+      // On ajoute la classe CSS qui gère l'animation de sortie
+      b.classList.add('lcb-closing');
+      // On attend la fin de l'animation (250ms) pour supprimer le nœud HTML
+      setTimeout(function () {
+        if (b.parentNode) b.parentNode.removeChild(b);
+      }, 250);
     }
   }
 

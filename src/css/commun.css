@@ -2142,12 +2142,7 @@ input[type="checkbox"]::after {
 
 /* Cookies */
 
-
-/* ============================================================
-   BANDEAU CONSENTEMENT COOKIES — Loooper!
-   À injecter via loooper-consent.js (injectStyles)
-   ============================================================ */
-
+/* Cookies */
 #loooper-consent-banner {
   position: fixed;
   bottom: 0;
@@ -2160,12 +2155,23 @@ input[type="checkbox"]::after {
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.35);
   font-family: Poppins, system-ui, sans-serif;
   font-size: 0.85rem;
-  animation: lcb-slide-in 0.35s ease;
+  /* On s'assure que l'animation reste sur son état final avec forwards */
+  animation: lcb-slide-in 0.35s ease forwards; 
+}
+
+/* Classe déclenchée par le JS pour la fermeture */
+#loooper-consent-banner.lcb-closing {
+  animation: lcb-slide-out 0.25s ease forwards;
 }
 
 @keyframes lcb-slide-in {
   from { transform: translateY(100%); }
   to   { transform: translateY(0); }
+}
+
+@keyframes lcb-slide-out {
+  from { transform: translateY(0); }
+  to   { transform: translateY(100%); }
 }
 
 .lcb-inner {
@@ -2236,7 +2242,6 @@ input[type="checkbox"]::after {
   border: 1.5px solid rgba(255, 255, 255, 0.4);
 }
 
-/* --- Mobile --- */
 @media (max-width: 600px) {
   .lcb-inner {
     flex-direction: column;
