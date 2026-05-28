@@ -82,7 +82,7 @@ document.querySelectorAll('a[href="#contactForm"]:not([data-format])').forEach(l
 
 
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector('form[name="contactformV4"]');
+    const form = document.querySelector('form[name="contactformV5"]');
     const button = form.querySelector('button[type="submit"]');
     const animationDiv = document.getElementById("animation");
     const rgpdCheckbox = document.getElementById("rgpd-consent");
