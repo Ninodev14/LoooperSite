@@ -1,4 +1,5 @@
 @import url(./reset.css);
+@import url(./fonts-local.css);
 @import url(./swiper.css);
 @import url(./color.css);
 @import url(./font.css);
@@ -13,3 +14,5 @@
 @import url(./header&footer.css);
 @import url(./accessibility.css);
 @import url(./responsive.css);
+
+

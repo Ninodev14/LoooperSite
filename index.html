@@ -5,27 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Preconnect aux origines critiques uniquement -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Polices auto-hébergées (RGPD — aucune requête externe) -->
+    <link rel="preload" href="/src/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/src/fonts/titan-one-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 
     <!-- Préchargement du CSS critique pour éviter le blocage rendu -->
     <link rel="preload" href="src/css/style.css" as="style">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="preload" href="/src/img/loooperFonder.webp" as="image" fetchpriority="high" type="image/webp">
-    <!-- Google Fonts : preload du woff2 critique + chargement non bloquant -->
-    
     <link rel="preload" href="/src/svg/brush-background-takin.svg" as="image">
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap">
-    </noscript>
-
-    <!-- OpenDyslexic non critique, chargé en différé -->
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-dyslexic" media="print" onload="this.media='all'">
 
     <title>Loooper!</title>
 
@@ -74,27 +62,12 @@
   }
   </script>
 
-    <script>
-        window.addEventListener('load', function () {
-            (function (w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != 'dataLayer' ? '&l=' + l : '';
-                j.async = true;
-                j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-T4Q4NXNW');
-        });
-    </script>
+    <!-- Consentement RGPD — GTM chargé UNIQUEMENT après accord utilisateur -->
+    <script src="/src/js/loooper-consent.js" defer></script>
 </head>
 
 <body style="position: relative;">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4Q4NXNW" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <!-- GTM noscript désactivé — consentement requis -->
     <header>
         <div class="menu-pc-container">
             <nav class="nav-pc">

@@ -2085,3 +2085,112 @@ input[type="checkbox"]::after {
 .mini-card-container .revers-mini-card {
     transform: none;
 }
+
+/* Cookies */
+
+
+/* ============================================================
+   BANDEAU CONSENTEMENT COOKIES — Loooper!
+   À injecter via loooper-consent.js (injectStyles)
+   ============================================================ */
+
+#loooper-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99998;
+  background: #180544;
+  color: #fff;
+  padding: 2rem 1.4rem;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.35);
+  font-family: Poppins, system-ui, sans-serif;
+  font-size: 0.85rem;
+  animation: lcb-slide-in 0.35s ease;
+}
+
+@keyframes lcb-slide-in {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+.lcb-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.lcb-text {
+  flex: 1;
+  min-width: 220px;
+}
+
+.lcb-title {
+
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.lcb-text p {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.lcb-link {
+  color: #BB6EF6;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.lcb-actions {
+  display: flex;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.lcb-btn {
+  padding: 0.5rem 1.1rem;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: opacity 0.15s;
+}
+
+.lcb-btn:hover { opacity: 0.85; }
+
+.lcb-btn--primary {
+  background: #3C61F5;
+  color: #fff;
+}
+
+.lcb-btn--secondary {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+}
+
+/* --- Mobile --- */
+@media (max-width: 600px) {
+  .lcb-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .lcb-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
