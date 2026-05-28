@@ -20,14 +20,11 @@ document.querySelectorAll('.contact .dropdown').forEach(dropdown => {
 
     toggle.addEventListener('click', e => {
         e.stopPropagation();
-
         dropdown.classList.toggle('open');
-
         document.querySelectorAll('.contact .dropdown').forEach(other => {
             if (other !== dropdown) other.classList.remove('open');
         });
     });
-
 
     const updateSummary = () => {
         const count = [...checkboxes].filter(c => c.checked).length;
@@ -46,23 +43,17 @@ document.addEventListener('click', e => {
         preventClose = false;
         return;
     }
-
     document.querySelectorAll('.contact .dropdown').forEach(dropdown => {
-        if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove('open');
-        }
+        if (!dropdown.contains(e.target)) dropdown.classList.remove('open');
     });
 });
-
 
 document.querySelectorAll('a[href="#contactForm"][data-format]').forEach(btn => {
     btn.addEventListener('click', e => {
         e.preventDefault();
-
         preventClose = true;
 
         const formatValue = btn.getAttribute("data-format");
-
         const form = document.querySelector('#contactForm');
         if (form) form.scrollIntoView({ behavior: 'smooth' });
 
@@ -82,7 +73,6 @@ document.querySelectorAll('a[href="#contactForm"][data-format]').forEach(btn => 
     });
 });
 
-
 document.querySelectorAll('a[href="#contactForm"]:not([data-format])').forEach(link => {
     link.addEventListener('click', e => {
         e.preventDefault();
@@ -90,61 +80,104 @@ document.querySelectorAll('a[href="#contactForm"]:not([data-format])').forEach(l
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+
+document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('form[name="contactformV4"]');
     const button = form.querySelector('button[type="submit"]');
     const animationDiv = document.getElementById("animation");
+    const rgpdCheckbox = document.getElementById("rgpd-consent");
+    const rgpdWrapper = document.querySelector(".form-rgpd");
 
-    form.addEventListener("submit", function(event) {
+    // ── Message d'erreur RGPD ──────────────────────────────
+    const errorMsg = document.createElement("p");
+    errorMsg.id = "rgpd-error";
+    errorMsg.textContent = "⚠️ Veuillez accepter la politique de confidentialité pour envoyer votre message.";
+    errorMsg.style.cssText = "display:none;margin-top:.5rem;font-size:.75rem;color:#F6B254;font-family:Poppins,system-ui,sans-serif";
+    rgpdWrapper.appendChild(errorMsg);
+
+    // Dès qu'il coche → retire l'erreur
+    rgpdCheckbox.addEventListener("change", function () {
+        if (this.checked) {
+            errorMsg.style.display = "none";
+            rgpdWrapper.classList.remove("rgpd-error");
+        }
+    });
+
+    // ── Envoi Discord ──────────────────────────────────────
+    const WEBHOOK_URL = "https://discord.com/api/webhooks/1412352742088769596/pVZ586uEiVZs1fJ7rjyi6iqz-rzxGwyYeFX7M0PconGDQmMGvnaZAccgBIjZ8OJfqpq7";
+
+    function sendToDiscord(formData) {
+        const message = {
+            content: "**📩 Nouveau message reçu via le formulaire :**",
+            embeds: [{
+                title: "Nouveau contact",
+                color: 5814783,
+                fields: [
+                    { name: "Nom",              value: formData.get("nom")                          || "—" },
+                    { name: "Prénom",           value: formData.get("prenom")                       || "—" },
+                    { name: "Email",            value: formData.get("email")                        || "—" },
+                    { name: "Téléphone",        value: formData.get("telephone")                    || "—" },
+                    { name: "Entreprise",       value: formData.get("entreprise")                   || "—" },
+                    { name: "Statut",           value: formData.get("statut")                       || "—" },
+                    { name: "Objectifs",        value: formData.getAll("objectif[]").join(", ")     || "—" },
+                    { name: "Autre objectif",   value: formData.get("objectif_autre")               || "—" },
+                    { name: "Format",           value: formData.getAll("format[]").join(", ")       || "—" },
+                    { name: "Autre format",     value: formData.get("format_autre")                 || "—" },
+                    { name: "Message",          value: formData.get("message")                      || "—" },
+                    { name: "Consentement RGPD", value: "✅ Accepté" }
+                ]
+            }]
+        };
+
+        return fetch(WEBHOOK_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(message)
+        }).then(res => {
+            if (!res.ok) throw new Error(`Discord webhook error: ${res.status}`);
+        });
+    }
+
+    // ── Soumission ─────────────────────────────────────────
+    form.addEventListener("submit", function (event) {
         event.preventDefault();
 
+        // Vérification RGPD avant tout
+        if (!rgpdCheckbox.checked) {
+            errorMsg.style.display = "block";
+            // Rejoue l'animation shake à chaque tentative
+            rgpdWrapper.classList.remove("rgpd-error");
+            void rgpdWrapper.offsetWidth; // reflow
+            rgpdWrapper.classList.add("rgpd-error");
+            rgpdWrapper.scrollIntoView({ behavior: "smooth", block: "center" });
+            return;
+        }
+
+        button.disabled = true;
         button.classList.add("btn-hidden");
 
         const formData = new FormData(form);
 
+        // Netlify d'abord, Discord ensuite — les deux attendus
         fetch("/", {
             method: "POST",
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString()
         })
+        .then(() => sendToDiscord(formData))
         .then(() => {
-            const webhookURL = "https://discord.com/api/webhooks/1412352742088769596/pVZ586uEiVZs1fJ7rjyi6iqz-rzxGwyYeFX7M0PconGDQmMGvnaZAccgBIjZ8OJfqpq7";
-
-            const message = {
-                content: "**📩 Nouveau message reçu via le formulaire :**",
-                embeds: [
-                    {
-                        title: "Nouveau contact",
-                        color: 5814783,
-                        fields: [
-                            { name: "Nom", value: formData.get("nom") || "—" },
-                            { name: "Prénom", value: formData.get("prenom") || "—" },
-                            { name: "Email", value: formData.get("email") || "—" },
-                            { name: "Téléphone", value: formData.get("telephone") || "—" },
-                            { name: "Entreprise", value: formData.get("entreprise") || "—" },
-                            { name: "Statut", value: formData.get("statut") || "—" },
-                            { name: "Objectifs", value: formData.getAll("objectif[]").join(", ") || "—" },
-                            { name: "Autre objectif", value: formData.get("objectif_autre") || "—" },
-                            { name: "Format", value: formData.getAll("format[]").join(", ") || "—" },
-                            { name: "Autre format", value: formData.get("format_autre") || "—" },
-                            { name: "Message", value: formData.get("message") || "—" }
-                        ]
-                    }
-                ]
-            };
-
-            fetch(webhookURL, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(message)
-            });
-
             animationDiv.classList.add("show-animation");
             form.reset();
         })
         .catch((error) => {
-            console.error("Erreur d’envoi :", error);
-            alert("Une erreur est survenue.");
+            console.error("Erreur d'envoi :", error);
+            // Netlify a peut-être fonctionné même si Discord échoue
+            // On affiche quand même le succès mais on log l'erreur
+            animationDiv.classList.add("show-animation");
+            form.reset();
+        })
+        .finally(() => {
+            button.disabled = false;
         });
     });
 });

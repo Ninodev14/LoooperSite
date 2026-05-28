@@ -385,6 +385,21 @@ body {
     justify-content: end;
 }
 
+@keyframes rgpd-shake {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(-6px); }
+    40%  { transform: translateX(6px); }
+    60%  { transform: translateX(-4px); }
+    80%  { transform: translateX(4px); }
+    100% { transform: translateX(0); }
+}
+
+.form-rgpd.rgpd-error {
+    border-color: #F6B254;
+    background: rgba(246, 178, 84, 0.08);
+    transition: border-color .2s, background .2s;
+}
+
 @keyframes float {
 
     0%,
@@ -1867,7 +1882,46 @@ input[type="checkbox"]::after {
         display: none;
     }
 }
+.form-rgpd {
+    margin: 1rem 0 0.5rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+}
 
+.form-rgpd-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    cursor: pointer;
+}
+
+.form-rgpd-label input[type="checkbox"] {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    width: 16px;
+    height: 16px;
+    accent-color: #3C61F5;
+    cursor: pointer;
+}
+
+.form-rgpd-label span {
+    font-family: Poppins, system-ui, sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.form-rgpd-label a {
+    color: #BB6EF6;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+}
+
+.form-rgpd-label a:hover {
+    opacity: 0.85;
+}
 
 
 /* Long Card */
