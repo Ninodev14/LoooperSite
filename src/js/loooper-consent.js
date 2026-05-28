@@ -112,6 +112,8 @@
   window.LoooperConsent = {
     revoke: function () {
       localStorage.removeItem(CONSENT_KEY);
+      document.cookie = "_ga=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "_ga_T4Q4NXNW=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       location.reload();
     },
     getStatus: function () {
