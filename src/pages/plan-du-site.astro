@@ -1,0 +1,41 @@
+---
+/**
+ * pages/plan-du-site.astro
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Plan du site"
+  description="Plan du site Loooper! — retrouvez facilement toutes les pages du site."
+  ogUrl="https://loooper.fr/plan-du-site"
+  noIndex={true}
+>
+  <section class="sitemap-page" style="padding: 4rem 2rem; max-width: 800px; margin: 0 auto;">
+    <h1>Plan du site</h1>
+
+    <nav aria-label="Plan du site">
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/formats">Nos formats</a></li>
+        <li>
+          <a href="/besoins">Vos besoins</a>
+          <ul>
+            <li><a href="/apprendre-ludique">Apprendre avec le ludique</a></li>
+            <li><a href="/sensibiliser-reflechir">Sensibiliser et faire réfléchir</a></li>
+            <li><a href="/creer-interaction-sociale">Créer de l'interaction sociale</a></li>
+            <li><a href="/renforcer-cohesion">Renforcer la cohésion</a></li>
+            <li><a href="/engager-motiver">Engager et motiver</a></li>
+            <li><a href="/former-efficacement">Former efficacement</a></li>
+            <li><a href="/communiquer-autrement">Communiquer autrement</a></li>
+          </ul>
+        </li>
+        <li><a href="/projets">Nos projets</a></li>
+        <li><a href="/equipe">Notre équipe</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/mentions-legales">Mentions légales</a></li>
+        <li><a href="/plan-du-site">Plan du site</a></li>
+      </ul>
+    </nav>
+  </section>
+</BaseLayout>

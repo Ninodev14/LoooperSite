@@ -1,0 +1,59 @@
+---
+/**
+ * SEOHead.astro
+ * Balises meta SEO, OG et Twitter Card réutilisables.
+ * À placer dans le <head> du layout.
+ *
+ * Props :
+ *   - title       : titre de la page
+ *   - description : meta description
+ *   - ogImage     : URL image OG (défaut ACCUEIL.png)
+ *   - ogUrl       : URL canonique de la page
+ *   - ogType      : type OG (défaut "website")
+ *   - noIndex     : true pour noindex (pages légales, plan du site…)
+ */
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogUrl?: string;
+  ogType?: string;
+  noIndex?: boolean;
+}
+
+const {
+  title,
+  description,
+  ogImage = "https://loooper.fr/src/img/ico/ACCUEIL.png",
+  ogUrl = "https://loooper.fr",
+  ogType = "website",
+  noIndex = false,
+} = Astro.props;
+
+const fullTitle = title.includes("Loooper") ? title : `${title} – Loooper!`;
+---
+
+<script src="/src/js/loooper-consent.js" defer></script>
+<!-- SEO de base -->
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<meta http-equiv="Content-Language" content="fr" />
+<meta name="robots" content={noIndex ? "noindex, nofollow" : "all"} />
+<meta name="author" content="Loooper!" />
+<meta name="owner" content="Loooper!" />
+<link rel="canonical" href={ogUrl} />
+
+<!-- Open Graph -->
+<meta property="og:title" content={fullTitle} />
+<meta property="og:type" content={ogType} />
+<meta property="og:site_name" content="Loooper!" />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:url" content={ogUrl} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />

@@ -1,0 +1,122 @@
+---
+/**
+ * BaseLayout.astro
+ * Layout racine utilisé par toutes les pages.
+ *
+ * Props :
+ *   - title       : titre de la page (passé à SEOHead)
+ *   - description : meta description
+ *   - ogImage     : image Open Graph
+ *   - ogUrl       : URL canonique
+ *   - currentPage : slug pour activer le lien nav actif (ex: "formats")
+ *   - noIndex     : désactive l'indexation
+ *   - schemaJson  : objet(s) Schema.org à injecter en JSON-LD (optionnel)
+ */
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+import SEOHead from '../components/SEOHead.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  ogUrl?: string;
+  currentPage?: string;
+  noIndex?: boolean;
+  schemaJson?: object | object[];
+}
+
+const {
+  title,
+  description,
+  ogImage,
+  ogUrl,
+  currentPage,
+  noIndex,
+  schemaJson,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      />
+    </noscript>
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-dyslexic" media="print" onload="this.media='all'" />
+
+    <!-- CSS global -->
+    <link rel="preload" href="/src/css/style.css" as="style" />
+    <link rel="stylesheet" href="/src/css/style.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- SEO + OG -->
+    <SEOHead
+      title={title}
+      description={description}
+      ogImage={ogImage}
+      ogUrl={ogUrl}
+      noIndex={noIndex}
+    />
+
+    <!-- Schema.org JSON-LD (optionnel, passé par chaque page) -->
+    {schemaJson && (
+      <script type="application/ld+json" set:html={JSON.stringify(schemaJson)} />
+    )}
+
+    <!-- Google Tag Manager (chargé après consentement via loooper-consent.js) -->
+    <script>
+      window.addEventListener('load', function () {
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          const f = d.getElementsByTagName(s)[0];
+          const j = d.createElement(s) as HTMLScriptElement;
+          const dl = l !== 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode!.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-T4Q4NXNW');
+      });
+    </script>
+  </head>
+
+  <body style="position: relative;">
+    <!-- GTM noscript -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-T4Q4NXNW"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+
+    <Header/>
+
+    <main>
+      <slot />
+    </main>
+    <ContactSection />
+    <Footer />
+  </body>
+</html>

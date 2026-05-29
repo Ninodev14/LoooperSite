@@ -1,15 +1,17 @@
 {
-  "name": "looopersite",
+  "name": "loooper-site",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
+    "dev": "astro dev",
+    "preview": "astro preview",
     "build:css": "postcss src/css/style.css -o src/css/style.min.css",
     "build:images": "node scripts/convert-images.js",
     "build:html-srcset": "node scripts/add-srcset.js",
     "build:html-optimize": "node scripts/optimize-html.js",
     "build:html-css-ref": "node -e \"const fs=require('fs'),path=require('path');function find(d){fs.readdirSync(d).forEach(f=>{const p=path.join(d,f);if(fs.statSync(p).isDirectory()&&f!=='node_modules'&&f!=='.git')find(p);else if(f.endsWith('.html')){const c=fs.readFileSync(p,'utf8');fs.writeFileSync(p,c.replace(/src\\/css\\/style\\.css/g,'src/css/style.min.css'))}})}find('.')\"",
-    "build": "npm run build:images && npm run build:css && npm run build:html-css-ref && npm run build:html-srcset && npm run build:html-optimize"
+    "build": "npm run build:images && npm run build:css && npm run build:html-css-ref && npm run build:html-srcset && npm run build:html-optimize && astro build"
   },
   "repository": {
     "type": "git",
@@ -18,11 +20,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "bugs": {
     "url": "https://github.com/Ninodev14/LoooperSite/issues"
   },
   "homepage": "https://github.com/Ninodev14/LoooperSite#readme",
+  "dependencies": {
+    "astro": "^6.4.2"
+  },
   "devDependencies": {
     "cssnano": "^7.1.7",
     "jsdom": "^26.0.0",

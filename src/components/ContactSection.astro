@@ -1,0 +1,308 @@
+    <div class="large-spacing"></div>
+    <div class="backgroundType1AnnimContainer contact-background">
+      <img
+        class="backgroundType1Annim rightbackgroundType1 reflect"
+        src="src/svg/backgroundType1.svg"
+        alt=""
+      />
+      <section class="contact">
+        <div id="contactForm" class="contact-container">
+          <h2 class="h1 black white-border">Nous contacter</h2>
+          <div class="small-medium-spacing"></div>
+          <form name="contactformV5" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="contactformV5" />
+            <input type="hidden" name="rgpd" value="non-coché" />
+
+            <fieldset class="form-group-container">
+              <div class="form-group">
+                <label class="text-typo" for="nom">Nom*</label>
+                <input
+                  class=""
+                  type="text"
+                  id="nom"
+                  name="nom"
+                  placeholder="Votre nom"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="text-typo" for="prenom">Prénom*</label>
+                <input
+                  class=""
+                  type="text"
+                  id="prenom"
+                  name="prenom"
+                  placeholder="Votre prénom"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="text-typo" for="email">Email*</label>
+                <input
+                  class=""
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Votre email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="text-typo" for="telephone">Téléphone</label>
+                <input
+                  class=""
+                  type="tel"
+                  id="telephone"
+                  name="telephone"
+                  placeholder="Votre téléphone"
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="text-typo" for="entreprise">Entreprise*</label>
+                <input
+                  class=""
+                  type="text"
+                  id="entreprise"
+                  name="entreprise"
+                  placeholder="Votre entreprise"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label class="text-typo" for="statut">Statut</label>
+                <input
+                  class=""
+                  type="text"
+                  id="statut"
+                  name="statut"
+                  placeholder="Votre Statut"
+                />
+              </div>
+            </fieldset>
+
+            <div class="form-group-container dropdown-toggle-container">
+              <fieldset>
+                <legend class="text-typo"
+                  >Pourquoi souhaitez-vous créer ce projet ?</legend
+                >
+                <div class="dropdown">
+                  <div class="dropdown-arrow-container">
+                    <div class="dropdown-toggle">Aucun sélectionné</div>
+                    <div class="dropdown-arrow-contact">
+                      <div class="line1"></div>
+                      <div class="line2"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown-content">
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="objectif[]"
+                        value="communication_interne"
+                      />
+                      Communication interne</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="objectif[]"
+                        value="communication_externe"
+                      />
+                      Communication externe</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="objectif[]"
+                        value="formation"
+                      /> Formation</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="objectif[]"
+                        value="pedagogie"
+                      /> Pédagogie</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="objectif[]"
+                        value="sensibilisation"
+                      />Sensibilisation</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="objectif[]"
+                        value="renforcement_de_cohesion"
+                      />Renforcement de cohésion</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="objectif[]"
+                        value="interaction_social"
+                      />Interaction sociale</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="objectif[]"
+                        value="valorisation"
+                      />Valorisation</label
+                    >
+                    <label class="text-typo black"
+                      ><input type="checkbox" id="objectif_autre_checkbox" />
+                      Autre</label
+                    >
+                    <input
+                      type="text"
+                      id="objectif_autre_text"
+                      name="objectif_autre"
+                      placeholder="Précisez..."
+                      style="display:none; margin-top:5px;"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- DEUXIÈME MENU -->
+              <fieldset>
+                <legend class="text-typo"
+                  >Quel format d’expérience imaginez-vous ?</legend
+                >
+                <div class="dropdown">
+                  <div class="dropdown-arrow-container">
+                    <div class="dropdown-toggle">Aucun sélectionné</div>
+                    <div class="dropdown-arrow-contact">
+                      <div class="line1"></div>
+                      <div class="line2"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown-content">
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="format[]"
+                        value="escape_game"
+                      /> Escape game</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="format[]"
+                        value="geocaching"
+                      /> Geocaching</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="format[]"
+                        value="histoire_interactive"
+                      /> Histoire interactive</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="format[]"
+                        value="jeu_societe"
+                      /> Jeu de société</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="format[]"
+                        value="jeu_video"
+                      />
+                      Jeu vidéo</label
+                    >
+                    <label class="text-typo black"
+                      ><input type="checkbox" name="format[]" value="quiz" />
+                      Quiz</label
+                    >
+                    <label class="text-typo black"
+                      ><input
+                        type="checkbox"
+                        name="format[]"
+                        value="mini_jeu"
+                      />
+                      Mini-jeu sur site web</label
+                    >
+                    <label class="text-typo black"
+                      ><input type="checkbox" id="format_autre_checkbox" />
+                      Autre</label
+                    >
+                    <input
+                      type="text"
+                      id="format_autre_text"
+                      name="format_autre"
+                      placeholder="Précisez..."
+                      style="display:none; margin-top:5px;"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <fieldset>
+              <div class="form-group">
+                <label class="text-typo" for="message">Message</label>
+                <textarea
+                  class=""
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="Votre message..."></textarea>
+              </div>
+            </fieldset>
+            <div class="obligatoireChamp">
+              <p>*Champs obligatoires</p>
+            </div>
+
+            <!-- Mention RGPD -->
+            <div class="form-rgpd">
+              <label class="form-rgpd-label">
+                <input type="checkbox" name="rgpd" id="rgpd-consent" required />
+                <span>
+                  J'accepte que mes données personnelles soient utilisées par
+                  Loooper! pour traiter ma demande de contact, conformément à
+                  notre
+                  <a href="/mentions-legales.html#donnees-personnelles"
+                    >politique de confidentialité</a
+                  >. Ces données ne seront pas transmises à des tiers.*
+                </span>
+              </label>
+            </div>
+            <div class="small-spacing"></div>
+            <div class="center-form-btn">
+              <button
+                type="submit"
+                class="text-typo btn-project btn-white-background"
+              >
+                <span>Envoyer ma demande</span>
+              </button>
+            </div>
+          </form>
+
+          <!-- Animation  -->
+          <div id="animation">
+            <p><b>Envoi réussi !</b></p>
+            <p>Nous vous remercions</p>
+            <p>et vous recontacterons bientôt !</p>
+          </div>
+        </div>
+      </section>
+      <img
+        class="backgroundType1Annim leftbackgroundType1"
+        src="src/svg/backgroundType1.svg"
+        alt=""
+      />
+    </div>
+
+    <div class="medium-spacing"></div>

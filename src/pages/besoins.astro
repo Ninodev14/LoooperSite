@@ -1,0 +1,112 @@
+---
+/**
+ * pages/besoins.astro — Vos besoins (hub)
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BesoinCard from '../components/BesoinCard.astro';
+import ContactSection from '../components/ContactSection.astro';
+
+const besoins = [
+  {
+    href: '/apprendre-ludique',
+    title: 'Apprendre avec le ludique',
+    desc: 'Rendez la formation engageante et mémorable grâce au jeu.',
+    icon: 'APPRENDRE.png',
+    color: 'purple' as const,
+  },
+  {
+    href: '/sensibiliser-reflechir',
+    title: 'Sensibiliser et faire réfléchir',
+    desc: 'Amenez vos équipes à prendre conscience de sujets importants.',
+    icon: 'SENSIBILISER.png',
+    color: 'orange' as const,
+  },
+  {
+    href: '/creer-interaction-sociale',
+    title: "Créer de l\u2019interaction sociale",
+    desc: 'Favorisez les échanges et brisez la glace entre participants.',
+    icon: 'INTERACTION.png',
+    color: 'yellow' as const,
+  },
+  {
+    href: '/renforcer-cohesion',
+    title: 'Renforcer la cohésion',
+    desc: "Soudez vos équipes autour d’expériences collectives mémorables.",
+    icon: 'COHESION.png',
+    color: 'green' as const,
+  },
+  {
+    href: '/engager-motiver',
+    title: 'Engager et motiver',
+    desc: "Stimulez l'implication et la motivation de vos collaborateurs.",
+    icon: 'ENGAGER.png',
+    color: 'purple' as const,
+  },
+  {
+    href: '/former-efficacement',
+    title: 'Former efficacement',
+    desc: 'Concevez des parcours de formation percutants et interactifs.',
+    icon: 'FORMER.png',
+    color: 'orange' as const,
+  },
+  {
+    href: '/communiquer-autrement',
+    title: 'Communiquer autrement',
+    desc: 'Transmettez vos messages de façon originale et impactante.',
+    icon: 'COMMUNIQUER.png',
+    color: 'yellow' as const,
+  },
+];
+
+const schemaOrg = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Loooper!",
+    "url": "https://loooper.fr/"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Besoins couverts par Loooper!",
+    "itemListElement": besoins.map((b, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": b.title,
+      "url": `https://loooper.fr${b.href}`,
+    })),
+  }
+];
+---
+
+<BaseLayout
+  title="Vos besoins"
+  description="Découvrez comment Loooper! utilise la gamification pour répondre à vos besoins : renforcer la cohésion, créer de l'interaction sociale, motiver, former ou communiquer autrement."
+  ogImage="https://loooper.fr/src/img/ico/BESOINS.png"
+  ogUrl="https://loooper.fr/besoins"
+  currentPage="besoins"
+  schemaJson={schemaOrg}
+>
+  <!--
+    Section hero / intro : copiez ici le contenu du haut de besoins.html
+  -->
+  <section class="besoins-hero">
+    <h1>Vos besoins</h1>
+    <p>Chaque projet est unique. Choisissez le besoin qui correspond à votre objectif :</p>
+  </section>
+
+  <!-- Grille des besoins (composant réutilisable) -->
+  <section class="besoins-grid">
+    {besoins.map((b) => (
+      <BesoinCard
+        href={b.href}
+        title={b.title}
+        desc={b.desc}
+        icon={b.icon}
+        color={b.color}
+      />
+    ))}
+  </section>
+
+  <ContactSection />
+</BaseLayout>
