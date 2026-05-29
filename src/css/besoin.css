@@ -17,7 +17,7 @@
 
 .mini-card-info-besoin::after {
     content: "";
-    background-image: url("/src/svg/pictoMiniCard/contour/bullTalking.png");
+    background-image: url("/svg/pictoMiniCard/contour/bullTalking.png");
     background-size: contain;
     background-repeat: no-repeat;
     width: 6rem;
@@ -32,40 +32,40 @@
     top: -3.4rem;
     width: 5.4rem;
     height: 5.4rem;
-    background-image: url("/src/svg/pictoMiniCard/contour/idea.png");
+    background-image: url("/svg/pictoMiniCard/contour/idea.png");
 }
 
 .sensibiliser:after {
-    background-image: url("/src/svg/pictoMiniCard/contour/annonce.png");
+    background-image: url("/svg/pictoMiniCard/contour/annonce.png");
 }
 
 .cree:after {
     top: -3.4rem;
     width: 5.4rem;
     height: 5.4rem;
-    background-image: url("/src/svg/pictoMiniCard/contour/connection.png");
+    background-image: url("/svg/pictoMiniCard/contour/connection.png");
 }
 
 .former:after {
     top: -3.1rem;
     width: 5.4rem;
     height: 5.4rem;
-    background-image: url("/src/svg/pictoMiniCard/contour/teach.png");
+    background-image: url("/svg/pictoMiniCard/contour/teach.png");
 }
 
 .renforcer:after {
-    background-image: url("/src/svg/pictoMiniCard/contour/table.png");
+    background-image: url("/svg/pictoMiniCard/contour/table.png");
 }
 
 .engager:after {
     top: -3.4rem;
     width: 5.4rem;
     height: 5.4rem;
-    background-image: url("/src/svg/pictoMiniCard/contour/starPodium.png");
+    background-image: url("/svg/pictoMiniCard/contour/starPodium.png");
 }
 
 .communiquer:after {
-    background-image: url("/src/svg/pictoMiniCard/contour/bullTalking.png");
+    background-image: url("/svg/pictoMiniCard/contour/bullTalking.png");
 }
 
 
@@ -173,7 +173,7 @@
     left: 0px;
     right: 0px;
     bottom: -100%;
-    background-image: url(/src/svg/backgroundType2.svg);
+    background-image: url(/svg/backgroundType2.svg);
     background-size: 100%;
 
     background-repeat: no-repeat;
@@ -187,7 +187,7 @@
     .backgroundBrushType2::before {
         top: 0%;
         bottom: 0%;
-        background-image: url(/src/svg/backgroundType2-mb.svg);
+        background-image: url(/svg/backgroundType2-mb.svg);
         background-size: 200%;
     }
 }

@@ -103,9 +103,9 @@ window.addEventListener("load", () => {
   }
   if ("ontouchstart" in window) {
     const disabledOptions = [
-      { id: "chkFocusBar", img: "src/img/Monitor.png" },
-      { id: "chkNormalCursor", img: "src/img/Monitor.png" },
-      { id: "chkLinkOutlineHover", img: "src/img/Monitor.png" }
+      { id: "chkFocusBar", img: "/img/Monitor.png" },
+      { id: "chkNormalCursor", img: "/img/Monitor.png" },
+      { id: "chkLinkOutlineHover", img: "/img/Monitor.png" }
     ];
 
     disabledOptions.forEach(opt => {

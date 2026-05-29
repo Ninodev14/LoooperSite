@@ -2,7 +2,7 @@
 /**
  * pages/404.astro — Page d'erreur 404
  */
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
@@ -10,15 +10,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Cette page n'existe pas ou a été déplacée."
   noIndex={true}
 >
-  <!--
-    Copiez ici le contenu de 404.html (hors head / header / footer)
-    ou personnalisez directement :
-  -->
-  <section style="padding: 6rem 2rem; text-align: center; font-family: sans-serif;">
-    <h1 style="font-size: 6rem; margin: 0;">404</h1>
-    <p style="font-size: 1.5rem;">Oops ! Cette page est introuvable.</p>
-    <a href="/" style="display: inline-block; margin-top: 2rem; padding: 1rem 2rem; background: #3C61F5; color: white; border-radius: 8px; text-decoration: none;">
-      Retour à l'accueil
-    </a>
-  </section>
+  <div class="container-404">
+    <div class="backgroundBrushType1">
+      <div class="medium-large-spacing"></div>
+      <section class="center-404">
+        <div class="small-spacing"></div>
+        <h1
+          class="h1 black paterneTitleContour"
+          style="position: relative; user-select: all;"
+        >
+          Erreur
+        </h1>
+        <h1 class="h1 white-border black">
+          <div class="paterneTitleContainer">
+            <span class="paterneTitle paterneTitleBlue">404</span><span
+              class="paterneTitleContour">404</span>
+          </div>
+        </h1>
+        <h3 class="h3 paterneTitleContourOnlyBlack">
+          Il semblerait que la page soit introuvable...
+        </h3>
+        <div class="medium-spacing"></div>
+      </section>
+    </div>
+  </div>
+  
 </BaseLayout>

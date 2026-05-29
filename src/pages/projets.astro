@@ -3,7 +3,6 @@
  * pages/projets.astro — Nos projets
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactSection from '../components/ContactSection.astro';
 ---
 
 <BaseLayout
@@ -12,12 +11,875 @@ import ContactSection from '../components/ContactSection.astro';
   ogUrl="https://loooper.fr/projets"
   currentPage="projets"
 >
-  <!--
-    Copiez ici le contenu de projets.html (hors head / header / footer)
-  -->
-  <p style="padding: 4rem 2rem; text-align: center; font-family: sans-serif;">
-    [Contenu de la page Projets — à compléter avec le HTML de projets.html]
-  </p>
+        <section class="mainPageTitle mainPageTitleOrange">
+            <h1 class="h1 container-width white-border black">Loooper!, des projets interactifs <span> </span>
+                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">aux </span><span
+                        class="paterneTitleContour">aux </span></div>
+                <div class="paterneTitleContainer"> <span class="paterneTitle paterneTitlePurple">problématiques
+                    </span><span class="paterneTitleContour">problématiques </span></div>
+                <div class="paterneTitleContainer"> <span class="paterneTitle paterneTitlePurple">diverses !</span><span
+                        class="paterneTitleContour"> diverses !</span></div>
 
-  <ContactSection />
+            </h1>
+        </section>
+        <div class="container-width ariane-net h3"><a href="/">Accueil </a>
+            <p class="h3">></p> <a href="/projets/"
+                class="end-chield highlight-no-annim purple black-border-small">Nos projets</a>
+        </div>
+
+
+        <section id="foot-prj1" class="container-width">
+            <div class="large-spacing"></div>
+
+            <h2 class="h2 black white-border">Découvrez notre univers …</h2>
+            <div class="small-medium-spacing"></div>
+            <div class="card-info-wrap">
+
+                <article class="card-info-container card-info-container-orange">
+                    <img src="/img/card/saveSeamulator.jpg" alt="Image représentant Save Seamulator">
+                    <div class="card-info-container-text">
+                        <div class="card-info-container-text-alignement">
+                            <h3 class="h3 black white-border highlight-no-annim orange">Save Seamulator</h3>
+                            <ul>
+                                <li class="text-typo black"><b>Le jeu vidéo</b> pour partager la magie de <b>l'océan</b>
+                                </li>
+                                <li class="text-typo black">Tester pour <b>comprendre</b> l’impact de l’homme sur <b>la
+                                        biodiversité marine</b></li>
+                            </ul>
+                        </div>
+                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-save-seamulator"
+                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur les Save Seamulator">
+                                <span>En savoir plus</span> </button></div>
+                    </div>
+                </article>
+
+                <article class="card-info-container card-info-container-purple">
+                    <img src="/img/card/zizanie.jpg" alt="Image représentant La Zizanie">
+                    <div class="card-info-container-text">
+                        <div class="card-info-container-text-alignement">
+                            <h3 class="h3 black white-border highlight-no-annim purple">La Zizanie</h3>
+                            <ul>
+                                <li class="text-typo black"><b>L’expérience interactive</b> où s’affrontent paysages et
+                                    animaux</li>
+                                <li class="text-typo black">Défendre <b>son équipe</b> à travers des questions sur
+                                    <b>les tableaux</b> qui nous entourent
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-zizanie"
+                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur La Zizanie">
+                                <span>En savoir plus</span> </button></div>
+                    </div>
+                </article>
+
+                <article class="card-info-container card-info-container-blue">
+                    <img src="/img/card/biker.jpg" alt="Image représentant Bikers au Grand cœur">
+                    <div class="card-info-container-text">
+                        <div class="card-info-container-text-alignement">
+                            <h3 class="h3 black white-border highlight-no-annim blue">Bikers au Grand cœur</h3>
+                            <ul>
+                                <li class="text-typo black"><b>Le jeu de société</b> pour permettre à tous de parler
+                                    <b>du harcèlement</b>
+                                </li>
+                                <li class="text-typo black">À imprimer, découper, mettre en place et jouer <b>chez
+                                        soi</b></li>
+                            </ul>
+                        </div>
+                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-bikers"
+                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur Bikers au Grand cœur">
+                                <span>En savoir plus</span> </button></div>
+                    </div>
+                </article>
+
+                <article class="card-info-container card-info-container-orange">
+                    <img src="/img/card/coopCook.jpg" alt="Image représentant Coop’Cook">
+                    <div class="card-info-container-text">
+                        <div class="card-info-container-text-alignement">
+                            <h3 class="h3 black white-border highlight-no-annim orange">Coop’Cook</h3>
+                            <ul>
+                                <li class="text-typo black"><b>Le jeu vidéo</b> pour cuisiner à <b>deux</b></li>
+                                <li class="text-typo black">Apprendre des recettes <b>équilibrées</b> tout en
+                                    <b>s’amusant</b>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-coop-cook"
+                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur le Coop’Cook">
+                                <span>En savoir plus</span> </button></div>
+                    </div>
+                </article>
+
+                <article class="card-info-container card-info-container-purple">
+                    <img src="/img/card/cartesCartels.jpg" alt="Image représentant Cartes & Cartels">
+                    <div class="card-info-container-text">
+                        <div class="card-info-container-text-alignement">
+                            <h3 class="h3 black white-border highlight-no-annim purple">Cartes & Cartels</h3>
+                            <ul>
+                                <li class="text-typo black"><b>Le quiz</b> pour se défier entre amis</li>
+                                <li class="text-typo black">Tout savoir sur <b>les cartels des œuvres</b> du MusBa</li>
+                            </ul>
+                        </div>
+                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-cartes-cartels"
+                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur Cartes & Cartels">
+                                <span>En savoir plus</span> </button></div>
+                    </div>
+                </article>
+
+                <article class="card-info-container card-info-container-blue">
+                    <img src="/img/card/kotiFight.jpg" alt="Image représentant Koti’Fight">
+                    <div class="card-info-container-text">
+                        <div class="card-info-container-text-alignement">
+                            <h3 class="h3 black white-border highlight-no-annim blue">Koti’Fight</h3>
+                            <ul>
+                                <li class="text-typo black">L’appli pour démêler <b>le vrai du faux</b></li>
+                                <li class="text-typo black">Défendre <b>son équipe</b> chaque jour</li>
+                            </ul>
+                        </div>
+                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-koti-fight"
+                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur Koti’Fight">
+                                <span>En savoir plus</span> </button></div>
+                    </div>
+                </article>
+
+                <article class="card-info-container card-info-container-orange">
+                    <img src="/img/card/zemblanite.jpg" alt="Image représentant Zemblanité">
+                    <div class="card-info-container-text">
+                        <div class="card-info-container-text-alignement">
+                            <h3 class="h3 black white-border highlight-no-annim orange">Zemblanité</h3>
+                            <ul>
+                                <li class="text-typo black"><b>Le jeu vidéo</b> pour empêcher la fin du monde</li>
+                                <li class="text-typo black"><b>Mourir et recommencer</b> pour démêler <b>les énigmes</b>
+                                    de la survie de l’humanité</li>
+                            </ul>
+                        </div>
+                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-zemblanite"
+                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur Zemblanité">
+                                <span>En savoir plus</span> </button></div>
+                    </div>
+                </article>
+
+                <article class="card-info-container card-info-container-purple">
+                    <img src="/img/card/scratch.jpg" alt="Image représentant l'atelier scratch">
+                    <div class="card-info-container-text">
+                        <div class="card-info-container-text-alignement">
+                            <h3 class="h3 black white-border highlight-no-annim purple">Atelier Scratch</h3>
+                            <ul>
+                                <li class="text-typo black"><b>Accompagnement</b> de collégiens pour la création d’un
+                                    <b>serious game</b>
+                                </li>
+                                <li class="text-typo black"><b>Apprendre et sensibiliser</b> sur <b>la protection</b> de
+                                    la biodiversité marine
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-scratch"
+                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur l'Atelier Scratch">
+                                <span>En savoir plus</span> </button></div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+
+        <div id="modal-save-seamulator" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-save-seamulator-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Save Seamulator</span><span
+                            class="paterneTitleContour">Save Seamulator</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+            <div>
+                <div class="project-modal modal-container modal-orange">
+                    <h3 id="modal-save-seamulator-title" class="h2 black sub-title-modal">Découvrez <span
+                            class="highlight-no-annim orange white-border">la biodiversité marine</span> et ses enjeux !
+                    </h3>
+                    <div class="modal-container-project">
+                        <div class="modal-container-img">
+                            <img src="/img/modal/saveSeamulatorPresentation.jpg" alt="image du jeu saveSeamulator">
+                        </div>
+                        <div class="modal-container-project-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <p class="black">Jeu vidéo </p>
+                                </div>
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/target.svg"
+                                        alt="Image représentant une cible">
+                                    <p class="black">
+                                        <a class="link-underline-black external-link"
+                                            href="https://www.ade-mediterranee.org/" target="_blank"
+                                            rel="noopener noreferrer">
+                                            Association ADE Méditerranée
+                                            <img src="/svg/externeBlack.svg" alt="Lien externe"
+                                                class="external-icon">
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne ">
+                                    <p class="black">14 personnes - 11 semaines</p>
+                                </div>
+                            </div>
+
+                            <div class="modal-container-text-paragraph">
+                                <h4 class="h3 black">C'est quoi ?</h4>
+                                <p class="black">Un serious game qui sensibilise les enfants à la protection de la
+                                    biodiversité
+                                    marine. Grâce à des mécaniques ludiques et immersives, les joueurs explorent l’océan
+                                    et
+                                    comprennent l’impact de leurs actions sur son équilibre.
+                                </p>
+                            </div>
+                            <a href="https://saveseamulator.netlify.app/"
+                                class="text-typo  btn-project btn-white-background" target="_blank">
+                                <span>Découvrir le jeu</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-zizanie" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-zizanie-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>La Zizanie</span><span class="paterneTitleContour">La
+                            Zizanie</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div>
+                <div class="project-modal modal-container modal-purple">
+                    <h3 id="modal-zizanie-title" class="h2 black sub-title-modal">Paysages ou Animaux ? <span
+                            class="highlight-no-annim purple white-border">Faites votre choix !</span> </h3>
+                    <div class="modal-container-project">
+                        <div class="modal-container-img">
+                            <img src="/img/modal/zizaniePresentation.jpg" alt="image de l'expérience la zizanie">
+                        </div>
+                        <div class="modal-container-project-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <p class="black">Expérience interactive </p>
+                                </div>
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/target.svg"
+                                        alt="Image représentant une cible">
+                                    <p class="black">
+                                        <a class="link-underline-black external-link"
+                                            href="https://www.musba-bordeaux.fr/" target="_blank"
+                                            rel="noopener noreferrer">
+                                            MusBa (Musée des Beaux arts de
+                                            Bordeaux)
+                                            <img src="/svg/externeBlack.svg" alt="Lien externe"
+                                                class="external-icon">
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne ">
+                                    <p class="black">7 personnes - 2 semaines</p>
+                                </div>
+                            </div>
+
+                            <div class="modal-container-text-paragraph">
+                                <h4 class="h3 black">C'est quoi ?</h4>
+                                <p class="black">Une expérience interactive imaginée pour la Bacchanight 2024. Les
+                                    visiteurs
+                                    rejoignent une équipe et s’affrontent à travers des questions liées aux tableaux qui
+                                    les
+                                    entourent. Leur mission ? Faire triompher leur équipe en remportant un maximum de
+                                    points.
+                                </p>
+                            </div>
+                            <a href="https://paysages-vs-animaux.netlify.app/"
+                                class="text-typo  btn-project btn-white-background" target="_blank">
+                                <span>Découvrir l'expérience</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-bikers" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-bikers-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Bikers au Grand cœur</span><span
+                            class="paterneTitleContour">Bikers au Grand cœur</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div>
+                <div class="project-modal modal-container modal-blue">
+                    <h3 id="modal-bikers-title" class="h2 black sub-title-modal">Le jeu qui facilite le dialogue <span
+                            class="highlight-no-annim blue white-border">sur le harcèlement </span></h3>
+                    <div class="modal-container-project">
+                        <div class="modal-container-img">
+                            <img src="/img/modal/bikerPresentation.jpg" alt="image du jeu Bikers au grand cœur">
+                        </div>
+                        <div class="modal-container-project-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <p class="black">Jeu de société</p>
+                                </div>
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/target.svg"
+                                        alt="Image représentant une cible">
+                                    <p class="black">
+                                        <a class="link-underline-black external-link"
+                                            href="https://bikercontreharcelement.fr/" target="_blank"
+                                            rel="noopener noreferrer">
+                                            Association Bikers Contre le
+                                            Harcèlement 33
+                                            <img src="/svg/externeBlack.svg" alt="Lien externe"
+                                                class="external-icon">
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne ">
+                                    <p class="black">9 personnes - 2 semaines</p>
+                                </div>
+                            </div>
+
+                            <div class="modal-container-text-paragraph">
+                                <h4 class="h3 black">C'est quoi ?</h4>
+                                <p class="black">Un jeu de société imprimable qui ouvre la discussion parent-enfant sur
+                                    le
+                                    harcèlement. À travers ses mécaniques, il invite à prendre la parole et à réfléchir
+                                    sur
+                                    les positions de harcelés, harceleurs ou du témoins, pour mieux comprendre et
+                                    avancer
+                                    ensemble.
+                                </p>
+                            </div>
+                            <a href="https://bikeraugrandcoeur.netlify.app/"
+                                class="text-typo  btn-project btn-white-background" target="_blank">
+                                <span>Découvrir l'expérience</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-coop-cook" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-coop-cook-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Coop’Cook</span><span
+                            class="paterneTitleContour">Coop’Cook</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div>
+                <div class="project-modal modal-container modal-orange">
+                    <h3 id="modal-coop-cook-title" class="h2 black sub-title-modal">Le jeu coopératif pour <span
+                            class="highlight-no-annim orange white-border">Jouer et bien manger !</span> </h3>
+                    <div class="modal-container-project">
+                        <div class="modal-container-img">
+                            <img src="/img/modal/coopCookPresentation.jpg" alt="image du jeu Coop'cook">
+                        </div>
+                        <div class="modal-container-project-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <p class="black">Jeu multijoueur</p>
+                                </div>
+
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne ">
+                                    <p class="black">9 personnes - 2 semaines</p>
+                                </div>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <h4 class="h3 black">C'est quoi ?</h4>
+                                <p class="black">Un jeu multijoueur de cuisine où chaque joueur doit suivre une recette
+                                    avec
+                                    l’aide de son coéquipier. Derrière cette épreuve ludique et conviviale se cache une
+                                    réflexion sur la nutrition et les alternatives aux recettes traditionnelles.
+                                </p>
+                            </div>
+                            <a href="https://workshop2025-fdg5.onrender.com/"
+                                class="text-typo  btn-project btn-white-background" target="_blank">
+                                <span>Découvrir le jeu</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-cartes-cartels" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-cartes-cartels-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Cartes & Cartels</span><span
+                            class="paterneTitleContour">Cartes & Cartels</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div>
+                <div class="project-modal modal-container modal-purple">
+                    <h3 id="modal-cartes-cartels-title" class="h2 black sub-title-modal"> <span
+                            class="highlight-no-annim purple white-border">Déduction et connaissances</span> seront vos
+                        meilleures armes</h3>
+                    <div class="modal-container-project">
+                        <div class="modal-container-img">
+                            <img src="/img/modal/cartsCartelsPresentation.jpg" alt="image du jeu Cartes & Cartels">
+                        </div>
+                        <div class="modal-container-project-info">
+                            <div class="modal-container-project-info">
+                                <div class="modal-container-text-paragraph">
+                                    <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                            alt="Image représentant un rouage">
+                                        <p class="black">Quiz multijoueur sur tablette</p>
+                                    </div>
+                                    <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/cross.svg"
+                                            alt="Image représentant une croix">
+                                        <p class="black">[indisponible sur ordinateur]</p>
+                                    </div>
+                                    <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/target.svg"
+                                            alt="Image représentant une cible">
+                                        <p class="black">
+                                            <a class="link-underline-black external-link"
+                                                href="https://www.musba-bordeaux.fr/" target="_blank"
+                                                rel="noopener noreferrer">
+                                                MusBa (Musée des Beaux arts de
+                                                Bordeaux)
+                                                <img src="/svg/externeBlack.svg" alt="Lien externe"
+                                                    class="external-icon">
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                            alt="Image représentant une personne ">
+                                        <p class="black">7 personnes - 2 semaines</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="modal-container-text-paragraph">
+                                <h4 class="h3 black">C'est quoi ?</h4>
+                                <p class="black">Un quiz multijoueur qui invite les visiteurs du musée à se défier
+                                    sur
+                                    une
+                                    tablette géante autour des cartels des œuvres. Artistes, dates, techniques et
+                                    matériaux
+                                    sont explorés à travers des questions de difficulté variée, rendant la
+                                    découverte à
+                                    la
+                                    fois ludique et enrichissante.
+                                </p>
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="modal-koti-fight" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-koti-fight-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Koti’Fight</span><span
+                            class="paterneTitleContour">Koti’Fight</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div>
+                <div class="project-modal modal-container modal-blue">
+                    <h3 id="modal-koti-fight-title" class="h2 black sub-title-modal"> Prêt à combiner<span
+                            class="highlight-no-annim blue white-border">fun, savoir et compétition ?</h3>
+                    <div class="modal-container-project">
+                        <div class="modal-container-img">
+                            <img src="/img/modal/kotiFightPresentation.jpg" alt="image du média Koti'fight">
+                        </div>
+                        <div class="modal-container-project-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <p class="black">Concept de média web</p>
+                                </div>
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/cross.svg"
+                                        alt="Image représentant une croix">
+                                    <p class="black">[Concept uniquement]</p>
+                                </div>
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne ">
+                                    <p class="black">7 personnes - 2 semaines</p>
+                                </div>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <h4 class="h3 black">C'est quoi ?</h4>
+                                <p class="black">Une application mobile de culture générale qui invite à
+                                    s’intéresser
+                                    aux
+                                    fake news autour d’une thématique donnée pendant deux semaines. Chaque joueur
+                                    rejoint
+                                    l’une des deux équipes proposées au départ et tente de la mener à la victoire en
+                                    débunkant une info par jour.
+                                </p>
+
+                            </div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-zemblanite" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-zemblanite-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Zemblanité</span><span
+                            class="paterneTitleContour">Zemblanité</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div>
+                <div class="project-modal modal-container modal-orange">
+                    <h3 id="modal-koti-fight-title" class="h2 black sub-title-modal"> Sans vous, la Terre est
+                        condamnée.
+                        Avec vous…<span class="highlight-no-annim orange white-border">elle l'est aussi.</span></h3>
+                    <div class="modal-container-project">
+                        <div class="modal-container-img">
+                            <img src="/img/modal/zemblanitePresentation.jpg" alt="image du jeu Zemblanité">
+                        </div>
+                        <div class="modal-container-project-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <p class="black">Jeu vidéo d’énigme</p>
+                                </div>
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne ">
+                                    <p class="black">7 personnes - 2 semaines</p>
+                                </div>
+                            </div>
+
+
+                            <div class="modal-container-text-paragraph">
+                                <h4 class="h3 black">C'est quoi ?</h4>
+                                <p class="black">Un point and click en pixel art où chaque énigme rapproche le
+                                    joueur
+                                    d’un
+                                    objectif : sauver la planète des conséquences écologiques de l’homme.
+                                </p>
+                            </div>
+                            <a href="https://amelieperrot.itch.io/zemblanite"
+                                class="text-typo  btn-project btn-white-background" target="_blank">
+                                <span>Découvrir le jeu</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-scratch" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-scratch-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Atelier scratch</span><span
+                            class="paterneTitleContour">Atelier scratch</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div>
+                <div class="project-modal modal-container modal-purple">
+                    <h3 id="modal-koti-fight-title" class="h2 black sub-title-modal"> Apprendre en créant <span
+                            class="highlight-no-annim purple white-border"> son propre jeu vidéo.</span></h3>
+                    <div class="modal-container-project">
+                        <div class="modal-container-img">
+                            <img src="/img/modal/scratchPrésentation.jpg" alt="image de l'atelier Save Seamulator">
+                        </div>
+                        <div class="modal-container-project-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <p class="black"> Atelier sur
+                                        <a class="link-underline-black external-link" href="https://scratch.mit.edu"
+                                            target="_blank" rel="noopener noreferrer">
+                                            Scratch
+                                            <img src="/svg/externeBlack.svg" alt="Lien externe"
+                                                class="external-icon">
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/target.svg"
+                                        alt="Image représentant une cible">
+                                    <p class="black">
+                                        <a class="link-underline-black external-link"
+                                            href="https://blogpeda.ac-bordeaux.fr/collegeneruda33/2026/04/03/la-biodiversite-par-le-jeu-video/"
+                                            target="_blank" rel="noopener noreferrer">
+                                            Collège Pablo Neruda
+                                            <img src="/svg/externeBlack.svg" alt="Lien externe"
+                                                class="external-icon">
+                                        </a>
+                                        et
+                                        <a class="link-underline-black external-link"
+                                            href="https://www.museum-bordeaux.fr/agenda/vivocean-2026" target="_blank"
+                                            rel="noopener noreferrer">
+                                            Projet VIV'O
+                                            <img src="/svg/externeBlack.svg" alt="Lien externe"
+                                                class="external-icon">
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne ">
+                                    <p class="black">4 semaines - 45 élèves</p>
+                                </div>
+                            </div>
+
+
+                            <div class="modal-container-text-paragraph">
+                                <h4 class="h3 black">C'est quoi ?</h4>
+                                <p class="black">Durant 8 heures, nous avons accompagné des jeunes dans la création d’un
+                                    serious game sur la protection de la biodiversité marine. Durant plusieurs séances,
+                                    ils ont réfléchi sur les mécaniques et la narration, dessiné les visuels, créé une
+                                    ambiance sonore et développé leur jeu sur scratch.
+                                </p>
+                            </div>
+                            <a href="https://scratch2026pabloneruda.netlify.app/"
+                                class="text-typo  btn-project btn-white-background" target="_blank">
+                                <span>Découvrir les jeux</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="large-spacing"></div>
+
+        <div id="foot-prj2" class="zoom-container-center">
+            <div class="zoom-container background-guillemet">
+                <section class="container-width">
+                    <h2 class="h2 black">La portée de nos projets ?</h2>
+                    <div class="small-medium-spacing"></div>
+                    <div class="wrapper-faq-container-info">
+                        <div class="wrapper-faq-container-info-row">
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-orange">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">Save Seamulator</h3>
+                                </div>
+                                <div class="faq-text-espacement">
+
+                                    <p class="black">
+                                        Développé pour et avec des collégiens, mais aussi avec de plus jeunes élèves, le
+                                        jeu
+                                        n’a pas pour idée de copier la réalité mais d’en présenter une version
+                                        simplifiée,
+                                        qui souligne des liens de cause à effet, amenant à une meilleure compréhension
+                                        de la
+                                        complexité du problème. Il ne s’agit pas simplement d’arrêter le plastique, mais
+                                        de
+                                        reconsidérer profondément nos modes de vie. Une solution simple n’existe pas, il
+                                        nous faut repenser le relationnel au monde.
+                                    </p>
+
+                                    <i class="text-typo black">Astasa</i>
+
+                                    <a target="_blank"
+                                        href="https://www.astasa.org/2025/09/30/apprendre-en-samusant-developper-un-jeu-video-sur-la-preservation-de-la-biodiversite-marine/"
+                                        class="text-typo btn-project btn-white-background">
+                                        <span class=" external-link">Lire l’article <img src="/svg/externeBlack.svg"
+                                                alt="Lien externe" class="external-icon"></span>
+                                    </a>
+
+
+
+                                    <p class="black">
+                                        “Il invite le joueur à incarner un plongeur sous-marin ayant pour mission
+                                        d’éliminer
+                                        la
+                                        pollution qui envahit une ville côtière”
+                                        “les étudiants ont en partie travaillé avec une classe de collégiens de Menton
+                                        (Alpes-Maritimes) et avec l’association ADE Méditerranée”
+                                    </p>
+
+                                    <i class="text-typo black">Rue89Bordeaux</i>
+
+                                    <a target="_blank"
+                                        href="https://rue89bordeaux.com/2025/04/un-jeu-video-sur-la-preservation-des-oceans-concu-par-des-etudiants-de-bordeaux/"
+                                        class="text-typo btn-project btn-white-background">
+                                        <span class=" external-link">Lire l’article <img src="/svg/externeBlack.svg"
+                                                alt="Lien externe" class="external-icon"></span>
+                                    </a>
+
+                                    <p class="black">“Des collégiens de Menton et des universitaires de Bordeaux
+                                        développent
+                                        un jeu en
+                                        ligne pour sensibiliser à notre environnement en ville”
+                                        “Le jeu vidéo se veut pédagogique, dans le but d’informer à la fois sur la
+                                        protection des écosystèmes marins et de la gestion écologique d’une ville.”
+                                    </p>
+
+                                    <i class="text-typo black">Nicematin</i>
+
+                                    <a target="_blank"
+                                        href="https://www.nicematin.com/environnement/des-collegiens-de-menton-et-des-universitaires-de-bordeaux-developpent-un-jeu-en-ligne-pour-sensibiliser-a-notre-environnement-en-ville--980091"
+                                        class="text-typo btn-project btn-white-background">
+                                        <span class=" external-link">Lire l’article <img src="/svg/externeBlack.svg"
+                                                alt="Lien externe" class="external-icon"></span>
+                                    </a>
+                                </div>
+                            </article>
+
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-purple">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">Bikers au Grand cœur</h3>
+                                </div>
+                                <div class="faq-text-espacement">
+                                    <p class="black">
+                                        “Souvenez-vous, il y a 15 jours, B.C.H apportait son aide à des jeunes
+                                        universitaires pour un projet pédagogique lié aux Harcelement.”
+                                        “Une franche partie de rigolade, un jeu ludique qui lie le monde des Bikers à la
+                                        lutte contre le Harcelement.”
+
+                                    </p>
+
+                                    <i class="text-typo black">Facebook - Biker contre harcelement 33</i>
+
+                                    <a target="_blank"
+                                        href="https://www.facebook.com/permalink.php?story_fbid=pfbid037L6ngAtivNW1h7kyA1vhobFEwZC1oPiB1crg6vHxscfg5rMjNc7a7jwSVQ7JQ9jpl&id=100070471032774"
+                                        class="text-typo btn-project btn-white-background">
+                                        <span class=" external-link">Voir le post<img src="/svg/externeBlack.svg"
+                                                alt="Lien externe" class="external-icon"></span>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                        <div class="wrapper-faq-container-info-row">
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-blue">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">La Zizanie</h3>
+                                </div>
+                                <div class="faq-text-espacement">
+                                    <p class="black">
+                                        “Vous avez été plus de 1 600 visiteurs à venir au musée ce mardi soir pour
+                                        soutenir
+                                        les projets étudiants lors de la Bacchanigh”
+                                        “Un grand merci à tous les participants, aux écoles partenaires[...] qui ont
+                                        insufflé vie à la Bacchanight !”
+
+                                    </p>
+
+                                    <i class="text-typo black">Instagram - MusBa</i>
+
+                                    <a target="_blank" href="https://www.instagram.com/p/C5GfgYgoJaV/?img_index=9"
+                                        class="text-typo btn-project btn-white-background">
+                                        <span class=" external-link">Voir le post <img src="/svg/externeBlack.svg"
+                                                alt="Lien externe" class="external-icon"></span>
+                                    </a>
+                                </div>
+                            </article>
+
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-orange">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">Wibo</h3>
+                                </div>
+                                <div class="faq-text-espacement">
+                                    <p class="black">
+                                        “À l’IUT Bordeaux-Montaigne, des étudiants ont réalisé un dessin animé pour
+                                        sensibiliser les enfants aux différences”
+                                        “expliquer de manière ludique les différences aux enfants. De la grossophobie au
+                                        racisme, en passant par les stéréotypes de genre, l’ensemble des thématiques
+                                        sociétales actuelles sont présentées.”
+                                    </p>
+
+                                    <i class="text-typo black">Sud Ouest</i>
+
+                                    <a target="_blank"
+                                        href="https://www.sudouest.fr/etudiant/a-l-iut-bordeaux-montaigne-des-etudiants-ont-realise-un-dessin-anime-pour-sensibiliser-les-enfants-aux-differences-14767692.php"
+                                        class="text-typo btn-project btn-white-background">
+                                        <span class=" external-link">Lire l’article <img src="/svg/externeBlack.svg"
+                                                alt="Lien externe" class="external-icon"></span>
+                                    </a>
+                                    <a target="_blank"
+                                        href="https://www.youtube.com/watch?v=XnmqQTKk82M&ab_channel=LesHistoiresdeWibo"
+                                        class="text-typo btn-project btn-white-background">
+                                        <span class=" external-link">Lire l’article <img src="/svg/externeBlack.svg"
+                                                alt="Lien externe" class="external-icon"></span>
+                                    </a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+  
+    <script src="/js/modal.js" defer></script>
+    <script src="/js/faq.js" defer></script>
 </BaseLayout>

@@ -14,7 +14,7 @@
     top: 0;
     pointer-events: none;
     right: -100px;
-    background-image: url(/src/svg/mentionsPatern.svg);
+    background-image: url(/svg/mentionsPatern.svg);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

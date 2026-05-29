@@ -2,7 +2,7 @@ const slides = [
     {
         chapitre: "Chapitre I",
         title: "La rencontre",
-        img: "src/svg/book/table.svg",
+        img: "/svg/book/table.svg",
         alt: "4 personnes assises",
         text: "Tout commence par <b>un moment d’échange</b>. On prend le temps d’écouter <b>vos besoins</b>, <b>vos envies</b> et <b>vos objectifs</b> afin de poser les bases <b>d’un concept sur mesure</b>.",
         color: "orange"
@@ -10,7 +10,7 @@ const slides = [
     {
         chapitre: "Chapitre II",
         title: "La réflexion",
-        img: "src/svg/book/bulle.svg",
+        img: "/svg/book/bulle.svg",
         alt: "bulle de réfléxion",
         text: "À partir de vos idées, nous imaginons <b>un scénario ludique et interactif</b> pensé pour s'intégrer parfaitement à <b>votre volonté</b> et à <b>votre public</b>.",
         color: "purple"
@@ -18,7 +18,7 @@ const slides = [
     {
         chapitre: "Chapitre III",
         title: "La création",
-        img: "src/svg/book/ampoule.svg",
+        img: "/svg/book/ampoule.svg",
         alt: "Image d'ampoulle",
         text: "Après validation, nous passons à <b>la production des éléments</b> : graphismes, développement, narration, chaque élément prend vie dans <b>un planning clair et transparent.</b>",
         color: "blue"
@@ -26,7 +26,7 @@ const slides = [
     {
         chapitre: "Chapitre IV",
         title: "Les tests",
-        img: "src/svg/book/list.svg",
+        img: "/svg/book/list.svg",
         alt: "Une cecklist",
         text: "Tout au long du processus, nous <b>testons</b> ensemble l’expérience afin de garantir <b>qualité, fluidité et adéquation avec vos attentes</b>.",
         color: "orange"
@@ -34,7 +34,7 @@ const slides = [
     {
         chapitre: "Chapitre V",
         title: "La livraison",
-        img: "src/svg/book/livraison.svg",
+        img: "/svg/book/livraison.svg",
         alt: "Livraison",
         text: "Le projet final vous est livré <b>prêt à l’emploi</b>. Et parce qu’on ne s’arrête pas là, nous vous accompagnons aussi dans <b>son déploiement</b> pour en assurer le succès.",
         color: "purple"
@@ -109,13 +109,13 @@ function animateTurn(direction) {
     const content = page.querySelector('div');
 
     const backImg = new Image();
-    backImg.src = '/src/img/book-page-back.png';
+    backImg.src = '/img/book-page-back.png';
 
     page.style.zIndex = 20;
     page.classList.add('turning');
 
     setTimeout(() => {
-        page.style.backgroundImage = 'url(/src/img/book-page-back.png)';
+        page.style.backgroundImage = 'url(/img/book-page-back.png)';
         if (content) content.classList.add('hidden');
     }, 200);
 
@@ -128,7 +128,7 @@ function animateTurn(direction) {
 
     page.addEventListener('transitionend', () => {
         setTimeout(() => {
-            page.style.backgroundImage = 'url(/src/img/book-page.png)';
+            page.style.backgroundImage = 'url(/img/book-page.png)';
             if (content) content.classList.remove('hidden');
         }, 200);
         page.classList.remove('turning');
@@ -161,13 +161,13 @@ function goToSlide(index) {
 
     const content = page.querySelector('div');
     const backImg = new Image();
-    backImg.src = '/src/img/book-page-back.png';
+    backImg.src = '/img/book-page-back.png';
 
     page.style.zIndex = 20;
     page.classList.add('turning');
 
     setTimeout(() => {
-        page.style.backgroundImage = 'url(/src/img/book-page-back.png)';
+        page.style.backgroundImage = 'url(/img/book-page-back.png)';
         if (content) content.classList.add('hidden');
     }, 200);
 
@@ -178,7 +178,7 @@ function goToSlide(index) {
 
     page.addEventListener('transitionend', () => {
         setTimeout(() => {
-            page.style.backgroundImage = 'url(/src/img/book-page.png)';
+            page.style.backgroundImage = 'url(/img/book-page.png)';
             if (content) content.classList.remove('hidden');
         }, 200);
         page.classList.remove('turning');

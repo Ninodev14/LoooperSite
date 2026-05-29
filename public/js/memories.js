@@ -9,20 +9,20 @@ document.addEventListener("DOMContentLoaded", () => {
   let lockBoard = false;
 
   const contentsByImage = {
-    "/src/svg/guyMemories.svg": {
+    "/svg/guyMemories.svg": {
       title: "Formats hybrides",
       text: "Numériques, physiques ou phygitaux, nos formats s’adaptent à vos usages. Conscients des enjeux liés aux écrans, nous veillons à proposer nos expériences sur le support le plus adapté aux besoins de chacun.",
-      image: "/src/svg/guyMemories.svg"
+      image: "/svg/guyMemories.svg"
     },
-    "/src/svg/linkMemories.svg": {
+    "/svg/linkMemories.svg": {
       title: "Valeurs humaines",
       text: "Chaque expérience est conçue pour être à la fois ludique, accessible et inclusive. Ces valeurs sont essentielles pour nous et guident chacune de nos créations.",
-      image: "/src/svg/linkMemories.svg"
+      image: "/svg/linkMemories.svg"
     },
-    "/src/svg/targetMemories.svg": {
+    "/svg/targetMemories.svg": {
       title: "Créations sur mesure",
       text: "De l’idée à la mise en œuvre, nous vous accompagnons pour imaginer et réaliser des formats ludiques qui vous ressemblent afin donner vie à une expérience unique alignée avec vos attentes.",
-      image: "/src/svg/targetMemories.svg"
+      image: "/svg/targetMemories.svg"
     }
   };
 
@@ -82,8 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
           setTimeout(() => {
             card1.classList.remove("flipped");
             card2.classList.remove("flipped");
-            card1.style.backgroundImage = "url(/src/svg/carteMemories.svg)";
-            card2.style.backgroundImage = "url(/src/svg/carteMemories.svg)";
+            card1.style.backgroundImage = "url(/svg/carteMemories.svg)";
+            card2.style.backgroundImage = "url(/svg/carteMemories.svg)";
             card1.style.transform = "rotateY(0) rotateX(0)";
             card2.style.transform = "rotateY(0) rotateX(0)";
             flippedCards = [];

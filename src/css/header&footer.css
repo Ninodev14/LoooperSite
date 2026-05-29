@@ -136,7 +136,7 @@ header {
     content: "";
     position: absolute;
     inset: 0;
-    background: url(/src/svg/paternHeader.svg) center/cover no-repeat;
+    background: url(/svg/paternHeader.svg) center/cover no-repeat;
     opacity: 0.3;
     pointer-events: none;
     z-index: 0;

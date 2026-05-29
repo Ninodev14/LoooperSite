@@ -204,15 +204,15 @@ body {
 }
 
 .mainPageTitlePurple {
-    background-image: url(/src/svg/purplePatern.svg);
+    background-image: url(/svg/purplePatern.svg);
 }
 
 .mainPageTitleOrange {
-    background-image: url(/src/svg/orangePatern.svg);
+    background-image: url(/svg/orangePatern.svg);
 }
 
 .mainPageTitleBlue {
-    background-image: url(/src/svg/bluePatern.svg);
+    background-image: url(/svg/bluePatern.svg);
 }
 
 .zoom-container-center {
@@ -277,7 +277,7 @@ body {
     aspect-ratio: 16 / 10; 
 
     pointer-events: none;
-    background-image: url(/src/svg/brush-background-takin.svg);
+    background-image: url(/svg/brush-background-takin.svg);
     
     background-size: cover; 
     background-repeat: no-repeat;
@@ -570,7 +570,7 @@ body {
         
         aspect-ratio: 1448 / 1399; 
         
-        background-image: url(/src/svg/brush-background-takin-mb.svg);
+        background-image: url(/svg/brush-background-takin-mb.svg);
         background-size: contain; 
         background-repeat: no-repeat;
         background-position: center;
@@ -580,7 +580,7 @@ body {
     }
 
     .container-404 .backgroundBrushType1::before {
-        background-image: url(/src/svg/brush-background-takin-mb.svg);
+        background-image: url(/svg/brush-background-takin-mb.svg);
 
     }
 
@@ -641,7 +641,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background-image: url(/src/svg/fullPatern.svg);
+    background-image: url(/svg/fullPatern.svg);
     background-size: 200%;
     opacity: 1;
     transition: opacity 0.3s;
@@ -887,7 +887,7 @@ body {
     content: "";
     position: absolute;
     inset: -0.3em;
-    background-image: url("/src/svg/ton-fichier.svg");
+    background-image: url("/svg/ton-fichier.svg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -916,19 +916,19 @@ body {
 .highlight.orange::before,
 .highlight-no-annim.orange::before {
 
-    background-image: url("/src/svg/higlightType1.svg");
+    background-image: url("/svg/higlightType1.svg");
 }
 
 .highlight.purple::before,
 .highlight-no-annim.purple::before {
 
-    background-image: url("/src/svg/higlightType2.svg");
+    background-image: url("/svg/higlightType2.svg");
 }
 
 .highlight.blue::before,
 .highlight-no-annim.blue::before {
 
-    background-image: url("/src/svg/higlightType3.svg");
+    background-image: url("/svg/higlightType3.svg");
 }
 
 /*ESPACEMENT*/
@@ -1088,7 +1088,7 @@ body {
     background-position: top left;
     background-color: transparent;
     background-repeat: no-repeat;
-    background-image: url(/src/svg/guillemet.svg);
+    background-image: url(/svg/guillemet.svg);
     pointer-events: none;
 }
 
@@ -1104,17 +1104,17 @@ body {
     background-position: bottom right;
     background-color: transparent;
     background-repeat: no-repeat;
-    background-image: url(/src/svg/guillemet.svg);
+    background-image: url(/svg/guillemet.svg);
     pointer-events: none;
 }
 
 
 .background-interogation-blue {
-    background-image: url(/src/svg/interogation-blue.svg);
+    background-image: url(/svg/interogation-blue.svg);
 }
 
 .background-interogation-purple {
-    background-image: url(/src/svg/interogation-purple.svg);
+    background-image: url(/svg/interogation-purple.svg);
 }
 
 .background-interogation-orange {

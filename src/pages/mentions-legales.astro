@@ -2,7 +2,7 @@
 /**
  * pages/mentions-legales.astro
  */
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
@@ -11,10 +11,212 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   ogUrl="https://loooper.fr/mentions-legales"
   noIndex={true}
 >
-  <!--
-    Copiez ici le contenu de mentions-legales.html (hors head / header / footer)
-  -->
-  <p style="padding: 4rem 2rem; text-align: center; font-family: sans-serif;">
-    [Contenu des Mentions légales — à compléter avec le HTML de mentions-legales.html]
-  </p>
+  <div class="mentions-legale-container">
+    <div class="large-spacing"></div>
+
+    <div class="medium-spacing"></div>
+
+    <section
+      class="container-width text-basical-container mentions-legales-text-container"
+    >
+      <article class="text-basical-container-text mentions-legales-text">
+        <h2 class="h2 black white-border">
+          Découvrez notre univers et nos valeurs
+        </h2>
+        <div class="small-spacing"></div>
+        <p>Entreprise : Loooper!</p>
+        <p>Forme juridique : SAS</p>
+        <p>Capital social : En cours de création</p>
+        <p>Siège social : 39 rue kléber Bordeaux 33800</p>
+        <p>Numéro SIRET : En cours de création</p>
+        <p>RCS / RM : En cours de création</p>
+        <p>Numéro de TVA intracommunautaire : En cours de création</p>
+        <p>
+          Responsable de la publication : Nino Lefort, Directeur général –
+          Loooper! SAS
+        </p>
+        <p>Contact : loooper.contact@gmail.com</p>
+      </article>
+
+      <article class="text-basical-container-text mentions-legales-text">
+        <h2 class="h3 black white-border">Hébergement</h2>
+        <div class="small-spacing"></div>
+        <p>Hébergeur : Netlify, Inc.</p>
+        <p>
+          Adresse : 2325 3rd Street, Suite 296, San Francisco, CA 94107,
+          États-Unis
+        </p>
+        <p>Téléphone : Non communiqué (support via le site web)</p>
+        <p>
+          Site web : <a
+            href="https://www.netlify.com"
+            target="_blank"
+            rel="noopener noreferrer">https://www.netlify.com</a>
+        </p>
+        <p>
+          Le site est hébergé par la société Netlify, Inc., prestataire de
+          services d’hébergement conforme au Règlement Général sur la Protection
+          des Données (RGPD). Les données peuvent être transférées et stockées
+          hors de l’Union européenne, avec des garanties de conformité
+          appropriées.
+        </p>
+      </article>
+
+      <article class="text-basical-container-text mentions-legales-text">
+        <h2 class="h3 black white-border">Propriété intellectuelle</h2>
+        <div class="small-spacing"></div>
+        <p>
+          L’ensemble du contenu présent sur ce site (textes, images, graphismes,
+          logo, vidéos, icônes, etc.) est la propriété exclusive de Loooper!,
+          sauf mention contraire.Toute reproduction, représentation,
+          modification, publication, adaptation de tout ou partie des éléments
+          du site, quel que soit le moyen ou le procédé utilisé, est interdite,
+          sauf autorisation écrite préalable.Le non-respect de cette
+          interdiction constitutes une contrefaçon pouvant engager la
+          responsabilité civile et pénale du contrefacteur.
+        </p>
+      </article>
+
+      <article class="text-basical-container-text mentions-legales-text">
+        <h2 class="h3 black white-border">Limitation de responsabilité</h2>
+        <div class="small-spacing"></div>
+        <p>
+          Loooper! ne pourra être tenue responsable des dommages directs ou
+          indirects causés au matériel de l’utilisateur lors de l’accès au site,
+          ni de l’apparition d’un bug ou d’une incompatibilité.
+        </p>
+        <p>
+          Des espaces interactifs (formulaire de contact, commentaires, etc.)
+          sont à la disposition des utilisateurs. Loooper! se réserve le droit
+          de supprimer, sans mise en demeure préalable, tout contenu
+          contrevenant à la législation applicable en France.
+        </p>
+        <p>
+          Le site peut contenir des liens hypertextes vers d’autres sites
+          web.Loooper! ne peut en aucun cas être tenue responsable du contenu
+          publié sur ces sites tiers.
+        </p>
+      </article>
+
+      <article
+        id="donnees-personnelles"
+        class="text-basical-container-text mentions-legales-text"
+      >
+        <h2 class="h3 black white-border">
+          Politique de confidentialité & Données personnelles
+        </h2>
+        <div class="small-spacing"></div>
+        <p>
+          Les données personnelles collectées via le site (formulaire de
+          contact) sont traitées dans le respect du Règlement Général sur la
+          Protection des Données (RGPD) et de la loi Informatique et Libertés.
+        </p>
+        <p>
+          <strong>Responsable du traitement :</strong> Loooper! (Nino Lefort)
+        </p>
+        <p>
+          <strong>Finalité du traitement :</strong> Les informations recueillies sont
+          uniquement utilisées pour traiter, recontacter et répondre aux demandes
+          de projets des utilisateurs formulées via le formulaire de contact.
+        </p>
+        <p>
+          <strong>Base légale :</strong> Le consentement de l'utilisateur (recueilli
+          de manière explicite via la case à cocher du formulaire).
+        </p>
+        <p>
+          <strong>Destinataires des données :</strong> Les données sont réservées
+          à l'usage exclusif de la société Loooper! et ne seront en aucun cas vendues,
+          échangées ou transmises à des tiers.
+        </p>
+        <p>
+          <strong>Durée de conservation :</strong> Les données sont conservées pendant
+          une durée maximale de 12 mois après le dernier contact commercial ou la
+          clôture de la demande.
+        </p>
+        <p>
+          <strong>Droits de l’utilisateur :</strong> Vous disposez d’un droit d’accès,
+          de rectification, de suppression (droit à l’oubli), d’opposition et de portabilité
+          de vos données personnelles.
+        </p>
+        <p>
+          <strong>Exercice des droits :</strong> Pour exercer ces droits ou pour toute
+          question, vous pouvez nous contacter directement par email à : <a
+            href="mailto:loooper.contact@gmail.com">loooper.contact@gmail.com</a
+          >.
+        </p>
+      </article>
+
+      <article
+        id="cookies"
+        class="text-basical-container-text mentions-legales-text"
+      >
+        <h2 class="h3 black white-border">Gestion des Cookies</h2>
+        <div class="small-spacing"></div>
+        <p>
+          Ce site utilise des cookies de mesure d'audience via Google Tag
+          Manager (GTM). Ces traceurs nous permettent d'analyser la navigation
+          sur notre site afin d'en améliorer l'expérience globale.
+        </p>
+        <p>
+          Conformément aux directives de la CNIL, aucun cookie non essentiel
+          n'est déposé sans votre consentement préalable via notre bandeau de
+          cookies. Votre choix est conservé pendant une durée de 6 mois.
+        </p>
+        <div class="small-spacing"></div>
+
+        <p>
+          <strong>Modifier vos préférences :</strong> Vous pouvez réinitialiser et
+          modifier votre choix concernant le dépôt des cookies à tout moment en cliquant
+          sur le bouton ci-dessous :
+        </p>
+        <div class="small-spacing"></div>
+        <button
+          onclick="window.LoooperConsent.revoke();"
+          class="text-typo btn-project btn-white-background"
+          style="cursor: pointer; padding: 10px 20px;"
+        >
+          <span>Réinitialiser mes préférences de cookies</span>
+        </button>
+      </article>
+
+      <article class="text-basical-container-text mentions-legales-text">
+        <h2 class="h3 black white-border">Accessibilité</h2>
+        <div class="small-spacing"></div>
+        <p>
+          Le site s’efforce de respecter les standards d’accessibilité numérique
+          (RGAA) afin de garantir un accès optimal à tous les utilisateurs, y
+          compris les personnes en situation de handicap.
+        </p>
+      </article>
+
+      <article class="text-basical-container-text mentions-legales-text">
+        <h2 class="h3 black white-border">
+          Droit applicable et juridiction compétente
+        </h2>
+        <div class="small-spacing"></div>
+        <p>
+          Tout litige en relation avec l’utilisation du site est soumis au droit
+          français.
+        </p>
+        <p>
+          En cas de litige, les tribunaux compétents de Bordeaux seront seuls
+          compétents.
+        </p>
+      </article>
+
+      <article class="text-basical-container-text mentions-legales-text">
+        <h2 class="h3 black white-border">Crédits</h2>
+        <div class="small-spacing"></div>
+        <p>
+          Conception & développement : <a href="https://loooper.fr"
+            >https://loooper.fr</a>
+        </p>
+        <p>
+          Images / Illustrations : <a href="https://loooper.fr"
+            >https://loooper.fr</a>
+        </p>
+        <p>Dernière mise à jour : 28/05/2026</p>
+      </article>
+    </section>
+  </div>
 </BaseLayout>

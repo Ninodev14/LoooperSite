@@ -2,7 +2,7 @@
 /**
  * pages/plan-du-site.astro
  */
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout
@@ -11,31 +11,62 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   ogUrl="https://loooper.fr/plan-du-site"
   noIndex={true}
 >
-  <section class="sitemap-page" style="padding: 4rem 2rem; max-width: 800px; margin: 0 auto;">
-    <h1>Plan du site</h1>
-
-    <nav aria-label="Plan du site">
-      <ul>
-        <li><a href="/">Accueil</a></li>
-        <li><a href="/formats">Nos formats</a></li>
+  <div class="medium-spacing"></div>
+  <section class="container-width">
+    <article>
+      <div class="small-spacing"></div>
+      <ul class="spacement-map">
         <li>
-          <a href="/besoins">Vos besoins</a>
-          <ul>
-            <li><a href="/apprendre-ludique">Apprendre avec le ludique</a></li>
-            <li><a href="/sensibiliser-reflechir">Sensibiliser et faire réfléchir</a></li>
-            <li><a href="/creer-interaction-sociale">Créer de l'interaction sociale</a></li>
-            <li><a href="/renforcer-cohesion">Renforcer la cohésion</a></li>
-            <li><a href="/engager-motiver">Engager et motiver</a></li>
-            <li><a href="/former-efficacement">Former efficacement</a></li>
-            <li><a href="/communiquer-autrement">Communiquer autrement</a></li>
-          </ul>
+          <a href="/" class="text-typo link-underline">Accueil</a>
         </li>
-        <li><a href="/projets">Nos projets</a></li>
-        <li><a href="/equipe">Notre équipe</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/mentions-legales">Mentions légales</a></li>
-        <li><a href="/plan-du-site">Plan du site</a></li>
+        <li>
+          <a href="/formats/" class="text-typo link-underline"
+            >Nos formats</a>
+        </li>
+        <li>
+          <a href="/besoins/" class="text-typo link-underline"
+            >Vos besoins</a>
+        </li>
+        <ul class="spacement-map-child">
+          <li>
+            <a href="/apprendre-ludique/" class="text-typo"
+              >Apprendre avec le ludique</a>
+          </li>
+          <li>
+            <a href="/sensibiliser-reflechir/" class="text-typo"
+              >Sensibiliser et faire réfléchir</a
+            >
+          </li>
+          <li>
+            <a href="/creer-interaction-sociale/" class="text-typo"
+              >Créer de l'interaction sociale</a>
+          </li>
+          <li>
+            <a href="/renforcer-cohesion/" class="text-typo"
+              >Renforcer la cohésion</a>
+          </li>
+          <li>
+            <a href="/engager-motiver/" class="text-typo"
+              >Engager et motiver</a>
+          </li>
+          <li>
+            <a href="/former-efficacement/" class="text-typo"
+              >Former efficacement</a>
+          </li>
+          <li>
+            <a href="/communiquer-autrement/" class="text-typo"
+              >Communiquer autrement</a>
+          </li>
+        </ul>
+        <li>
+          <a href="/equipe/" class="text-typo link-underline"
+            >Notre équipe</a>
+        </li>
+        <li>
+          <a href="/projets/" class="text-typo link-underline"
+            >Nos projets</a>
+        </li>
       </ul>
-    </nav>
+    </article>
   </section>
 </BaseLayout>

@@ -25,7 +25,7 @@ interface Props {
 const {
   title,
   description,
-  ogImage = "https://loooper.fr/src/img/ico/ACCUEIL.png",
+  ogImage = "https://loooper.fr/img/ico/ACCUEIL.png",
   ogUrl = "https://loooper.fr",
   ogType = "website",
   noIndex = false,
@@ -34,7 +34,7 @@ const {
 const fullTitle = title.includes("Loooper") ? title : `${title} – Loooper!`;
 ---
 
-<script src="/src/js/loooper-consent.js" defer></script>
+<script src="/js/loooper-consent.js" defer></script>
 <!-- SEO de base -->
 <title>{fullTitle}</title>
 <meta name="description" content={description} />

@@ -3,9 +3,6 @@
  * pages/besoins.astro — Vos besoins (hub)
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import BesoinCard from '../components/BesoinCard.astro';
-import ContactSection from '../components/ContactSection.astro';
-
 const besoins = [
   {
     href: '/apprendre-ludique',
@@ -82,31 +79,131 @@ const schemaOrg = [
 <BaseLayout
   title="Vos besoins"
   description="Découvrez comment Loooper! utilise la gamification pour répondre à vos besoins : renforcer la cohésion, créer de l'interaction sociale, motiver, former ou communiquer autrement."
-  ogImage="https://loooper.fr/src/img/ico/BESOINS.png"
+  ogImage="https://loooper.fr/img/ico/BESOINS.png"
   ogUrl="https://loooper.fr/besoins"
   currentPage="besoins"
   schemaJson={schemaOrg}
 >
-  <!--
-    Section hero / intro : copiez ici le contenu du haut de besoins.html
-  -->
-  <section class="besoins-hero">
-    <h1>Vos besoins</h1>
-    <p>Chaque projet est unique. Choisissez le besoin qui correspond à votre objectif :</p>
-  </section>
+<section class="mainPageTitle mainPageTitlePurple">
+            <h1 class="h1 container-width white-border black">Loooper!, des projets
+                qui répondent <span> </span>
+                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleBlue">à </span><span
+                        class="paterneTitleContour">à </span></div>
+                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleBlue">vos </span><span
+                        class="paterneTitleContour">vos </span></div>
+                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleBlue">besoins !</span><span
+                        class="paterneTitleContour">besoins !</span></div>
 
-  <!-- Grille des besoins (composant réutilisable) -->
-  <section class="besoins-grid">
-    {besoins.map((b) => (
-      <BesoinCard
-        href={b.href}
-        title={b.title}
-        desc={b.desc}
-        icon={b.icon}
-        color={b.color}
-      />
-    ))}
-  </section>
+            </h1>
+        </section>
+        <div class="container-width ariane-net h3"><a href="">Accueil </a>
+            <p class="h3">></p> <a href="/besoins/" class="end-chield highlight-no-annim blue black-border-small">Vos
+                besoins</a>
+        </div>
 
-  <ContactSection />
+        <div class="large-spacing"></div>
+
+
+        <section class="container-width text-basical-container">
+            <article class="text-basical-container-text-long">
+                <div>
+                    <h2 class="h2 black white-border">Une variété d’outils numériques et physiques adaptés pour vous
+                    </h2>
+                    <div class="small-medium-spacing"></div>
+                    <p>Chez <b>LOOOPER!</b>, chaque projet commence par <b class="highlight orange">vos besoins</b>.
+                        Nous co-construisons avec vous <b>une expérience sur mesure</b>, pensée pour <b
+                            class="highlight purple">vos objectifs et vos publics</b>. Chaque <a class="link-underline"
+                            href="/formats/">format</a> que nous proposons a ses forces afin de répondre à vos
+                        enjeux.
+                        Qu’il s’agisse de <b>formation, de sensibilisation, d’apprentissage ou de création de lien,</b>
+                        notre
+                        volonté est la même : transformer vos contenus en expériences ludiques, interactives et
+                        mémorables,<b class="highlight blue"> adaptées à votre contexte et à vos ressources</b>.
+                    </p>
+                </div>
+            </article>
+            <article class="text-basical-container-emojie">
+                <div class="emojie-img-line-container">
+                    <div class="emojie-img-line">
+                        <img src="/svg/controler.svg" alt="Image representant une manette">
+                        <img src="/svg/starType1.svg" alt="Image representant des étoile">
+                    </div>
+                    <div class="emojie-img-line">
+                        <img src="/svg/starType2.svg" alt="Image representant des étoile">
+                        <img src="/svg/cardAs.svg" alt="Image representant une Carte">
+                    </div>
+                </div>
+
+            </article>
+        </section>
+
+        <div class="large-spacing"></div>
+
+        <section class="zoom-container-center">
+            <div class="zoom-container backgroundBrushType2">
+                <div class="container-width">
+                    <div class="zoom-center-title">
+                        <h2 class="h2 black" style="z-index: 1;">Et vous, de quoi avez-vous besoin ?</h2>
+                        <div class="small-medium-spacing"></div>
+                        <nav class="mini-card-besoin-container">
+
+                            <article class="mini-card-info-besoin mini-card-info-besoin-orange apprendre">
+                                <h3 class="h3 black">Apprendre avec le ludique</h3>
+                                <a href="/apprendre-ludique/" class="text-typo btn-project btn-white-background">
+                                    <span>Voir la page</span>
+                                </a>
+                            </article>
+
+                            <article class="mini-card-info-besoin mini-card-info-besoin-purple sensibiliser">
+                                <h3 class="h3 black">Sensibiliser et faire réfléchir</h3>
+                                <a href="/sensibiliser-reflechir/"
+                                    class="text-typo btn-project btn-white-background">
+                                    <span>Voir la page</span>
+                                </a>
+                            </article>
+
+                            <article class="mini-card-info-besoin mini-card-info-besoin-blue cree">
+                                <h3 class="h3 black">Créer de l'interaction sociale</h3>
+                                <a href="/creer-interaction-sociale/"
+                                    class="text-typo btn-project btn-white-background">
+                                    <span>Voir la page</span>
+                                </a>
+                            </article>
+
+                            <article class="mini-card-info-besoin mini-card-info-besoin-orange former">
+                                <h3 class="h3 black">Former efficacement</h3>
+                                <a href="/former-efficacement/" class="text-typo btn-project btn-white-background">
+                                    <span>Voir la page</span>
+                                </a>
+                            </article>
+
+                            <article class="mini-card-info-besoin mini-card-info-besoin-purple renforcer">
+                                <h3 class="h3 black">Renforcer la cohésion</h3>
+                                <a href="/renforcer-cohesion/" class="text-typo btn-project btn-white-background">
+                                    <span>Voir la page</span>
+                                </a>
+                            </article>
+
+                            <article class="mini-card-info-besoin mini-card-info-besoin-blue engager">
+                                <h3 class="h3 black">Engager et motiver</h3>
+                                <a href="/engager-motiver/" class="text-typo btn-project btn-white-background">
+                                    <span>Voir la page</span>
+                                </a>
+                            </article>
+
+                            <article class="mini-card-info-besoin mini-card-info-besoin-orange communiquer">
+                                <h3 class="h3 black">Communiquer autrement</h3>
+                                <a href="/communiquer-autrement/" class="text-typo btn-project btn-white-background">
+                                    <span>Voir la page</span>
+                                </a>
+                            </article>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+   
+
+    <script src="/js/faq.js" defer></script>
 </BaseLayout>

@@ -118,15 +118,15 @@ header p {
 }
 
 .paterneTitleOrange {
-  background-image: url(/src/svg/orangePaternFull.svg);
+  background-image: url(/svg/orangePaternFull.svg);
 }
 
 .paterneTitleBlue {
-  background-image: url(/src/svg/bluePaternFull.svg);
+  background-image: url(/svg/bluePaternFull.svg);
 }
 
 .paterneTitlePurple {
-  background-image: url(/src/svg/purplePaternFull.svg);
+  background-image: url(/svg/purplePaternFull.svg);
 }
 
 .uderline {

@@ -3,7 +3,6 @@
  * pages/communiquer-autrement.astro — Communiquer autrement
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactSection from '../components/ContactSection.astro';
 ---
 
 <BaseLayout
@@ -12,12 +11,475 @@ import ContactSection from '../components/ContactSection.astro';
   ogUrl="https://loooper.fr/communiquer-autrement"
   currentPage="communiquer-autrement"
 >
-  <!--
-    Copiez ici le contenu de communiquer-autrement.html (hors <head>, <header> et <footer>).
-  -->
-  <p style="padding: 4rem 2rem; text-align: center; font-family: sans-serif;">
-    [Contenu "Communiquer autrement" — à compléter avec le HTML de communiquer-autrement.html]
-  </p>
 
-  <ContactSection />
+        <section class="mainPageTitle mainPageTitleBlue">
+            <h1 class="h1 container-width white-border black">Loooper! c’est
+                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleOrange">communiquer autrement
+                    </span><span class="paterneTitleContour">communiquer autrement</span></div>
+            </h1>
+        </section>
+        <div class="container-width ariane-net h3"><a href="/">Accueil </a>
+            <p class="h3">></p> <a href="/besoins/">Vos besoins</a>
+            <p class="h3">></p><a href="/communiquer-autrement/"
+                class="end-chield highlight-no-annim orange black-border-small">Communiquer autrement</a>
+        </div>
+
+        <div class="large-spacing"></div>
+
+
+        <section class="container-width text-basical-container">
+            <article class="text-basical-container-text-long">
+                <div>
+                    <h2 class="h2 black white-border">Développer une communication originale avec des expériences
+                        immersives ?
+                    </h2>
+                    <div class="small-medium-spacing"></div>
+                    <p>
+                        Chez <b>Loooper! <b>, nous pensons qu’une <b>communication efficace</b> doit être <b
+                                    class="highlight orange">vivante, ludique et mémorable</b>. Grâce à <b
+                                    class="highlight purple">l’interactivité et à la ludification</b>, vos messages
+                                deviennent <b class="highlight blue">de véritables expériences</b> qui captivent,
+                                <b>marquent les esprits</b> et créent <b>un attachement</b> à votre produit, service ou
+                                marque.
+                    </p>
+                </div>
+            </article>
+            <article class="text-basical-container-emojie">
+                <div class="emojie-img-line-container-besoin-child">
+                    <div class="emojie-img-line-besoin-child star">
+                        <img src="/svg/besoin/starPurpleType2.svg" alt="Image representant des étoile">
+                    </div>
+                    <img class="emojie-img-line-besoin-child" src="/svg/besoin/taking.svg"
+                        alt="Image representant des connection entre personne">
+                    <div class="emojie-img-line-besoin-child star2">
+                        <img src="/svg/besoin/starPurpleType1.svg" alt="Image representant des étoile">
+                    </div>
+                </div>
+
+            </article>
+        </section>
+
+        <div class="large-spacing"></div>
+
+        <div class="backgroundBrushType1">
+            <section class="container-width long-card-container">
+                <h2 class="h2 black white-border">Les formats qui permettent une communication interactive</h2>
+                <div class="small-medium-spacing"></div>
+                <div class="long-card-wrapper">
+                    <article class="long-card long-card-orange">
+                        <img src="/img/long-card/mini-jeu.jpg" alt="image representative un Mini-jeu">
+                        <div class="long-card-text-content">
+                            <div>
+                                <h3 class="h2 black white-border highlight-no-annim orange"
+                                    id="book-page-part-1-container-title">
+                                    Mini-jeu</h3>
+                            </div>
+                            <p class="black">
+                                Captez <b>l’attention</b>, divertissez et <b>dynamisez</b> un site internet, une
+                                application ou un support de communication.
+                            </p>
+                            <button data-modal="modal-mini-jeu" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur les Mini-jeu">
+                                <span>En savoir plus</span> </button>
+                        </div>
+                    </article>
+
+                    <article class="long-card long-card-purple">
+                        <img src="/img/long-card/cart-cartel.jpg" alt="image representative d'un Quiz">
+                        <div class="long-card-text-content">
+                            <div>
+                                <h3 class="h2 black white-border highlight-no-annim purple"
+                                    id="book-page-part-1-container-title">
+                                    Quiz</h3>
+                            </div>
+                            <p class="black">
+                                Découvrez un produit, un service ou une thématique en suscitant <b>la curiosité</b> et
+                                en créant de <b>l’interaction</b>.
+                            </p>
+                            <button data-modal="modal-quiz" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur le quiz">
+                                <span>En savoir plus</span> </button>
+                        </div>
+                    </article>
+
+                    <article class="long-card long-card-blue">
+                        <img src="/img/long-card/story.jpg" alt="image representative d'une Histoire interactive">
+                        <div class="long-card-text-content">
+                            <div>
+                                <h3 class="h2 black white-border highlight-no-annim blue"
+                                    id="book-page-part-1-container-title">
+                                    Histoire interactive</h3>
+                            </div>
+                            <p class="black">
+                                Entrez dans la peau d’un personnage, faites <b>des choix décisifs</b>, ressentez <b>ses
+                                    dilemmes</b> et développez <b>une connexion</b> avec un message.
+                            </p>
+                            <button data-modal="modal-histoire-interactive" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur les Histoire interactive">
+                                <span>En savoir plus</span> </button>
+                        </div>
+                    </article>
+                </div>
+                <div class="small-medium-spacing"></div>
+                <a href="/formats/" class="text-typo btn-project btn-white-background">
+                    <span>Découvrir nos autres formats</span>
+                </a>
+            </section>
+        </div>
+
+        <div class="large-spacing"></div>
+
+        <div class="zoom-container-center">
+            <div class="zoom-container background-interogation background-interogation-purple">
+                <section class="container-width">
+                    <h2 class="h2 black">Des questions sur la communication ludique ?
+                    </h2>
+                    <div class="small-medium-spacing"></div>
+                    <div class="wrapper-faq-container-info">
+                        <div class="wrapper-faq-container-info-row">
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-orange">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">Est-ce que le jeu fonctionne même avec des groupes qui ne se
+                                        connaissent pas ?
+                                    </h3>
+                                </div>
+                                <p class="black">
+                                    Oui. <b>La gamification</b> peut être utilisée aussi bien pour engager vos
+                                    collaborateurs en <b>interne</b> que pour vos clients en <b>externe</b>.
+                                </p>
+                            </article>
+
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-purple">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">
+                                        Peut-on utiliser la communication interactive dans tous les secteurs ?</h3>
+                                </div>
+                                <p class="black">
+                                    <b>Absolument.</b> Qu’il s’agisse d’éducation, de culture, de santé, d’événementiel
+                                    ou
+                                    de commerce, la communication ludique s’adapte à <b>tous les domaines.</b>
+                                </p>
+                            </article>
+                        </div>
+                        <div class="wrapper-faq-container-info-row">
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-blue">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">Quels sont les bénéfices d’une communication immersive par
+                                        rapport
+                                        à un support classique ?
+                                    </h3>
+                                </div>
+                                <p class="black">
+                                    Une expérience interactive<b> attire davantage l’attention</b>, reste plus longtemps
+                                    en
+                                    <b>mémoire</b> et crée <b>une émotion positive</b>. Là où un support classique peut
+                                    vite
+                                    être oublié, une communication ludique <b>se vit et se partage</b>.
+                                </p>
+                            </article>
+
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-orange">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">
+                                        Une expérience ludique peut-elle s’intégrer dans une stratégie digitale ?</h3>
+                                </div>
+                                <p class="black">
+                                    Oui. Qu’il s’agisse d’un mini-jeu sur votre site, d’un quiz en ligne ou d’une
+                                    histoire
+                                    interactive intégrée à une campagne digitale, nos solutions <b>renforcent</b> vos
+                                    dispositifs numériques et <b>augmentent</b> l’engagement utilisateur.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="modal-mini-jeu" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-mini-jeu-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Mini-jeu</span><span
+                            class="paterneTitleContour">Mini-jeu</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div>
+                <div class="modal-container modal-orange">
+
+                    <h3 id="modal-mini-jeu-interactive" class="h2 black sub-title-modal">Transformez une visite en <span
+                            class="highlight-no-annim orange white-border">aventure !</span></h3>
+                    <div class="modal-container-content">
+                        <div class="modal-container-text">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/interogation.svg"
+                                        alt="Image représentant un point d'interogation">
+                                    <h4 class="h3 black">C’est quoi ?</h4>
+                                </div>
+                                <p class="black">Un mini-jeu, c’est est <b>une expérience ludique</b> intégrée à votre
+                                    <b>site
+                                        web</b>.
+                                    <b>Rapide
+                                        et simple</b>, il transforme la navigation en moment <b>interactif et
+                                        mémorable</b>.
+                                </p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/target.svg"
+                                        alt="Image représentant une cible">
+                                    <h4 class="h3 black">Pourquoi ?</h4>
+                                </div>
+                                <p class="black">Avec un mini-jeu, votre site passe de fonctionnel à <b>captivant</b>.
+                                    Il
+                                    attire
+                                    <b>l’attention</b>, <b>fidélise</b> vos visiteurs et crée un <b>lien</b> immédiat
+                                    avec votre <b>univers</b>.
+                                </p>
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="modal-container-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <h4 class="h3 black">Support</h4>
+                                </div>
+                                <p class="black"><b>Numérique</b>, intégré à un site web</p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/temps.svg"
+                                        alt="Image représentant une horlange">
+                                    <h4 class="h3 black">Durée</h4>
+                                </div>
+                                <p class="black"><b>5</b> à <b>20 minutes</b></p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne">
+                                    <h4 class="h3 black">Nombre de participants</h4>
+                                </div>
+                                <p class="black">Jeu <b>individuel</b> ou <b>multijoueur</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aligne-btn-center">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background"
+                            data-format="mini_jeu">
+                            <span>Je crée mon mini-jeu web</span>
+                            <div class="arrow-container black-arrow">
+                                <img src="/svg/arrowB.svg" alt="fleche">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-histoire-interactive" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-histoire-interactive-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Histoire interactive</span><span
+                            class="paterneTitleContour">Histoire interactive</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div>
+                <div class="modal-container modal-blue">
+                    <h3 id="modal-histoire-interactive" class="h2 black sub-title-modal">Quel <span
+                            class="highlight-no-annim blue white-border">chemin</span> prendrez-vous ?</h3>
+                    <div class="modal-container-content">
+                        <div class="modal-container-text">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/interogation.svg"
+                                        alt="Image représentant un point d'interogation">
+                                    <h4 class="h3 black">C’est quoi ?</h4>
+                                </div>
+                                <p class="black">Une histoire interactive, c’est <b>un récit narratif</b> où le lecteur
+                                    devient
+                                    acteur.
+                                    Chaque décision qu’il prend <b>impacte</b> le déroulement, rendant chaque lecture
+                                    <b>unique</b>.
+                                </p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/target.svg"
+                                        alt="Image représentant une cible">
+                                    <h4 class="h3 black">Pourquoi ?</h4>
+                                </div>
+                                <p class="black">À travers ses choix, le joueur développe <b>un attachement</b> au récit
+                                    et à
+                                    ses
+                                    personnages. L’impact de ses actions lui permet de <b>s’identifier</b>,
+                                    transformant
+                                    l’expérience en moment <b>émotionnel</b> et <b>mémorable</b>.</p>
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="modal-container-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <h4 class="h3 black">Support</h4>
+                                </div>
+                                <p class="black"><b>Numérique</b></p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/temps.svg"
+                                        alt="Image représentant une horlange">
+                                    <h4 class="h3 black">Durée</h4>
+                                </div>
+                                <p class="black"><b>20 minutes</b> à <b>1 heure</b></p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne">
+                                    <h4 class="h3 black">Nombre de participants</h4>
+                                </div>
+                                <p class="black"><b>Individuel</b></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aligne-btn-center">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background"
+                            data-format="histoire_interactive">
+                            <span> <span>J'écris mon histoire</span></span>
+                            <div class="arrow-container black-arrow">
+                                <img src="/svg/arrowB.svg" alt="fleche">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-quiz" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-quiz-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Quiz</span><span class="paterneTitleContour">Quiz</span>
+                    </div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+
+            <div>
+                <div class="modal-container modal-purple">
+                    <h3 id="modal-quiz" class="h2 black sub-title-modal">Qui remportera <span
+                            class="highlight-no-annim purple white-border">la manche ?</span></h3>
+                    <div class="modal-container-content">
+                        <div class="modal-container-text">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/interogation.svg"
+                                        alt="Image représentant un point d'interogation">
+                                    <h4 class="h3 black">C’est quoi ?</h4>
+                                </div>
+                                <p class="black">Le quiz, c’est LE jeu universel pour tester <b>ses connaissances en
+                                        s’amusant</b>.
+                                    Défiez-vous autour d’une série <b>de questions personnalisées</b> sur le sujet de
+                                    votre
+                                    choix.
+                                    <b>Scores, défis, classements…</b> les mécaniques s’adaptent pour <b>captiver</b> et
+                                    <b>faire vibrer</b>
+                                    votre
+                                    public.
+                                </p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/target.svg"
+                                        alt="Image représentant une cible">
+                                    <h4 class="h3 black">Pourquoi ?</h4>
+                                </div>
+                                <p class="black">Plus qu’un simple jeu, le quiz est <b>une activité fédératrice</b> : il
+                                    renforce
+                                    <b>la
+                                        complicité</b> des participants, encourage <b>la réflexion</b> et permet
+                                    <b>d’apprendre
+                                        différemment</b>.
+                                    Un
+                                    outil parfait pour <b>créer du lien</b>, <b>transmettre</b> vos messages et
+                                    valoriser <b>vos
+                                        contenus.</b>
+                                </p>
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="modal-container-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <h4 class="h3 black">Support</h4>
+                                </div>
+                                <p class="black"><b>Numérique</b> ou <b>hybride</b> avec participants en présentiel</p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/temps.svg"
+                                        alt="Image représentant une horlange">
+                                    <h4 class="h3 black">Durée</h4>
+                                </div>
+                                <p class="black"><b>10 à 30 minutes</b></p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne">
+                                    <h4 class="h3 black">Nombre de participants</h4>
+                                </div>
+                                <p class="black"><b>Illimité</b> en digital, <b>2 à 50</b> en présentiel.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aligne-btn-center">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background" data-format="quiz">
+                            <span>Je lance mon quiz</span>
+                            <div class="arrow-container black-arrow">
+                                <img src="/svg/arrowB.svg" alt="fleche">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+
+    <script src="/js/modal.js" defer></script>
+    <script src="/js/faq.js" defer></script>
+
 </BaseLayout>

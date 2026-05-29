@@ -3,21 +3,490 @@
  * pages/apprendre-ludique.astro — Apprendre avec le ludique
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import ContactSection from '../components/ContactSection.astro';
 ---
 
 <BaseLayout
   title="Apprendre avec le ludique"
-  description="Rendez la formation engageante et mémorable grâce au jeu. Découvrez comment Loooper! gamifie vos contenus pédagogiques."
+  description="Découvrez comment apprendre autrement grâce à la pédagogie ludique : comprendre en s'amusant et retenir durablement."
   ogUrl="https://loooper.fr/apprendre-ludique"
   currentPage="apprendre-ludique"
->
-  <!--
-    Copiez ici le contenu de apprendre-ludique.html (hors <head>, <header> et <footer>).
-  -->
-  <p style="padding: 4rem 2rem; text-align: center; font-family: sans-serif;">
-    [Contenu "Apprendre avec le ludique" — à compléter avec le HTML de apprendre-ludique.html]
-  </p>
+><section class="mainPageTitle mainPageTitleBlue">
+            <h1 class="h1 container-width white-border black">Loooper! c’est apprendre avec <span> </span>
+                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleOrange">le </span><span
+                        class="paterneTitleContour">le </span></div>
+                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleOrange">ludique </span><span
+                        class="paterneTitleContour">ludique </span></div>
+                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleOrange">et</span><span
+                        class="paterneTitleContour">et</span></div>
+                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleOrange">l’interactif
+                        !</span><span class="paterneTitleContour">l’interactif !</span></div>
+            </h1>
+        </section>
+        <div class="container-width ariane-net h3"><a href="/">Accueil </a>
+            <p class="h3">></p> <a href="/besoins/">Vos besoins</a>
+            <p class="h3">></p> <a href="/apprendre-ludique/"
+                class="end-chield highlight-no-annim orange black-border-small"> Apprendre avec le ludique </a>
+        </div>
 
-  <ContactSection />
+        <div class="large-spacing"></div>
+
+
+        <section class="container-width text-basical-container">
+            <article class="text-basical-container-text-long">
+                <div>
+                    <h2 class="h2 black white-border">Apprendre en s’amusant ?
+                    </h2>
+                    <div class="small-medium-spacing"></div>
+
+                    <p>
+                        Chez <b>Loooper!</b>, nous sommes persuadés d'une chose : <b
+                            class="highlight orange">l'apprentissage peut (et doit) être amusant</b>. Grâce à la
+                        <b>gamification</b>, nous transformons des contenus parfois complexes en expériences <b
+                            class="highlight purple">vivantes, engageantes et mémorables</b>. Avec une approche <b
+                            class="highlight blue">ludique et interactive</b>, chacun <b>s'implique activement</b> dans
+                        son processus d'apprentissage. Résultat : on développe sa <b>curiosité</b>, on retient mieux les
+                        notions difficiles et surtout… on prend <b>plaisir à apprendre</b>.
+                    </p>
+                </div>
+            </article>
+            <article class="text-basical-container-emojie">
+                <div class="emojie-img-line-container-besoin-child">
+                    <div class="emojie-img-line-besoin-child star">
+                        <img src="/svg/besoin/starPurpleType2.svg" alt="Image representant des étoiles">
+                    </div>
+                    <img class="emojie-img-line-besoin-child" src="/svg/besoin/idea.svg"
+                        alt="Image representant une empoule">
+                    <div class="emojie-img-line-besoin-child star2">
+                        <img src="/svg/besoin/starPurpleType1.svg" alt="Image representant des étoiles">
+                    </div>
+                </div>
+
+            </article>
+        </section>
+
+        <div class="large-spacing"></div>
+
+        <div class="backgroundBrushType1">
+            <section class="container-width long-card-container">
+                <h2 class="h2 black white-border">Les formats qui apportent une pédagogie ludique</h2>
+                <div class="small-medium-spacing"></div>
+                <div class="long-card-wrapper">
+                    <article class="long-card long-card-orange">
+                        <img src="/img/long-card/cart-cartel.jpg" alt="image representative d'un quiz">
+                        <div class="long-card-text-content">
+                            <div>
+                                <h3 class="h2 black white-border highlight-no-annim orange"
+                                    id="book-page-part-1-container-title">
+                                    Quiz</h3>
+                            </div>
+                            <p class="black">Testez vos <b>connaissances</b>, enrichissez-les avec de <b>nouveaux
+                                    savoirs</b> et stimulez la <b>compétition bienveillante</b> entre participants.</p>
+                            <button data-modal="modal-quiz" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur le quiz">
+                                <span>En savoir plus</span> </button>
+                        </div>
+                    </article>
+
+                    <article class="long-card long-card-purple">
+                        <img src="/img/long-card/geocaching.jpg" alt="image representative du Geocaching">
+                        <div class="long-card-text-content">
+                            <div>
+                                <h3 class="h2 black white-border highlight-no-annim purple"
+                                    id="book-page-part-1-container-title">
+                                    Géocaching</h3>
+                            </div>
+                            <p class="black">Partez à la <b>découverte d’un lieu</b>, résolvez des <b>énigmes</b> sur le
+                                terrain et plongez dans un univers <b>d’apprentissage</b>.
+
+                            </p>
+                            <button data-modal="modal-geocaching" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur le Géocaching">
+                                <span>En savoir plus</span> </button>
+
+                    </article>
+
+                    <article class="long-card long-card-blue">
+                        <img src="/img/long-card/biker.jpg" alt="image representative d'une jeu de société">
+                        <div class="long-card-text-content">
+                            <div>
+                                <h3 class="h2 black white-border highlight-no-annim blue"
+                                    id="book-page-part-1-container-title">
+                                    Jeu de société</h3>
+                            </div>
+                            <p class="black">Utilisez des <b>mécaniques ludiques</b> pour comprendre des contenus,
+                                favorisez la <b>réflexion</b>, et engagez la discussion sur ce qui est appris.</p>
+                            <button data-modal="modal-jeu-societe" aria-haspopup="dialog"
+                                class="text-typo btn-project btn-modal btn-white-background"
+                                aria-label="En savoir plus sur les Jeu de société">
+                                <span>En savoir plus</span> </button>
+                        </div>
+                    </article>
+                </div>
+                <div class="small-medium-spacing"></div>
+                <a href="/formats/" class="text-typo btn-project btn-white-background">
+                    <span>Découvrir nos autres formats</span>
+                </a>
+            </section>
+        </div>
+
+        <div class="large-spacing"></div>
+
+        <div class="zoom-container-center">
+            <div class="zoom-container background-interogation background-interogation-purple">
+                <section class="container-width">
+                    <h2 class="h2 black">Des questions sur l'apprentissage par le jeu ?
+                    </h2>
+                    <div class="small-medium-spacing"></div>
+                    <div class="wrapper-faq-container-info">
+                        <div class="wrapper-faq-container-info-row">
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-orange">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">À qui s’adresse l’apprentissage par le jeu ?</h3>
+                                </div>
+                                <p class="black">
+                                    <b>À tout le monde !</b> Enfants, étudiants, enseignants, entreprises, associations…
+                                    Nos
+                                    expériences interactives sont conçues pour convenir à <b>tous les types de
+                                        public et à toutes les situations.</b>
+                                </p>
+                            </article>
+
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-purple">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">
+                                        Les expériences sont-elles forcément numériques ?</h3>
+                                </div>
+                                <p class="black">
+                                    Pas du tout. Nous créons aussi bien des expériences <b>digitales que réelles</b> :
+                                    <a class="link-underline-black" href="/formats/">jeux de société, quiz en direct,
+                                        géocaching…</a> L’important est de choisir le format qui correspond le mieux à
+                                    <b>vos ressources et à vos publics</b>.
+                                </p>
+                            </article>
+                        </div>
+                        <div class="wrapper-faq-container-info-row">
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-blue">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">
+                                        Peut-on adapter un jeu pédagogique
+                                        à un domaine spécifique ?</h3>
+                                </div>
+                                <p class="black">
+                                    Absolument. Chez <b>Loooper!</b>, chaque projet est conçu <b>sur mesure</b> pour
+                                    répondre à <a class="link-underline-black" href="/besoins/">vos
+                                        besoins et à vos objectifs</a>.
+                                </p>
+                            </article>
+
+                            <article class="faq-container-info">
+                                <div class="faq-header">
+                                    <div>
+                                        <div class="faq-arrow faq-arrow-orange">
+                                            <div class="faq-arrow-1"></div>
+                                            <div class="faq-arrow-2"></div>
+                                        </div>
+                                    </div>
+                                    <h3 class="h3 black">Peut-on organiser un serious game
+                                        pour un grand groupe ?</h3>
+                                </div>
+                                <p class="black">
+                                    Oui ! Les formats de pédagogie ludique s'adaptent aussi bien à <b>de petits
+                                        groupes</b>
+                                    qu'à <b>des événements de grande ampleur</b>. Cela peut prendre la forme de <a
+                                        class="link-underline-black" href="/formats/">quiz collectifs, d'ateliers
+                                        interactifs ou d'expériences immersives en plein air</a>, <b>tout</b> est
+                                    possible.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+
+
+        <div id="modal-jeu-societe" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-jeu-societe-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Jeu de société</span><span class="paterneTitleContour">Jeu
+                            de société</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div>
+                <div class="modal-container modal-blue">
+
+                    <h3 id="modal-jeu-societe" class="h2 black sub-title-modal">À vous de <span
+                            class="highlight-no-annim blue white-border">jouer!</span></h3>
+                    <div class="modal-container-content">
+                        <div class="modal-container-text">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/interogation.svg"
+                                        alt="Image représentant un point d'interogation">
+                                    <h4 class="h3 black">C’est quoi ?</h4>
+                                </div>
+                                <p class="black">Un jeu de société, c’est un format physique avec <b>des cartes, plateau
+                                        ou
+                                        pions</b>,
+                                    pensé pour créer un moment <b>convivial</b> et <b>engageant</b> autour d’une table.
+                                </p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/target.svg"
+                                        alt="Image représentant une cible">
+                                    <h4 class="h3 black">Pourquoi ?</h4>
+                                </div>
+                                <p class="black">Ce format capte <b>l’attention</b>, stimule <b>les échanges</b> et
+                                    permet d’aborder
+                                    un
+                                    sujet
+                                    de manière <b>ludique</b>. Parfait pour <b>apprendre, sensibiliser ou renforcer la
+                                        cohésion</b>
+                                    dans
+                                    un
+                                    cadre accessible et amusant.</p>
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="modal-container-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <h4 class="h3 black">Support</h4>
+                                </div>
+                                <p class="black">Physique</p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/temps.svg"
+                                        alt="Image représentant une horlange">
+                                    <h4 class="h3 black">Durée</h4>
+                                </div>
+                                <p class="black"><b>15 minutes</b> à <b>1 heure</b></p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne">
+                                    <h4 class="h3 black">Nombre de participants</h4>
+                                </div>
+                                <p class="black"><b>2 à 8</b> personnes par jeu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aligne-btn-center">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background"
+                            data-format="jeu_societe">
+                            <span>Je crée mon jeu de société</span>
+                            <div class="arrow-container black-arrow">
+                                <img src="/svg/arrowB.svg" alt="fleche">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-geocaching" class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-geocaching-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Géocaching</span><span
+                            class="paterneTitleContour">Géocaching</span></div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+            <div>
+                <div class="modal-container modal-purple">
+
+                    <h3 id="modal-geocaching" class="h2 black sub-title-modal">Où se cache <span
+                            class="highlight-no-annim puremodal-purple white-border"> le trésor ?</span></h3>
+                    <div class="modal-container-content">
+                        <div class="modal-container-text">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/interogation.svg"
+                                        alt="Image représentant un point d'interogation">
+                                    <h4 class="h3 black">C’est quoi ?</h4>
+                                </div>
+                                <p class="black">Le géocaching, c’est <b>une chasse au trésor</b> interactive où les
+                                    participants
+                                    suivent <b>des indices ou coordonnées GPS</b> pour retrouver des objets, des lieux
+                                    ou des
+                                    informations cachées.</p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/target.svg"
+                                        alt="Image représentant une cible">
+                                    <h4 class="h3 black">Pourquoi ?</h4>
+                                </div>
+                                <p class="black">Ce format invite les joueurs à explorer <b>un espace réel</b> et à en
+                                    <b>apprendre</b>
+                                    davantage sur un lieu, une histoire ou un patrimoine, tout en vivant une aventure.
+                                </p>
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="modal-container-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <h4 class="h3 black">Support</h4>
+                                </div>
+                                <p class="black"><b>Hybride</b> (application mobile + exploration réelle)</p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/temps.svg"
+                                        alt="Image représentant une horlange">
+                                    <h4 class="h3 black">Durée</h4>
+                                </div>
+                                <p class="black"><b>30 minutes</b> à <b>2 heures</b></p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne">
+                                    <h4 class="h3 black">Nombre de participants</h4>
+                                </div>
+                                <p class="black"><b>Un seul téléphone</b> suffit, activité réalisable <b>seul</b> ou en
+                                    <b>groupe</b>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aligne-btn-center">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background"
+                            data-format="geocaching">
+                            <span>Je lance mon géocaching</span>
+                            <div class="arrow-container black-arrow">
+                                <img src="/svg/arrowB.svg" alt="fleche">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-quiz" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-quiz-title">
+            <div class="modal-header">
+                <div class="modal-header-null-object"></div>
+                <h2 class="h1 black header-modal-tilte">
+                    <div class="paterneTitleContainer"><span>Quiz</span><span class="paterneTitleContour">Quiz</span>
+                    </div>
+                </h2><button class="btn-close" aria-label="Fermer">
+                    <div class="close-line"></div>
+                    <div class="close-line"></div>
+                </button>
+            </div>
+
+
+            <div>
+                <div class="modal-container modal-orange">
+                    <h3 id="modal-quiz" class="h2 black sub-title-modal">Qui remportera <span
+                            class="highlight-no-annim orange white-border">la manche ?</span></h3>
+                    <div class="modal-container-content">
+                        <div class="modal-container-text">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/interogation.svg"
+                                        alt="Image représentant un point d'interogation">
+                                    <h4 class="h3 black">C’est quoi ?</h4>
+                                </div>
+                                <p class="black">Le quiz, c’est LE jeu universel pour tester <b>ses connaissances en
+                                        s’amusant</b>.
+                                    Défiez-vous autour d’une série <b>de questions personnalisées</b> sur le sujet de
+                                    votre
+                                    choix.
+                                    <b>Scores, défis, classements…</b> les mécaniques s’adaptent pour <b>captiver</b> et
+                                    <b>faire vibrer</b>
+                                    votre
+                                    public.
+                                </p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/target.svg"
+                                        alt="Image représentant une cible">
+                                    <h4 class="h3 black">Pourquoi ?</h4>
+                                </div>
+                                <p class="black">Plus qu’un simple jeu, le quiz est <b>une activité fédératrice</b> : il
+                                    renforce
+                                    <b>la
+                                        complicité</b> des participants, encourage <b>la réflexion</b> et permet
+                                    <b>d’apprendre
+                                        différemment</b>.
+                                    Un
+                                    outil parfait pour <b>créer du lien</b>, <b>transmettre</b> vos messages et
+                                    valoriser <b>vos
+                                        contenus.</b>
+                                </p>
+                            </div>
+                            <div></div>
+                        </div>
+                        <div class="modal-container-info">
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/rouage.svg"
+                                        alt="Image représentant un rouage">
+                                    <h4 class="h3 black">Support</h4>
+                                </div>
+                                <p class="black"><b>Numérique</b> ou <b>hybride</b> avec participants en présentiel</p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/temps.svg"
+                                        alt="Image représentant une horlange">
+                                    <h4 class="h3 black">Durée</h4>
+                                </div>
+                                <p class="black"><b>10 à 30 minutes</b></p>
+                            </div>
+                            <div class="modal-container-text-paragraph">
+                                <div class="text-paragraph-emojie"><img src="/svg/modalEmojie/guy.svg"
+                                        alt="Image représentant une personne">
+                                    <h4 class="h3 black">Nombre de participants</h4>
+                                </div>
+                                <p class="black"><b>Illimité</b> en digital, <b>2 à 50</b> en présentiel.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aligne-btn-center">
+                        <a href="#contactForm" class="text-typo  btn-project btn-white-background" data-format="quiz">
+                            <span>Je lance mon quiz</span>
+                            <div class="arrow-container black-arrow">
+                                <img src="/svg/arrowB.svg" alt="fleche">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+   
+
+    <script src="/js/modal.js" defer></script>
+    <script src="/js/faq.js" defer></script>
+
+
 </BaseLayout>
