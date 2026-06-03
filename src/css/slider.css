@@ -164,7 +164,7 @@ p.lead {
 
 @media (min-width: 640px) {
     .swiper {
-        padding-bottom: 0px;
+        padding-bottom: 10px;
     }
 }
 

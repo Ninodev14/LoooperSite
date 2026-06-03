@@ -1952,8 +1952,9 @@ input[type="checkbox"]::after {
 
 
 .long-card img {
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: 30%;
+    min-width: 254px;
 }
 
 .long-card a img {
@@ -2005,6 +2006,12 @@ input[type="checkbox"]::after {
     .long-card-text-content p {
         width: 100%;
     }
+
+    .long-card img {
+    height: 100%;
+    width: 100%;
+    min-width: 0;
+}
 }
 
 /* Mini Card */
