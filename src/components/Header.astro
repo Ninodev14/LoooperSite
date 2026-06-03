@@ -62,26 +62,55 @@ const activeClass = "highlight purple black white-border-small";
             </div>
           </div>
           <div class="dropdown-menu">
-            <a class="header-typo-pc" href="/apprendre-ludique/"
-              >Apprendre avec le ludique</a
+            <a
+              class:list={[
+                "header-typo-pc",
+                currentPath === "/apprendre-ludique/" && "uderline",
+              ]}
+              href="/apprendre-ludique/">Apprendre avec le ludique</a
             >
-            <a class="header-typo-pc" href="/sensibiliser-reflechir/"
-              >Sensibiliser et faire réfléchir</a
+            <a
+              class:list={[
+                "header-typo-pc",
+                currentPath === "/sensibiliser-reflechir/" && "uderline",
+              ]}
+              href="/sensibiliser-reflechir/">Sensibiliser et faire réfléchir</a
             >
-            <a class="header-typo-pc" href="/creer-interaction-sociale/"
+            <a
+              class:list={[
+                "header-typo-pc",
+                currentPath === "/creer-interaction-sociale/" && "uderline",
+              ]}
+              href="/creer-interaction-sociale/"
               >Créer de l'interaction sociale</a
             >
-            <a class="header-typo-pc" href="/renforcer-cohesion/"
-              >Renforcer la cohésion</a
+            <a
+              class:list={[
+                "header-typo-pc",
+                currentPath === "/renforcer-cohesion/" && "uderline",
+              ]}
+              href="/renforcer-cohesion/">Renforcer la cohésion</a
             >
-            <a class="header-typo-pc" href="/engager-motiver/"
-              >Engager et motiver</a
+            <a
+              class:list={[
+                "header-typo-pc",
+                currentPath === "/engager-motiver/" && "uderline",
+              ]}
+              href="/engager-motiver/">Engager et motiver</a
             >
-            <a class="header-typo-pc" href="/former-efficacement/"
-              >Former efficacement</a
+            <a
+              class:list={[
+                "header-typo-pc",
+                currentPath === "/former-efficacement/" && "uderline",
+              ]}
+              href="/former-efficacement/">Former efficacement</a
             >
-            <a class="header-typo-pc" href="/communiquer-autrement/"
-              >Communiquer autrement</a
+            <a
+              class:list={[
+                "header-typo-pc",
+                currentPath === "/communiquer-autrement/" && "uderline",
+              ]}
+              href="/communiquer-autrement/">Communiquer autrement</a
             >
           </div>
         </div>
@@ -413,17 +442,55 @@ const activeClass = "highlight purple black white-border-small";
           <button id="btn-back">
             <img src="/svg/arrowW.svg" alt="fleche" />
           </button>
-          <a class="h3" href="/apprendre-ludique/">Apprendre avec le ludique</a>
-          <a class="h3" href="/sensibiliser-reflechir/"
-            >Sensibiliser et faire réfléchir</a
+          <a
+            class:list={[
+              "h3",
+              currentPath === "/apprendre-ludique/" && "uderline",
+            ]}
+            href="/apprendre-ludique/">Apprendre avec le ludique</a
           >
-          <a class="h3" href="/creer-interaction-sociale/"
-            >Créer de l'interaction sociale</a
+          <a
+            class:list={[
+              "h3",
+              currentPath === "/sensibiliser-reflechir/" && "uderline",
+            ]}
+            href="/sensibiliser-reflechir/">Sensibiliser et faire réfléchir</a
           >
-          <a class="h3" href="/renforcer-cohesion/">Renforcer la cohésion</a>
-          <a class="h3" href="/engager-motiver/">Engager et motiver</a>
-          <a class="h3" href="/former-efficacement/">Former efficacement</a>
-          <a class="h3" href="/communiquer-autrement/">Communiquer autrement</a>
+          <a
+            class:list={[
+              "h3",
+              currentPath === "/creer-interaction-sociale/" && "uderline",
+            ]}
+            href="/creer-interaction-sociale/">Créer de l'interaction sociale</a
+          >
+          <a
+            class:list={[
+              "h3",
+              currentPath === "/renforcer-cohesion/" && "uderline",
+            ]}
+            href="/renforcer-cohesion/">Renforcer la cohésion</a
+          >
+          <a
+            class:list={[
+              "h3",
+              currentPath === "/engager-motiver/" && "uderline",
+            ]}
+            href="/engager-motiver/">Engager et motiver</a
+          >
+          <a
+            class:list={[
+              "h3",
+              currentPath === "/former-efficacement/" && "uderline",
+            ]}
+            href="/former-efficacement/">Former efficacement</a
+          >
+          <a
+            class:list={[
+              "h3",
+              currentPath === "/communiquer-autrement/" && "uderline",
+            ]}
+            href="/communiquer-autrement/">Communiquer autrement</a
+          >
           <div class="null-object"></div>
           <div class="null-object"></div>
         </div>
