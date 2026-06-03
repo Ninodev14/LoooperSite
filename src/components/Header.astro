@@ -18,7 +18,9 @@ const isBesoins = besoinsPaths.includes(currentPath);
 const isEquipe = currentPath === "/equipe/";
 const isProjets = currentPath === "/projets/";
 
-const activeClass = "highlight purple black white-border-small";
+const activeClassOrange = "highlight orange black white-border-small";
+const activeClassPurple = "highlight purple black white-border-small";
+const activeClassBlue = "highlight blue black white-border-small";
 ---
 
 <header>
@@ -29,7 +31,7 @@ const activeClass = "highlight purple black white-border-small";
           href="/"
           class:list={[
             "header-typo-pc link-underline-fill",
-            isHome && activeClass,
+            isHome && activeClassPurple,
           ]}
         >
           Accueil
@@ -39,7 +41,7 @@ const activeClass = "highlight purple black white-border-small";
           href="/formats/"
           class:list={[
             "header-typo-pc link-underline-fill",
-            isFormats && activeClass,
+            isFormats && activeClassBlue,
           ]}
         >
           Nos formats
@@ -51,7 +53,7 @@ const activeClass = "highlight purple black white-border-small";
               href="/besoins/"
               class:list={[
                 "header-typo-pc link-underline-fill",
-                isBesoins && activeClass,
+                isBesoins && activeClassOrange,
               ]}
             >
               Vos besoins
@@ -309,7 +311,7 @@ const activeClass = "highlight purple black white-border-small";
           href="/equipe/"
           class:list={[
             "header-typo-pc link-underline-fill",
-            isEquipe && activeClass,
+            isEquipe && activeClassPurple,
           ]}
         >
           Notre équipe
@@ -318,7 +320,7 @@ const activeClass = "highlight purple black white-border-small";
           href="/projets/"
           class:list={[
             "header-typo-pc link-underline-fill",
-            isProjets && activeClass,
+            isProjets && activeClassBlue,
           ]}
         >
           Nos projets
@@ -371,7 +373,7 @@ const activeClass = "highlight purple black white-border-small";
           href="/formats/"
           class:list={[
             "h3",
-            isFormats && "highlight purple black white-border-small",
+            isFormats && "highlight blue black white-border-small",
           ]}
         >
           <img
@@ -386,7 +388,7 @@ const activeClass = "highlight purple black white-border-small";
             href="/besoins/"
             class:list={[
               "h3",
-              isBesoins && "highlight purple black white-border-small",
+              isBesoins && "highlight orange black white-border-small",
             ]}
           >
             <img
@@ -418,7 +420,7 @@ const activeClass = "highlight purple black white-border-small";
           href="/projets/"
           class:list={[
             "h3",
-            isProjets && "highlight purple black white-border-small",
+            isProjets && "highlight blue black white-border-small",
           ]}
         >
           <img
