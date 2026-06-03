@@ -83,7 +83,6 @@ function onMouseEnter(e) {
   document.addEventListener('mouseleave', onMouseLeave);
   document.addEventListener('mouseenter', onMouseEnter);
 
-  // ASTUCE : Récupérer la position initiale si la souris est déjà sur l'écran
   const bootstrapPosition = (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
