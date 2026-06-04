@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const allModals = document.querySelectorAll('.modal');
 
-    // --- 1. FONCTIONS DE CŒUR ---
-
     const COLOR_CLASSES = ['blue', 'purple', 'orange'];
 
     function openModal(modalId, triggerElement = null) {
@@ -18,28 +16,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (triggerElement) {
                 modal.dataset.triggerId = triggerElement.id || "";
 
-                // Cherche la couleur sur l'article parent du bouton
-                const colorSource = triggerElement.closest('[class*="-blue"], [class*="-purple"], [class*="-orange"]');
+                const colorSource =
+                    triggerElement.closest('[class*="-blue"], [class*="-purple"], [class*="-orange"]') ||
+                    triggerElement.closest('article, .swiper-slide')?.querySelector('.highlight-no-annim');
 
-                // Cible le container de la modal (là où la couleur est appliquée)
                 const modalContainer = modal.querySelector('.modal-container');
+                const highlights = modal.querySelectorAll('.highlight-no-annim');
 
                 if (modalContainer) {
                     COLOR_CLASSES.forEach(c => {
                         modalContainer.classList.remove(`modal-${c}`);
                     });
 
-                    // Cible aussi les highlights dans la modal
-                    const highlights = modal.querySelectorAll('.highlight-no-annim');
-
                     if (colorSource) {
                         const colorClass = COLOR_CLASSES.find(c =>
-                            [...colorSource.classList].some(cls => cls.includes(`-${c}`))
+                            [...colorSource.classList].some(cls => cls.includes(`-${c}`) || cls === c)
                         );
                         if (colorClass) {
                             modalContainer.classList.add(`modal-${colorClass}`);
 
-                            // Nettoie et applique la couleur sur chaque highlight
                             highlights.forEach(h => {
                                 COLOR_CLASSES.forEach(c => h.classList.remove(c));
                                 h.classList.add(colorClass);
@@ -60,21 +55,17 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.remove('active');
         modal.setAttribute('aria-hidden', 'true');
 
-        // Nettoyage URL si nécessaire
         if (clearHash && window.location.hash === `#${modal.id}`) {
             history.replaceState(null, null, ' ');
         }
 
-        // Retour du focus au bouton d'origine
         if (modal.dataset.triggerId) {
             const trigger = document.getElementById(modal.dataset.triggerId);
             if (trigger) trigger.focus();
         }
     }
 
-    // --- 2. ÉCOUTEURS D'ÉVÉNEMENTS ---
 
-    // Clic sur les boutons ouvrant une modal
     document.querySelectorAll('.btn-modal').forEach(btn => {
         btn.addEventListener('click', e => {
             e.preventDefault();
@@ -83,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Clic sur les boutons de fermeture
     document.querySelectorAll('.btn-close').forEach(btn => {
         btn.addEventListener('click', () => closeModal(btn.closest('.modal')));
     });
@@ -99,7 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Touche Échap
     document.addEventListener('keydown', e => {
         if (e.key === "Escape") {
             const active = document.querySelector('.modal.active');
@@ -107,14 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- 3. LIENS INTERNES À LA MODAL (C'est la partie qui manquait !) ---
-    // Gère le clic sur un lien qui pointe vers une ancre (ex: #contactForm)
     document.querySelectorAll('.modal a[href^="#"]').forEach(link => {
         link.addEventListener('click', e => {
             const targetId = link.getAttribute('href');
             const targetElement = document.querySelector(targetId);
 
-            // Si la cible n'est pas une autre modal, on ferme l'actuelle et on scroll
             if (targetElement && !targetElement.classList.contains('modal')) {
                 const currentModal = link.closest('.modal');
                 closeModal(currentModal);
@@ -122,12 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                     targetElement.focus();
-                }, 300); // Délai pour laisser la modal disparaître
+                }, 300); 
             }
         });
     });
 
-    // --- 4. GESTION DU HASH (Lien direct via URL) ---
     function handleHash() {
         const hash = window.location.hash;
         if (hash) {
@@ -136,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (target.classList.contains('modal')) {
                     openModal(hash);
                 } else if (target.closest('.modal')) {
-                    // Si le lien pointe vers un titre à l'intérieur d'une modal
                     openModal(target.closest('.modal').id);
                 }
             }
