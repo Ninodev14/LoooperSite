@@ -48,12 +48,14 @@ const activeClassBlue = "highlight blue black white-border-small";
         </a>
 
         <div class="dropdown">
-          <div class="dropdown-text-arrow">
+          <div
+            class:list={["dropdown-text-arrow", isBesoins && activeClassOrange]}
+          >
             <a
               href="/besoins/"
               class:list={[
                 "header-typo-pc link-underline-fill",
-                isBesoins && activeClassOrange,
+                isBesoins && "white-border-small black ",
               ]}
             >
               Vos besoins
