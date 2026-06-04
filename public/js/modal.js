@@ -4,27 +4,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. FONCTIONS DE CŒUR ---
 
+    const COLOR_CLASSES = ['blue', 'purple', 'orange'];
+
     function openModal(modalId, triggerElement = null) {
         const cleanId = modalId.replace('#', '');
         const modal = document.getElementById(cleanId);
 
         if (modal) {
-            // Fermer les autres modals pour éviter les superpositions
-            allModals.forEach(m => closeModal(m, false)); 
-
+            allModals.forEach(m => closeModal(m, false));
             modal.classList.add('active');
             modal.setAttribute('aria-hidden', 'false');
 
-            // Mémorise l'élément qui a ouvert la modal
             if (triggerElement) {
                 modal.dataset.triggerId = triggerElement.id || "";
+
+                // Cherche la couleur sur l'article parent du bouton
+                const colorSource = triggerElement.closest('[class*="-blue"], [class*="-purple"], [class*="-orange"]');
+
+                // Cible le container de la modal (là où la couleur est appliquée)
+                const modalContainer = modal.querySelector('.modal-container');
+
+                if (modalContainer) {
+                    COLOR_CLASSES.forEach(c => {
+                        modalContainer.classList.remove(`modal-${c}`);
+                    });
+
+                    // Cible aussi les highlights dans la modal
+                    const highlights = modal.querySelectorAll('.highlight-no-annim');
+
+                    if (colorSource) {
+                        const colorClass = COLOR_CLASSES.find(c =>
+                            [...colorSource.classList].some(cls => cls.includes(`-${c}`))
+                        );
+                        if (colorClass) {
+                            modalContainer.classList.add(`modal-${colorClass}`);
+
+                            // Nettoie et applique la couleur sur chaque highlight
+                            highlights.forEach(h => {
+                                COLOR_CLASSES.forEach(c => h.classList.remove(c));
+                                h.classList.add(colorClass);
+                            });
+                        }
+                    }
+                }
             }
 
-            // Focus accessibilité
             const focusable = modal.querySelector('h2, h3, button, a, input');
-            if (focusable) {
-                setTimeout(() => focusable.focus(), 50);
-            }
+            if (focusable) setTimeout(() => focusable.focus(), 50);
         }
     }
 
