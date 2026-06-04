@@ -125,14 +125,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
-
-window.addEventListener("load", () => {
+window.addEventListener("ludiqueReady", () => {
   let ludiqueMode = sessionStorage.getItem("ludiqueMode");
   if (ludiqueMode === "on") {
     positions = [];
-    for (let i = 0; i < taille * taille; i++) {
-      positions.push(i);
-    }
+    for (let i = 0; i < taille * taille; i++) positions.push(i);
     estGagne = true;
     puzzle.classList.add("gagne");
     afficherPuzzle();

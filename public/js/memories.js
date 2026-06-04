@@ -124,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
   toggle.addEventListener("change", updateGameDisplay);
 });
 
-window.addEventListener("load", () => {
+window.addEventListener("ludiqueReady", () => {
   const gameContainer = document.querySelector(".memory-game-container");
   const noGameContainer = document.querySelector(".memory-no-game-container");
   let ludiqueMode = sessionStorage.getItem("ludiqueMode");

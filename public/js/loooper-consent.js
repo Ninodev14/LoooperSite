@@ -53,7 +53,7 @@
       '      Nous utilisons Google Tag Manager pour mesurer l\'audience de notre site.',
       '      Ces cookies sont déposés <strong>uniquement avec votre accord</strong>.',
       '      </p> ',
-      '   <a href="/mentions-legales#cookies/" class="lcb-link">En savoir plus</a>',
+      '   <a href="/mentions-legales#cookies" class="lcb-link">En savoir plus</a>',
       '  </div>',
       '  <div class="lcb-actions">',
       '    <button id="lcb-refuse" class="lcb-btn lcb-btn--secondary">Refuser</button>',

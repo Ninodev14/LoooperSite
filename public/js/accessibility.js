@@ -251,7 +251,6 @@ function resetSettings() {
 
 window.addEventListener("load", () => {
   if (toggleGame) {
-
     let ludiqueMode = sessionStorage.getItem("ludiqueMode");
 
     if (!ludiqueMode) {
@@ -276,6 +275,8 @@ window.addEventListener("load", () => {
         sessionStorage.setItem("ludiqueMode", "off");
       }
     });
+
+    window.dispatchEvent(new CustomEvent("ludiqueReady"));
   }
 });
 
