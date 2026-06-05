@@ -1,209 +1,252 @@
 ---
-/**
- * pages/besoins.astro — Vos besoins (hub)
- */
-import BaseLayout from '../layouts/BaseLayout.astro';
-const besoins = [
-  {
-    href: '/apprendre-ludique',
-    title: 'Apprendre avec le ludique',
-    desc: 'Rendez la formation engageante et mémorable grâce au jeu.',
-    icon: 'APPRENDRE.png',
-    color: 'purple' as const,
-  },
-  {
-    href: '/sensibiliser-reflechir',
-    title: 'Sensibiliser et faire réfléchir',
-    desc: 'Amenez vos équipes à prendre conscience de sujets importants.',
-    icon: 'SENSIBILISER.png',
-    color: 'orange' as const,
-  },
-  {
-    href: '/creer-interaction-sociale',
-    title: "Créer de l\u2019interaction sociale",
-    desc: 'Favorisez les échanges et brisez la glace entre participants.',
-    icon: 'INTERACTION.png',
-    color: 'yellow' as const,
-  },
-  {
-    href: '/renforcer-cohesion',
-    title: 'Renforcer la cohésion',
-    desc: "Soudez vos équipes autour d’expériences collectives mémorables.",
-    icon: 'COHESION.png',
-    color: 'green' as const,
-  },
-  {
-    href: '/engager-motiver',
-    title: 'Engager et motiver',
-    desc: "Stimulez l'implication et la motivation de vos collaborateurs.",
-    icon: 'ENGAGER.png',
-    color: 'purple' as const,
-  },
-  {
-    href: '/former-efficacement',
-    title: 'Former efficacement',
-    desc: 'Concevez des parcours de formation percutants et interactifs.',
-    icon: 'FORMER.png',
-    color: 'orange' as const,
-  },
-  {
-    href: '/communiquer-autrement',
-    title: 'Communiquer autrement',
-    desc: 'Transmettez vos messages de façon originale et impactante.',
-    icon: 'COMMUNIQUER.png',
-    color: 'yellow' as const,
-  },
-];
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const schemaOrg = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Loooper!",
-    "url": "https://loooper.fr/"
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Besoins couverts par Loooper!",
-    "itemListElement": besoins.map((b, i) => ({
-      "@type": "ListItem",
-      "position": i + 1,
-      "name": b.title,
-      "url": `https://loooper.fr${b.href}`,
-    })),
-  }
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "Loooper!",
+        url: "https://loooper.fr/",
+    },
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: "Besoins couverts par Loooper!",
+        itemListElement: [
+            {
+                "@type": "ListItem",
+                position: 1,
+                name: "Apprendre avec le ludique",
+                url: "https://loooper.fr/apprendre-ludique",
+            },
+            {
+                "@type": "ListItem",
+                position: 2,
+                name: "Sensibiliser et faire réfléchir",
+                url: "https://loooper.fr/sensibiliser-reflechir",
+            },
+            {
+                "@type": "ListItem",
+                position: 3,
+                name: "Créer de l'interaction sociale",
+                url: "https://loooper.fr/creer-interaction-sociale",
+            },
+            {
+                "@type": "ListItem",
+                position: 4,
+                name: "Renforcer la cohésion",
+                url: "https://loooper.fr/renforcer-cohesion",
+            },
+            {
+                "@type": "ListItem",
+                position: 5,
+                name: "Engager et motiver",
+                url: "https://loooper.fr/engager-motiver",
+            },
+            {
+                "@type": "ListItem",
+                position: 6,
+                name: "Former efficacement",
+                url: "https://loooper.fr/former-efficacement",
+            },
+            {
+                "@type": "ListItem",
+                position: 7,
+                name: "Communiquer autrement",
+                url: "https://loooper.fr/communiquer-autrement",
+            },
+        ],
+    },
 ];
 ---
 
 <BaseLayout
-  title="Vos besoins"
-  description="Découvrez comment Loooper! utilise la gamification pour répondre à vos besoins : renforcer la cohésion, créer de l'interaction sociale, motiver, former ou communiquer autrement."
-  ogImage="https://loooper.fr/img/ico/BESOINS.png"
-  ogUrl="https://loooper.fr/besoins"
-  currentPage="besoins"
-  schemaJson={schemaOrg}
+    title="Vos besoins"
+    description="Découvrez comment Loooper! utilise la gamification pour répondre à vos besoins : renforcer la cohésion, créer de l'interaction sociale, motiver, former ou communiquer autrement."
+    ogImage="https://loooper.fr/img/ico/BESOINS.png"
+    ogUrl="https://loooper.fr/besoins"
+    currentPage="besoins"
+    schemaJson={schemaOrg}
 >
-<section class="mainPageTitle mainPageTitlePurple">
-            <h1 class="h1 container-width white-border black">Loooper!, des projets
-                qui répondent <span> </span>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleBlue">à </span><span
-                        class="paterneTitleContour">à </span></div>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleBlue">vos </span><span
-                        class="paterneTitleContour">vos </span></div>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleBlue">besoins !</span><span
-                        class="paterneTitleContour">besoins !</span></div>
+    <section class="mainPageTitle mainPageTitlePurple">
+        <h1 class="h1 container-width white-border black">
+            Loooper!, des projets qui répondent <span> </span>
+            <div class="paterneTitleContainer">
+                <span class="paterneTitle paterneTitleBlue">à </span><span
+                    class="paterneTitleContour"
+                    >à
+                </span>
+            </div>
+            <div class="paterneTitleContainer">
+                <span class="paterneTitle paterneTitleBlue">vos </span><span
+                    class="paterneTitleContour"
+                    >vos
+                </span>
+            </div>
+            <div class="paterneTitleContainer">
+                <span class="paterneTitle paterneTitleBlue">besoins !</span
+                ><span class="paterneTitleContour">besoins !</span>
+            </div>
+        </h1>
+    </section>
 
-            </h1>
-        </section>
-        <div class="container-width ariane-net h3"><a href="">Accueil </a>
-            <p class="h3">></p> <a href="/besoins/" class="end-chield highlight-no-annim blue black-border-small">Vos
-                besoins</a>
-        </div>
+    <div class="container-width ariane-net h3">
+        <a href="">Accueil </a>
+        <p class="h3">></p>
+        <a
+            href="/besoins/"
+            class="end-chield highlight-no-annim blue black-border-small"
+            >Vos besoins</a
+        >
+    </div>
 
-        <div class="large-spacing"></div>
+    <div class="large-spacing"></div>
 
-
-        <section class="container-width text-basical-container">
-            <article class="text-basical-container-text-long">
-                <div>
-                    <h2 class="h2 black white-border">Une variété d’outils numériques et physiques adaptés pour vous
-                    </h2>
-                    <div class="small-medium-spacing"></div>
-                    <p>Chez <b>LOOOPER!</b>, chaque projet commence par <b class="highlight orange">vos besoins</b>.
-                        Nous co-construisons avec vous <b>une expérience sur mesure</b>, pensée pour <b
-                            class="highlight purple">vos objectifs et vos publics</b>. Chaque <a class="link-underline"
-                            href="/formats/">format</a> que nous proposons a ses forces afin de répondre à vos
-                        enjeux.
-                        Qu’il s’agisse de <b>formation, de sensibilisation, d’apprentissage ou de création de lien,</b>
-                        notre
-                        volonté est la même : transformer vos contenus en expériences ludiques, interactives et
-                        mémorables,<b class="highlight blue"> adaptées à votre contexte et à vos ressources</b>.
-                    </p>
+    <section class="container-width text-basical-container">
+        <article class="text-basical-container-text-long">
+            <div>
+                <h2 class="h2 black white-border">
+                    Une variété d'outils numériques et physiques adaptés pour
+                    vous
+                </h2>
+                <div class="small-medium-spacing"></div>
+                <p>
+                    Chez <b>LOOOPER!</b>, chaque projet commence par <b
+                        class="highlight orange">vos besoins</b
+                    >. Nous co-construisons avec vous <b
+                        >une expérience sur mesure</b
+                    >, pensée pour <b class="highlight purple"
+                        >vos objectifs et vos publics</b
+                    >. Chaque <a class="link-underline" href="/formats/"
+                        >format</a
+                    > que nous proposons a ses forces afin de répondre à vos enjeux.
+                    Qu'il s'agisse de <b
+                        >formation, de sensibilisation, d'apprentissage ou de
+                        création de lien,</b
+                    > notre volonté est la même : transformer vos contenus en expériences
+                    ludiques, interactives et mémorables,
+                    <b class="highlight blue">
+                        adaptées à votre contexte et à vos ressources</b
+                    >.
+                </p>
+            </div>
+        </article>
+        <article class="text-basical-container-emojie">
+            <div class="emojie-img-line-container">
+                <div class="emojie-img-line">
+                    <img
+                        src="/svg/controler.svg"
+                        alt="Image representant une manette"
+                    />
+                    <img
+                        src="/svg/starType1.svg"
+                        alt="Image representant des étoile"
+                    />
                 </div>
-            </article>
-            <article class="text-basical-container-emojie">
-                <div class="emojie-img-line-container">
-                    <div class="emojie-img-line">
-                        <img src="/svg/controler.svg" alt="Image representant une manette">
-                        <img src="/svg/starType1.svg" alt="Image representant des étoile">
-                    </div>
-                    <div class="emojie-img-line">
-                        <img src="/svg/starType2.svg" alt="Image representant des étoile">
-                        <img src="/svg/cardAs.svg" alt="Image representant une Carte">
-                    </div>
-                </div>
-
-            </article>
-        </section>
-
-        <div class="large-spacing"></div>
-
-        <section class="zoom-container-center">
-            <div class="zoom-container backgroundBrushType2">
-                <div class="container-width">
-                    <div class="zoom-center-title">
-                        <h2 class="h2 black" style="z-index: 1;">Et vous, de quoi avez-vous besoin ?</h2>
-                        <div class="small-medium-spacing"></div>
-                        <nav class="mini-card-besoin-container">
-
-                            <article class="mini-card-info-besoin mini-card-info-besoin-orange apprendre">
-                                <h3 class="h3 black">Apprendre avec le ludique</h3>
-                                <a href="/apprendre-ludique/" class="text-typo btn-project btn-white-background">
-                                    <span>Voir la page</span>
-                                </a>
-                            </article>
-
-                            <article class="mini-card-info-besoin mini-card-info-besoin-purple sensibiliser">
-                                <h3 class="h3 black">Sensibiliser et faire réfléchir</h3>
-                                <a href="/sensibiliser-reflechir/"
-                                    class="text-typo btn-project btn-white-background">
-                                    <span>Voir la page</span>
-                                </a>
-                            </article>
-
-                            <article class="mini-card-info-besoin mini-card-info-besoin-blue cree">
-                                <h3 class="h3 black">Créer de l'interaction sociale</h3>
-                                <a href="/creer-interaction-sociale/"
-                                    class="text-typo btn-project btn-white-background">
-                                    <span>Voir la page</span>
-                                </a>
-                            </article>
-
-                            <article class="mini-card-info-besoin mini-card-info-besoin-orange former">
-                                <h3 class="h3 black">Former efficacement</h3>
-                                <a href="/former-efficacement/" class="text-typo btn-project btn-white-background">
-                                    <span>Voir la page</span>
-                                </a>
-                            </article>
-
-                            <article class="mini-card-info-besoin mini-card-info-besoin-purple renforcer">
-                                <h3 class="h3 black">Renforcer la cohésion</h3>
-                                <a href="/renforcer-cohesion/" class="text-typo btn-project btn-white-background">
-                                    <span>Voir la page</span>
-                                </a>
-                            </article>
-
-                            <article class="mini-card-info-besoin mini-card-info-besoin-blue engager">
-                                <h3 class="h3 black">Engager et motiver</h3>
-                                <a href="/engager-motiver/" class="text-typo btn-project btn-white-background">
-                                    <span>Voir la page</span>
-                                </a>
-                            </article>
-
-                            <article class="mini-card-info-besoin mini-card-info-besoin-orange communiquer">
-                                <h3 class="h3 black">Communiquer autrement</h3>
-                                <a href="/communiquer-autrement/" class="text-typo btn-project btn-white-background">
-                                    <span>Voir la page</span>
-                                </a>
-                            </article>
-
-                        </nav>
-                    </div>
+                <div class="emojie-img-line">
+                    <img
+                        src="/svg/starType2.svg"
+                        alt="Image representant des étoile"
+                    />
+                    <img
+                        src="/svg/cardAs.svg"
+                        alt="Image representant une Carte"
+                    />
                 </div>
             </div>
-        </section>
-   
+        </article>
+    </section>
+
+    <div class="large-spacing"></div>
+
+    <section class="zoom-container-center">
+        <div class="zoom-container backgroundBrushType2">
+            <div class="container-width">
+                <div class="zoom-center-title">
+                    <h2 class="h2 black" style="z-index: 1;">
+                        Et vous, de quoi avez-vous besoin ?
+                    </h2>
+                    <div class="small-medium-spacing"></div>
+                    <nav class="mini-card-besoin-container">
+                        <article
+                            class="mini-card-info-besoin mini-card-info-besoin-orange apprendre"
+                        >
+                            <h3 class="h3 black">Apprendre avec le ludique</h3>
+                            <a
+                                href="/apprendre-ludique/"
+                                class="text-typo btn-project btn-white-background"
+                                ><span>Voir la page</span></a
+                            >
+                        </article>
+                        <article
+                            class="mini-card-info-besoin mini-card-info-besoin-purple sensibiliser"
+                        >
+                            <h3 class="h3 black">
+                                Sensibiliser et faire réfléchir
+                            </h3>
+                            <a
+                                href="/sensibiliser-reflechir/"
+                                class="text-typo btn-project btn-white-background"
+                                ><span>Voir la page</span></a
+                            >
+                        </article>
+                        <article
+                            class="mini-card-info-besoin mini-card-info-besoin-blue cree"
+                        >
+                            <h3 class="h3 black">
+                                Créer de l'interaction sociale
+                            </h3>
+                            <a
+                                href="/creer-interaction-sociale/"
+                                class="text-typo btn-project btn-white-background"
+                                ><span>Voir la page</span></a
+                            >
+                        </article>
+                        <article
+                            class="mini-card-info-besoin mini-card-info-besoin-orange former"
+                        >
+                            <h3 class="h3 black">Former efficacement</h3>
+                            <a
+                                href="/former-efficacement/"
+                                class="text-typo btn-project btn-white-background"
+                                ><span>Voir la page</span></a
+                            >
+                        </article>
+                        <article
+                            class="mini-card-info-besoin mini-card-info-besoin-purple renforcer"
+                        >
+                            <h3 class="h3 black">Renforcer la cohésion</h3>
+                            <a
+                                href="/renforcer-cohesion/"
+                                class="text-typo btn-project btn-white-background"
+                                ><span>Voir la page</span></a
+                            >
+                        </article>
+                        <article
+                            class="mini-card-info-besoin mini-card-info-besoin-blue engager"
+                        >
+                            <h3 class="h3 black">Engager et motiver</h3>
+                            <a
+                                href="/engager-motiver/"
+                                class="text-typo btn-project btn-white-background"
+                                ><span>Voir la page</span></a
+                            >
+                        </article>
+                        <article
+                            class="mini-card-info-besoin mini-card-info-besoin-orange communiquer"
+                        >
+                            <h3 class="h3 black">Communiquer autrement</h3>
+                            <a
+                                href="/communiquer-autrement/"
+                                class="text-typo btn-project btn-white-background"
+                                ><span>Voir la page</span></a
+                            >
+                        </article>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="/js/faq.js" defer></script>
 </BaseLayout>
