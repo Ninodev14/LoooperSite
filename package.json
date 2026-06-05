@@ -10,7 +10,7 @@
     "build:images": "node scripts/convert-images.cjs",
     "build:html-srcset": "node scripts/add-srcset.cjs",
     "build:html-optimize": "node scripts/optimize-html.cjs",
-    "build": "npm run build:css && astro build && npm run build:images && npm run build:html-srcset && npm run build:html-optimize"
+    "build": "npm run build:css && npm run build:images && astro build && npm run build:html-srcset && npm run build:html-optimize"
   },
   "repository": {
     "type": "git",
