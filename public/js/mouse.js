@@ -11,11 +11,10 @@ function initCursor(hasMouse) {
   cleanupCursor();
 
   if (!hasMouse) {
-    document.querySelectorAll('.cursor, .cursor-ring').forEach(el => el.style.display = 'none');
+    // Si pas de souris, on s'assure qu'ils restent cachés
+    document.querySelectorAll('.cursor, .cursor-ring').forEach(el => el.classList.remove('visible'));
     return;
   }
-
-  document.querySelectorAll('.cursor, .cursor-ring').forEach(el => el.style.display = '');
 
   const ring = document.querySelector('.cursor-ring');
   const cursor = document.querySelector('.cursor');
@@ -62,19 +61,25 @@ function initCursor(hasMouse) {
   }
 
   function onMouseLeave() {
+    ring.classList.remove('visible');
     ring.classList.add('hidden');
+    cursor.classList.remove('visible');
     cursor.classList.add('hidden');
   }
 
-function onMouseEnter(e) {
-    mouseX = e.clientX; // Ajoute ça
-    mouseY = e.clientY; // Ajoute ça
+  function onMouseEnter(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
     ringX = e.clientX;
     ringY = e.clientY;
+    
     ring.classList.remove('hidden');
     cursor.classList.remove('hidden');
+    ring.classList.add('visible');
+    cursor.classList.add('visible');
   }
-// ── Event registration ─────────────────────────────────────────────────────
+
+  // ── Event registration ─────────────────────────────────────────────────────
 
   window.addEventListener('resize', onResize);
   window.addEventListener('pointermove', onPointerMove);
@@ -83,6 +88,9 @@ function onMouseEnter(e) {
   document.addEventListener('mouseleave', onMouseLeave);
   document.addEventListener('mouseenter', onMouseEnter);
 
+  ring.classList.add('hidden');
+  cursor.classList.add('hidden');
+
   const bootstrapPosition = (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
@@ -90,8 +98,12 @@ function onMouseEnter(e) {
     ringY = e.clientY;
     cursor.style.left = `${mouseX}px`;
     cursor.style.top = `${mouseY}px`;
+
     ring.classList.remove('hidden');
     cursor.classList.remove('hidden');
+    ring.classList.add('visible');
+    cursor.classList.add('visible');
+    
     detectBackgroundColor(mouseX, mouseY);
   };
   window.addEventListener('mousemove', bootstrapPosition, { once: true });
@@ -104,6 +116,7 @@ function onMouseEnter(e) {
       el.addEventListener(evt, handleScrollUpdate, { passive: true });
     });
   });
+
   // ── Animation loop ─────────────────────────────────────────────────────────
 
   function animate() {
