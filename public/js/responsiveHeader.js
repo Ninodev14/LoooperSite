@@ -112,12 +112,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function setupAnimation(containerSelector) {
     const container = document.querySelector(containerSelector);
-                console.log("circles");
     if (!container) return;
 
     const circles = container.querySelectorAll('.circle-group');
     let canAnimate = true;
-            console.log(circles);
     container.addEventListener('mouseenter', () => {
         if (!canAnimate) return;
 
