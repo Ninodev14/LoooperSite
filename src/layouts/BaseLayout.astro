@@ -13,10 +13,13 @@
  *   - schemaJson  : objet(s) Schema.org à injecter en JSON-LD (optionnel)
  */
 
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import ContactSection from '../components/ContactSection.astro';
-import SEOHead from '../components/SEOHead.astro';
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import ContactSection from "../components/ContactSection.astro";
+import SEOHead from "../components/SEOHead.astro";
+
+const isProd = import.meta.env.PROD;
+const cssFile = isProd ? "/src/css/style.min.css" : "/src/css/style.css";
 
 interface Props {
   title: string;
@@ -28,15 +31,8 @@ interface Props {
   schemaJson?: object | object[];
 }
 
-const {
-  title,
-  description,
-  ogImage,
-  ogUrl,
-  currentPage,
-  noIndex,
-  schemaJson,
-} = Astro.props;
+const { title, description, ogImage, ogUrl, currentPage, noIndex, schemaJson } =
+  Astro.props;
 ---
 
 <!doctype html>
@@ -60,11 +56,16 @@ const {
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Titan+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       />
     </noscript>
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/open-dyslexic" media="print" onload="this.media='all'" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.cdnfonts.com/css/open-dyslexic"
+      media="print"
+      onload="this.media='all'"
+    />
 
     <!-- CSS global -->
-    <link rel="preload" href="/src/css/style.css" as="style" />
-    <link rel="stylesheet" href="/src/css/style.css" />
+    <link rel="preload" href={cssFile} as="style" />
+    <link rel="stylesheet" href={cssFile} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -79,23 +80,28 @@ const {
     />
 
     <!-- Schema.org JSON-LD (optionnel, passé par chaque page) -->
-    {schemaJson && (
-      <script type="application/ld+json" set:html={JSON.stringify(schemaJson)} />
-    )}
+    {
+      schemaJson && (
+        <script
+          type="application/ld+json"
+          set:html={JSON.stringify(schemaJson)}
+        />
+      )
+    }
 
     <!-- Google Tag Manager (chargé après consentement via loooper-consent.js) -->
     <script>
-      window.addEventListener('load', function () {
+      window.addEventListener("load", function () {
         (function (w, d, s, l, i) {
           w[l] = w[l] || [];
-          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
           const f = d.getElementsByTagName(s)[0];
           const j = d.createElement(s) as HTMLScriptElement;
-          const dl = l !== 'dataLayer' ? '&l=' + l : '';
+          const dl = l !== "dataLayer" ? "&l=" + l : "";
           j.async = true;
-          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
           f.parentNode!.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-T4Q4NXNW');
+        })(window, document, "script", "dataLayer", "GTM-T4Q4NXNW");
       });
     </script>
   </head>
@@ -107,11 +113,10 @@ const {
         src="https://www.googletagmanager.com/ns.html?id=GTM-T4Q4NXNW"
         height="0"
         width="0"
-        style="display:none;visibility:hidden"
-      ></iframe>
+        style="display:none;visibility:hidden"></iframe>
     </noscript>
 
-    <Header/>
+    <Header />
 
     <main>
       <slot />

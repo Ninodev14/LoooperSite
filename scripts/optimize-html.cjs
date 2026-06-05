@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
 
-const ROOT_DIR = './'; // Puisque ton build Netlify publie à la racine
+const ROOT_DIR = './dist/';
 
 function optimizeHTML() {
     // On récupère tous les fichiers HTML à la racine
