@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "preview": "astro preview",
-    "build:css": "postcss src/css/style.css -o src/css/style.min.css",
+    "build:css": "postcss src/css/style.css -o public/css/style.min.css",
     "build:images": "node scripts/convert-images.cjs",
     "build:html-srcset": "node scripts/add-srcset.cjs",
     "build:html-optimize": "node scripts/optimize-html.cjs",
