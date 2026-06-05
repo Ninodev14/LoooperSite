@@ -2,7 +2,7 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const inputDir = 'src/img';
+const inputDir = 'public/img';
 
 // Dossiers qui nécessitent des versions responsives (images trop grandes)
 const RESPONSIVE_DIRS = ['carousel'];
