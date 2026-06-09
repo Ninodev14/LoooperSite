@@ -116,14 +116,14 @@ function setupAnimation(containerSelector) {
 
     const circles = container.querySelectorAll('.circle-group');
     let canAnimate = true;
+
     container.addEventListener('mouseenter', () => {
-        if (!canAnimate) return;
+        if (!canAnimate || document.body.classList.contains('no-animation')) return;
 
         canAnimate = false;
 
         circles.forEach(circle => {
             circle.classList.add('animate');
-
             circle.addEventListener('animationend', () => {
                 circle.classList.remove('animate');
             }, { once: true });
@@ -131,11 +131,9 @@ function setupAnimation(containerSelector) {
 
         setTimeout(() => {
             canAnimate = true;
-        }, 1100); // délai entre deux animations
+        }, 1100);
     });
 }
 
-// Appliquer à plusieurs containers
 setupAnimation('.img-container-header');
 setupAnimation('.footerLogo');
-

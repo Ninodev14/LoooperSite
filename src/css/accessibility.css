@@ -603,10 +603,7 @@
  }
 
 
- /* .no-animation *,
-.no-animation *::before,
-.no-animation *::after {
-  animation: none !important;
-  transition: none !important;
-  scroll-behavior: auto !important;
-} */
+
+ .no-animation .img-container-header:hover, .no-animation .footerLogo:hover {
+transform: scale(1.0);
+}

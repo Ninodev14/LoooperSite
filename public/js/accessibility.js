@@ -281,29 +281,29 @@ window.addEventListener("load", () => {
 });
 
 
-// // --- Toggle animations
-// function toggleAnimations() {
-//   const chkNoAnim = document.getElementById("chkNoAnimation");
-//   if (!chkNoAnim) return;
+//-- Toggle animations
+function toggleAnimations() {
+  const chkNoAnim = document.getElementById("chkNoAnimation");
+  if (!chkNoAnim) return;
 
-//   if (chkNoAnim.checked) {
-//     body.classList.add("no-animation");
-//     localStorage.setItem("noAnimation", "on");
-//   } else {
-//     body.classList.remove("no-animation");
-//     localStorage.removeItem("noAnimation");
-//   }
-// }
+  if (chkNoAnim.checked) {
+    body.classList.add("no-animation");
+    localStorage.setItem("noAnimation", "on");
+  } else {
+    body.classList.remove("no-animation");
+    localStorage.removeItem("noAnimation");
+  }
+  console.log("zdz");
+}
 
-// // --- Charger l'état au chargement de la page
-// window.addEventListener("load", () => {
-//   const chkNoAnim = document.getElementById("chkNoAnimation");
-//   if (localStorage.getItem("noAnimation") === "on") {
-//     body.classList.add("no-animation");
-//     if (chkNoAnim) chkNoAnim.checked = true;
-//   }
+window.addEventListener("load", () => {
+  const chkNoAnim = document.getElementById("chkNoAnimation");
+  if (localStorage.getItem("noAnimation") === "on") {
+    body.classList.add("no-animation");
+    if (chkNoAnim) chkNoAnim.checked = true;
+  }
   
-//   if (chkNoAnim) {
-//     chkNoAnim.addEventListener("change", toggleAnimations);
-//   }
-// });
+  if (chkNoAnim) {
+    chkNoAnim.addEventListener("change", toggleAnimations);
+  }
+});
