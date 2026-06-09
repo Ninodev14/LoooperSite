@@ -139,8 +139,8 @@
      filter: invert(1);
  }
 
- .filtre-activ img{
-     filter: invert(1) ;
+ .filtre-activ img {
+     filter: invert(1);
  }
 
  #accessibility-btn,
@@ -604,6 +604,43 @@
 
 
 
- .no-animation .img-container-header:hover, .no-animation .footerLogo:hover {
-transform: scale(1.0);
+ .no-animation .img-container-header:hover,
+ .no-animation .footerLogo:hover {
+     transform: scale(1.0);
+ }
+
+ .no-animation .leftbackgroundType1 {
+     transform: translateX(30%) ;
+     opacity: 1;
+     animation: none !important;
+ }
+
+ .no-animation .rightbackgroundType1   {
+     transform: translateX(-30%) scaleX(-1);
+     opacity: 1;
+     animation: none !important;
+ }
+
+ .no-animation .contact-background .reflect {
+     transform: translateX(-60%) scaleX(-1) ;
+     opacity: 1;
+     animation: none !important;
+ }
+
+ .no-animation .contact-background .leftbackgroundType1 {
+     transform: translateX(60%) ;
+     opacity: 1;
+     animation: none !important;
+ }
+
+ .no-animation .backgroundType2Annim.left {
+    animation: none !important;
+    opacity: 1;
+    transform: translateY(0) rotate(-90deg);
+}
+
+ .no-animation .backgroundType2Annim.right {
+    animation: none !important;
+    opacity: 1;
+    transform: translateY(0) rotate(90deg) scaleX(-1);
 }
