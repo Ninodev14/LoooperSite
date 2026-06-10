@@ -24,7 +24,7 @@ npm run dev
 
 # Partager sur le réseau local (pour tester depuis d'autres appareils)
 npx astro dev --host
-# → http://<ton-ip-locale>:4321
+# → http://ip-locale>:4321
 
 # Build de production
 npm run build
