@@ -659,8 +659,8 @@
  .no-animation .btn-project span,
  .no-animation .btn-project img,
  .no-animation .highlight::before,
- .nav-pc .header-typo-pc,
- .link-underline-fill:after,
+ .no-animation .nav-pc .header-typo-pc,
+ .no-animation .link-underline-fill:after,
  .no-animation .dropdown-arrow,
  .no-animation .dropdown-arrow-contact,
  .no-animation .emojie-img-line-besoin-child,
@@ -671,13 +671,13 @@
  .no-animation .protagonistes-card,
  .no-animation .protagonistes-card:after,
  .no-animation .zoom-container,
-  .no-animation input,
-  .no-animation .toggle-label::before,
-  .no-animation .toggle-ball,
-  .no-animation #menu-tel,
-  .no-animation #menu-toggle *,
-  .no-animation #menu-tel *,
-  .no-animation #foot-inx2 *{
+ .no-animation input,
+ .no-animation .toggle-label::before,
+ .no-animation .toggle-ball,
+ .no-animation #menu-tel,
+ .no-animation #menu-toggle *,
+ .no-animation #menu-tel *,
+ .no-animation #foot-inx2 * {
      animation: none !important;
      transition: none !important;
  }
