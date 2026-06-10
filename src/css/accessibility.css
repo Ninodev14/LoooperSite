@@ -610,37 +610,74 @@
  }
 
  .no-animation .leftbackgroundType1 {
-     transform: translateX(30%) ;
+     transform: translateX(30%);
      opacity: 1;
      animation: none !important;
+     transition: none;
  }
 
- .no-animation .rightbackgroundType1   {
+ .no-animation .rightbackgroundType1 {
      transform: translateX(-30%) scaleX(-1);
      opacity: 1;
      animation: none !important;
+     transition: none;
  }
 
  .no-animation .contact-background .reflect {
-     transform: translateX(-60%) scaleX(-1) ;
+     transform: translateX(-60%) scaleX(-1);
      opacity: 1;
      animation: none !important;
+     transition: none;
  }
 
  .no-animation .contact-background .leftbackgroundType1 {
-     transform: translateX(60%) ;
+     transform: translateX(60%);
      opacity: 1;
      animation: none !important;
+     transition: none;
  }
 
  .no-animation .backgroundType2Annim.left {
-    animation: none !important;
-    opacity: 1;
-    transform: translateY(0) rotate(-90deg);
-}
+     animation: none !important;
+     opacity: 1;
+     transform: translateY(0) rotate(-90deg);
+     transition: none;
+ }
 
  .no-animation .backgroundType2Annim.right {
-    animation: none !important;
-    opacity: 1;
-    transform: translateY(0) rotate(90deg) scaleX(-1);
-}
+     animation: none !important;
+     opacity: 1;
+     transform: translateY(0) rotate(90deg) scaleX(-1);
+     transition: none;
+ }
+
+
+
+ .no-animation .btn-project span:before,
+ .no-animation .btn-project:after,
+ .btn-project:before,
+ .no-animation .btn-project span,
+ .no-animation .btn-project img,
+ .no-animation .highlight::before,
+ .nav-pc .header-typo-pc,
+ .link-underline-fill:after,
+ .no-animation .dropdown-arrow,
+ .no-animation .dropdown-arrow-contact,
+ .no-animation .emojie-img-line-besoin-child,
+ .no-animation .faq-arrow,
+ .no-animation .faq-container-info *,
+ .no-animation .dropdown-menu,
+ .no-animation .footer-bot-img-container img,
+ .no-animation .protagonistes-card,
+ .no-animation .protagonistes-card:after,
+ .no-animation .zoom-container,
+  .no-animation input,
+  .no-animation .toggle-label::before,
+  .no-animation .toggle-ball,
+  .no-animation #menu-tel,
+  .no-animation #menu-toggle *,
+  .no-animation #menu-tel *,
+  .no-animation #foot-inx2 *{
+     animation: none !important;
+     transition: none !important;
+ }

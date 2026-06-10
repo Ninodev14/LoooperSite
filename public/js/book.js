@@ -4,7 +4,7 @@ const slides = [
         title: "La rencontre",
         img: "/svg/book/table.svg",
         alt: "4 personnes assises",
-        text: "Tout commence par <b>un moment d’échange</b>. On prend le temps d’écouter <b>vos besoins</b>, <b>vos envies</b> et <b>vos objectifs</b> afin de poser les bases <b>d’un concept sur mesure</b>.",
+        text: "Tout commence par <b>un moment d'échange</b>. On prend le temps d'écouter <b>vos besoins</b>, <b>vos envies</b> et <b>vos objectifs</b> afin de poser les bases <b>d'un concept sur mesure</b>.",
         color: "orange"
     },
     {
@@ -28,7 +28,7 @@ const slides = [
         title: "Les tests",
         img: "/svg/book/list.svg",
         alt: "Une cecklist",
-        text: "Tout au long du processus, nous <b>testons</b> ensemble l’expérience afin de garantir <b>qualité, fluidité et adéquation avec vos attentes</b>.",
+        text: "Tout au long du processus, nous <b>testons</b> ensemble l'expérience afin de garantir <b>qualité, fluidité et adéquation avec vos attentes</b>.",
         color: "orange"
     },
     {
@@ -36,7 +36,7 @@ const slides = [
         title: "La livraison",
         img: "/svg/book/livraison.svg",
         alt: "Livraison",
-        text: "Le projet final vous est livré <b>prêt à l’emploi</b>. Et parce qu’on ne s’arrête pas là, nous vous accompagnons aussi dans <b>son déploiement</b> pour en assurer le succès.",
+        text: "Le projet final vous est livré <b>prêt à l'emploi</b>. Et parce qu'on ne s'arrête pas là, nous vous accompagnons aussi dans <b>son déploiement</b> pour en assurer le succès.",
         color: "purple"
     }
 ];
@@ -60,7 +60,6 @@ function lock() {
         isLocked = false;
     }, LOCK_DURATION);
 }
-
 
 function initDots() {
     dotsContainer.innerHTML = '';
@@ -96,6 +95,7 @@ function render() {
         d.setAttribute('aria-selected', i === current ? 'true' : 'false')
     );
 }
+
 function animateTurn(direction) {
     if (isLocked) return;
     lock();
@@ -106,8 +106,17 @@ function animateTurn(direction) {
 
     if (!page) return;
 
-    const content = page.querySelector('div');
+    // Sans animation : changement direct
+    if (document.body.classList.contains('no-animation')) {
+        isLocked = false;
+        current = direction === 'next'
+            ? (current + 1) % slides.length
+            : (current - 1 + slides.length) % slides.length;
+        render();
+        return;
+    }
 
+    const content = page.querySelector('div');
     const backImg = new Image();
     backImg.src = '/img/book-page-back.png';
 
@@ -141,9 +150,6 @@ function animateTurn(direction) {
     }, { once: true });
 }
 
-
-
-
 function prev() { animateTurn('prev'); }
 function next() { animateTurn('next'); }
 
@@ -153,6 +159,15 @@ function goToSlide(index) {
     if (index === current) return;
 
     const direction = index > current ? 'next' : 'prev';
+
+    // Sans animation : changement direct
+    if (document.body.classList.contains('no-animation')) {
+        isLocked = false;
+        current = Math.max(0, Math.min(index, slides.length - 1));
+        render();
+        return;
+    }
+
     const page = direction === 'next'
         ? document.querySelector('.book-page-2')
         : document.querySelector('.book-page-1');
@@ -194,7 +209,6 @@ function goToSlide(index) {
 if (prevBtn) prevBtn.addEventListener('click', prev);
 if (nextBtn) nextBtn.addEventListener('click', next);
 
-
 (function addSwipe() {
     const el = document.querySelector('.book-container-center');
     if (!el) return;
@@ -215,7 +229,6 @@ if (nextBtn) nextBtn.addEventListener('click', next);
         }
     });
 })();
-
 
 initDots();
 render();
@@ -258,6 +271,19 @@ function renderMobile() {
 }
 
 function animateMobile(direction, targetIndex = null) {
+    // Sans animation : changement direct
+    if (document.body.classList.contains('no-animation')) {
+        if (targetIndex !== null) {
+            currentMobile = targetIndex;
+        } else if (direction === 'next') {
+            currentMobile = (currentMobile + 1) % slides.length;
+        } else {
+            currentMobile = (currentMobile - 1 + slides.length) % slides.length;
+        }
+        renderMobile();
+        return;
+    }
+
     bookMobileContent.classList.add('fading-out');
 
     setTimeout(() => {
@@ -274,19 +300,13 @@ function animateMobile(direction, targetIndex = null) {
     }, 400);
 }
 
-function nextMobile() {
-    animateMobile('next');
-}
-
-function prevMobile() {
-    animateMobile('prev');
-}
+function nextMobile() { animateMobile('next'); }
+function prevMobile() { animateMobile('prev'); }
 
 function goToMobileSlide(i) {
     if (i === currentMobile) return;
     animateMobile(null, i);
 }
-
 
 mobileNext.addEventListener('click', nextMobile);
 mobilePrev.addEventListener('click', prevMobile);
@@ -294,20 +314,9 @@ mobilePrev.addEventListener('click', prevMobile);
 const page1 = document.querySelector('.book-page-1');
 const page2 = document.querySelector('.book-page-2');
 
-if (page1) {
-    page1.addEventListener('click', () => {
-        prev();
-    });
-}
+if (page1) page1.addEventListener('click', () => prev());
+if (page2) page2.addEventListener('click', () => next());
 
-if (page2) {
-    page2.addEventListener('click', () => {
-        next();
-    });
-}
-
-
-// swipe sur mobile
 (function addSwipe() {
     const el = document.querySelector('.book-mobile-container');
     let startX = 0, startY = 0;
