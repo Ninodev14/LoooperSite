@@ -51,6 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
             gameMessage.textContent = content.text;
             gameImage.src = content.image;
 
+            if (window.innerWidth <= 960) {
+              gameImage.scrollIntoView({ behavior: "smooth", block: "center" });
+            }
+
             for (let btn of gameButtons) {
               if (btn.src.includes("interogationMemories.svg")) {
                 btn.src = content.image;

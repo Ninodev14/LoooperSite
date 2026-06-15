@@ -466,19 +466,19 @@ background: transparent;
   transition: background 0.3s ease;
 }
 
-.puzzle.gagne {
-  border: 0px solid transparent;
-  background: transparent;
-  cursor: default;
-  zoom: 1.02287; 
-}
-
 .puzzle.gagne .piece {
   border: 0px solid transparent;
   cursor: default;
-  zoom: 1.03;
+  transform: scale(1.023);
 }
 
+.puzzle.gagne {
+  gap: 0;
+  border: 0px solid transparent;
+  background: transparent;
+  overflow: hidden; /* clip le débordement des scales */
+  cursor: default;
+}
 .puzzle.gagne .vide {
   background-image: url("/img/loooperFonder.jpg") !important;
   background-size: 30vw 30vw ;

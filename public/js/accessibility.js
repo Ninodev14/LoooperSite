@@ -166,8 +166,14 @@ function toggleReading() {
 
 function toggleContrast() {
   body.classList.toggle("high-contrast");
-  if (body.classList.contains("high-contrast")) localStorage.setItem("contrast", "high");
-  else localStorage.removeItem("contrast");
+  if (body.classList.contains("high-contrast")) {
+    localStorage.setItem("contrast", "high");
+  } else {
+    localStorage.removeItem("contrast");
+  }
+  if ("ontouchstart" in window) {
+    location.reload();
+  }
 }
 
 // --- Focus bar (PC uniquement)

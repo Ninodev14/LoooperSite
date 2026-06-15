@@ -197,10 +197,18 @@
  }
 
 
- .high-contrast {
-     background-color: #0B021F;
+ html.high-contrast,
+ body.high-contrast {
+     background-color: #0B021F !important;
      color: #fff !important;
  }
+
+
+ .high-contrast .nav-pc {
+     background-color: #000000;
+     border-bottom: 3px solid #FFFFFF
+ }
+
 
  .high-contrast .protagonistes-card-null-background {
      background: linear-gradient(145deg, #0B021F 50%, transparent 50%);
@@ -213,7 +221,8 @@
 
 
  .high-contrast footer {
-     background-color: #03010A !important;
+     background-color: #000000 !important;
+
  }
 
  .high-contrast .mainPageTitle,

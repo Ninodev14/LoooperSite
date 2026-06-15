@@ -22,7 +22,7 @@ npm install
 npm run dev
 # → http://localhost:4321
 
-# Partager sur le réseau local (pour tester depuis d'autres appareils)
+# Partager sur le réseau local
 npx astro dev --host
 # → http://ip-locale>:4321
 

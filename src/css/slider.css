@@ -58,14 +58,15 @@ p.lead {
 }
 
 .slide-media img {
-    width: 30vw;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    box-shadow: 20px 20px 0 0 transparent;
-    border-radius: 30px;
-    border: 5px solid #000;
-    transition: box-shadow 260ms ease;
+  width: 30vw;
+  height: 100%;
+  aspect-ratio: 1002 / 563;
+  display: block;
+  object-fit: cover;
+  box-shadow: 20px 20px 0 0 transparent;
+  border-radius: 30px;
+  border: 5px solid #000;
+  transition: box-shadow 260ms ease;
 }
 
 @media (max-width: 1023px) {
