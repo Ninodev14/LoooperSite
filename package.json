@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/Ninodev14/LoooperSite#readme",
   "dependencies": {
-    "astro": "^6.4.4"
+    "astro": "^7.0.7"
   },
   "devDependencies": {
     "cssnano": "^7.1.7",
