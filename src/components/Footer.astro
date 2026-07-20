@@ -52,15 +52,10 @@
     Encadrer les éléments cliquables au survol
   </label>
 
-  
-    <label class="text-typo black">
-    <input
-      type="checkbox"
-      id="chkNoAnimation"
-    />
+  <label class="text-typo black">
+    <input type="checkbox" id="chkNoAnimation" />
     Désactiver les animations
   </label>
-
 
   <button
     class="text-typo btn-project btn-white-background"
@@ -101,9 +96,7 @@
         <a href="/" class="footerTitle link-underline">Accueil</a>
         <a href="/#foot-inx3" class="text-typo">L'équipe en bref</a>
         <a href="/#foot-inx4" class="text-typo">Nos projets phares</a>
-        <a href="/#foot-inx1" class="text-typo"
-          >Ce qui rend Loooper! unique</a
-        >
+        <a href="/#foot-inx1" class="text-typo">Ce qui rend Loooper! unique</a>
         <a href="/#foot-inx2" class="text-typo">Répondre à des besoins</a>
       </div>
       <div class="footer-nav-row">
@@ -379,6 +372,12 @@
   </div>
 </footer>
 
+<script>
+  window.LOOOPER_ANALYTICS_URL =
+    "https://sitestatloooper.onrender.com/api/collect";
+  window.LOOOPER_ANALYTICS_SITE = "loooper.fr";
+</script>
+<script src="/js/tracker/tracker.js" defer></script>
 <script src="/js/mouse.js" defer></script>
 <script src="/js/accessibility.js" defer></script>
 <script src="/js/form.js" defer></script>
