@@ -15,7 +15,7 @@
         localStorage.removeItem(CONSENT_KEY);
         return null;
       }
-      return data.value; 
+      return data.value;
     } catch (e) {
       return null;
     }
@@ -38,6 +38,12 @@
     document.head.appendChild(s);
   }
 
+  function loadHomeTracker() {
+    if (window.looooperTrack && typeof window.looooperTrack.onConsentAccepted === 'function') {
+      window.looooperTrack.onConsentAccepted();
+    }
+  }
+
 
   function createBanner() {
     var banner = document.createElement('div');
@@ -50,8 +56,8 @@
       '  <div class="lcb-text">',
       '    <strong class="lcb-title">🍪 Cookies & confidentialité</strong>',
       '    <p>',
-      '      Nous utilisons Google Tag Manager pour mesurer l\'audience de notre site.',
-      '      Ces cookies sont déposés <strong>uniquement avec votre accord</strong>.',
+      '      Nous utilisons Google Tag Manager et un outil de mesure d\'audience interne pour analyser la fréquentation de notre site.',
+      '      Ces cookies/identifiants sont déposés <strong>uniquement avec votre accord</strong>.',
       '      </p> ',
       '   <a href="/mentions-legales#cookies" class="lcb-link">En savoir plus</a>',
       '  </div>',
@@ -63,8 +69,6 @@
     ].join('');
     return banner;
   }
-
-
 
 
   function removeBanner() {
@@ -84,6 +88,7 @@
       document.getElementById('lcb-accept').addEventListener('click', function () {
         setConsent('accepted');
         loadGTM();
+        loadHomeTracker();
         removeBanner();
       });
       document.getElementById('lcb-refuse').addEventListener('click', function () {
@@ -97,7 +102,6 @@
       document.addEventListener('DOMContentLoaded', appendBanner);
     }
   }
-
 
 
   window.LoooperConsent = {
@@ -119,6 +123,5 @@
   } else if (consent === null) {
     showBanner();
   }
-
 
 })();

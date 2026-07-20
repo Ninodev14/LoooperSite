@@ -1,6 +1,41 @@
 (function () {
+  "use strict";
+
   var API_URL = window.LOOOPER_ANALYTICS_URL || "https://sitestatloooper.onrender.com/api/collect";
   var SITE = window.LOOOPER_ANALYTICS_SITE || "loooper.fr";
+  var CONSENT_KEY = "loooper_cookie_consent";
+
+  function getConsent() {
+    try {
+      var raw = localStorage.getItem(CONSENT_KEY);
+      if (!raw) return null;
+      var data = JSON.parse(raw);
+      if (Date.now() > data.expires) {
+        localStorage.removeItem(CONSENT_KEY);
+        return null;
+      }
+      return data.value; // 'accepted' | 'refused'
+    } catch (e) {
+      return null;
+    }
+  }
+
+  var memoryFallback = {};
+  function safeGet(key) {
+    try {
+      return localStorage.getItem(key);
+    } catch (e) {
+      return memoryFallback[key] || null;
+    }
+  }
+
+  function safeSet(key, value) {
+    try {
+      localStorage.setItem(key, value);
+    } catch (e) {
+      memoryFallback[key] = value;
+    }
+  }
 
   function uuid() {
     return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
@@ -12,15 +47,17 @@
 
   function getSessionId() {
     var key = "_looop_sid";
-    var id = localStorage.getItem(key);
+    var id = safeGet(key);
     if (!id) {
       id = uuid();
-      localStorage.setItem(key, id);
+      safeSet(key, id);
     }
     return id;
   }
 
   function send(payload, useBeacon) {
+    if (getConsent() !== "accepted") return;
+
     var body = JSON.stringify(
       Object.assign(
         {
@@ -47,32 +84,39 @@
     }
   }
 
-  // Pageview au chargement
   var loadTime = Date.now();
-  send({ type: "pageview" });
+  var started = false;
 
-  // Durée passée sur la page, envoyée quand l'utilisateur quitte/change d'onglet
   function sendDuration() {
+    if (!started) return;
     var duration = Date.now() - loadTime;
     if (duration > 500) {
       send({ type: "duration", value: duration }, true);
     }
   }
-  document.addEventListener("visibilitychange", function () {
-    if (document.visibilityState === "hidden") sendDuration();
-  });
-  window.addEventListener("pagehide", sendDuration);
 
-  // Clics automatiques sur tout élément portant data-track="nom_du_bouton"
-  document.addEventListener("click", function (e) {
+  var onVisibilityChange = function () {
+    if (document.visibilityState === "hidden") sendDuration();
+  };
+  var onClick = function (e) {
     var el = e.target.closest("[data-track]");
     if (el) {
       send({ type: "click", label: el.getAttribute("data-track") });
     }
-  });
+  };
 
-  // Recherche : à appeler manuellement depuis ta barre de recherche
-  // ex: window.looooperTrack.search("jeux serious game bordeaux")
+  function start() {
+    if (started) return; 
+    started = true;
+    loadTime = Date.now();
+
+    send({ type: "pageview" });
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    window.addEventListener("pagehide", sendDuration);
+    document.addEventListener("click", onClick);
+  }
+
   window.looooperTrack = {
     search: function (query) {
       if (query && query.trim()) {
@@ -82,5 +126,12 @@
     click: function (label) {
       send({ type: "click", label: label });
     },
+    onConsentAccepted: function () {
+      start();
+    },
   };
+
+  if (getConsent() === "accepted") {
+    start();
+  }
 })();
