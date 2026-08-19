@@ -1,0 +1,48 @@
+<!-- public/admin/index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Loooper! Blog</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="data:," />
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #111;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+    .cms-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      color: #eee;
+      font-size: 1rem;
+    }
+  </style>
+
+  <!-- Netlify Identity DOIT être chargé avant Decap -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <div class="cms-loading">Chargement de l'interface d'administration…</div>
+
+  <!-- Gère la redirection après clic sur le lien d'invitation/reset envoyé par email -->
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+</body>
+</html>
