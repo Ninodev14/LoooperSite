@@ -38,6 +38,28 @@ const { title, description, ogImage, ogUrl, currentPage, noIndex, schemaJson } =
 <!doctype html>
 <html lang="fr">
   <head>
+    <script is:inline>
+      (function () {
+        const color = sessionStorage.getItem("loopColor");
+        if (!color) return;
+        const style = document.createElement("style");
+        style.id = "pt-flash-cover";
+        style.textContent = `
+      #pt-flash-cover-bg {
+        position: fixed;
+        inset: 0;
+        background: ${color};
+        z-index: 9999;
+      }
+    `;
+        document.head.appendChild(style);
+
+        const bg = document.createElement("div");
+        bg.id = "pt-flash-cover-bg";
+        document.documentElement.appendChild(bg);
+
+      })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -123,5 +145,9 @@ const { title, description, ogImage, ogUrl, currentPage, noIndex, schemaJson } =
     </main>
     <ContactSection />
     <Footer />
+    <div id="pt-grid" data-color=""></div>
+
+    <img id="pt-logo" src="/img/logo.png" alt="Loooper!" />
+    <script src="/js/loading.js" defer></script>
   </body>
 </html>
