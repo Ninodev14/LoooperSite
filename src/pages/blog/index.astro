@@ -13,7 +13,7 @@ const articles = (await getCollection('blog', ({ data }) => !data.draft))
   <ul>
     {articles.map(article => (
       <li>
-        <a href={`/blog/${article.slug}`}>{article.data.title}</a>
+        <a href={`/blog/${article.id}`}>{article.data.title}</a>
       </li>
     ))}
   </ul>
