@@ -1,5 +1,5 @@
 ---
-title: Exemple de titre un peu long pour un article
+title: Exemple de titre un peu long pour un article 2
 description: "Découvrez les balises HTML essentielles : hn, title,
   description... pour un bon SEO afin d'optimiser vos pages web comme un expert
   !"
