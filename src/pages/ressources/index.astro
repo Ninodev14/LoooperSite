@@ -5,6 +5,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 const articles = (
   await getCollection("ressources", ({ data }) => !data.draft)
 ).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const latestArticle = articles[0];
 ---
 
 <BaseLayout
@@ -27,6 +29,7 @@ const articles = (
   <div class="container-width ariane-net h3">
     <a href="/">Accueil </a>
     <p class="h3">></p>
+
     <a
       href="/ressources/"
       class="end-chield highlight-no-annim blue black-border-small"
@@ -34,33 +37,71 @@ const articles = (
     >
   </div>
 
-  <div class="large-spacing"></div>
+  {
+    latestArticle && (
+      <div
+        class="zoom-container zoom-container-ressource"
+        style="transform: scaleX(1);"
+      >
+        <section class="container-width featured-ressource">
+          <div class="featured-ressource-text">
+            <div class="keywords-container">
+              {latestArticle.data.tags?.map((tag) => (
+                <p class="keywords">{tag}</p>
+              ))}
+            </div>
+            <h2 class="h2 white">{latestArticle.data.title}</h2>
+            <p class="p white">{latestArticle.data.description}</p>
+
+            <a
+              href={`/ressources/${latestArticle.id}`}
+              class="text-typo btn-project btn-white-background"
+            >
+              <span>Lire la ressource</span>
+              <div class="arrow-container black-arrow">
+                <img src="/svg/arrowB.svg" alt="fleche" />
+              </div>
+            </a>
+          </div>
+          <div class="featured-ressource-image">
+            <img
+              src={latestArticle.data.image}
+              alt={latestArticle.data.title}
+            />
+          </div>
+        </section>
+      </div>
+    )
+  }
+
+  <div class="small-spacing"></div>
+
+  <div class="small-spacing"></div>
+
   <section class="container-width">
     <ul>
       {
         articles.map((article) => (
-          <li>
+          <li class="card-info-container-ressource-li">
             <article class="card-info-container card-info-container-ressource">
               <img src={article.data.image} alt={article.data.title} />
               <div class="card-info-container-text">
                 <div class="card-info-container-text-alignement">
                   <div class="keywords-container">
                     {article.data.tags?.map((tag) => (
-                      <span class="keywords keywords-ressource">{tag}</span>
+                      <p class="keywords">{tag}</p>
                     ))}
                   </div>
                   <h3 class="h3 black">{article.data.title}</h3>
                   <p class="p black white-border">{article.data.description}</p>
                 </div>
                 <div class="card-info-container-text-center-btn">
-                  {" "}
                   <a href={`/ressources/${article.id}`}>
-                    {" "}
                     <button
                       class="text-typo btn-project btn-modal btn-white-background"
                       aria-label="En savoir plus sur le quiz"
                     >
-                      <span>En savoir plus</span>{" "}
+                      <span>En savoir plus</span>
                     </button>
                   </a>
                 </div>
