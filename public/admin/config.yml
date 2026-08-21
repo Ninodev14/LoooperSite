@@ -1,4 +1,3 @@
-# public/admin/config.yml
 backend:
   name: git-gateway
   branch: main
@@ -32,4 +31,53 @@ collections:
           - "Éducation"
           - "Associatif"
       - { label: "Brouillon", name: "draft", widget: "boolean", default: false }
-      - { label: "Contenu", name: "body", widget: "markdown" }
+
+      - label: "Blocs de contenu"
+        name: "blocks"
+        widget: "list"
+        required: false
+        types:
+          - label: "Bloc 1 — Titre + texte (1 colonne)"
+            name: "text_single"
+            widget: "object"
+            fields:
+              - { label: "Titre du bloc", name: "heading", widget: "string" }
+              - { label: "Texte", name: "text", widget: "markdown" }
+
+          - label: "Bloc 2 — Titre + image + texte"
+            name: "image_text"
+            widget: "object"
+            fields:
+              - { label: "Titre du bloc", name: "heading", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Texte", name: "text", widget: "markdown" }
+              - label: "Position de l'image"
+                name: "imagePosition"
+                widget: "select"
+                options: ["gauche", "droite"]
+                default: "gauche"
+
+          - label: "Bloc 3 — Titre + texte (2 colonnes)"
+            name: "text_two_columns"
+            widget: "object"
+            fields:
+              - { label: "Titre du bloc", name: "heading", widget: "string" }
+              - { label: "Colonne 1", name: "column1", widget: "markdown" }
+              - { label: "Colonne 2", name: "column2", widget: "markdown" }
+
+          - label: "Bloc 4 — Titre + image pleine largeur + texte"
+            name: "full_image_text"
+            widget: "object"
+            fields:
+              - { label: "Titre du bloc", name: "heading", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Texte", name: "text", widget: "markdown" }
+
+          - label: "Bloc 5 — Titre + texte (3 colonnes)"
+            name: "text_three_columns"
+            widget: "object"
+            fields:
+              - { label: "Titre du bloc", name: "heading", widget: "string" }
+              - { label: "Colonne 1", name: "column1", widget: "markdown" }
+              - { label: "Colonne 2", name: "column2", widget: "markdown" }
+              - { label: "Colonne 3", name: "column3", widget: "markdown" }

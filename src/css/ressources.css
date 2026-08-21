@@ -37,7 +37,11 @@
     margin-top: -26%;
 }
 }
-
+@media (min-width: 1900px) {
+.keywords {
+    margin-top: -16%;
+}
+}
 
 .keywords-container {
     
@@ -167,4 +171,140 @@ ul {
 
 .card-info-container-ressource-li:nth-child(3n+3) .keywords {
     background-color: #3C61F5;
+}
+
+/* Pagination */ 
+
+.filters-ressources {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.filters-tags-container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+
+;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-tag {
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 20px;
+
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.filter-tag.active {
+    background-color: #F6B254;
+    color: white;
+}
+
+.filters-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px 16px;
+}
+
+.search-container {
+    position: relative;
+    max-width: 400px;
+    min-width: 220px;
+    flex: 1;
+}
+
+.search-container input {
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 50px 14px 20px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.per-page-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.per-page-container select {
+    border: none;
+    border-radius: 30px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 60px;
+    flex-direction: column;
+}
+
+.pagination-btn {
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 24px;
+    width: 13rem;
+    cursor: pointer;
+    color: black;
+}
+
+.pagination-btn:disabled {
+    color: black;
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pagination-numbers {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.pagination-number {
+        font-size: 1rem;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.pagination-number.active {
+    background-color: #BB6EF6;
+    color: white;
+}
+
+.pagination-dots {
+    color: white;
+}
+
+.pagination-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }

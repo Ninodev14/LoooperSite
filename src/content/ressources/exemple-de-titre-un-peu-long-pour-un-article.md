@@ -8,7 +8,6 @@ image: /img/ressources/who-is-this-guy-meme.png
 tags:
   - Serious game
   - Escape game
-  - Culture
 draft: false
 ---
 

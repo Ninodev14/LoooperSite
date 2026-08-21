@@ -1,34 +1,113 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { marked } from "marked"; // npm install marked
 
 export async function getStaticPaths() {
-  const articles = await getCollection('ressources', ({ data }) => !data.draft);
-  return articles.map(article => ({
+  const articles = await getCollection("ressources", ({ data }) => !data.draft);
+  return articles.map((article) => ({
     params: { id: article.id },
     props: { article },
   }));
 }
 
 const { article } = Astro.props;
-const { Content } = await render(article);
+const { title, description, image, tags, blocks } = article.data;
 ---
 
-<BaseLayout
-  title={article.data.title}
-  description={article.data.description}
->
-  <article>
-    <h1>{article.data.title}</h1>
-    <p>{article.data.date.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
-    {article.data.image && <img src={article.data.image} alt={article.data.title} />}
-    {article.data.tags && (
-      <ul>
-        {article.data.tags.map(tag => <li>{tag}</li>)}
-      </ul>
-    )}
-    <div>
-      <Content />
-    </div>
-  </article>
+<BaseLayout title={title} description={description}>
+
+  <style>
+.columns-grid {
+    display: grid;
+    gap: 32px;
+}
+
+.columns-2 { grid-template-columns: repeat(2, 1fr); }
+.columns-3 { grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 768px) {
+    .columns-2, .columns-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.block-image-text-inner {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.position-droite .block-image-text-inner {
+    flex-direction: row-reverse;
+}
+
+.block-image-text-inner img,
+.block-full-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+</style>
+
+
+  <h1>{title}</h1>
+  {image && <img src={image} alt={title} />}
+
+  {blocks?.map((block) => {
+    switch (block.type) {
+      case "text_single":
+        return (
+          <section class="block block-text-single">
+            <h2>{block.heading}</h2>
+            <div set:html={marked.parse(block.text)} />
+          </section>
+        );
+
+      case "image_text":
+        return (
+          <section class={`block block-image-text position-${block.imagePosition}`}>
+            <h2>{block.heading}</h2>
+            <div class="block-image-text-inner">
+              <img src={block.image} alt={block.heading} />
+              <div set:html={marked.parse(block.text)} />
+            </div>
+          </section>
+        );
+
+      case "text_two_columns":
+        return (
+          <section class="block block-two-columns">
+            <h2>{block.heading}</h2>
+            <div class="columns-grid columns-2">
+              <div set:html={marked.parse(block.column1)} />
+              <div set:html={marked.parse(block.column2)} />
+            </div>
+          </section>
+        );
+
+      case "full_image_text":
+        return (
+          <section class="block block-full-image">
+            <h2>{block.heading}</h2>
+            <img src={block.image} alt={block.heading} />
+            <div set:html={marked.parse(block.text)} />
+          </section>
+        );
+
+      case "text_three_columns":
+        return (
+          <section class="block block-three-columns">
+            <h2>{block.heading}</h2>
+            <div class="columns-grid columns-3">
+              <div set:html={marked.parse(block.column1)} />
+              <div set:html={marked.parse(block.column2)} />
+              <div set:html={marked.parse(block.column3)} />
+            </div>
+          </section>
+        );
+
+      default:
+        return null;
+    }
+  })}
 </BaseLayout>
