@@ -1,10 +1,10 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const articles = (
-  await getCollection("ressources", ({ data }) => !data.draft)
-).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const articles = (await getCollection('ressources', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
 
 const latestArticle = articles[0];
 
@@ -15,15 +15,15 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
   title="Ressource"
   description="Articles et ressources de Loooper!"
   ogUrl="https://ressources"
-  currentPage="ressource"
->
+  currentPage="ressource">
   <section class="mainPageTitle mainPageTitlePurple">
     <h1 class="h1 container-width white-border black">
       Découvrez toutes les
       <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleBlue"
+        <span class="paterneTitle paterneTitleBlue">ressources de LOOOPER! </span><span
+          class="paterneTitleContour"
           >ressources de LOOOPER!
-        </span><span class="paterneTitleContour">ressources de LOOOPER! </span>
+        </span>
       </div>
     </h1>
   </section>
@@ -32,19 +32,14 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
     <a href="/">Accueil </a>
     <p class="h3">></p>
 
-    <a
-      href="/ressources/"
-      class="end-chield highlight-no-annim blue black-border-small"
+    <a href="/ressources/" class="end-chield highlight-no-annim blue black-border-small"
       >Nos Ressources</a
     >
   </div>
 
   {
     latestArticle && (
-      <div
-        class="zoom-container zoom-container-ressource"
-        style="transform: scaleX(1);"
-      >
+      <div class="zoom-container zoom-container-ressource" style="transform: scaleX(1);">
         <section class="container-width featured-ressource">
           <div class="featured-ressource-text">
             <div class="keywords-container">
@@ -57,8 +52,7 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
 
             <a
               href={`/ressources/${latestArticle.id}`}
-              class="text-typo btn-project btn-white-background"
-            >
+              class="text-typo btn-project btn-white-background">
               <span>Lire la ressource</span>
               <div class="arrow-container black-arrow">
                 <img src="/svg/arrowB.svg" alt="fleche" />
@@ -66,10 +60,7 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
             </a>
           </div>
           <div class="featured-ressource-image">
-            <img
-              src={latestArticle.data.image}
-              alt={latestArticle.data.title}
-            />
+            <img src={latestArticle.data.image} alt={latestArticle.data.title} />
           </div>
         </section>
       </div>
@@ -80,9 +71,7 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
 
   <section class="container-width filters-ressources">
     <div class="filters-tags-container text-typo">
-      <button class="filter-tag active" data-tag="all"
-        >Toutes les ressources</button
-      >
+      <button class="filter-tag active" data-tag="all">Toutes les ressources</button>
       {
         allTags.map((tag) => (
           <button class="filter-tag" data-tag={tag}>
@@ -96,19 +85,9 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
 
     <div class="filters-bottom-row text-typo">
       <div class="search-container">
-        <input
-          type="text"
-          id="search-input"
-          placeholder="Rechercher une ressource..."
-        />
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          class="search-icon"
-        >
-          <circle cx="11" cy="11" r="7" stroke="black" stroke-width="2"
-          ></circle>
+        <input type="text" id="search-input" placeholder="Rechercher une ressource..." />
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="search-icon">
+          <circle cx="11" cy="11" r="7" stroke="black" stroke-width="2"></circle>
           <line
             x1="16.5"
             y1="16.5"
@@ -121,9 +100,7 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
       </div>
 
       <div class="per-page-container">
-        <label class="text-typo" for="per-page-select"
-          >Nombre d'articles par page</label
-        >
+        <label class="text-typo" for="per-page-select">Nombre d'articles par page</label>
         <select class="text-typo black" id="per-page-select">
           <option value="3">3</option>
           <option value="6" selected>6</option>
@@ -144,8 +121,7 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
           <li
             class="card-info-container-ressource-li"
             data-tags={JSON.stringify(article.data.tags ?? [])}
-            data-title={article.data.title.toLowerCase()}
-          >
+            data-title={article.data.title.toLowerCase()}>
             <article class="card-info-container card-info-container-ressource">
               <img src={article.data.image} alt={article.data.title} />
               <div class="card-info-container-text">
@@ -162,8 +138,7 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
                   <a href={`/ressources/${article.id}`}>
                     <button
                       class="text-typo btn-project btn-modal btn-white-background"
-                      aria-label="En savoir plus sur le quiz"
-                    >
+                      aria-label="En savoir plus sur le quiz">
                       <span>En savoir plus</span>
                     </button>
                   </a>
@@ -178,44 +153,33 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
     <div class="pagination">
       <div id="page-numbers" class="pagination-numbers text-typo"></div>
       <div class="pagination-buttons">
-        <button class="pagination-btn text-typo" id="prev-page"
-          >Page précédente</button
-        >
-        <button class="pagination-btn text-typo" id="next-page"
-          >Page suivante</button
-        >
+        <button class="pagination-btn text-typo" id="prev-page">Page précédente</button>
+        <button class="pagination-btn text-typo" id="next-page">Page suivante</button>
       </div>
     </div>
   </section>
 </BaseLayout>
 <script>
   const allCards = Array.from(
-    document.querySelectorAll<HTMLLIElement>(
-      ".card-info-container-ressource-li",
-    ),
+    document.querySelectorAll<HTMLLIElement>('.card-info-container-ressource-li'),
   );
-  const filterButtons =
-    document.querySelectorAll<HTMLButtonElement>(".filter-tag");
-  const searchInput = document.getElementById(
-    "search-input",
-  ) as HTMLInputElement;
-  const perPageSelect = document.getElementById(
-    "per-page-select",
-  ) as HTMLSelectElement;
-  const pageNumbersContainer = document.getElementById("page-numbers")!;
-  const prevBtn = document.getElementById("prev-page") as HTMLButtonElement;
-  const nextBtn = document.getElementById("next-page") as HTMLButtonElement;
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>('.filter-tag');
+  const searchInput = document.getElementById('search-input') as HTMLInputElement;
+  const perPageSelect = document.getElementById('per-page-select') as HTMLSelectElement;
+  const pageNumbersContainer = document.getElementById('page-numbers')!;
+  const prevBtn = document.getElementById('prev-page') as HTMLButtonElement;
+  const nextBtn = document.getElementById('next-page') as HTMLButtonElement;
 
-  let activeTag = "all";
-  let searchQuery = "";
+  let activeTag = 'all';
+  let searchQuery = '';
   let perPage = 9;
   let currentPage = 1;
 
   function getFilteredCards() {
     return allCards.filter((card) => {
-      const tags: string[] = JSON.parse(card.dataset.tags || "[]");
-      const title = card.dataset.title || "";
-      const matchesTag = activeTag === "all" || tags.includes(activeTag);
+      const tags: string[] = JSON.parse(card.dataset.tags || '[]');
+      const title = card.dataset.title || '';
+      const matchesTag = activeTag === 'all' || tags.includes(activeTag);
       const matchesSearch = title.includes(searchQuery);
       return matchesTag && matchesSearch;
     });
@@ -226,13 +190,11 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
     const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
     currentPage = Math.min(currentPage, totalPages);
 
-    allCards.forEach((card) => (card.style.display = "none"));
+    allCards.forEach((card) => (card.style.display = 'none'));
     const start = (currentPage - 1) * perPage;
-    filtered
-      .slice(start, start + perPage)
-      .forEach((card) => (card.style.display = ""));
+    filtered.slice(start, start + perPage).forEach((card) => (card.style.display = ''));
 
-    pageNumbersContainer.innerHTML = "";
+    pageNumbersContainer.innerHTML = '';
     const pagesToShow = new Set<number>();
     pagesToShow.add(1);
     pagesToShow.add(totalPages);
@@ -244,16 +206,15 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
     let lastPage = 0;
     sorted.forEach((p) => {
       if (p - lastPage > 1) {
-        const dots = document.createElement("span");
-        dots.textContent = "...";
-        dots.className = "pagination-dots";
+        const dots = document.createElement('span');
+        dots.textContent = '...';
+        dots.className = 'pagination-dots';
         pageNumbersContainer.appendChild(dots);
       }
-      const btn = document.createElement("button");
+      const btn = document.createElement('button');
       btn.textContent = String(p);
-      btn.className =
-        "pagination-number" + (p === currentPage ? " active" : "");
-      btn.addEventListener("click", () => {
+      btn.className = 'pagination-number' + (p === currentPage ? ' active' : '');
+      btn.addEventListener('click', () => {
         currentPage = p;
         render();
       });
@@ -266,35 +227,35 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
   }
 
   filterButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      filterButtons.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      activeTag = btn.dataset.tag || "all";
+    btn.addEventListener('click', () => {
+      filterButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeTag = btn.dataset.tag || 'all';
       currentPage = 1;
       render();
     });
   });
 
-  searchInput?.addEventListener("input", (e) => {
+  searchInput?.addEventListener('input', (e) => {
     searchQuery = (e.target as HTMLInputElement).value.toLowerCase();
     currentPage = 1;
     render();
   });
 
-  perPageSelect?.addEventListener("change", (e) => {
+  perPageSelect?.addEventListener('change', (e) => {
     perPage = parseInt((e.target as HTMLSelectElement).value, 10);
     currentPage = 1;
     render();
   });
 
-  prevBtn.addEventListener("click", () => {
+  prevBtn.addEventListener('click', () => {
     if (currentPage > 1) {
       currentPage--;
       render();
     }
   });
 
-  nextBtn.addEventListener("click", () => {
+  nextBtn.addEventListener('click', () => {
     currentPage++;
     render();
   });

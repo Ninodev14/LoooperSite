@@ -1,10 +1,10 @@
 ---
-import { getCollection } from "astro:content";
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import { marked } from "marked"; // npm install marked
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { marked } from 'marked'; // npm install marked
 
 export async function getStaticPaths() {
-  const articles = await getCollection("ressources", ({ data }) => !data.draft);
+  const articles = await getCollection('ressources', ({ data }) => !data.draft);
   return articles.map((article) => ({
     params: { id: article.id },
     props: { article },
@@ -16,98 +16,83 @@ const { title, description, image, tags, blocks } = article.data;
 ---
 
 <BaseLayout title={title} description={description}>
+  <div class="medium-spacing"></div>
 
-  <style>
-.columns-grid {
-    display: grid;
-    gap: 32px;
-}
+  <div class="container-width ariane-net h3">
+    <a href="/">Accueil </a>
+    <p class="h3">></p>
+    <a href="/ressources/">Nos Ressources</a>
+    <p class="h3">></p>
+    <a href={''} class="end-chield highlight-no-annim blue black-border-small">{title}</a>
+  </div>
 
-.columns-2 { grid-template-columns: repeat(2, 1fr); }
-.columns-3 { grid-template-columns: repeat(3, 1fr); }
+  <section class="container-width">
+    <h1 class="h2">{title}</h1>
+    {image && <img src={image} alt={title} />}
 
-@media (max-width: 768px) {
-    .columns-2, .columns-3 {
-        grid-template-columns: 1fr;
-    }
-}
+    {article.data.tags?.map((tag) => <p class="text-typo">{tag}</p>)}
+  </section>
+  <div class="zoom-container zoom-container-ressource" style="transform: scaleX(1);">
+    <section class="container-width">
+      {
+        blocks?.map((block) => {
+          switch (block.type) {
+            case 'text_single':
+              return (
+                <section class="block block-text-single">
+                  <h2>{block.heading}</h2>
+                  <div set:html={marked.parse(block.text)} />
+                </section>
+              );
 
-.block-image-text-inner {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-}
+            case 'image_text':
+              return (
+                <section class={`block block-image-text position-${block.imagePosition}`}>
+                  <h2>{block.heading}</h2>
+                  <div class="block-image-text-inner">
+                    <img src={block.image} alt={block.heading} />
+                    <div set:html={marked.parse(block.text)} />
+                  </div>
+                </section>
+              );
 
-.position-droite .block-image-text-inner {
-    flex-direction: row-reverse;
-}
+            case 'text_two_columns':
+              return (
+                <section class="block block-two-columns">
+                  <h2>{block.heading}</h2>
+                  <div class="columns-grid columns-2">
+                    <div set:html={marked.parse(block.column1)} />
+                    <div set:html={marked.parse(block.column2)} />
+                  </div>
+                </section>
+              );
 
-.block-image-text-inner img,
-.block-full-image img {
-    width: 100%;
-    border-radius: 12px;
-}
-</style>
+            case 'full_image_text':
+              return (
+                <section class="block block-full-image">
+                  <h2>{block.heading}</h2>
+                  <img src={block.image} alt={block.heading} />
+                  <div set:html={marked.parse(block.text)} />
+                </section>
+              );
 
+            case 'text_three_columns':
+              return (
+                <section class="block block-three-columns">
+                  <h2>{block.heading}</h2>
+                  <div class="columns-grid columns-3">
+                    <div set:html={marked.parse(block.column1)} />
+                    <div set:html={marked.parse(block.column2)} />
+                    <div set:html={marked.parse(block.column3)} />
+                  </div>
+                </section>
+              );
 
-  <h1>{title}</h1>
-  {image && <img src={image} alt={title} />}
-
-  {blocks?.map((block) => {
-    switch (block.type) {
-      case "text_single":
-        return (
-          <section class="block block-text-single">
-            <h2>{block.heading}</h2>
-            <div set:html={marked.parse(block.text)} />
-          </section>
-        );
-
-      case "image_text":
-        return (
-          <section class={`block block-image-text position-${block.imagePosition}`}>
-            <h2>{block.heading}</h2>
-            <div class="block-image-text-inner">
-              <img src={block.image} alt={block.heading} />
-              <div set:html={marked.parse(block.text)} />
-            </div>
-          </section>
-        );
-
-      case "text_two_columns":
-        return (
-          <section class="block block-two-columns">
-            <h2>{block.heading}</h2>
-            <div class="columns-grid columns-2">
-              <div set:html={marked.parse(block.column1)} />
-              <div set:html={marked.parse(block.column2)} />
-            </div>
-          </section>
-        );
-
-      case "full_image_text":
-        return (
-          <section class="block block-full-image">
-            <h2>{block.heading}</h2>
-            <img src={block.image} alt={block.heading} />
-            <div set:html={marked.parse(block.text)} />
-          </section>
-        );
-
-      case "text_three_columns":
-        return (
-          <section class="block block-three-columns">
-            <h2>{block.heading}</h2>
-            <div class="columns-grid columns-3">
-              <div set:html={marked.parse(block.column1)} />
-              <div set:html={marked.parse(block.column2)} />
-              <div set:html={marked.parse(block.column3)} />
-            </div>
-          </section>
-        );
-
-      default:
-        return null;
-    }
-  })}
+            default:
+              return null;
+          }
+        })
+      }
+    </section>
+  </div>
 </BaseLayout>

@@ -1,0 +1,35 @@
+.columns-grid {
+  display: grid;
+  gap: 32px;
+}
+
+.columns-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.columns-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .columns-2,
+  .columns-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.block-image-text-inner {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.position-droite .block-image-text-inner {
+  flex-direction: row-reverse;
+}
+
+.block-image-text-inner img,
+.block-full-image img {
+  width: 100%;
+  border-radius: 12px;
+}
