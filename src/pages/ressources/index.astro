@@ -138,7 +138,7 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
   <div class="small-medium-spacing"></div>
 
   <section class="container-width">
-    <ul id="ressources-grid">
+    <ul class="ressources-grid" id="ressources-grid">
       {
         articles.map((article) => (
           <li

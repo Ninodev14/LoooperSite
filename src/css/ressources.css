@@ -44,14 +44,12 @@
 }
 
 .keywords-container {
-    
     display: flex;
-
     align-items: center;
     gap: 10px;
 }
 
-.container-width ul {
+.ressources-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 6rem 16px;
@@ -61,13 +59,13 @@
 }
 
 @media (max-width: 1420px) {
-    .container-width ul {
+    .ressources-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 640px) {
-    .container-width ul {
+    .ressources-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -80,10 +78,7 @@
     margin: 0;
 }
 
-ul {
-    display: flex;
-    justify-items: center;
-}
+
 
 .zoom-container-ressource {
     margin-top: 30px;
