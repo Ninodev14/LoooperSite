@@ -23,8 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      const visible = Math.max(0, Math.min(1, entry.intersectionRatio));
-      let progress = Math.min(visible / targetRatio, 1);
+      // Hauteur visible du container, en px, par rapport à la hauteur de l'écran
+      const visibleHeight = entry.intersectionRect.height;
+      const screenRatio = visibleHeight / window.innerHeight;
+
+      let progress = Math.min(screenRatio / targetRatio, 1);
       const newScale = 0.8 + 0.2 * progress;
       container.style.transform = `scaleX(${newScale})`;
     });

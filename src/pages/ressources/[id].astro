@@ -1,17 +1,27 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { marked } from 'marked'; // npm install marked
+import { marked } from 'marked';
 
 export async function getStaticPaths() {
-  const articles = await getCollection('ressources', ({ data }) => !data.draft);
-  return articles.map((article) => ({
+  const TAG_COLORS = ['#F6B254', '#BB6EF6', '#3C61F5'];
+  const TAG_COLOR_CLASSES = ['orange', 'purple', 'blue'];
+
+  const articles = (await getCollection('ressources', ({ data }) => !data.draft)).sort(
+    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+  );
+
+  return articles.map((article, index) => ({
     params: { id: article.id },
-    props: { article },
+    props: {
+      article,
+      tagColor: TAG_COLORS[index % 3],
+      tagColorClass: TAG_COLOR_CLASSES[index % 3],
+    },
   }));
 }
 
-const { article } = Astro.props;
+const { article, tagColor, tagColorClass } = Astro.props;
 const { title, description, image, tags, blocks } = article.data;
 ---
 
@@ -19,72 +29,92 @@ const { title, description, image, tags, blocks } = article.data;
   <div class="medium-spacing"></div>
 
   <div class="container-width ariane-net h3">
-    <a href="/">Accueil </a>
+    <a href="/">Accueil</a>
     <p class="h3">></p>
     <a href="/ressources/">Nos Ressources</a>
     <p class="h3">></p>
-    <a href={''} class="end-chield highlight-no-annim blue black-border-small">{title}</a>
+    <a href={''} class={`end-chield highlight-no-annim ${tagColorClass} black-border-small`}
+      >{title}</a
+    >
   </div>
-
+  <div class="small-medium-spacing"></div>
   <section class="container-width">
-    <h1 class="h2">{title}</h1>
-    {image && <img src={image} alt={title} />}
-
-    {article.data.tags?.map((tag) => <p class="text-typo">{tag}</p>)}
+    <h1 class="h2 title-intro">{title}</h1>
+    <div class="home-article-image" style={`--tag-color: ${tagColor};`}>
+      <span class="image-frame"> {image && <img src={image} alt={title} />}</span>
+    </div>
+    <div class="small-spacing"></div>
+    <div class="keywords-article-container">
+      {
+        tags?.map((tag) => (
+          <p class="text-typo keywords-article" style={`background-color: ${tagColor};`}>
+            {tag}
+          </p>
+        ))
+      }
+    </div>
   </section>
+  <div class="medium-spacing"></div>
   <div class="zoom-container zoom-container-ressource" style="transform: scaleX(1);">
-    <section class="container-width">
+    <section class="container-width container-article-content">
       {
         blocks?.map((block) => {
           switch (block.type) {
             case 'text_single':
               return (
                 <section class="block block-text-single">
-                  <h2>{block.heading}</h2>
+                  <h2 class="h2 white-border black">{block.heading}</h2>
                   <div set:html={marked.parse(block.text)} />
+                  <div class="small-medium-spacing" />
                 </section>
               );
 
             case 'image_text':
               return (
                 <section class={`block block-image-text position-${block.imagePosition}`}>
-                  <h2>{block.heading}</h2>
+                  <h2 class="h2 white-border black">{block.heading}</h2>
                   <div class="block-image-text-inner">
-                    <img src={block.image} alt={block.heading} />
-                    <div set:html={marked.parse(block.text)} />
+                    <div class="block-image-text-image">
+                      <img src={block.image} alt={block.heading} />
+                    </div>
+                    <div class="block-image-text-content" set:html={marked.parse(block.text)} />
                   </div>
+                  <div class="small-medium-spacing" />
                 </section>
               );
 
             case 'text_two_columns':
               return (
                 <section class="block block-two-columns">
-                  <h2>{block.heading}</h2>
+                  <h2 class="h2 white-border black">{block.heading}</h2>
                   <div class="columns-grid columns-2">
                     <div set:html={marked.parse(block.column1)} />
                     <div set:html={marked.parse(block.column2)} />
                   </div>
+                  <div class="small-medium-spacing" />
                 </section>
               );
 
             case 'full_image_text':
               return (
                 <section class="block block-full-image">
-                  <h2>{block.heading}</h2>
+                  <h2 class="h2 white-border black">{block.heading}</h2>
                   <img src={block.image} alt={block.heading} />
                   <div set:html={marked.parse(block.text)} />
+                  <div class="small-medium-spacing" />
                 </section>
               );
 
             case 'text_three_columns':
               return (
                 <section class="block block-three-columns">
-                  <h2>{block.heading}</h2>
+                  <h2 class="h2 white-border black">{block.heading}</h2>
                   <div class="columns-grid columns-3">
                     <div set:html={marked.parse(block.column1)} />
                     <div set:html={marked.parse(block.column2)} />
                     <div set:html={marked.parse(block.column3)} />
                   </div>
+                  <div class="small-medium-spacing" />
                 </section>
               );
 
