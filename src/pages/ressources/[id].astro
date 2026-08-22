@@ -39,19 +39,24 @@ const { title, description, image, tags, blocks } = article.data;
   </div>
   <div class="small-medium-spacing"></div>
   <section class="container-width">
-    <h1 class="h2 title-intro">{title}</h1>
-    <div class="home-article-image" style={`--tag-color: ${tagColor};`}>
-      <span class="image-frame"> {image && <img src={image} alt={title} />}</span>
-    </div>
-    <div class="small-spacing"></div>
-    <div class="keywords-article-container">
-      {
-        tags?.map((tag) => (
-          <p class="text-typo keywords-article" style={`background-color: ${tagColor};`}>
-            {tag}
-          </p>
-        ))
-      }
+    <div class="description-article-container">
+      <div class="description-article-content">
+        <h1 class="h2 title-intro">{title}</h1>
+        <div class="home-article-image" style={`--tag-color: ${tagColor};`}>
+          {image && <img src={image} alt={title} />}
+        </div>
+        <div class="small-spacing"></div>
+        <div class="keywords-article-container">
+          {
+            tags?.map((tag) => (
+              <p class="text-typo keywords-article" style={`background-color: ${tagColor};`}>
+                {tag}
+              </p>
+            ))
+          }
+        </div>
+      </div>
+      <img class="pattern-article" src="/public/svg/paternArticle.svg" alt="Pattern" />
     </div>
   </section>
   <div class="medium-spacing"></div>
