@@ -53,9 +53,12 @@ const faqBlocks = blocks?.filter((block) => block.type === 'faq') ?? [];
         <div class="keywords-article-container">
           {
             tags?.map((tag) => (
-              <p class="text-typo keywords-article" style={`background-color: ${tagColor};`}>
+              <a
+                href={`/ressources/?tag=${encodeURIComponent(tag)}`}
+                class="text-typo keywords-article"
+                style={`background-color: ${tagColor};`}>
                 {tag}
-              </p>
+              </a>
             ))
           }
         </div>
@@ -197,4 +200,5 @@ const faqBlocks = blocks?.filter((block) => block.type === 'faq') ?? [];
   }
 
   <script src="/js/faq.js" defer></script>
+  <script src="/js/tagLinker.js" defer></script>
 </BaseLayout>

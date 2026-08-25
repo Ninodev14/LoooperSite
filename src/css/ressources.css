@@ -54,6 +54,13 @@
   height: fit-content;
   margin-top: -20%;
   font-size: 0.8rem;
+
+  border: none;
+
+  cursor: pointer;
+  line-height: normal;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 @media (max-width: 840px) {
@@ -105,6 +112,24 @@
 .zoom-container-ressource {
   margin-top: 30px;
   background-color: #0b0123;
+}
+
+.zoom-container-ressource strong {
+  font-weight: bold;
+}
+
+.zoom-container-ressource em {
+  font-style: italic;
+}
+.zoom-container-ressource code {
+  font-family: monospace;
+  background-color: #f6b254;
+  color: black;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+.zoom-container-ressource a {
+    text-decoration: underline;
 }
 
 .featured-ressource {
@@ -327,4 +352,75 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.pagination-btn-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.pagination-btn-arrow:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.pagination-btn-arrow:disabled .line1,
+.pagination-btn-arrow:disabled .line2 {
+  background: #999999;
+}
+
+.pagination-chevron {
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+
+.pagination-chevron .line1,
+.pagination-chevron .line2 {
+  position: absolute;
+  top: 50%;
+  background: #000;
+  border-radius: 2px;
+  height: 3px;
+  width: 10px;
+}
+
+.pagination-chevron-left .line1,
+.pagination-chevron-left .line2 {
+  left: 0;
+  transform-origin: left center;
+}
+
+.pagination-chevron-left .line1 {
+  transform: translateY(0%) rotate(-45deg);
+}
+
+.pagination-chevron-left .line2 {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.pagination-chevron-right .line1,
+.pagination-chevron-right .line2 {
+  right: 0;
+  transform-origin: right center;
+}
+
+.pagination-chevron-right .line1 {
+  transform: translateY(0%) rotate(45deg);
+}
+
+.pagination-chevron-right .line2 {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.pagination-arrow-double {
+  display: inline-flex;
+  align-items: center;
 }

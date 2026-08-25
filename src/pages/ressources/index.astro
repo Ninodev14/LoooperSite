@@ -44,7 +44,9 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
           <div class="featured-ressource-text">
             <div class="keywords-container">
               {latestArticle.data.tags?.map((tag) => (
-                <p class="keywords">{tag}</p>
+                <button class="keywords tag-link" data-tag={tag} type="button">
+                  {tag}
+                </button>
               ))}
             </div>
             <h2 class="h2 white">{latestArticle.data.title}</h2>
@@ -128,7 +130,9 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
                 <div class="card-info-container-text-alignement">
                   <div class="keywords-container">
                     {article.data.tags?.map((tag) => (
-                      <p class="keywords">{tag}</p>
+                      <button class="keywords tag-link" data-tag={tag} type="button">
+                        {tag}
+                      </button>
                     ))}
                   </div>
                   <h3 class="h3 black">{article.data.title}</h3>
@@ -153,8 +157,58 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
     <div class="pagination">
       <div id="page-numbers" class="pagination-numbers text-typo"></div>
       <div class="pagination-buttons">
-        <button class="pagination-btn text-typo" id="prev-page">Page précédente</button>
-        <button class="pagination-btn text-typo" id="next-page">Page suivante</button>
+        <button
+          class="pagination-btn pagination-btn-arrow"
+          id="first-page"
+          aria-label="Première page"
+          type="button">
+          <div class="pagination-arrow-double">
+            <div class="pagination-chevron pagination-chevron-left">
+              <div class="line1"></div>
+              <div class="line2"></div>
+            </div>
+            <div class="pagination-chevron pagination-chevron-left">
+              <div class="line1"></div>
+              <div class="line2"></div>
+            </div>
+          </div>
+        </button>
+        <button
+          class="pagination-btn pagination-btn-arrow"
+          id="prev-page"
+          aria-label="Page précédente"
+          type="button">
+          <div class="pagination-chevron pagination-chevron-left">
+            <div class="line1"></div>
+            <div class="line2"></div>
+          </div>
+        </button>
+        <button
+          class="pagination-btn pagination-btn-arrow"
+          id="next-page"
+          aria-label="Page suivante"
+          type="button">
+          <div class="pagination-chevron pagination-chevron-right">
+            <div class="line1"></div>
+            <div class="line2"></div>
+          </div>
+        </button>
+        <button
+          class="pagination-btn pagination-btn-arrow"
+          id="last-page"
+          aria-label="Dernière page"
+          type="button">
+          <div class="pagination-arrow-double">
+            <div class="pagination-chevron pagination-chevron-right">
+              <div class="line1"></div>
+              <div class="line2"></div>
+            </div>
+            <div class="pagination-chevron pagination-chevron-right">
+              <div class="line1"></div>
+              <div class="line2"></div>
+            </div>
+          </div>
+        </button>
       </div>
     </div>
   </section>
@@ -167,12 +221,16 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
   const searchInput = document.getElementById('search-input') as HTMLInputElement;
   const perPageSelect = document.getElementById('per-page-select') as HTMLSelectElement;
   const pageNumbersContainer = document.getElementById('page-numbers')!;
+  const paginationContainer = document.querySelector<HTMLDivElement>('.pagination');
   const prevBtn = document.getElementById('prev-page') as HTMLButtonElement;
   const nextBtn = document.getElementById('next-page') as HTMLButtonElement;
+  const firstBtn = document.getElementById('first-page') as HTMLButtonElement;
+  const lastBtn = document.getElementById('last-page') as HTMLButtonElement;
 
   let activeTag = 'all';
   let searchQuery = '';
-  let perPage = 9;
+  // On synchronise avec la valeur réellement sélectionnée dans le <select>
+  let perPage = parseInt(perPageSelect?.value || '9', 10);
   let currentPage = 1;
 
   function getFilteredCards() {
@@ -224,6 +282,13 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
 
     prevBtn.disabled = currentPage === 1;
     nextBtn.disabled = currentPage === totalPages;
+    firstBtn.disabled = currentPage === 1;
+    lastBtn.disabled = currentPage === totalPages;
+
+    // On masque toute la pagination s'il n'y a qu'une seule page de résultats
+    if (paginationContainer) {
+      paginationContainer.style.display = totalPages <= 1 ? 'none' : '';
+    }
   }
 
   filterButtons.forEach((btn) => {
@@ -260,5 +325,16 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
     render();
   });
 
+  firstBtn.addEventListener('click', () => {
+    currentPage = 1;
+    render();
+  });
+
+  lastBtn.addEventListener('click', () => {
+    currentPage = Infinity; // render() le recale automatiquement sur totalPages
+    render();
+  });
+
   render();
 </script>
+<script src="/js/tagLinker.js" defer></script>
