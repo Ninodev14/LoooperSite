@@ -7,13 +7,12 @@ draft: false
 blocks:
   - type: text_single
     heading: zfzefazfe
-    text: >-
-      > * ###### **zefzaefzefz** *zefzfezfezze* `fzefzf
-      `[zaef  zefzefz](https://loooper.fr)[](https://loooper.fr)
-
-      >   zefzaefzefz
-
-      >
-
-      >
+    text: |-
+      **Strong** \
+      \
+      *Italic*\
+      \
+      `JSP`\
+      \
+      [dzddzzd](link.html)[](https://loooper:fr)
 ---
