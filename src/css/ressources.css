@@ -273,6 +273,18 @@
   border: none;
   border-radius: 30px;
   padding: 14px 50px 14px 20px;
+  outline: none;
+  transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.search-container input:focus {
+  box-shadow: 0 0 0 3px #bb6ef6;
+  background-color: white;
+}
+
+.search-container:focus-within .search-icon circle,
+.search-container:focus-within .search-icon line {
+  stroke: #bb6ef6;
 }
 
 .search-icon {
