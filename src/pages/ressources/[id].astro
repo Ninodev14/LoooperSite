@@ -49,10 +49,6 @@ const faqBlocks = blocks?.filter((block) => block.type === 'faq') ?? [];
     <div class="description-article-container">
       <div class="description-article-content">
         <h1 class="h2 title-intro">{title}</h1>
-        <figure class="home-article-image" style={`--tag-color: ${tagColor};`}>
-          {image && <img src={image} alt={imageLegend || title} />}
-          {imageLegend && <figcaption class="image-legend">{imageLegend}</figcaption>}
-        </figure>
         <div class="small-spacing"></div>
         <div class="keywords-article-container">
           {
@@ -63,6 +59,19 @@ const faqBlocks = blocks?.filter((block) => block.type === 'faq') ?? [];
             ))
           }
         </div>
+        <div class="small-spacing"></div>
+        <figure class="home-article-image" style={`--tag-color: ${tagColor};`}>
+          {image && <img src={image} alt={imageLegend || title} />}
+        </figure>
+        {
+          imageLegend && (
+            <figcaption class="image-legend image-legend-early text-typo i">
+              {imageLegend}
+            </figcaption>
+          )
+        }
+        <div class="small-spacing"></div>
+        <p class="p">{article.data.description}</p>
       </div>
       <img class="pattern-article" src="/svg/paternArticle.svg" alt="Pattern" />
     </div>
@@ -90,7 +99,9 @@ const faqBlocks = blocks?.filter((block) => block.type === 'faq') ?? [];
                     <figure class="block-image-text-image">
                       <img src={block.image} alt={block.imageLegend || block.heading} />
                       {block.imageLegend && (
-                        <figcaption class="image-legend">{block.imageLegend}</figcaption>
+                        <figcaption class="image-legend text-typo i">
+                          {block.imageLegend}
+                        </figcaption>
                       )}
                     </figure>
                     <div class="block-image-text-content" set:html={marked.parse(block.text)} />
@@ -118,7 +129,7 @@ const faqBlocks = blocks?.filter((block) => block.type === 'faq') ?? [];
                   <figure>
                     <img src={block.image} alt={block.imageLegend || block.heading} />
                     {block.imageLegend && (
-                      <figcaption class="image-legend">{block.imageLegend}</figcaption>
+                      <figcaption class="image-legend text-typo i">{block.imageLegend}</figcaption>
                     )}
                   </figure>
                   <div set:html={marked.parse(block.text)} />
