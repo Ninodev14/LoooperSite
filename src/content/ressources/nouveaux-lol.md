@@ -3,6 +3,7 @@ title: Nouveaux lol
 description: sfqs gqsg gs gqg qsdfg g qsdfg q
 date: 2026-08-25T11:01:00.000Z
 image: /img/ressources/who-is-this-guy-meme.png
+imageLegend: legend ici
 tags:
   - Serious game
 draft: false
