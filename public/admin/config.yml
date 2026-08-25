@@ -50,6 +50,7 @@ collections:
             fields:
               - { label: "Titre du bloc", name: "heading", widget: "string" }
               - { label: "Image", name: "image", widget: "image" }
+              - { label: "Légende de l'image", name: "imageLegend", widget: "string", required: false }
               - { label: "Texte", name: "text", widget: "markdown" }
               - label: "Position de l'image"
                 name: "imagePosition"
@@ -71,6 +72,7 @@ collections:
             fields:
               - { label: "Titre du bloc", name: "heading", widget: "string" }
               - { label: "Image", name: "image", widget: "image" }
+              - { label: "Légende de l'image", name: "imageLegend", widget: "string", required: false }
               - { label: "Texte", name: "text", widget: "markdown" }
 
           - label: "Bloc 5 — Titre + texte (3 colonnes)"
@@ -81,3 +83,17 @@ collections:
               - { label: "Colonne 1", name: "column1", widget: "markdown" }
               - { label: "Colonne 2", name: "column2", widget: "markdown" }
               - { label: "Colonne 3", name: "column3", widget: "markdown" }
+
+          - label: "Bloc 6 — FAQ"
+            name: "faq"
+            widget: "object"
+            fields:
+              - { label: "Titre de la FAQ", name: "heading", widget: "string", default: "Des questions ?" }
+              - label: "Questions"
+                name: "items"
+                widget: "list"
+                label_singular: "Question"
+                summary: "{{fields.question}}"
+                fields:
+                  - { label: "Question", name: "question", widget: "string" }
+                  - { label: "Réponse", name: "answer", widget: "markdown" }

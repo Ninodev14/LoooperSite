@@ -23,6 +23,18 @@ export async function getStaticPaths() {
 
 const { article, tagColor, tagColorClass } = Astro.props;
 const { title, description, image, tags, blocks } = article.data;
+
+// Couleurs de flèches pour la FAQ, en boucle
+const FAQ_ARROW_COLORS = ['orange', 'purple', 'blue'];
+
+// Découpe un tableau en sous-tableaux de 2 (pour les lignes de FAQ)
+function chunkPairs(arr) {
+  const rows = [];
+  for (let i = 0; i < arr.length; i += 2) {
+    rows.push(arr.slice(i, i + 2));
+  }
+  return rows;
+}
 ---
 
 <BaseLayout title={title} description={description}>
@@ -79,9 +91,12 @@ const { title, description, image, tags, blocks } = article.data;
                 <section class={`block block-image-text position-${block.imagePosition}`}>
                   <h2 class="h2 white-border black">{block.heading}</h2>
                   <div class="block-image-text-inner">
-                    <div class="block-image-text-image">
-                      <img src={block.image} alt={block.heading} />
-                    </div>
+                    <figure class="block-image-text-image">
+                      <img src={block.image} alt={block.imageLegend || block.heading} />
+                      {block.imageLegend && (
+                        <figcaption class="image-legend">{block.imageLegend}</figcaption>
+                      )}
+                    </figure>
                     <div class="block-image-text-content" set:html={marked.parse(block.text)} />
                   </div>
                   <div class="small-medium-spacing" />
@@ -104,7 +119,12 @@ const { title, description, image, tags, blocks } = article.data;
               return (
                 <section class="block block-full-image">
                   <h2 class="h2 white-border black">{block.heading}</h2>
-                  <img src={block.image} alt={block.heading} />
+                  <figure>
+                    <img src={block.image} alt={block.imageLegend || block.heading} />
+                    {block.imageLegend && (
+                      <figcaption class="image-legend">{block.imageLegend}</figcaption>
+                    )}
+                  </figure>
                   <div set:html={marked.parse(block.text)} />
                   <div class="small-medium-spacing" />
                 </section>
@@ -122,6 +142,45 @@ const { title, description, image, tags, blocks } = article.data;
                   <div class="small-medium-spacing" />
                 </section>
               );
+
+            case 'faq': {
+              const rows = chunkPairs(block.items || []);
+              return (
+                <div class="zoom-container-center">
+                  <div class="zoom-container background-interogation background-interogation-purple">
+                    <section class="container-width">
+                      <h2 class="h2 black">{block.heading}</h2>
+                      <div class="small-medium-spacing" />
+                      <div class="wrapper-faq-container-info">
+                        {rows.map((row, rowIndex) => (
+                          <div class="wrapper-faq-container-info-row">
+                            {row.map((item, colIndex) => {
+                              const globalIndex = rowIndex * 2 + colIndex;
+                              const arrowColor =
+                                FAQ_ARROW_COLORS[globalIndex % FAQ_ARROW_COLORS.length];
+                              return (
+                                <article class="faq-container-info">
+                                  <div class="faq-header">
+                                    <div>
+                                      <div class={`faq-arrow faq-arrow-${arrowColor}`}>
+                                        <div class="faq-arrow-1" />
+                                        <div class="faq-arrow-2" />
+                                      </div>
+                                    </div>
+                                    <h3 class="h3 black">{item.question}</h3>
+                                  </div>
+                                  <div class="black" set:html={marked.parse(item.answer)} />
+                                </article>
+                              );
+                            })}
+                          </div>
+                        ))}
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              );
+            }
 
             default:
               return null;
