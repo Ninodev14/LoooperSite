@@ -142,3 +142,7 @@
 .container-article-content h2 {
   margin-bottom: 20px;
 }
+
+.faq-article-container .black p{
+ color: black;
+}

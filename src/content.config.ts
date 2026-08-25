@@ -11,6 +11,7 @@ const blockSchema = z.discriminatedUnion('type', [
     type: z.literal('image_text'),
     heading: z.string(),
     image: z.string(),
+    imageLegend: z.string().optional(),
     text: z.string(),
     imagePosition: z.enum(['gauche', 'droite']).default('gauche'),
   }),
@@ -24,6 +25,7 @@ const blockSchema = z.discriminatedUnion('type', [
     type: z.literal('full_image_text'),
     heading: z.string(),
     image: z.string(),
+    imageLegend: z.string().optional(),
     text: z.string(),
   }),
   z.object({
@@ -32,6 +34,16 @@ const blockSchema = z.discriminatedUnion('type', [
     column1: z.string(),
     column2: z.string(),
     column3: z.string(),
+  }),
+  z.object({
+    type: z.literal('faq'),
+    heading: z.string(),
+    items: z.array(
+      z.object({
+        question: z.string(),
+        answer: z.string(),
+      }),
+    ),
   }),
 ]);
 
@@ -42,6 +54,7 @@ const ressources = defineCollection({
     description: z.string(),
     date: z.date(),
     image: z.string().optional(),
+    imageLegend: z.string().optional(),
     tags: z.array(z.string()).optional(),
     draft: z.boolean().default(false),
     blocks: z.array(blockSchema).optional(),

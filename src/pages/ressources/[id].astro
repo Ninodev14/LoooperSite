@@ -22,19 +22,14 @@ export async function getStaticPaths() {
 }
 
 const { article, tagColor, tagColorClass } = Astro.props;
-const { title, description, image, tags, blocks } = article.data;
+const { title, description, image, imageLegend, tags, blocks } = article.data;
 
 // Couleurs de flèches pour la FAQ, en boucle
 const FAQ_ARROW_COLORS = ['orange', 'purple', 'blue'];
 
-// Découpe un tableau en sous-tableaux de 2 (pour les lignes de FAQ)
-function chunkPairs(arr) {
-  const rows = [];
-  for (let i = 0; i < arr.length; i += 2) {
-    rows.push(arr.slice(i, i + 2));
-  }
-  return rows;
-}
+// On sépare les blocs de contenu classiques des blocs FAQ
+const contentBlocks = blocks?.filter((block) => block.type !== 'faq') ?? [];
+const faqBlocks = blocks?.filter((block) => block.type === 'faq') ?? [];
 ---
 
 <BaseLayout title={title} description={description}>
@@ -54,9 +49,10 @@ function chunkPairs(arr) {
     <div class="description-article-container">
       <div class="description-article-content">
         <h1 class="h2 title-intro">{title}</h1>
-        <div class="home-article-image" style={`--tag-color: ${tagColor};`}>
-          {image && <img src={image} alt={title} />}
-        </div>
+        <figure class="home-article-image" style={`--tag-color: ${tagColor};`}>
+          {image && <img src={image} alt={imageLegend || title} />}
+          {imageLegend && <figcaption class="image-legend">{imageLegend}</figcaption>}
+        </figure>
         <div class="small-spacing"></div>
         <div class="keywords-article-container">
           {
@@ -68,14 +64,14 @@ function chunkPairs(arr) {
           }
         </div>
       </div>
-      <img class="pattern-article" src="/public/svg/paternArticle.svg" alt="Pattern" />
+      <img class="pattern-article" src="/svg/paternArticle.svg" alt="Pattern" />
     </div>
   </section>
   <div class="medium-spacing"></div>
   <div class="zoom-container zoom-container-ressource" style="transform: scaleX(1);">
     <section class="container-width container-article-content">
       {
-        blocks?.map((block) => {
+        contentBlocks.map((block) => {
           switch (block.type) {
             case 'text_single':
               return (
@@ -143,45 +139,6 @@ function chunkPairs(arr) {
                 </section>
               );
 
-            case 'faq': {
-              const rows = chunkPairs(block.items || []);
-              return (
-                <div class="zoom-container-center">
-                  <div class="zoom-container background-interogation background-interogation-purple">
-                    <section class="container-width">
-                      <h2 class="h2 black">{block.heading}</h2>
-                      <div class="small-medium-spacing" />
-                      <div class="wrapper-faq-container-info">
-                        {rows.map((row, rowIndex) => (
-                          <div class="wrapper-faq-container-info-row">
-                            {row.map((item, colIndex) => {
-                              const globalIndex = rowIndex * 2 + colIndex;
-                              const arrowColor =
-                                FAQ_ARROW_COLORS[globalIndex % FAQ_ARROW_COLORS.length];
-                              return (
-                                <article class="faq-container-info">
-                                  <div class="faq-header">
-                                    <div>
-                                      <div class={`faq-arrow faq-arrow-${arrowColor}`}>
-                                        <div class="faq-arrow-1" />
-                                        <div class="faq-arrow-2" />
-                                      </div>
-                                    </div>
-                                    <h3 class="h3 black">{item.question}</h3>
-                                  </div>
-                                  <div class="black" set:html={marked.parse(item.answer)} />
-                                </article>
-                              );
-                            })}
-                          </div>
-                        ))}
-                      </div>
-                    </section>
-                  </div>
-                </div>
-              );
-            }
-
             default:
               return null;
           }
@@ -189,4 +146,44 @@ function chunkPairs(arr) {
       }
     </section>
   </div>
+
+  {
+    faqBlocks.map((block) => (
+      <>
+        <div class="large-spacing" />
+
+        <div class="zoom-container-center faq-article-container">
+          <div class="zoom-container background-interogation background-interogation-purple">
+            <section class="container-width">
+              <h2 class="h2 black">{block.heading}</h2>
+              <div class="small-medium-spacing" />
+              <div class="wrapper-faq-container-info">
+                {block.items?.map((item, index) => {
+                  const arrowColor = FAQ_ARROW_COLORS[index % FAQ_ARROW_COLORS.length];
+                  return (
+                    <div class="wrapper-faq-container-info-row">
+                      <article class="faq-container-info">
+                        <div class="faq-header">
+                          <div>
+                            <div class={`faq-arrow faq-arrow-${arrowColor}`}>
+                              <div class="faq-arrow-1" />
+                              <div class="faq-arrow-2" />
+                            </div>
+                          </div>
+                          <h3 class="h3 black">{item.question}</h3>
+                        </div>
+                        <div class="black" set:html={marked.parse(item.answer)} />
+                      </article>
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          </div>
+        </div>
+      </>
+    ))
+  }
+
+  <script src="/js/faq.js" defer></script>
 </BaseLayout>
