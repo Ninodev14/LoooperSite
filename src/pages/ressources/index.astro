@@ -54,7 +54,8 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
 
             <a
               href={`/ressources/${latestArticle.id}`}
-              class="text-typo btn-project btn-white-background">
+              class="text-typo btn-project btn-white-background"
+              style="text-decoration: none;">
               <span>Lire la ressource</span>
               <div class="arrow-container black-arrow">
                 <img src="/svg/arrowB.svg" alt="fleche" />
@@ -62,7 +63,9 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
             </a>
           </div>
           <div class="featured-ressource-image">
-            <img src={latestArticle.data.image} alt={latestArticle.data.title} />
+            <a href={`/ressources/${latestArticle.id}`}>
+              <img src={latestArticle.data.image} alt={latestArticle.data.title} />
+            </a>
           </div>
         </section>
       </div>
@@ -125,7 +128,9 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
             data-tags={JSON.stringify(article.data.tags ?? [])}
             data-title={article.data.title.toLowerCase()}>
             <article class="card-info-container card-info-container-ressource">
-              <img src={article.data.image} alt={article.data.title} />
+              <a href={`/ressources/${article.id}`}>
+                <img src={article.data.image} alt={article.data.title} />
+              </a>
               <div class="card-info-container-text">
                 <div class="card-info-container-text-alignement">
                   <div class="keywords-container">
