@@ -1982,7 +1982,7 @@ input[type="checkbox"]::after {
 .long-card img {
     height: auto;
     width: 30%;
-    min-width: 254px;
+
 }
 
 .long-card a img {
