@@ -3,13 +3,13 @@
  * pages/formats.astro — Nos formats
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import JeuVideo from "../components/Modal/JeuVideo.astro";
-import Quiz from "../components/Modal/Quiz.astro";
-import HistoireInteractive from "../components/Modal/HistoireInteractive.astro";
-import MiniJeu from "../components/Modal/MiniJeu.astro";
-import EscapeGame from "../components/Modal/EscapeGame.astro";
-import JeuSociete from "../components/Modal/JeuSociete.astro";
-import GeoCaching from "../components/Modal/Geocaching.astro";
+import JeuVideo from '../components/Modal/JeuVideo.astro';
+import Quiz from '../components/Modal/Quiz.astro';
+import HistoireInteractive from '../components/Modal/HistoireInteractive.astro';
+import MiniJeu from '../components/Modal/MiniJeu.astro';
+import EscapeGame from '../components/Modal/EscapeGame.astro';
+import JeuSociete from '../components/Modal/JeuSociete.astro';
+import GeoCaching from '../components/Modal/Geocaching.astro';
 ---
 
 <BaseLayout
@@ -17,376 +17,426 @@ import GeoCaching from "../components/Modal/Geocaching.astro";
   description="Découvrez tous les formats d'expériences ludiques et interactives proposés par Loooper! : quiz, escape game, jeux de rôle, ateliers créatifs et bien plus encore."
   ogImage="https://loooper.fr/img/ico/FORMATS.png"
   ogUrl="https://loooper.fr/formats"
-  currentPage="formats"
->
-        <section class="mainPageTitle mainPageTitleOrange">
-            <h1 class="h1 container-width white-border black">Loooper!, c’est des formats qui s’adaptent pour devenir
-                <span> </span>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">le </span><span
-                        class="paterneTitleContour">le </span></div>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">vôtre !</span><span
-                        class="paterneTitleContour">vôtre !</span></div>
-            </h1>
-        </section>
-        <div class="container-width ariane-net h3"><a href="/">Accueil </a>
-            <p class="h3">></p> <a href="/formats/"
-                class="end-chield highlight-no-annim purple black-border-small">Nos formats</a>
+  currentPage="formats">
+  <section class="mainPageTitle mainPageTitleOrange" data-reveal="down">
+    <h1 class="h1 container-width white-border black">
+      Loooper!, c’est des formats qui s’adaptent pour devenir
+      <span> </span>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitlePurple">le </span><span class="paterneTitleContour"
+          >le
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitlePurple">vôtre !</span><span
+          class="paterneTitleContour">vôtre !</span
+        >
+      </div>
+    </h1>
+  </section>
+  <div class="container-width ariane-net h3" data-reveal="down" data-reveal-delay="100">
+    <a href="/">Accueil </a>
+    <p class="h3">></p>
+    <a href="/formats/" class="end-chield highlight-no-annim purple black-border-small"
+      >Nos formats</a
+    >
+  </div>
+
+  <div id="foot-form1" class="container-width">
+    <div class="large-spacing"></div>
+    <section class="text-basical-container" data-reveal="left" data-reveal-delay="100">
+      <article class="text-basical-container-text-long">
+        <div>
+          <h2 class="h2 black white-border">Découvrez notre univers et nos valeurs !</h2>
+          <div class="small-medium-spacing"></div>
+          <p>
+            <b>Loooper!</b> transforme <b>vos idées</b> en <b class="highlight purple"
+              >formats interactifs sur mesure.</b
+            >
+          </p>
+          <p>
+            Chaque projet devient <b>unique</b>, pensé pour s’adapter à votre image… et captiver
+            votre public.
+          </p>
+          <p>
+            La <b class="highlight blue">ludification</b> est notre moteur : <b
+              >apprendre, découvrir, s’amuser autrement</b
+            >.
+          </p>
+          <p>
+            Pour vous donner un aperçu de nos possibilités, explorez tous <b>les formats</b> que nous
+            pouvons développer <b>ensemble</b>.
+          </p>
+          <p>
+            Avec nous, la seule limite… c’est votre <b class="highlight orange">imagination !</b>
+          </p>
         </div>
+      </article>
+      <article class="text-basical-container-emojie">
+        <div class="emojie-img-line-container-besoin-child formatType">
+          <div class="emojie-img-line-besoin-child star">
+            <img src="/svg/starBecolorType2.svg" alt="Image representant des étoile" />
+          </div>
+          <img
+            class="emojie-img-line-besoin-child"
+            src="/svg/handStar.svg"
+            alt="Image representant des connection entre personne"
+          />
+          <div class="emojie-img-line-besoin-child star2">
+            <img src="/svg/starBecolorType1.svg" alt="Image representant des étoile" />
+          </div>
+        </div>
+      </article>
+    </section>
 
-
-        <div id="foot-form1" class="container-width">
-            <div class="large-spacing"></div>
-            <section class=" text-basical-container">
-                <article class="text-basical-container-text-long">
-                    <div>
-                        <h2 class="h2 black white-border">Découvrez notre univers et nos valeurs !
-                        </h2>
-                        <div class="small-medium-spacing"></div>
-                        <p><b>Loooper!</b> transforme <b>vos idées</b> en <b class="highlight purple">formats
-                                interactifs sur
-                                mesure.</b></p>
-                        <p> Chaque projet devient <b>unique</b>, pensé pour s’adapter à votre image… et captiver votre
-                            public.</p>
-                        <p>La <b class="highlight blue">ludification</b> est notre moteur : <b>apprendre, découvrir,
-                                s’amuser autrement</b>.</p>
-                        <p>Pour vous donner un aperçu de nos possibilités, explorez tous <b>les formats</b> que nous
-                            pouvons développer <b>ensemble</b>.</p>
-                        <p>Avec nous, la seule limite… c’est votre <b class="highlight orange">imagination !</b></p>
-                    </div>
-                </article>
-                <article class="text-basical-container-emojie">
-                    <div class="emojie-img-line-container-besoin-child formatType">
-                        <div class="emojie-img-line-besoin-child star">
-                            <img src="/svg/starBecolorType2.svg" alt="Image representant des étoile">
-                        </div>
-                        <img class="emojie-img-line-besoin-child" src="/svg/handStar.svg"
-                            alt="Image representant des connection entre personne">
-                        <div class="emojie-img-line-besoin-child star2">
-                            <img src="/svg/starBecolorType1.svg" alt="Image representant des étoile">
-                        </div>
-                    </div>
-
-                </article>
-            </section>
-
-            <div class="large-spacing"></div>
-
-            <h2 id="foot-form2" class="h2 black white-border">Des formats personnalisables avec leurs atouts</h2>
-            <div class="small-medium-spacing"></div>
-            <div class="card-info-wrap">
-                <article class="card-info-container card-info-container-orange">
-                    <img src="/img/card/zemblanite.jpg" alt="Image représentant un jeu video">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim orange">Jeu vidéo</h3>
-                            <ul>
-                                <li class="text-typo black">Un format numérique immersif</li>
-                                <li class="text-typo black">Accessible à tous, partout</li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-jeu-video"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les jeux video">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-purple">
-                    <img src="/img/card/quiz.jpg" alt="Image représentant un quiz">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim purple">Quiz</h3>
-                            <ul>
-                                <li class="text-typo black">Un jeu collectif qui crée du lien</li>
-                                <li class="text-typo black">Se défier et apprendre autrement</li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-quiz"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur le quiz">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-blue">
-                    <img src="/img/card/histoire.jpg" alt="Image représentant une histoire">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim blue">Histoire interactive</h3>
-                            <ul>
-                                <li class="text-typo black">Une histoire immersive</li>
-                                <li class="text-typo black">Chaque choix transforme le récit</li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button
-                                data-modal="modal-histoire-interactive" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les Histoire interactive">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-orange">
-                    <img src="/img/card/jeux.jpg" alt="Image représentant un Mini-jeu sur site web">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim orange">Mini-jeu sur site web</h3>
-                            <ul>
-                                <li class="text-typo black">Interaction rapide et fun</li>
-                                <li class="text-typo black">Engagez vos visiteurs en s’amusant</li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-mini-jeu"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les Mini-jeu">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-purple">
-                    <img src="/img/card/escapeGame.jpg" alt="Image représentant un Escape game">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim purple">Escape game</h3>
-                            <ul>
-                                <li class="text-typo black">S’entraider pour réussir</li>
-                                <li class="text-typo black">S’immerger dans un univers captivant</li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-escape-game"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les Escape game">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-blue">
-                    <img src="/img/card/jeuxDeSociéter.jpg" alt="Image représentant un Jeu de société">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim blue">Jeu de société</h3>
-                            <ul>
-                                <li class="text-typo black">Alliés ou Adversaires ?</li>
-                                <li class="text-typo black">Apprendre en s’amusant</li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-jeu-societe"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les Jeu de société">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-orange">
-                    <img src="/img/card/geoCaching.jpg" alt="Image représentant du Géocaching">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim orange">Géocaching</h3>
-                            <ul>
-                                <li class="text-typo black">Apprendre en explorant un espace</li>
-                                <li class="text-typo black">Chasse au trésor interactive</li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-geocaching"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur le Géocaching">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-purple">
-                    <img src="/img/card/interogation.jpg" alt="Image représentant un point d'interogation">
-                    <div class="card-info-container-text card-info-container-text-interogation">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim purple">Une autre idée ?</h3>
-                            <ul>
-                                <li class="text-typo">Discutons-en pour trouver ce qui vous conviendrait le mieux
-                                    !</li>
-                            </ul>
-                        </div>
-                        <a href="#contactForm" class="text-typo  btn-project">
-                            <span>Parler de mon idée</span>
-                            <div class="arrow-container">
-                                <img src="/svg/arrowW.svg" alt="fleche">
-                            </div>
-                        </a>
-                    </div>
-                </article>
+    <div class="large-spacing"></div>
+    <div data-reveal="up" data-reveal-delay="100">
+      <h2 id="foot-form2" class="h2 black white-border">
+        Des formats personnalisables avec leurs atouts
+      </h2>
+      <div class="small-medium-spacing"></div>
+      <div class="card-info-wrap">
+        <article class="card-info-container card-info-container-orange">
+          <img src="/img/card/zemblanite.jpg" alt="Image représentant un jeu video" />
+          <div class="card-info-container-text">
+            <div class="card-info-container-text-alignement">
+              <h3 class="h3 black white-border highlight-no-annim orange">Jeu vidéo</h3>
+              <ul>
+                <li class="text-typo black">Un format numérique immersif</li>
+                <li class="text-typo black">Accessible à tous, partout</li>
+              </ul>
             </div>
-        </div>
-
-        <div class="large-spacing"></div>
-
-        <div id="foot-form3" class="zoom-container-center">
-            <div class="zoom-container background-interogation background-interogation-blue">
-                <section class="container-width">
-                    <h2 class="h2 black">Loooper! répond à toutes vos questions
-                        sur nos formats interactifs et expériences sur mesure</h2>
-                    <div class="small-medium-spacing"></div>
-                    <div class="wrapper-faq-container-info">
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-orange">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Qu’est ce qu’un serious game ?</h3>
-                                </div>
-                                <p class="black">
-                                    Un serious game, c’est un jeu qui allie <b>divertissement</b> et <b>objectif
-                                        concret</b>
-                                    :
-                                    apprendre, sensibiliser, former ou engager un public autour d’un sujet.
-                                    Chez <b>Loooper!</b>, il est toujours conçu pour être <b>immersif et interactif</b>.
-                                </p>
-                            </article>
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-purple">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Comment choisir mon format ?</h3>
-                                </div>
-                                <p class="black">
-                                    Tout dépend de <b><a class="link-underline-black" href="/besoins/">vos
-                                            objectifs</a></b> : sensibiliser, former, divertir, fédérer… Chaque
-                                    format a
-                                    <b> ses atouts</b> ! Notre objectif est de vous guider pour trouver la solution
-                                    <b>la
-                                        plus
-                                        adaptée</b>! 
-                                </p>
-                            </article>
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow faq-arrow-blue">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Les expériences s’adaptent-elles à tous les publics ?</h3>
-                                </div>
-                                <p class="black">
-                                    Oui ! Nos formats sont pensés pour être <b>accessibles</b> et <b>inclusifs</b>,
-                                    qu’il
-                                    s’agisse
-                                    d’enfants, d’adolescents, d’adultes ou de professionnels. Nous adaptons chaque
-                                    projet à
-                                    <b>l’âge</b> et au <b>contexte</b> de votre public.
-                                </p>
-                            </article>
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow faq-arrow-orange">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Sur quels supports les expériences fonctionnent-elles ?</h3>
-                                </div>
-                                <p class="black">
-                                    Nous travaillons sur tous types de supports : <b>numérique</b> (ordinateur, mobile,
-                                    web),
-                                    <b>physique</b> (jeux de société, escape games) ou <b>hybride</b> (géocaching,
-                                    ateliers
-                                    mixtes). Votre projet peut prendre vie à l'endroit qui <b>lui correspond</b>.
-                                </p>
-                            </article>
-                        </div>
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-purple">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Tous les formats sont-ils personnalisables ?</h3>
-                                </div>
-                                <p class="black">
-                                    Absolument. Chaque format est <b>une base modifiable</b> que nous adaptons à votre
-                                    image,
-                                    vos
-                                    contenus et vos besoins spécifiques. Avec <b>Loooper!</b> tout est réalisé <b>sur
-                                        mesure</b>.
-                                </p>
-                            </article>
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-blue">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Est-ce que je peux combiner plusieurs formats ?</h3>
-                                </div>
-                                <p class="black">
-                                    <b> Oui !</b> Par exemple, un quiz peut enrichir un escape game ou un mini-jeu web
-                                    prolonger
-                                    une expérience physique. C’est même une de nos volontés : imaginer <b>des parcours
-                                        hybrides
-                                        et interactifs.</b>
-                                </p>
-                            </article>
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow faq-arrow-orange">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Combien coûte une expérience ?</h3>
-                                </div>
-                                <p class="black">
-                                    Le prix dépend <b>du format</b>, <b>du temps</b> de création et du degré de
-                                    <b>personnalisation</b>. Nos devis
-                                    sont toujours adaptés à <b>votre budget et à vos besoins</b>. 
-                                </p>
-                            </article>
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow faq-arrow-purple">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Combien de temps est nécessaire pour la réalisation&nbsp;?</h3>
-                                </div>
-                                <p class="black">
-                                    Selon la complexité, une expérience peut être conçue <b>en quelques semaines</b> à
-                                    <b>plusieurs
-                                        mois</b>. Nous définissons ensemble un planning <b>clair</b> et <b>réaliste</b>,
-                                    pour s’adapter à <b>vos
-                                        contraintes</b>.
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                </section>
+            <div class="card-info-container-text-center-btn">
+              <button
+                data-modal="modal-jeu-video"
+                aria-haspopup="dialog"
+                class="text-typo btn-project btn-modal btn-white-background"
+                aria-label="En savoir plus sur les jeux video">
+                <span>En savoir plus</span>
+              </button>
             </div>
+          </div>
+        </article>
+
+        <article class="card-info-container card-info-container-purple">
+          <img src="/img/card/quiz.jpg" alt="Image représentant un quiz" />
+          <div class="card-info-container-text">
+            <div class="card-info-container-text-alignement">
+              <h3 class="h3 black white-border highlight-no-annim purple">Quiz</h3>
+              <ul>
+                <li class="text-typo black">Un jeu collectif qui crée du lien</li>
+                <li class="text-typo black">Se défier et apprendre autrement</li>
+              </ul>
+            </div>
+            <div class="card-info-container-text-center-btn">
+              <button
+                data-modal="modal-quiz"
+                aria-haspopup="dialog"
+                class="text-typo btn-project btn-modal btn-white-background"
+                aria-label="En savoir plus sur le quiz">
+                <span>En savoir plus</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-info-container card-info-container-blue">
+          <img src="/img/card/histoire.jpg" alt="Image représentant une histoire" />
+          <div class="card-info-container-text">
+            <div class="card-info-container-text-alignement">
+              <h3 class="h3 black white-border highlight-no-annim blue">Histoire interactive</h3>
+              <ul>
+                <li class="text-typo black">Une histoire immersive</li>
+                <li class="text-typo black">Chaque choix transforme le récit</li>
+              </ul>
+            </div>
+            <div class="card-info-container-text-center-btn">
+              <button
+                data-modal="modal-histoire-interactive"
+                aria-haspopup="dialog"
+                class="text-typo btn-project btn-modal btn-white-background"
+                aria-label="En savoir plus sur les Histoire interactive">
+                <span>En savoir plus</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-info-container card-info-container-orange">
+          <img src="/img/card/jeux.jpg" alt="Image représentant un Mini-jeu sur site web" />
+          <div class="card-info-container-text">
+            <div class="card-info-container-text-alignement">
+              <h3 class="h3 black white-border highlight-no-annim orange">Mini-jeu sur site web</h3>
+              <ul>
+                <li class="text-typo black">Interaction rapide et fun</li>
+                <li class="text-typo black">Engagez vos visiteurs en s’amusant</li>
+              </ul>
+            </div>
+            <div class="card-info-container-text-center-btn">
+              <button
+                data-modal="modal-mini-jeu"
+                aria-haspopup="dialog"
+                class="text-typo btn-project btn-modal btn-white-background"
+                aria-label="En savoir plus sur les Mini-jeu">
+                <span>En savoir plus</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-info-container card-info-container-purple">
+          <img src="/img/card/escapeGame.jpg" alt="Image représentant un Escape game" />
+          <div class="card-info-container-text">
+            <div class="card-info-container-text-alignement">
+              <h3 class="h3 black white-border highlight-no-annim purple">Escape game</h3>
+              <ul>
+                <li class="text-typo black">S’entraider pour réussir</li>
+                <li class="text-typo black">S’immerger dans un univers captivant</li>
+              </ul>
+            </div>
+            <div class="card-info-container-text-center-btn">
+              <button
+                data-modal="modal-escape-game"
+                aria-haspopup="dialog"
+                class="text-typo btn-project btn-modal btn-white-background"
+                aria-label="En savoir plus sur les Escape game">
+                <span>En savoir plus</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-info-container card-info-container-blue">
+          <img src="/img/card/jeuxDeSociéter.jpg" alt="Image représentant un Jeu de société" />
+          <div class="card-info-container-text">
+            <div class="card-info-container-text-alignement">
+              <h3 class="h3 black white-border highlight-no-annim blue">Jeu de société</h3>
+              <ul>
+                <li class="text-typo black">Alliés ou Adversaires ?</li>
+                <li class="text-typo black">Apprendre en s’amusant</li>
+              </ul>
+            </div>
+            <div class="card-info-container-text-center-btn">
+              <button
+                data-modal="modal-jeu-societe"
+                aria-haspopup="dialog"
+                class="text-typo btn-project btn-modal btn-white-background"
+                aria-label="En savoir plus sur les Jeu de société">
+                <span>En savoir plus</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-info-container card-info-container-orange">
+          <img src="/img/card/geoCaching.jpg" alt="Image représentant du Géocaching" />
+          <div class="card-info-container-text">
+            <div class="card-info-container-text-alignement">
+              <h3 class="h3 black white-border highlight-no-annim orange">Géocaching</h3>
+              <ul>
+                <li class="text-typo black">Apprendre en explorant un espace</li>
+                <li class="text-typo black">Chasse au trésor interactive</li>
+              </ul>
+            </div>
+            <div class="card-info-container-text-center-btn">
+              <button
+                data-modal="modal-geocaching"
+                aria-haspopup="dialog"
+                class="text-typo btn-project btn-modal btn-white-background"
+                aria-label="En savoir plus sur le Géocaching">
+                <span>En savoir plus</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card-info-container card-info-container-purple">
+          <img src="/img/card/interogation.jpg" alt="Image représentant un point d'interogation" />
+          <div class="card-info-container-text card-info-container-text-interogation">
+            <div class="card-info-container-text-alignement">
+              <h3 class="h3 black white-border highlight-no-annim purple">Une autre idée ?</h3>
+              <ul>
+                <li class="text-typo">
+                  Discutons-en pour trouver ce qui vous conviendrait le mieux !
+                </li>
+              </ul>
+            </div>
+            <a href="#contactForm" class="text-typo btn-project">
+              <span>Parler de mon idée</span>
+              <div class="arrow-container">
+                <img src="/svg/arrowW.svg" alt="fleche" />
+              </div>
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+  <div class="large-spacing"></div>
+
+  <div id="foot-form3" class="zoom-container-center">
+    <div class="zoom-container background-interogation background-interogation-blue">
+      <section class="container-width">
+        <h2 class="h2 black">
+          Loooper! répond à toutes vos questions sur nos formats interactifs et expériences sur
+          mesure
+        </h2>
+        <div class="small-medium-spacing"></div>
+        <div class="wrapper-faq-container-info">
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-orange">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">Qu’est ce qu’un serious game ?</h3>
+              </div>
+              <p class="black">
+                Un serious game, c’est un jeu qui allie <b>divertissement</b> et <b
+                  >objectif concret</b
+                >
+                : apprendre, sensibiliser, former ou engager un public autour d’un sujet. Chez <b
+                  >Loooper!</b
+                >, il est toujours conçu pour être <b>immersif et interactif</b>.
+              </p>
+            </article>
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-purple">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">Comment choisir mon format ?</h3>
+              </div>
+              <p class="black">
+                Tout dépend de <b
+                  ><a class="link-underline-black" href="/besoins/">vos objectifs</a></b
+                > : sensibiliser, former, divertir, fédérer… Chaque format a
+                <b> ses atouts</b> ! Notre objectif est de vous guider pour trouver la solution
+                <b>la plus adaptée</b>!
+              </p>
+            </article>
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow faq-arrow-blue">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">Les expériences s’adaptent-elles à tous les publics ?</h3>
+              </div>
+              <p class="black">
+                Oui ! Nos formats sont pensés pour être <b>accessibles</b> et <b>inclusifs</b>,
+                qu’il s’agisse d’enfants, d’adolescents, d’adultes ou de professionnels. Nous
+                adaptons chaque projet à
+                <b>l’âge</b> et au <b>contexte</b> de votre public.
+              </p>
+            </article>
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow faq-arrow-orange">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">Sur quels supports les expériences fonctionnent-elles ?</h3>
+              </div>
+              <p class="black">
+                Nous travaillons sur tous types de supports : <b>numérique</b> (ordinateur, mobile, web),
+                <b>physique</b> (jeux de société, escape games) ou <b>hybride</b> (géocaching, ateliers
+                mixtes). Votre projet peut prendre vie à l'endroit qui <b>lui correspond</b>.
+              </p>
+            </article>
+          </div>
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-purple">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">Tous les formats sont-ils personnalisables ?</h3>
+              </div>
+              <p class="black">
+                Absolument. Chaque format est <b>une base modifiable</b> que nous adaptons à votre image,
+                vos contenus et vos besoins spécifiques. Avec <b>Loooper!</b> tout est réalisé <b
+                  >sur mesure</b
+                >.
+              </p>
+            </article>
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-blue">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">Est-ce que je peux combiner plusieurs formats ?</h3>
+              </div>
+              <p class="black">
+                <b> Oui !</b> Par exemple, un quiz peut enrichir un escape game ou un mini-jeu web prolonger
+                une expérience physique. C’est même une de nos volontés : imaginer <b
+                  >des parcours hybrides et interactifs.</b
+                >
+              </p>
+            </article>
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow faq-arrow-orange">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">Combien coûte une expérience ?</h3>
+              </div>
+              <p class="black">
+                Le prix dépend <b>du format</b>, <b>du temps</b> de création et du degré de
+                <b>personnalisation</b>. Nos devis sont toujours adaptés à <b
+                  >votre budget et à vos besoins</b
+                >.
+              </p>
+            </article>
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow faq-arrow-purple">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">Combien de temps est nécessaire pour la réalisation&nbsp;?</h3>
+              </div>
+              <p class="black">
+                Selon la complexité, une expérience peut être conçue <b>en quelques semaines</b> à
+                <b>plusieurs mois</b>. Nous définissons ensemble un planning <b>clair</b> et <b
+                  >réaliste</b
+                >, pour s’adapter à <b>vos contraintes</b>.
+              </p>
+            </article>
+          </div>
         </div>
+      </section>
+    </div>
+  </div>
 
-    <JeuVideo />
-    <Quiz />
-    <HistoireInteractive />
-    <MiniJeu />
-    <EscapeGame />
-    <JeuSociete />
-    <GeoCaching />
-    <script src="/js/modal.js" defer></script>
-    <script src="/js/faq.js" defer></script>
-
+  <JeuVideo />
+  <Quiz />
+  <HistoireInteractive />
+  <MiniJeu />
+  <EscapeGame />
+  <JeuSociete />
+  <GeoCaching />
+  <script src="/js/modal.js" defer></script>
+  <script src="/js/faq.js" defer></script>
 </BaseLayout>

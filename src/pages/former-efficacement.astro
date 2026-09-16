@@ -3,229 +3,264 @@
  * pages/former-efficacement.astro — Former efficacement
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import JeuVideo from "../components/Modal/JeuVideo.astro";
-import Quiz from "../components/Modal/Quiz.astro";
-import JeuSociete from "../components/Modal/JeuSociete.astro";
+import JeuVideo from '../components/Modal/JeuVideo.astro';
+import Quiz from '../components/Modal/Quiz.astro';
+import JeuSociete from '../components/Modal/JeuSociete.astro';
 ---
 
 <BaseLayout
   title="Former efficacement"
   description="Concevez des parcours de formation percutants et interactifs avec l'expertise de Loooper!."
   ogUrl="https://loooper.fr/former-efficacement"
-  currentPage="former-efficacement"
->
-        <section class="mainPageTitle mainPageTitleBlue">
-            <h1 class="h1 container-width white-border black">Loooper! c’est
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleOrange">former </span><span
-                        class="paterneTitleContour">former </span></div>
-                <div class="paterneTitleContainer"><span
-                        class="paterneTitle paterneTitleOrange">efficacement</span><span
-                        class="paterneTitleContour">efficacement</span></div>
-            </h1>
-        </section>
-        <div class="container-width ariane-net h3"><a href="/">Accueil </a>
-            <p class="h3">></p> <a href="/besoins/">Vos besoins</a>
-            <p class="h3">></p><a href="/former-efficacement/"
-                class="end-chield highlight-no-annim orange black-border-small">Former efficacement</a>
+  currentPage="former-efficacement">
+  <section class="mainPageTitle mainPageTitleBlue" data-reveal="down">
+    <h1 class="h1 container-width white-border black">
+      Loooper! c’est
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitleOrange">former </span><span
+          class="paterneTitleContour"
+          >former
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitleOrange">efficacement</span><span
+          class="paterneTitleContour">efficacement</span>
+      </div>
+    </h1>
+  </section>
+  <div class="container-width ariane-net h3" data-reveal="down">
+    <a href="/">Accueil </a>
+    <p class="h3">></p>
+    <a href="/besoins/">Vos besoins</a>
+    <p class="h3">></p><a
+      href="/former-efficacement/"
+      class="end-chield highlight-no-annim orange black-border-small">Former efficacement</a
+    >
+  </div>
+
+  <div class="large-spacing"></div>
+
+  <section
+    class="container-width text-basical-container"
+    data-reveal="left"
+    data-reveal-delay="100">
+    <article class="text-basical-container-text-long">
+      <div>
+        <h2 class="h2 black white-border">Apprendre différemment avec des formations ludiques ?</h2>
+        <div class="small-medium-spacing"></div>
+        <p>
+          Chez <b>Loooper!</b>, nous savons qu’une formation n’a pas besoin d’être monotone. Grâce à
+          la <b class="highlight orange">gamification</b>, vos collaborateurs ou apprenants vivent <b
+            class="highlight purple">une expérience dynamique et interactive</b
+          > qui stimule
+          <b>l’intérêt</b>, favorise <b>la mémorisation</b> et encourage <b>l’implication</b>. En
+          apprenant par <b>le jeu</b>, chaque participant devient <b class="highlight blue"
+            >acteur de son apprentissage</b
+          >, ce qui renforce <b>l’efficacité pédagogique</b> et crée <b>une expérience marquante</b
+          >.
+        </p>
+      </div>
+    </article>
+    <article class="text-basical-container-emojie">
+      <div class="emojie-img-line-container-besoin-child">
+        <div class="emojie-img-line-besoin-child star">
+          <img src="/svg/besoin/starPurpleType2.svg" alt="Image representant des étoile" />
         </div>
-
-        <div class="large-spacing"></div>
-
-
-        <section class="container-width text-basical-container">
-            <article class="text-basical-container-text-long">
-                <div>
-                    <h2 class="h2 black white-border">Apprendre différemment avec des formations ludiques ?
-                    </h2>
-                    <div class="small-medium-spacing"></div>
-                    <p>
-                        Chez <b>Loooper!</b>, nous savons qu’une formation n’a pas besoin d’être monotone. Grâce à la <b
-                            class="highlight orange">gamification</b>, vos collaborateurs ou apprenants vivent <b
-                            class="highlight purple">une expérience dynamique et interactive</b> qui stimule
-                        <b>l’intérêt</b>, favorise <b>la mémorisation</b> et encourage <b>l’implication</b>.
-                        En apprenant par <b>le jeu</b>, chaque participant devient <b class="highlight blue">acteur de
-                            son apprentissage</b>, ce qui renforce <b>l’efficacité pédagogique</b> et crée <b>une
-                            expérience marquante</b>.
-                    </p>
-                </div>
-            </article>
-            <article class="text-basical-container-emojie">
-                <div class="emojie-img-line-container-besoin-child">
-                    <div class="emojie-img-line-besoin-child star">
-                        <img src="/svg/besoin/starPurpleType2.svg" alt="Image representant des étoile">
-                    </div>
-                    <img class="emojie-img-line-besoin-child" src="/svg/besoin/teach.svg"
-                        alt="Image representant des connection entre personne">
-                    <div class="emojie-img-line-besoin-child star2">
-                        <img src="/svg/besoin/starPurpleType1.svg" alt="Image representant des étoile">
-                    </div>
-                </div>
-
-            </article>
-        </section>
-
-        <div class="large-spacing"></div>
-
-        <div class="backgroundBrushType1">
-            <section class="container-width long-card-container">
-                <h2 class="h2 black white-border">Les formats qui permettent des formations interactives</h2>
-                <div class="small-medium-spacing"></div>
-                <div class="long-card-wrapper">
-                    <article class="long-card long-card-orange">
-                        <img src="/img/long-card/cart-cartel.jpg" alt="image representative un quiz">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim orange"
-                                    id="book-page-part-1-container-title">
-                                    Quiz</h3>
-                            </div>
-                            <p class="black">Testez <b>des connaissances</b> sur des thématiques, apprenez <b>de
-                                    nouvelles choses ludiquement</b> et transformez l’apprentissage en <b>un défi
-                                    motivant et stimulant</b>.</p>
-                            <button data-modal="modal-quiz" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur le quiz">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-
-                    <article class="long-card long-card-purple">
-                        <img src="/img/long-card/game.jpg" alt="image representative d'un Jeu vidéo">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim purple"
-                                    id="book-page-part-1-container-title">
-                                    Jeu vidéo</h3>
-                            </div>
-                            <p class="black">Plongez dans un univers virtuel avec <b>des mécaniques ludiques</b> servant
-                                <b>un objectif pédagogique clair</b>, apprenez en expérimentant.
-                            </p>
-                            <button data-modal="modal-jeu-video" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les jeux video">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-
-                    <article class="long-card long-card-blue">
-                        <img src="/img/long-card/biker.jpg" alt="image representative un jeu de société">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim blue"
-                                    id="book-page-part-1-container-title">
-                                    Jeu de société</h3>
-                            </div>
-                            <p class="black">Utilisez <b>des mécaniques ludiques</b> pour comprendre <b>des
-                                    problématiques</b>, favorisez <b>la réflexion</b> et engagez <b>la discussion</b>
-                                sur la thématique.
-                            </p>
-                            <button data-modal="modal-jeu-societe" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les Jeu de société">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-                </div>
-                <div class="small-medium-spacing"></div>
-                <a href="/formats/" class="text-typo btn-project btn-white-background">
-                    <span>Découvrir nos autres formats</span>
-                </a>
-            </section>
+        <img
+          class="emojie-img-line-besoin-child"
+          src="/svg/besoin/teach.svg"
+          alt="Image representant des connection entre personne"
+        />
+        <div class="emojie-img-line-besoin-child star2">
+          <img src="/svg/besoin/starPurpleType1.svg" alt="Image representant des étoile" />
         </div>
+      </div>
+    </article>
+  </section>
 
-        <div class="large-spacing"></div>
+  <div class="large-spacing"></div>
 
-        <div class="zoom-container-center">
-            <div class="zoom-container background-interogation background-interogation-purple">
-                <section class="container-width">
-                    <h2 class="h2 black">Des questions sur les formations gamifiées ?
-                    </h2>
-                    <div class="small-medium-spacing"></div>
-                    <div class="wrapper-faq-container-info">
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-orange">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Est-ce que le jeu remplace la formation théorique classique ?
-                                    </h3>
-                                </div>
-                                <p class="black">
-                                    Pas nécessairement. Les formats ludiques ne remplacent pas la théorie, ils
-                                    <b>l’accompagnent</b> et <b>la renforcent</b> en rendant <b>la transmission</b> plus
-                                    vivante.
-                                </p>
-                            </article>
-
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-purple">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">
-                                        Pourquoi choisir une formation gamifiée plutôt qu’un cours traditionnel ?</h3>
-                                </div>
-                                <p class="black">
-                                    <b>La formation ludique</b> rend les participants<b> actifs et engagés</b>. Ils
-                                    deviennent <b>acteurs de leur apprentissage</b>, ce qui favorise <b>la
-                                        mémorisation</b>
-                                    à long terme et évite <b>la passivité</b>.
-                                </p>
-                            </article>
-                        </div>
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-blue">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">
-                                        Peut-on intégrer une expérience à une formation déjà existante ?</h3>
-                                </div>
-                                <p class="black">
-                                    Oui, les expériences conçues par <b>Loooper! </b>sont réalisées <b>sur mesure</b> et
-                                    s’intègrent parfaitement dans un dispositif pédagogique <b>déjà en place</b>.
-                                </p>
-                            </article>
-
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-orange">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">
-                                        Peut-on adapter une formation ludique à n’importe quel domaine ?</h3>
-                                </div>
-                                <p class="black">
-                                    <b>Tout à fait.</b> Chaque formation interactive est pensée <b>spécifiquement</b>
-                                    pour
-                                    <b>votre secteur, vos objectifs et vos publics</b>.
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                </section>
+  <div class="backgroundBrushType1">
+    <section class="container-width long-card-container" data-reveal="left" data-reveal-delay="100">
+      <h2 class="h2 black white-border">Les formats qui permettent des formations interactives</h2>
+      <div class="small-medium-spacing"></div>
+      <div class="long-card-wrapper">
+        <article class="long-card long-card-orange">
+          <img src="/img/long-card/cart-cartel.jpg" alt="image representative un quiz" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim orange"
+                id="book-page-part-1-container-title">
+                Quiz
+              </h3>
             </div>
+            <p class="black">
+              Testez <b>des connaissances</b> sur des thématiques, apprenez <b
+                >de nouvelles choses ludiquement</b
+              > et transformez l’apprentissage en <b>un défi motivant et stimulant</b>.
+            </p>
+            <button
+              data-modal="modal-quiz"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur le quiz">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="long-card long-card-purple">
+          <img src="/img/long-card/game.jpg" alt="image representative d'un Jeu vidéo" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim purple"
+                id="book-page-part-1-container-title">
+                Jeu vidéo
+              </h3>
+            </div>
+            <p class="black">
+              Plongez dans un univers virtuel avec <b>des mécaniques ludiques</b> servant
+              <b>un objectif pédagogique clair</b>, apprenez en expérimentant.
+            </p>
+            <button
+              data-modal="modal-jeu-video"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur les jeux video">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="long-card long-card-blue">
+          <img src="/img/long-card/biker.jpg" alt="image representative un jeu de société" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim blue"
+                id="book-page-part-1-container-title">
+                Jeu de société
+              </h3>
+            </div>
+            <p class="black">
+              Utilisez <b>des mécaniques ludiques</b> pour comprendre <b>des problématiques</b>,
+              favorisez <b>la réflexion</b> et engagez <b>la discussion</b>
+              sur la thématique.
+            </p>
+            <button
+              data-modal="modal-jeu-societe"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur les Jeu de société">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+      </div>
+      <div class="small-medium-spacing"></div>
+      <a href="/formats/" class="text-typo btn-project btn-white-background">
+        <span>Découvrir nos autres formats</span>
+      </a>
+    </section>
+  </div>
+
+  <div class="large-spacing"></div>
+
+  <div class="zoom-container-center">
+    <div class="zoom-container background-interogation background-interogation-purple">
+      <section class="container-width">
+        <h2 class="h2 black">Des questions sur les formations gamifiées ?</h2>
+        <div class="small-medium-spacing"></div>
+        <div class="wrapper-faq-container-info">
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-orange">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">
+                  Est-ce que le jeu remplace la formation théorique classique ?
+                </h3>
+              </div>
+              <p class="black">
+                Pas nécessairement. Les formats ludiques ne remplacent pas la théorie, ils
+                <b>l’accompagnent</b> et <b>la renforcent</b> en rendant <b>la transmission</b> plus vivante.
+              </p>
+            </article>
+
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-purple">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">
+                  Pourquoi choisir une formation gamifiée plutôt qu’un cours traditionnel ?
+                </h3>
+              </div>
+              <p class="black">
+                <b>La formation ludique</b> rend les participants<b> actifs et engagés</b>. Ils
+                deviennent <b>acteurs de leur apprentissage</b>, ce qui favorise <b
+                  >la mémorisation</b
+                >
+                à long terme et évite <b>la passivité</b>.
+              </p>
+            </article>
+          </div>
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-blue">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">
+                  Peut-on intégrer une expérience à une formation déjà existante ?
+                </h3>
+              </div>
+              <p class="black">
+                Oui, les expériences conçues par <b>Loooper! </b>sont réalisées <b>sur mesure</b> et s’intègrent
+                parfaitement dans un dispositif pédagogique <b>déjà en place</b>.
+              </p>
+            </article>
+
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-orange">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">
+                  Peut-on adapter une formation ludique à n’importe quel domaine ?
+                </h3>
+              </div>
+              <p class="black">
+                <b>Tout à fait.</b> Chaque formation interactive est pensée <b>spécifiquement</b>
+                pour
+                <b>votre secteur, vos objectifs et vos publics</b>.
+              </p>
+            </article>
+          </div>
         </div>
-   
-    <JeuVideo />
-    <Quiz />
-    <JeuSociete />
+      </section>
+    </div>
+  </div>
 
-    <script src="/js/modal.js" defer></script>
-    <script src="/js/faq.js" defer></script>
+  <JeuVideo />
+  <Quiz />
+  <JeuSociete />
 
+  <script src="/js/modal.js" defer></script>
+  <script src="/js/faq.js" defer></script>
 </BaseLayout>

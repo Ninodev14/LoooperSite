@@ -3,202 +3,244 @@
  * pages/creer-interaction-sociale.astro — Créer de l'interaction sociale
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import JeuVideo from "../components/Modal/JeuVideo.astro";
-import Quiz from "../components/Modal/Quiz.astro";
-import JeuSociete from "../components/Modal/JeuSociete.astro";
+import JeuVideo from '../components/Modal/JeuVideo.astro';
+import Quiz from '../components/Modal/Quiz.astro';
+import JeuSociete from '../components/Modal/JeuSociete.astro';
 ---
 
 <BaseLayout
   title="Créer de l'interaction sociale"
   description="Favorisez les échanges et brisez la glace entre participants grâce aux formats interactifs Loooper!."
   ogUrl="https://loooper.fr/creer-interaction-sociale"
-  currentPage="creer-interaction-sociale"
->
-<section class="mainPageTitle mainPageTitlePurple">
-            <h1 class="h1 container-width white-border black">Loooper! c’est <span> </span>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleBlue">créer </span><span
-                        class="paterneTitleContour">créer </span></div>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleBlue">de </span><span
-                        class="paterneTitleContour">de </span></div>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleBlue">l'interaction
-                    </span><span class="paterneTitleContour">l'interaction </span></div>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitleBlue">sociale</span><span
-                        class="paterneTitleContour">sociale</span></div>
-            </h1>
-        </section>
-        <div class="container-width ariane-net h3"><a href="/">Accueil </a>
-            <p class="h3">></p> <a href="/besoins/">Vos besoins</a>
-            <p class="h3">></p><a href="/creer-interaction-sociale/"
-                class="end-chield highlight-no-annim blue black-border-small"> Créer de l'interaction
-                sociale </a>
+  currentPage="creer-interaction-sociale">
+  <section class="mainPageTitle mainPageTitlePurple" data-reveal="down">
+    <h1 class="h1 container-width white-border black">
+      Loooper! c’est <span> </span>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitleBlue">créer </span><span class="paterneTitleContour"
+          >créer
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitleBlue">de </span><span class="paterneTitleContour"
+          >de
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitleBlue">l'interaction </span><span
+          class="paterneTitleContour"
+          >l'interaction
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitleBlue">sociale</span><span class="paterneTitleContour"
+          >sociale</span>
+      </div>
+    </h1>
+  </section>
+  <div class="container-width ariane-net h3" data-reveal="down">
+    <a href="/">Accueil </a>
+    <p class="h3">></p>
+    <a href="/besoins/">Vos besoins</a>
+    <p class="h3">></p><a
+      href="/creer-interaction-sociale/"
+      class="end-chield highlight-no-annim blue black-border-small">
+      Créer de l'interaction sociale
+    </a>
+  </div>
+
+  <div class="large-spacing"></div>
+
+  <section
+    class="container-width text-basical-container"
+    data-reveal="left"
+    data-reveal-delay="100">
+    <article class="text-basical-container-text-long">
+      <div>
+        <h2 class="h2 black white-border">
+          Susciter des rencontres à travers une expérience conviviale ?
+        </h2>
+        <div class="small-medium-spacing"></div>
+        <p>
+          Chez <b>Loooper!</b>, nous concevons <b class="highlight orange"
+            >des expériences interactives</b
+          > qui facilitent <b>le contact</b>, brisent la glace et créent <b
+            >des moments inoubliables</b
+          >. Avec <b>le ludique</b>, chacun trouve <b class="highlight purple"
+            >un terrain de partage</b
+          > : <b>discussions, rires, défis et coopération</b>. Nos expériences créent <b
+            class="highlight blue">un moment idéal</b
+          > pour <b>découvrir autrui</b>, dépasser les bulles sociales et créer <b
+            >un moment convivial</b
+          >.
+        </p>
+      </div>
+    </article>
+    <article class="text-basical-container-emojie">
+      <div class="emojie-img-line-container-besoin-child">
+        <div class="emojie-img-line-besoin-child star">
+          <img src="/svg/besoin/starYellowType2.svg" alt="Image representant des étoile" />
         </div>
-
-        <div class="large-spacing"></div>
-
-
-        <section class="container-width text-basical-container">
-            <article class="text-basical-container-text-long">
-                <div>
-                    <h2 class="h2 black white-border">Susciter des rencontres à travers une expérience conviviale ?
-                    </h2>
-                    <div class="small-medium-spacing"></div>
-                    <p>
-                        Chez <b>Loooper!</b>, nous concevons <b class="highlight orange">des expériences
-                            interactives</b> qui facilitent <b>le contact</b>, brisent la glace et créent <b>des moments
-                            inoubliables</b>. Avec <b>le ludique</b>, chacun trouve <b class="highlight purple">un
-                            terrain de partage</b> : <b>discussions, rires, défis et coopération</b>. Nos expériences
-                        créent <b class="highlight blue">un moment idéal</b> pour <b>découvrir autrui</b>, dépasser les
-                        bulles sociales et créer <b>un moment convivial</b>.
-                    </p>
-                </div>
-            </article>
-            <article class="text-basical-container-emojie">
-                <div class="emojie-img-line-container-besoin-child">
-                    <div class="emojie-img-line-besoin-child star">
-                        <img src="/svg/besoin/starYellowType2.svg" alt="Image representant des étoile">
-                    </div>
-                    <img class="emojie-img-line-besoin-child" src="/svg/besoin/connection.svg"
-                        alt="Image representant des connection entre personne">
-                    <div class="emojie-img-line-besoin-child star2">
-                        <img src="/svg/besoin/starYellowType1.svg" alt="Image representant des étoile">
-                    </div>
-                </div>
-
-            </article>
-        </section>
-
-        <div class="large-spacing"></div>
-
-        <div class="backgroundBrushType1">
-            <section class="container-width long-card-container">
-                <h2 class="h2 black white-border">Les formats qui tissent des liens par le jeu</h2>
-                <div class="small-medium-spacing"></div>
-                <div class="long-card-wrapper">
-                    <article class="long-card long-card-orange">
-                        <img src="/img/long-card/cart-cartel.jpg" alt="image representative un quiz">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim orange"
-                                    id="book-page-part-1-container-title">
-                                    Quiz</h3>
-                            </div>
-                            <p class="black">Encouragez <b>la collaboration</b> ou <b>la compétition bienveillante</b>,
-                                engagez <b>des discussions</b> et créez <b>des moments de complicité</b> autour d’un
-                                sujet commun.</p>
-                            <button data-modal="modal-quiz" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur le quiz">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-
-                    <article class="long-card long-card-purple">
-                        <img src="/img/long-card/biker.jpg" alt="image representative d'une jeu de société">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim purple"
-                                    id="book-page-part-1-container-title">
-                                    Jeu de société</h3>
-                            </div>
-                            <p class="black">Utilisez <b>des mécaniques ludiques</b>, favorisez <b>les échanges</b> et
-                                engagez <b>la discussion</b> sur diverses thématiques.
-                            </p>
-                            <button data-modal="modal-jeu-societe" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les Jeu de société">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-
-                    <article class="long-card long-card-blue">
-                        <img src="/img/long-card/game.jpg" alt="image representative un jeu video">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim blue"
-                                    id="book-page-part-1-container-title">
-                                    Jeu vidéo multijoueur</h3>
-                            </div>
-                            <p class="black">Rassemblez-vous, à distance ou en présentiel, autour d’un objectif commun.
-                                <b>Coopérez</b> ou <b>affrontez-vous</b> pour créer <b>un moment de partage</b>.
-                            </p>
-                            <button data-modal="modal-jeu-video" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les jeux video">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-                </div>
-                <div class="small-medium-spacing"></div>
-                <a href="/formats/" class="text-typo btn-project btn-white-background">
-                    <span>Découvrir nos autres formats</span>
-                </a>
-            </section>
+        <img
+          class="emojie-img-line-besoin-child"
+          src="/svg/besoin/connection.svg"
+          alt="Image representant des connection entre personne"
+        />
+        <div class="emojie-img-line-besoin-child star2">
+          <img src="/svg/besoin/starYellowType1.svg" alt="Image representant des étoile" />
         </div>
+      </div>
+    </article>
+  </section>
 
-        <div class="large-spacing"></div>
+  <div class="large-spacing"></div>
 
-        <div class="zoom-container-center">
-            <div class="zoom-container background-interogation background-interogation-purple">
-                <section class="container-width">
-                    <h2 class="h2 black">Des questions sur les expériences de création d'interaction sociale ?
-                    </h2>
-                    <div class="small-medium-spacing"></div>
-                    <div class="wrapper-faq-container-info">
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-orange">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Est-ce que le jeu fonctionne même avec des groupes qui ne se
-                                        connaissent pas ?
-                                    </h3>
-                                </div>
-                                <p class="black">
-                                    Absolument ! Le jeu est<b> un facilitateur naturel de rencontres.</b> Il brise les
-                                    barrières
-                                    sociales, encourage <b>les échanges</b> et crée <b>une dynamique conviviale</b>,
-                                    même
-                                    entre parfaits inconnus.
-                                </p>
-                            </article>
-                        </div>
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-purple">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">
-                                        Le jeu permet-il de rassembler des personnes de cultures ou d’âges différents ?
-                                    </h3>
-                                </div>
-                                <p class="black">Oui. Grâce à ses règles universelles et son côté accessible, le jeu est
-                                    un
-                                    langage commun qui favorise le partage <b>intergénérationnel</b> et
-                                    <b>interculturel</b>. Chez <b>Loooper!</b>, nous <b>adaptons</b> chaque expérience
-                                    pour
-                                    inclure les publics <b>de votre choix</b>.
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                </section>
+  <div class="backgroundBrushType1">
+    <section class="container-width long-card-container" data-reveal="left" data-reveal-delay="100">
+      <h2 class="h2 black white-border">Les formats qui tissent des liens par le jeu</h2>
+      <div class="small-medium-spacing"></div>
+      <div class="long-card-wrapper">
+        <article class="long-card long-card-orange">
+          <img src="/img/long-card/cart-cartel.jpg" alt="image representative un quiz" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim orange"
+                id="book-page-part-1-container-title">
+                Quiz
+              </h3>
             </div>
+            <p class="black">
+              Encouragez <b>la collaboration</b> ou <b>la compétition bienveillante</b>, engagez <b
+                >des discussions</b
+              > et créez <b>des moments de complicité</b> autour d’un sujet commun.
+            </p>
+            <button
+              data-modal="modal-quiz"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur le quiz">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="long-card long-card-purple">
+          <img src="/img/long-card/biker.jpg" alt="image representative d'une jeu de société" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim purple"
+                id="book-page-part-1-container-title">
+                Jeu de société
+              </h3>
+            </div>
+            <p class="black">
+              Utilisez <b>des mécaniques ludiques</b>, favorisez <b>les échanges</b> et engagez <b
+                >la discussion</b
+              > sur diverses thématiques.
+            </p>
+            <button
+              data-modal="modal-jeu-societe"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur les Jeu de société">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="long-card long-card-blue">
+          <img src="/img/long-card/game.jpg" alt="image representative un jeu video" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim blue"
+                id="book-page-part-1-container-title">
+                Jeu vidéo multijoueur
+              </h3>
+            </div>
+            <p class="black">
+              Rassemblez-vous, à distance ou en présentiel, autour d’un objectif commun.
+              <b>Coopérez</b> ou <b>affrontez-vous</b> pour créer <b>un moment de partage</b>.
+            </p>
+            <button
+              data-modal="modal-jeu-video"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur les jeux video">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+      </div>
+      <div class="small-medium-spacing"></div>
+      <a href="/formats/" class="text-typo btn-project btn-white-background">
+        <span>Découvrir nos autres formats</span>
+      </a>
+    </section>
+  </div>
+
+  <div class="large-spacing"></div>
+
+  <div class="zoom-container-center">
+    <div class="zoom-container background-interogation background-interogation-purple">
+      <section class="container-width">
+        <h2 class="h2 black">
+          Des questions sur les expériences de création d'interaction sociale ?
+        </h2>
+        <div class="small-medium-spacing"></div>
+        <div class="wrapper-faq-container-info">
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-orange">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">
+                  Est-ce que le jeu fonctionne même avec des groupes qui ne se connaissent pas ?
+                </h3>
+              </div>
+              <p class="black">
+                Absolument ! Le jeu est<b> un facilitateur naturel de rencontres.</b> Il brise les barrières
+                sociales, encourage <b>les échanges</b> et crée <b>une dynamique conviviale</b>,
+                même entre parfaits inconnus.
+              </p>
+            </article>
+          </div>
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-purple">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">
+                  Le jeu permet-il de rassembler des personnes de cultures ou d’âges différents ?
+                </h3>
+              </div>
+              <p class="black">
+                Oui. Grâce à ses règles universelles et son côté accessible, le jeu est un langage
+                commun qui favorise le partage <b>intergénérationnel</b> et
+                <b>interculturel</b>. Chez <b>Loooper!</b>, nous <b>adaptons</b> chaque expérience pour
+                inclure les publics <b>de votre choix</b>.
+              </p>
+            </article>
+          </div>
         </div>
+      </section>
+    </div>
+  </div>
 
-    <JeuVideo />
-    <Quiz />
-    <JeuSociete />
+  <JeuVideo />
+  <Quiz />
+  <JeuSociete />
 
-    <script src="/js/modal.js" defer></script>
-    <script src="/js/faq.js" defer></script>
-
-
+  <script src="/js/modal.js" defer></script>
+  <script src="/js/faq.js" defer></script>
 </BaseLayout>

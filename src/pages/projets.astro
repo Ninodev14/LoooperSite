@@ -3,395 +3,484 @@
  * pages/projets.astro — Nos projets
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SaveSeamulator from "../components/Modal/SaveSeamulator.astro";
-import Zizanie from "../components/Modal/Zizanie.astro";
-import BikerAuGrandCoeur from "../components/Modal/BikerAuGrandCoeur.astro";
-import CoopCook from "../components/Modal/CoopCook.astro";
-import CartesCartels from "../components/Modal/CartesCartels.astro";
-import KotiFight from "../components/Modal/KotiFight.astro";
-import Zemblanite from "../components/Modal/Zemblanite.astro";
-import Scratch from "../components/Modal/Scratch.astro";
+import SaveSeamulator from '../components/Modal/SaveSeamulator.astro';
+import Zizanie from '../components/Modal/Zizanie.astro';
+import BikerAuGrandCoeur from '../components/Modal/BikerAuGrandCoeur.astro';
+import CoopCook from '../components/Modal/CoopCook.astro';
+import CartesCartels from '../components/Modal/CartesCartels.astro';
+import KotiFight from '../components/Modal/KotiFight.astro';
+import Zemblanite from '../components/Modal/Zemblanite.astro';
+import Scratch from '../components/Modal/Scratch.astro';
 ---
-
 
 <BaseLayout
   title="Nos projets"
   description="Découvrez les projets de gamification et d'expériences interactives réalisés par Loooper! pour ses clients."
   ogUrl="https://loooper.fr/projets"
-  currentPage="projets"
->
-        <section class="mainPageTitle mainPageTitleOrange">
-            <h1 class="h1 container-width white-border black">Loooper!, des projets interactifs <span> </span>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">aux </span><span
-                        class="paterneTitleContour">aux </span></div>
-                <div class="paterneTitleContainer"> <span class="paterneTitle paterneTitlePurple">problématiques
-                    </span><span class="paterneTitleContour">problématiques </span></div>
-                <div class="paterneTitleContainer"> <span class="paterneTitle paterneTitlePurple">diverses !</span><span
-                        class="paterneTitleContour"> diverses !</span></div>
+  currentPage="projets">
+  <section class="mainPageTitle mainPageTitleOrange" data-reveal="down">
+    <h1 class="h1 container-width white-border black">
+      Loooper!, des projets interactifs <span> </span>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitlePurple">aux </span><span class="paterneTitleContour"
+          >aux
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitlePurple">problématiques </span><span
+          class="paterneTitleContour"
+          >problématiques
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitlePurple">diverses !</span><span
+          class="paterneTitleContour">
+          diverses !</span
+        >
+      </div>
+    </h1>
+  </section>
+  <div class="container-width ariane-net h3" data-reveal="down">
+    <a href="/">Accueil </a>
+    <p class="h3">></p>
+    <a href="/projets/" class="end-chield highlight-no-annim purple black-border-small"
+      >Nos projets</a
+    >
+  </div>
 
-            </h1>
-        </section>
-        <div class="container-width ariane-net h3"><a href="/">Accueil </a>
-            <p class="h3">></p> <a href="/projets/"
-                class="end-chield highlight-no-annim purple black-border-small">Nos projets</a>
+  <section id="foot-prj1" class="container-width" data-reveal="up" data-reveal-delay="100">
+    <div class="large-spacing"></div>
+
+    <h2 class="h2 black white-border">Découvrez notre univers …</h2>
+    <div class="small-medium-spacing"></div>
+    <div class="card-info-wrap">
+      <article class="card-info-container card-info-container-orange">
+        <img src="/img/card/saveSeamulator.jpg" alt="Image représentant Save Seamulator" />
+        <div class="card-info-container-text">
+          <div class="card-info-container-text-alignement">
+            <h3 class="h3 black white-border highlight-no-annim orange">Save Seamulator</h3>
+            <ul>
+              <li class="text-typo black">
+                <b>Le jeu vidéo</b> pour partager la magie de <b>l'océan</b>
+              </li>
+              <li class="text-typo black">
+                Tester pour <b>comprendre</b> l’impact de l’homme sur <b>la biodiversité marine</b>
+              </li>
+            </ul>
+          </div>
+          <div class="card-info-container-text-center-btn">
+            <button
+              data-modal="modal-save-seamulator"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur les Save Seamulator">
+              <span>En savoir plus</span>
+            </button>
+          </div>
         </div>
+      </article>
 
-
-        <section id="foot-prj1" class="container-width">
-            <div class="large-spacing"></div>
-
-            <h2 class="h2 black white-border">Découvrez notre univers …</h2>
-            <div class="small-medium-spacing"></div>
-            <div class="card-info-wrap">
-
-                <article class="card-info-container card-info-container-orange">
-                    <img src="/img/card/saveSeamulator.jpg" alt="Image représentant Save Seamulator">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim orange">Save Seamulator</h3>
-                            <ul>
-                                <li class="text-typo black"><b>Le jeu vidéo</b> pour partager la magie de <b>l'océan</b>
-                                </li>
-                                <li class="text-typo black">Tester pour <b>comprendre</b> l’impact de l’homme sur <b>la
-                                        biodiversité marine</b></li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-save-seamulator"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les Save Seamulator">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-purple">
-                    <img src="/img/card/zizanie.jpg" alt="Image représentant La Zizanie">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim purple">La Zizanie</h3>
-                            <ul>
-                                <li class="text-typo black"><b>L’expérience interactive</b> où s’affrontent paysages et
-                                    animaux</li>
-                                <li class="text-typo black">Défendre <b>son équipe</b> à travers des questions sur
-                                    <b>les tableaux</b> qui nous entourent
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-zizanie"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur La Zizanie">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-blue">
-                    <img src="/img/card/biker.jpg" alt="Image représentant Bikers au Grand cœur">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim blue">Bikers au Grand cœur</h3>
-                            <ul>
-                                <li class="text-typo black"><b>Le jeu de société</b> pour permettre à tous de parler
-                                    <b>du harcèlement</b>
-                                </li>
-                                <li class="text-typo black">À imprimer, découper, mettre en place et jouer <b>chez
-                                        soi</b></li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-bikers"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur Bikers au Grand cœur">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-orange">
-                    <img src="/img/card/coopCook.jpg" alt="Image représentant Coop’Cook">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim orange">Coop’Cook</h3>
-                            <ul>
-                                <li class="text-typo black"><b>Le jeu vidéo</b> pour cuisiner à <b>deux</b></li>
-                                <li class="text-typo black">Apprendre des recettes <b>équilibrées</b> tout en
-                                    <b>s’amusant</b>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-coop-cook"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur le Coop’Cook">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-purple">
-                    <img src="/img/card/cartesCartels.jpg" alt="Image représentant Cartes & Cartels">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim purple">Cartes & Cartels</h3>
-                            <ul>
-                                <li class="text-typo black"><b>Le quiz</b> pour se défier entre amis</li>
-                                <li class="text-typo black">Tout savoir sur <b>les cartels des œuvres</b> du MusBa</li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-cartes-cartels"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur Cartes & Cartels">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-blue">
-                    <img src="/img/card/kotiFight.jpg" alt="Image représentant Koti’Fight">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim blue">Koti’Fight</h3>
-                            <ul>
-                                <li class="text-typo black">L’appli pour démêler <b>le vrai du faux</b></li>
-                                <li class="text-typo black">Défendre <b>son équipe</b> chaque jour</li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-koti-fight"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur Koti’Fight">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-orange">
-                    <img src="/img/card/zemblanite.jpg" alt="Image représentant Zemblanité">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim orange">Zemblanité</h3>
-                            <ul>
-                                <li class="text-typo black"><b>Le jeu vidéo</b> pour empêcher la fin du monde</li>
-                                <li class="text-typo black"><b>Mourir et recommencer</b> pour démêler <b>les énigmes</b>
-                                    de la survie de l’humanité</li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-zemblanite"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur Zemblanité">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-                <article class="card-info-container card-info-container-purple">
-                    <img src="/img/card/scratch.jpg" alt="Image représentant l'atelier scratch">
-                    <div class="card-info-container-text">
-                        <div class="card-info-container-text-alignement">
-                            <h3 class="h3 black white-border highlight-no-annim purple">Atelier Scratch</h3>
-                            <ul>
-                                <li class="text-typo black"><b>Accompagnement</b> de collégiens pour la création d’un
-                                    <b>serious game</b>
-                                </li>
-                                <li class="text-typo black"><b>Apprendre et sensibiliser</b> sur <b>la protection</b> de
-                                    la biodiversité marine
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="card-info-container-text-center-btn"> <button data-modal="modal-scratch"
-                                aria-haspopup="dialog" class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur l'Atelier Scratch">
-                                <span>En savoir plus</span> </button></div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-
-        <div class="large-spacing"></div>
-
-        <div id="foot-prj2" class="zoom-container-center">
-            <div class="zoom-container background-guillemet">
-                <section class="container-width">
-                    <h2 class="h2 black">La portée de nos projets ?</h2>
-                    <div class="small-medium-spacing"></div>
-                    <div class="wrapper-faq-container-info">
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-orange">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Save Seamulator</h3>
-                                </div>
-                                <div class="faq-text-espacement">
-
-                                    <p class="black">
-                                        Développé pour et avec des collégiens, mais aussi avec de plus jeunes élèves, le
-                                        jeu
-                                        n’a pas pour idée de copier la réalité mais d’en présenter une version
-                                        simplifiée,
-                                        qui souligne des liens de cause à effet, amenant à une meilleure compréhension
-                                        de la
-                                        complexité du problème. Il ne s’agit pas simplement d’arrêter le plastique, mais
-                                        de
-                                        reconsidérer profondément nos modes de vie. Une solution simple n’existe pas, il
-                                        nous faut repenser le relationnel au monde.
-                                    </p>
-
-                                    <i class="text-typo black">Astasa</i>
-
-                                    <a target="_blank"
-                                        href="https://www.astasa.org/2025/09/30/apprendre-en-samusant-developper-un-jeu-video-sur-la-preservation-de-la-biodiversite-marine/"
-                                        class="text-typo btn-project btn-white-background">
-                                        <span class=" external-link">Lire l’article <img src="/svg/externeBlack.svg"
-                                                alt="Lien externe" class="external-icon"></span>
-                                    </a>
-
-
-
-                                    <p class="black">
-                                        “Il invite le joueur à incarner un plongeur sous-marin ayant pour mission
-                                        d’éliminer
-                                        la
-                                        pollution qui envahit une ville côtière”
-                                        “les étudiants ont en partie travaillé avec une classe de collégiens de Menton
-                                        (Alpes-Maritimes) et avec l’association ADE Méditerranée”
-                                    </p>
-
-                                    <i class="text-typo black">Rue89Bordeaux</i>
-
-                                    <a target="_blank"
-                                        href="https://rue89bordeaux.com/2025/04/un-jeu-video-sur-la-preservation-des-oceans-concu-par-des-etudiants-de-bordeaux/"
-                                        class="text-typo btn-project btn-white-background">
-                                        <span class=" external-link">Lire l’article <img src="/svg/externeBlack.svg"
-                                                alt="Lien externe" class="external-icon"></span>
-                                    </a>
-
-                                    <p class="black">“Des collégiens de Menton et des universitaires de Bordeaux
-                                        développent
-                                        un jeu en
-                                        ligne pour sensibiliser à notre environnement en ville”
-                                        “Le jeu vidéo se veut pédagogique, dans le but d’informer à la fois sur la
-                                        protection des écosystèmes marins et de la gestion écologique d’une ville.”
-                                    </p>
-
-                                    <i class="text-typo black">Nicematin</i>
-
-                                    <a target="_blank"
-                                        href="https://www.nicematin.com/environnement/des-collegiens-de-menton-et-des-universitaires-de-bordeaux-developpent-un-jeu-en-ligne-pour-sensibiliser-a-notre-environnement-en-ville--980091"
-                                        class="text-typo btn-project btn-white-background">
-                                        <span class=" external-link">Lire l’article <img src="/svg/externeBlack.svg"
-                                                alt="Lien externe" class="external-icon"></span>
-                                    </a>
-                                </div>
-                            </article>
-
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-purple">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Bikers au Grand cœur</h3>
-                                </div>
-                                <div class="faq-text-espacement">
-                                    <p class="black">
-                                        “Souvenez-vous, il y a 15 jours, B.C.H apportait son aide à des jeunes
-                                        universitaires pour un projet pédagogique lié aux Harcelement.”
-                                        “Une franche partie de rigolade, un jeu ludique qui lie le monde des Bikers à la
-                                        lutte contre le Harcelement.”
-
-                                    </p>
-
-                                    <i class="text-typo black">Facebook - Biker contre harcelement 33</i>
-
-                                    <a target="_blank"
-                                        href="https://www.facebook.com/permalink.php?story_fbid=pfbid037L6ngAtivNW1h7kyA1vhobFEwZC1oPiB1crg6vHxscfg5rMjNc7a7jwSVQ7JQ9jpl&id=100070471032774"
-                                        class="text-typo btn-project btn-white-background">
-                                        <span class=" external-link">Voir le post<img src="/svg/externeBlack.svg"
-                                                alt="Lien externe" class="external-icon"></span>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-blue">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">La Zizanie</h3>
-                                </div>
-                                <div class="faq-text-espacement">
-                                    <p class="black">
-                                        “Vous avez été plus de 1 600 visiteurs à venir au musée ce mardi soir pour
-                                        soutenir
-                                        les projets étudiants lors de la Bacchanigh”
-                                        “Un grand merci à tous les participants, aux écoles partenaires[...] qui ont
-                                        insufflé vie à la Bacchanight !”
-
-                                    </p>
-
-                                    <i class="text-typo black">Instagram - MusBa</i>
-
-                                    <a target="_blank" href="https://www.instagram.com/p/C5GfgYgoJaV/?img_index=9"
-                                        class="text-typo btn-project btn-white-background">
-                                        <span class=" external-link">Voir le post <img src="/svg/externeBlack.svg"
-                                                alt="Lien externe" class="external-icon"></span>
-                                    </a>
-                                </div>
-                            </article>
-
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-orange">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Wibo</h3>
-                                </div>
-                                <div class="faq-text-espacement">
-                                    <p class="black">
-                                        “À l’IUT Bordeaux-Montaigne, des étudiants ont réalisé un dessin animé pour
-                                        sensibiliser les enfants aux différences”
-                                        “expliquer de manière ludique les différences aux enfants. De la grossophobie au
-                                        racisme, en passant par les stéréotypes de genre, l’ensemble des thématiques
-                                        sociétales actuelles sont présentées.”
-                                    </p>
-
-                                    <i class="text-typo black">Sud Ouest</i>
-
-                                    <a target="_blank"
-                                        href="https://www.sudouest.fr/etudiant/a-l-iut-bordeaux-montaigne-des-etudiants-ont-realise-un-dessin-anime-pour-sensibiliser-les-enfants-aux-differences-14767692.php"
-                                        class="text-typo btn-project btn-white-background">
-                                        <span class=" external-link">Lire l’article <img src="/svg/externeBlack.svg"
-                                                alt="Lien externe" class="external-icon"></span>
-                                    </a>
-                                    <a target="_blank"
-                                        href="https://www.youtube.com/watch?v=XnmqQTKk82M&ab_channel=LesHistoiresdeWibo"
-                                        class="text-typo btn-project btn-white-background">
-                                        <span class=" external-link">Lire l’article <img src="/svg/externeBlack.svg"
-                                                alt="Lien externe" class="external-icon"></span>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </section>
-            </div>
+      <article class="card-info-container card-info-container-purple">
+        <img src="/img/card/zizanie.jpg" alt="Image représentant La Zizanie" />
+        <div class="card-info-container-text">
+          <div class="card-info-container-text-alignement">
+            <h3 class="h3 black white-border highlight-no-annim purple">La Zizanie</h3>
+            <ul>
+              <li class="text-typo black">
+                <b>L’expérience interactive</b> où s’affrontent paysages et animaux
+              </li>
+              <li class="text-typo black">
+                Défendre <b>son équipe</b> à travers des questions sur
+                <b>les tableaux</b> qui nous entourent
+              </li>
+            </ul>
+          </div>
+          <div class="card-info-container-text-center-btn">
+            <button
+              data-modal="modal-zizanie"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur La Zizanie">
+              <span>En savoir plus</span>
+            </button>
+          </div>
         </div>
-  
-    <SaveSeamulator />
-    <Zizanie />
-    <BikerAuGrandCoeur />
-    <CoopCook />
-    <CartesCartels />
-    <KotiFight />
-    <Zemblanite />
-    <Scratch />
+      </article>
 
-    <script src="/js/modal.js" defer></script>
-    <script src="/js/faq.js" defer></script>
+      <article class="card-info-container card-info-container-blue">
+        <img src="/img/card/biker.jpg" alt="Image représentant Bikers au Grand cœur" />
+        <div class="card-info-container-text">
+          <div class="card-info-container-text-alignement">
+            <h3 class="h3 black white-border highlight-no-annim blue">Bikers au Grand cœur</h3>
+            <ul>
+              <li class="text-typo black">
+                <b>Le jeu de société</b> pour permettre à tous de parler
+                <b>du harcèlement</b>
+              </li>
+              <li class="text-typo black">
+                À imprimer, découper, mettre en place et jouer <b>chez soi</b>
+              </li>
+            </ul>
+          </div>
+          <div class="card-info-container-text-center-btn">
+            <button
+              data-modal="modal-bikers"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur Bikers au Grand cœur">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-info-container card-info-container-orange">
+        <img src="/img/card/coopCook.jpg" alt="Image représentant Coop’Cook" />
+        <div class="card-info-container-text">
+          <div class="card-info-container-text-alignement">
+            <h3 class="h3 black white-border highlight-no-annim orange">Coop’Cook</h3>
+            <ul>
+              <li class="text-typo black"><b>Le jeu vidéo</b> pour cuisiner à <b>deux</b></li>
+              <li class="text-typo black">
+                Apprendre des recettes <b>équilibrées</b> tout en
+                <b>s’amusant</b>
+              </li>
+            </ul>
+          </div>
+          <div class="card-info-container-text-center-btn">
+            <button
+              data-modal="modal-coop-cook"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur le Coop’Cook">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-info-container card-info-container-purple">
+        <img src="/img/card/cartesCartels.jpg" alt="Image représentant Cartes & Cartels" />
+        <div class="card-info-container-text">
+          <div class="card-info-container-text-alignement">
+            <h3 class="h3 black white-border highlight-no-annim purple">Cartes & Cartels</h3>
+            <ul>
+              <li class="text-typo black"><b>Le quiz</b> pour se défier entre amis</li>
+              <li class="text-typo black">
+                Tout savoir sur <b>les cartels des œuvres</b> du MusBa
+              </li>
+            </ul>
+          </div>
+          <div class="card-info-container-text-center-btn">
+            <button
+              data-modal="modal-cartes-cartels"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur Cartes & Cartels">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-info-container card-info-container-blue">
+        <img src="/img/card/kotiFight.jpg" alt="Image représentant Koti’Fight" />
+        <div class="card-info-container-text">
+          <div class="card-info-container-text-alignement">
+            <h3 class="h3 black white-border highlight-no-annim blue">Koti’Fight</h3>
+            <ul>
+              <li class="text-typo black">L’appli pour démêler <b>le vrai du faux</b></li>
+              <li class="text-typo black">Défendre <b>son équipe</b> chaque jour</li>
+            </ul>
+          </div>
+          <div class="card-info-container-text-center-btn">
+            <button
+              data-modal="modal-koti-fight"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur Koti’Fight">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-info-container card-info-container-orange">
+        <img src="/img/card/zemblanite.jpg" alt="Image représentant Zemblanité" />
+        <div class="card-info-container-text">
+          <div class="card-info-container-text-alignement">
+            <h3 class="h3 black white-border highlight-no-annim orange">Zemblanité</h3>
+            <ul>
+              <li class="text-typo black"><b>Le jeu vidéo</b> pour empêcher la fin du monde</li>
+              <li class="text-typo black">
+                <b>Mourir et recommencer</b> pour démêler <b>les énigmes</b>
+                de la survie de l’humanité
+              </li>
+            </ul>
+          </div>
+          <div class="card-info-container-text-center-btn">
+            <button
+              data-modal="modal-zemblanite"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur Zemblanité">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card-info-container card-info-container-purple">
+        <img src="/img/card/scratch.jpg" alt="Image représentant l'atelier scratch" />
+        <div class="card-info-container-text">
+          <div class="card-info-container-text-alignement">
+            <h3 class="h3 black white-border highlight-no-annim purple">Atelier Scratch</h3>
+            <ul>
+              <li class="text-typo black">
+                <b>Accompagnement</b> de collégiens pour la création d’un
+                <b>serious game</b>
+              </li>
+              <li class="text-typo black">
+                <b>Apprendre et sensibiliser</b> sur <b>la protection</b> de la biodiversité marine
+              </li>
+            </ul>
+          </div>
+          <div class="card-info-container-text-center-btn">
+            <button
+              data-modal="modal-scratch"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur l'Atelier Scratch">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <div class="large-spacing"></div>
+
+  <div id="foot-prj2" class="zoom-container-center">
+    <div class="zoom-container background-guillemet">
+      <section class="container-width">
+        <h2 class="h2 black">La portée de nos projets ?</h2>
+        <div class="small-medium-spacing"></div>
+        <div class="wrapper-faq-container-info">
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-orange">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">Save Seamulator</h3>
+              </div>
+              <div class="faq-text-espacement">
+                <p class="black">
+                  Développé pour et avec des collégiens, mais aussi avec de plus jeunes élèves, le
+                  jeu n’a pas pour idée de copier la réalité mais d’en présenter une version
+                  simplifiée, qui souligne des liens de cause à effet, amenant à une meilleure
+                  compréhension de la complexité du problème. Il ne s’agit pas simplement d’arrêter
+                  le plastique, mais de reconsidérer profondément nos modes de vie. Une solution
+                  simple n’existe pas, il nous faut repenser le relationnel au monde.
+                </p>
+
+                <i class="text-typo black">Astasa</i>
+
+                <a
+                  target="_blank"
+                  href="https://www.astasa.org/2025/09/30/apprendre-en-samusant-developper-un-jeu-video-sur-la-preservation-de-la-biodiversite-marine/"
+                  class="text-typo btn-project btn-white-background">
+                  <span class="external-link"
+                    >Lire l’article <img
+                      src="/svg/externeBlack.svg"
+                      alt="Lien externe"
+                      class="external-icon"
+                    /></span
+                  >
+                </a>
+
+                <p class="black">
+                  “Il invite le joueur à incarner un plongeur sous-marin ayant pour mission
+                  d’éliminer la pollution qui envahit une ville côtière” “les étudiants ont en
+                  partie travaillé avec une classe de collégiens de Menton (Alpes-Maritimes) et avec
+                  l’association ADE Méditerranée”
+                </p>
+
+                <i class="text-typo black">Rue89Bordeaux</i>
+
+                <a
+                  target="_blank"
+                  href="https://rue89bordeaux.com/2025/04/un-jeu-video-sur-la-preservation-des-oceans-concu-par-des-etudiants-de-bordeaux/"
+                  class="text-typo btn-project btn-white-background">
+                  <span class="external-link"
+                    >Lire l’article <img
+                      src="/svg/externeBlack.svg"
+                      alt="Lien externe"
+                      class="external-icon"
+                    /></span
+                  >
+                </a>
+
+                <p class="black">
+                  “Des collégiens de Menton et des universitaires de Bordeaux développent un jeu en
+                  ligne pour sensibiliser à notre environnement en ville” “Le jeu vidéo se veut
+                  pédagogique, dans le but d’informer à la fois sur la protection des écosystèmes
+                  marins et de la gestion écologique d’une ville.”
+                </p>
+
+                <i class="text-typo black">Nicematin</i>
+
+                <a
+                  target="_blank"
+                  href="https://www.nicematin.com/environnement/des-collegiens-de-menton-et-des-universitaires-de-bordeaux-developpent-un-jeu-en-ligne-pour-sensibiliser-a-notre-environnement-en-ville--980091"
+                  class="text-typo btn-project btn-white-background">
+                  <span class="external-link"
+                    >Lire l’article <img
+                      src="/svg/externeBlack.svg"
+                      alt="Lien externe"
+                      class="external-icon"
+                    /></span
+                  >
+                </a>
+              </div>
+            </article>
+
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-purple">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">Bikers au Grand cœur</h3>
+              </div>
+              <div class="faq-text-espacement">
+                <p class="black">
+                  “Souvenez-vous, il y a 15 jours, B.C.H apportait son aide à des jeunes
+                  universitaires pour un projet pédagogique lié aux Harcelement.” “Une franche
+                  partie de rigolade, un jeu ludique qui lie le monde des Bikers à la lutte contre
+                  le Harcelement.”
+                </p>
+
+                <i class="text-typo black">Facebook - Biker contre harcelement 33</i>
+
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/permalink.php?story_fbid=pfbid037L6ngAtivNW1h7kyA1vhobFEwZC1oPiB1crg6vHxscfg5rMjNc7a7jwSVQ7JQ9jpl&id=100070471032774"
+                  class="text-typo btn-project btn-white-background">
+                  <span class="external-link"
+                    >Voir le post<img
+                      src="/svg/externeBlack.svg"
+                      alt="Lien externe"
+                      class="external-icon"
+                    /></span
+                  >
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-blue">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">La Zizanie</h3>
+              </div>
+              <div class="faq-text-espacement">
+                <p class="black">
+                  “Vous avez été plus de 1 600 visiteurs à venir au musée ce mardi soir pour
+                  soutenir les projets étudiants lors de la Bacchanigh” “Un grand merci à tous les
+                  participants, aux écoles partenaires[...] qui ont insufflé vie à la Bacchanight !”
+                </p>
+
+                <i class="text-typo black">Instagram - MusBa</i>
+
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/p/C5GfgYgoJaV/?img_index=9"
+                  class="text-typo btn-project btn-white-background">
+                  <span class="external-link"
+                    >Voir le post <img
+                      src="/svg/externeBlack.svg"
+                      alt="Lien externe"
+                      class="external-icon"
+                    /></span
+                  >
+                </a>
+              </div>
+            </article>
+
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-orange">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">Wibo</h3>
+              </div>
+              <div class="faq-text-espacement">
+                <p class="black">
+                  “À l’IUT Bordeaux-Montaigne, des étudiants ont réalisé un dessin animé pour
+                  sensibiliser les enfants aux différences” “expliquer de manière ludique les
+                  différences aux enfants. De la grossophobie au racisme, en passant par les
+                  stéréotypes de genre, l’ensemble des thématiques sociétales actuelles sont
+                  présentées.”
+                </p>
+
+                <i class="text-typo black">Sud Ouest</i>
+
+                <a
+                  target="_blank"
+                  href="https://www.sudouest.fr/etudiant/a-l-iut-bordeaux-montaigne-des-etudiants-ont-realise-un-dessin-anime-pour-sensibiliser-les-enfants-aux-differences-14767692.php"
+                  class="text-typo btn-project btn-white-background">
+                  <span class="external-link"
+                    >Lire l’article <img
+                      src="/svg/externeBlack.svg"
+                      alt="Lien externe"
+                      class="external-icon"
+                    /></span
+                  >
+                </a>
+                <a
+                  target="_blank"
+                  href="https://www.youtube.com/watch?v=XnmqQTKk82M&ab_channel=LesHistoiresdeWibo"
+                  class="text-typo btn-project btn-white-background">
+                  <span class="external-link"
+                    >Lire l’article <img
+                      src="/svg/externeBlack.svg"
+                      alt="Lien externe"
+                      class="external-icon"
+                    /></span
+                  >
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <SaveSeamulator />
+  <Zizanie />
+  <BikerAuGrandCoeur />
+  <CoopCook />
+  <CartesCartels />
+  <KotiFight />
+  <Zemblanite />
+  <Scratch />
+
+  <script src="/js/modal.js" defer></script>
+  <script src="/js/faq.js" defer></script>
 </BaseLayout>

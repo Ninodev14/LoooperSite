@@ -376,6 +376,16 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  transition: transform 200ms ease, background-color 200ms ease;
+}
+
+.pagination-btn-arrow:hover:not(:disabled) {
+  background-color: #bb6ef6;
+  transform: scale(1.1);
+}
+
+.pagination-btn-arrow:active:not(:disabled) {
+  transform: scale(.92);
 }
 
 .pagination-btn-arrow:disabled {
@@ -402,6 +412,12 @@
   border-radius: 2px;
   height: 3px;
   width: 10px;
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.pagination-btn-arrow:hover:not(:disabled) .line1,
+.pagination-btn-arrow:hover:not(:disabled) .line2 {
+  background: #fff;
 }
 
 .pagination-chevron-left .line1,
@@ -418,6 +434,14 @@
   transform: translateY(-50%) rotate(45deg);
 }
 
+.pagination-btn-arrow:hover:not(:disabled) .pagination-chevron-left .line1 {
+  transform: translateY(0%) rotate(-45deg) translateX(-1px) scale(1.2);
+}
+
+.pagination-btn-arrow:hover:not(:disabled) .pagination-chevron-left .line2 {
+  transform: translateY(-50%) rotate(45deg) translateX(-1px) scale(1.2);
+}
+
 .pagination-chevron-right .line1,
 .pagination-chevron-right .line2 {
   right: 0;
@@ -430,6 +454,14 @@
 
 .pagination-chevron-right .line2 {
   transform: translateY(-50%) rotate(-45deg);
+}
+
+.pagination-btn-arrow:hover:not(:disabled) .pagination-chevron-right .line1 {
+  transform: translateY(0%) rotate(45deg) translateX(1px) scale(1.2);
+}
+
+.pagination-btn-arrow:hover:not(:disabled) .pagination-chevron-right .line2 {
+  transform: translateY(-50%) rotate(-45deg) translateX(1px) scale(1.2);
 }
 
 .pagination-arrow-double {

@@ -3,196 +3,221 @@
  * pages/sensibiliser-reflechir.astro — Sensibiliser et faire réfléchir
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import JeuVideo from "../components/Modal/JeuVideo.astro";
-import HistoireInteractive from "../components/Modal/HistoireInteractive.astro";
-import JeuSociete from "../components/Modal/JeuSociete.astro";
+import JeuVideo from '../components/Modal/JeuVideo.astro';
+import HistoireInteractive from '../components/Modal/HistoireInteractive.astro';
+import JeuSociete from '../components/Modal/JeuSociete.astro';
 ---
 
 <BaseLayout
   title="Sensibiliser et faire réfléchir"
   description="Amenez vos équipes à prendre conscience de sujets importants grâce à des expériences immersives Loooper!."
   ogUrl="https://loooper.fr/sensibiliser-reflechir"
-  currentPage="sensibiliser-reflechir"
->
-        <section class="mainPageTitle mainPageTitleOrange">
-            <h1 class="h1 container-width white-border black">Loooper! c’est
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">sensibiliser
-                        et faire réfléchir
-                    </span><span class="paterneTitleContour">sensibiliser
-                        et faire réfléchir</span></div>
-            </h1>
-        </section>
-        <div class="container-width ariane-net h3"><a href="/">Accueil </a>
-            <p class="h3">></p> <a href="/besoins">Vos besoins</a>
-            <p class="h3">></p><a href="/sensibiliser-reflechir"
-                class="end-chield highlight-no-annim purple black-border-small">Sensibiliser et faire
-                réfléchir</a>
+  currentPage="sensibiliser-reflechir">
+  <section class="mainPageTitle mainPageTitleOrange" data-reveal="down">
+    <h1 class="h1 container-width white-border black">
+      Loooper! c’est
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitlePurple">sensibiliser et faire réfléchir </span><span
+          class="paterneTitleContour">sensibiliser et faire réfléchir</span>
+      </div>
+    </h1>
+  </section>
+  <div class="container-width ariane-net h3" data-reveal="down">
+    <a href="/">Accueil </a>
+    <p class="h3">></p>
+    <a href="/besoins">Vos besoins</a>
+    <p class="h3">></p><a
+      href="/sensibiliser-reflechir"
+      class="end-chield highlight-no-annim purple black-border-small"
+      >Sensibiliser et faire réfléchir</a
+    >
+  </div>
+
+  <div class="large-spacing"></div>
+
+  <section
+    class="container-width text-basical-container"
+    data-reveal="left"
+    data-reveal-delay="100">
+    <article class="text-basical-container-text-long">
+      <div>
+        <h2 class="h2 black white-border">Éveiller des consciences par l’interactif ?</h2>
+        <div class="small-medium-spacing"></div>
+        <p>
+          Chez <b>Loooper!</b>, nous pensons qu’il est possible <b class="highlight orange"
+            >d'éveiller les consciences</b
+          > à travers le jeu et <b class="highlight purple">d’inciter à une réflexion</b>. Nos <b
+            >expériences</b
+          > facilitent une connexion émotionnelle à un thème, favorisent <b>l'identification</b> aux problématiques
+          et permettent de mieux <b>appréhender</b>
+          des contextes parfois complexes ou délicats. Grâce à <b class="highlight blue"
+            >l’interactivité et à la gamification
+          </b>, les participants ne sont plus de simples témoins passifs.
+        </p>
+      </div>
+    </article>
+    <article class="text-basical-container-emojie">
+      <div class="emojie-img-line-container-besoin-child">
+        <div class="emojie-img-line-besoin-child star">
+          <img src="/svg/besoin/starBlueType2.svg" alt="Image representant des étoile" />
         </div>
-
-        <div class="large-spacing"></div>
-
-
-        <section class="container-width text-basical-container">
-            <article class="text-basical-container-text-long">
-                <div>
-                    <h2 class="h2 black white-border">Éveiller des consciences par l’interactif ?
-                    </h2>
-                    <div class="small-medium-spacing"></div>
-                    <p>
-                        Chez <b>Loooper!</b>, nous pensons qu’il est possible <b class="highlight orange">d'éveiller les
-                            consciences</b> à travers le jeu et <b class="highlight purple">d’inciter à une
-                            réflexion</b>. Nos <b>expériences</b> facilitent une connexion émotionnelle à un thème,
-                        favorisent <b>l'identification</b> aux problématiques et permettent de mieux <b>appréhender</b>
-                        des contextes parfois complexes ou délicats. Grâce à <b class="highlight blue">l’interactivité
-                            et à la gamification </b>, les participants ne sont plus de simples témoins passifs.
-                    </p>
-                </div>
-            </article>
-            <article class="text-basical-container-emojie">
-                <div class="emojie-img-line-container-besoin-child">
-                    <div class="emojie-img-line-besoin-child star">
-                        <img src="/svg/besoin/starBlueType2.svg" alt="Image representant des étoile">
-                    </div>
-                    <img class="emojie-img-line-besoin-child" src="/svg/besoin/annonce.svg"
-                        alt="Image representant une Annonce">
-                    <div class="emojie-img-line-besoin-child star2">
-                        <img src="/svg/besoin/starBlueType1.svg" alt="Image representant des étoile">
-                    </div>
-                </div>
-
-            </article>
-        </section>
-
-        <div class="large-spacing"></div>
-
-        <div class="backgroundBrushType1">
-            <section class="container-width long-card-container">
-                <h2 class="h2 black white-border">Les formats qui apportent une pédagogie ludique</h2>
-                <div class="small-medium-spacing"></div>
-                <div class="long-card-wrapper">
-                    <article class="long-card long-card-orange">
-                        <img src="/img/long-card/game.jpg" alt="image representative un jeu video">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim orange"
-                                    id="book-page-part-1-container-title">
-                                    Jeu vidéo</h3>
-                            </div>
-                            <p class="black">Plongez dans un univers où chaque action entraîne des <b>conséquences</b>.
-                                Comprenez les <b>enjeux</b> d’un sujet en expérimentant <b>diverses situations</b>.</p>
-                            <button data-modal="modal-jeu-video" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les jeux video">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-
-                    <article class="long-card long-card-purple">
-                        <img src="/img/long-card/biker.jpg" alt="image representative d'une jeu de société">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim purple"
-                                    id="book-page-part-1-container-title">
-                                    Jeu de société</h3>
-                            </div>
-                            <p class="black">Utilisez <b>des mécaniques ludiques</b> pour comprendre <b>des
-                                    problématiques</b>, favorisez <b>la réflexion</b>, et engagez la discussion sur<b>la
-                                    thématique</b>.</p>
-                            <button data-modal="modal-jeu-societe" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les Jeu de société">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-
-                    <article class="long-card long-card-blue">
-                        <img src="/img/long-card/story.jpg" alt="image representative d'une histoire">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim blue"
-                                    id="book-page-part-1-container-title">
-                                    Histoire interactive</h3>
-                            </div>
-                            <p class="black">Entrez dans la peau d’un personnage, faites <b>des choix décisifs</b> et
-                                ressentez <b>ses dilemmes</b>. </p>
-                            <button data-modal="modal-histoire-interactive" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les Histoire interactive">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-
-                </div>
-                <div class="small-medium-spacing"></div>
-                <a href="/formats/" class="text-typo btn-project btn-white-background">
-                    <span>Découvrir nos autres formats</span>
-                </a>
-            </section>
+        <img
+          class="emojie-img-line-besoin-child"
+          src="/svg/besoin/annonce.svg"
+          alt="Image representant une Annonce"
+        />
+        <div class="emojie-img-line-besoin-child star2">
+          <img src="/svg/besoin/starBlueType1.svg" alt="Image representant des étoile" />
         </div>
+      </div>
+    </article>
+  </section>
 
-        <div class="large-spacing"></div>
+  <div class="large-spacing"></div>
 
-        <div class="zoom-container-center">
-            <div class="zoom-container background-interogation background-interogation-purple">
-                <section class="container-width">
-                    <h2 class="h2 black">Des questions sur l’éducation immersive ?
-                    </h2>
-                    <div class="small-medium-spacing"></div>
-                    <div class="wrapper-faq-container-info">
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-orange">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Le côté ludique ne réduit-il pas la gravité d’un sujet sérieux
-                                        ?
-                                    </h3>
-                                </div>
-                                <p class="black">
-                                    Au contraire ! Un jeu bien pensé peut aborder <b>des sujets sensibles</b> avec
-                                    respect,
-                                    tout en permettant au public de mieux comprendre <b>la complexité des enjeux</b>. Le
-                                    ludique ne minimise pas l’importance : il crée une nouvelle <b>porte d’entrée</b>.
-                                </p>
-                            </article>
-                        </div>
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-purple">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">
-                                        Quels sont les avantages par rapport à une conférence classique ?</h3>
-                                </div>
-                                <p class="black">
-                                    L’interactivité <b>capte l’attention du public</b> plus longtemps. Là où une
-                                    conférence
-                                    peut parfois rester abstraite, une expérience immersive crée <b>un souvenir
-                                        mémorable</b> et <b>une implication émotionnelle</b> qui favorise <b>la
-                                        réflexion</b>.
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                </section>
+  <div class="backgroundBrushType1">
+    <section class="container-width long-card-container" data-reveal="left" data-reveal-delay="100">
+      <h2 class="h2 black white-border">Les formats qui apportent une pédagogie ludique</h2>
+      <div class="small-medium-spacing"></div>
+      <div class="long-card-wrapper">
+        <article class="long-card long-card-orange">
+          <img src="/img/long-card/game.jpg" alt="image representative un jeu video" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim orange"
+                id="book-page-part-1-container-title">
+                Jeu vidéo
+              </h3>
             </div>
+            <p class="black">
+              Plongez dans un univers où chaque action entraîne des <b>conséquences</b>. Comprenez
+              les <b>enjeux</b> d’un sujet en expérimentant <b>diverses situations</b>.
+            </p>
+            <button
+              data-modal="modal-jeu-video"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur les jeux video">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="long-card long-card-purple">
+          <img src="/img/long-card/biker.jpg" alt="image representative d'une jeu de société" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim purple"
+                id="book-page-part-1-container-title">
+                Jeu de société
+              </h3>
+            </div>
+            <p class="black">
+              Utilisez <b>des mécaniques ludiques</b> pour comprendre <b>des problématiques</b>,
+              favorisez <b>la réflexion</b>, et engagez la discussion sur<b>la thématique</b>.
+            </p>
+            <button
+              data-modal="modal-jeu-societe"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur les Jeu de société">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="long-card long-card-blue">
+          <img src="/img/long-card/story.jpg" alt="image representative d'une histoire" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim blue"
+                id="book-page-part-1-container-title">
+                Histoire interactive
+              </h3>
+            </div>
+            <p class="black">
+              Entrez dans la peau d’un personnage, faites <b>des choix décisifs</b> et ressentez <b
+                >ses dilemmes</b
+              >.
+            </p>
+            <button
+              data-modal="modal-histoire-interactive"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur les Histoire interactive">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+      </div>
+      <div class="small-medium-spacing"></div>
+      <a href="/formats/" class="text-typo btn-project btn-white-background">
+        <span>Découvrir nos autres formats</span>
+      </a>
+    </section>
+  </div>
+
+  <div class="large-spacing"></div>
+
+  <div class="zoom-container-center">
+    <div class="zoom-container background-interogation background-interogation-purple">
+      <section class="container-width">
+        <h2 class="h2 black">Des questions sur l’éducation immersive ?</h2>
+        <div class="small-medium-spacing"></div>
+        <div class="wrapper-faq-container-info">
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-orange">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">
+                  Le côté ludique ne réduit-il pas la gravité d’un sujet sérieux ?
+                </h3>
+              </div>
+              <p class="black">
+                Au contraire ! Un jeu bien pensé peut aborder <b>des sujets sensibles</b> avec respect,
+                tout en permettant au public de mieux comprendre <b>la complexité des enjeux</b>. Le
+                ludique ne minimise pas l’importance : il crée une nouvelle <b>porte d’entrée</b>.
+              </p>
+            </article>
+          </div>
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-purple">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">
+                  Quels sont les avantages par rapport à une conférence classique ?
+                </h3>
+              </div>
+              <p class="black">
+                L’interactivité <b>capte l’attention du public</b> plus longtemps. Là où une conférence
+                peut parfois rester abstraite, une expérience immersive crée <b
+                  >un souvenir mémorable</b
+                > et <b>une implication émotionnelle</b> qui favorise <b>la réflexion</b>.
+              </p>
+            </article>
+          </div>
         </div>
+      </section>
+    </div>
+  </div>
 
+  <JeuVideo />
+  <HistoireInteractive />
+  <JeuSociete />
 
-    <JeuVideo />
-    <HistoireInteractive />
-    <JeuSociete />
-
-
-    <script src="/js/modal.js" defer></script>
-    <script src="/js/faq.js" defer></script>
-
+  <script src="/js/modal.js" defer></script>
+  <script src="/js/faq.js" defer></script>
 </BaseLayout>

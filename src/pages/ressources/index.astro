@@ -16,7 +16,7 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
   description="Articles et ressources de Loooper!"
   ogUrl="https://ressources"
   currentPage="ressource">
-  <section class="mainPageTitle mainPageTitlePurple">
+  <section class="mainPageTitle mainPageTitlePurple" data-reveal="down">
     <h1 class="h1 container-width white-border black">
       Découvrez toutes les
       <div class="paterneTitleContainer">
@@ -28,7 +28,7 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
     </h1>
   </section>
 
-  <div class="container-width ariane-net h3">
+  <div class="container-width ariane-net h3" data-reveal="down">
     <a href="/">Accueil </a>
     <p class="h3">></p>
 
@@ -74,149 +74,156 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
 
   <div class="small-medium-spacing"></div>
 
-  <section class="container-width filters-ressources">
-    <div class="filters-tags-container text-typo">
-      <button class="filter-tag active" data-tag="all">Toutes les ressources</button>
-      {
-        allTags.map((tag) => (
-          <button class="filter-tag" data-tag={tag}>
-            {tag}
-          </button>
-        ))
-      }
-    </div>
-
-    <div class="small-spacing"></div>
-
-    <div class="filters-bottom-row text-typo">
-      <div class="search-container">
-        <input type="text" id="search-input" placeholder="Rechercher une ressource..." />
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="search-icon">
-          <circle cx="11" cy="11" r="7" stroke="black" stroke-width="2"></circle>
-          <line
-            x1="16.5"
-            y1="16.5"
-            x2="21"
-            y2="21"
-            stroke="black"
-            stroke-width="2"
-            stroke-linecap="round"></line>
-        </svg>
+  <div data-reveal="up" data-reveal-delay="100">
+    <section class="container-width filters-ressources">
+      <div class="filters-tags-container text-typo">
+        <button class="filter-tag active" data-tag="all">Toutes les ressources</button>
+        {
+          allTags.map((tag) => (
+            <button class="filter-tag" data-tag={tag}>
+              {tag}
+            </button>
+          ))
+        }
       </div>
 
-      <div class="per-page-container">
-        <label class="text-typo" for="per-page-select">Nombre d'articles par page</label>
-        <select class="text-typo black" id="per-page-select">
-          <option value="3">3</option>
-          <option value="6" selected>6</option>
-          <option value="9">9</option>
-          <option value="18">18</option>
-          <option value="27">27</option>
-        </select>
+      <div class="small-spacing"></div>
+
+      <div class="filters-bottom-row text-typo">
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Rechercher une ressource..." />
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="search-icon">
+            <circle cx="11" cy="11" r="7" stroke="black" stroke-width="2"></circle>
+            <line
+              x1="16.5"
+              y1="16.5"
+              x2="21"
+              y2="21"
+              stroke="black"
+              stroke-width="2"
+              stroke-linecap="round"></line>
+          </svg>
+        </div>
+
+        <div class="per-page-container">
+          <label class="text-typo" for="per-page-select">Nombre d'articles par page</label>
+          <select class="text-typo black" id="per-page-select">
+            <option value="3">3</option>
+            <option value="6" selected>6</option>
+            <option value="9">9</option>
+            <option value="18">18</option>
+            <option value="27">27</option>
+          </select>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <div class="small-medium-spacing"></div>
+    <div class="small-medium-spacing"></div>
 
-  <section class="container-width">
-    <ul class="ressources-grid" id="ressources-grid">
-      {
-        articles.map((article) => (
-          <li
-            class="card-info-container-ressource-li"
-            data-tags={JSON.stringify(article.data.tags ?? [])}
-            data-title={article.data.title.toLowerCase()}>
-            <article class="card-info-container card-info-container-ressource">
-              <a href={`/ressources/${article.id}`}>
-                <img src={article.data.image} alt={article.data.title} />
-              </a>
-              <div class="card-info-container-text">
-                <div class="card-info-container-text-alignement">
-                  <div class="keywords-container">
-                    {article.data.tags?.map((tag) => (
-                      <button class="keywords tag-link" data-tag={tag} type="button">
-                        {tag}
-                      </button>
-                    ))}
+    <section class="container-width">
+      <ul class="ressources-grid" id="ressources-grid">
+        {
+          articles.map((article) => (
+            <li
+              class="card-info-container-ressource-li"
+              data-tags={JSON.stringify(article.data.tags ?? [])}
+              data-title={article.data.title.toLowerCase()}
+              data-reveal="up">
+              <article class="card-info-container card-info-container-ressource">
+                <a href={`/ressources/${article.id}`}>
+                  <img src={article.data.image} alt={article.data.title} />
+                </a>
+                <div class="card-info-container-text">
+                  <div class="card-info-container-text-alignement">
+                    <div class="keywords-container">
+                      {article.data.tags?.map((tag) => (
+                        <button class="keywords tag-link" data-tag={tag} type="button">
+                          {tag}
+                        </button>
+                      ))}
+                    </div>
+                    <h3 class="h3 black">{article.data.title}</h3>
+                    <p class="p black white-border">{article.data.description}</p>
                   </div>
-                  <h3 class="h3 black">{article.data.title}</h3>
-                  <p class="p black white-border">{article.data.description}</p>
+                  <div class="card-info-container-text-center-btn">
+                    <a href={`/ressources/${article.id}`}>
+                      <button
+                        class="text-typo btn-project btn-modal btn-white-background"
+                        aria-label="En savoir plus sur le quiz">
+                        <span>En savoir plus</span>
+                      </button>
+                    </a>
+                  </div>
                 </div>
-                <div class="card-info-container-text-center-btn">
-                  <a href={`/ressources/${article.id}`}>
-                    <button
-                      class="text-typo btn-project btn-modal btn-white-background"
-                      aria-label="En savoir plus sur le quiz">
-                      <span>En savoir plus</span>
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </article>
-          </li>
-        ))
-      }
-    </ul>
+              </article>
+            </li>
+          ))
+        }
+      </ul>
 
-    <div class="pagination">
-      <div id="page-numbers" class="pagination-numbers text-typo"></div>
-      <div class="pagination-buttons">
-        <button
-          class="pagination-btn pagination-btn-arrow"
-          id="first-page"
-          aria-label="Première page"
-          type="button">
-          <div class="pagination-arrow-double">
+      <div class="pagination">
+        <div id="page-numbers" class="pagination-numbers text-typo"></div>
+        <div class="pagination-buttons">
+          <button
+            class="pagination-btn pagination-btn-arrow"
+            id="first-page"
+            aria-label="Première page"
+            type="button">
+            <div class="pagination-arrow-double">
+              <div class="pagination-chevron pagination-chevron-left">
+                <div class="line1"></div>
+                <div class="line2"></div>
+              </div>
+              <div class="pagination-chevron pagination-chevron-left">
+                <div class="line1"></div>
+                <div class="line2"></div>
+              </div>
+            </div>
+          </button>
+          <button
+            class="pagination-btn pagination-btn-arrow"
+            id="prev-page"
+            aria-label="Page précédente"
+            type="button">
             <div class="pagination-chevron pagination-chevron-left">
               <div class="line1"></div>
               <div class="line2"></div>
             </div>
-            <div class="pagination-chevron pagination-chevron-left">
-              <div class="line1"></div>
-              <div class="line2"></div>
-            </div>
-          </div>
-        </button>
-        <button
-          class="pagination-btn pagination-btn-arrow"
-          id="prev-page"
-          aria-label="Page précédente"
-          type="button">
-          <div class="pagination-chevron pagination-chevron-left">
-            <div class="line1"></div>
-            <div class="line2"></div>
-          </div>
-        </button>
-        <button
-          class="pagination-btn pagination-btn-arrow"
-          id="next-page"
-          aria-label="Page suivante"
-          type="button">
-          <div class="pagination-chevron pagination-chevron-right">
-            <div class="line1"></div>
-            <div class="line2"></div>
-          </div>
-        </button>
-        <button
-          class="pagination-btn pagination-btn-arrow"
-          id="last-page"
-          aria-label="Dernière page"
-          type="button">
-          <div class="pagination-arrow-double">
+          </button>
+          <button
+            class="pagination-btn pagination-btn-arrow"
+            id="next-page"
+            aria-label="Page suivante"
+            type="button">
             <div class="pagination-chevron pagination-chevron-right">
               <div class="line1"></div>
               <div class="line2"></div>
             </div>
-            <div class="pagination-chevron pagination-chevron-right">
-              <div class="line1"></div>
-              <div class="line2"></div>
+          </button>
+          <button
+            class="pagination-btn pagination-btn-arrow"
+            id="last-page"
+            aria-label="Dernière page"
+            type="button">
+            <div class="pagination-arrow-double">
+              <div class="pagination-chevron pagination-chevron-right">
+                <div class="line1"></div>
+                <div class="line2"></div>
+              </div>
+              <div class="pagination-chevron pagination-chevron-right">
+                <div class="line1"></div>
+                <div class="line2"></div>
+              </div>
             </div>
-          </div>
-        </button>
+          </button>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </BaseLayout>
 <script>
   const allCards = Array.from(
@@ -253,9 +260,27 @@ const allTags = [...new Set(articles.flatMap((a) => a.data.tags ?? []))];
     const totalPages = Math.max(1, Math.ceil(filtered.length / perPage));
     currentPage = Math.min(currentPage, totalPages);
 
-    allCards.forEach((card) => (card.style.display = 'none'));
+    // on masque et on réinitialise l'état "révélé" de toutes les cartes
+    allCards.forEach((card) => {
+      card.style.display = 'none';
+      card.classList.remove('is-visible');
+    });
+
     const start = (currentPage - 1) * perPage;
-    filtered.slice(start, start + perPage).forEach((card) => (card.style.display = ''));
+    const visibleCards = filtered.slice(start, start + perPage);
+
+    visibleCards.forEach((card, i) => {
+      card.style.display = '';
+      (card as HTMLElement).style.transitionDelay = `${i * 60}ms`;
+    });
+
+    // double rAF pour laisser le navigateur peindre le display:none -> block
+    // avant de déclencher la transition d'apparition
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        visibleCards.forEach((card) => card.classList.add('is-visible'));
+      });
+    });
 
     pageNumbersContainer.innerHTML = '';
     const pagesToShow = new Set<number>();

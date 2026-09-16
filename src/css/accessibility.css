@@ -685,7 +685,14 @@
  .no-animation #menu-tel,
  .no-animation #menu-toggle *,
  .no-animation #menu-tel *,
- .no-animation #foot-inx2 * {
+ .no-animation #foot-inx2 *,
+ .no-animation .swiper .swiper-btn-container *, .no-animation .swiper-slide *,.no-animation .pagination *,
+ .no-animation [data-reveal] {
      animation: none !important;
      transition: none !important;
  }
+
+.no-animation [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+}

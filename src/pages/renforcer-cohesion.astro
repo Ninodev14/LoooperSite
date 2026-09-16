@@ -3,196 +3,232 @@
  * pages/renforcer-cohesion.astro — Renforcer la cohésion
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Quiz from "../components/Modal/Quiz.astro";
-import EscapeGame from "../components/Modal/EscapeGame.astro";
-import GeoCaching from "../components/Modal/Geocaching.astro";
+import Quiz from '../components/Modal/Quiz.astro';
+import EscapeGame from '../components/Modal/EscapeGame.astro';
+import GeoCaching from '../components/Modal/Geocaching.astro';
 ---
 
 <BaseLayout
   title="Renforcer la cohésion"
   description="Soudez vos équipes autour d'expériences collectives mémorables conçues sur mesure par Loooper!."
   ogUrl="https://loooper.fr/renforcer-cohesion"
-  currentPage="renforcer-cohesion"
->
-        <section class="mainPageTitle mainPageTitleOrange">
-            <h1 class="h1 container-width white-border black">Loooper! c’est <span> </span>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">renforcer </span><span
-                        class="paterneTitleContour">renforcer </span></div>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">la </span><span
-                        class="paterneTitleContour">la </span></div>
-                <div class="paterneTitleContainer"><span class="paterneTitle paterneTitlePurple">cohésion</span><span
-                        class="paterneTitleContour">cohésion</span></div>
-            </h1>
-        </section>
-        <div class="container-width ariane-net h3"><a href="/">Accueil </a>
-            <p class="h3">></p> <a href="/besoins">Vos besoins</a>
-            <p class="h3">></p><a href="/renforcer-cohesion"
-                class="end-chield highlight-no-annim purple black-border-small"> Renforcer la cohésion</a>
+  currentPage="renforcer-cohesion">
+  <section class="mainPageTitle mainPageTitleOrange" data-reveal="down">
+    <h1 class="h1 container-width white-border black">
+      Loooper! c’est <span> </span>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitlePurple">renforcer </span><span
+          class="paterneTitleContour"
+          >renforcer
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitlePurple">la </span><span class="paterneTitleContour"
+          >la
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitlePurple">cohésion</span><span
+          class="paterneTitleContour">cohésion</span>
+      </div>
+    </h1>
+  </section>
+  <div class="container-width ariane-net h3" data-reveal="down">
+    <a href="/">Accueil </a>
+    <p class="h3">></p>
+    <a href="/besoins">Vos besoins</a>
+    <p class="h3">></p><a
+      href="/renforcer-cohesion"
+      class="end-chield highlight-no-annim purple black-border-small">
+      Renforcer la cohésion</a
+    >
+  </div>
+
+  <div class="large-spacing"></div>
+
+  <section
+    class="container-width text-basical-container"
+    data-reveal="left"
+    data-reveal-delay="100">
+    <article class="text-basical-container-text-long">
+      <div>
+        <h2 class="h2 black white-border">
+          Renforcer des liens avec des activités collectives immersives ?
+        </h2>
+        <div class="small-medium-spacing"></div>
+        <p>
+          Chez <b>Loooper!</b>, nous sommes convaincus que <b class="highlight orange"
+            >la cohésion</b
+          > est la clé d’un groupe <b>solide et motivé</b>. Grâce à <b class="highlight purple"
+            >des activités interactives et ludiques</b
+          >, nous favorisons <b>le renforcement des liens</b>, <b>la collaboration</b> et l'épanouissement
+          d'un véritable <b>esprit d'équipe</b> chez les participants. Chaque expérience se transforme
+          en une opportunité <b class="highlight blue"
+            >de partage, de collaboration et de création de souvenirs</b
+          >.
+        </p>
+      </div>
+    </article>
+    <article class="text-basical-container-emojie">
+      <div class="emojie-img-line-container-besoin-child">
+        <div class="emojie-img-line-besoin-child star">
+          <img src="/svg/besoin/starBlueType2.svg" alt="Image representant des étoile" />
         </div>
-
-        <div class="large-spacing"></div>
-
-
-        <section class="container-width text-basical-container">
-            <article class="text-basical-container-text-long">
-                <div>
-                    <h2 class="h2 black white-border">Renforcer des liens avec des activités collectives immersives ?
-                    </h2>
-                    <div class="small-medium-spacing"></div>
-                    <p>
-                        Chez <b>Loooper!</b>, nous sommes convaincus que <b class="highlight orange">la cohésion</b> est
-                        la clé d’un groupe <b>solide et motivé</b>. Grâce à <b class="highlight purple">des activités
-                            interactives et ludiques</b>, nous favorisons <b>le renforcement des liens</b>, <b>la
-                            collaboration</b> et l'épanouissement d'un véritable <b>esprit d'équipe</b> chez les
-                        participants. Chaque expérience se transforme en une opportunité <b class="highlight blue">de
-                            partage, de collaboration et de création de souvenirs</b>.
-                    </p>
-                </div>
-            </article>
-            <article class="text-basical-container-emojie">
-                <div class="emojie-img-line-container-besoin-child">
-                    <div class="emojie-img-line-besoin-child star">
-                        <img src="/svg/besoin/starBlueType2.svg" alt="Image representant des étoile">
-                    </div>
-                    <img class="emojie-img-line-besoin-child" src="/svg/besoin/group.svg"
-                        alt="Image representant un groupe de personne">
-                    <div class="emojie-img-line-besoin-child star2">
-                        <img src="/svg/besoin/starBlueType1.svg" alt="Image representant des étoile">
-                    </div>
-                </div>
-
-            </article>
-        </section>
-
-        <div class="large-spacing"></div>
-
-        <div class="backgroundBrushType1">
-            <section class="container-width long-card-container">
-                <h2 class="h2 black white-border">Les formats qui tissent des liens par le jeu</h2>
-                <div class="small-medium-spacing"></div>
-                <div class="long-card-wrapper">
-                    <article class="long-card long-card-orange">
-                        <img src="/img/long-card/escape.jpg" alt="image representative d'un Escape game">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim orange"
-                                    id="book-page-part-1-container-title">
-                                    Escape game</h3>
-                            </div>
-                            <p class="black">Développez <b>la coopération, la communication et l’entraide</b>. Unissez
-                                <b>vos forces</b> pour atteindre un objectif commun.
-                            </p>
-                            <button data-modal="modal-escape-game" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur les Escape game">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-
-                    <article class="long-card long-card-purple">
-                        <img src="/img/long-card/cart-cartel.jpg" alt="image representative un quiz">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim purple"
-                                    id="book-page-part-1-container-title">
-                                    Quiz</h3>
-                            </div>
-                            <p class="black">Stimulez <b>la compétition bienveillante</b>, favorisez
-                                <b>l’interaction</b> et créez <b>des moments de complicité</b> autour de thématiques
-                                variées.
-                            </p>
-                            <button data-modal="modal-quiz" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur le quiz">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-
-                    <article class="long-card long-card-blue">
-                        <img src="/img/long-card/geocaching.jpg" alt="image representative un Geocaching">
-                        <div class="long-card-text-content">
-                            <div>
-                                <h3 class="h2 black white-border highlight-no-annim blue"
-                                    id="book-page-part-1-container-title">
-                                    Geocaching</h3>
-                            </div>
-                            <p class="black">Partez <b>à plusieurs</b> à la découverte d’un lieu, résolvez <b>des
-                                    énigmes</b> sur le terrain et renforcez <b>les liens</b> en collaborant.
-                            </p>
-                            <button data-modal="modal-geocaching" aria-haspopup="dialog"
-                                class="text-typo btn-project btn-modal btn-white-background"
-                                aria-label="En savoir plus sur le Géocaching">
-                                <span>En savoir plus</span> </button>
-                        </div>
-                    </article>
-                </div>
-                <div class="small-medium-spacing"></div>
-                <a href="/formats/" class="text-typo btn-project btn-white-background">
-                    <span>Découvrir nos autres formats</span>
-                </a>
-            </section>
+        <img
+          class="emojie-img-line-besoin-child"
+          src="/svg/besoin/group.svg"
+          alt="Image representant un groupe de personne"
+        />
+        <div class="emojie-img-line-besoin-child star2">
+          <img src="/svg/besoin/starBlueType1.svg" alt="Image representant des étoile" />
         </div>
+      </div>
+    </article>
+  </section>
 
-        <div class="large-spacing"></div>
+  <div class="large-spacing"></div>
 
-        <div class="zoom-container-center">
-            <div class="zoom-container background-interogation background-interogation-purple">
-                <section class="container-width">
-                    <h2 class="h2 black">Des questions sur les expériences interactives de coopération ?
-                    </h2>
-                    <div class="small-medium-spacing"></div>
-                    <div class="wrapper-faq-container-info">
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-orange">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">Peut-on organiser une activité de cohésion pour un séminaire
-                                        d’entreprise ?
-                                    </h3>
-                                </div>
-                                <p class="black">
-                                    <b>Oui !</b> Nos formats peuvent être adaptés <b>aux séminaires interactifs</b> et
-                                    <b>aux événements professionnels</b>. Ils renforcent <b>la collaboration</b> et
-                                    contribuent à créer une ambiance de travail plus <b>positive</b>.
-                                </p>
-                            </article>
-                        </div>
-                        <div class="wrapper-faq-container-info-row">
-                            <article class="faq-container-info">
-                                <div class="faq-header">
-                                    <div>
-                                        <div class="faq-arrow faq-arrow-purple">
-                                            <div class="faq-arrow-1"></div>
-                                            <div class="faq-arrow-2"></div>
-                                        </div>
-                                    </div>
-                                    <h3 class="h3 black">
-                                        Les activités de cohésion fonctionnent-elles uniquement en présentiel ?</h3>
-                                </div>
-                                <p class="black">
-
-                                    <b>Pas du tout</b>. Nous concevons aussi des expériences <b>en distanciel</b>,
-                                    parfaites
-                                    pour les équipes en <b>télétravail</b> ou <b>réparties géographiquement</b>.
-
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                </section>
+  <div class="backgroundBrushType1">
+    <section class="container-width long-card-container" data-reveal="left" data-reveal-delay="100">
+      <h2 class="h2 black white-border">Les formats qui tissent des liens par le jeu</h2>
+      <div class="small-medium-spacing"></div>
+      <div class="long-card-wrapper">
+        <article class="long-card long-card-orange">
+          <img src="/img/long-card/escape.jpg" alt="image representative d'un Escape game" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim orange"
+                id="book-page-part-1-container-title">
+                Escape game
+              </h3>
             </div>
+            <p class="black">
+              Développez <b>la coopération, la communication et l’entraide</b>. Unissez
+              <b>vos forces</b> pour atteindre un objectif commun.
+            </p>
+            <button
+              data-modal="modal-escape-game"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur les Escape game">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="long-card long-card-purple">
+          <img src="/img/long-card/cart-cartel.jpg" alt="image representative un quiz" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim purple"
+                id="book-page-part-1-container-title">
+                Quiz
+              </h3>
+            </div>
+            <p class="black">
+              Stimulez <b>la compétition bienveillante</b>, favorisez
+              <b>l’interaction</b> et créez <b>des moments de complicité</b> autour de thématiques variées.
+            </p>
+            <button
+              data-modal="modal-quiz"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur le quiz">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="long-card long-card-blue">
+          <img src="/img/long-card/geocaching.jpg" alt="image representative un Geocaching" />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim blue"
+                id="book-page-part-1-container-title">
+                Geocaching
+              </h3>
+            </div>
+            <p class="black">
+              Partez <b>à plusieurs</b> à la découverte d’un lieu, résolvez <b>des énigmes</b> sur le
+              terrain et renforcez <b>les liens</b> en collaborant.
+            </p>
+            <button
+              data-modal="modal-geocaching"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur le Géocaching">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+      </div>
+      <div class="small-medium-spacing"></div>
+      <a href="/formats/" class="text-typo btn-project btn-white-background">
+        <span>Découvrir nos autres formats</span>
+      </a>
+    </section>
+  </div>
+
+  <div class="large-spacing"></div>
+
+  <div class="zoom-container-center">
+    <div class="zoom-container background-interogation background-interogation-purple">
+      <section class="container-width">
+        <h2 class="h2 black">Des questions sur les expériences interactives de coopération ?</h2>
+        <div class="small-medium-spacing"></div>
+        <div class="wrapper-faq-container-info">
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-orange">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">
+                  Peut-on organiser une activité de cohésion pour un séminaire d’entreprise ?
+                </h3>
+              </div>
+              <p class="black">
+                <b>Oui !</b> Nos formats peuvent être adaptés <b>aux séminaires interactifs</b> et
+                <b>aux événements professionnels</b>. Ils renforcent <b>la collaboration</b> et contribuent
+                à créer une ambiance de travail plus <b>positive</b>.
+              </p>
+            </article>
+          </div>
+          <div class="wrapper-faq-container-info-row">
+            <article class="faq-container-info">
+              <div class="faq-header">
+                <div>
+                  <div class="faq-arrow faq-arrow-purple">
+                    <div class="faq-arrow-1"></div>
+                    <div class="faq-arrow-2"></div>
+                  </div>
+                </div>
+                <h3 class="h3 black">
+                  Les activités de cohésion fonctionnent-elles uniquement en présentiel ?
+                </h3>
+              </div>
+              <p class="black">
+                <b>Pas du tout</b>. Nous concevons aussi des expériences <b>en distanciel</b>,
+                parfaites pour les équipes en <b>télétravail</b> ou <b>réparties géographiquement</b
+                >.
+              </p>
+            </article>
+          </div>
         </div>
+      </section>
+    </div>
+  </div>
 
-    <Quiz />
-    <EscapeGame />
-    <GeoCaching />
+  <Quiz />
+  <EscapeGame />
+  <GeoCaching />
 
-    <script src="/js/modal.js" defer></script>
-    <script src="/js/faq.js" defer></script>
-
+  <script src="/js/modal.js" defer></script>
+  <script src="/js/faq.js" defer></script>
 </BaseLayout>

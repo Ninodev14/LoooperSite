@@ -35,7 +35,7 @@ const faqBlocks = blocks?.filter((block) => block.type === 'faq') ?? [];
 <BaseLayout title={title} description={description}>
   <div class="medium-spacing"></div>
 
-  <div class="container-width ariane-net h3">
+  <div class="container-width ariane-net h3" data-reveal="down">
     <a href="/">Accueil</a>
     <p class="h3">></p>
     <a href="/ressources/">Nos Ressources</a>
@@ -47,7 +47,7 @@ const faqBlocks = blocks?.filter((block) => block.type === 'faq') ?? [];
   <div class="small-medium-spacing"></div>
   <section class="container-width">
     <div class="description-article-container">
-      <div class="description-article-content">
+      <div class="description-article-content" data-reveal="left" data-reveal-delay="100">
         <h1 class="h2 title-intro">{title}</h1>
         <div class="small-spacing"></div>
         <div class="keywords-article-container">

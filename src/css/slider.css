@@ -1,16 +1,7 @@
 :root {
     --bg: #0f172a;
-    /* slate-900 */
     --card: #111827;
-    /* gray-900 */
     --fg: #e5e7eb;
-    /* gray-200 */
-    --accent: #38bdf8;
-    /* sky-400 */
-}
-
-* {
-    box-sizing: border-box;
 }
 
 .container {
@@ -30,7 +21,6 @@ p.lead {
     opacity: .85;
 }
 
-/* --- Swiper layout --- */
 .swiper {
     width: 100%;
     padding: 24px 8px 56px;
@@ -44,7 +34,6 @@ p.lead {
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-
 }
 
 .slide-media {
@@ -53,33 +42,36 @@ p.lead {
     padding-bottom: 20px;
     background: none;
     border: none;
-
-
 }
 
 .slide-media img {
-  width: 30vw;
-  height: 100%;
-  aspect-ratio: 1002 / 563;
-  display: block;
-  object-fit: cover;
-  box-shadow: 20px 20px 0 0 transparent;
-  border-radius: 30px;
-  border: 5px solid #000;
-  transition: box-shadow 260ms ease;
+    width: 30vw;
+    height: 100%;
+    aspect-ratio: 1002 / 563;
+    display: block;
+    object-fit: cover;
+    box-shadow: 20px 20px 0 0 transparent;
+    border-radius: 30px;
+    border: 5px solid #000;
+    transition: box-shadow 260ms ease, transform 260ms ease;
+    will-change: transform;
+}
+
+.slide-media img:hover {
+    box-shadow: 20px 20px 0 0 #007aff;
+    transform: translate(-6px, -6px);
 }
 
 @media (max-width: 1023px) {
-.slide-media img {
-    width: 45vw;
+    .slide-media img {
+        width: 45vw;
+    }
+}
 
-}
-}
 @media (max-width: 639px) {
-.slide-media img {
-    width: 80vw;
-
-}
+    .slide-media img {
+        width: 80vw;
+    }
 }
 
 .slide-caption {
@@ -97,8 +89,6 @@ p.lead {
     padding: 10px;
 }
 
-/* --- Arrows --- */
-/* --- Conteneur des boutons --- */
 .swiper-button-next,
 .swiper-button-prev {
     position: relative;
@@ -111,16 +101,28 @@ p.lead {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: transform 200ms ease, background-color 200ms ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: #007aff;
+    transform: scale(1.1);
 }
 
 
-/* --- Barres de la flèche --- */
+.swiper-button-next:active,
+.swiper-button-prev:active {
+    transform: scale(.92);
+}
+
 .barArrow {
     position: absolute;
     width: 14px;
     height: 3px;
     background-color: #fff;
     border-radius: 2px;
+    transition: transform 200ms ease;
 }
 
 .barArrow1 {
@@ -131,17 +133,22 @@ p.lead {
     bottom: 20.5px;
 }
 
-/* Flèche Next */
 .swiper-button-next .barArrow1 {
     transform: rotate(135deg);
 }
 
 .swiper-button-next .barArrow2 {
     transform: rotate(-135deg);
-
 }
 
-/* Flèche Prev */
+.swiper-button-next:hover .barArrow1 {
+    transform: rotate(135deg) translateX(1px) scale(1.2);
+}
+
+.swiper-button-next:hover .barArrow2 {
+    transform: rotate(-135deg) translateX(1px) scale(1.2);
+}
+
 .swiper-button-prev .barArrow1 {
     transform: rotate(-135deg);
 }
@@ -150,6 +157,13 @@ p.lead {
     transform: rotate(135deg);
 }
 
+.swiper-button-prev:hover .barArrow1 {
+    transform: rotate(-135deg) translateX(-1px) scale(1.2);
+}
+
+.swiper-button-prev:hover .barArrow2 {
+    transform: rotate(135deg) translateX(-1px) scale(1.2);
+}
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
@@ -158,16 +172,20 @@ p.lead {
 
 .swiper-button-disabled {
     opacity: .35;
+    pointer-events: none;
 }
 
-/* --- Dots --- */
 .swiper-pagination-bullet {
     background: #5D507C;
     opacity: 1;
     width: 12px;
     height: 12px;
     border-radius: 50px;
-    transition: background 0.3s;
+    transition: background 300ms ease, transform 300ms ease;
+}
+
+.swiper-pagination-bullet:hover {
+    transform: scale(1.3);
 }
 
 .swiper-pagination-bullet-active {
