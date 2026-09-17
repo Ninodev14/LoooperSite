@@ -468,3 +468,17 @@
   display: inline-flex;
   align-items: center;
 }
+
+.pagination-number {
+  transition: transform 200ms ease, background-color 200ms ease;
+}
+
+.pagination-number:hover:not(.active) {
+  background-color: #bb6ef6;
+  color: white;
+  transform: scale(1.1);
+}
+
+.pagination-number:active:not(.active) {
+  transform: scale(.92);
+}
