@@ -1,698 +1,831 @@
- .opendyslexic p,
- .opendyslexic .footerTitle,
- .opendyslexic input,
- .opendyslexic textarea,
- .opendyslexic .header-typo-pc,
- .opendyslexic .text-typo,
- .opendyslexic p,
- .opendyslexic .h3,
- .opendyslexic .h2,
- .opendyslexic .dropdown-toggle,
- .opendyslexic .h1 {
-     font-family: "Open-dyslexic";
- }
-
-
- .opendyslexic header .highlight,
- .opendyslexic header .highlight-no-annim,
- .opendyslexic header .highlight a {
-     font-weight: normal;
- }
-
-
- .reading p,
- .reading .footerTitle,
- .reading input,
- .reading textarea,
- .reading .header-typo-pc,
- .reading .text-typo,
- .reading p,
- .reading .h3,
- .reading .h2,
- .reading .h1 {
-     font-family: "Open Sans", sans-serif;
- }
-
- body.normal-cursor * {
-     cursor: auto !important;
- }
-
- body.normal-cursor .cursor-ring {
-     display: none !important;
- }
-
- body.normal-cursor a,
- body.normal-cursor a *,
- body.normal-cursor button,
- body.normal-cursor button *,
- body.normal-cursor [role="button"],
- body.normal-cursor [role="button"] *,
- body.normal-cursor input[type="button"],
- body.normal-cursor input[type="submit"],
- body.normal-cursor .toggle-labe,
- body.normal-cursor .toggle-labe *,
- body.normal-cursor .btn-project,
- body.normal-cursor .btn-project *,
- body.normal-cursor .faq-header,
- body.normal-cursor .faq-header *,
- body.normal-cursor .btn-close,
- body.normal-cursor .btn-close *,
- body.normal-cursor .dropdown-toggle,
- body.normal-cursor .dropdown-toggle *,
- body.normal-cursor .contact .dropdown summary,
- body.normal-cursor .contact .dropdown summary *,
- body.normal-cursor .protagonistes-card,
- body.normal-cursor .protagonistes-card *,
- body.normal-cursor .book-mobile-nav,
- body.normal-cursor .book-mobile-nav *,
- body.normal-cursor .book-nav,
- body.normal-cursor .book-nav *,
- body.normal-cursor .clickable,
- body.normal-cursor .clickable *,
- body.normal-cursor #menu-toggle,
- body.normal-cursor #menu-toggle *,
- body.normal-cursor #btn-slide,
- body.normal-cursor #btn-slide *,
- body.normal-cursor #btn-back,
- body.normal-cursor #btn-back *,
- body.normal-cursor .card,
- body.normal-cursor .card *,
- body.normal-cursor .enCours,
- body.normal-cursor .enCours *,
- body.normal-cursor .swiper-button-next,
- body.normal-cursor .swiper-button-next *,
- body.normal-cursor .swiper-button-prev,
- body.normal-cursor .swiper-button-prev *,
- body.normal-cursor .discovered *,
- body.normal-cursor [style*="cursor:pointer"],
- body.normal-cursor [style*="cursor:pointer"] * {
-     cursor: pointer !important;
- }
-
- /* Exception pour .vide - ne pas afficher le cursor pointer */
- body.normal-cursor .vide,
- body.normal-cursor .vide * {
-     cursor: default !important;
- }
-
- /* Bouton */
-
- .menue-nav-ludique-handicap {
-     position: fixed;
-     display: flex;
-     bottom: 20px;
-     right: 20px;
-     width: fit-content;
-     gap: 20px;
-     height: 50px;
-     cursor: pointer;
-     z-index: 11;
- }
-
- #ludique-menue {
-     text-align: center;
-     z-index: 11;
-     display: none;
-     position: fixed;
-     bottom: 74px;
-     right: calc(40px + 50px);
-     background: #fff;
-     border: 2px solid #000000;
-     gap: 14px;
-     width: 160px;
-     flex-direction: column;
-     border-radius: 10px;
-     padding: 20px 16px;
-     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
- }
-
- #accessibility-btn img,
- #ludique-btn img {
-     width: 50px;
-     height: auto;
-     transition: filter 0.3s ease;
-
- }
-
- #accessibility-btn img:hover,
- #ludique-btn img:hover {
-     filter: invert(1);
- }
-
- .filtre-activ img {
-     filter: invert(1);
- }
-
- #accessibility-btn,
- #ludique-btn {
-     transition: filter 0.3s ease;
-     all: unset;
-     cursor: pointer;
-     display: inline;
- }
-
-
-
- /* Menu d’options */
- #accessibility-menu {
-     z-index: 11;
-     display: none;
-     position: fixed;
-     bottom: 74px;
-     right: 20px;
-     background: #fff;
-     border: 2px solid #000000;
-     gap: 14px;
-     flex-direction: column;
-     border-radius: 10px;
-     padding: 20px 16px;
-     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
- }
-
- #accessibility-menu input[type="checkbox"] {
-     padding: 0;
-     width: 18px;
-     height: 18px;
- }
-
- #accessibility-menu label,
- #ludique-menue p {
-     font-size: 0.8rem;
-
- }
-
- #accessibility-menu label {
-     display: flex;
-     align-items: center;
- }
-
- #accessibility-menu label img {
-     margin-left: 4px;
-     margin-right: 8px;
- }
-
- #accessibility-menu button {
-     margin-top: 10px;
-     font-size: 0.8rem;
- }
-
-
- html.high-contrast,
- body.high-contrast {
-     background-color: #0B021F !important;
-     color: #fff !important;
- }
-
-
- .high-contrast .nav-pc {
-     background-color: #000000;
-     border-bottom: 3px solid #FFFFFF
- }
-
-
- .high-contrast .protagonistes-card-null-background {
-     background: linear-gradient(145deg, #0B021F 50%, transparent 50%);
- }
-
- .high-contrast .book-container::after,
- .high-contrast .backgroundBrushType1::before {
-     display: none;
- }
-
-
- .high-contrast footer, .high-contrast .zoom-container-ressource {
-     background-color: #000000 !important;
-
- }
-
- .high-contrast .mainPageTitle,
- .high-contrast .paterneTitle,
- .high-contrast .highlight-no-annim::before,
- .high-contrast .highlight::before {
-     background-image: none !important;
- }
-
-
- .high-contrast .mainPageTitle .white-border {
-     background-repeat: repeat;
-     background-position: bottom;
-     background-size: auto;
-     padding-top: calc(3.89rem + 10vh);
-     /* 70px → 3.89rem */
-     padding-bottom: 1.11rem;
-     /* 20px → 1.11rem */
-     text-shadow:
-         0.0556rem 0 #fff, -0.0556rem 0 #fff,
-         0 0.0556rem #fff, 0 -0.0556rem #fff,
-         0.0556rem 0.0556rem #fff, -0.0556rem -0.0556rem #fff,
-         0.0556rem -0.0556rem #fff, -0.0556rem 0.0556rem #fff,
-         0.111rem 0 #fff, -0.111rem 0 #fff,
-         0 0.111rem #fff, 0 -0.111rem #fff,
-         0.111rem 0.111rem #fff, -0.111rem -0.111rem #fff,
-         0.111rem -0.111rem #fff, -0.111rem 0.111rem #fff,
-         0.167rem 0 #fff, -0.167rem 0 #fff,
-         0 0.167rem #fff, 0 -0.167rem #fff,
-         0.167rem 0.167rem #fff, -0.167rem -0.167rem #fff,
-         0.167rem -0.167rem #fff, -0.167rem 0.167rem #fff,
-
-         0.222rem 0 #0B021F, -0.222rem 0 #0B021F,
-         0 0.222rem #0B021F, 0 -0.222rem #0B021F,
-         0.222rem 0.222rem #0B021F, -0.222rem -0.222rem #0B021F,
-         0.222rem -0.222rem #0B021F, -0.222rem 0.222rem #0B021F,
-         0.278rem 0 #0B021F, -0.278rem 0 #0B021F,
-         0 0.278rem #0B021F, 0 -0.278rem #0B021F,
-         0.278rem 0.278rem #0B021F, -0.278rem -0.278rem #0B021F,
-         0.278rem -0.278rem #0B021F, -0.278rem 0.278rem #0B021F,
-         0.333rem 0 #0B021F, -0.333rem 0 #0B021F,
-         0 0.333rem #0B021F, 0 -0.333rem #0B021F,
-         0.333rem 0.333rem #0B021F, -0.333rem -0.333rem #0B021F,
-         0.333rem -0.333rem #0B021F, -0.333rem 0.333rem #0B021F,
-         0.389rem 0 #0B021F, -0.389rem 0 #0B021F,
-         0 0.389rem #0B021F, 0 -0.389rem #0B021F,
-         0.389rem 0.389rem #0B021F, -0.389rem -0.389rem #0B021F,
-         0.389rem -0.389rem #0B021F, -0.389rem 0.389rem #0B021F,
-         0.444rem 0 #0B021F, -0.444rem 0 #0B021F,
-         0 0.444rem #0B021F, 0 -0.444rem #0B021F,
-         0.444rem 0.444rem #0B021F, -0.444rem -0.444rem #0B021F,
-         0.444rem -0.444rem #0B021F, -0.444rem 0.444rem #0B021F,
-         0.5rem 0 #0B021F, -0.5rem 0 #0B021F,
-         0 0.5rem #0B021F, 0 -0.5rem #0B021F,
-         0.5rem 0.5rem #0B021F, -0.5rem -0.5rem #0B021F,
-         0.5rem -0.5rem #0B021F, -0.5rem 0.5rem #0B021F;
- }
-
- .high-contrast .paterneTitleContour {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     text-shadow:
-         0.0556rem 0 #fff, -0.0556rem 0 #fff,
-         0 0.0556rem #fff, 0 -0.0556rem #fff,
-         0.0556rem 0.0556rem #fff, -0.0556rem -0.0556rem #fff,
-         0.0556rem -0.0556rem #fff, -0.0556rem 0.0556rem #fff,
-         0.111rem 0 #fff, -0.111rem 0 #fff,
-         0 0.111rem #fff, 0 -0.111rem #fff,
-         0.111rem 0.111rem #fff, -0.111rem -0.111rem #fff,
-         0.111rem -0.111rem #fff, -0.111rem 0.111rem #fff,
-         0.167rem 0 #fff, -0.167rem 0 #fff,
-         0 0.167rem #fff, 0 -0.167rem #fff,
-         0.167rem 0.167rem #fff, -0.167rem -0.167rem #fff,
-         0.167rem -0.167rem #fff, -0.167rem 0.167rem #fff,
-
-         0.222rem 0 #0B021F, -0.222rem 0 #0B021F,
-         0 0.222rem #0B021F, 0 -0.222rem #0B021F,
-         0.222rem 0.222rem #0B021F, -0.222rem -0.222rem #0B021F,
-         0.222rem -0.222rem #0B021F, -0.222rem 0.222rem #0B021F,
-         0.278rem 0 #0B021F, -0.278rem 0 #0B021F,
-         0 0.278rem #0B021F, 0 -0.278rem #0B021F,
-         0.278rem 0.278rem #0B021F, -0.278rem -0.278rem #0B021F,
-         0.278rem -0.278rem #0B021F, -0.278rem 0.278rem #0B021F,
-         0.333rem 0 #0B021F, -0.333rem 0 #0B021F,
-         0 0.333rem #0B021F, 0 -0.333rem #0B021F,
-         0.333rem 0.333rem #0B021F, -0.333rem -0.333rem #0B021F,
-         0.333rem -0.333rem #0B021F, -0.333rem 0.333rem #0B021F,
-         0.389rem 0 #0B021F, -0.389rem 0 #0B021F,
-         0 0.389rem #0B021F, 0 -0.389rem #0B021F,
-         0.389rem 0.389rem #0B021F, -0.389rem -0.389rem #0B021F,
-         0.389rem -0.389rem #0B021F, -0.389rem 0.389rem #0B021F,
-         0.444rem 0 #0B021F, -0.444rem 0 #0B021F,
-         0 0.444rem #0B021F, 0 -0.444rem #0B021F,
-         0.444rem 0.444rem #0B021F, -0.444rem -0.444rem #0B021F,
-         0.444rem -0.444rem #0B021F, -0.444rem 0.444rem #0B021F,
-         0.5rem 0 #0B021F, -0.5rem 0 #0B021F,
-         0 0.5rem #0B021F, 0 -0.5rem #0B021F,
-         0.5rem 0.5rem #0B021F, -0.5rem -0.5rem #0B021F,
-         0.5rem -0.5rem #0B021F, -0.5rem 0.5rem #0B021F;
-     z-index: 1;
-     user-select: none;
-     pointer-events: none;
- }
-
-
-
- .high-contrast .black-border-small {
-     text-shadow:
-         0.0139rem 0 #000, -0.0139rem 0 #000,
-         0 0.0139rem #000, 0 -0.0139rem #000,
-         0.0139rem 0.0139rem #000, -0.0139rem -0.0139rem #000,
-         0.0139rem -0.0139rem #000, -0.0139rem 0.0139rem #000,
-         0.0278rem 0 #000, -0.0278rem 0 #000,
-         0 0.0278rem #000, 0 -0.0278rem #000,
-         0.0278rem 0.0278rem #000, -0.0278rem -0.0278rem #000,
-         0.0278rem -0.0278rem #000, -0.0278rem 0.0278rem #000,
-         0.0417rem 0 #000, -0.0417rem 0 #000,
-         0 0.0417rem #000, 0 -0.0417rem #000,
-         0.0417rem 0.0417rem #000, -0.0417rem -0.0417rem #000,
-         0.0417rem -0.0417rem #000, -0.0417rem 0.0417rem #000;
- }
-
- .high-contrast .opendyslexic .mainPageTitle .white-border,
- .high-contrast .reading .mainPageTitle .white-border {
-     background-repeat: repeat;
-     background-position: bottom;
-     background-size: auto;
-     padding-top: calc(1.945rem + 5vh);
-     padding-bottom: 0.555rem;
-     text-shadow:
-         0.0278rem 0 #fff, -0.0278rem 0 #fff,
-         0 0.0278rem #fff, 0 -0.0278rem #fff,
-         0.0278rem 0.0278rem #fff, -0.0278rem -0.0278rem #fff,
-         0.0278rem -0.0278rem #fff, -0.0278rem 0.0278rem #fff,
-         0.0555rem 0 #fff, -0.0555rem 0 #fff,
-         0 0.0555rem #fff, 0 -0.0555rem #fff,
-         0.0555rem 0.0555rem #fff, -0.0555rem -0.0555rem #fff,
-         0.0555rem -0.0555rem #fff, -0.0555rem 0.0555rem #fff,
-         0.0835rem 0 #fff, -0.0835rem 0 #fff,
-         0 0.0835rem #fff, 0 -0.0835rem #fff,
-         0.0835rem 0.0835rem #fff, -0.0835rem -0.0835rem #fff,
-         0.0835rem -0.0835rem #fff, -0.0835rem 0.0835rem #fff,
-
-         0.111rem 0 #0B021F, -0.111rem 0 #0B021F,
-         0 0.111rem #0B021F, 0 -0.111rem #0B021F,
-         0.111rem 0.111rem #0B021F, -0.111rem -0.111rem #0B021F,
-         0.111rem -0.111rem #0B021F, -0.111rem 0.111rem #0B021F,
-         0.139rem 0 #0B021F, -0.139rem 0 #0B021F,
-         0 0.139rem #0B021F, 0 -0.139rem #0B021F,
-         0.139rem 0.139rem #0B021F, -0.139rem -0.139rem #0B021F,
-         0.139rem -0.139rem #0B021F, -0.139rem 0.139rem #0B021F,
-         0.166rem 0 #0B021F, -0.166rem 0 #0B021F,
-         0 0.166rem #0B021F, 0 -0.166rem #0B021F,
-         0.166rem 0.166rem #0B021F, -0.166rem -0.166rem #0B021F,
-         0.166rem -0.166rem #0B021F, -0.166rem 0.166rem #0B021F,
-         0.194rem 0 #0B021F, -0.194rem 0 #0B021F,
-         0 0.194rem #0B021F, 0 -0.194rem #0B021F,
-         0.194rem 0.194rem #0B021F, -0.194rem -0.194rem #0B021F,
-         0.194rem -0.194rem #0B021F, -0.194rem 0.194rem #0B021F,
-         0.222rem 0 #0B021F, -0.222rem 0 #0B021F,
-         0 0.222rem #0B021F, 0 -0.222rem #0B021F,
-         0.222rem 0.222rem #0B021F, -0.222rem -0.222rem #0B021F,
-         0.222rem -0.222rem #0B021F, -0.222rem 0.222rem #0B021F,
-         0.25rem 0 #0B021F, -0.25rem 0 #0B021F,
-         0 0.25rem #0B021F, 0 -0.25rem #0B021F,
-         0.25rem 0.25rem #0B021F, -0.25rem -0.25rem #0B021F,
-         0.25rem -0.25rem #0B021F, -0.25rem 0.25rem #0B021F;
- }
-
- .high-contrast .opendyslexic .paterneTitleContour,
- .high-contrast .reading .paterneTitleContour {
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     text-shadow:
-         0.0278rem 0 #fff, -0.0278rem 0 #fff,
-         0 0.0278rem #fff, 0 -0.0278rem #fff,
-         0.0278rem 0.0278rem #fff, -0.0278rem -0.0278rem #fff,
-         0.0278rem -0.0278rem #fff, -0.0278rem 0.0278rem #fff,
-         0.0555rem 0 #fff, -0.0555rem 0 #fff,
-         0 0.0555rem #fff, 0 -0.0555rem #fff,
-         0.0555rem 0.0555rem #fff, -0.0555rem -0.0555rem #fff,
-         0.0555rem -0.0555rem #fff, -0.0555rem 0.0555rem #fff,
-         0.0835rem 0 #fff, -0.0835rem 0 #fff,
-         0 0.0835rem #fff, 0 -0.0835rem #fff,
-         0.0835rem 0.0835rem #fff, -0.0835rem -0.0835rem #fff,
-         0.0835rem -0.0835rem #fff, -0.0835rem 0.0835rem #fff,
-
-         0.111rem 0 #0B021F, -0.111rem 0 #0B021F,
-         0 0.111rem #0B021F, 0 -0.111rem #0B021F,
-         0.111rem 0.111rem #0B021F, -0.111rem -0.111rem #0B021F,
-         0.111rem -0.111rem #0B021F, -0.111rem 0.111rem #0B021F,
-         0.139rem 0 #0B021F, -0.139rem 0 #0B021F,
-         0 0.139rem #0B021F, 0 -0.139rem #0B021F,
-         0.139rem 0.139rem #0B021F, -0.139rem -0.139rem #0B021F,
-         0.139rem -0.139rem #0B021F, -0.139rem 0.139rem #0B021F,
-         0.166rem 0 #0B021F, -0.166rem 0 #0B021F,
-         0 0.166rem #0B021F, 0 -0.166rem #0B021F,
-         0.166rem 0.166rem #0B021F, -0.166rem -0.166rem #0B021F,
-         0.166rem -0.166rem #0B021F, -0.166rem 0.166rem #0B021F,
-         0.194rem 0 #0B021F, -0.194rem 0 #0B021F,
-         0 0.194rem #0B021F, 0 -0.194rem #0B021F,
-         0.194rem 0.194rem #0B021F, -0.194rem -0.194rem #0B021F,
-         0.194rem -0.194rem #0B021F, -0.194rem 0.194rem #0B021F,
-         0.222rem 0 #0B021F, -0.222rem 0 #0B021F,
-         0 0.222rem #0B021F, 0 -0.222rem #0B021F,
-         0.222rem 0.222rem #0B021F, -0.222rem -0.222rem #0B021F,
-         0.222rem -0.222rem #0B021F, -0.222rem 0.222rem #0B021F,
-         0.25rem 0 #0B021F, -0.25rem 0 #0B021F,
-         0 0.25rem #0B021F, 0 -0.25rem #0B021F,
-         0.25rem 0.25rem #0B021F, -0.25rem -0.25rem #0B021F,
-         0.25rem -0.25rem #0B021F, -0.25rem 0.25rem #0B021F;
-     z-index: 1;
-     user-select: none;
-     pointer-events: none;
- }
-
- .high-contrast .background-interogation,
- .high-contrast .background-guillemet::after,
- .high-contrast .background-guillemet::before,
- .high-contrast .backgroundBrushType2::before,
- .high-contrast .visibleBackgroundType2Annim {
-     background-image: none;
- }
-
- .high-contrast .btn-project::before {
-     width: 120%;
-     height: 200px;
-     background: #BB6EF6;
- }
-
- .high-contrast .btn-project::after {
-     width: 120%;
-     height: 200px;
-     background: #BB6EF6;
- }
-
- .high-contrast .btn-project span::before {
-     width: 120%;
-     height: 200px;
-     background: #BB6EF6;
-     z-index: -1;
- }
-
- .high-contrast .btn-white-background::before {
-     width: 120%;
-     height: 200px;
-     background: #03010A;
- }
-
- .high-contrast .btn-white-background::after {
-     width: 120%;
-     height: 200px;
-     background: #03010A;
- }
-
- .high-contrast .btn-white-background span::before {
-     width: 120%;
-     height: 200px;
-     background: #03010A;
-     z-index: -1;
- }
-
- .high-contrast .btn-white-background {
-     border: 3px solid #BB6EF6;
-     color: #03010A;
-     background: #fff;
-     box-shadow: 0 6px 0 0 #BB6EF6;
- }
-
-
-
- #focus-top,
- #focus-bottom {
-     position: fixed;
-     left: 0;
-     width: 100%;
-     background: rgba(0, 0, 0, 0.8);
-     filter: saturate(200);
-     pointer-events: none;
-     display: none;
-     z-index: 999999;
-     transition: height 0.05s linear;
- }
-
- #focus-top {
-     top: 0;
-     height: 0;
- }
-
- #focus-bottom {
-     bottom: 0;
-     height: 0;
- }
-
- body.focus-bar-active #focus-top,
- body.focus-bar-active #focus-bottom {
-     display: block;
- }
-
- .focus-bar-btn {
-     display: block;
- }
-
- @media (max-width: 768px) {
-     .focus-bar-btn {
-         display: none !important;
-     }
- }
-
-
-
- .link-outline a,
- .link-outline button,
- .link-outline [role="button"],
- .link-outline input[type="button"],
- .link-outline input[type="submit"],
- .link-outline .toggle-labe,
- .link-outline .btn-project,
- .link-outline .faq-header,
- .link-outline .btn-close,
- .link-outline .dropdown-toggle,
- .link-outline .contact .dropdown summary,
- .link-outline .protagonistes-card,
- .link-outline .book-mobile-nav,
- .link-outline .book-nav,
- .link-outline .clickable,
- .link-outline #menu-toggle,
- .link-outline #btn-slide,
- .link-outline #btn-back,
- .link-outline .card,
- .link-outline .enCours,
- .link-outline .swiper-button-next,
- .link-outline .swiper-button-prev,
- .link-outline input,
- .link-outline textarea,
- .link-outline .img-container-header img,
- .link-outline .dropdown,
- .link-outline #ludique-btn *,
- .link-outline .discovered *,
- .link-outline #accessibility-btn *,
- .link-outline [style*="cursor:pointer"] {
-     outline: 2px solid var(--link-outline-color, #00A5F7);
-     outline-offset: 3px;
- }
-
- .link-outline a.small {
-     outline-offset: 4px;
- }
-
- .link-outline-hover a:hover,
- .link-outline-hover button:hover,
- .link-outline-hover [role="button"]:hover,
- .link-outline-hover input[type="button"]:hover,
- .link-outline-hover input[type="submit"]:hover,
- .link-outline-hover .toggle-labe:hover,
- .link-outline-hover .btn-project:hover,
- .link-outline-hover .faq-header:hover,
- .link-outline-hover .btn-close:hover,
- .link-outline-hover .dropdown-toggle:hover,
- .link-outline-hover .contact .dropdown summary:hover,
- .link-outline-hover .protagonistes-card:hover,
- .link-outline-hover .book-mobile-nav:hover,
- .link-outline-hover .book-nav:hover,
- .link-outline-hover .clickable:hover,
- .link-outline-hover #menu-toggle:hover,
- .link-outline-hover #btn-slide:hover,
- .link-outline-hover #btn-back:hover,
- .link-outline-hover .card:hover,
- .link-outline-hover .enCours:hover,
- .link-outline-hover .swiper-button-next:hover,
- .link-outline-hover .swiper-button-prev:hover,
- .link-outline-hover input:hover,
- .link-outline-hover textarea:hover,
- .link-outline-hover .img-container-header img:hover,
- .link-outline-hover .dropdown:hover,
- .link-outline-hover #ludique-btn *:hover,
- .link-outline-hover .discovered *:hover,
- .link-outline-hover #accessibility-btn *:hover,
- .link-outline-hover [style*="cursor:pointer"]:hover {
-     outline: 3px solid var(--link-outline-color, #ff6600);
-     outline-offset: 3px;
- }
-
-
-
- .no-animation .img-container-header:hover,
- .no-animation .footerLogo:hover {
-     transform: scale(1.0);
- }
-
- .no-animation .leftbackgroundType1 {
-     transform: translateX(30%);
-     opacity: 1;
-     animation: none !important;
-     transition: none;
- }
-
- .no-animation .rightbackgroundType1 {
-     transform: translateX(-30%) scaleX(-1);
-     opacity: 1;
-     animation: none !important;
-     transition: none;
- }
-
- .no-animation .contact-background .reflect {
-     transform: translateX(-60%) scaleX(-1);
-     opacity: 1;
-     animation: none !important;
-     transition: none;
- }
-
- .no-animation .contact-background .leftbackgroundType1 {
-     transform: translateX(60%);
-     opacity: 1;
-     animation: none !important;
-     transition: none;
- }
-
- .no-animation .backgroundType2Annim.left {
-     animation: none !important;
-     opacity: 1;
-     transform: translateY(0) rotate(-90deg);
-     transition: none;
- }
-
- .no-animation .backgroundType2Annim.right {
-     animation: none !important;
-     opacity: 1;
-     transform: translateY(0) rotate(90deg) scaleX(-1);
-     transition: none;
- }
-
-
-
- .no-animation .btn-project span:before,
- .no-animation .btn-project:after,
- .btn-project:before,
- .no-animation .btn-project span,
- .no-animation .btn-project img,
- .no-animation .highlight::before,
- .no-animation .nav-pc .header-typo-pc,
- .no-animation .link-underline-fill:after,
- .no-animation .dropdown-arrow,
- .no-animation .dropdown-arrow-contact,
- .no-animation .emojie-img-line-besoin-child,
- .no-animation .faq-arrow,
- .no-animation .faq-container-info *,
- .no-animation .dropdown-menu,
- .no-animation .footer-bot-img-container img,
- .no-animation .protagonistes-card,
- .no-animation .protagonistes-card:after,
- .no-animation .zoom-container,
- .no-animation input,
- .no-animation .toggle-label::before,
- .no-animation .toggle-ball,
- .no-animation #menu-tel,
- .no-animation #menu-toggle *,
- .no-animation #menu-tel *,
- .no-animation #foot-inx2 *,
- .no-animation .swiper .swiper-btn-container *, .no-animation .swiper-slide *,.no-animation .pagination *,
- .no-animation [data-reveal] {
-     animation: none !important;
-     transition: none !important;
- }
+.opendyslexic p,
+.opendyslexic .footerTitle,
+.opendyslexic input,
+.opendyslexic textarea,
+.opendyslexic .header-typo-pc,
+.opendyslexic .text-typo,
+.opendyslexic p,
+.opendyslexic .h3,
+.opendyslexic .h2,
+.opendyslexic .dropdown-toggle,
+.opendyslexic .h1 {
+  font-family: 'Open-dyslexic';
+}
+
+.opendyslexic header .highlight,
+.opendyslexic header .highlight-no-annim,
+.opendyslexic header .highlight a {
+  font-weight: normal;
+}
+
+.reading p,
+.reading .footerTitle,
+.reading input,
+.reading textarea,
+.reading .header-typo-pc,
+.reading .text-typo,
+.reading p,
+.reading .h3,
+.reading .h2,
+.reading .h1 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body.normal-cursor * {
+  cursor: auto !important;
+}
+
+body.normal-cursor .cursor-ring {
+  display: none !important;
+}
+
+body.normal-cursor a,
+body.normal-cursor a *,
+body.normal-cursor button,
+body.normal-cursor button *,
+body.normal-cursor [role='button'],
+body.normal-cursor [role='button'] *,
+body.normal-cursor input[type='button'],
+body.normal-cursor input[type='submit'],
+body.normal-cursor .toggle-labe,
+body.normal-cursor .toggle-labe *,
+body.normal-cursor .btn-project,
+body.normal-cursor .btn-project *,
+body.normal-cursor .faq-header,
+body.normal-cursor .faq-header *,
+body.normal-cursor .btn-close,
+body.normal-cursor .btn-close *,
+body.normal-cursor .dropdown-toggle,
+body.normal-cursor .dropdown-toggle *,
+body.normal-cursor .contact .dropdown summary,
+body.normal-cursor .contact .dropdown summary *,
+body.normal-cursor .protagonistes-card,
+body.normal-cursor .protagonistes-card *,
+body.normal-cursor .book-mobile-nav,
+body.normal-cursor .book-mobile-nav *,
+body.normal-cursor .book-nav,
+body.normal-cursor .book-nav *,
+body.normal-cursor .clickable,
+body.normal-cursor .clickable *,
+body.normal-cursor #menu-toggle,
+body.normal-cursor #menu-toggle *,
+body.normal-cursor #btn-slide,
+body.normal-cursor #btn-slide *,
+body.normal-cursor #btn-back,
+body.normal-cursor #btn-back *,
+body.normal-cursor .card,
+body.normal-cursor .card *,
+body.normal-cursor .enCours,
+body.normal-cursor .enCours *,
+body.normal-cursor .swiper-button-next,
+body.normal-cursor .swiper-button-next *,
+body.normal-cursor .swiper-button-prev,
+body.normal-cursor .swiper-button-prev *,
+body.normal-cursor .discovered *,
+body.normal-cursor [style*='cursor:pointer'],
+body.normal-cursor [style*='cursor:pointer'] * {
+  cursor: pointer !important;
+}
+
+/* Exception pour .vide - ne pas afficher le cursor pointer */
+body.normal-cursor .vide,
+body.normal-cursor .vide * {
+  cursor: default !important;
+}
+
+/* Bouton */
+
+.menue-nav-ludique-handicap {
+  position: fixed;
+  display: flex;
+  bottom: 20px;
+  right: 20px;
+  width: fit-content;
+  gap: 20px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 11;
+}
+
+#ludique-menue {
+  text-align: center;
+  z-index: 11;
+  display: none;
+  position: fixed;
+  bottom: 74px;
+  right: calc(40px + 50px);
+  background: #fff;
+  border: 2px solid #000000;
+  gap: 14px;
+  width: 160px;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#accessibility-btn img,
+#ludique-btn img {
+  width: 50px;
+  height: auto;
+  transition: filter 0.3s ease;
+}
+
+#accessibility-btn img:hover,
+#ludique-btn img:hover {
+  filter: invert(1);
+}
+
+.filtre-activ img {
+  filter: invert(1);
+}
+
+#accessibility-btn,
+#ludique-btn {
+  transition: filter 0.3s ease;
+  all: unset;
+  cursor: pointer;
+  display: inline;
+}
+
+/* Menu d’options */
+#accessibility-menu {
+  z-index: 11;
+  display: none;
+  position: fixed;
+  bottom: 74px;
+  right: 20px;
+  background: #fff;
+  border: 2px solid #000000;
+  gap: 14px;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px 16px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#accessibility-menu input[type='checkbox'] {
+  padding: 0;
+  width: 18px;
+  height: 18px;
+}
+
+#accessibility-menu label,
+#ludique-menue p {
+  font-size: 0.8rem;
+}
+
+#accessibility-menu label {
+  display: flex;
+  align-items: center;
+}
+
+#accessibility-menu label img {
+  margin-left: 4px;
+  margin-right: 8px;
+}
+
+#accessibility-menu button {
+  margin-top: 10px;
+  font-size: 0.8rem;
+}
+
+html.high-contrast,
+body.high-contrast {
+  background-color: #0b021f !important;
+  color: #fff !important;
+}
+
+.high-contrast .nav-pc {
+  background-color: #000000;
+  border-bottom: 3px solid #ffffff;
+}
+
+.high-contrast .protagonistes-card-null-background {
+  background: linear-gradient(145deg, #0b021f 50%, transparent 50%);
+}
+
+.high-contrast .book-container::after,
+.high-contrast .backgroundBrushType1::before {
+  display: none;
+}
+
+.high-contrast footer,
+.high-contrast .zoom-container-ressource {
+  background-color: #000000 !important;
+}
+
+.high-contrast .mainPageTitle,
+.high-contrast .paterneTitle,
+.high-contrast .highlight-no-annim::before,
+.high-contrast .highlight::before {
+  background-image: none !important;
+}
+
+.high-contrast .mainPageTitle .white-border {
+  background-repeat: repeat;
+  background-position: bottom;
+  background-size: auto;
+  padding-top: calc(3.89rem + 10vh);
+  /* 70px → 3.89rem */
+  padding-bottom: 1.11rem;
+  /* 20px → 1.11rem */
+  text-shadow:
+    0.0556rem 0 #fff,
+    -0.0556rem 0 #fff,
+    0 0.0556rem #fff,
+    0 -0.0556rem #fff,
+    0.0556rem 0.0556rem #fff,
+    -0.0556rem -0.0556rem #fff,
+    0.0556rem -0.0556rem #fff,
+    -0.0556rem 0.0556rem #fff,
+    0.111rem 0 #fff,
+    -0.111rem 0 #fff,
+    0 0.111rem #fff,
+    0 -0.111rem #fff,
+    0.111rem 0.111rem #fff,
+    -0.111rem -0.111rem #fff,
+    0.111rem -0.111rem #fff,
+    -0.111rem 0.111rem #fff,
+    0.167rem 0 #fff,
+    -0.167rem 0 #fff,
+    0 0.167rem #fff,
+    0 -0.167rem #fff,
+    0.167rem 0.167rem #fff,
+    -0.167rem -0.167rem #fff,
+    0.167rem -0.167rem #fff,
+    -0.167rem 0.167rem #fff,
+    0.222rem 0 #0b021f,
+    -0.222rem 0 #0b021f,
+    0 0.222rem #0b021f,
+    0 -0.222rem #0b021f,
+    0.222rem 0.222rem #0b021f,
+    -0.222rem -0.222rem #0b021f,
+    0.222rem -0.222rem #0b021f,
+    -0.222rem 0.222rem #0b021f,
+    0.278rem 0 #0b021f,
+    -0.278rem 0 #0b021f,
+    0 0.278rem #0b021f,
+    0 -0.278rem #0b021f,
+    0.278rem 0.278rem #0b021f,
+    -0.278rem -0.278rem #0b021f,
+    0.278rem -0.278rem #0b021f,
+    -0.278rem 0.278rem #0b021f,
+    0.333rem 0 #0b021f,
+    -0.333rem 0 #0b021f,
+    0 0.333rem #0b021f,
+    0 -0.333rem #0b021f,
+    0.333rem 0.333rem #0b021f,
+    -0.333rem -0.333rem #0b021f,
+    0.333rem -0.333rem #0b021f,
+    -0.333rem 0.333rem #0b021f,
+    0.389rem 0 #0b021f,
+    -0.389rem 0 #0b021f,
+    0 0.389rem #0b021f,
+    0 -0.389rem #0b021f,
+    0.389rem 0.389rem #0b021f,
+    -0.389rem -0.389rem #0b021f,
+    0.389rem -0.389rem #0b021f,
+    -0.389rem 0.389rem #0b021f,
+    0.444rem 0 #0b021f,
+    -0.444rem 0 #0b021f,
+    0 0.444rem #0b021f,
+    0 -0.444rem #0b021f,
+    0.444rem 0.444rem #0b021f,
+    -0.444rem -0.444rem #0b021f,
+    0.444rem -0.444rem #0b021f,
+    -0.444rem 0.444rem #0b021f,
+    0.5rem 0 #0b021f,
+    -0.5rem 0 #0b021f,
+    0 0.5rem #0b021f,
+    0 -0.5rem #0b021f,
+    0.5rem 0.5rem #0b021f,
+    -0.5rem -0.5rem #0b021f,
+    0.5rem -0.5rem #0b021f,
+    -0.5rem 0.5rem #0b021f;
+}
+
+.high-contrast .paterneTitleContour {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-shadow:
+    0.0556rem 0 #fff,
+    -0.0556rem 0 #fff,
+    0 0.0556rem #fff,
+    0 -0.0556rem #fff,
+    0.0556rem 0.0556rem #fff,
+    -0.0556rem -0.0556rem #fff,
+    0.0556rem -0.0556rem #fff,
+    -0.0556rem 0.0556rem #fff,
+    0.111rem 0 #fff,
+    -0.111rem 0 #fff,
+    0 0.111rem #fff,
+    0 -0.111rem #fff,
+    0.111rem 0.111rem #fff,
+    -0.111rem -0.111rem #fff,
+    0.111rem -0.111rem #fff,
+    -0.111rem 0.111rem #fff,
+    0.167rem 0 #fff,
+    -0.167rem 0 #fff,
+    0 0.167rem #fff,
+    0 -0.167rem #fff,
+    0.167rem 0.167rem #fff,
+    -0.167rem -0.167rem #fff,
+    0.167rem -0.167rem #fff,
+    -0.167rem 0.167rem #fff,
+    0.222rem 0 #0b021f,
+    -0.222rem 0 #0b021f,
+    0 0.222rem #0b021f,
+    0 -0.222rem #0b021f,
+    0.222rem 0.222rem #0b021f,
+    -0.222rem -0.222rem #0b021f,
+    0.222rem -0.222rem #0b021f,
+    -0.222rem 0.222rem #0b021f,
+    0.278rem 0 #0b021f,
+    -0.278rem 0 #0b021f,
+    0 0.278rem #0b021f,
+    0 -0.278rem #0b021f,
+    0.278rem 0.278rem #0b021f,
+    -0.278rem -0.278rem #0b021f,
+    0.278rem -0.278rem #0b021f,
+    -0.278rem 0.278rem #0b021f,
+    0.333rem 0 #0b021f,
+    -0.333rem 0 #0b021f,
+    0 0.333rem #0b021f,
+    0 -0.333rem #0b021f,
+    0.333rem 0.333rem #0b021f,
+    -0.333rem -0.333rem #0b021f,
+    0.333rem -0.333rem #0b021f,
+    -0.333rem 0.333rem #0b021f,
+    0.389rem 0 #0b021f,
+    -0.389rem 0 #0b021f,
+    0 0.389rem #0b021f,
+    0 -0.389rem #0b021f,
+    0.389rem 0.389rem #0b021f,
+    -0.389rem -0.389rem #0b021f,
+    0.389rem -0.389rem #0b021f,
+    -0.389rem 0.389rem #0b021f,
+    0.444rem 0 #0b021f,
+    -0.444rem 0 #0b021f,
+    0 0.444rem #0b021f,
+    0 -0.444rem #0b021f,
+    0.444rem 0.444rem #0b021f,
+    -0.444rem -0.444rem #0b021f,
+    0.444rem -0.444rem #0b021f,
+    -0.444rem 0.444rem #0b021f,
+    0.5rem 0 #0b021f,
+    -0.5rem 0 #0b021f,
+    0 0.5rem #0b021f,
+    0 -0.5rem #0b021f,
+    0.5rem 0.5rem #0b021f,
+    -0.5rem -0.5rem #0b021f,
+    0.5rem -0.5rem #0b021f,
+    -0.5rem 0.5rem #0b021f;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.high-contrast .black-border-small {
+  text-shadow:
+    0.0139rem 0 #000,
+    -0.0139rem 0 #000,
+    0 0.0139rem #000,
+    0 -0.0139rem #000,
+    0.0139rem 0.0139rem #000,
+    -0.0139rem -0.0139rem #000,
+    0.0139rem -0.0139rem #000,
+    -0.0139rem 0.0139rem #000,
+    0.0278rem 0 #000,
+    -0.0278rem 0 #000,
+    0 0.0278rem #000,
+    0 -0.0278rem #000,
+    0.0278rem 0.0278rem #000,
+    -0.0278rem -0.0278rem #000,
+    0.0278rem -0.0278rem #000,
+    -0.0278rem 0.0278rem #000,
+    0.0417rem 0 #000,
+    -0.0417rem 0 #000,
+    0 0.0417rem #000,
+    0 -0.0417rem #000,
+    0.0417rem 0.0417rem #000,
+    -0.0417rem -0.0417rem #000,
+    0.0417rem -0.0417rem #000,
+    -0.0417rem 0.0417rem #000;
+}
+
+.high-contrast .opendyslexic .mainPageTitle .white-border,
+.high-contrast .reading .mainPageTitle .white-border {
+  background-repeat: repeat;
+  background-position: bottom;
+  background-size: auto;
+  padding-top: calc(1.945rem + 5vh);
+  padding-bottom: 0.555rem;
+  text-shadow:
+    0.0278rem 0 #fff,
+    -0.0278rem 0 #fff,
+    0 0.0278rem #fff,
+    0 -0.0278rem #fff,
+    0.0278rem 0.0278rem #fff,
+    -0.0278rem -0.0278rem #fff,
+    0.0278rem -0.0278rem #fff,
+    -0.0278rem 0.0278rem #fff,
+    0.0555rem 0 #fff,
+    -0.0555rem 0 #fff,
+    0 0.0555rem #fff,
+    0 -0.0555rem #fff,
+    0.0555rem 0.0555rem #fff,
+    -0.0555rem -0.0555rem #fff,
+    0.0555rem -0.0555rem #fff,
+    -0.0555rem 0.0555rem #fff,
+    0.0835rem 0 #fff,
+    -0.0835rem 0 #fff,
+    0 0.0835rem #fff,
+    0 -0.0835rem #fff,
+    0.0835rem 0.0835rem #fff,
+    -0.0835rem -0.0835rem #fff,
+    0.0835rem -0.0835rem #fff,
+    -0.0835rem 0.0835rem #fff,
+    0.111rem 0 #0b021f,
+    -0.111rem 0 #0b021f,
+    0 0.111rem #0b021f,
+    0 -0.111rem #0b021f,
+    0.111rem 0.111rem #0b021f,
+    -0.111rem -0.111rem #0b021f,
+    0.111rem -0.111rem #0b021f,
+    -0.111rem 0.111rem #0b021f,
+    0.139rem 0 #0b021f,
+    -0.139rem 0 #0b021f,
+    0 0.139rem #0b021f,
+    0 -0.139rem #0b021f,
+    0.139rem 0.139rem #0b021f,
+    -0.139rem -0.139rem #0b021f,
+    0.139rem -0.139rem #0b021f,
+    -0.139rem 0.139rem #0b021f,
+    0.166rem 0 #0b021f,
+    -0.166rem 0 #0b021f,
+    0 0.166rem #0b021f,
+    0 -0.166rem #0b021f,
+    0.166rem 0.166rem #0b021f,
+    -0.166rem -0.166rem #0b021f,
+    0.166rem -0.166rem #0b021f,
+    -0.166rem 0.166rem #0b021f,
+    0.194rem 0 #0b021f,
+    -0.194rem 0 #0b021f,
+    0 0.194rem #0b021f,
+    0 -0.194rem #0b021f,
+    0.194rem 0.194rem #0b021f,
+    -0.194rem -0.194rem #0b021f,
+    0.194rem -0.194rem #0b021f,
+    -0.194rem 0.194rem #0b021f,
+    0.222rem 0 #0b021f,
+    -0.222rem 0 #0b021f,
+    0 0.222rem #0b021f,
+    0 -0.222rem #0b021f,
+    0.222rem 0.222rem #0b021f,
+    -0.222rem -0.222rem #0b021f,
+    0.222rem -0.222rem #0b021f,
+    -0.222rem 0.222rem #0b021f,
+    0.25rem 0 #0b021f,
+    -0.25rem 0 #0b021f,
+    0 0.25rem #0b021f,
+    0 -0.25rem #0b021f,
+    0.25rem 0.25rem #0b021f,
+    -0.25rem -0.25rem #0b021f,
+    0.25rem -0.25rem #0b021f,
+    -0.25rem 0.25rem #0b021f;
+}
+
+.high-contrast .opendyslexic .paterneTitleContour,
+.high-contrast .reading .paterneTitleContour {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-shadow:
+    0.0278rem 0 #fff,
+    -0.0278rem 0 #fff,
+    0 0.0278rem #fff,
+    0 -0.0278rem #fff,
+    0.0278rem 0.0278rem #fff,
+    -0.0278rem -0.0278rem #fff,
+    0.0278rem -0.0278rem #fff,
+    -0.0278rem 0.0278rem #fff,
+    0.0555rem 0 #fff,
+    -0.0555rem 0 #fff,
+    0 0.0555rem #fff,
+    0 -0.0555rem #fff,
+    0.0555rem 0.0555rem #fff,
+    -0.0555rem -0.0555rem #fff,
+    0.0555rem -0.0555rem #fff,
+    -0.0555rem 0.0555rem #fff,
+    0.0835rem 0 #fff,
+    -0.0835rem 0 #fff,
+    0 0.0835rem #fff,
+    0 -0.0835rem #fff,
+    0.0835rem 0.0835rem #fff,
+    -0.0835rem -0.0835rem #fff,
+    0.0835rem -0.0835rem #fff,
+    -0.0835rem 0.0835rem #fff,
+    0.111rem 0 #0b021f,
+    -0.111rem 0 #0b021f,
+    0 0.111rem #0b021f,
+    0 -0.111rem #0b021f,
+    0.111rem 0.111rem #0b021f,
+    -0.111rem -0.111rem #0b021f,
+    0.111rem -0.111rem #0b021f,
+    -0.111rem 0.111rem #0b021f,
+    0.139rem 0 #0b021f,
+    -0.139rem 0 #0b021f,
+    0 0.139rem #0b021f,
+    0 -0.139rem #0b021f,
+    0.139rem 0.139rem #0b021f,
+    -0.139rem -0.139rem #0b021f,
+    0.139rem -0.139rem #0b021f,
+    -0.139rem 0.139rem #0b021f,
+    0.166rem 0 #0b021f,
+    -0.166rem 0 #0b021f,
+    0 0.166rem #0b021f,
+    0 -0.166rem #0b021f,
+    0.166rem 0.166rem #0b021f,
+    -0.166rem -0.166rem #0b021f,
+    0.166rem -0.166rem #0b021f,
+    -0.166rem 0.166rem #0b021f,
+    0.194rem 0 #0b021f,
+    -0.194rem 0 #0b021f,
+    0 0.194rem #0b021f,
+    0 -0.194rem #0b021f,
+    0.194rem 0.194rem #0b021f,
+    -0.194rem -0.194rem #0b021f,
+    0.194rem -0.194rem #0b021f,
+    -0.194rem 0.194rem #0b021f,
+    0.222rem 0 #0b021f,
+    -0.222rem 0 #0b021f,
+    0 0.222rem #0b021f,
+    0 -0.222rem #0b021f,
+    0.222rem 0.222rem #0b021f,
+    -0.222rem -0.222rem #0b021f,
+    0.222rem -0.222rem #0b021f,
+    -0.222rem 0.222rem #0b021f,
+    0.25rem 0 #0b021f,
+    -0.25rem 0 #0b021f,
+    0 0.25rem #0b021f,
+    0 -0.25rem #0b021f,
+    0.25rem 0.25rem #0b021f,
+    -0.25rem -0.25rem #0b021f,
+    0.25rem -0.25rem #0b021f,
+    -0.25rem 0.25rem #0b021f;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+.high-contrast .background-interogation,
+.high-contrast .background-guillemet::after,
+.high-contrast .background-guillemet::before,
+.high-contrast .backgroundBrushType2::before,
+.high-contrast .visibleBackgroundType2Annim {
+  background-image: none;
+}
+
+.high-contrast .btn-project::before {
+  width: 120%;
+  height: 200px;
+  background: #bb6ef6;
+}
+
+.high-contrast .btn-project::after {
+  width: 120%;
+  height: 200px;
+  background: #bb6ef6;
+}
+
+.high-contrast .btn-project span::before {
+  width: 120%;
+  height: 200px;
+  background: #bb6ef6;
+  z-index: -1;
+}
+
+.high-contrast .btn-white-background::before {
+  width: 120%;
+  height: 200px;
+  background: #03010a;
+}
+
+.high-contrast .btn-white-background::after {
+  width: 120%;
+  height: 200px;
+  background: #03010a;
+}
+
+.high-contrast .btn-white-background span::before {
+  width: 120%;
+  height: 200px;
+  background: #03010a;
+  z-index: -1;
+}
+
+.high-contrast .btn-white-background {
+  border: 3px solid #bb6ef6;
+  color: #03010a;
+  background: #fff;
+  box-shadow: 0 6px 0 0 #bb6ef6;
+}
+
+#focus-top,
+#focus-bottom {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  filter: saturate(200);
+  pointer-events: none;
+  display: none;
+  z-index: 999999;
+  transition: height 0.05s linear;
+}
+
+#focus-top {
+  top: 0;
+  height: 0;
+}
+
+#focus-bottom {
+  bottom: 0;
+  height: 0;
+}
+
+body.focus-bar-active #focus-top,
+body.focus-bar-active #focus-bottom {
+  display: block;
+}
+
+.focus-bar-btn {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .focus-bar-btn {
+    display: none !important;
+  }
+}
+
+.link-outline a,
+.link-outline button,
+.link-outline [role='button'],
+.link-outline input[type='button'],
+.link-outline input[type='submit'],
+.link-outline .toggle-labe,
+.link-outline .btn-project,
+.link-outline .faq-header,
+.link-outline .btn-close,
+.link-outline .dropdown-toggle,
+.link-outline .contact .dropdown summary,
+.link-outline .protagonistes-card,
+.link-outline .book-mobile-nav,
+.link-outline .book-nav,
+.link-outline .clickable,
+.link-outline #menu-toggle,
+.link-outline #btn-slide,
+.link-outline #btn-back,
+.link-outline .card,
+.link-outline .enCours,
+.link-outline .swiper-button-next,
+.link-outline .swiper-button-prev,
+.link-outline input,
+.link-outline textarea,
+.link-outline .img-container-header img,
+.link-outline .dropdown,
+.link-outline #ludique-btn *,
+.link-outline .discovered *,
+.link-outline #accessibility-btn *,
+.link-outline [style*='cursor:pointer'] {
+  outline: 2px solid var(--link-outline-color, #00a5f7);
+  outline-offset: 3px;
+}
+
+.link-outline a.small {
+  outline-offset: 4px;
+}
+
+.link-outline-hover a:hover,
+.link-outline-hover button:hover,
+.link-outline-hover [role='button']:hover,
+.link-outline-hover input[type='button']:hover,
+.link-outline-hover input[type='submit']:hover,
+.link-outline-hover .toggle-labe:hover,
+.link-outline-hover .btn-project:hover,
+.link-outline-hover .faq-header:hover,
+.link-outline-hover .btn-close:hover,
+.link-outline-hover .dropdown-toggle:hover,
+.link-outline-hover .contact .dropdown summary:hover,
+.link-outline-hover .protagonistes-card:hover,
+.link-outline-hover .book-mobile-nav:hover,
+.link-outline-hover .book-nav:hover,
+.link-outline-hover .clickable:hover,
+.link-outline-hover #menu-toggle:hover,
+.link-outline-hover #btn-slide:hover,
+.link-outline-hover #btn-back:hover,
+.link-outline-hover .card:hover,
+.link-outline-hover .enCours:hover,
+.link-outline-hover .swiper-button-next:hover,
+.link-outline-hover .swiper-button-prev:hover,
+.link-outline-hover input:hover,
+.link-outline-hover textarea:hover,
+.link-outline-hover .img-container-header img:hover,
+.link-outline-hover .dropdown:hover,
+.link-outline-hover #ludique-btn *:hover,
+.link-outline-hover .discovered *:hover,
+.link-outline-hover #accessibility-btn *:hover,
+.link-outline-hover [style*='cursor:pointer']:hover {
+  outline: 3px solid var(--link-outline-color, #ff6600);
+  outline-offset: 3px;
+}
+
+.no-animation .img-container-header:hover,
+.no-animation .footerLogo:hover {
+  transform: scale(1);
+}
+
+.no-animation .leftbackgroundType1 {
+  transform: translateX(30%);
+  opacity: 1;
+  animation: none !important;
+  transition: none;
+}
+
+.no-animation .rightbackgroundType1 {
+  transform: translateX(-30%) scaleX(-1);
+  opacity: 1;
+  animation: none !important;
+  transition: none;
+}
+
+.no-animation .contact-background .reflect {
+  transform: translateX(-60%) scaleX(-1);
+  opacity: 1;
+  animation: none !important;
+  transition: none;
+}
+
+.no-animation .contact-background .leftbackgroundType1 {
+  transform: translateX(60%);
+  opacity: 1;
+  animation: none !important;
+  transition: none;
+}
+
+.no-animation .backgroundType2Annim.left {
+  animation: none !important;
+  opacity: 1;
+  transform: translateY(0) rotate(-90deg);
+  transition: none;
+}
+
+.no-animation .backgroundType2Annim.right {
+  animation: none !important;
+  opacity: 1;
+  transform: translateY(0) rotate(90deg) scaleX(-1);
+  transition: none;
+}
+
+.no-animation .btn-project span:before,
+.no-animation .btn-project:after,
+.btn-project:before,
+.no-animation .btn-project span,
+.no-animation .btn-project img,
+.no-animation .highlight::before,
+.no-animation .nav-pc .header-typo-pc,
+.no-animation .link-underline-fill:after,
+.no-animation .dropdown-arrow,
+.no-animation .dropdown-arrow-contact,
+.no-animation .emojie-img-line-besoin-child,
+.no-animation .faq-arrow,
+.no-animation .faq-container-info *,
+.no-animation .dropdown-menu,
+.no-animation .footer-bot-img-container img,
+.no-animation .protagonistes-card,
+.no-animation .protagonistes-card:after,
+.no-animation .zoom-container,
+.no-animation input,
+.no-animation .toggle-label::before,
+.no-animation .toggle-ball,
+.no-animation #menu-tel,
+.no-animation #menu-toggle *,
+.no-animation #menu-tel *,
+.no-animation #foot-inx2 *,
+.no-animation .swiper .swiper-btn-container *,
+.no-animation .swiper-slide *,
+.no-animation .pagination *,
+.no-animation [data-reveal] {
+  animation: none !important;
+  transition: none !important;
+}
 
 .no-animation [data-reveal] {
-    opacity: 1 !important;
-    transform: none !important;
+  opacity: 1 !important;
+  transform: none !important;
 }

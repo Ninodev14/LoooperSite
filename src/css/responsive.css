@@ -1,91 +1,81 @@
 /*responcive */
 
 @media (min-width: 2500px) {
+  .card-info-container {
+    width: 20%;
+  }
 
-    .card-info-container {
-        width: 20%;
+  .card-info-wrap {
+    max-width: calc((20% * 4) + (20px * 3));
+  }
 
-    }
+  .memory-item-text {
+    max-width: 20vw;
+  }
 
-    .card-info-wrap {
-        max-width: calc((20% * 4) + (20px * 3));
-    }
+  .mini-card-container {
+    max-width: calc(4 * 18rem + 3 * 3rem);
+  }
 
-    .memory-item-text {
-        max-width: 20vw;
-    }
+  .mini-card,
+  .revers-mini-card {
+    width: 18rem;
+    height: 18rem;
+  }
 
-    .mini-card-container {
-        max-width: calc(4 * 18rem + 3 * 3rem);
-    }
+  .menue-nav-ludique-handicap {
+    height: 4rem;
+  }
+  #ludique-menue {
+    right: calc(40px + 4rem);
+  }
+  #accessibility-btn img,
+  #ludique-btn img {
+    width: 4rem;
+    height: auto;
+    transition: filter 0.3s ease;
+  }
 
-    .mini-card,
-    .revers-mini-card {
-        width: 18rem;
-        height: 18rem;
-    }
+  .header-typo-pc {
+    font-size: 1rem;
+  }
 
-    .menue-nav-ludique-handicap {
-        height: 4rem;
-    }
- #ludique-menue {
+  .dropdown-menu {
+    padding: 0.5rem 0;
+    min-width: 14rem;
+  }
 
-     right: calc(40px + 4rem);
+  .btn-project {
+    padding: 0.5rem 1rem;
+    border-radius: 50vw;
+  }
 
- }
-    #accessibility-btn img,
-    #ludique-btn img {
-        width: 4rem;
-        height: auto;
-        transition: filter 0.3s ease;
-    }
+  .long-card img {
+    height: 20rem;
+    width: auto;
+  }
 
-    .header-typo-pc {
-        font-size: 1rem;
-    }
+  .protagonistes-card {
+    width: 26rem;
+    max-width: none;
+  }
 
-    .dropdown-menu {
-        padding: 0.5rem 0;
-        min-width: 14rem;
+  .protagonistes-card-text {
+    height: 100%;
+  }
 
-    }
+  .back-content {
+    justify-content: space-around;
+  }
+  .card-info-container-text {
+    padding: 1rem;
+  }
 
-    .btn-project {
-
-        padding: 0.5rem 1rem;
-        border-radius: 50vw;
-
-    }
-
-    .long-card img {
-        height: 20rem;
-        width: auto;
-    }
-
-    .protagonistes-card {
-        width: 26rem;
-        max-width: none;
-
-    }
-
-    .protagonistes-card-text {
-        height: 100%;
-
-    }
-
-    .back-content {
-        justify-content: space-around;
-    }
-    .card-info-container-text{
-     padding: 1rem;
-    }
-
-    #accessibility-menu, #ludique-menue {
-
-     bottom: calc(20px + 4rem);
-
- }
- #ludique-menue {
+  #accessibility-menu,
+  #ludique-menue {
+    bottom: calc(20px + 4rem);
+  }
+  #ludique-menue {
     width: calc(14px + 8rem);
- }
+  }
 }

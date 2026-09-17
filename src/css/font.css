@@ -100,10 +100,10 @@ header p {
   color: black;
 }
 
-.mainPageTitle .paterneTitleContainer{
+.mainPageTitle .paterneTitleContainer {
   margin-right: 0.6rem;
 }
-.mainPageTitle span:not(.paterneTitle){
+.mainPageTitle span:not(.paterneTitle) {
   margin-right: 0.3rem;
 }
 
@@ -687,10 +687,9 @@ html {
 }
 
 .link-underline {
-    text-decoration-line: underline;
-    text-decoration-color: rgb(255, 255, 255);
+  text-decoration-line: underline;
+  text-decoration-color: rgb(255, 255, 255);
 }
-
 
 .link-underline-black {
   text-decoration-line: underline;

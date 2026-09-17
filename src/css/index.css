@@ -18,13 +18,14 @@
 
 .backgroundType1Annim {
   width: 30vw;
-
 }
 
 .leftbackgroundType1,
 .rightbackgroundType1 {
   opacity: 0;
-  transition: transform 0.6s ease, opacity 0.6s ease;
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
 }
 
 .leftbackgroundType1 {
@@ -46,7 +47,6 @@
   transform: translateX(30%);
   opacity: 1;
 }
-
 
 @keyframes bounceInStrayRight {
   0% {
@@ -81,13 +81,15 @@
   top: -37.2vw;
   width: 50vw;
   height: 50vw;
-  background-image: url("/svg/backgroundType1.svg");
+  background-image: url('/svg/backgroundType1.svg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1;
   opacity: 0;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
 }
 
 .backgroundType2Annim.left {
@@ -101,7 +103,6 @@
 }
 
 .backgroundType2Annim.visibleBackgroundType2Annim.left {
-
   transform: translateY(0) rotate(-90deg);
   opacity: 1;
   animation: bounceInLeft 1.5s ease;
@@ -142,16 +143,13 @@
 }
 
 .visibleHighlight {
-
   opacity: 1;
 }
 
 @media screen and (max-width: 960px) {
-
   .backgroundType1Annim,
   .backgroundType2Annim {
     width: 0;
-
   }
 
   .intro-paragraphe {
@@ -161,12 +159,9 @@
     width: 100%;
     height: 100%;
   }
-
 }
 
 /* Memories */
-
-
 
 .memory-game {
   text-align: center;
@@ -209,7 +204,9 @@
   height: 12vw;
   cursor: pointer;
   user-select: none;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
   background-image: url(/svg/carteMemories.svg);
   background-size: cover;
   background-position: center;
@@ -267,14 +264,13 @@
   display: none;
 }
 
-.toggle-checkbox:checked~.memory-game-container {
+.toggle-checkbox:checked ~ .memory-game-container {
   display: none;
 }
 
 .memory-no-game img {
   transform: scalex(-1);
 }
-
 
 .memory-no-game-container-footer {
   display: flex;
@@ -294,7 +290,7 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  width: 30vw
+  width: 30vw;
 }
 
 .memory-item img {
@@ -309,21 +305,21 @@
   padding: 18px 24px;
   border-radius: 40px;
   border: 4px solid #000;
-  background: #FFF;
+  background: #fff;
   height: 100%;
   justify-content: space-evenly;
 }
 
 .orange-shadow-box {
-  box-shadow: 0 12px 0 0 #F6B254;
+  box-shadow: 0 12px 0 0 #f6b254;
 }
 
 .purple-shadow-box {
-  box-shadow: 0 12px 0 0 #BB6EF6;
+  box-shadow: 0 12px 0 0 #bb6ef6;
 }
 
 .blueu-shadow-box {
-  box-shadow: 0 12px 0 0 #3C61F5;
+  box-shadow: 0 12px 0 0 #3c61f5;
 }
 
 .game-info-text {
@@ -355,28 +351,24 @@
   width: fit-content !important;
 }
 
-
 @media screen and (max-width: 650px) {
-
   .memory-no-game {
     flex-direction: column;
-    gap: 100px
+    gap: 100px;
   }
 
   .memory-item {
     width: 100%;
-    ;
   }
 
   .game-btn-arrow {
     height: 30px;
     width: fit-content !important;
   }
-
 }
 
 @media screen and (max-width: 960px) {
-    .game-info {
+  .game-info {
     height: calc(55vw + 200px);
     min-height: 460px;
   }
@@ -419,14 +411,12 @@
 
   .game-button img {
     width: 10vw !important;
-
   }
 
   .game-btn-arrow {
     height: 30px;
     width: fit-content !important;
   }
-
 }
 
 /* puzzle taquin */
@@ -448,20 +438,23 @@
 .piece {
   width: 10vw;
   height: 10vw;
-  background-image: url("/img/loooperFonder.jpg");
+  background-image: url('/img/loooperFonder.jpg');
   background-size: 30vw 30vw;
   cursor: pointer;
-  transition: transform 0.3s ease, border 0.3s ease, background 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border 0.3s ease,
+    background 0.3s ease;
 }
 
-@supports (background-image: url("/img/loooperFonder.webp")) {
+@supports (background-image: url('/img/loooperFonder.webp')) {
   .piece {
-    background-image: url("/img/loooperFonder.webp");
+    background-image: url('/img/loooperFonder.webp');
   }
 }
 
 .vide {
-background: transparent;
+  background: transparent;
   cursor: default;
   transition: background 0.3s ease;
 }
@@ -480,13 +473,13 @@ background: transparent;
   cursor: default;
 }
 .puzzle.gagne .vide {
-  background-image: url("/img/loooperFonder.jpg") !important;
-  background-size: 30vw 30vw ;
+  background-image: url('/img/loooperFonder.jpg') !important;
+  background-size: 30vw 30vw;
   background-position: 0% 100%;
 }
-@supports (background-image: url("/img/loooperFonder.webp")) {
+@supports (background-image: url('/img/loooperFonder.webp')) {
   .puzzle.gagne .vide {
-    background-image: url("/img/loooperFonder.webp") !important;
+    background-image: url('/img/loooperFonder.webp') !important;
   }
 }
 

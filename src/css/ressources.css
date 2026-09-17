@@ -129,7 +129,7 @@
   border-radius: 4px;
 }
 .zoom-container-ressource a {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .featured-ressource {
@@ -274,7 +274,9 @@
   border-radius: 30px;
   padding: 14px 50px 14px 20px;
   outline: none;
-  transition: box-shadow 0.2s, background-color 0.2s;
+  transition:
+    box-shadow 0.2s,
+    background-color 0.2s;
 }
 
 .search-container input:focus {
@@ -376,7 +378,9 @@
   border: none;
   border-radius: 50%;
   cursor: pointer;
-  transition: transform 200ms ease, background-color 200ms ease;
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease;
 }
 
 .pagination-btn-arrow:hover:not(:disabled) {
@@ -385,7 +389,7 @@
 }
 
 .pagination-btn-arrow:active:not(:disabled) {
-  transform: scale(.92);
+  transform: scale(0.92);
 }
 
 .pagination-btn-arrow:disabled {
@@ -412,7 +416,9 @@
   border-radius: 2px;
   height: 3px;
   width: 10px;
-  transition: transform 200ms ease, background 200ms ease;
+  transition:
+    transform 200ms ease,
+    background 200ms ease;
 }
 
 .pagination-btn-arrow:hover:not(:disabled) .line1,
@@ -470,7 +476,9 @@
 }
 
 .pagination-number {
-  transition: transform 200ms ease, background-color 200ms ease;
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease;
 }
 
 .pagination-number:hover:not(.active) {
@@ -480,5 +488,5 @@
 }
 
 .pagination-number:active:not(.active) {
-  transform: scale(.92);
+  transform: scale(0.92);
 }
