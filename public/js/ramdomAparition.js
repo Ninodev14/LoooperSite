@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 observer.unobserve(container);
             }
         }, {
-            threshold: isMobile ? 0.05 : 0.3,
+            threshold: isMobile ? 0.01 : 0.01,
             rootMargin: isMobile ? "0px 0px -50px 0px" : "0px"
         });
 
