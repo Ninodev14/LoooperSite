@@ -137,10 +137,6 @@ header p {
   background-image: url(/svg/purplePaternFull.svg);
 }
 
-.uderline {
-  text-decoration-line: underline;
-}
-
 .mainPageTitle .white-border {
   background-repeat: repeat;
   background-position: bottom;
@@ -689,6 +685,12 @@ header .header-typo-pc .white-border-small {
 html {
   font-size: 13px;
 }
+
+.link-underline {
+    text-decoration-line: underline;
+    text-decoration-color: rgb(255, 255, 255);
+}
+
 
 .link-underline-black {
   text-decoration-line: underline;

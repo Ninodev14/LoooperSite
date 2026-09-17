@@ -2,25 +2,25 @@
 const currentPath = Astro.url.pathname;
 
 const besoinsPaths = [
-  "/besoins/",
-  "/apprendre-ludique/",
-  "/sensibiliser-reflechir/",
-  "/creer-interaction-sociale/",
-  "/renforcer-cohesion/",
-  "/engager-motiver/",
-  "/former-efficacement/",
-  "/communiquer-autrement/",
+  '/besoins/',
+  '/apprendre-ludique/',
+  '/sensibiliser-reflechir/',
+  '/creer-interaction-sociale/',
+  '/renforcer-cohesion/',
+  '/engager-motiver/',
+  '/former-efficacement/',
+  '/communiquer-autrement/',
 ];
 
-const isHome = currentPath === "/";
-const isFormats = currentPath === "/formats/";
+const isHome = currentPath === '/';
+const isFormats = currentPath === '/formats/';
 const isBesoins = besoinsPaths.includes(currentPath);
-const isEquipe = currentPath === "/equipe/";
-const isProjets = currentPath === "/projets/";
+const isEquipe = currentPath === '/equipe/';
+const isProjets = currentPath === '/projets/';
 
-const activeClassOrange = "highlight orange black white-border-small";
-const activeClassPurple = "highlight purple black white-border-small";
-const activeClassBlue = "highlight blue black white-border-small";
+const activeClassOrange = 'highlight orange black white-border-small';
+const activeClassPurple = 'highlight purple black white-border-small';
+const activeClassBlue = 'highlight blue black white-border-small';
 ---
 
 <header>
@@ -29,35 +29,24 @@ const activeClassBlue = "highlight blue black white-border-small";
       <div class="nav-pc-container">
         <a
           href="/"
-          class:list={[
-            "header-typo-pc link-underline-fill",
-            isHome && activeClassPurple,
-          ]}
-        >
+          class:list={['header-typo-pc link-underline-fill', isHome && activeClassPurple]}>
           Accueil
         </a>
 
         <a
           href="/formats/"
-          class:list={[
-            "header-typo-pc link-underline-fill",
-            isFormats && activeClassBlue,
-          ]}
-        >
+          class:list={['header-typo-pc link-underline-fill', isFormats && activeClassBlue]}>
           Nos formats
         </a>
 
         <div class="dropdown">
-          <div
-            class:list={["dropdown-text-arrow", isBesoins && activeClassOrange]}
-          >
+          <div class:list={['dropdown-text-arrow', isBesoins && activeClassOrange]}>
             <a
               href="/besoins/"
               class:list={[
-                "header-typo-pc link-underline-fill",
-                isBesoins && "white-border-small black ",
-              ]}
-            >
+                'header-typo-pc link-underline-fill',
+                isBesoins && 'white-border-small black ',
+              ]}>
               Vos besoins
             </a>
             <div class="dropdown-arrow">
@@ -68,51 +57,50 @@ const activeClassBlue = "highlight blue black white-border-small";
           <div class="dropdown-menu">
             <a
               class:list={[
-                "header-typo-pc",
-                currentPath === "/apprendre-ludique/" && "uderline",
+                'header-typo-pc',
+                currentPath === '/apprendre-ludique/' && 'link-underline',
               ]}
               href="/apprendre-ludique/">Apprendre avec le ludique</a
             >
             <a
               class:list={[
-                "header-typo-pc",
-                currentPath === "/sensibiliser-reflechir/" && "uderline",
+                'header-typo-pc',
+                currentPath === '/sensibiliser-reflechir/' && 'link-underline',
               ]}
               href="/sensibiliser-reflechir/">Sensibiliser et faire réfléchir</a
             >
             <a
               class:list={[
-                "header-typo-pc",
-                currentPath === "/creer-interaction-sociale/" && "uderline",
+                'header-typo-pc',
+                currentPath === '/creer-interaction-sociale/' && 'link-underline',
               ]}
-              href="/creer-interaction-sociale/"
-              >Créer de l'interaction sociale</a
+              href="/creer-interaction-sociale/">Créer de l'interaction sociale</a
             >
             <a
               class:list={[
-                "header-typo-pc",
-                currentPath === "/renforcer-cohesion/" && "uderline",
+                'header-typo-pc',
+                currentPath === '/renforcer-cohesion/' && 'link-underline',
               ]}
               href="/renforcer-cohesion/">Renforcer la cohésion</a
             >
             <a
               class:list={[
-                "header-typo-pc",
-                currentPath === "/engager-motiver/" && "uderline",
+                'header-typo-pc',
+                currentPath === '/engager-motiver/' && 'link-underline',
               ]}
               href="/engager-motiver/">Engager et motiver</a
             >
             <a
               class:list={[
-                "header-typo-pc",
-                currentPath === "/former-efficacement/" && "uderline",
+                'header-typo-pc',
+                currentPath === '/former-efficacement/' && 'link-underline',
               ]}
               href="/former-efficacement/">Former efficacement</a
             >
             <a
               class:list={[
-                "header-typo-pc",
-                currentPath === "/communiquer-autrement/" && "uderline",
+                'header-typo-pc',
+                currentPath === '/communiquer-autrement/' && 'link-underline',
               ]}
               href="/communiquer-autrement/">Communiquer autrement</a
             >
@@ -122,11 +110,7 @@ const activeClassBlue = "highlight blue black white-border-small";
 
       <div class="img-container-header">
         <a href="/" aria-label="Retour à l'accueil - Loooper">
-          <svg
-            viewBox="0 0 880 191"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
+          <svg viewBox="0 0 880 191" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               id="circle3"
               class="circle-group"
@@ -170,8 +154,7 @@ const activeClassBlue = "highlight blue black white-border-small";
               x="780"
               y="29"
               width="69"
-              height="133"
-            >
+              height="133">
               <path
                 d="M811.115 34.1374C816.356 29.2519 823.231 27.9757 831.739 30.3089C839.871 32.5392 844.98 36.9669 847.064 43.5922C849.274 50.2519 849.281 57.5854 847.085 65.5929C845.266 72.2242 842.616 79.4345 839.135 87.224C835.688 94.8884 831.963 101.602 827.961 107.366C825.977 110.185 823.283 112.406 819.879 114.028C816.634 115.559 812.884 115.742 808.63 114.575C804.376 113.409 801.182 111.322 799.047 108.315C796.946 105.183 795.761 101.899 795.493 98.4618C794.957 91.5883 795.126 84.1014 796.003 76.001C796.913 67.7755 798.243 60.4723 799.993 54.0913C802.326 45.5834 806.034 38.932 811.115 34.1374ZM811.077 158.631C806.135 161.446 801.036 162.133 795.781 160.692C790.527 159.251 786.492 156.059 783.677 151.117C780.862 146.175 780.175 141.076 781.616 135.821C783.057 130.566 786.248 126.531 791.191 123.716C796.133 120.901 801.232 120.214 806.487 121.656C811.742 123.097 815.776 126.288 818.591 131.231C821.406 136.173 822.093 141.272 820.652 146.526C819.211 151.781 816.02 155.816 811.077 158.631Z"
                 fill="white"></path>
@@ -242,11 +225,7 @@ const activeClassBlue = "highlight blue black white-border-small";
               class="circle-group"
               d="M481.945 96.3385C481.945 84.6501 479.399 73.9034 474.307 64.0966L473.258 62.1448C467.465 51.8181 459.592 43.6959 449.643 37.7768C439.82 31.8579 429.114 28.9609 417.527 29.0868C405.69 29.0871 394.798 32.1119 384.849 38.1566C374.9 44.0754 367.091 52.0704 361.424 62.1448L360.395 64.0467C355.421 73.5952 352.992 83.9182 353.11 95.0162C353.362 107.358 356.387 118.629 362.18 128.83C368.099 138.905 375.905 146.839 385.602 152.632C394.811 158.063 404.741 160.893 415.389 161.122L417.527 161.135C429.114 160.884 439.819 157.859 449.643 152.066C458.97 146.635 466.471 139.432 472.145 130.459L473.258 128.64C479.05 118.818 481.945 108.05 481.945 96.3385ZM493.982 96.3385C493.982 110.14 490.539 123.028 483.623 134.756C476.784 146.352 467.439 155.615 455.755 162.431C444.126 169.289 431.403 172.87 417.79 173.166C417.747 173.167 417.704 173.169 417.661 173.17C404.017 173.319 391.214 169.915 379.49 163.001C379.47 162.989 379.449 162.979 379.43 162.967C367.937 156.101 358.707 146.684 351.801 134.929C351.771 134.878 351.74 134.827 351.711 134.776C344.878 122.744 341.367 109.496 341.076 95.2627C341.075 95.2235 341.076 95.182 341.076 95.1428C340.929 81.2485 344.205 68.2058 350.932 56.246C357.614 44.3662 366.888 34.8595 378.597 27.8711C390.426 20.6838 403.444 17.0785 417.397 17.0561V17.0528C417.43 17.0524 417.462 17.0564 417.494 17.0561C417.505 17.0561 417.516 17.0528 417.527 17.0528V17.0561C431.274 16.9293 444.134 20.406 455.855 27.4681L455.851 27.4714C467.63 34.492 476.963 44.1558 483.753 56.2593C490.609 68.4808 493.982 81.9221 493.982 96.3385Z"
               fill="black"></path>
-            <g
-              style="mix-blend-mode:color-burn"
-              id="circle3"
-              class="circle-group"
-            >
+            <g style="mix-blend-mode:color-burn" id="circle3" class="circle-group">
               <path
                 d="M373.57 34.1995L362.635 65.291M465.611 81.7171L478.547 118.828M476.369 81.7171L487.829 117.762M412.598 76.16L380.889 52.9418M415.743 65.8712L384.034 42.653M405.231 46.7659L436.94 23.5477M402.086 36.4771L424.731 20.5566M426.458 85.7885L432.209 46.9108M437.026 83.7721L442.777 44.8944M416.084 133.313L394.155 100.699M422.538 124.706L400.61 92.0915M348.034 80.2621L387.213 77.1645M352.365 90.1105L391.544 87.0129M461.074 34.9488H445.822M476.369 52.9418L449.392 67.0529M481.007 61.4852L450.996 77.6912M465.593 110.524L426.358 108.257M462.644 100.177L423.409 97.9101M424.272 156.512L436.341 119.11M435.028 156.262L447.097 118.86M459.896 127.377L477.597 140.249M456.908 137.712L470.775 146.753M408.361 140.249L376.981 156.985M409.965 150.887L385.507 163.807M387.996 133.351L353.23 115.025M389.601 122.713L354.834 104.387"
                 stroke="#3C61F5"
@@ -264,11 +243,7 @@ const activeClassBlue = "highlight blue black white-border-small";
               class="circle-group"
               d="M365.98 96.3385C365.98 84.6501 363.434 73.9034 358.343 64.0966L357.294 62.1448C351.5 51.8181 343.627 43.6959 333.678 37.7768C323.855 31.8578 313.149 28.9609 301.563 29.0868C289.725 29.0871 278.833 32.1119 268.885 38.1566C258.936 44.0754 251.127 52.0704 245.459 62.1448L244.43 64.0467C239.457 73.5952 237.028 83.9181 237.146 95.0162C237.398 107.358 240.422 118.629 246.215 128.83C252.134 138.905 259.941 146.839 269.638 152.632C278.847 158.063 288.777 160.893 299.425 161.122L301.563 161.135C313.149 160.884 323.855 157.859 333.678 152.066C343.006 146.635 350.506 139.432 356.181 130.459L357.294 128.64C363.086 118.818 365.98 108.05 365.98 96.3385ZM378.018 96.3385C378.018 110.14 374.575 123.028 367.659 134.756C360.82 146.352 351.475 155.615 339.79 162.431C328.162 169.289 315.438 172.87 301.826 173.166C301.783 173.167 301.739 173.169 301.696 173.17C288.052 173.319 275.249 169.915 263.526 163.001C263.506 162.989 263.485 162.979 263.466 162.967C251.973 156.101 242.743 146.684 235.837 134.929C235.807 134.878 235.776 134.827 235.747 134.776C228.914 122.744 225.402 109.496 225.112 95.2627C225.111 95.2235 225.112 95.182 225.112 95.1428C224.964 81.2485 228.24 68.2058 234.967 56.246C241.65 44.3662 250.923 34.8595 262.633 27.8711C274.462 20.6838 287.479 17.0785 301.433 17.0561V17.0528C301.465 17.0524 301.498 17.0564 301.53 17.0561C301.541 17.0561 301.552 17.0528 301.563 17.0528V17.0561C315.31 16.9293 328.17 20.406 339.89 27.4681L339.887 27.4714C351.665 34.492 360.999 44.1558 367.789 56.2593C374.645 68.4808 378.018 81.9221 378.018 96.3385Z"
               fill="black"></path>
-            <g
-              style="mix-blend-mode:color-burn"
-              id="circle2"
-              class="circle-group"
-            >
+            <g style="mix-blend-mode:color-burn" id="circle2" class="circle-group">
               <path
                 d="M292.294 24.2111L266.696 37.7411L297.77 45.4859M273.226 60.6658L248.862 45.4859L244.759 67.5657M284.69 168.126L276.611 145.885L318.392 161.704M353.106 148.784H335.655L359.928 133.108M341.044 122.496L318.392 148.712L305.208 127.338M312.306 21.7832L339.464 32.4916L329.753 40.1427M299.461 91.8463L271.646 72.9481L262.457 98.0334M289.419 59.3669L317.994 69.8115L313.333 41.9338M254.196 153.572L266.55 150.72L241.863 129.044M322.699 115.841L305.16 80.2067L333.094 90.208M367.875 117.094L365.446 85.4755L339.898 104.457M278.426 97.7983L288.444 136.247L262.879 120.972M234.013 87.7636L229.915 119.32L259.08 105.639M348.366 40.1675L341.61 72.4985L366.749 61.4845"
                 stroke="#BB6EF6"
@@ -286,11 +261,7 @@ const activeClassBlue = "highlight blue black white-border-small";
               class="circle-group"
               d="M243.195 96.3385C243.195 84.6501 240.649 73.9034 235.557 64.0966L234.508 62.1448C228.715 51.8181 220.842 43.6959 210.893 37.7768C201.07 31.8579 190.364 28.9609 178.777 29.0868C166.94 29.0871 156.048 32.1119 146.099 38.1566C136.15 44.0754 128.341 52.0704 122.674 62.1448L121.645 64.0467C116.671 73.5952 114.242 83.9182 114.36 95.0162C114.612 107.358 117.637 118.629 123.43 128.83C129.349 138.905 137.155 146.839 146.852 152.632C156.061 158.063 165.991 160.893 176.639 161.122L178.777 161.135C190.364 160.884 201.069 157.859 210.893 152.066C220.22 146.635 227.721 139.432 233.395 130.459L234.508 128.64C240.3 118.818 243.195 108.05 243.195 96.3385ZM255.232 96.3385C255.232 110.14 251.789 123.028 244.873 134.756C238.034 146.352 228.689 155.615 217.005 162.431C205.376 169.289 192.653 172.87 179.04 173.166C178.997 173.167 178.954 173.169 178.911 173.17C165.267 173.319 152.464 169.915 140.74 163.001C140.72 162.989 140.699 162.979 140.68 162.967C129.187 156.101 119.957 146.684 113.051 134.929C113.021 134.878 112.99 134.827 112.961 134.776C106.128 122.744 102.617 109.496 102.326 95.2627C102.325 95.2235 102.326 95.182 102.326 95.1428C102.179 81.2485 105.455 68.2058 112.182 56.246C118.864 44.3662 128.138 34.8595 139.847 27.8711C151.676 20.6838 164.694 17.0785 178.647 17.0561V17.0528C178.68 17.0524 178.712 17.0564 178.744 17.0561C178.755 17.0561 178.766 17.0528 178.777 17.0528V17.0561C192.524 16.9293 205.384 20.406 217.105 27.4681L217.101 27.4714C228.88 34.492 238.213 44.1558 245.003 56.2593C251.859 68.4808 255.232 81.9221 255.232 96.3385Z"
               fill="black"></path>
-            <g
-              style="mix-blend-mode:color-burn"
-              id="circle1"
-              class="circle-group"
-            >
+            <g style="mix-blend-mode:color-burn" id="circle1" class="circle-group">
               <path
                 d="M138.243 52.7106L142.31 73.1136L157.896 67.1814L163.091 86.1062M170.812 36.8395L161.899 49.6948L187.366 59.1097L175.496 73.2109M185.949 41.9183L202.418 29.1973L210.278 43.9004L221.794 35.9021M200.092 75.2636L201.812 59.7175L227.205 69.3287L227.514 50.9027M169.371 114.969L185.839 127.69L193.7 112.987L210.048 123.852M183.513 81.6236L185.234 97.1697L210.627 87.5585L210.936 105.984M232.61 136.293L243.31 124.885L219.506 111.826L233.312 99.6196M223.499 155.278L216.419 136.273L202.212 148.01M113.132 64.8941L120.059 69.4137L106.252 81.62M118.305 143.546L127.683 136.462M113.361 116.467L113.132 95.6586L129.602 98.2451L130.782 78.6504M148.495 125.273L137.124 114.532L160.096 100.058L145.576 88.7086M179.913 161.768L180.142 140.96L163.672 143.546L162.492 123.952M151.874 165.51L156.149 159.833L133.178 145.359L147.697 134.01"
                 stroke="#F6B254"
@@ -311,20 +282,12 @@ const activeClassBlue = "highlight blue black white-border-small";
       <div class="nav-pc-container-end">
         <a
           href="/equipe/"
-          class:list={[
-            "header-typo-pc link-underline-fill",
-            isEquipe && activeClassPurple,
-          ]}
-        >
+          class:list={['header-typo-pc link-underline-fill', isEquipe && activeClassPurple]}>
           Notre équipe
         </a>
         <a
           href="/projets/"
-          class:list={[
-            "header-typo-pc link-underline-fill",
-            isProjets && activeClassBlue,
-          ]}
-        >
+          class:list={['header-typo-pc link-underline-fill', isProjets && activeClassBlue]}>
           Nos projets
         </a>
         <a href="/#contactForm" class="header-typo-pc btn-project">
@@ -357,47 +320,21 @@ const activeClassBlue = "highlight blue black white-border-small";
   <nav>
     <div id="menu-tel">
       <div class="menu-tel-nav">
-        <a
-          href="/"
-          class:list={[
-            "h3",
-            isHome && "highlight purple black white-border-small",
-          ]}
-        >
-          <img
-            class="img-logo"
-            src="/svg/header/index.svg"
-            alt="Representation d'une maison"
-          />
+        <a href="/" class:list={['h3', isHome && 'highlight purple black white-border-small']}>
+          <img class="img-logo" src="/svg/header/index.svg" alt="Representation d'une maison" />
           Accueil
         </a>
         <a
           href="/formats/"
-          class:list={[
-            "h3",
-            isFormats && "highlight blue black white-border-small",
-          ]}
-        >
-          <img
-            class="img-logo"
-            src="/svg/header/format.svg"
-            alt="Representation de jeux"
-          />
+          class:list={['h3', isFormats && 'highlight blue black white-border-small']}>
+          <img class="img-logo" src="/svg/header/format.svg" alt="Representation de jeux" />
           Nos formats
         </a>
         <div class="btn-slide-container">
           <a
             href="/besoins/"
-            class:list={[
-              "h3",
-              isBesoins && "highlight orange black white-border-small",
-            ]}
-          >
-            <img
-              class="img-logo"
-              src="/svg/header/besoin.svg"
-              alt="Representation d'une cible"
-            />
+            class:list={['h3', isBesoins && 'highlight orange black white-border-small']}>
+            <img class="img-logo" src="/svg/header/besoin.svg" alt="Representation d'une cible" />
             Vos besoins
           </a>
           <button id="btn-slide">
@@ -406,11 +343,7 @@ const activeClassBlue = "highlight blue black white-border-small";
         </div>
         <a
           href="/equipe/"
-          class:list={[
-            "h3",
-            isEquipe && "highlight purple black white-border-small",
-          ]}
-        >
+          class:list={['h3', isEquipe && 'highlight purple black white-border-small']}>
           <img
             class="img-logo"
             src="/svg/header/equipe.svg"
@@ -420,16 +353,8 @@ const activeClassBlue = "highlight blue black white-border-small";
         </a>
         <a
           href="/projets/"
-          class:list={[
-            "h3",
-            isProjets && "highlight blue black white-border-small",
-          ]}
-        >
-          <img
-            class="img-logo"
-            src="/svg/header/projet.svg"
-            alt="Representation d'un parchemin"
-          />
+          class:list={['h3', isProjets && 'highlight blue black white-border-small']}>
+          <img class="img-logo" src="/svg/header/projet.svg" alt="Representation d'un parchemin" />
           Nos projets
         </a>
         <a href="#contactForm" class="h3 btn-project" id="btn-close">
@@ -447,52 +372,31 @@ const activeClassBlue = "highlight blue black white-border-small";
             <img src="/svg/arrowW.svg" alt="fleche" />
           </button>
           <a
-            class:list={[
-              "h3",
-              currentPath === "/apprendre-ludique/" && "uderline",
-            ]}
+            class:list={['h3', currentPath === '/apprendre-ludique/' && 'link-underline']}
             href="/apprendre-ludique/">Apprendre avec le ludique</a
           >
           <a
-            class:list={[
-              "h3",
-              currentPath === "/sensibiliser-reflechir/" && "uderline",
-            ]}
+            class:list={['h3', currentPath === '/sensibiliser-reflechir/' && 'link-underline']}
             href="/sensibiliser-reflechir/">Sensibiliser et faire réfléchir</a
           >
           <a
-            class:list={[
-              "h3",
-              currentPath === "/creer-interaction-sociale/" && "uderline",
-            ]}
+            class:list={['h3', currentPath === '/creer-interaction-sociale/' && 'link-underline']}
             href="/creer-interaction-sociale/">Créer de l'interaction sociale</a
           >
           <a
-            class:list={[
-              "h3",
-              currentPath === "/renforcer-cohesion/" && "uderline",
-            ]}
+            class:list={['h3', currentPath === '/renforcer-cohesion/' && 'link-underline']}
             href="/renforcer-cohesion/">Renforcer la cohésion</a
           >
           <a
-            class:list={[
-              "h3",
-              currentPath === "/engager-motiver/" && "uderline",
-            ]}
+            class:list={['h3', currentPath === '/engager-motiver/' && 'link-underline']}
             href="/engager-motiver/">Engager et motiver</a
           >
           <a
-            class:list={[
-              "h3",
-              currentPath === "/former-efficacement/" && "uderline",
-            ]}
+            class:list={['h3', currentPath === '/former-efficacement/' && 'link-underline']}
             href="/former-efficacement/">Former efficacement</a
           >
           <a
-            class:list={[
-              "h3",
-              currentPath === "/communiquer-autrement/" && "uderline",
-            ]}
+            class:list={['h3', currentPath === '/communiquer-autrement/' && 'link-underline']}
             href="/communiquer-autrement/">Communiquer autrement</a
           >
           <div class="null-object"></div>
