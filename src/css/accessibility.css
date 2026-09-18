@@ -749,6 +749,10 @@ body.focus-bar-active #focus-bottom {
 .no-animation .footerLogo:hover {
   transform: scale(1);
 }
+.no-animation .highlight {
+  transition: none !important;
+  background-size: 0% 100%, 100% 100% !important;
+}
 
 .no-animation .leftbackgroundType1 {
   transform: translateX(30%);

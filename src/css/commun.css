@@ -511,7 +511,7 @@ body {
 }
 
 .card-info-container-text h3 {
-  padding: 3px;
+  padding: 8px;
   width: fit-content;
 }
 
@@ -897,7 +897,6 @@ body {
 .highlight.visibleHighlight,
 .highlight-no-annim {
   background-size: 0% 100%, 100% 100%;
-    background-position: 0% 100%, 0% 100%;
 }
 
 .highlight.orange,
