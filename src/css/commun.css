@@ -871,56 +871,48 @@ body {
   box-shadow: 0 6px 0 0 #000000;
 }
 
-/*ANNIMATION HIGLIGHT*/
+/* ANIMATION HIGHLIGHT */
 .highlight,
 .highlight-no-annim {
-  position: relative;
-  display: inline-block;
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+
+  padding: 0.2em 0.25em;
+  margin: 0 -0.25em;
+  border-radius: 0.2em;
+
+  background-repeat: no-repeat, no-repeat;
+  background-position: right center, center center;
+  background-size: 100% 100%, 100% 100%;
 }
 
-.highlight::before {
-  content: '';
-  position: absolute;
-  inset: -0.3em;
-  background-image: url('/svg/ton-fichier.svg');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1;
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 1s ease-out;
+.highlight {
+  transition: background-size 1s ease-out;
 }
 
-.highlight-no-annim::before {
-  content: '';
-  position: absolute;
-  inset: -0.3em;
-
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: -1;
-  clip-path: inset(0 0 0 0);
-  transition: clip-path 1s ease-out;
+.highlight:not(.visibleHighlight) {
+  background-size: 100% 100%, 100% 100%;
+}
+.highlight.visibleHighlight,
+.highlight-no-annim {
+  background-size: 0% 100%, 100% 100%;
+    background-position: 0% 100%, 0% 100%;
 }
 
-.highlight.visibleHighlight::before {
-  clip-path: inset(0 0 0 0);
+.highlight.orange,
+.highlight-no-annim.orange {
+  background-image: linear-gradient(var(--backgroundColor), var(--backgroundColor)), url('/svg/higlightType1.svg');
 }
 
-.highlight.orange::before,
-.highlight-no-annim.orange::before {
-  background-image: url('/svg/higlightType1.svg');
+.highlight.purple,
+.highlight-no-annim.purple {
+  background-image: linear-gradient(var(--backgroundColor), var(--backgroundColor)), url('/svg/higlightType2.svg');
 }
 
-.highlight.purple::before,
-.highlight-no-annim.purple::before {
-  background-image: url('/svg/higlightType2.svg');
-}
-
-.highlight.blue::before,
-.highlight-no-annim.blue::before {
-  background-image: url('/svg/higlightType3.svg');
+.highlight.blue,
+.highlight-no-annim.blue {
+  background-image: linear-gradient(var(--backgroundColor), var(--backgroundColor)), url('/svg/higlightType3.svg');
 }
 
 /*ESPACEMENT*/

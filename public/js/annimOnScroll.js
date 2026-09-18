@@ -23,7 +23,7 @@ function triggerElement(target) {
       });
     } else {
       document.querySelectorAll(".highlight").forEach((el, i) => {
-        setTimeout(() => el.classList.add("visibleHighlight"), i * 200);
+        setTimeout(() => el.classList.add("visibleHighlight"), i * 300);
       });
     }
   }
