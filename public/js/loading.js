@@ -1,6 +1,6 @@
 (function () {
   const COLORS = ['#bb6ef6', '#f6b254', '#3c61f5'];
-  const DURATION = 700;
+  const DURATION = 1000;
   const KEY = 'loooperTransition';
   let transitioning = false;
 
