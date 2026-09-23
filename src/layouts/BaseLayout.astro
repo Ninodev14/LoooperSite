@@ -13,13 +13,13 @@
  *   - schemaJson  : objet(s) Schema.org à injecter en JSON-LD (optionnel)
  */
 
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import ContactSection from "../components/ContactSection.astro";
-import SEOHead from "../components/SEOHead.astro";
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactSection from '../components/ContactSection.astro';
+import SEOHead from '../components/SEOHead.astro';
 
 const isProd = import.meta.env.PROD;
-const cssFile = isProd ? "/css/style.min.css" : "/src/css/style.css";
+const cssFile = isProd ? '/css/style.min.css' : '/src/css/style.css';
 
 interface Props {
   title: string;
@@ -31,8 +31,7 @@ interface Props {
   schemaJson?: object | object[];
 }
 
-const { title, description, ogImage, ogUrl, currentPage, noIndex, schemaJson } =
-  Astro.props;
+const { title, description, ogImage, ogUrl, currentPage, noIndex, schemaJson } = Astro.props;
 ---
 
 <!doctype html>
@@ -40,6 +39,12 @@ const { title, description, ogImage, ogUrl, currentPage, noIndex, schemaJson } =
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/js/loading.js" defer></script>
+    <style id="ptr-hide" is:inline>
+      html {
+        visibility: hidden;
+      }
+    </style>
 
     <!-- Polices -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -80,28 +85,21 @@ const { title, description, ogImage, ogUrl, currentPage, noIndex, schemaJson } =
     />
 
     <!-- Schema.org JSON-LD (optionnel, passé par chaque page) -->
-    {
-      schemaJson && (
-        <script
-          type="application/ld+json"
-          set:html={JSON.stringify(schemaJson)}
-        />
-      )
-    }
+    {schemaJson && <script type="application/ld+json" set:html={JSON.stringify(schemaJson)} />}
 
     <!-- Google Tag Manager (chargé après consentement via loooper-consent.js) -->
     <script>
-      window.addEventListener("load", function () {
+      window.addEventListener('load', function () {
         (function (w, d, s, l, i) {
           w[l] = w[l] || [];
-          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
           const f = d.getElementsByTagName(s)[0];
           const j = d.createElement(s) as HTMLScriptElement;
-          const dl = l !== "dataLayer" ? "&l=" + l : "";
+          const dl = l !== 'dataLayer' ? '&l=' + l : '';
           j.async = true;
-          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
           f.parentNode!.insertBefore(j, f);
-        })(window, document, "script", "dataLayer", "GTM-T4Q4NXNW");
+        })(window, document, 'script', 'dataLayer', 'GTM-T4Q4NXNW');
       });
     </script>
   </head>
