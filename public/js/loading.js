@@ -1,6 +1,6 @@
 (function () {
   const COLORS = ['#bb6ef6', '#f6b254', '#3c61f5'];
-  const DURATION = 1000;
+  const DURATION = 800;
   const KEY = 'loooperTransition';
   let transitioning = false;
 
@@ -10,7 +10,13 @@
     document.documentElement.style.visibility = 'visible';
   }
 
+  function removeOverlay() {
+    const o = document.getElementById('page-transition-overlay');
+    if (o) o.remove();
+  }
+
   function makeOverlay(color, xPct, yPct, covered) {
+    removeOverlay(); // évite les doublons
     const el = document.createElement('div');
     el.id = 'page-transition-overlay';
     Object.assign(el.style, {
@@ -29,8 +35,7 @@
 
   if (incoming) {
     const el = makeOverlay(incoming.color, incoming.x, incoming.y, true);
-    unhide(); 
-
+    unhide();
     requestAnimationFrame(() => requestAnimationFrame(() => {
       el.style.clipPath = `circle(0% at ${incoming.x}% ${incoming.y}%)`;
       el.style.WebkitClipPath = `circle(0% at ${incoming.x}% ${incoming.y}%)`;
@@ -56,6 +61,15 @@
     }));
     setTimeout(() => { window.location.href = url; }, DURATION);
   }
+
+  window.addEventListener('pageshow', (e) => {
+    if (e.persisted) {
+      transitioning = false;
+      removeOverlay();
+      sessionStorage.removeItem(KEY);
+      unhide();
+    }
+  });
 
   document.addEventListener('click', (e) => {
     if (transitioning) { e.preventDefault(); return; }
