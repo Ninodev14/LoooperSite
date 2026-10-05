@@ -6,7 +6,7 @@ image: /img/ressources/607412176_1855280681808697_6123635086436644696_n.jpg
 tags:
   - Gamification
   - Éducation
-draft: false
+draft: true
 blocks:
   - type: text_single
     heading: Titre 1
