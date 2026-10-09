@@ -1,16 +1,20 @@
-const HEURE_PARIS = 13; 
+const HEURE_PARIS = 14; 
+
+function heureParis() {
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Paris',
+    hour: 'numeric',
+    hourCycle: 'h23',
+  }).formatToParts(new Date());
+
+  return Number(parts.find((p) => p.type === 'hour').value);
+}
 
 export default async () => {
-  const heureParis = Number(
-    new Intl.DateTimeFormat('fr-FR', {
-      timeZone: 'Europe/Paris',
-      hour: '2-digit',
-      hourCycle: 'h23',
-    }).format(new Date())
-  );
+  const heure = heureParis();
 
-  if (heureParis !== HEURE_PARIS) {
-    console.log(`Il est ${heureParis}h à Paris, rien à faire.`);
+  if (heure !== HEURE_PARIS) {
+    console.log(`Il est ${heure}h à Paris, rien à faire.`);
     return;
   }
 
