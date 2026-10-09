@@ -1,3 +1,73 @@
-<svg width="142" height="129" viewBox="0 0 142 129" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M23.5 91.7501H72M23.5 74.7501H72M118.5 53.25H79.2225M118.5 36.25H70M50 41.8098C50 41.7899 50 41.7699 50 41.75C50 20.487 69.9233 3.25 94.5 3.25C119.077 3.25 139 20.487 139 41.75C139 51.6891 134.647 60.7485 127.5 67.579C124 70.9241 128.989 82.0416 134.5 87.25C126.5 87.25 119 84.75 111 77.5167C105.898 79.2801 100.33 80.25 94.5 80.25C93.661 80.25 92.8275 80.2299 91.9999 80.1903M50 41.8098C49.1725 41.7702 48.339 41.7501 47.5 41.7501C22.9233 41.7501 3 58.9871 3 80.2501C3 90.1892 7.35319 99.2486 14.5 106.079C18 109.424 13.0115 120.542 7.5 125.75C15.5 125.75 23 123.25 31 116.017C36.1023 117.78 41.6702 118.75 47.5 118.75C72.0767 118.75 92 101.513 92 80.2501C92 80.2301 92 80.2102 91.9999 80.1903M50 41.8098C61.4222 42.3571 71.6955 46.6311 79.2225 53.25M91.9999 80.1903C91.9815 69.6957 87.1097 60.1856 79.2225 53.25" stroke="#F6B254" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<svg class="ico ico-bullTalking" width="142" height="129" viewBox="0 0 142 129" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="overflow:visible">
+<style>
+/* État de base au repos : lignes de texte discrètes */
+.ico-bullTalking .talk-line { 
+  stroke-dasharray: 1; 
+  stroke-dashoffset: 0;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes talk-bounce-top {
+  0%, 100% { transform: scale(1) translate(0, 0) rotate(0deg); }
+  25% { transform: scale(1.05) translate(2px, -2px) rotate(1.5deg); }
+  50% { transform: scale(0.98) translate(-1px, 1px) rotate(-1deg); }
+  75% { transform: scale(1.02) translate(1px, -1px) rotate(0.5deg); }
+}
+
+@keyframes talk-bounce-bot {
+  0%, 100% { transform: scale(1) translate(0, 0) rotate(0deg); }
+  25% { transform: scale(1.05) translate(-2px, 2px) rotate(-1.5deg); }
+  50% { transform: scale(0.98) translate(1px, -1px) rotate(1deg); }
+  75% { transform: scale(1.02) translate(-1px, 1px) rotate(-0.5deg); }
+}
+
+@keyframes talk-type-line {
+  0% { stroke-dashoffset: 1; opacity: 0; }
+  20% { opacity: 1; }
+  60%, 100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+:is(.mini-card, .revers-mini-card):hover .ico-bullTalking .talk-top { 
+  transform-origin: 94px 41px; 
+  animation: talk-bounce-top 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite; 
+}
+
+:is(.mini-card, .revers-mini-card):hover .ico-bullTalking .talk-bottom { 
+  transform-origin: 47px 80px; 
+  animation: talk-bounce-bot 1.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s infinite; 
+}
+
+:is(.mini-card, .revers-mini-card):hover .ico-bullTalking .talk-line-top1 { 
+  animation: talk-type-line 1.8s cubic-bezier(0.25, 0.1, 0.25, 1) infinite; 
+}
+:is(.mini-card, .revers-mini-card):hover .ico-bullTalking .talk-line-top2 { 
+  animation: talk-type-line 1.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.15s infinite; 
+}
+:is(.mini-card, .revers-mini-card):hover .ico-bullTalking .talk-line-bot1 { 
+  animation: talk-type-line 1.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.4s infinite; 
+}
+:is(.mini-card, .revers-mini-card):hover .ico-bullTalking .talk-line-bot2 { 
+  animation: talk-type-line 1.8s cubic-bezier(0.25, 0.1, 0.25, 1) 0.55s infinite; 
+}
+
+@media (prefers-reduced-motion: reduce) { 
+  .ico-bullTalking * { animation: none !important; } 
+}
+</style>
+
+<g stroke="#F6B254" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Groupe Bulle du Haut -->
+  <g class="talk-top">
+    <path class="talk-bubble" d="M50 41.8098C50 41.7899 50 41.7699 50 41.75C50 20.487 69.9233 3.25 94.5 3.25C119.077 3.25 139 20.487 139 41.75C139 51.6891 134.647 60.7485 127.5 67.579C124 70.9241 128.989 82.0416 134.5 87.25C126.5 87.25 119 84.75 111 77.5167C105.898 79.2801 100.33 80.25 94.5 80.25C93.661 80.25 92.8275 80.2299 91.9999 80.1903"/>
+    <path class="talk-line talk-line-top1" pathLength="1" d="M118.5 36.25H70"/>
+    <path class="talk-line talk-line-top2" pathLength="1" d="M118.5 53.25H79.2225"/>
+  </g>
+
+  <!-- Groupe Bulle du Bas -->
+  <g class="talk-bottom">
+    <path class="talk-bubble" d="M50 41.8098C49.1725 41.7702 48.339 41.7501 47.5 41.7501C22.9233 41.7501 3 58.9871 3 80.2501C3 90.1892 7.35319 99.2486 14.5 106.079C18 109.424 13.0115 120.542 7.5 125.75C15.5 125.75 23 123.25 31 116.017C36.1023 117.78 41.6702 118.75 47.5 118.75C72.0767 118.75 92 101.513 92 80.2501C92 80.2301 92 80.2102 91.9999 80.1903M50 41.8098C61.4222 42.3571 71.6955 46.6311 79.2225 53.25M91.9999 80.1903C91.9815 69.6957 87.1097 60.1856 79.2225 53.25"/>
+    <path class="talk-line talk-line-bot1" pathLength="1" d="M23.5 74.7501H72"/>
+    <path class="talk-line talk-line-bot2" pathLength="1" d="M23.5 91.7501H72"/>
+  </g>
+</g>
 </svg>

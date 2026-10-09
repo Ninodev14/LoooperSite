@@ -847,3 +847,22 @@ body.focus-bar-active #focus-bottom {
   opacity: 1 !important;
   transform: none !important;
 }
+
+.no-animation svg,
+.no-animation svg * {
+  animation: none !important;
+  transition: none !important;
+}
+
+.no-animation svg * {
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+.no-animation svg [stroke-dasharray] {
+  stroke-dashoffset: 0 !important;
+}
+
+.no-animation svg {
+  pointer-events: none !important;
+}

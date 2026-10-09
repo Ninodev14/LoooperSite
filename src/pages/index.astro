@@ -18,6 +18,14 @@ import BikerAuGrandCoeur from '../components/Modal/BikerAuGrandCoeur.astro';
 import CoopCook from '../components/Modal/CoopCook.astro';
 import CartesCartels from '../components/Modal/CartesCartels.astro';
 import Zemblanite from '../components/Modal/Zemblanite.astro';
+
+import idea from '/svg/pictoMiniCard/idea.svg?raw';
+import annonce from '/svg/pictoMiniCard/annonce.svg?raw';
+import connection from '/svg/pictoMiniCard/connection.svg?raw';
+import teach from '/svg/pictoMiniCard/teach.svg?raw';
+import table from '/svg/pictoMiniCard/table.svg?raw';
+import starPodium from '/svg/pictoMiniCard/starPodium.svg?raw';
+import bullTalking from '/svg/pictoMiniCard/bullTalking.svg?raw';
 ---
 
 <BaseLayout
@@ -402,64 +410,49 @@ import Zemblanite from '../components/Modal/Zemblanite.astro';
       <a href="/apprendre-ludique/">
         <article class="revers-mini-card mini-card-orange">
           <h3 class="h3 black">Apprendre avec le ludique</h3>
-          <img src="/svg/pictoMiniCard/idea.svg" alt="Image representant une idée" />
+          <Fragment set:html={idea} />
         </article>
       </a>
 
       <a href="/sensibiliser-reflechir/">
         <article class="mini-card mini-card-purple">
           <h3 class="h3 black">Sensibiliser et faire réfléchir</h3>
-          <img src="/svg/pictoMiniCard/annonce.svg" alt="Image representant un megaphone" />
+          <Fragment set:html={annonce} />
         </article>
       </a>
 
       <a href="/creer-interaction-sociale/">
         <article class="revers-mini-card mini-card-blue">
           <h3 class="h3 black">Créer de l'interaction sociale</h3>
-          <img
-            src="/svg/pictoMiniCard/connection.svg"
-            alt="Image representant une des connection entre plusieur personne"
-          />
+          <Fragment set:html={connection} />
         </article>
       </a>
 
       <a href="/former-efficacement/">
         <article class="mini-card mini-card-orange">
           <h3 class="h3 black">Former efficacement</h3>
-          <img
-            src="/svg/pictoMiniCard/teach.svg"
-            alt="Image representant un couvre chef etudiant"
-          />
+          <Fragment set:html={teach} />
         </article>
       </a>
 
       <a href="/renforcer-cohesion/">
         <article class="mini-card mini-card-purple">
           <h3 class="h3 black">Renforcer la cohésion</h3>
-          <img
-            src="/svg/pictoMiniCard/table.svg"
-            alt="Image representant 4 personne autour d'une table"
-          />
+          <Fragment set:html={table} />
         </article>
       </a>
 
       <a href="/engager-motiver/">
         <article class="revers-mini-card mini-card-blue">
           <h3 class="h3 black">Engager et motiver</h3>
-          <img
-            src="/svg/pictoMiniCard/starPodium.svg"
-            alt="Image representant un podium avec une étoile"
-          />
+          <Fragment set:html={starPodium} />
         </article>
       </a>
 
       <a href="/communiquer-autrement/">
         <article class="mini-card mini-card-orange">
           <h3 class="h3 black">Communiquer autrement</h3>
-          <img
-            src="/svg/pictoMiniCard/bullTalking.svg"
-            alt="Image representant des bulle de texte"
-          />
+          <Fragment set:html={bullTalking} />
         </article>
       </a>
     </nav>

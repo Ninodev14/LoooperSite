@@ -280,6 +280,27 @@ body {
   z-index: -1;
 }
 
+.backgroundBrushType1::before {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 2.8s cubic-bezier(0.8, 0.6, 0.35, 1) 0.15s;
+}
+
+.backgroundBrushType1.visibleBrush::before {
+  clip-path: inset(0 0 0 0);
+}
+
+body.no-animation .backgroundBrushType1::before {
+  clip-path: none;
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backgroundBrushType1::before {
+    clip-path: none;
+    transition: none;
+  }
+}
+
 .mentions-legales-text-container {
   flex-direction: column;
 }
@@ -883,8 +904,12 @@ body {
   border-radius: 0.2em;
 
   background-repeat: no-repeat, no-repeat;
-  background-position: right center, center center;
-  background-size: 100% 100%, 100% 100%;
+  background-position:
+    right center,
+    center center;
+  background-size:
+    100% 100%,
+    100% 100%;
 }
 
 .highlight {
@@ -892,26 +917,33 @@ body {
 }
 
 .highlight:not(.visibleHighlight) {
-  background-size: 100% 100%, 100% 100%;
+  background-size:
+    100% 100%,
+    100% 100%;
 }
 .highlight.visibleHighlight,
 .highlight-no-annim {
-  background-size: 0% 100%, 100% 100%;
+  background-size:
+    0% 100%,
+    100% 100%;
 }
 
 .highlight.orange,
 .highlight-no-annim.orange {
-  background-image: linear-gradient(var(--backgroundColor), var(--backgroundColor)), url('/svg/higlightType1.svg');
+  background-image:
+    linear-gradient(var(--backgroundColor), var(--backgroundColor)), url('/svg/higlightType1.svg');
 }
 
 .highlight.purple,
 .highlight-no-annim.purple {
-  background-image: linear-gradient(var(--backgroundColor), var(--backgroundColor)), url('/svg/higlightType2.svg');
+  background-image:
+    linear-gradient(var(--backgroundColor), var(--backgroundColor)), url('/svg/higlightType2.svg');
 }
 
 .highlight.blue,
 .highlight-no-annim.blue {
-  background-image: linear-gradient(var(--backgroundColor), var(--backgroundColor)), url('/svg/higlightType3.svg');
+  background-image:
+    linear-gradient(var(--backgroundColor), var(--backgroundColor)), url('/svg/higlightType3.svg');
 }
 
 /*ESPACEMENT*/
@@ -2087,10 +2119,22 @@ input[type='checkbox']::after {
 }
 
 .mini-card img,
-.revers-mini-card img {
+.revers-mini-card img,
+.mini-card svg,
+.revers-mini-card svg {
   width: 50%;
+  height: auto;
 }
 
+.mini-card svg,
+.revers-mini-card svg {
+  transition: filter 0.2s ease;
+}
+
+.mix-done a:hover .mini-card svg,
+.mix-done a:hover .revers-mini-card svg {
+  filter: brightness(0) invert(1) !important;
+}
 .mini-card-orange {
   box-shadow: 0 12px 0 0 #f6b254;
 }
@@ -2120,7 +2164,6 @@ input[type='checkbox']::after {
   transform: none;
 }
 
-/* Cookies */
 
 /* Cookies */
 #loooper-consent-banner {
@@ -2287,8 +2330,6 @@ input[type='checkbox']::after {
     opacity: 1;
     transform: none;
   }
-
-  
 }
 /* BACK TO TOP */
 .back-to-top {

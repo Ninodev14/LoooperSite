@@ -1,4 +1,4 @@
-const HEURE_PARIS = 14; 
+const HEURE_PARIS = 10; 
 
 function heureParis() {
   const parts = new Intl.DateTimeFormat('en-GB', {

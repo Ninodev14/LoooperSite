@@ -1,3 +1,32 @@
-<svg width="146" height="141" viewBox="0 0 146 141" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M114.188 120.5H128V138H72.75H17.5V120.5H31.3125M114.188 120.5H100.375H72.75H45.125H31.3125M114.188 120.5V103H103.828M31.3125 120.5V103H41.6719M41.6719 103H52.0312H72.75H93.4688H103.828M41.6719 103V85.5H72.75H103.828V103M3 35.5H17M15.5 3L26 13.5M15.5 68L26 57.5M143 35.5H129M130.5 3L120 13.5M130.5 68L120 57.5M73.0001 5.5L82.7374 25.0978L104.385 28.3024L88.7553 43.6192L92.397 65.1976L73.0001 55.066L53.6032 65.1976L57.2449 43.6192L41.6152 28.3024L63.2628 25.0978L73.0001 5.5Z" stroke="#3C61F5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+<svg class="ico ico-starPodium" width="146" height="141" viewBox="0 0 146 141" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="overflow:visible">
+<style>
+
+@keyframes pod-star { 
+  0% { transform: rotate(0deg); } 
+  100% { transform: rotate(360deg); } 
+}
+@keyframes pod-steps { 0%,60%,100% { transform: none; } 72% { transform: scaleY(.96); } }
+@keyframes pod-ray { 0%,100% { opacity: 1; transform: none; } 40% { opacity: 0; transform: translate(var(--tx), var(--ty)); } 41% { opacity: 0; transform: none; } 70% { opacity: 1; } }
+
+/* Centre exact de l'étoile : 73px x 35.35px */
+.ico-starPodium .pod-star { transform-origin: 73px 35.35px; }
+
+:is(.mini-card,.revers-mini-card):hover .ico-starPodium .pod-star { animation: pod-star 2s linear infinite; }
+:is(.mini-card,.revers-mini-card):hover .ico-starPodium .pod-steps { transform-origin: 73px 138px; animation: pod-steps 1.5s ease-in-out infinite; }
+:is(.mini-card,.revers-mini-card):hover .ico-starPodium .pod-ray { animation: pod-ray 1.5s ease-out infinite; }
+:is(.mini-card,.revers-mini-card):hover .ico-starPodium .pod-ray2, :is(.mini-card,.revers-mini-card):hover .ico-starPodium .pod-ray5 { animation-delay: .1s; }
+:is(.mini-card,.revers-mini-card):hover .ico-starPodium .pod-ray3, :is(.mini-card,.revers-mini-card):hover .ico-starPodium .pod-ray6 { animation-delay: .2s; }
+
+@media (prefers-reduced-motion: reduce) { .ico-starPodium * { animation: none !important; } }
+</style>
+<g stroke="#3C61F5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+<path class="pod-steps" d="M114.188 120.5H128V138H72.75H17.5V120.5H31.3125M114.188 120.5H100.375H72.75H45.125H31.3125M114.188 120.5V103H103.828M31.3125 120.5V103H41.6719M41.6719 103H52.0312H72.75H93.4688H103.828M41.6719 103V85.5H72.75H103.828V103"/>
+<path class="pod-star" d="M73.0001 5.5L82.7374 25.0978L104.385 28.3024L88.7553 43.6192L92.397 65.1976L73.0001 55.066L53.6032 65.1976L57.2449 43.6192L41.6152 28.3024L63.2628 25.0978L73.0001 5.5Z"/>
+<path class="pod-ray" style="--tx:-5px;--ty:0px" d="M3 35.5H17"/>
+<path class="pod-ray pod-ray2" style="--tx:-4px;--ty:-4px" d="M15.5 3L26 13.5"/>
+<path class="pod-ray pod-ray3" style="--tx:-4px;--ty:4px" d="M15.5 68L26 57.5"/>
+<path class="pod-ray pod-ray4" style="--tx:5px;--ty:0px" d="M143 35.5H129"/>
+<path class="pod-ray pod-ray5" style="--tx:4px;--ty:-4px" d="M130.5 3L120 13.5"/>
+<path class="pod-ray pod-ray6" style="--tx:4px;--ty:4px" d="M130.5 68L120 57.5"/>
+</g>
 </svg>

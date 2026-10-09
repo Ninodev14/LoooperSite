@@ -1,10 +1,5 @@
-const VISIBLE_CLASSES = {
-  backgroundType1Annim: "visibleBackgroundType1Annim",
-  backgroundType2Annim: "visibleBackgroundType2Annim",
-};
-
 const elements = document.querySelectorAll(
-  ".backgroundType1Annim, .backgroundType2Annim, .highlight"
+  ".backgroundType1Annim, .backgroundType2Annim, .backgroundBrushType1, .highlight"
 );
 
 function triggerElement(target) {
@@ -14,6 +9,10 @@ function triggerElement(target) {
 
   if (target.classList.contains("backgroundType2Annim")) {
     target.classList.add("visibleBackgroundType2Annim");
+  }
+
+  if (target.classList.contains("backgroundBrushType1")) {
+    target.classList.add("visibleBrush");
   }
 
   if (target.classList.contains("highlight")) {
