@@ -2273,4 +2273,141 @@ input[type='checkbox']::after {
     opacity: 1;
     transform: none;
   }
+
+  
+}
+/* BACK TO TOP */
+.back-to-top {
+  --btt-size: 48px;
+
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 9000;
+  width: var(--btt-size);
+  height: var(--btt-size);
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border: 3px solid #fff;
+  border-radius: 120px;
+  background: #000;
+  overflow: hidden;
+  will-change: transform, opacity;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(24px) scale(0.5);
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s cubic-bezier(0.5, 0, 0.75, 0),
+    visibility 0s linear 0.35s,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  transition:
+    opacity 0.2s ease,
+    visibility 0s,
+    transform 0.25s cubic-bezier(0.25, 1.5, 0.5, 1),
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+  animation: btt-pop 0.75s ease-out;
+}
+
+@keyframes btt-pop {
+  0% {
+    transform: translateY(40px) scale(0.3) rotate(-90deg);
+  }
+  55% {
+    transform: translateY(-10px) scale(1.12) rotate(6deg);
+  }
+  75% {
+    transform: translateY(3px) scale(0.95) rotate(-3deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+.back-to-top.is-visible:active {
+  transform: scale(0.92);
+}
+
+/* La flèche : 2 barres arrondies */
+.btt-arrow {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.btt-line {
+  position: absolute;
+  top: 1px;
+  width: 14px;
+  height: 4px;
+  border-radius: 3px;
+  background: #fff;
+  transition: background-color 0.2s ease;
+}
+
+.btt-line1 {
+  left: 0;
+  transform: rotate(-45deg);
+}
+
+.btt-line2 {
+  left: 8px;
+  transform: rotate(45deg);
+}
+
+@media (hover: hover) {
+  .back-to-top:hover {
+    background: #fff;
+    border-color: #000;
+  }
+
+  .back-to-top:hover .btt-line {
+    background: #000;
+  }
+}
+
+/* Même inversion pour la navigation au clavier */
+.back-to-top:focus-visible {
+  background: #fff;
+  border-color: #000;
+  outline: 3px solid #f6b254;
+  outline-offset: 4px;
+}
+
+.back-to-top:focus-visible .btt-line {
+  background: #000;
+}
+
+@media screen and (max-width: 960px) {
+  .back-to-top {
+    --btt-size: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top,
+  .back-to-top.is-visible {
+    animation: none;
+    transform: none;
+    transition:
+      opacity 0.2s ease,
+      visibility 0s,
+      background-color 0.2s ease,
+      border-color 0.2s ease;
+  }
 }

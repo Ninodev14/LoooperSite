@@ -10,6 +10,16 @@
 <div id="focus-top"></div>
 <div id="focus-bottom"></div>
 
+<button id="back-to-top" class="back-to-top" type="button" aria-label="Retour en haut de la page">
+  <i class="btt-bubble btt-bubble-blue"></i>
+  <i class="btt-bubble btt-bubble-orange"></i>
+  <i class="btt-bubble btt-bubble-purple"></i>
+  <span class="btt-arrow" aria-hidden="true">
+    <i class="btt-line btt-line1"></i>
+    <i class="btt-line btt-line2"></i>
+  </span>
+</button>
+
 <div id="accessibility-menu">
   <label class="text-typo black">
     <input type="checkbox" id="chkOpendyslexic" onchange="toggleOpendyslexic()" />
@@ -321,6 +331,7 @@
   window.LOOOPER_ANALYTICS_URL = 'https://sitestatloooper.onrender.com/api/collect';
   window.LOOOPER_ANALYTICS_SITE = 'loooper.fr';
 </script>
+<script src="/js/backToTop.js" defer></script>
 <script src="/js/tracker/tracker.js" defer></script>
 <script src="/js/mouse.js" defer></script>
 <script src="/js/accessibility.js" defer></script>
