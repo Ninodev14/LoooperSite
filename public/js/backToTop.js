@@ -1,4 +1,13 @@
 (function () {
+  function noAnimation() {
+    var chk = document.getElementById('chkNoAnimation');
+    return (
+      document.body.classList.contains('no-animation') ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
+      !!(chk && chk.checked)
+    );
+  }
+
   function initBackToTop() {
     var btn = document.getElementById('back-to-top');
     if (!btn || btn.dataset.ready) return;
@@ -40,11 +49,7 @@
     update();
 
     btn.addEventListener('click', function () {
-      var chk = document.getElementById('chkNoAnimation');
-      var noAnim =
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches ||
-        (chk && chk.checked);
-      var opts = { top: 0, behavior: noAnim ? 'auto' : 'smooth' };
+      var opts = { top: 0, behavior: noAnimation() ? 'auto' : 'smooth' };
 
       window.scrollTo(opts);
       if (document.documentElement.scrollTo) document.documentElement.scrollTo(opts);

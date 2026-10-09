@@ -499,3 +499,76 @@
     background-size: 90vw 90vw;
   }
 }
+
+
+/* Number*/
+.number-game {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+}
+
+.number-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.number-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 240px;
+  max-width: 360px;
+}
+
+.number-value {
+  margin: 0;
+  font-size: 6rem;
+  line-height: 1;
+    display: inline-grid;
+  font-variant-numeric: tabular-nums;
+}
+
+.number-value[data-count]::after {
+  content: attr(data-count) attr(data-suffix);
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+.number-purple {
+  color: #bb6ef6;
+}
+
+.number-blue {
+  color: #3c61f5;
+}
+
+.number-orange {
+  color: #f6b254;
+}
+
+.number-item-text {
+  color: #fff;
+  max-width: 300px;
+}
+
+.number-item-text p {
+  margin: 0;
+}
+
+@media screen and (max-width: 960px) {
+  .number-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .number-item {
+    flex: none;
+    max-width: 100%;
+  }
+}

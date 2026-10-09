@@ -795,6 +795,16 @@ body.focus-bar-active #focus-bottom {
   transform: translateY(0) rotate(90deg) scaleX(-1);
   transition: none;
 }
+.no-animation .back-to-top,
+.no-animation .back-to-top.is-visible {
+  animation: none;
+  transform: none;
+  transition: none;
+}
+
+.no-animation .back-to-top.is-visible:active {
+  transform: none;
+}
 
 .no-animation .btn-project span:before,
 .no-animation .btn-project:after,
