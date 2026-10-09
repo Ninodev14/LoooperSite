@@ -11,5 +11,5 @@ export default async () => {
 };
 
 export const config = {
-  schedule: '0 7 * * *', // tous les jours à 07:00 UTC (9h en été, 8h en hiver, heure de France)
+  schedule: '0 11 * * *', // TEST : tous les jours à 11:00 UTC = 13:00 en France (heure d'été)
 };
