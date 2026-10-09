@@ -1880,6 +1880,20 @@ input[type='checkbox']::after {
   opacity: 0.85;
 }
 
+.contact-mail {
+  margin-top: 1rem;
+}
+
+.contact-mail a {
+  color: #3c61f5;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.contact-mail a:hover {
+  opacity: 0.85;
+}
 /* Long Card */
 
 .long-card {
