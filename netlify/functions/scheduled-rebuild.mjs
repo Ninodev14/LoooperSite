@@ -1,4 +1,19 @@
+const HEURE_PARIS = 13; 
+
 export default async () => {
+  const heureParis = Number(
+    new Intl.DateTimeFormat('fr-FR', {
+      timeZone: 'Europe/Paris',
+      hour: '2-digit',
+      hourCycle: 'h23',
+    }).format(new Date())
+  );
+
+  if (heureParis !== HEURE_PARIS) {
+    console.log(`Il est ${heureParis}h à Paris, rien à faire.`);
+    return;
+  }
+
   const url = process.env.BUILD_HOOK_URL;
 
   if (!url) {
@@ -11,5 +26,5 @@ export default async () => {
 };
 
 export const config = {
-  schedule: '0 11 * * *', // TEST : tous les jours à 11:00 UTC = 13:00 en France (heure d'été)
+  schedule: '0 11,12 * * *',
 };
