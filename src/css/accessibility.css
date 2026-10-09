@@ -590,6 +590,10 @@ body.high-contrast {
   background-image: none;
 }
 
+.high-contrast .highlight, .high-contrast .highlight-no-annim {
+  background-image: none;
+}
+
 .high-contrast .btn-project::before {
   width: 120%;
   height: 200px;
