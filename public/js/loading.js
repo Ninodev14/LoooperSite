@@ -20,26 +20,33 @@
     const el = document.createElement('div');
     el.id = 'page-transition-overlay';
     Object.assign(el.style, {
-      position: 'fixed', inset: '0', zIndex: '999999999',
-      background: color, pointerEvents: 'none',
+      position: 'fixed',
+      inset: '0',
+      zIndex: '999999999',
+      background: color,
+      pointerEvents: 'none',
       clipPath: `circle(${covered ? '150vmax' : '0%'} at ${xPct}% ${yPct}%)`,
       WebkitClipPath: `circle(${covered ? '150vmax' : '0%'} at ${xPct}% ${yPct}%)`,
-      transition: `clip-path ${DURATION}ms cubic-bezier(.76,0,.24,1)`
+      transition: `clip-path ${DURATION}ms cubic-bezier(.76,0,.24,1)`,
     });
     document.documentElement.appendChild(el);
     return el;
   }
 
   let incoming = null;
-  try { incoming = JSON.parse(sessionStorage.getItem(KEY)); } catch (e) {}
+  try {
+    incoming = JSON.parse(sessionStorage.getItem(KEY));
+  } catch (e) {}
 
   if (incoming) {
     const el = makeOverlay(incoming.color, incoming.x, incoming.y, true);
     unhide();
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      el.style.clipPath = `circle(0% at ${incoming.x}% ${incoming.y}%)`;
-      el.style.WebkitClipPath = `circle(0% at ${incoming.x}% ${incoming.y}%)`;
-    }));
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        el.style.clipPath = `circle(0% at ${incoming.x}% ${incoming.y}%)`;
+        el.style.WebkitClipPath = `circle(0% at ${incoming.x}% ${incoming.y}%)`;
+      }),
+    );
     setTimeout(() => el.remove(), DURATION + 50);
     sessionStorage.removeItem(KEY);
   } else {
@@ -55,11 +62,15 @@
     sessionStorage.setItem(KEY, JSON.stringify({ color, x: xPct, y: yPct }));
 
     const el = makeOverlay(color, xPct, yPct, false);
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      el.style.clipPath = `circle(150vmax at ${xPct}% ${yPct}%)`;
-      el.style.WebkitClipPath = `circle(150vmax at ${xPct}% ${yPct}%)`;
-    }));
-    setTimeout(() => { window.location.href = url; }, DURATION);
+    requestAnimationFrame(() =>
+      requestAnimationFrame(() => {
+        el.style.clipPath = `circle(150vmax at ${xPct}% ${yPct}%)`;
+        el.style.WebkitClipPath = `circle(150vmax at ${xPct}% ${yPct}%)`;
+      }),
+    );
+    setTimeout(() => {
+      window.location.href = url;
+    }, DURATION);
   }
 
   window.addEventListener('pageshow', (e) => {
@@ -71,23 +82,53 @@
     }
   });
 
-  document.addEventListener('click', (e) => {
-    if (transitioning) { e.preventDefault(); return; }
+  function normalizePath(p) {
+    return p.replace(/\/index\.html$/, '/').replace(/\/+$/, '') || '/';
+  }
 
-    const link = e.target.closest('a[href]');
-    if (!link) return;
+  document.addEventListener(
+    'click',
+    (e) => {
+      if (transitioning) {
+        e.preventDefault();
+        return;
+      }
 
-    const url = link.getAttribute('href');
-    const sameOrigin = link.origin === window.location.origin;
-    const isHash = url.startsWith('#');
-    const isModified = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey;
-    const newTab = link.target === '_blank';
+      const link = e.target.closest('a[href]');
+      if (!link) return;
 
-    if (!sameOrigin || isHash || isModified || newTab) return;
+      const isModified = e.metaKey || e.ctrlKey || e.shiftKey || e.altKey;
+      const newTab = link.target === '_blank';
+      const isDownload = link.hasAttribute('download');
+      if (isModified || newTab || isDownload) return;
 
-    e.preventDefault();
-    leave(url, e.clientX, e.clientY);
-  }, true);
+      const dest = new URL(link.href, window.location.href);
 
+      // autre site, mailto:, tel:... : comportement normal
+      if (dest.origin !== window.location.origin) return;
+
+      const samePage =
+        normalizePath(dest.pathname) === normalizePath(window.location.pathname) &&
+        dest.search === window.location.search;
+
+      if (samePage) {
+        // même page + ancre (ex: /#foot-inx2) : saut natif, pas de transition
+        if (dest.hash) return;
+
+        // même page sans ancre (ex: clic sur le logo depuis l'accueil) : retour en haut
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: document.body.classList.contains('no-animation') ? 'auto' : 'smooth',
+        });
+        return;
+      }
+
+      // vraie autre page : transition
+      e.preventDefault();
+      leave(dest.href, e.clientX, e.clientY);
+    },
+    true,
+  );
   setTimeout(unhide, 1000);
 })();
