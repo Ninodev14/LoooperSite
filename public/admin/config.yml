@@ -11,10 +11,14 @@ collections:
     folder: "src/content/ressources"
     create: true
     slug: "{{slug}}"
+    summary: "{{date | date('DD/MM/YYYY HH:mm')}} · {{title}}"
     fields:
       - { label: "Titre", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Date", name: "date", widget: "datetime" }
+      - label: "Date de publication"
+        name: "date"
+        widget: "datetime"
+        hint: "L'article sera visible à partir de cette date. Pour publier tout de suite, laisse la date du jour."
       - { label: "Image de couverture", name: "image", widget: "image", required: false }
       - { label: "Légende de l'image de couverture", name: "imageLegend", widget: "string", required: false }
       - label: "Tags"

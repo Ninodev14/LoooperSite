@@ -1,15 +1,13 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { marked } from 'marked';
+import { getPublishedRessources } from '../../utils/ressources';
 
 export async function getStaticPaths() {
   const TAG_COLORS = ['#F6B254', '#BB6EF6', '#3C61F5'];
   const TAG_COLOR_CLASSES = ['orange', 'purple', 'blue'];
 
-  const articles = (await getCollection('ressources', ({ data }) => !data.draft)).sort(
-    (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
-  );
+  const articles = await getPublishedRessources();
 
   return articles.map((article, index) => ({
     params: { id: article.id },

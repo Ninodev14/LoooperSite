@@ -52,7 +52,7 @@ const ressources = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    date: z.date(),
+    date: z.coerce.date(),
     image: z.string().optional(),
     imageLegend: z.string().optional(),
     tags: z.array(z.string()).optional(),
