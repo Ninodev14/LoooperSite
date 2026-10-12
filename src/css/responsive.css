@@ -1,8 +1,9 @@
 /*responcive */
 
 @media (min-width: 2500px) {
+
   .card-info-container {
-    width: 20%;
+    width: 400px;
   }
 
   .card-info-wrap {

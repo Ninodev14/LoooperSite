@@ -196,6 +196,31 @@ body.high-contrast {
   color: #fff !important;
 }
 
+.high-contrast #accessibility-btn img,
+.high-contrast #ludique-btn img {
+  filter: invert(1);
+}
+
+.high-contrast #accessibility-btn img:hover,
+.high-contrast #ludique-btn img:hover {
+  filter: invert(0);
+}
+.high-contrast .back-to-top {
+  background: #fff;
+  border-color: #000;
+}
+
+.high-contrast .back-to-top .btt-line{
+  background: #000;
+}
+
+.high-contrast .back-to-top:hover {
+  background: #000;
+  border-color: #fff;
+}
+.high-contrast .back-to-top:hover .btt-line{
+  background: #fff;
+}
 .high-contrast .nav-pc {
   background-color: #000000;
   border-bottom: 3px solid #ffffff;

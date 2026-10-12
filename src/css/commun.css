@@ -487,7 +487,7 @@ body.no-animation .backgroundBrushType1::before {
 
 .card-info-container {
   margin-left: -12px;
-  width: 320px;
+  width: 340px;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -542,6 +542,7 @@ body.no-animation .backgroundBrushType1::before {
 
 .card-info-container-text-center-btn {
   display: flex;
+  justify-content: space-between;
 }
 
 .long-card-wrapper {
@@ -559,6 +560,12 @@ body.no-animation .backgroundBrushType1::before {
 .external-icon {
   width: fit-content !important;
   height: 0.9em;
+}
+
+@media screen and (max-width: 1900px) {
+  .card-info-container {
+    width: 320px;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -2163,7 +2170,6 @@ input[type='checkbox']::after {
 .mini-card-container .revers-mini-card {
   transform: none;
 }
-
 
 /* Cookies */
 #loooper-consent-banner {
