@@ -147,6 +147,7 @@
 }
 
 @media screen and (max-width: 960px) {
+
   .backgroundType1Annim,
   .backgroundType2Annim {
     width: 0;
@@ -264,7 +265,7 @@
   display: none;
 }
 
-.toggle-checkbox:checked ~ .memory-game-container {
+.toggle-checkbox:checked~.memory-game-container {
   display: none;
 }
 
@@ -469,14 +470,17 @@
   gap: 0;
   border: 0px solid transparent;
   background: transparent;
-  overflow: hidden; /* clip le débordement des scales */
+  overflow: hidden;
+  /* clip le débordement des scales */
   cursor: default;
 }
+
 .puzzle.gagne .vide {
   background-image: url('/img/loooperFonder.jpg') !important;
   background-size: 30vw 30vw;
   background-position: 0% 100%;
 }
+
 @supports (background-image: url('/img/loooperFonder.webp')) {
   .puzzle.gagne .vide {
     background-image: url('/img/loooperFonder.webp') !important;
@@ -528,7 +532,7 @@
   margin: 0;
   font-size: 6rem;
   line-height: 1;
-    display: inline-grid;
+  display: inline-grid;
   font-variant-numeric: tabular-nums;
 }
 
@@ -558,7 +562,7 @@
 
 .number-item-text p {
   margin: 0;
-    font-size: 1.4rem;
+  font-size: 1.4rem;
   line-height: 1.2;
 }
 
@@ -572,4 +576,81 @@
     flex: none;
     max-width: 100%;
   }
+}
+
+.avis-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.avis-block {
+  margin-left: -12px;
+  width: 30vw;
+  padding: 80px 26px 26px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 0;
+  border-radius: 30px;
+  border: 5px solid #000;
+  background: #fff;
+}
+
+.avis-block-top {
+  margin-bottom: 80px;
+}
+
+.avis-block-bot {
+  margin-top: 80px;
+}
+
+.guillemet-avis {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -10%;
+  left: 10%;
+
+  background-size: 26% 26%;
+  background-repeat: no-repeat;
+}
+
+.card-info-container-purple .guillemet-avis {
+  background-image: url('/svg/guillemetPurple.svg');
+}
+
+.card-info-container-orange .guillemet-avis {
+  background-image: url('/svg/guillemetOrange.svg');
+}
+
+.card-info-container-blue .guillemet-avis {
+  background-image: url('/svg/guillemetBlue.svg');
+}
+
+
+@media screen and (max-width: 960px) {
+  .avis-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 80px;
+  }
+  .avis-block {
+  width: 90%;
+}
+
+.avis-block-top {
+  margin-bottom: 0px;
+}
+
+.avis-block-bot {
+  margin-top: 0px;
+}
+}
+
+.zoom-number{
+  padding: 5em 0;
 }
