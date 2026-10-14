@@ -778,7 +778,7 @@ body.no-animation .backgroundBrushType1::before {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 16px !important;
+  padding: 6px 8px !important;
   color: #000;
 }
 
