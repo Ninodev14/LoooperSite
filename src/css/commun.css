@@ -774,6 +774,23 @@ body.no-animation .backgroundBrushType1::before {
   font-size: 14px;
   color: #333;
 }
+.btn-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.btn-play .icon-play {
+  display: block;
+  transition: color 0.2s ease, transform 0.2s ease;
+  z-index: 1;
+}
+
+.btn-play:hover{
+  color: #fff;
+}
+
 
 .btn-project {
   position: relative;

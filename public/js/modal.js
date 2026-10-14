@@ -68,8 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.btn-modal').forEach(btn => {
         btn.addEventListener('click', e => {
-            e.preventDefault();
             const target = btn.getAttribute('data-modal') || btn.getAttribute('href');
+
+            if (!target || !(btn.hasAttribute('data-modal') || target.startsWith('#'))) return;
+
+            e.preventDefault();
             openModal(target, btn);
         });
     });
@@ -78,11 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.addEventListener('click', () => closeModal(btn.closest('.modal')));
     });
 
-    // Clic sur l'overlay (fond)
     allModals.forEach(modal => {
         modal.addEventListener('click', e => {
             const container = modal.querySelector('.modal-container');
-            // Si on clique sur le fond (modal) et pas sur le contenu (container)
             if (container && !container.contains(e.target)) {
                 closeModal(modal);
             }
