@@ -584,6 +584,7 @@ body.no-animation .backgroundBrushType1::before {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  margin-right: 0.4rem;
 }
 
 .external-icon {

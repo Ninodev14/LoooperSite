@@ -60,8 +60,8 @@ a {
 }
 
 a {
-  display: inline-block;
-  margin-top: 1.5rem;
+  display: inline;
+  margin-inline-start: 0.25em;
 }
 
 input,
