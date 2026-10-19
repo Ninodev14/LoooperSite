@@ -11,7 +11,7 @@ const slides = [
         chapitre: "Chapitre II",
         title: "La réflexion",
         img: "/svg/book/bulle.svg",
-        alt: "bulle de réfléxion",
+        alt: "Bulle de réflexion",
         text: "À partir de vos idées, nous imaginons <b>un scénario ludique et interactif</b> pensé pour s'intégrer parfaitement à <b>votre volonté</b> et à <b>votre public</b>.",
         color: "purple"
     },
@@ -19,7 +19,7 @@ const slides = [
         chapitre: "Chapitre III",
         title: "La création",
         img: "/svg/book/ampoule.svg",
-        alt: "Image d'ampoulle",
+        alt: "Ampoule d'idée",
         text: "Après validation, nous passons à <b>la production des éléments</b> : graphismes, développement, narration, chaque élément prend vie dans <b>un planning clair et transparent.</b>",
         color: "blue"
     },
@@ -27,13 +27,13 @@ const slides = [
         chapitre: "Chapitre IV",
         title: "Les tests",
         img: "/svg/book/list.svg",
-        alt: "Une cecklist",
+        alt: "Checklist",
         text: "Tout au long du processus, nous <b>testons</b> ensemble l'expérience afin de garantir <b>qualité, fluidité et adéquation avec vos attentes</b>.",
         color: "orange"
     },
     {
         chapitre: "Chapitre V",
-        title: "La livraison",
+        title: "Livraison du produit",
         img: "/svg/book/livraison.svg",
         alt: "Livraison",
         text: "Le projet final vous est livré <b>prêt à l'emploi</b>. Et parce qu'on ne s'arrête pas là, nous vous accompagnons aussi dans <b>son déploiement</b> pour en assurer le succès.",

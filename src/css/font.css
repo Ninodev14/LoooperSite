@@ -59,6 +59,11 @@ a {
   color: #fff;
 }
 
+a {
+  display: inline-block;
+  margin-top: 1.5rem;
+}
+
 input,
 textarea,
 .dropdown-toggle {
