@@ -15,18 +15,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (triggerElement) {
                 modal.dataset.triggerId = triggerElement.id || "";
+            }
 
+            // Pas de clic (lien direct) → on retrouve le bouton de la carte associée
+            const colorTrigger = triggerElement ||
+                document.querySelector(`.btn-modal[data-modal="${cleanId}"], .btn-modal[href="#${cleanId}"]`);
+
+            if (colorTrigger) {
                 const colorSource =
-                    triggerElement.closest('[class*="-blue"], [class*="-purple"], [class*="-orange"]') ||
-                    triggerElement.closest('article, .swiper-slide')?.querySelector('.highlight-no-annim');
+                    colorTrigger.closest('[class*="-blue"], [class*="-purple"], [class*="-orange"]') ||
+                    colorTrigger.closest('article, .swiper-slide')?.querySelector('.highlight-no-annim');
 
                 const modalContainer = modal.querySelector('.modal-container');
                 const highlights = modal.querySelectorAll('.highlight-no-annim');
 
                 if (modalContainer) {
-                    COLOR_CLASSES.forEach(c => {
-                        modalContainer.classList.remove(`modal-${c}`);
-                    });
+                    COLOR_CLASSES.forEach(c => modalContainer.classList.remove(`modal-${c}`));
 
                     if (colorSource) {
                         const colorClass = COLOR_CLASSES.find(c =>
@@ -34,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         );
                         if (colorClass) {
                             modalContainer.classList.add(`modal-${colorClass}`);
-
                             highlights.forEach(h => {
                                 COLOR_CLASSES.forEach(c => h.classList.remove(c));
                                 h.classList.add(colorClass);
@@ -64,7 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (trigger) trigger.focus();
         }
     }
-
 
     document.querySelectorAll('.btn-modal').forEach(btn => {
         btn.addEventListener('click', e => {
@@ -109,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     targetElement.scrollIntoView({ behavior: 'smooth' });
                     targetElement.focus();
-                }, 300); 
+                }, 300);
             }
         });
     });
@@ -128,6 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    window.addEventListener('DOMContentLoaded', handleHash);
+    // On est déjà dans DOMContentLoaded : appel direct
+    handleHash();
     window.addEventListener('hashchange', handleHash);
 });
