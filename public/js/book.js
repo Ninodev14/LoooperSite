@@ -3,7 +3,7 @@ const slides = [
         chapitre: "Chapitre I",
         title: "La rencontre",
         img: "/svg/book/table.svg",
-        alt: "4 personnes assises",
+        alt: "quatre personnes assises autour d'une table pour un échange",
         text: "Tout commence par <b>un moment d'échange</b>. On prend le temps d'écouter <b>vos besoins</b>, <b>vos envies</b> et <b>vos objectifs</b> afin de poser les bases <b>d'un concept sur mesure</b>.",
         color: "orange"
     },
@@ -35,7 +35,7 @@ const slides = [
         chapitre: "Chapitre V",
         title: "Livraison du produit",
         img: "/svg/book/livraison.svg",
-        alt: "Livraison",
+        alt: "Illustration représentant la livraison d'un projet",
         text: "Le projet final vous est livré <b>prêt à l'emploi</b>. Et parce qu'on ne s'arrête pas là, nous vous accompagnons aussi dans <b>son déploiement</b> pour en assurer le succès.",
         color: "purple"
     }
