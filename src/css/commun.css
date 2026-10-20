@@ -271,7 +271,6 @@ body {
   background-repeat: no-repeat;
 }
 @media (max-width: 490px) {
-
   .backgroundBrushType3::after {
     top: 0%;
     bottom: 0%;
@@ -791,14 +790,15 @@ body.no-animation .backgroundBrushType1::before {
 
 .btn-play .icon-play {
   display: block;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
   z-index: 1;
 }
 
-.btn-play:hover{
+.btn-play:hover {
   color: #fff;
 }
-
 
 .btn-project {
   position: relative;
@@ -1555,10 +1555,9 @@ body.no-animation .backgroundBrushType1::before {
   gap: 2rem;
 }
 
-.modal-container-btn{
+.modal-container-btn {
   display: flex;
   gap: 1rem;
-  
 }
 
 .modal-container-project-info .text-paragraph-emojie img {
@@ -2051,6 +2050,7 @@ input[type='checkbox']::after {
 .contact-mail a:hover {
   opacity: 0.85;
 }
+
 /* Long Card */
 
 .long-card {
@@ -2099,6 +2099,71 @@ input[type='checkbox']::after {
 
 .long-card-text-content p {
   padding-right: 20%;
+}
+
+@media screen and (min-width: 1101px) {
+  .alternative-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem 3rem;
+    align-items: stretch;
+  }
+
+  .alternative-card > h2,
+  .alternative-card > .small-medium-spacing {
+    grid-column: 1 / -1;
+  }
+
+  .alternative-card > .small-medium-spacing {
+    margin-top: 2rem;
+  }
+
+  .alternative-card > .small-spacing {
+    display: none;
+  }
+
+
+  .alternative-card .long-card-wrapper {
+    gap: 0;
+    height: 100%;
+  }
+
+  .alternative-card .long-card {
+    width: 100%;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .alternative-card .long-card > img {
+    width: 34%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .alternative-card .long-card-text-content {
+    margin-left: 0;
+    padding: 1.2rem 1.4rem;
+    gap: 0.8rem;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .alternative-card .long-card-text-content .h2 {
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+
+  .alternative-card .long-card-text-content p {
+    width: 100%;
+    padding-right: 0;
+    font-size: 0.95rem;
+  }
+
+  .alternative-card .btn-project {
+    padding: 4px 14px;
+    font-size: 0.85rem;
+    box-shadow: 0 4px 0 0 #000;
+  }
 }
 
 @media screen and (max-width: 850px) {
@@ -2302,11 +2367,9 @@ input[type='checkbox']::after {
   box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.35);
   font-family: Poppins, system-ui, sans-serif;
   font-size: 0.85rem;
-  /* On s'assure que l'animation reste sur son état final avec forwards */
   animation: lcb-slide-in 0.35s ease forwards;
 }
 
-/* Classe déclenchée par le JS pour la fermeture */
 #loooper-consent-banner.lcb-closing {
   animation: lcb-slide-out 0.25s ease forwards;
 }
@@ -2455,7 +2518,6 @@ input[type='checkbox']::after {
     transform: none;
   }
 }
-/* BACK TO TOP */
 .back-to-top {
   --btt-size: 48px;
 
@@ -2521,7 +2583,6 @@ input[type='checkbox']::after {
   transform: scale(0.92);
 }
 
-/* La flèche : 2 barres arrondies */
 .btt-arrow {
   position: relative;
   width: 22px;
@@ -2560,7 +2621,6 @@ input[type='checkbox']::after {
   }
 }
 
-/* Même inversion pour la navigation au clavier */
 .back-to-top:focus-visible {
   background: #fff;
   border-color: #000;
