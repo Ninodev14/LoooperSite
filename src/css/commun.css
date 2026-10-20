@@ -581,10 +581,16 @@ body.no-animation .backgroundBrushType1::before {
 }
 
 .external-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-right: 0.4rem;
+  display: inline;
+}
+
+.external-link svg,
+.external-link img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0.4rem;
+  width: 1em;
+  height: 1em;
 }
 
 .external-icon {
@@ -1547,6 +1553,12 @@ body.no-animation .backgroundBrushType1::before {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.modal-container-btn{
+  display: flex;
+  gap: 1rem;
+  
 }
 
 .modal-container-project-info .text-paragraph-emojie img {
