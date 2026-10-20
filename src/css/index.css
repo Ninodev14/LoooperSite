@@ -653,12 +653,10 @@
 
 .zoom-number{
   padding: 5em 0;
-}/* Tape-chiffre : caché par défaut.
+}
 
 
-/* Tape-chiffre : caché par défaut.
-   Bouton ludique inversé => actif quand ludique-active est ABSENT.
-   (si tu veux l'inverse : remplace body:not(.ludique-active) par body.ludique-active) */
+
 .numhunt-bar {
   display: none;
   width: 100%;
@@ -674,10 +672,6 @@ body:not(.ludique-active) .numhunt-bar {
 
 .numhunt-stats {
   margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px 56px;
   color: #000;
   font-size: 1.3rem;
   letter-spacing: 0.02em;
@@ -701,7 +695,99 @@ body:not(.ludique-active) .numhunt-bar {
   text-align: center;
 }
 
-/* Pendant la partie, les cartes deviennent des cibles */
+.numhunt-hud {
+  display: none;
+  position: fixed;
+  top: 110px;
+  left: 24px;
+  z-index: 9999;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 210px;
+  padding: 14px 18px 16px;
+  border: 4px solid #000;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 8px 0 0 #bb6ef6;
+  color: #000;
+  pointer-events: none;
+  animation: hudIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+body:has(.number-container.playing) .numhunt-hud {
+  display: flex;
+}
+
+.numhunt-hud-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.numhunt-hud-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.numhunt-hud-label {
+  font-family: 'Titan One';
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 100;
+  line-height: normal;
+  text-transform: uppercase;
+  color: #000;
+}
+
+.numhunt-hud-cell b {
+  color: #f6b254;
+  font-size: 2.4rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  -webkit-text-stroke: 1px #000;
+    font-family: 'Titan One';
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 100;
+  line-height: normal;
+}
+
+.numhunt-hud-track {
+  height: 12px;
+  overflow: hidden;
+  border: 3px solid #000;
+  border-radius: 999px;
+  background: #f1e6fd;
+}
+
+.numhunt-hud-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  background: #3c61f5;
+  transform-origin: left center;
+  animation: hudTime 20s linear forwards, hudColor 20s linear forwards;
+}
+
+@keyframes hudIn {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes hudTime {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+
+@keyframes hudColor {
+  0% { background: #3c61f5; }
+  50% { background: #f6b254; }
+  100% { background: #e5484d; }
+}
+
 .number-container.playing {
   gap: 60px;
 }
@@ -736,7 +822,8 @@ body:not(.ludique-active) .numhunt-bar {
 }
 
 body.no-animation .number-item.hit,
-body.no-animation .number-item.miss {
+body.no-animation .number-item.miss,
+body.no-animation .numhunt-hud {
   animation: none;
 }
 
@@ -747,11 +834,27 @@ body.no-animation .number-item.miss {
   }
 
   .numhunt-stats {
-    gap: 10px 32px;
     font-size: 1.1rem;
   }
 
   .numhunt-stats b {
+    font-size: 1.8rem;
+  }
+
+  .numhunt-hud {
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 0;
+    width: calc(100% - 24px);
+    max-width: 340px;
+    padding: 10px 14px 12px;
+    border-width: 3px;
+    border-radius: 20px;
+    animation: none;
+  }
+
+  .numhunt-hud-cell b {
     font-size: 1.8rem;
   }
 

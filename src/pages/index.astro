@@ -104,7 +104,7 @@ import bullTalking from '/svg/pictoMiniCard/bullTalking.svg?raw';
           </div>
         </div>
 
-        <!-- Tape-chiffre : barre visible seulement quand le jeu est actif (CSS) -->
+        <!-- Bouton + record + message : visibles quand le jeu est actif -->
         <div class="numhunt-bar" id="numhunt-bar">
           <button
             type="button"
@@ -112,11 +112,7 @@ import bullTalking from '/svg/pictoMiniCard/bullTalking.svg?raw';
             class="text-typo btn-project btn-white-background">
             <span>Tape-chiffre !</span>
           </button>
-          <p class="numhunt-stats" aria-live="polite">
-            Score : <b id="numhunt-score">0</b> · Temps : <b id="numhunt-time">20</b>s · Record : <b
-              id="numhunt-best">0</b
-            >
-          </p>
+          <p class="numhunt-stats">Record <b id="numhunt-best">0</b></p>
           <p class="numhunt-msg" id="numhunt-msg" aria-live="polite">
             Clique sur le chiffre qui s’allume. Attention, une erreur = −1 !
           </p>
@@ -531,6 +527,20 @@ import bullTalking from '/svg/pictoMiniCard/bullTalking.svg?raw';
   </section>
 
   <div class="large-spacing"></div>
+
+  <div class="numhunt-hud" aria-live="polite">
+    <div class="numhunt-hud-row">
+      <div class="numhunt-hud-cell">
+        <span class="numhunt-hud-label">Score</span>
+        <b id="numhunt-score">0</b>
+      </div>
+      <div class="numhunt-hud-cell">
+        <span class="numhunt-hud-label">Temps</span>
+        <b><span id="numhunt-time">20</span>s</b>
+      </div>
+    </div>
+    <div class="numhunt-hud-track"><span class="numhunt-hud-fill"></span></div>
+  </div>
 
   <SaveSeamulator />
   <BikerAuGrandCoeur />
