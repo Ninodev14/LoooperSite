@@ -800,7 +800,7 @@ body.no-animation .backgroundBrushType1::before {
   color: #fff;
 }
 
-.btn-project {
+.btn-project{
   position: relative;
   overflow: hidden;
   height: fit-content;
@@ -2437,31 +2437,10 @@ input[type='checkbox']::after {
   flex-shrink: 0;
 }
 
-.lcb-btn {
-  padding: 0.5rem 1.1rem;
-  border: none;
-  border-radius: 7px;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 0.8rem;
-  font-weight: 600;
-  transition: opacity 0.15s;
+#lcb-refuse, #lcb-accept{
+font-size: 0.8rem;
 }
 
-.lcb-btn:hover {
-  opacity: 0.85;
-}
-
-.lcb-btn--primary {
-  background: #3c61f5;
-  color: #fff;
-}
-
-.lcb-btn--secondary {
-  background: transparent;
-  color: #fff;
-  border: 1.5px solid rgba(255, 255, 255, 0.4);
-}
 
 @media (max-width: 600px) {
   .lcb-inner {

@@ -3,6 +3,23 @@ const taille = 3;
 let positions = [];
 let estGagne = false;
 
+const DESCRIPTION_PHOTO =
+  "Photo de l'équipe Loooper! : Élodie, Nino et Julie";
+
+function majAlt() {
+  if (estGagne) {
+    puzzle.setAttribute("aria-label", DESCRIPTION_PHOTO);
+  } else {
+    puzzle.setAttribute(
+      "aria-label",
+      `Puzzle à reconstituer. La photo complète représente : ${DESCRIPTION_PHOTO}`
+    );
+  }
+}
+
+puzzle.setAttribute("role", "img");
+majAlt();
+
 function initPuzzle() {
   positions = [];
   estGagne = false;
@@ -18,6 +35,7 @@ function afficherPuzzle() {
   positions.forEach((pos, i) => {
     const div = document.createElement("div");
     div.classList.add("piece");
+    div.setAttribute("aria-hidden", "true");
     if (!estGagne) {
       div.classList.add("enCours");
     }
@@ -35,6 +53,7 @@ function afficherPuzzle() {
 
     puzzle.appendChild(div);
   });
+  majAlt();
 }
 
 function deplacer(i, div) {
@@ -42,10 +61,10 @@ function deplacer(i, div) {
 
   const vide = positions.indexOf(6);
 
-  const memeLigneGauche = (i === vide - 1 && Math.floor(i / taille) === Math.floor(vide / taille));
-  const memeLigneDroite = (i === vide + 1 && Math.floor(i / taille) === Math.floor(vide / taille));
-  const auDessus = (i === vide - taille);
-  const enDessous = (i === vide + taille);
+  const memeLigneGauche = i === vide - 1 && Math.floor(i / taille) === Math.floor(vide / taille);
+  const memeLigneDroite = i === vide + 1 && Math.floor(i / taille) === Math.floor(vide / taille);
+  const auDessus = i === vide - taille;
+  const enDessous = i === vide + taille;
 
   if (memeLigneGauche || memeLigneDroite || auDessus || enDessous) {
     const pieces = puzzle.querySelectorAll(".piece");
@@ -70,9 +89,8 @@ function verifierVictoire() {
   if (gagne) {
     estGagne = true;
     puzzle.classList.add("gagne");
-    const piecesEnCours = puzzle.querySelectorAll(".piece.enCours");
-    piecesEnCours.forEach(p => p.classList.remove("enCours"));
-
+    puzzle.querySelectorAll(".piece.enCours").forEach((p) => p.classList.remove("enCours"));
+    majAlt();
     lancerConfettis();
   }
 }
@@ -90,51 +108,42 @@ function lancerConfettis() {
       ticks: 400,
       origin: {
         x: Math.random(),
-        y: 0
+        y: 0,
       },
-      colors: ['#3C61F5', '#BB6EF6', '#F6B254']
+      colors: ["#3C61F5", "#BB6EF6", "#F6B254"],
     });
 
     if (Date.now() < end) requestAnimationFrame(frame);
   })();
 }
 
+function afficherResolu() {
+  positions = [];
+  for (let i = 0; i < taille * taille; i++) positions.push(i);
+  estGagne = true;
+  puzzle.classList.add("gagne");
+  afficherPuzzle();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const togglePuzzle = document.getElementById("toggleGame");
+  if (!togglePuzzle) return;
 
-  const savedMode = sessionStorage.getItem("ludiqueMode");
-
-
-  function updatePuzzleDisplay() {
+  togglePuzzle.addEventListener("change", () => {
     if (togglePuzzle.checked) {
-      positions = [];
-      for (let i = 0; i < taille * taille; i++) {
-        positions.push(i);
-      }
-      estGagne = true;
-      puzzle.classList.add("gagne");
-      afficherPuzzle();
+      afficherResolu();
     } else {
-      initPuzzle();
       puzzle.classList.remove("gagne");
+      initPuzzle();
     }
-  }
-
-
-  togglePuzzle.addEventListener("change", updatePuzzleDisplay);
-
-
+  });
 });
+
 window.addEventListener("ludiqueReady", () => {
-  let ludiqueMode = sessionStorage.getItem("ludiqueMode");
-  if (ludiqueMode === "on") {
-    positions = [];
-    for (let i = 0; i < taille * taille; i++) positions.push(i);
-    estGagne = true;
-    puzzle.classList.add("gagne");
-    afficherPuzzle();
+  if (sessionStorage.getItem("ludiqueMode") === "on") {
+    afficherResolu();
   } else {
-    initPuzzle();
     puzzle.classList.remove("gagne");
+    initPuzzle();
   }
 });

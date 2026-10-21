@@ -668,7 +668,6 @@ body:not(.ludique-active) .numhunt-bar {
   display: flex;
 }
 
-/* Bouton désactivé pendant toute la partie */
 #numhunt-start:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -796,7 +795,6 @@ body:has(.number-container.playing) .numhunt-hud {
   100% { background: #e5484d; }
 }
 
-/* Effet "bump" au clic : le chiffre gonfle puis rentre dans le trou */
 @keyframes numBump {
   0%   { transform: translateY(0) scale(1, 1); }
   35%  { transform: translateY(-10%) scale(1.3, 1.25); }
@@ -816,27 +814,30 @@ body:has(.number-container.playing) .numhunt-hud {
   gap: 34px;
   cursor: default;
   user-select: none;
+  isolation: isolate;
 }
 
 .number-container.playing .number-item.is-target {
   cursor: pointer;
 }
 
-/* ::before volontairement 2px plus grand que le trou de ::after :
-   le liseré d'antialiasing de ::after tombe sur du noir, plus sur du blanc */
+/* Fond noir : exactement la largeur du trou et le même haut,
+   il ne déborde que vers le BAS (2px) pour cacher le liseré du masque */
 .number-container.playing .number-item::before {
   content: "";
   position: absolute;
-  top: calc(var(--nh) - var(--hole-h) / 2 - 1px);
-  left: 50%;
+  top: calc(var(--nh) - var(--hole-h) / 2);
+  left: calc(50% - var(--hole-w) / 2);
   z-index: 0;
-  width: calc(var(--hole-w) + 2px);
+  width: var(--hole-w);
   height: calc(var(--hole-h) + 2px);
-  transform: translateX(-50%);
   border-radius: 50%;
   background: #000;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
+/* Masque blanc : trou transparent à la taille exacte (--hole-w / --hole-h) */
 .number-container.playing .number-item::after {
   content: "";
   position: absolute;
@@ -845,15 +846,15 @@ body:has(.number-container.playing) .numhunt-hud {
   right: -30px;
   z-index: 2;
   height: calc(var(--nh) * 1.5 + 1px);
-  background:
-    radial-gradient(
-      ellipse calc(var(--hole-w) / 2) calc(var(--hole-h) / 2) at 50% 1px,
-      #000 0%,
-      #000 99%,
-      transparent 100%
-    ) 50% 0 / var(--hole-w) calc(var(--hole-h) / 2 + 1px) no-repeat,
-    #fff;
+  background: radial-gradient(
+    ellipse calc(var(--hole-w) / 2) calc(var(--hole-h) / 2) at 50% 1px,
+    transparent 0,
+    transparent 99%,
+    #fff 100%
+  );
   pointer-events: none;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .number-container.playing .number-value {
@@ -862,6 +863,8 @@ body:has(.number-container.playing) .numhunt-hud {
   clip-path: inset(-100% -100% 0 -100%);
   transform: translateY(130%) scale(1, 0.85);
   transform-origin: 50% 100%;
+  will-change: transform;
+  backface-visibility: hidden;
   transition:
     transform 0.28s cubic-bezier(0.55, 0, 0.9, 0.4),
     color 0.15s ease;

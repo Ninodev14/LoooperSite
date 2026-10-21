@@ -62,8 +62,8 @@
       '   <a href="/mentions-legales#cookies" class="lcb-link">En savoir plus</a>',
       '  </div>',
       '  <div class="lcb-actions">',
-      '    <button id="lcb-refuse" class="lcb-btn lcb-btn--secondary">Refuser</button>',
-      '    <button id="lcb-accept" class="lcb-btn lcb-btn--primary">Accepter</button>',
+      '    <button id="lcb-refuse" class="btn-project text-typo"><span>Refuser</span></button>',
+      '    <button id="lcb-accept" class="btn-project text-typo"><span>Accepter</span></button>',
       '  </div>',
       '</div>',
     ].join('');
