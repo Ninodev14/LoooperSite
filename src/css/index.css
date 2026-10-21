@@ -977,3 +977,101 @@ body.no-animation .number-container.playing .number-value {
     gap: 50px;
   }
 }
+
+.number-item:focus-visible,
+.number-container:focus-visible {
+  outline: 3px solid #3c61f5;
+  outline-offset: 4px;
+}
+
+.numhunt-keys {
+  margin-top: 12px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.numhunt-keys summary {
+  display: block;
+  list-style: none;
+  cursor: pointer;
+  color: black;
+  font-family: 'Titan One';
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 100;
+  line-height: normal;
+  text-align: center;
+}
+
+.numhunt-keys summary::-webkit-details-marker {
+  display: none;
+}
+
+.numhunt-keys summary::marker {
+  content: "";
+}
+
+/* triangle arrondi, en ligne avec le texte */
+.numhunt-keys summary::before {
+  content: "";
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.6rem;
+  vertical-align: -0.05em;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 3 L12.5 8 L4 13 Z' fill='black' stroke='black' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  transition: transform 0.2s ease;
+}
+
+.numhunt-keys[open] summary::before {
+  transform: rotate(90deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .numhunt-keys summary::before {
+    transition: none;
+  }
+}
+
+.numhunt-keys summary:focus-visible {
+  outline: 3px solid #3c61f5;
+  outline-offset: 4px;
+}
+
+.numhunt-keys-content {
+  margin-top: 8px;
+  padding: 12px 16px;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 16px;
+}
+
+.numhunt-keys-content p,
+.numhunt-keys-content li {
+  color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.3rem;
+  text-underline-offset: 0.3rem;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 100;
+}
+
+.numhunt-keys kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 1px 6px;
+  text-align: center;
+  color: black;
+  font-family: Poppins;
+  font-size: 0.85rem;
+  font-weight: bold;
+  line-height: 1.3rem;
+  background: #f1f1f1;
+  border: 2px solid #000;
+  border-bottom-width: 4px;
+  border-radius: 6px;
+}
