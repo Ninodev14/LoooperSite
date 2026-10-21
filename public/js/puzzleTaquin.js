@@ -13,15 +13,15 @@ const DESCRIPTION_PHOTO =
   "À droite, Nino aux cheveux longs attachés, avec des lunettes et une barbe, un t-shirt noir et un pantalon beige.";
 
 const CONTENU = [
-  "mur en pierre et feuillage, avec le visage de la personne aux longues tresses, lunettes et grand sourire",
-  "feuillage vert, avec le visage de la personne aux cheveux courts châtains et aux lunettes",
-  "feuillage et mur en pierre, avec le visage de l'homme aux cheveux longs attachés, lunettes et barbe",
-  "buste de la personne aux tresses : chemise noire aux manches ajourées, collier avec un pendentif doré, bras croisés, haut du jean clair",
-  "buste de la personne en chemise blanche, mains dans les poches, haut du jean bleu foncé",
-  "buste de l'homme : t-shirt noir avec un petit écusson rouge et blanc sur la poche, bras le long du corps, haut du pantalon beige",
+  "mur en pierre et feuillage, avec le visage de Julie la personne aux longues tresses, lunettes et grand sourire",
+  "feuillage vert, avec le visage de elodie la personne aux cheveux courts châtains et aux lunettes",
+  "feuillage et mur en pierre, avec le visage de Nino la personne cheveux longs attachés, lunettes et barbe",
+  "buste de Julie : chemise noire aux manches ajourées, collier avec un pendentif doré, bras croisés, haut du jean clair",
+  "buste d'élodie en chemise blanche, mains dans les poches, haut du jean bleu foncé",
+  "buste de Nino : t-shirt noir avec un petit écusson rouge et blanc sur la poche, bras le long du corps, haut du pantalon beige",
   "",
-  "jambes de la personne au jean large bleu foncé, avec des plantes et du gravier au sol",
-  "jambes de l'homme en pantalon beige avec ses chaussures, un poteau en bois à droite, des plantes et du gravier",
+  "jambes d'élodie au jean large bleu foncé, avec des plantes et du gravier au sol",
+  "jambes de Nino en pantalon beige avec ses chaussures, un poteau en bois à droite, des plantes et du gravier",
 ];
 
 const LIEUX = [
@@ -43,7 +43,6 @@ const DIRECTIONS = {
   bas: "vers le bas",
 };
 
-// Zones sr-only : consignes + annonces vocales
 const aide = document.createElement("p");
 aide.id = "puzzle-aide";
 aide.className = "sr-only";
@@ -76,7 +75,6 @@ function voisinsDe(i) {
   return v;
 }
 
-// direction dans laquelle la pièce i se déplacerait (ou null si bloquée)
 function directionPiece(i, vide) {
   if (!voisinsDe(vide).includes(i)) return null;
   if (i === vide - 1) return "droite";
@@ -124,7 +122,6 @@ function melanger() {
   positions = Array.from({ length: taille * taille }, (_, i) => i);
   let vide = CASE_VIDE;
   let prev = -1;
-  // on mélange avec de vrais coups : le puzzle est toujours résolvable
   for (let n = 0; n < 150; n++) {
     const voisins = voisinsDe(vide).filter((v) => v !== prev);
     const v = voisins[Math.floor(Math.random() * voisins.length)];
@@ -260,7 +257,6 @@ function afficherResolu() {
   afficherPuzzle();
 }
 
-// Clavier : flèches = direction dans laquelle la pièce bouge, I = état
 puzzle.addEventListener("keydown", (e) => {
   if (estGagne) return;
 
