@@ -2,39 +2,48 @@ const body = document.body;
 const menuHandicap = document.getElementById("accessibility-menu");
 const menuLudique = document.getElementById("ludique-menue");
 const btnHandicap = document.getElementById("accessibility-btn");
+const btnHandicapEquipe = document.getElementById("accecibility-btn-equipe");
 const btnLudique = document.getElementById("ludique-btn");
 const toggleGame = document.getElementById("toggleGame");
 const zoomDisplay = document.getElementById("zoom-level");
 
+// Tous les boutons qui ouvrent le menu accessibilité
+const btnsHandicap = [btnHandicap, btnHandicapEquipe].filter(Boolean);
+
 let zoomLevel = parseFloat(localStorage.getItem("zoom")) || 1;
 
+function setHandicapState(open) {
+  if (!menuHandicap) return;
+  menuHandicap.style.display = open ? "flex" : "none";
+  btnsHandicap.forEach((b) => b.setAttribute("aria-expanded", String(open)));
+  if (btnHandicap) btnHandicap.classList.toggle("filtre-activ", open);
+}
+
 // --- Boutons d’ouverture de menus
-if (btnHandicap) {
-  btnHandicap.addEventListener("click", () => {
+btnsHandicap.forEach((btn) => {
+  btn.setAttribute("aria-controls", "accessibility-menu");
+  btn.setAttribute("aria-expanded", "false");
+
+  btn.addEventListener("click", () => {
     const isVisible = menuHandicap.style.display === "flex";
-    menuHandicap.style.display = isVisible ? "none" : "flex";
+    setHandicapState(!isVisible);
 
-    if (!isVisible && menuLudique) menuLudique.style.display = "none";
-
-    if (!isVisible) {
-      btnHandicap.classList.add("filtre-activ");
+    if (!isVisible && menuLudique) {
+      menuLudique.style.display = "none";
       if (btnLudique) btnLudique.classList.remove("filtre-activ");
-    } else {
-      btnHandicap.classList.remove("filtre-activ");
     }
   });
-}
+});
 
 if (btnLudique) {
   btnLudique.addEventListener("click", () => {
     const isVisible = menuLudique.style.display === "flex";
     menuLudique.style.display = isVisible ? "none" : "flex";
 
-    if (!isVisible && menuHandicap) menuHandicap.style.display = "none";
+    if (!isVisible && menuHandicap) setHandicapState(false);
 
     if (!isVisible) {
       btnLudique.classList.add("filtre-activ");
-      if (btnHandicap) btnHandicap.classList.remove("filtre-activ");
     } else {
       btnLudique.classList.remove("filtre-activ");
     }
@@ -46,13 +55,12 @@ document.addEventListener("click", (e) => {
     menuHandicap && menuHandicap.contains(e.target);
   const isClickInsideLudique =
     menuLudique && menuLudique.contains(e.target);
-  const isBtnHandicap = btnHandicap && btnHandicap.contains(e.target);
+  const isBtnHandicap = btnsHandicap.some((b) => b.contains(e.target));
   const isBtnLudique = btnLudique && btnLudique.contains(e.target);
 
   if (!isClickInsideHandicap && !isClickInsideLudique && !isBtnHandicap && !isBtnLudique) {
-    if (menuHandicap) menuHandicap.style.display = "none";
+    if (menuHandicap) setHandicapState(false);
     if (menuLudique) menuLudique.style.display = "none";
-    btnHandicap.classList.remove("filtre-activ");
     if (btnLudique) btnLudique.classList.remove("filtre-activ");
   }
 });
@@ -299,7 +307,6 @@ function toggleAnimations() {
     body.classList.remove("no-animation");
     localStorage.removeItem("noAnimation");
   }
-  console.log("zdz");
 }
 
 window.addEventListener("load", () => {

@@ -525,8 +525,23 @@
   text-align: center;
 }
 
-.text-basical-container-img-accecibility .handicap-img {
+.text-basical-container-img-accecibility button {
   margin-top: 1rem;
+  width: fit-content;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.text-basical-container-img-accecibility .handicap-img {
   width: 8rem;
   height: auto;
 }
@@ -557,5 +572,6 @@
     width: 50vw;
   }
   .text-basical-container-img-accecibility .handicap-arrow {
- width: 100%;
-}}
+    width: 100%;
+  }
+}
