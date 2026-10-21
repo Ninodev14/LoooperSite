@@ -668,6 +668,14 @@ body:not(.ludique-active) .numhunt-bar {
   display: flex;
 }
 
+/* Bouton désactivé pendant toute la partie */
+#numhunt-start:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(0.4);
+}
+
 .numhunt-stats {
   margin: 0;
   color: #000;
@@ -697,10 +705,12 @@ body:not(.ludique-active) .numhunt-bar {
   display: none;
   position: fixed;
   top: 110px;
-  left: 24px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 9999;
   flex-direction: column;
   gap: 12px;
+  width: max-content;
   min-width: 210px;
   padding: 14px 18px 16px;
   border: 4px solid #000;
@@ -771,8 +781,8 @@ body:has(.number-container.playing) .numhunt-hud {
 }
 
 @keyframes hudIn {
-  from { opacity: 0; transform: translateX(-30px); }
-  to { opacity: 1; transform: translateX(0); }
+  from { opacity: 0; transform: translateX(-50%) translateY(-30px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 @keyframes hudTime {
@@ -786,50 +796,62 @@ body:has(.number-container.playing) .numhunt-hud {
   100% { background: #e5484d; }
 }
 
+/* Effet "bump" au clic : le chiffre gonfle puis rentre dans le trou */
+@keyframes numBump {
+  0%   { transform: translateY(0) scale(1, 1); }
+  35%  { transform: translateY(-10%) scale(1.3, 1.25); }
+  100% { transform: translateY(130%) scale(1, 0.85); }
+}
+
 
 .number-container.playing {
   gap: 60px;
-  --nh: 6rem;   
-  --hole-w: 14rem;  
-  --hole-h: 3rem;   
+  --nh: 6rem;
+  --hole-w: 15rem;
+  --hole-h: 3rem;
 }
 
 .number-container.playing .number-item {
   position: relative;
   gap: 34px;
-  cursor: pointer;
+  cursor: default;
   user-select: none;
 }
 
+.number-container.playing .number-item.is-target {
+  cursor: pointer;
+}
+
+/* ::before volontairement 2px plus grand que le trou de ::after :
+   le liseré d'antialiasing de ::after tombe sur du noir, plus sur du blanc */
 .number-container.playing .number-item::before {
   content: "";
   position: absolute;
-  top: calc(var(--nh) - var(--hole-h) / 2);
+  top: calc(var(--nh) - var(--hole-h) / 2 - 1px);
   left: 50%;
   z-index: 0;
-  width: var(--hole-w);
-  height: var(--hole-h);
+  width: calc(var(--hole-w) + 2px);
+  height: calc(var(--hole-h) + 2px);
   transform: translateX(-50%);
   border-radius: 50%;
-  background: radial-gradient(ellipse at 50% 35%, #000 0%, #14091f 70%, #2a1d40 100%);
+  background: #000;
 }
 
 .number-container.playing .number-item::after {
   content: "";
   position: absolute;
-  top: var(--nh);
+  top: calc(var(--nh) - 1px);
   left: -30px;
   right: -30px;
   z-index: 2;
-  height: calc(var(--nh) * 1.5);
+  height: calc(var(--nh) * 1.5 + 1px);
   background:
     radial-gradient(
-      ellipse calc(var(--hole-w) / 2) calc(var(--hole-h) / 2) at 50% 0,
+      ellipse calc(var(--hole-w) / 2) calc(var(--hole-h) / 2) at 50% 1px,
       #000 0%,
-      #14091f 75%,
-      #2a1d40 99%,
+      #000 99%,
       transparent 100%
-    ) 50% 0 / var(--hole-w) calc(var(--hole-h) / 2) no-repeat,
+    ) 50% 0 / var(--hole-w) calc(var(--hole-h) / 2 + 1px) no-repeat,
     #fff;
   pointer-events: none;
 }
@@ -865,6 +887,7 @@ body:has(.number-container.playing) .numhunt-hud {
 
 .number-container.playing .number-item.hit .number-value {
   color: #2fb457;
+  animation: numBump 0.3s ease-out;
 }
 
 body.no-animation .numhunt-hud {
@@ -873,6 +896,7 @@ body.no-animation .numhunt-hud {
 
 body.no-animation .number-container.playing .number-value {
   transition: none;
+  animation: none !important;
 }
 
 @media screen and (max-width: 960px) {
@@ -890,20 +914,23 @@ body.no-animation .number-container.playing .number-value {
   }
 
   .numhunt-hud {
-    top: 80px;
-    left: 50%;
-    transform: translateX(-50%);
-    min-width: 0;
-    width: calc(100% - 24px);
-    max-width: 340px;
-    padding: 10px 14px 12px;
+    top: 70px;
+    gap: 8px;
+    min-width: 150px;
+    padding: 8px 12px 10px;
     border-width: 3px;
-    border-radius: 20px;
+    border-radius: 16px;
+    box-shadow: 0 5px 0 0 #bb6ef6;
     animation: none;
   }
 
-  .numhunt-hud-cell b {
-    font-size: 1.8rem;
+  .numhunt-hud-row {
+    gap: 20px;
+  }
+
+  .numhunt-hud-track {
+    height: 9px;
+    border-width: 2px;
   }
 
   .number-container.playing {

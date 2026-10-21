@@ -41,18 +41,24 @@
     setTimeout(() => item.classList.remove("hit"), 300);
   }
 
-  function nextTarget() {
+  function nextTarget(wasHit = false) {
     clearTimeout(targetTimer);
     if (!running) return;
 
-    if (target) {
-      target.classList.remove("is-target");
-      leaving = target;
+    const prev = target;
+    if (prev) {
+      prev.classList.remove("is-target");
       clearTimeout(leavingTimer);
-      leavingTimer = setTimeout(() => { leaving = null; }, RETRACT_MS);
+      if (wasHit) {
+        // déjà cliqué : plus de point possible dessus
+        leaving = null;
+      } else {
+        leaving = prev;
+        leavingTimer = setTimeout(() => { leaving = null; }, RETRACT_MS);
+      }
     }
 
-    const others = items.filter((i) => i !== target);
+    const others = items.filter((i) => i !== prev);
     target = others[Math.floor(Math.random() * others.length)];
     target.classList.add("is-target");
 
@@ -67,16 +73,15 @@
       score++;
       scoreEl.textContent = score;
       flashHit(item);
-      nextTarget();
+      nextTarget(true);
     } else if (item === leaving) {
+      // petite tolérance si le chiffre vient juste de partir (1 seul clic)
       score++;
       scoreEl.textContent = score;
       flashHit(item);
       leaving = null;
-    } else {
-      score = Math.max(0, score - 1);
-      scoreEl.textContent = score;
     }
+    // sinon : trou vide, il ne se passe rien (pas de malus)
   }
 
   function setInteractive(on) {
