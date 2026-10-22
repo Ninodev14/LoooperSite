@@ -23,7 +23,13 @@
 .modal::after {
   content: '';
   display: block;
-  flex: 1 0 40px;
+  flex: 1 0 0px;
+}
+
+.modal::after {
+  content: '';
+  display: block;
+  flex: 1 0 24px;
 }
 
 .modal-header {
@@ -321,4 +327,9 @@
     flex-direction: column;
     text-align: center;
   }
+  .modal::before,
+.modal::after {
+
+  flex: 1 0 2rem;
+}
 }
