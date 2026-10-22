@@ -1,199 +1,285 @@
 const body = document.body;
-const menuHandicap = document.getElementById("accessibility-menu");
-const menuLudique = document.getElementById("ludique-menue");
-const btnHandicap = document.getElementById("accessibility-btn");
-const btnHandicapEquipe = document.getElementById("accecibility-btn-equipe");
-const btnLudique = document.getElementById("ludique-btn");
-const toggleGame = document.getElementById("toggleGame");
-const zoomDisplay = document.getElementById("zoom-level");
+const menuHandicap = document.getElementById('accessibility-menu');
+const menuLudique = document.getElementById('ludique-menue');
+const btnHandicap = document.getElementById('accessibility-btn');
+const btnHandicapEquipe = document.getElementById('accecibility-btn-equipe');
+const btnLudique = document.getElementById('ludique-btn');
+const toggleGame = document.getElementById('toggleGame');
+const zoomDisplay = document.getElementById('zoom-level');
 
 // Tous les boutons qui ouvrent le menu accessibilité
 const btnsHandicap = [btnHandicap, btnHandicapEquipe].filter(Boolean);
 
-let zoomLevel = parseFloat(localStorage.getItem("zoom")) || 1;
+let zoomLevel = parseFloat(localStorage.getItem('zoom')) || 1;
+// --- Couper le son du site
+let siteMuted = localStorage.getItem('mute') === 'on';
+const audioContexts = new Set();
+const originalMuted = new WeakMap();
+
+// Chaque AudioContext passe par un gain maître (0 = coupé, rien ne se rejoue après)
+const NativeAudioContext = window.AudioContext || window.webkitAudioContext;
+if (NativeAudioContext) {
+  const PatchedAudioContext = class extends NativeAudioContext {
+    constructor(...args) {
+      super(...args);
+      const realDestination = this.destination;
+      const master = this.createGain();
+      master.gain.value = siteMuted ? 0 : 1;
+      master.connect(realDestination);
+      Object.defineProperty(this, 'destination', { value: master, configurable: true });
+      this._masterGain = master;
+      audioContexts.add(this);
+    }
+  };
+  window.AudioContext = PatchedAudioContext;
+  window.webkitAudioContext = PatchedAudioContext;
+}
+
+// Tout média qui démarre pendant le mute est muet (inclut new Audio())
+const nativePlay = HTMLMediaElement.prototype.play;
+HTMLMediaElement.prototype.play = function () {
+  if (siteMuted) {
+    if (!originalMuted.has(this)) originalMuted.set(this, this.muted);
+    this.muted = true;
+  }
+  return nativePlay.apply(this, arguments);
+};
+
+// Empêche le site de réactiver le son d'un média pendant le mute
+document.addEventListener(
+  'volumechange',
+  (e) => {
+    if (siteMuted && e.target instanceof HTMLMediaElement && !e.target.muted) {
+      e.target.muted = true;
+    }
+  },
+  true,
+);
+
+function muteMediaElement(m) {
+  if (!originalMuted.has(m)) originalMuted.set(m, m.muted);
+  m.muted = true;
+}
+
+// Médias ajoutés plus tard dans le DOM
+new MutationObserver(() => {
+  if (siteMuted) document.querySelectorAll('audio, video').forEach(muteMediaElement);
+}).observe(document.documentElement, { childList: true, subtree: true });
+
+function applyMute(muted) {
+  siteMuted = muted;
+
+  document.querySelectorAll('audio, video').forEach((m) => {
+    if (muted) {
+      muteMediaElement(m);
+    } else if (originalMuted.has(m)) {
+      m.muted = originalMuted.get(m);
+      originalMuted.delete(m);
+    }
+  });
+
+  audioContexts.forEach((ctx) => {
+    if (ctx._masterGain) ctx._masterGain.gain.value = muted ? 0 : 1;
+  });
+
+  body.classList.toggle('site-muted', muted);
+}
+
+applyMute(siteMuted);
+
+function toggleMute() {
+  const chk = document.getElementById('chkMute');
+  const muted = chk ? chk.checked : !siteMuted;
+  applyMute(muted);
+  muted ? localStorage.setItem('mute', 'on') : localStorage.removeItem('mute');
+}
 
 function setHandicapState(open) {
   if (!menuHandicap) return;
-  menuHandicap.style.display = open ? "flex" : "none";
-  btnsHandicap.forEach((b) => b.setAttribute("aria-expanded", String(open)));
-  if (btnHandicap) btnHandicap.classList.toggle("filtre-activ", open);
+  menuHandicap.style.display = open ? 'flex' : 'none';
+  btnsHandicap.forEach((b) => b.setAttribute('aria-expanded', String(open)));
+  if (btnHandicap) btnHandicap.classList.toggle('filtre-activ', open);
 }
 
 // --- Boutons d’ouverture de menus
 btnsHandicap.forEach((btn) => {
-  btn.setAttribute("aria-controls", "accessibility-menu");
-  btn.setAttribute("aria-expanded", "false");
+  btn.setAttribute('aria-controls', 'accessibility-menu');
+  btn.setAttribute('aria-expanded', 'false');
 
-  btn.addEventListener("click", () => {
-    const isVisible = menuHandicap.style.display === "flex";
+  btn.addEventListener('click', () => {
+    const isVisible = menuHandicap.style.display === 'flex';
     setHandicapState(!isVisible);
 
     if (!isVisible && menuLudique) {
-      menuLudique.style.display = "none";
-      if (btnLudique) btnLudique.classList.remove("filtre-activ");
+      menuLudique.style.display = 'none';
+      if (btnLudique) btnLudique.classList.remove('filtre-activ');
     }
   });
 });
 
 if (btnLudique) {
-  btnLudique.addEventListener("click", () => {
-    const isVisible = menuLudique.style.display === "flex";
-    menuLudique.style.display = isVisible ? "none" : "flex";
+  btnLudique.addEventListener('click', () => {
+    const isVisible = menuLudique.style.display === 'flex';
+    menuLudique.style.display = isVisible ? 'none' : 'flex';
 
     if (!isVisible && menuHandicap) setHandicapState(false);
 
     if (!isVisible) {
-      btnLudique.classList.add("filtre-activ");
+      btnLudique.classList.add('filtre-activ');
     } else {
-      btnLudique.classList.remove("filtre-activ");
+      btnLudique.classList.remove('filtre-activ');
     }
   });
 }
 
-document.addEventListener("click", (e) => {
-  const isClickInsideHandicap =
-    menuHandicap && menuHandicap.contains(e.target);
-  const isClickInsideLudique =
-    menuLudique && menuLudique.contains(e.target);
+document.addEventListener('click', (e) => {
+  const isClickInsideHandicap = menuHandicap && menuHandicap.contains(e.target);
+  const isClickInsideLudique = menuLudique && menuLudique.contains(e.target);
   const isBtnHandicap = btnsHandicap.some((b) => b.contains(e.target));
   const isBtnLudique = btnLudique && btnLudique.contains(e.target);
 
   if (!isClickInsideHandicap && !isClickInsideLudique && !isBtnHandicap && !isBtnLudique) {
     if (menuHandicap) setHandicapState(false);
-    if (menuLudique) menuLudique.style.display = "none";
-    if (btnLudique) btnLudique.classList.remove("filtre-activ");
+    if (menuLudique) menuLudique.style.display = 'none';
+    if (btnLudique) btnLudique.classList.remove('filtre-activ');
   }
 });
 
-window.addEventListener("load", () => {
-
-  if (localStorage.getItem("font") === "opendyslexic") {
-    body.classList.add("opendyslexic");
-    const el = document.getElementById("chkOpendyslexic");
+window.addEventListener('load', () => {
+  if (localStorage.getItem('font') === 'opendyslexic') {
+    body.classList.add('opendyslexic');
+    const el = document.getElementById('chkOpendyslexic');
     if (el) el.checked = true;
   }
 
-  if (localStorage.getItem("font") === "reading") {
-    body.classList.add("reading");
-    const el = document.getElementById("chkReading");
+  if (localStorage.getItem('font') === 'reading') {
+    body.classList.add('reading');
+    const el = document.getElementById('chkReading');
     if (el) el.checked = true;
   }
 
-  if (localStorage.getItem("contrast") === "high") {
-    body.classList.add("high-contrast");
-    const el = document.getElementById("chkContrast");
+  if (localStorage.getItem('contrast') === 'high') {
+    body.classList.add('high-contrast');
+    const el = document.getElementById('chkContrast');
     if (el) el.checked = true;
   }
 
-  if (!("ontouchstart" in window) && localStorage.getItem("focusBar") === "on") {
-    body.classList.add("focus-bar-active");
-    const el = document.getElementById("chkFocusBar");
+  if (!('ontouchstart' in window) && localStorage.getItem('focusBar') === 'on') {
+    body.classList.add('focus-bar-active');
+    const el = document.getElementById('chkFocusBar');
     if (el) el.checked = true;
   }
 
-  if (localStorage.getItem("linkOutline") === "on") {
-    body.classList.add("link-outline");
-    const el = document.getElementById("chkLinkOutline");
+  if (localStorage.getItem('linkOutline') === 'on') {
+    body.classList.add('link-outline');
+    const el = document.getElementById('chkLinkOutline');
     if (el) el.checked = true;
   }
 
-  if (localStorage.getItem("linkOutlineHover") === "on") {
-    body.classList.add("link-outline-hover");
-    const el = document.getElementById("chkLinkOutlineHover");
+  if (localStorage.getItem('linkOutlineHover') === 'on') {
+    body.classList.add('link-outline-hover');
+    const el = document.getElementById('chkLinkOutlineHover');
     if (el) el.checked = true;
   }
 
-  const cursorSetting = localStorage.getItem("cursor");
-  if (cursorSetting === "normal") {
-    body.classList.add("normal-cursor");
-    const el = document.getElementById("chkNormalCursor");
+  if (localStorage.getItem('mute') === 'on') {
+    const el = document.getElementById('chkMute');
+    if (el) el.checked = true;
+    applyMute(true);
+  }
+
+  const cursorSetting = localStorage.getItem('cursor');
+  if (cursorSetting === 'normal') {
+    body.classList.add('normal-cursor');
+    const el = document.getElementById('chkNormalCursor');
     if (el) el.checked = true;
   }
-  if ("ontouchstart" in window) {
+  if ('ontouchstart' in window) {
     const disabledOptions = [
-      { id: "chkFocusBar", img: "/img/Monitor.png" },
-      { id: "chkNormalCursor", img: "/img/Monitor.png" },
-      { id: "chkLinkOutlineHover", img: "/img/Monitor.png" }
+      { id: 'chkFocusBar', img: '/img/Monitor.png' },
+      { id: 'chkNormalCursor', img: '/img/Monitor.png' },
+      { id: 'chkLinkOutlineHover', img: '/img/Monitor.png' },
     ];
 
-    disabledOptions.forEach(opt => {
-      const label = document.querySelector(`label[for="${opt.id}"]`) || document.getElementById(opt.id)?.closest("label");
+    disabledOptions.forEach((opt) => {
+      const label =
+        document.querySelector(`label[for="${opt.id}"]`) ||
+        document.getElementById(opt.id)?.closest('label');
       const checkbox = document.getElementById(opt.id);
 
       if (label && checkbox) {
-        const img = document.createElement("img");
+        const img = document.createElement('img');
         img.src = opt.img;
-        img.alt = "Option désactivée sur mobile";
-        img.style.width = "18px";
-        img.style.height = "18px";
-        img.style.opacity = "0.8";
-        img.style.filter = "grayscale(100%)";
+        img.alt = 'Option désactivée sur mobile';
+        img.style.width = '18px';
+        img.style.height = '18px';
+        img.style.opacity = '0.8';
+        img.style.filter = 'grayscale(100%)';
 
         checkbox.replaceWith(img);
 
-        label.style.opacity = "0.4";
+        label.style.opacity = '0.4';
       }
     });
   }
 });
 
 function toggleOpendyslexic() {
-  const chkOpen = document.getElementById("chkOpendyslexic");
-  const chkRead = document.getElementById("chkReading");
+  const chkOpen = document.getElementById('chkOpendyslexic');
+  const chkRead = document.getElementById('chkReading');
 
   if (chkOpen.checked) {
-    body.classList.remove("reading");
+    body.classList.remove('reading');
     if (chkRead) chkRead.checked = false;
-    localStorage.removeItem("font");
+    localStorage.removeItem('font');
 
-    body.classList.add("opendyslexic");
-    localStorage.setItem("font", "opendyslexic");
+    body.classList.add('opendyslexic');
+    localStorage.setItem('font', 'opendyslexic');
   } else {
-    body.classList.remove("opendyslexic");
-    localStorage.removeItem("font");
+    body.classList.remove('opendyslexic');
+    localStorage.removeItem('font');
   }
 }
 
 function toggleReading() {
-  const chkRead = document.getElementById("chkReading");
-  const chkOpen = document.getElementById("chkOpendyslexic");
+  const chkRead = document.getElementById('chkReading');
+  const chkOpen = document.getElementById('chkOpendyslexic');
 
   if (chkRead.checked) {
-    body.classList.remove("opendyslexic");
+    body.classList.remove('opendyslexic');
     if (chkOpen) chkOpen.checked = false;
-    localStorage.removeItem("font");
+    localStorage.removeItem('font');
 
-    body.classList.add("reading");
-    localStorage.setItem("font", "reading");
+    body.classList.add('reading');
+    localStorage.setItem('font', 'reading');
   } else {
-
-    body.classList.remove("reading");
-    localStorage.removeItem("font");
+    body.classList.remove('reading');
+    localStorage.removeItem('font');
   }
 }
 
 function toggleContrast() {
-  body.classList.toggle("high-contrast");
-  if (body.classList.contains("high-contrast")) {
-    localStorage.setItem("contrast", "high");
+  body.classList.toggle('high-contrast');
+  if (body.classList.contains('high-contrast')) {
+    localStorage.setItem('contrast', 'high');
   } else {
-    localStorage.removeItem("contrast");
+    localStorage.removeItem('contrast');
   }
-  if ("ontouchstart" in window) {
+  if ('ontouchstart' in window) {
     location.reload();
   }
 }
 
 // --- Focus bar (PC uniquement)
-if (!("ontouchstart" in window)) {
-  const focusTop = document.getElementById("focus-top");
-  const focusBottom = document.getElementById("focus-bottom");
+if (!('ontouchstart' in window)) {
+  const focusTop = document.getElementById('focus-top');
+  const focusBottom = document.getElementById('focus-bottom');
   const focusHeight = 80;
 
   let mouseY = 0;
   let ticking = false;
 
-  document.addEventListener("mousemove", (e) => {
+  document.addEventListener('mousemove', (e) => {
     mouseY = e.clientY;
     if (!ticking) {
       requestAnimationFrame(updateFocusBar);
@@ -202,121 +288,126 @@ if (!("ontouchstart" in window)) {
   });
 
   function updateFocusBar() {
-    if (body.classList.contains("focus-bar-active") && focusTop && focusBottom) {
+    if (body.classList.contains('focus-bar-active') && focusTop && focusBottom) {
       const topHeight = Math.max(0, mouseY - focusHeight / 2);
       const bottomHeight = window.innerHeight - (mouseY + focusHeight / 2);
-      focusTop.style.height = topHeight + "px";
-      focusBottom.style.height = bottomHeight + "px";
+      focusTop.style.height = topHeight + 'px';
+      focusBottom.style.height = bottomHeight + 'px';
     }
     ticking = false;
   }
 
   window.toggleFocusBar = function () {
-    body.classList.toggle("focus-bar-active");
-    if (body.classList.contains("focus-bar-active")) localStorage.setItem("focusBar", "on");
-    else localStorage.removeItem("focusBar");
+    body.classList.toggle('focus-bar-active');
+    if (body.classList.contains('focus-bar-active')) localStorage.setItem('focusBar', 'on');
+    else localStorage.removeItem('focusBar');
   };
 } else {
   window.toggleFocusBar = function () {
-    alert("La barre de lecture est disponible uniquement sur ordinateur.");
+    alert('La barre de lecture est disponible uniquement sur ordinateur.');
   };
 }
 
 // --- Curseur normal uniquement
 function toggleNormalCursor() {
-  const chkNormal = document.getElementById("chkNormalCursor");
+  const chkNormal = document.getElementById('chkNormalCursor');
 
   if (chkNormal.checked) {
-    body.classList.add("normal-cursor");
-    localStorage.setItem("cursor", "normal");
+    body.classList.add('normal-cursor');
+    localStorage.setItem('cursor', 'normal');
   } else {
-    body.classList.remove("normal-cursor");
-    localStorage.removeItem("cursor");
+    body.classList.remove('normal-cursor');
+    localStorage.removeItem('cursor');
   }
 }
 
 function toggleLinkOutline() {
-  const el = document.getElementById("chkLinkOutline");
+  const el = document.getElementById('chkLinkOutline');
   const checked = el ? el.checked : false;
-  body.classList.toggle("link-outline", checked);
-  checked ? localStorage.setItem("linkOutline", "on") : localStorage.removeItem("linkOutline");
+  body.classList.toggle('link-outline', checked);
+  checked ? localStorage.setItem('linkOutline', 'on') : localStorage.removeItem('linkOutline');
 }
 
 function toggleLinkOutlineHover() {
-  const el = document.getElementById("chkLinkOutlineHover");
+  const el = document.getElementById('chkLinkOutlineHover');
   const checked = el ? el.checked : false;
-  body.classList.toggle("link-outline-hover", checked);
-  checked ? localStorage.setItem("linkOutlineHover", "on") : localStorage.removeItem("linkOutlineHover");
+  body.classList.toggle('link-outline-hover', checked);
+  checked
+    ? localStorage.setItem('linkOutlineHover', 'on')
+    : localStorage.removeItem('linkOutlineHover');
 }
 
 function resetSettings() {
   body.classList.remove(
-    "opendyslexic",
-    "high-contrast",
-    "reading",
-    "focus-bar-active",
-    "normal-cursor",
-    "link-outline",
-    "link-outline-hover"
+    'opendyslexic',
+    'high-contrast',
+    'reading',
+    'focus-bar-active',
+    'normal-cursor',
+    'link-outline',
+    'link-outline-hover',
+    'no-animation',
   );
   localStorage.clear();
-  document.querySelectorAll("#accessibility-menu input[type='checkbox']").forEach((chk) => (chk.checked = false));
+  applyMute(false);
+  document
+    .querySelectorAll("#accessibility-menu input[type='checkbox']")
+    .forEach((chk) => (chk.checked = false));
 }
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   if (toggleGame) {
-    let ludiqueMode = sessionStorage.getItem("ludiqueMode");
+    let ludiqueMode = sessionStorage.getItem('ludiqueMode');
 
     if (!ludiqueMode) {
-      sessionStorage.setItem("ludiqueMode", "on");
-      ludiqueMode = "on";
+      sessionStorage.setItem('ludiqueMode', 'on');
+      ludiqueMode = 'on';
     }
 
-    if (ludiqueMode === "on") {
+    if (ludiqueMode === 'on') {
       toggleGame.checked = true;
-      body.classList.add("ludique-active");
+      body.classList.add('ludique-active');
     } else {
       toggleGame.checked = false;
-      body.classList.remove("ludique-active");
+      body.classList.remove('ludique-active');
     }
 
-    toggleGame.addEventListener("change", () => {
+    toggleGame.addEventListener('change', () => {
       if (toggleGame.checked) {
-        body.classList.add("ludique-active");
-        sessionStorage.setItem("ludiqueMode", "on");
+        body.classList.add('ludique-active');
+        sessionStorage.setItem('ludiqueMode', 'on');
       } else {
-        body.classList.remove("ludique-active");
-        sessionStorage.setItem("ludiqueMode", "off");
+        body.classList.remove('ludique-active');
+        sessionStorage.setItem('ludiqueMode', 'off');
       }
     });
 
-    window.dispatchEvent(new CustomEvent("ludiqueReady"));
+    window.dispatchEvent(new CustomEvent('ludiqueReady'));
   }
 });
 
-
 //-- Toggle animations
 function toggleAnimations() {
-  const chkNoAnim = document.getElementById("chkNoAnimation");
+  const chkNoAnim = document.getElementById('chkNoAnimation');
   if (!chkNoAnim) return;
 
   if (chkNoAnim.checked) {
-    body.classList.add("no-animation");
-    localStorage.setItem("noAnimation", "on");
+    body.classList.add('no-animation');
+    localStorage.setItem('noAnimation', 'on');
   } else {
-    body.classList.remove("no-animation");
-    localStorage.removeItem("noAnimation");
+    body.classList.remove('no-animation');
+    localStorage.removeItem('noAnimation');
   }
 }
 
-window.addEventListener("load", () => {
-  const chkNoAnim = document.getElementById("chkNoAnimation");
-  if (localStorage.getItem("noAnimation") === "on") {
-    body.classList.add("no-animation");
+window.addEventListener('load', () => {
+  const chkNoAnim = document.getElementById('chkNoAnimation');
+  if (localStorage.getItem('noAnimation') === 'on') {
+    body.classList.add('no-animation');
     if (chkNoAnim) chkNoAnim.checked = true;
   }
-  
+
   if (chkNoAnim) {
-    chkNoAnim.addEventListener("change", toggleAnimations);
+    chkNoAnim.addEventListener('change', toggleAnimations);
   }
 });
