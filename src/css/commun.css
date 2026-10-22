@@ -1520,7 +1520,7 @@ body.no-animation .backgroundBrushType1::before {
 }
 
 .text-paragraph-emojie img {
-  max-height: 1.6rem;
+  max-height: 1.6rem !important;
 }
 
 .modal-container-project {
