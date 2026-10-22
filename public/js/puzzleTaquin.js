@@ -5,6 +5,7 @@ let positions = [];
 let estGagne = false;
 let enMouvement = false;
 let focusPos = null;
+let ctx = null;
 
 const DESCRIPTION_PHOTO =
   "Photo de l'équipe Loooper! : Élodie, Nino et Julie, trois personnes debout côte à côte en extérieur, devant un mur en pierre et un feuillage vert. " +
@@ -62,6 +63,46 @@ puzzle.after(aide, live);
 function annoncer(msg) {
   live.textContent = "";
   setTimeout(() => (live.textContent = msg), 50);
+}
+
+function initAudio() {
+  if (!ctx) {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return;
+    ctx = new AC();
+  }
+  if (ctx.state === "suspended") ctx.resume();
+}
+
+function beep(freq, dur = 0.15, when = 0, type = "sine", vol = 0.3) {
+  if (!ctx) return;
+  const t = ctx.currentTime + when;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.type = type;
+  osc.frequency.value = freq;
+  gain.gain.setValueAtTime(0, t);
+  gain.gain.linearRampToValueAtTime(vol, t + 0.01);
+  gain.gain.exponentialRampToValueAtTime(0.001, t + dur);
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.start(t);
+  osc.stop(t + dur + 0.05);
+}
+
+function soundGlisse() {
+  beep(400, 0.12, 0, "sine", 0.25);
+}
+
+function soundBloque() {
+  beep(130, 0.15, 0, "square", 0.12);
+}
+
+function soundVictoire() {
+  beep(523, 0.18, 0);
+  beep(659, 0.18, 0.18);
+  beep(784, 0.18, 0.36);
+  beep(1047, 0.5, 0.54);
 }
 
 function voisinsDe(i) {
@@ -180,11 +221,13 @@ function afficherPuzzle() {
 
 function deplacer(i) {
   if (estGagne || enMouvement) return;
+  initAudio();
 
   const vide = positions.indexOf(CASE_VIDE);
   const dir = directionPiece(i, vide);
 
   if (!dir) {
+    soundBloque();
     annoncer(`Pièce ${positions[i] + 1} bloquée. La case vide est ${LIEUX[vide]}.`);
     return;
   }
@@ -202,15 +245,17 @@ function deplacer(i) {
   enMouvement = true;
   const numPiece = positions[i];
 
+  soundGlisse();
+
   setTimeout(() => {
     [positions[i], positions[vide]] = [positions[vide], positions[i]];
     focusPos = numPiece;
     enMouvement = false;
     afficherPuzzle();
 
-    if (!verifierVictoire()) {
-      annoncer(`Pièce ${numPiece + 1} déplacée ${DIRECTIONS[dir]}. ${etat()}`);
-    }
+    if (verifierVictoire()) return;
+
+    annoncer(`Pièce ${numPiece + 1} déplacée ${DIRECTIONS[dir]}. ${etat()}`);
   }, 200);
 }
 
@@ -223,6 +268,7 @@ function verifierVictoire() {
   afficherPuzzle();
   puzzle.setAttribute("tabindex", "-1");
   puzzle.focus();
+  soundVictoire();
   annoncer(`Bravo, puzzle terminé ! ${DESCRIPTION_PHOTO}`);
   lancerConfettis();
   return true;
@@ -259,6 +305,7 @@ function afficherResolu() {
 
 puzzle.addEventListener("keydown", (e) => {
   if (estGagne) return;
+  initAudio();
 
   const vide = positions.indexOf(CASE_VIDE);
   const cibles = {
@@ -274,6 +321,7 @@ puzzle.addEventListener("keydown", (e) => {
     if (voisinsDe(vide).includes(i)) {
       deplacer(i);
     } else {
+      soundBloque();
       annoncer("Aucune pièce ne peut aller dans cette direction.");
     }
   } else if (e.key === "i" || e.key === "I") {

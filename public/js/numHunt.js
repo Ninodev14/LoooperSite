@@ -14,10 +14,13 @@
   if (!container || !startBtn || !items.length) return;
 
   const DURATION = 20;
+  const BASE_DELAY = 1800; 
+  const RETRACT_MS = 700; 
+  const INTRO_DELAY = 2500;
+
   const isEnabled = () =>
     body.classList.contains("ludique-active") === GAME_WHEN_LUDIQUE_CLASS;
 
-  // Un son par chiffre : grave à gauche, médium au centre, aigu à droite
   const FREQS = [262, 392, 587];
   const PANS = [-1, 0, 1];
   const NOMS = items.map((it) => {
@@ -33,7 +36,7 @@
   let leavingTimer = null;
   let targetTimer = null;
   let clockTimer = null;
-  let audioOn = false;
+  let introTimer = null;
   let ctx = null;
 
   // ---------- Stockage ----------
@@ -44,33 +47,26 @@
   const setBest = (v) => {
     try { localStorage.setItem("numHuntBest", String(v)); } catch {}
   };
-  const getAudioPref = () => {
-    try { return localStorage.getItem("numHuntAudio") === "1"; }
-    catch { return false; }
-  };
-  const setAudioPref = (v) => {
-    try { localStorage.setItem("numHuntAudio", v ? "1" : "0"); } catch {}
-  };
 
   bestEl.textContent = getBest();
 
-  // ---------- Accessibilité : zones sr-only ----------
-  // Le HUD change chaque seconde : on le coupe pour les lecteurs d'écran
+  // ---------- Accessibilité  ----------
+
   if (hud) {
     hud.setAttribute("aria-live", "off");
     hud.setAttribute("aria-hidden", "true");
   }
-  msgEl.setAttribute("aria-live", "off"); // tout passe par annoncer()
+  msgEl.setAttribute("aria-live", "off"); 
 
   const aide = document.createElement("p");
   aide.id = "numhunt-aide";
   aide.className = "sr-only";
   aide.textContent =
-    "Jeu de réflexes de 20 secondes. Un des trois chiffres s'allume au hasard. " +
-    "Active le mode audio : chaque chiffre a un son et une position. " +
+    "Jeu de réflexes de 20 secondes. Un des trois chiffres s'allume au hasard, avec un son. " +
     "Chiffre 1 : son grave à gauche. Chiffre 2 : son moyen au centre. Chiffre 3 : son aigu à droite. " +
     "Quand tu entends un son, appuie sur la touche 1, 2 ou 3 correspondante, " +
-    "ou sur les flèches gauche, bas, droite. Pas de pénalité si tu te trompes.";
+    "ou sur les flèches gauche, bas, droite. " +
+    "Si tu laisses passer un chiffre, un son descendant te le signale. Pas de pénalité si tu te trompes.";
 
   const live = document.createElement("div");
   live.className = "sr-only";
@@ -85,57 +81,28 @@
     setTimeout(() => (live.textContent = msg), 50);
   }
 
-  // Bouton mode audio
-  const audioBtn = document.createElement("button");
-  audioBtn.type = "button";
-  audioBtn.className = "text-typo btn-project btn-white-background";
-  audioBtn.innerHTML = "<span></span>";
-  startBtn.after(audioBtn);
-
-  // ---------- Aide clavier VISIBLE pour tout le monde ----------
+  // ---------- Aide clavier ----------
   const aideClavier = document.createElement("details");
   aideClavier.className = "numhunt-keys";
   aideClavier.innerHTML = `
     <summary>Jouer au clavier ou avec un lecteur d’écran</summary>
     <div class="numhunt-keys-content">
       <p><b>Pour commencer :</b> appuie sur <kbd>Tab</kbd> jusqu’au bouton « Tape-chiffre ! », puis sur <kbd>Entrée</kbd> ou <kbd>Espace</kbd>.</p>
-      <p><b>Pendant la partie</b>, un chiffre s’allume (ou émet un son). Appuie sur la touche qui correspond :</p>
+      <p><b>Pendant la partie</b>, un chiffre s’allume et émet un son. Appuie sur la touche qui correspond :</p>
       <ul>
         <li><kbd>1</kbd> ou <kbd>←</kbd> : le premier chiffre (150), à gauche, son grave</li>
         <li><kbd>2</kbd> ou <kbd>↓</kbd> : le deuxième chiffre (96), au centre, son moyen</li>
         <li><kbd>3</kbd> ou <kbd>→</kbd> : le troisième chiffre (300), à droite, son aigu</li>
       </ul>
-      <p><b>Mode audio :</b> active-le avec le bouton « Mode audio » pour jouer uniquement avec les sons (idéal avec un casque). Le rythme est alors un peu plus lent.</p>
+      <p><b>Les sons sont toujours activés</b> : tu peux jouer uniquement à l’oreille (idéal avec un casque). Si tu laisses passer un chiffre, un son descendant te le signale.</p>
       <p>Pas de pénalité si tu te trompes. La partie dure 20 secondes.</p>
     </div>`;
-  audioBtn.after(aideClavier);
+  startBtn.after(aideClavier);
 
   // S'ouvre tout seul quand on arrive au bouton avec le clavier
   startBtn.addEventListener("focus", () => {
     if (startBtn.matches(":focus-visible")) aideClavier.open = true;
   });
-
-  function majAudioBtn() {
-    audioBtn.setAttribute("aria-pressed", String(audioOn));
-    audioBtn.querySelector("span").textContent = audioOn
-      ? "Mode audio : activé"
-      : "Mode audio : désactivé";
-  }
-
-  audioBtn.addEventListener("click", () => {
-    audioOn = !audioOn;
-    setAudioPref(audioOn);
-    majAudioBtn();
-    if (audioOn) {
-      initAudio();
-      beep(FREQS[0], PANS[0], 0.15, 0);
-      beep(FREQS[1], PANS[1], 0.15, 0.2);
-      beep(FREQS[2], PANS[2], 0.15, 0.4);
-    }
-  });
-
-  audioOn = getAudioPref();
-  majAudioBtn();
 
   // ---------- Audio ----------
   function initAudio() {
@@ -148,7 +115,7 @@
   }
 
   function beep(freq, pan = 0, dur = 0.15, when = 0, type = "sine", vol = 0.3) {
-    if (!audioOn || !ctx) return;
+    if (!ctx) return;
     const t = ctx.currentTime + when;
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
@@ -177,6 +144,10 @@
     beep(1175, 0, 0.14, 0.09);
   };
   const soundEmpty = () => beep(130, 0, 0.15, 0, "square", 0.12);
+  const soundMiss = () => {
+    beep(330, 0, 0.12, 0, "sawtooth", 0.15);
+    beep(220, 0, 0.2, 0.11, "sawtooth", 0.15);
+  };
   const soundEnd = () => {
     beep(523, 0, 0.18, 0);
     beep(392, 0, 0.18, 0.2);
@@ -184,8 +155,6 @@
   };
 
   // ---------- Jeu ----------
-  const retractMs = () => (audioOn ? 700 : 300);
-
   function flashHit(item) {
     item.classList.add("hit");
     setTimeout(() => item.classList.remove("hit"), 300);
@@ -203,18 +172,17 @@
         leaving = null;
       } else {
         leaving = prev;
-        leavingTimer = setTimeout(() => { leaving = null; }, retractMs());
+        leavingTimer = setTimeout(() => { leaving = null; }, RETRACT_MS);
+        soundMiss();
       }
     }
 
     const others = items.filter((i) => i !== prev);
     target = others[Math.floor(Math.random() * others.length)];
     target.classList.add("is-target");
-    cueTarget(items.indexOf(target), wasHit ? 0.25 : 0);
+    cueTarget(items.indexOf(target), prev ? 0.3 : 0);
 
-    // en mode audio, rythme plus lent pour laisser le temps d'écouter
-    const base = audioOn ? 1800 : 1100;
-    const delay = base - ((DURATION - timeLeft) / DURATION) * 500;
+    const delay = BASE_DELAY - ((DURATION - timeLeft) / DURATION) * 500;
     targetTimer = setTimeout(nextTarget, delay);
   }
 
@@ -252,7 +220,6 @@
       }
     });
 
-    // role="application" : le lecteur d'écran laisse passer les touches 1, 2, 3
     if (on) {
       container.setAttribute("role", "application");
       container.setAttribute("aria-label", "Tape-chiffre en cours. Touches 1, 2, 3.");
@@ -275,7 +242,6 @@
     });
   });
 
-  // Raccourcis clavier globaux pendant la partie
   const KEYS = { "1": 0, "2": 1, "3": 2, ArrowLeft: 0, ArrowDown: 1, ArrowRight: 2 };
   document.addEventListener("keydown", (e) => {
     if (!running || !(e.key in KEYS)) return;
@@ -288,6 +254,7 @@
     running = false;
     clearTimeout(targetTimer);
     clearTimeout(leavingTimer);
+    clearTimeout(introTimer);
     clearInterval(clockTimer);
     target = null;
     leaving = null;
@@ -322,7 +289,7 @@
 
   function startGame() {
     if (running || !isEnabled()) return;
-    if (audioOn) initAudio();
+    initAudio();
     running = true;
     score = 0;
     timeLeft = DURATION;
@@ -337,13 +304,10 @@
     setInteractive(true);
 
     annoncer(
-      audioOn
-        ? "C'est parti ! Écoute le son et appuie sur 1, 2 ou 3. Grave à gauche, moyen au centre, aigu à droite."
-        : "C'est parti ! Un chiffre s'allume, appuie sur la touche 1, 2 ou 3."
+      "C'est parti ! Écoute le son et appuie sur 1, 2 ou 3. Grave à gauche, moyen au centre, aigu à droite."
     );
 
-    // petit délai pour laisser finir l'annonce avant le premier son
-    setTimeout(() => running && nextTarget(), audioOn ? 2500 : 0);
+    introTimer = setTimeout(() => running && nextTarget(), INTRO_DELAY);
 
     clockTimer = setInterval(() => {
       timeLeft--;
