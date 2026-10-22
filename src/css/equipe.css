@@ -543,8 +543,18 @@
 
 .text-basical-container-img-accecibility .handicap-img {
   width: 8rem;
+  transition: filter 0.3s ease;
   height: auto;
 }
+
+.text-basical-container-img-accecibility .handicap-img:hover {
+filter: invert(1);
+}
+
+.text-basical-container-text-handicap{
+  width: 60vw;
+}
+
 .text-basical-container-img-accecibility .handicap-arrow {
   width: 50%;
   height: auto;
@@ -574,4 +584,7 @@
   .text-basical-container-img-accecibility .handicap-arrow {
     width: 100%;
   }
+  .text-basical-container-text-handicap {
+    width: 100%;
+}
 }
