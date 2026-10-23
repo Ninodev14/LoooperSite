@@ -257,6 +257,73 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="protagonistes-card-null-background-white cursor-dark-zone"></div>
       </article>
     </div>
+
+    <div class="quiz-trio" id="quiz-trio">
+      <div class="medium-spacing"></div>
+      <article class="quiz-card">
+        <div class="quiz-step" id="quiz-intro">
+          <h3 class="h2 black">Qui est qui ?</h3>
+          <p>
+            Tu as bien lu nos cartes ? Pour chaque phrase, retrouve qui est concerné : <b>Elodie</b
+            >,
+            <b>Nino</b> ou <b>Julie</b> en 8 questions,.
+          </p>
+          <button type="button" id="quiz-start" class="text-typo btn-project btn-white-background">
+            <span>C’est parti !</span>
+          </button>
+        </div>
+
+        <div class="quiz-step" id="quiz-play" hidden>
+          <p class="quiz-progress" id="quiz-progress"></p>
+          <h3 class="h3 black" id="quiz-question"></h3>
+          <div class="quiz-answers" role="group" aria-labelledby="quiz-progress quiz-question">
+            <button
+              type="button"
+              class="quiz-answer quiz-answer-blue"
+              data-who="elodie"
+              aria-keyshortcuts="1">
+              <img src="/img/elodie.jpg" alt="" />
+              <span class="h3 black">Elodie</span>
+              <span class="quiz-key" aria-hidden="true">1</span>
+            </button>
+            <button
+              type="button"
+              class="quiz-answer quiz-answer-purple"
+              data-who="nino"
+              aria-keyshortcuts="2">
+              <img src="/img/nino.jpg" alt="" />
+              <span class="h3 black">Nino</span>
+              <span class="quiz-key" aria-hidden="true">2</span>
+            </button>
+            <button
+              type="button"
+              class="quiz-answer quiz-answer-orange"
+              data-who="julie"
+              aria-keyshortcuts="3">
+              <img src="/img/julie.jpg" alt="" />
+              <span class="h3 black">Julie</span>
+              <span class="quiz-key" aria-hidden="true">3</span>
+            </button>
+          </div>
+          <p class="quiz-feedback" id="quiz-feedback"></p>
+          <button
+            type="button"
+            id="quiz-next"
+            class="text-typo btn-project btn-white-background"
+            hidden>
+            <span>Question suivante</span>
+          </button>
+        </div>
+
+        <div class="quiz-step" id="quiz-end" hidden>
+          <h3 class="h2 black" id="quiz-result"></h3>
+          <p id="quiz-message"></p>
+          <button type="button" id="quiz-replay" class="text-typo btn-project btn-white-background">
+            <span>Rejouer !</span>
+          </button>
+        </div>
+      </article>
+    </div>
   </section>
 
   <div class="large-spacing"></div>
@@ -732,4 +799,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <script src="/js/flipCard.js" defer></script>
   <script src="/js/faq.js" defer></script>
   <script src="/js/book.js" defer></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"
+    defer></script>
+  <script src="/js/quizTrio.js" defer></script>
 </BaseLayout>
