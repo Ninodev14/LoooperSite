@@ -787,7 +787,7 @@ body.no-animation .backgroundBrushType1::before {
   color: #fff;
 }
 
-.btn-project{
+.btn-project {
   position: relative;
   overflow: hidden;
   height: fit-content;
@@ -1721,9 +1721,9 @@ input[type='checkbox']::after {
 .form-rgpd {
   margin: 1rem 0 0.5rem;
   padding: 0.9rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #3c61f5;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
+  text-align: left;
 }
 
 .form-rgpd-label {
@@ -1740,23 +1740,23 @@ input[type='checkbox']::after {
   height: 16px;
   accent-color: #3c61f5;
   cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.form-rgpd-label input[type='checkbox']:checked {
+  background-color: #fff;
 }
 
 .form-rgpd-label span {
   font-family: Poppins, system-ui, sans-serif;
-  font-size: 0.78rem;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.8rem;
+  color: #fff;
 }
 
 .form-rgpd-label a {
   color: #bb6ef6;
   text-decoration: underline;
   text-underline-offset: 0.2rem;
-}
-
-.form-rgpd-label a:hover {
-  opacity: 0.85;
 }
 
 .contact-mail {
@@ -1768,10 +1768,6 @@ input[type='checkbox']::after {
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 0.2rem;
-}
-
-.contact-mail a:hover {
-  opacity: 0.85;
 }
 
 /* Long Card */
@@ -1844,7 +1840,6 @@ input[type='checkbox']::after {
   .alternative-card > .small-spacing {
     display: none;
   }
-
 
   .alternative-card .long-card-wrapper {
     gap: 0;
@@ -2160,10 +2155,10 @@ input[type='checkbox']::after {
   flex-shrink: 0;
 }
 
-#lcb-refuse, #lcb-accept{
-font-size: 0.8rem;
+#lcb-refuse,
+#lcb-accept {
+  font-size: 0.8rem;
 }
-
 
 @media (max-width: 600px) {
   .lcb-inner {
@@ -2352,7 +2347,6 @@ font-size: 0.8rem;
       border-color 0.2s ease;
   }
 }
-
 
 .external-link {
   display: inline;
