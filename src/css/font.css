@@ -59,6 +59,8 @@ a {
   color: #fff;
 }
 
+
+
 a {
   display: inline;
   margin-inline-start: 0.25em;
@@ -693,16 +695,28 @@ html {
 
 .link-underline {
   text-decoration-line: underline;
+  font-weight: bold;
   text-decoration-color: rgb(255, 255, 255);
+  text-underline-offset: 0.2rem;
 }
 
 .link-underline-black {
   text-decoration-line: underline;
+  font-weight: bold;
   text-decoration-color: rgb(0, 0, 0);
+  text-underline-offset: 0.2rem;
 }
 
 .black .link-underline-black {
   color: black;
+}
+
+.link-underline-purple {
+  text-decoration-line: underline;
+  font-weight: bold;
+  text-decoration-color: #bb6ef6;
+   color: #bb6ef6;
+  text-underline-offset: 0.2rem;
 }
 
 @media (max-width: 768px) {

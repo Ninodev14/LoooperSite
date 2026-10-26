@@ -128,8 +128,11 @@
   padding: 2px 4px;
   border-radius: 4px;
 }
-.zoom-container-ressource a {
-  text-decoration: underline;
+.ressources-container a {
+    text-decoration-line: underline;
+  font-weight: bold;
+  text-decoration-color: #bb6ef6;
+   color: #bb6ef6;
 }
 
 .featured-ressource {

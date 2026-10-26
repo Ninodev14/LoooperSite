@@ -1753,22 +1753,10 @@ input[type='checkbox']::after {
   color: #fff;
 }
 
-.form-rgpd-label a {
-  color: #bb6ef6;
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
-}
-
 .contact-mail {
   margin-top: 1rem;
 }
 
-.contact-mail a {
-  color: #3c61f5;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
-}
 
 /* Long Card */
 
