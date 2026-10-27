@@ -11,11 +11,12 @@
   const msgEl = document.getElementById("numhunt-msg");
   const bar = document.getElementById("numhunt-bar");
   const hud = document.querySelector(".numhunt-hud");
+  const fillEl = document.querySelector(".numhunt-hud-fill");
   if (!container || !startBtn || !items.length) return;
 
   const DURATION = 20;
-  const BASE_DELAY = 1800; 
-  const RETRACT_MS = 700; 
+  const BASE_DELAY = 1800;
+  const RETRACT_MS = 700;
   const INTRO_DELAY = 2500;
 
   const isEnabled = () =>
@@ -39,6 +40,20 @@
   let introTimer = null;
   let ctx = null;
 
+  // ---------- Barre de temps ----------
+  function setFill(left, instant = false) {
+    if (!fillEl) return;
+    const ratio = Math.max(0, Math.min(1, left / DURATION));
+    if (instant) fillEl.style.transition = "none";
+    fillEl.style.transform = `scaleX(${ratio})`;
+    fillEl.style.backgroundColor =
+      ratio > 0.5 ? "#3c61f5" : ratio > 0.25 ? "#f6b254" : "#e5484d";
+    if (instant) {
+      void fillEl.offsetWidth; // force le reflow
+      fillEl.style.transition = "";
+    }
+  }
+
   // ---------- Stockage ----------
   const getBest = () => {
     try { return parseInt(localStorage.getItem("numHuntBest"), 10) || 0; }
@@ -50,13 +65,12 @@
 
   bestEl.textContent = getBest();
 
-  // ---------- Accessibilité  ----------
-
+  // ---------- Accessibilité ----------
   if (hud) {
     hud.setAttribute("aria-live", "off");
     hud.setAttribute("aria-hidden", "true");
   }
-  msgEl.setAttribute("aria-live", "off"); 
+  msgEl.setAttribute("aria-live", "off");
 
   const aide = document.createElement("p");
   aide.id = "numhunt-aide";
@@ -99,7 +113,6 @@
     </div>`;
   startBtn.after(aideClavier);
 
-  // S'ouvre tout seul quand on arrive au bouton avec le clavier
   startBtn.addEventListener("focus", () => {
     if (startBtn.matches(":focus-visible")) aideClavier.open = true;
   });
@@ -297,6 +310,7 @@
     leaving = null;
     scoreEl.textContent = 0;
     timeEl.textContent = DURATION;
+    setFill(DURATION, true);
     msgEl.textContent = "Go !";
     startBtn.disabled = true;
     startBtn.querySelector("span").textContent = "C’est parti !";
@@ -312,6 +326,7 @@
     clockTimer = setInterval(() => {
       timeLeft--;
       timeEl.textContent = timeLeft;
+      setFill(timeLeft);
       if (timeLeft === 10 || timeLeft === 5) {
         annoncer(`${timeLeft} secondes, ${score} point${score > 1 ? "s" : ""}.`);
       }

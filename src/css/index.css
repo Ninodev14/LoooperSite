@@ -790,9 +790,10 @@ body:has(.number-container.playing) .numhunt-hud {
   border-radius: 999px;
   background: #3c61f5;
   transform-origin: left center;
-  animation:
-    hudTime 20s linear forwards,
-    hudColor 20s linear forwards;
+  transform: scaleX(1);
+  transition:
+    transform 1s linear,
+    background-color 1s linear;
 }
 
 @keyframes hudIn {
@@ -803,27 +804,6 @@ body:has(.number-container.playing) .numhunt-hud {
   to {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
-  }
-}
-
-@keyframes hudTime {
-  from {
-    transform: scaleX(1);
-  }
-  to {
-    transform: scaleX(0);
-  }
-}
-
-@keyframes hudColor {
-  0% {
-    background: #3c61f5;
-  }
-  50% {
-    background: #f6b254;
-  }
-  100% {
-    background: #e5484d;
   }
 }
 
@@ -858,8 +838,6 @@ body:has(.number-container.playing) .numhunt-hud {
   cursor: pointer;
 }
 
-/* Fond noir : exactement la largeur du trou et le même haut,
-   il ne déborde que vers le BAS (2px) pour cacher le liseré du masque */
 .number-container.playing .number-item::before {
   content: '';
   position: absolute;
@@ -874,7 +852,6 @@ body:has(.number-container.playing) .numhunt-hud {
   transform: translateZ(0);
 }
 
-/* Masque blanc : trou transparent à la taille exacte (--hole-w / --hole-h) */
 .number-container.playing .number-item::after {
   content: '';
   position: absolute;
@@ -930,13 +907,28 @@ body:has(.number-container.playing) .numhunt-hud {
   animation: numBump 0.3s ease-out;
 }
 
+/* ---- Mode "sans animation" : le jeu reste jouable ---- */
 body.no-animation .numhunt-hud {
-  animation: none;
+  animation: none !important;
+}
+
+body.no-animation .numhunt-hud-fill {
+  transition: none !important;
 }
 
 body.no-animation .number-container.playing .number-value {
-  transition: none;
+  transition: none !important;
   animation: none !important;
+  transform: translateY(130%) scale(1, 0.85) !important;
+}
+
+body.no-animation .number-container.playing .number-item.is-target .number-value {
+  transform: translateY(0) scale(1, 1) !important;
+}
+
+body.no-animation .number-container.playing .number-item.hit .number-value {
+  animation: none !important;
+  color: #2fb457;
 }
 
 @media screen and (max-width: 960px) {

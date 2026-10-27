@@ -8,7 +8,10 @@
 .opendyslexic .h3,
 .opendyslexic .h2,
 .opendyslexic .dropdown-toggle,
-.opendyslexic .h1 {
+.opendyslexic .h1,
+.opendyslexic .numhunt-keys summary,
+.opendyslexic .numhunt-hud b,
+.opendyslexic .numhunt-hud span {
   font-family: 'Open-dyslexic';
 }
 
@@ -27,8 +30,12 @@
 .reading p,
 .reading .h3,
 .reading .h2,
-.reading .h1 {
+.reading .h1,
+.reading .numhunt-keys summary,
+.reading .numhunt-hud b,
+.reading .numhunt-hud span {
   font-family: 'Open Sans', sans-serif;
+  font-weight: 500;
 }
 
 body.normal-cursor * {
@@ -210,7 +217,7 @@ body.high-contrast {
   border-color: #000;
 }
 
-.high-contrast .back-to-top .btt-line{
+.high-contrast .back-to-top .btt-line {
   background: #000;
 }
 
@@ -218,7 +225,7 @@ body.high-contrast {
   background: #000;
   border-color: #fff;
 }
-.high-contrast .back-to-top:hover .btt-line{
+.high-contrast .back-to-top:hover .btt-line {
   background: #fff;
 }
 .high-contrast .nav-pc {
@@ -615,7 +622,8 @@ body.high-contrast {
   background-image: none;
 }
 
-.high-contrast .highlight, .high-contrast .highlight-no-annim {
+.high-contrast .highlight,
+.high-contrast .highlight-no-annim {
   background-image: none;
 }
 
@@ -780,7 +788,9 @@ body.focus-bar-active #focus-bottom {
 }
 .no-animation .highlight {
   transition: none !important;
-  background-size: 0% 100%, 100% 100% !important;
+  background-size:
+    0% 100%,
+    100% 100% !important;
 }
 
 .no-animation .leftbackgroundType1 {
