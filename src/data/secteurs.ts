@@ -226,7 +226,7 @@ export const secteurs: Secteur[] = [
     nav: 'Musées et patrimoine',
     title: 'Jeux interactifs pour musées, Bordeaux',
     description:
-      'Quiz, enquêtes et jeux de société sur mesure pour faire jouer vos collections. Devis gratuit sous 48 h.',
+      'Vos collections méritent d’être jouées, pas seulement regardées. À Bordeaux, nous créons des quiz, enquêtes et jeux de médiation sur mesure pour les musées.',
     h1: {
       avant: 'Loooper! c’est des ',
       mots: ['jeux', 'interactifs'],
@@ -305,7 +305,7 @@ export const secteurs: Secteur[] = [
     nav: 'Écoles et éducation',
     title: 'Atelier serious game pour collèges, Bordeaux',
     description:
-      'Ateliers de création de jeu vidéo ou de jeu de société pour vos élèves, et jeux pédagogiques sur mesure. Devis gratuit.',
+      'Et si vos élèves créaient leur propre jeu, avec nous à leurs côtés ? Ateliers de serious game et jeux pédagogiques sur mesure pour collèges, à Bordeaux.',
     h1: {
       avant: 'Loooper! c’est des ',
       mots: ['ateliers', 'serious', 'game'],
@@ -397,7 +397,7 @@ export const secteurs: Secteur[] = [
     nav: 'Entreprises et RSE',
     title: 'Jeu de sensibilisation RSE pour entreprises',
     description:
-      'Jeux de société, serious games et ateliers sur mesure pour sensibiliser vos équipes à la RSE et créer du lien en séminaire. Devis gratuit sous 48 h.',
+      'Un livret RSE se lit une fois, un jeu se rejoue. Nous créons à Bordeaux des jeux sur mesure pour que vos équipes s’approprient vos enjeux RSE.',
     h1: {
       avant: 'Loooper! c’est des ',
       mots: ['jeux', 'de', 'sensibilisation'],
@@ -476,7 +476,7 @@ export const secteurs: Secteur[] = [
     nav: 'Tourisme et territoires',
     title: 'Jeu de piste et parcours ludique touristique',
     description:
-      'Jeux de piste, quiz et parcours interactifs pour sites de visite et territoires : offrez à vos visiteurs une expérience mémorable. Devis gratuit sous 48 h.',
+      'Vos visiteurs veulent participer, pas seulement regarder. Nous créons des jeux de piste et des parcours ludiques pour faire vivre vos sites et vos territoires.',
     h1: {
       avant: 'Loooper! c’est des ',
       mots: ['parcours', 'ludiques'],
@@ -555,7 +555,7 @@ export const secteurs: Secteur[] = [
     nav: 'Zoos et parcs animaliers',
     title: 'Jeu interactif pour zoo et parc animalier',
     description:
-      'Jeux de piste, quiz et parcours pour zoos et parcs animaliers : faites comprendre la biodiversité aux familles et aux scolaires. Devis gratuit sous 48 h.',
+      'Faites comprendre la biodiversité aux familles et aux scolaires en les faisant jouer. Jeux de piste et quiz sur mesure pour zoos et parcs animaliers.',
     h1: {
       avant: 'Loooper! c’est des ',
       mots: ['jeux', 'interactifs'],
