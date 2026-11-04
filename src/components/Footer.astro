@@ -1,3 +1,7 @@
+---
+import { secteurs } from '../data/secteurs';
+---
+
 <div class="menue-nav-ludique-handicap">
   <button id="ludique-btn" class="cursor-light-zone"
     ><img src="/svg/ludique_mode.svg" alt="Activer le mode ludique" /></button
@@ -132,6 +136,16 @@
         <a href="/projets/" class="footerTitle link-underline">Nos projets</a>
         <a href="/projets/#foot-prj1" class="text-typo">Nos productions</a>
         <a href="/projets/#foot-prj2" class="text-typo">Parutions médias</a>
+      </div>
+      <div class="footer-nav-row">
+        <p class="footerTitle">Pour qui ?</p>
+        {
+          secteurs.map((x) => (
+            <a href={`/secteur/${x.slug}/`} class="text-typo">
+              {x.nav}
+            </a>
+          ))
+        }
       </div>
     </nav>
     <div class="medium-spacing"></div>

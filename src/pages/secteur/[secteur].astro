@@ -1,0 +1,469 @@
+---
+/**
+ * src/pages/secteur/[secteur].astro
+ * Génère /secteur/serious-game-musee/, /secteur/serious-game-ecole/,
+ * /secteur/jeu-entreprise-rse/, /secteur/jeu-interactif-tourisme/,
+ * /secteur/jeu-interactif-zoo/ à partir de src/data/secteurs.ts.
+ * Même gabarit que les pages « besoins » (ex. renforcer-cohesion.astro).
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+/* Modales des formats */
+import Quiz from '../../components/Modal/Quiz.astro';
+import EscapeGame from '../../components/Modal/EscapeGame.astro';
+import GeoCaching from '../../components/Modal/Geocaching.astro';
+import JeuSociete from '../../components/Modal/JeuSociete.astro';
+import JeuVideo from '../../components/Modal/JeuVideo.astro';
+import MiniJeu from '../../components/Modal/MiniJeu.astro';
+import HistoireInteractive from '../../components/Modal/HistoireInteractive.astro';
+
+/* Modales des projets (les mêmes que la page /projets/) */
+import Zizanie from '../../components/Modal/Zizanie.astro';
+import CartesCartels from '../../components/Modal/CartesCartels.astro';
+import BikerAuGrandCoeur from '../../components/Modal/BikerAuGrandCoeur.astro';
+import CoopCook from '../../components/Modal/CoopCook.astro';
+import SaveSeamulator from '../../components/Modal/SaveSeamulator.astro';
+import Zemblanite from '../../components/Modal/Zemblanite.astro';
+import KotiFight from '../../components/Modal/KotiFight.astro';
+import Scratch from '../../components/Modal/Scratch.astro';
+
+import { secteurs, FORMATS, PROJETS, type Secteur } from '../../data/secteurs';
+
+export function getStaticPaths() {
+  return secteurs.map((s) => ({
+    params: { secteur: s.slug },
+    props: { s },
+  }));
+}
+
+const { s } = Astro.props as { s: Secteur };
+
+const url = `https://loooper.fr/secteur/${s.slug}/`;
+const autres = secteurs.filter((x) => x.slug !== s.slug);
+
+const PALETTES = {
+  Blue: { paterne: 'Orange', ariane: 'orange' },
+  Orange: { paterne: 'Purple', ariane: 'purple' },
+  Purple: { paterne: 'Blue', ariane: 'blue' },
+} as const;
+const pal = PALETTES[s.bandeau];
+
+const COULEURS = ['orange', 'purple', 'blue'] as const;
+
+const formats = s.formats.map((f) => ({ ...FORMATS[f.id], texte: f.texte ?? FORMATS[f.id].texte }));
+const projets = s.projets.map((id) => PROJETS[id]);
+
+const MODALES: Record<string, any> = {
+  'modal-quiz': Quiz,
+  'modal-escape-game': EscapeGame,
+  'modal-geocaching': GeoCaching,
+  'modal-jeu-societe': JeuSociete,
+  'modal-jeu-video': JeuVideo,
+  'modal-mini-jeu': MiniJeu,
+  'modal-histoire-interactive': HistoireInteractive,
+  'modal-zizanie': Zizanie,
+  'modal-cartes-cartels': CartesCartels,
+  'modal-bikers': BikerAuGrandCoeur,
+  'modal-coop-cook': CoopCook,
+  'modal-save-seamulator': SaveSeamulator,
+  'modal-zemblanite': Zemblanite,
+  'modal-koti-fight': KotiFight,
+  'modal-scratch': Scratch,
+};
+
+const modalesUtilisees = [
+  ...new Set([...formats.map((f) => f.modal), ...projets.map((p) => p.modal)]),
+];
+
+const faqCouleur = secteurs.indexOf(s) % 2 === 0 ? 'purple' : 'blue';
+const arrowCouleurs = ['orange', 'purple', 'blue'];
+
+const faqColonnes = [s.faq.filter((_, i) => i % 2 === 0), s.faq.filter((_, i) => i % 2 === 1)];
+
+const schemaJson = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: s.title,
+    description: s.description,
+    url,
+    areaServed: 'Nouvelle-Aquitaine',
+    provider: {
+      '@type': 'Organization',
+      name: 'Loooper!',
+      url: 'https://loooper.fr/',
+      logo: 'https://loooper.fr/img/logoSMP.png',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://loooper.fr/' },
+      { '@type': 'ListItem', position: 2, name: s.nav, item: url },
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: s.faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title={s.title}
+  description={s.description}
+  ogUrl={url}
+  currentPage={s.slug}
+  schemaJson={schemaJson}>
+  <section class={`mainPageTitle mainPageTitle${s.bandeau}`} data-reveal="down">
+    <h1 class="h1 container-width white-border black">
+      {s.h1.avant}
+      {
+        s.h1.mots.map((mot, i) => {
+          const texte = i < s.h1.mots.length - 1 ? `${mot} ` : mot;
+          return (
+            <div class="paterneTitleContainer">
+              <span class={`paterneTitle paterneTitle${pal.paterne}`}>{texte}</span>
+              <span class="paterneTitleContour" aria-hidden="true">
+                {texte}
+              </span>
+            </div>
+          );
+        })
+      }
+      {s.h1.apres}
+    </h1>
+  </section>
+
+  <div class="container-width ariane-net h3" data-reveal="down">
+    <a href="/">Accueil </a>
+    <p class="h3">&gt;</p>
+    <a
+      href={`/secteur/${s.slug}/`}
+      class={`end-chield highlight-no-annim ${pal.ariane} black-border-small`}>
+      {s.nav}</a
+    >
+  </div>
+
+  <div class="large-spacing"></div>
+
+  <section class="container-width text-basical-container" data-reveal="up" data-reveal-delay="100">
+    <article class="text-basical-container-text-long">
+      <div>
+        <h2 class="h2 black white-border">{s.introTitre}</h2>
+        <div class="small-medium-spacing"></div>
+        <p set:html={s.intro} />
+        {
+          s.chiffre && (
+            <>
+              <div class="small-spacing" />
+              <p>
+                Déjà <b class="highlight purple">{s.chiffre.valeur}</b> {s.chiffre.texte}.
+              </p>
+            </>
+          )
+        }
+        <div class="small-medium-spacing"></div>
+        <a href="#contactForm" class="text-typo btn-project btn-white-background">
+          <span>{s.cta}</span>
+          <div class="arrow-container black-arrow">
+            <img src="/svg/arrowB.svg" alt="" />
+          </div>
+        </a>
+      </div>
+    </article>
+    <article class="text-basical-container-emojie">
+      <div class="emojie-img-line-container-besoin-child">
+        <div class="emojie-img-line-besoin-child star">
+          <img src={`/svg/besoin/star${s.illustration.etoiles}Type2.svg`} alt="" />
+        </div>
+        <img class="emojie-img-line-besoin-child" src={s.illustration.img} alt="" />
+        <div class="emojie-img-line-besoin-child star2">
+          <img src={`/svg/besoin/star${s.illustration.etoiles}Type1.svg`} alt="" />
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="large-spacing"></div>
+
+  <section class="container-width" data-reveal="up" data-reveal-delay="100">
+    <h2 class="h2 black white-border">Ce que nous pouvons faire pour vous</h2>
+    <div class="small-medium-spacing"></div>
+    <div class="card-info-wrap">
+      {
+        s.besoins.map((b) => (
+          <article
+            class={`card-info-container card-info-container-${b.couleur} card-info-container-secteur`}>
+            <div class="card-info-container-text">
+              <div class="card-info-container-text-alignement">
+                <h3 class={`h3 highlight-no-annim white-border-small black ${b.couleur}`}>
+                  {b.titre}
+                </h3>
+                <p class="black">{b.texte}</p>
+              </div>
+              <div class="card-info-container-text-center-btn">
+                <a href={b.lien.href} class="text-typo btn-project btn-white-background">
+                  <span>{b.lien.label}</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <div class="large-spacing"></div>
+
+  <div class="backgroundBrushType1">
+    <section class="container-width long-card-container" data-reveal="up" data-reveal-delay="100">
+      <h2 class="h2 black white-border">Les formats qui s’adaptent à votre projet</h2>
+      <div class="small-medium-spacing"></div>
+      <div class="long-card-wrapper">
+        {
+          formats.map((f, i) => {
+            const couleur = COULEURS[i % COULEURS.length];
+            return (
+              <article class={`long-card long-card-${couleur}`}>
+                <img src={f.img} alt={f.alt} />
+                <div class="long-card-text-content">
+                  <div>
+                    <h3 class={`h2 black white-border highlight-no-annim ${couleur}`}>{f.titre}</h3>
+                  </div>
+                  <p class="black" set:html={f.texte} />
+                  <button
+                    data-modal={f.modal}
+                    aria-haspopup="dialog"
+                    class="text-typo btn-project btn-modal btn-white-background"
+                    aria-label={f.aria}>
+                    <span>En savoir plus</span>
+                  </button>
+                </div>
+              </article>
+            );
+          })
+        }
+      </div>
+      <div class="small-medium-spacing"></div>
+      <a href="/formats/" class="text-typo btn-project btn-white-background">
+        <span>Découvrir nos autres formats</span>
+      </a>
+    </section>
+  </div>
+
+  {
+    projets.length > 0 && (
+      <>
+        <div class="large-spacing" />
+        <section class="container-width" data-reveal="up" data-reveal-delay="100">
+          <h2 class="h2 black white-border">Nos réalisations</h2>
+          <div class="small-medium-spacing" />
+          <div class="realisations-grid">
+            {projets.map((p, i) => {
+              const couleur = COULEURS[i % COULEURS.length];
+              return (
+                <article class={`realisation realisation-${couleur}`}>
+                  <div class="realisation-media">
+                    <img src={p.img} alt={p.alt} loading="lazy" />
+                  </div>
+                  <div class="realisation-body">
+                    <h3 class={`h3 highlight-no-annim white-border-small black ${couleur}`}>
+                      {p.titre}
+                    </h3>
+                    <p class="black realisation-type">{p.type}</p>
+                    <p class="black">{p.description}</p>
+                    <div class="realisation-actions">
+                      <button
+                        data-modal={p.modal}
+                        aria-haspopup="dialog"
+                        class="text-typo btn-project btn-modal btn-white-background"
+                        aria-label={`En savoir plus sur ${p.titre}`}>
+                        <span>En savoir plus</span>
+                      </button>
+                      <a href="/projets/" class="text-typo btn-project btn-white-background">
+                        <span>Voir tous nos projets</span>
+                      </a>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  {
+    s.avis && (
+      <>
+        <div class="large-spacing" />
+        <section class="container-width backgroundBrushType3">
+          <div data-reveal="up" data-reveal-delay="100">
+            <h2 class="h2 black white-border">Ils sont entrés dans le jeu...</h2>
+            <div class="small-medium-spacing" />
+            <div class="avis-container">
+              {s.avis.map((a, i) => (
+                <div
+                  class={`avis-block ${i % 2 === 0 ? 'card-info-container-orange avis-block-top' : 'card-info-container-purple avis-block-bot'}`}>
+                  <div class="guillemet-avis" />
+                  <p class="black">{a.texte}</p>
+                  <p class="avis-name h3 black">{a.auteur}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </>
+    )
+  }
+
+  <div class="large-spacing"></div>
+
+  <section class="container-width" data-reveal="up" data-reveal-delay="100">
+    <h2 class="h2 black white-border">Loooper! accompagne aussi</h2>
+    <div class="small-medium-spacing"></div>
+    <nav class="secteur-liens" aria-label="Autres secteurs">
+      {
+        autres.map((x) => (
+          <a href={`/secteur/${x.slug}/`} class="text-typo btn-project btn-white-background">
+            <span>{x.nav}</span>
+          </a>
+        ))
+      }
+      <a href="/besoins/" class="text-typo btn-project btn-white-background">
+        <span>Explorer tous les besoins</span>
+      </a>
+    </nav>
+  </section>
+
+  <div class="large-spacing"></div>
+
+  <div class="zoom-container-center">
+    <div class={`zoom-container background-interogation background-interogation-${faqCouleur}`}>
+      <section class="container-width">
+        <h2 class="h2 black">Des questions sur {s.nav.toLowerCase()} ?</h2>
+        <div class="small-medium-spacing"></div>
+        <div class="wrapper-faq-container-info">
+          {
+            faqColonnes.map((colonne, c) => (
+              <div class="wrapper-faq-container-info-row">
+                {colonne.map((f, i) => (
+                  <article class="faq-container-info">
+                    <div class="faq-header">
+                      <div>
+                        <div
+                          class={`faq-arrow faq-arrow-${arrowCouleurs[(i * 2 + c) % arrowCouleurs.length]}`}>
+                          <div class="faq-arrow-1" />
+                          <div class="faq-arrow-2" />
+                        </div>
+                      </div>
+                      <h3 class="h3 black">{f.q}</h3>
+                    </div>
+                    <p class="black">{f.a}</p>
+                  </article>
+                ))}
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </div>
+
+  {
+    modalesUtilisees.map((id) => {
+      const Modale = MODALES[id];
+      return Modale ? <Modale /> : null;
+    })
+  }
+
+  <script src="/js/modal.js" defer></script>
+  <script src="/js/faq.js" defer></script>
+</BaseLayout>
+
+<style>
+  .realisations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 28rem));
+    gap: 4rem 3.5rem;
+    justify-content: start;
+  }
+
+  .realisation {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 5px solid #000;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+
+  .realisation-orange {
+    box-shadow: 12px 12px 0 0 #f6b254;
+  }
+
+  .realisation-purple {
+    box-shadow: 12px 12px 0 0 #bb6ef6;
+  }
+
+  .realisation-blue {
+    box-shadow: 12px 12px 0 0 #3c61f5;
+  }
+
+  .realisation-media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    border-bottom: 5px solid #000;
+    overflow: hidden;
+  }
+
+  .realisation-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .realisation-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 1.2rem;
+    padding: 1.5rem 1.5rem 2rem;
+  }
+
+  .realisation-body h3 {
+    width: fit-content;
+  }
+
+  .realisation-type {
+    margin: -0.6rem 0 0;
+    font-weight: 700;
+  }
+
+  .realisation-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem 1rem;
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+
+  .secteur-liens {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .card-info-container-secteur {
+    width: 20rem;
+  }
+</style>
