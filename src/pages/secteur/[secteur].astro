@@ -332,14 +332,38 @@ const schemaJson = [
     <div class="small-medium-spacing"></div>
     <nav class="secteur-liens" aria-label="Autres secteurs">
       {
-        autres.map((x) => (
-          <a href={`/secteur/${x.slug}/`} class="text-typo btn-project btn-white-background">
-            <span>{x.nav}</span>
-          </a>
-        ))
+        autres.map((x, i) => {
+          const couleur = COULEURS[i % COULEURS.length];
+          return (
+            <a href={`/secteur/${x.slug}/`} class={`secteur-card secteur-card-${couleur}`}>
+              <h3 class={`h3 highlight-no-annim white-border-small black ${couleur}`}>{x.nav}</h3>
+              <p class="black secteur-card-texte">{x.introTitre}</p>
+              <span class="secteur-card-cta text-typo black">
+                <span>Découvrir</span>
+                <span class="arrow-container black-arrow">
+                  <img src="/svg/arrowB.svg" alt="" />
+                </span>
+              </span>
+            </a>
+          );
+        })
       }
-      <a href="/besoins/" class="text-typo btn-project btn-white-background">
-        <span>Explorer tous les besoins</span>
+      <a
+        href="/besoins/"
+        class={`secteur-card secteur-card-${COULEURS[autres.length % COULEURS.length]}`}>
+        <h3
+          class={`h3 highlight-no-annim white-border-small black ${COULEURS[autres.length % COULEURS.length]}`}>
+          Explorer tous les besoins
+        </h3>
+        <p class="black secteur-card-texte">
+          Apprendre, sensibiliser, former, engager… trouvez le format qui répond à votre projet.
+        </p>
+        <span class="secteur-card-cta text-typo black">
+          <span>Explorer</span>
+          <span class="arrow-container black-arrow">
+            <img src="/svg/arrowB.svg" alt="" />
+          </span>
+        </span>
       </a>
     </nav>
   </section>
@@ -458,9 +482,74 @@ const schemaJson = [
   }
 
   .secteur-liens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap: 3.5rem 3rem;
+  }
+
+  .secteur-card {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.8rem 1.6rem 1.6rem;
+    background: #fff;
+    border: 5px solid #000;
+    border-radius: 30px;
+    text-decoration: none;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .secteur-card-orange {
+    --card-color: #f6b254;
+  }
+
+  .secteur-card-purple {
+    --card-color: #bb6ef6;
+  }
+
+  .secteur-card-blue {
+    --card-color: #3c61f5;
+  }
+
+  .secteur-card {
+    box-shadow: 10px 10px 0 0 var(--card-color);
+  }
+
+  .secteur-card:hover {
+    transform: translate(-4px, -4px);
+  }
+
+  .secteur-card h3 {
+    width: fit-content;
+    margin: 0;
+  }
+
+  .secteur-card-texte {
+    margin: 0;
+  }
+
+  .secteur-card-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: auto;
+    padding-top: 1.2rem;
+    border-top: 2px solid var(--card-color);
+    font-weight: 700;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .secteur-card {
+      transition: none;
+    }
+
+    .secteur-card:hover,
+    .secteur-card:focus-visible {
+      transform: none;
+    }
   }
 
   .card-info-container-secteur {
