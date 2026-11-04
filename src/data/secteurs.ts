@@ -224,9 +224,9 @@ export const secteurs: Secteur[] = [
   {
     slug: 'serious-game-musee',
     nav: 'Musées et patrimoine',
-    title: 'Jeux interactifs pour musées à Bordeaux',
+    title: 'Jeux interactifs pour musées, Bordeaux',
     description:
-      'Loooper! crée des jeux interactifs, quiz et parcours ludiques sur mesure pour les musées et lieux de patrimoine de Nouvelle-Aquitaine. Faites jouer vos collections.',
+      'Quiz, enquêtes et jeux de société sur mesure pour faire jouer vos collections. Devis gratuit sous 48 h.',
     h1: {
       avant: 'Loooper! c’est des ',
       mots: ['jeux', 'interactifs'],
@@ -234,7 +234,7 @@ export const secteurs: Secteur[] = [
     },
     introTitre: 'Et si vos collections devenaient un terrain de jeu ?',
     intro:
-      'Une collection est riche, mais pas toujours facile d’accès. Chez <b>Loooper!</b>, nous transformons <b class="highlight orange">vos œuvres, vos récits et vos savoirs</b> en <b class="highlight purple">jeux interactifs</b> qui donnent envie d’observer, de chercher et de comprendre. Le visiteur devient <b class="highlight blue">acteur de sa visite</b>.',
+      'Une collection est riche, mais pas toujours facile d’accès. Chez <b>Loooper!</b>, nous transformons <b>vos œuvres, vos récits et vos savoirs</b> en <b>jeux interactifs de médiation</b> qui donnent envie d’observer, de chercher et de comprendre. Le visiteur devient <b>acteur de sa visite</b>. Chaque expérience est pensée <b>accessible, inclusive et éco-conçue</b>.',
     cta: 'Parler de mon musée',
     illustration: { img: '/svg/besoin/idea.svg', etoiles: 'Purple' },
     bandeau: 'Blue',
@@ -242,7 +242,7 @@ export const secteurs: Secteur[] = [
       {
         titre: 'Valoriser vos collections',
         texte:
-          'Quiz, enquêtes, jeux de cartes ou jeux de piste : le visiteur regarde les œuvres plus longtemps et retient davantage, sans que la médiation devienne scolaire.',
+          'Quiz, enquêtes, jeux de cartes ou jeux de piste : le visiteur regarde les œuvres plus longtemps et retient davantage.',
         couleur: 'orange',
         lien: { href: '/apprendre-ludique/', label: 'Apprendre avec le ludique' },
       },
@@ -281,12 +281,12 @@ export const secteurs: Secteur[] = [
     projets: ['zizanie', 'cartes-cartels'],
     chiffre: {
       valeur: '300',
-      texte: 'groupes et familles ont déjà découvert des œuvres par le jeu avec Loooper!',
+      texte: 'groupes et familles ont découvert des œuvres par le jeu',
     },
     faq: [
       {
         q: 'Combien de temps faut-il pour créer un jeu pour un musée ?',
-        a: 'Cela dépend du format : un quiz interactif ne demande pas le même temps qu’un jeu de société ou qu’une application complète. Après un premier échange sur vos objectifs, votre public et votre calendrier, nous vous proposons un planning réaliste.',
+        a: 'Cela dépend du format : un quiz interactif ne demande pas le même temps qu’un jeu de société ou qu’une application complète. Nos projets ont été réalisés en 2 à 11 semaines selon le format et le périmètre. Après un premier échange sur vos objectifs, votre public et votre calendrier, nous vous proposons un planning réaliste.',
       },
       {
         q: 'Peut-on jouer dans un musée sans écran ?',
@@ -294,7 +294,7 @@ export const secteurs: Secteur[] = [
       },
       {
         q: 'Travaillez-vous avec les petites structures culturelles ?',
-        a: 'Oui. Nous accompagnons des musées, des associations et des structures culturelles de toutes tailles en Nouvelle-Aquitaine. Présentez-nous votre projet et nous construisons une proposition adaptée à vos moyens.',
+        a: 'Oui. Nous avons travaillé avec le MusBA et des associations. Chaque proposition est adaptée à vos moyens : présentez-nous votre projet et nous construisons une réponse sur mesure.',
       },
     ],
   },
@@ -303,9 +303,9 @@ export const secteurs: Secteur[] = [
   {
     slug: 'serious-game-ecole',
     nav: 'Écoles et éducation',
-    title: 'Ateliers serious game pour écoles et collèges',
+    title: 'Atelier serious game pour collèges, Bordeaux',
     description:
-      'Loooper! anime des ateliers de création de serious games et conçoit des jeux pédagogiques sur mesure pour les écoles, collèges et établissements d’enseignement supérieur.',
+      'Ateliers de création de jeu vidéo ou de jeu de société pour vos élèves, et jeux pédagogiques sur mesure. Devis gratuit.',
     h1: {
       avant: 'Loooper! c’est des ',
       mots: ['ateliers', 'serious', 'game'],
@@ -313,7 +313,7 @@ export const secteurs: Secteur[] = [
     },
     introTitre: 'Faire jouer vos élèves, ou mieux, leur faire créer leur jeu ?',
     intro:
-      'Les élèves retiennent mieux quand ils jouent, et encore mieux quand ils créent. Nous animons <b class="highlight orange">des ateliers serious game</b> où ils conçoivent leur propre jeu, et nous fabriquons <b class="highlight purple">des outils pédagogiques ludiques</b> à partir de vos contenus pour <b class="highlight blue">accompagner vos séquences</b>.',
+      'Les élèves retiennent mieux quand ils jouent, et encore mieux quand ils créent. Nous animons <b>des ateliers serious game</b> où ils conçoivent leur propre jeu, et nous fabriquons <b>des outils pédagogiques ludiques</b> à partir de vos contenus pour <b>accompagner vos séquences</b>. Chaque expérience est pensée <b>accessible, inclusive et éco-conçue</b>.',
     cta: 'Parler de ma classe',
     illustration: { img: '/svg/besoin/teach.svg', etoiles: 'Purple' },
     bandeau: 'Purple',
@@ -360,18 +360,18 @@ export const secteurs: Secteur[] = [
     projets: ['scratch', 'save-seamulator', 'bikers'],
     chiffre: {
       valeur: '150',
-      texte: 'élèves déjà accompagnés dans la création de serious games',
+      texte: 'élèves accompagnés dans la création de serious games',
     },
     avis: [
       {
         texte:
-          'Le trio de Loooper! forme une équipe parfaite pour accompagner dans la création de serious game et ludifier le travail en atelier auprès du public. Sérieux et aidants, ils proposent une expérience sur mesure par rapport à la demande client.',
+          'Le trio de Loooper! forme une équipe parfaite pour accompagner dans la création de serious game et ludifier le travail en atelier auprès du public. Sérieux et aidants, ils proposent une expérience sur mesure par rapport à la demande client […]',
         auteur:
           'Thomas Brunel de Montméjan, professeur à l’IUT Bordeaux Montaigne et chercheur associé au laboratoire MICA',
       },
       {
         texte:
-          'Leur projet est très bien structuré, tout comme leurs séances. Ils sont à l’aise devant les élèves et se rendent disponibles à tout moment. Leurs ateliers jeux vidéo ont été une vraie chance pour les élèves qui ont adoré ce projet.',
+          '[…] Leur projet est très bien structuré, tout comme leurs séances. Ils sont à l’aise devant les élèves et se rendent disponibles à tout moment. Leurs ateliers jeux vidéo ont été une vraie chance pour les élèves qui ont adoré ce projet.',
         auteur: 'Léa Roger, enseignante de SVT au collège Pablo Néruda',
       },
     ],
@@ -395,9 +395,9 @@ export const secteurs: Secteur[] = [
   {
     slug: 'jeu-entreprise-rse',
     nav: 'Entreprises et RSE',
-    title: 'Jeux de sensibilisation RSE pour entreprises',
+    title: 'Jeu de sensibilisation RSE pour entreprises',
     description:
-      'Loooper! conçoit des jeux sur mesure pour sensibiliser vos équipes à la RSE, renforcer la cohésion et rendre vos formations plus engageantes, à Bordeaux et en Nouvelle-Aquitaine.',
+      'Jeux de société, serious games et ateliers sur mesure pour sensibiliser vos équipes à la RSE et créer du lien en séminaire. Devis gratuit sous 48 h.',
     h1: {
       avant: 'Loooper! c’est des ',
       mots: ['jeux', 'de', 'sensibilisation'],
@@ -405,7 +405,7 @@ export const secteurs: Secteur[] = [
     },
     introTitre: 'Une démarche RSE que vos équipes vont vraiment s’approprier ?',
     intro:
-      'Un livret RSE se lit une fois. Un jeu se rejoue et se discute. Chez <b>Loooper!</b>, nous transformons <b class="highlight orange">vos enjeux RSE</b> en <b class="highlight purple">expériences collectives</b> qui font passer les messages et <b class="highlight blue">créent du lien entre collaborateurs</b>.',
+      'Un livret RSE se lit une fois. Un jeu se rejoue et se discute. Chez <b>Loooper!</b>, nous transformons <b>vos enjeux RSE</b> en <b>expériences collectives</b> qui font passer les messages et <b>créent du lien entre collaborateurs</b>. Chaque expérience est pensée <b>accessible, inclusive et éco-conçue</b>.',
     cta: 'Parler de mon entreprise',
     illustration: { img: '/svg/besoin/annonce.svg', etoiles: 'Blue' },
     bandeau: 'Orange',
@@ -446,11 +446,15 @@ export const secteurs: Secteur[] = [
       {
         id: 'jeu-societe',
         texte:
-          'Abordez <b>les enjeux RSE</b> autour d’un plateau : on débat, on se positionne et on repart avec <b>des idées concrètes</b>.',
+          'Un plateau pour se positionner, débattre et repartir avec <b>des idées concrètes</b> : <b>un jeu de société</b> qui lance la discussion en équipe.',
       },
     ],
     projets: ['bikers', 'zemblanite', 'coop-cook'],
     faq: [
+      {
+        q: 'Avez-vous déjà réalisé un jeu de sensibilisation ?',
+        a: 'Oui. Bikers au grand cœur, un jeu de société sur le harcèlement, a été repris par l’association Bikers Contre le Harcèlement 33 pour ses événements et ses interventions. Save Seamulator sensibilise à la biodiversité marine. Nous appliquons la même démarche à vos enjeux RSE.',
+      },
       {
         q: 'Un jeu sur mesure, est-ce adapté à une petite entreprise ?',
         a: 'Oui. Nous adaptons le format (jeu de société, jeu numérique, atelier animé) à la taille de votre équipe et à votre budget.',
@@ -470,9 +474,9 @@ export const secteurs: Secteur[] = [
   {
     slug: 'jeu-interactif-tourisme',
     nav: 'Tourisme et territoires',
-    title: 'Jeux et parcours ludiques pour le tourisme',
+    title: 'Jeu de piste et parcours ludique touristique',
     description:
-      'Loooper! crée des jeux de piste, quiz et parcours interactifs pour les sites touristiques, offices de tourisme et territoires de Nouvelle-Aquitaine. Faites découvrir autrement.',
+      'Jeux de piste, quiz et parcours interactifs pour sites de visite et territoires : offrez à vos visiteurs une expérience mémorable. Devis gratuit sous 48 h.',
     h1: {
       avant: 'Loooper! c’est des ',
       mots: ['parcours', 'ludiques'],
@@ -480,7 +484,7 @@ export const secteurs: Secteur[] = [
     },
     introTitre: 'Et si la visite d’un lieu devenait une aventure ?',
     intro:
-      'Les visiteurs ne veulent plus seulement regarder : ils veulent participer. Nous créons des <b class="highlight orange">jeux de piste, quiz et parcours interactifs</b> qui font découvrir <b class="highlight purple">votre patrimoine, vos histoires et vos paysages</b> en jouant, <b class="highlight blue">en solo, en famille ou entre amis</b>.',
+      'Les visiteurs ne veulent plus seulement regarder : ils veulent participer. Pour un site de visite, un office de tourisme ou tout un territoire, nous créons des <b>jeux de piste, quiz et parcours interactifs</b> qui font découvrir <b>votre patrimoine, vos histoires et vos paysages</b> en jouant, <b>à leur rythme</b>. Chaque expérience est pensée <b>accessible, inclusive et éco-conçue</b>.',
     cta: 'Parler de mon site',
     illustration: { img: '/svg/besoin/connection.svg', etoiles: 'Yellow' },
     bandeau: 'Blue',
@@ -527,7 +531,7 @@ export const secteurs: Secteur[] = [
     projets: ['cartes-cartels', 'zizanie'],
     chiffre: {
       valeur: '96',
-      texte: 'enfants et parents ont déjà joué et appris en famille avec Loooper!',
+      texte: 'enfants et parents sont venus jouer et apprendre en famille avec Loooper!',
     },
     faq: [
       {
@@ -549,9 +553,9 @@ export const secteurs: Secteur[] = [
   {
     slug: 'jeu-interactif-zoo',
     nav: 'Zoos et parcs animaliers',
-    title: 'Jeux interactifs pour zoos et parcs animaliers',
+    title: 'Jeu interactif pour zoo et parc animalier',
     description:
-      'Loooper! crée des jeux de piste, quiz et parcours interactifs pour les zoos et parcs animaliers : sensibilisez petits et grands à la biodiversité en jouant.',
+      'Jeux de piste, quiz et parcours pour zoos et parcs animaliers : faites comprendre la biodiversité aux familles et aux scolaires. Devis gratuit sous 48 h.',
     h1: {
       avant: 'Loooper! c’est des ',
       mots: ['jeux', 'interactifs'],
@@ -559,7 +563,7 @@ export const secteurs: Secteur[] = [
     },
     introTitre: 'Et si la visite de votre parc devenait une expédition ?',
     intro:
-      'Observer les animaux, c’est déjà beaucoup. Les comprendre, c’est encore mieux. Chez <b>Loooper!</b>, nous créons des <b class="highlight orange">jeux de piste, quiz et histoires interactives</b> qui font découvrir <b class="highlight purple">vos espèces, vos missions de conservation et leurs enjeux</b> à chaque visiteur, <b class="highlight blue">en famille, en groupe scolaire ou entre amis</b>.',
+      'Observer les animaux, c’est déjà beaucoup. Les comprendre, c’est encore mieux. Chez <b>Loooper!</b>, nous créons des <b>jeux de piste, quiz et histoires interactives</b> qui font découvrir <b>vos espèces, vos missions de conservation et leurs enjeux</b> à chaque visiteur, <b>en famille, en groupe scolaire ou entre amis</b>. Chaque expérience est pensée <b>accessible, inclusive et éco-conçue</b>.',
     cta: 'Parler de mon parc',
     illustration: { img: '/svg/besoin/connection.svg', etoiles: 'Purple' },
     bandeau: 'Orange',
@@ -574,7 +578,7 @@ export const secteurs: Secteur[] = [
       {
         titre: 'Séduire les familles et les scolaires',
         texte:
-          'Des parcours et des niveaux adaptés aux enfants comme aux adultes, pour que petits et grands jouent ensemble et que les groupes scolaires apprennent en s’amusant.',
+          'Des parcours et des niveaux adaptés aux enfants comme aux adultes. Pour la sortie scolaire, un jeu à utiliser avant, pendant et après la visite.',
         couleur: 'purple',
         lien: { href: '/creer-interaction-sociale/', label: 'Créer de l’interaction' },
       },
@@ -604,6 +608,10 @@ export const secteurs: Secteur[] = [
       },
     ],
     projets: ['save-seamulator', 'zemblanite', 'scratch'],
+    chiffre: {
+      valeur: '3',
+      texte: 'conférences données sur la biodiversité marine',
+    },
     faq: [
       {
         q: 'Avez-vous déjà travaillé sur la biodiversité et la protection de la nature ?',
