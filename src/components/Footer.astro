@@ -1,5 +1,8 @@
 ---
 import { secteurs } from '../data/secteurs';
+import { getPublishedRessources } from '../utils/ressources';
+
+const latestRessources = (await getPublishedRessources()).slice(0, 4);
 ---
 
 <div class="menue-nav-ludique-handicap">
@@ -155,6 +158,13 @@ import { secteurs } from '../data/secteurs';
       </div>
       <div class="footer-nav-row">
         <a href="/ressources/" class="footerTitle link-underline">Ressources</a>
+        {
+          latestRessources.map((article) => (
+            <a href={`/ressources/${article.id}`} class="text-typo">
+              {article.data.title}
+            </a>
+          ))
+        }
       </div>
     </nav>
     <div class="medium-spacing"></div>
