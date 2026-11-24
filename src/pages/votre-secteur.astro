@@ -1,0 +1,122 @@
+---
+/**
+ * pages/votre-secteur.astro — Votre secteur
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Votre secteur ?"
+  description="Musées, écoles, entreprises, territoires touristiques, zoos : découvrez comment Loooper! crée des expériences ludiques sur mesure pour chaque secteur."
+  ogUrl="https://loooper.fr/votre-secteur"
+  currentPage="votre-secteur">
+  <section class="mainPageTitle mainPageTitlePurple" data-reveal="down">
+    <h1 class="h1 container-width white-border black">
+      Loooper!, des expériences pour <span> </span>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitleBlue">chaque </span><span class="paterneTitleContour"
+          >chaque
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitleBlue">secteur !</span><span
+          class="paterneTitleContour">secteur !</span
+        >
+      </div>
+    </h1>
+  </section>
+
+  <div class="container-width ariane-net h3" data-reveal="down">
+    <a href="/">Accueil </a>
+    <p class="h3">></p>
+    <a href="/votre-secteur/" class="end-chield highlight-no-annim blue black-border-small"
+      >Votre secteur</a
+    >
+  </div>
+
+  <div class="large-spacing"></div>
+
+  <section class="container-width text-basical-container" data-reveal="up" data-reveal-delay="100">
+    <article class="text-basical-container-text-long">
+      <div>
+        <h2 class="h2 black white-border">
+          Musées, écoles, entreprises, territoires : des formats ludiques pour chaque secteur
+        </h2>
+        <div class="small-medium-spacing"></div>
+        <p>
+          Chez <b>LOOOPER!</b>, nous adaptons chaque expérience à <b class="highlight orange"
+            >&thinsp;votre univers, votre public et vos contraintes</b
+          > . Un musée n'a pas les mêmes attentes qu'une école, une entreprise ou un parc animalier :
+          nous partons de <b class="highlight purple">votre contexte</b> pour concevoir une expérience
+          interactive sur mesure. Chaque<a class="link-underline-purple" href="/formats/">format</a> que
+          nous proposons s'appuie sur des mécaniques de gamification diverses pour répondre à vos enjeux,
+          et reste <b class="highlight blue">ludique, accessible et adapté à vos ressources</b>.
+        </p>
+      </div>
+    </article>
+    <article class="text-basical-container-emojie">
+      <div class="emojie-img-line-container">
+        <div class="emojie-img-line">
+          <img src="/svg/controler.svg" alt="" />
+          <img src="/svg/starType1.svg" alt="" />
+        </div>
+        <div class="emojie-img-line">
+          <img src="/svg/starType2.svg" alt="" />
+          <img src="/svg/cardAs.svg" alt="" />
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <div class="large-spacing"></div>
+
+  <section class="zoom-container-center">
+    <div class="zoom-container backgroundBrushType2">
+      <div class="container-width">
+        <div class="zoom-center-title">
+          <h2 class="h2 black" style="z-index: 1;">Et vous, quel est votre secteur ?</h2>
+          <div class="small-medium-spacing"></div>
+          <nav class="mini-card-besoin-container">
+            <article class="mini-card-info-besoin mini-card-info-besoin-orange musee">
+              <h3 class="h3 black">Musées et patrimoine</h3>
+              <a
+                href="/secteur/serious-game-musee/"
+                class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
+              >
+            </article>
+            <article class="mini-card-info-besoin mini-card-info-besoin-purple ecole">
+              <h3 class="h3 black">Écoles et éducation</h3>
+              <a
+                href="/secteur/serious-game-ecole/"
+                class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
+              >
+            </article>
+            <article class="mini-card-info-besoin mini-card-info-besoin-blue entreprise">
+              <h3 class="h3 black">Entreprises et RSE</h3>
+              <a
+                href="/secteur/jeu-entreprise-rse/"
+                class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
+              >
+            </article>
+            <article class="mini-card-info-besoin mini-card-info-besoin-orange tourisme">
+              <h3 class="h3 black">Tourisme et territoires</h3>
+              <a
+                href="/secteur/jeu-interactif-tourisme/"
+                class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
+              >
+            </article>
+            <article class="mini-card-info-besoin mini-card-info-besoin-purple zoo">
+              <h3 class="h3 black">Zoos et parcs animaliers</h3>
+              <a
+                href="/secteur/jeu-interactif-zoo/"
+                class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
+              >
+            </article>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="/js/faq.js" defer></script>
+</BaseLayout>

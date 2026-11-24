@@ -16,44 +16,50 @@ const schemaOrg = [
       {
         '@type': 'ListItem',
         position: 1,
-        name: 'Apprendre avec le ludique',
-        url: 'https://loooper.fr/apprendre-ludique',
+        name: "Rendre l'apprentissage ludique",
+        url: 'https://loooper.fr/besoins/apprendre-ludique',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Sensibiliser et faire réfléchir',
-        url: 'https://loooper.fr/sensibiliser-reflechir',
+        url: 'https://loooper.fr/besoins/sensibiliser-reflechir',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: "Créer de l'interaction sociale",
-        url: 'https://loooper.fr/creer-interaction-sociale',
+        url: 'https://loooper.fr/besoins/creer-interaction-sociale',
       },
       {
         '@type': 'ListItem',
         position: 4,
         name: 'Renforcer la cohésion',
-        url: 'https://loooper.fr/renforcer-cohesion',
+        url: 'https://loooper.fr/besoins/renforcer-cohesion',
       },
       {
         '@type': 'ListItem',
         position: 5,
         name: 'Engager et motiver',
-        url: 'https://loooper.fr/engager-motiver',
+        url: 'https://loooper.fr/besoins/engager-motiver',
       },
       {
         '@type': 'ListItem',
         position: 6,
         name: 'Former efficacement',
-        url: 'https://loooper.fr/former-efficacement',
+        url: 'https://loooper.fr/besoins/former-efficacement',
       },
       {
         '@type': 'ListItem',
         position: 7,
-        name: 'Communiquer autrement',
-        url: 'https://loooper.fr/communiquer-autrement',
+        name: 'Marquer les esprits',
+        url: 'https://loooper.fr/besoins/marquer-les-esprits',
+      },
+      {
+        '@type': 'ListItem',
+        position: 8,
+        name: 'Accueillir tous les publics',
+        url: 'https://loooper.fr/besoins/accueillir-tous-publics',
       },
     ],
   },
@@ -62,7 +68,7 @@ const schemaOrg = [
 
 <BaseLayout
   title="Vos besoins"
-  description="Découvrez comment Loooper! utilise la ludification pour répondre à vos besoins : renforcer la cohésion, créer de l'interaction sociale, motiver, former ou communiquer autrement."
+  description="Découvrez comment Loooper! utilise la ludification pour répondre à vos besoins : renforcer la cohésion, créer de l'interaction sociale, motiver, former ou marquer les esprits."
   ogImage="https://loooper.fr/img/ico/BESOINS.png"
   ogUrl="https://loooper.fr/besoins"
   currentPage="besoins"
@@ -89,8 +95,8 @@ const schemaOrg = [
   </section>
 
   <div class="container-width ariane-net h3" data-reveal="down">
-    <a href="">Accueil </a>
-    <p class="h3"></p>
+    <a href="/">Accueil </a>
+    <p class="h3">></p>
     <a href="/besoins/" class="end-chield highlight-no-annim blue black-border-small">Vos besoins</a
     >
   </div>
@@ -108,11 +114,12 @@ const schemaOrg = [
           Chez <b>LOOOPER!</b>, tout commence par une question simple : de quoi avez-vous vraiment <b
             class="highlight orange">
             besoin ?</b
-          >
-          Nous co-construisons ensemble <b>une expérience interactive sur mesure</b>, pensée pour <b
-            class="highlight purple">vos objectifs et vos publics</b
-          >. Chaque <a class="link-underline-purple" href="/formats/">format</a> que nous proposons s'appuie
-          sur des mécaniques de gamification diverses pour répondre à vos enjeux. Que ce soit pour de
+          >&thinsp; Nous co-construisons ensemble <b>une expérience interactive sur mesure</b>,
+          pensée pour <b class="highlight purple">vos objectifs et vos publics</b>. Chaque<a
+            class="link-underline-purple"
+            href="/formats/">format</a
+          > que nous proposons s'appuie sur des mécaniques de gamification diverses pour répondre à vos
+          enjeux. Que ce soit pour de
           <b> la formation, de la sensibilisation, de l'apprentissage ou de la création de lien,</b> notre
           volonté reste la même : transformer vos contenus en expériences ludiques, interactives et mémorables,
           adaptées à <b class="highlight blue">votre contexte et à vos ressources</b>.
@@ -143,46 +150,58 @@ const schemaOrg = [
           <div class="small-medium-spacing"></div>
           <nav class="mini-card-besoin-container">
             <article class="mini-card-info-besoin mini-card-info-besoin-orange apprendre">
-              <h3 class="h3 black">Apprendre avec le ludique</h3>
-              <a href="/apprendre-ludique/" class="text-typo btn-project btn-white-background"
-                ><span>Voir la page</span></a
+              <h3 class="h3 black">Rendre l'apprentissage ludique</h3>
+              <a
+                href="/besoins/apprendre-ludique/"
+                class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
               >
             </article>
             <article class="mini-card-info-besoin mini-card-info-besoin-purple sensibiliser">
               <h3 class="h3 black">Sensibiliser et faire réfléchir</h3>
-              <a href="/sensibiliser-reflechir/" class="text-typo btn-project btn-white-background"
-                ><span>Voir la page</span></a
+              <a
+                href="/besoins/sensibiliser-reflechir/"
+                class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
               >
             </article>
             <article class="mini-card-info-besoin mini-card-info-besoin-blue cree">
               <h3 class="h3 black">Créer de l'interaction sociale</h3>
               <a
-                href="/creer-interaction-sociale/"
+                href="/besoins/creer-interaction-sociale/"
                 class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
               >
             </article>
             <article class="mini-card-info-besoin mini-card-info-besoin-orange former">
               <h3 class="h3 black">Former efficacement</h3>
-              <a href="/former-efficacement/" class="text-typo btn-project btn-white-background"
-                ><span>Voir la page</span></a
+              <a
+                href="/besoins/former-efficacement/"
+                class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
               >
             </article>
             <article class="mini-card-info-besoin mini-card-info-besoin-purple renforcer">
               <h3 class="h3 black">Renforcer la cohésion</h3>
-              <a href="/renforcer-cohesion/" class="text-typo btn-project btn-white-background"
-                ><span>Voir la page</span></a
+              <a
+                href="/besoins/renforcer-cohesion/"
+                class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
               >
             </article>
             <article class="mini-card-info-besoin mini-card-info-besoin-blue engager">
               <h3 class="h3 black">Engager et motiver</h3>
-              <a href="/engager-motiver/" class="text-typo btn-project btn-white-background"
+              <a href="/besoins/engager-motiver/" class="text-typo btn-project btn-white-background"
                 ><span>Voir la page</span></a
               >
             </article>
             <article class="mini-card-info-besoin mini-card-info-besoin-orange communiquer">
-              <h3 class="h3 black">Communiquer autrement</h3>
-              <a href="/communiquer-autrement/" class="text-typo btn-project btn-white-background"
-                ><span>Voir la page</span></a
+              <h3 class="h3 black">Marquer les esprits</h3>
+              <a
+                href="/besoins/marquer-les-esprits/"
+                class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
+              >
+            </article>
+            <article class="mini-card-info-besoin mini-card-info-besoin-purple communiquer">
+              <h3 class="h3 black">Accueillir tous les publics</h3>
+              <a
+                href="/besoins/accueillir-tous-publics/"
+                class="text-typo btn-project btn-white-background"><span>Voir la page</span></a
               >
             </article>
           </nav>

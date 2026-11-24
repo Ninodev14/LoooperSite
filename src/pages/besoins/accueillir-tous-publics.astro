@@ -1,40 +1,34 @@
 ---
 /**
- * pages/apprendre-ludique.astro — Apprendre avec le ludique
+ * pages/accueillir-tous-publics.astro — Accueillir tous les publics
  */
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Quiz from '../components/Modal/Quiz.astro';
-import JeuSociete from '../components/Modal/JeuSociete.astro';
-import GeoCaching from '../components/Modal/Geocaching.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Quiz from '../../components/Modal/Quiz.astro';
+import JeuSociete from '../../components/Modal/JeuSociete.astro';
+import GeoCaching from '../../components/Modal/Geocaching.astro';
 ---
 
 <BaseLayout
-  title="Apprendre avec le ludique"
-  description="Découvrez comment apprendre autrement grâce à la pédagogie ludique : comprendre en s'amusant et retenir durablement."
-  ogUrl="https://loooper.fr/apprendre-ludique"
-  currentPage="apprendre-ludique"
+  title="Accueillir tous les publics"
+  description="Handicap, âge, niveau de lecture, contexte : Loooper! adapte chaque expérience ludique à vos publics pour que personne ne reste sur le côté."
+  ogUrl="https://loooper.fr/accueillir-tous-publics"
+  currentPage="accueillir-tous-publics"
   ><section class="mainPageTitle mainPageTitleBlue" data-reveal="down">
     <h1 class="h1 container-width white-border black">
-      Loooper! c’est apprendre avec <span> </span>
+      Loooper! c’est accueillir <span> </span>
       <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleOrange">le </span><span class="paterneTitleContour"
-          >le
+        <span class="paterneTitle paterneTitleOrange">tous </span><span class="paterneTitleContour"
+          >tous
         </span>
       </div>
       <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleOrange">ludique </span><span
-          class="paterneTitleContour"
-          >ludique
+        <span class="paterneTitle paterneTitleOrange">les </span><span class="paterneTitleContour"
+          >les
         </span>
       </div>
       <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleOrange">et</span><span class="paterneTitleContour"
-          >et</span
-        >
-      </div>
-      <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleOrange">l’interactif !</span><span
-          class="paterneTitleContour">l’interactif !</span
+        <span class="paterneTitle paterneTitleOrange">publics !</span><span
+          class="paterneTitleContour">publics !</span
         >
       </div>
     </h1>
@@ -44,8 +38,10 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
     <p class="h3">></p>
     <a href="/besoins/">Vos besoins</a>
     <p class="h3">></p>
-    <a href="/apprendre-ludique/" class="end-chield highlight-no-annim orange black-border-small">
-      Apprendre avec le ludique
+    <a
+      href="/accueillir-tous-publics/"
+      class="end-chield highlight-no-annim orange black-border-small">
+      Accueillir tous les publics
     </a>
   </div>
 
@@ -54,19 +50,20 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
   <section class="container-width text-basical-container" data-reveal="up" data-reveal-delay="100">
     <article class="text-basical-container-text-long">
       <div>
-        <h2 class="h2 black white-border">Apprendre en s’amusant ?</h2>
+        <h2 class="h2 black white-border">Une expérience qui s’adapte à vos publics</h2>
         <div class="small-medium-spacing"></div>
 
         <p>
-          Chez <b>Loooper!</b>, nous sommes persuadés d'une chose : <b class="highlight orange"
-            >l'apprentissage peut (et doit) être amusant</b
-          >. Grâce à la
-          <b>ludification</b>, nous transformons des contenus parfois complexes en expériences <b
-            class="highlight purple">vivantes, engageantes et mémorables</b
-          >. Avec une approche <b class="highlight blue">ludique et interactive</b>, chacun <b
-            >s'implique activement</b
-          > dans son processus d'apprentissage. Résultat : on développe sa <b>curiosité</b>, on
-          retient mieux les notions difficiles et surtout… on prend <b>plaisir à apprendre</b>.
+          Chez <b>Loooper!</b>, il n’y a pas de solution toute faite : <b class="highlight orange"
+            >nous nous adaptons à vous</b
+          >, à <b class="highlight purple">votre public</b> et à ses <b>besoins</b>, y compris en
+          situation de <b class="highlight blue">handicap</b>. Visuel, auditif, moteur, cognitif, ou
+          simplement des habitudes de lecture et de jeu différentes : <b
+            >chaque expérience est pensée pour être accessible</b
+          >. Police adaptée, contraste, repères sonores, concentration, format physique ou
+          numérique… ce ne sont que
+          <b>des exemples parmi d’autres</b>. Ensemble, nous définissons ce qui compte vraiment pour
+          vos joueurs.
         </p>
       </div>
     </article>
@@ -75,7 +72,7 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
         <div class="emojie-img-line-besoin-child star">
           <img src="/svg/besoin/starPurpleType2.svg" alt="" />
         </div>
-        <img class="emojie-img-line-besoin-child" src="/svg/besoin/idea.svg" alt="" />
+        <img class="emojie-img-line-besoin-child" src="/svg/besoin/... .svg" alt="" />
         <div class="emojie-img-line-besoin-child star2">
           <img src="/svg/besoin/starPurpleType1.svg" alt="" />
         </div>
@@ -87,22 +84,25 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
 
   <div class="backgroundBrushType1">
     <section class="container-width long-card-container" data-reveal="up" data-reveal-delay="100">
-      <h2 class="h2 black white-border">Les formats qui apportent une pédagogie ludique</h2>
+      <h2 class="h2 black white-border">Des formats adaptables à chaque public</h2>
       <div class="small-medium-spacing"></div>
       <div class="long-card-wrapper">
         <article class="long-card long-card-orange">
-          <img src="/img/long-card/cart-cartel.jpg" alt="Écran du quiz Cartes & Cartels" />
+          <img
+            src="/img/long-card/cart-cartel.jpg"
+            alt="Écran du quiz Cartes & Cartels avec de grands textes contrastés"
+          />
           <div class="long-card-text-content">
             <div>
               <h3
                 class="h2 black white-border highlight-no-annim orange"
-                id="book-page-part-1-container-title">
+                id="accessibilite-part-1-container-title">
                 Quiz
               </h3>
             </div>
             <p class="black">
-              Testez vos <b>connaissances</b>, enrichissez-les avec de <b>nouveaux savoirs</b> et stimulez
-              la <b>compétition bienveillante</b> entre participants.
+              Lecture, <b>contrastes</b>, <b>sons</b>, <b>rythme</b>, <b>niveau de difficulté</b> : chaque
+              réglage peut être pensé <b>pour vos joueurs</b>, sur écran ou en direct.
             </p>
             <button
               data-modal="modal-quiz"
@@ -123,13 +123,14 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
             <div>
               <h3
                 class="h2 black white-border highlight-no-annim purple"
-                id="book-page-part-1-container-title">
+                id="accessibilite-part-2-container-title">
                 Géocaching
               </h3>
             </div>
             <p class="black">
-              Partez à la <b>découverte d’un lieu</b>, résolvez des <b>énigmes</b> sur le terrain et plongez
-              dans un univers <b>d’apprentissage</b>.
+              <b>Lieu, parcours, étapes, durée</b> : tout se règle selon <b
+                >la mobilité et les capacités</b
+              > de votre groupe, pour explorer ensemble.
             </p>
             <button
               data-modal="modal-geocaching"
@@ -150,14 +151,13 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
             <div>
               <h3
                 class="h2 black white-border highlight-no-annim blue"
-                id="book-page-part-1-container-title">
+                id="accessibilite-part-3-container-title">
                 Jeu de société
               </h3>
             </div>
             <p class="black">
-              Utilisez des <b>mécaniques ludiques</b> pour comprendre des contenus, favorisez la <b
-                >réflexion</b
-              >, et engagez la discussion sur ce qui est appris.
+              <b>Règles, matériel, rôles</b> : on ajuste le jeu pour que
+              <b>chacun puisse y participer</b> et prendre la parole à sa façon.
             </p>
             <button
               data-modal="modal-jeu-societe"
@@ -181,7 +181,7 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
   <div class="zoom-container-center">
     <div class="zoom-container background-interogation background-interogation-purple">
       <section class="container-width">
-        <h2 class="h2 black">Des questions sur l'apprentissage par le jeu ?</h2>
+        <h2 class="h2 black">Des questions sur l’accessibilité ?</h2>
         <div class="small-medium-spacing"></div>
         <div class="wrapper-faq-container-info">
           <div class="wrapper-faq-container-info-row">
@@ -193,13 +193,12 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
                     <div class="faq-arrow-2"></div>
                   </div>
                 </div>
-                <h3 class="h3 black">À qui s’adresse l’apprentissage par le jeu ?</h3>
+                <h3 class="h3 black">À quels publics et handicaps vous adaptez-vous ?</h3>
               </div>
               <p class="black">
-                <b>À tout le monde !</b> Enfants, étudiants, enseignants, entreprises, associations… Nos
-                expériences interactives sont conçues pour convenir à <b
-                  >tous les types de public et à toutes les situations.</b
-                >
+                <b>À celui de vos joueurs.</b> Handicap visuel, auditif, moteur, cognitif, troubles de
+                l’attention, difficultés de lecture, âge, familiarité avec le numérique… Nous partons
+                de <b>votre public réel</b>, pas d’un modèle figé.
               </p>
             </article>
 
@@ -211,15 +210,13 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
                     <div class="faq-arrow-2"></div>
                   </div>
                 </div>
-                <h3 class="h3 black">Les expériences sont-elles forcément numériques ?</h3>
+                <h3 class="h3 black">Quels aménagements peut-on prévoir ?</h3>
               </div>
               <p class="black">
-                Pas du tout. Nous créons aussi bien des expériences <b>digitales que réelles</b
-                >:&thinsp;
-                <a class="link-underline-purple" href="/formats/"
-                  >jeux de société, quiz en direct, géocaching…</a
-                >&thinsp;L’important est de choisir le format qui correspond le mieux à
-                <b>vos ressources et à vos publics</b>.
+                Ils dépendent <b>de vos besoins</b> : typographie, contrastes, sons, consignes, rythme,
+                support numérique ou physique… Dites-nous
+                <a class="link-underline-purple" href="/besoins/">qui vous voulez accueillir</a>,
+                nous trouvons <b>les bons réglages ensemble</b>.
               </p>
             </article>
           </div>
@@ -232,15 +229,11 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
                     <div class="faq-arrow-2"></div>
                   </div>
                 </div>
-                <h3 class="h3 black">
-                  Peut-on adapter un jeu pédagogique à un domaine spécifique ?
-                </h3>
+                <h3 class="h3 black">Comment construisez-vous une expérience accessible ?</h3>
               </div>
               <p class="black">
-                Absolument. Chez <b>Loooper!</b>, chaque projet est conçu <b>sur mesure</b> pour répondre
-                à <a class="link-underline-purple" href="/besoins/"
-                  >vos besoins et à vos objectifs</a
-                >.
+                En <b>coconstruction</b> : on écoute, on teste, on ajuste jusqu’à ce que l’expérience
+                <b>fonctionne pour tous vos publics</b>.
               </p>
             </article>
 
@@ -252,17 +245,15 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
                     <div class="faq-arrow-2"></div>
                   </div>
                 </div>
-                <h3 class="h3 black">Peut-on organiser un serious game pour un grand groupe ?</h3>
+                <h3 class="h3 black">
+                  Peut-on réunir des publics différents autour d’un même jeu ?
+                </h3>
               </div>
               <p class="black">
-                Oui ! Les formats de pédagogie ludique s'adaptent aussi bien à <b
-                  >de petits groupes</b
-                >
-                qu'à <b>des événements de grande ampleur</b>. Cela peut prendre la forme de <a
-                  class="link-underline-purple"
-                  href="/formats/"
-                  >quiz collectifs, d'ateliers interactifs ou d'expériences immersives en plein air</a
-                >, <b>tout</b> est possible.
+                Oui, c’est même l’objectif : <b>favoriser les rencontres</b> et aider chacun à
+                <b>apprendre autrement</b>. Parmi
+                <a class="link-underline-purple" href="/formats/">tous nos formats</a>, nous
+                choisissons celui qui donne <b>à chacun un rôle à jouer</b>.
               </p>
             </article>
           </div>

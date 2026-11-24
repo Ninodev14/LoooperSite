@@ -1,34 +1,40 @@
 ---
 /**
- * pages/engager-motiver.astro — Engager et motiver
+ * pages/creer-interaction-sociale.astro — Créer de l'interaction sociale
  */
-import BaseLayout from '../layouts/BaseLayout.astro';
-import HistoireInteractive from '../components/Modal/HistoireInteractive.astro';
-import MiniJeu from '../components/Modal/MiniJeu.astro';
-import GeoCaching from '../components/Modal/Geocaching.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import JeuVideo from '../../components/Modal/JeuVideo.astro';
+import Quiz from '../../components/Modal/Quiz.astro';
+import JeuSociete from '../../components/Modal/JeuSociete.astro';
 ---
 
 <BaseLayout
-  title="Engager et motiver"
-  description="Stimulez l'implication et la motivation de vos collaborateurs grâce à la ludification Loooper!."
-  ogUrl="https://loooper.fr/engager-motiver"
-  currentPage="engager-motiver">
+  title="Créer de l'interaction sociale"
+  description="Favorisez les échanges et brisez la glace entre participants grâce aux formats interactifs Loooper!."
+  ogUrl="https://loooper.fr/creer-interaction-sociale"
+  currentPage="creer-interaction-sociale">
   <section class="mainPageTitle mainPageTitlePurple" data-reveal="down">
     <h1 class="h1 container-width white-border black">
-      Loooper! c’est
+      Loooper! c’est <span> </span>
       <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleBlue">engager </span><span class="paterneTitleContour"
-          >engager
+        <span class="paterneTitle paterneTitleBlue">créer </span><span class="paterneTitleContour"
+          >créer
         </span>
       </div>
       <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleBlue">et </span><span class="paterneTitleContour"
-          >et
+        <span class="paterneTitle paterneTitleBlue">de </span><span class="paterneTitleContour"
+          >de
         </span>
       </div>
       <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleBlue">motiver</span><span class="paterneTitleContour"
-          >motiver</span
+        <span class="paterneTitle paterneTitleBlue">l'interaction </span><span
+          class="paterneTitleContour"
+          >l'interaction
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitleBlue">sociale</span><span class="paterneTitleContour"
+          >sociale</span
         >
       </div>
     </h1>
@@ -38,9 +44,9 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
     <p class="h3">></p>
     <a href="/besoins/">Vos besoins</a>
     <p class="h3">></p><a
-      href="/engager-motiver/"
+      href="/creer-interaction-sociale/"
       class="end-chield highlight-no-annim blue black-border-small">
-      Engager et motiver
+      Créer de l'interaction sociale
     </a>
   </div>
 
@@ -50,19 +56,21 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
     <article class="text-basical-container-text-long">
       <div>
         <h2 class="h2 black white-border">
-          Créer de l’engagement à travers une expérience mémorable interactive ?
+          Susciter des rencontres à travers une expérience conviviale ?
         </h2>
         <div class="small-medium-spacing"></div>
         <p>
-          Chez <b>Loooper!</b>, nous croyons que le jeu est un outil efficace pour <b
-            class="highlight orange">motiver, engager et fidéliser</b
-          >. Nous convertissons vos contenus en <b class="highlight purple"
-            >une expérience mémorable</b
-          > qui <b>capte l'attention</b> et suscite l'envie d'en <b>découvrir davantage</b>.
-          <b>La ludification</b> offre à votre public la possibilité d'établir <b
-            class="highlight blue">une connexion avec vos produits, services ou communications,</b
-          > afin de <b>dynamiser</b> une communauté, mettre en <b>valeur un produit</b> ou orchestrer
-          <b>un événement</b>.
+          Chez <b>Loooper!</b>, nous concevons <b class="highlight orange"
+            >des expériences interactives</b
+          > qui facilitent <b>le contact</b>, brisent la glace et créent <b
+            >des moments inoubliables</b
+          >. Avec <b>le ludique</b>, chacun trouve <b class="highlight purple"
+            >un terrain de partage</b
+          > : <b>discussions, rires, défis et coopération</b>. Nos expériences créent <b
+            class="highlight blue">un moment idéal</b
+          > pour <b>découvrir autrui</b>, dépasser les bulles sociales et créer <b
+            >un moment convivial</b
+          >.
         </p>
       </div>
     </article>
@@ -71,11 +79,7 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
         <div class="emojie-img-line-besoin-child star">
           <img src="/svg/besoin/starYellowType2.svg" alt="" />
         </div>
-        <img
-          class="emojie-img-line-besoin-child"
-          src="/svg/besoin/starPodium.svg"
-          alt=""
-        />
+        <img class="emojie-img-line-besoin-child" src="/svg/besoin/connection.svg" alt="" />
         <div class="emojie-img-line-besoin-child star2">
           <img src="/svg/besoin/starYellowType1.svg" alt="" />
         </div>
@@ -87,28 +91,29 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
 
   <div class="backgroundBrushType1">
     <section class="container-width long-card-container" data-reveal="up" data-reveal-delay="100">
-      <h2 class="h2 black white-border">Les formats qui motivent avec la ludification</h2>
+      <h2 class="h2 black white-border">Les formats qui tissent des liens par le jeu</h2>
       <div class="small-medium-spacing"></div>
       <div class="long-card-wrapper">
         <article class="long-card long-card-orange">
-          <img src="/img/long-card/mini-jeu.jpg" alt="Écran d'un mini-jeu web posant une question vrai ou faux" />
+          <img src="/img/long-card/cart-cartel.jpg" alt="Écran du quiz Cartes & Cartels" />
           <div class="long-card-text-content">
             <div>
               <h3
                 class="h2 black white-border highlight-no-annim orange"
                 id="book-page-part-1-container-title">
-                Mini-jeu
+                Quiz
               </h3>
             </div>
             <p class="black">
-              Captez <b>l’attention</b>, divertissez et <b>dynamisez</b> un site internet, une application
-              ou un support de communication.
+              Encouragez <b>la collaboration</b> ou <b>la compétition bienveillante</b>, engagez <b
+                >des discussions</b
+              > et créez <b>des moments de complicité</b> autour d’un sujet commun.
             </p>
             <button
-              data-modal="modal-mini-jeu"
+              data-modal="modal-quiz"
               aria-haspopup="dialog"
               class="text-typo btn-project btn-modal btn-white-background"
-              aria-label="En savoir plus sur les Mini-jeu">
+              aria-label="En savoir plus sur le quiz">
               <span>En savoir plus</span>
             </button>
           </div>
@@ -116,51 +121,51 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
 
         <article class="long-card long-card-purple">
           <img
-            src="/img/long-card/story.jpg"
-            alt="Écran d'un choix dans une histoire interactive"
+            src="/img/long-card/biker.jpg"
+            alt="Personnes jouant au jeu de société Bikers au Grand Cœur"
           />
           <div class="long-card-text-content">
             <div>
               <h3
                 class="h2 black white-border highlight-no-annim purple"
                 id="book-page-part-1-container-title">
-                Histoire interactive
+                Jeu de société
               </h3>
             </div>
             <p class="black">
-              Plongez dans <b>un univers narratif immersif</b> et créez <b
-                >une expérience mémorable</b
-              > à travers vos choix.
+              Utilisez <b>des mécaniques ludiques</b>, favorisez <b>les échanges</b> et engagez <b
+                >la discussion</b
+              > sur diverses thématiques.
             </p>
             <button
-              data-modal="modal-histoire-interactive"
+              data-modal="modal-jeu-societe"
               aria-haspopup="dialog"
               class="text-typo btn-project btn-modal btn-white-background"
-              aria-label="En savoir plus sur les Histoire interactive">
+              aria-label="En savoir plus sur les Jeu de société">
               <span>En savoir plus</span>
             </button>
           </div>
         </article>
 
         <article class="long-card long-card-blue">
-          <img src="/img/long-card/geocaching.jpg" alt="Écran d'une carte de Bordeaux avec plusieurs points de repère, illustrant un géocaching" />
+          <img src="/img/long-card/game.jpg" alt="Écran du jeu vidéo Zemblanité" />
           <div class="long-card-text-content">
             <div>
               <h3
                 class="h2 black white-border highlight-no-annim blue"
                 id="book-page-part-1-container-title">
-                Géocaching
+                Jeu vidéo multijoueur
               </h3>
             </div>
             <p class="black">
-              Partez à <b>la découverte</b> d’un lieu, résolvez <b>des énigmes</b> sur le terrain et animez
-              <b>une communauté ou un événement</b>.
+              Rassemblez-vous, à distance ou en présentiel, autour d’un objectif commun.
+              <b>Coopérez</b> ou <b>affrontez-vous</b> pour créer <b>un moment de partage</b>.
             </p>
             <button
-              data-modal="modal-geocaching"
+              data-modal="modal-jeu-video"
               aria-haspopup="dialog"
               class="text-typo btn-project btn-modal btn-white-background"
-              aria-label="En savoir plus sur le Géocaching">
+              aria-label="En savoir plus sur les jeux video">
               <span>En savoir plus</span>
             </button>
           </div>
@@ -178,7 +183,9 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
   <div class="zoom-container-center">
     <div class="zoom-container background-interogation background-interogation-purple">
       <section class="container-width">
-        <h2 class="h2 black">Des questions sur l'engagement par le jeu ?</h2>
+        <h2 class="h2 black">
+          Des questions sur les expériences de création d'interaction sociale ?
+        </h2>
         <div class="small-medium-spacing"></div>
         <div class="wrapper-faq-container-info">
           <div class="wrapper-faq-container-info-row">
@@ -191,14 +198,13 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
                   </div>
                 </div>
                 <h3 class="h3 black">
-                  L’engagement par le jeu fonctionne-t-il uniquement sur le court terme ?
+                  Est-ce que le jeu fonctionne même avec des groupes qui ne se connaissent pas ?
                 </h3>
               </div>
               <p class="black">
-                <b>Non</b>. Selon vos objectifs, une expérience peut être pensée pour <b
-                  >un événement ponctuel</b
-                > (lancement de produit, salon, campagne) ou pour <b>un engagement permanent</b> (plateforme
-                ludifiée, animation communautaire).
+                Absolument ! Le jeu est<b> un facilitateur naturel de rencontres.</b> Il brise les barrières
+                sociales, encourage <b>les échanges</b> et crée <b>une dynamique conviviale</b>,
+                même entre parfaits inconnus.
               </p>
             </article>
           </div>
@@ -212,14 +218,14 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
                   </div>
                 </div>
                 <h3 class="h3 black">
-                  Comment la ludification peut-elle créer de la fidélisation ?
+                  Le jeu permet-il de rassembler des personnes de cultures ou d’âges différents ?
                 </h3>
               </div>
               <p class="black">
-                En rendant l’expérience interactive et mémorable, vos publics ressentent <b
-                  >une affection positive</b
-                > envers votre projet. Cela favorise <b>l’attachement</b>
-                et encourage <b>la fidélité</b> sur le long terme.
+                Oui. Grâce à ses règles universelles et son côté accessible, le jeu est un langage
+                commun qui favorise le partage <b>intergénérationnel</b> et
+                <b>interculturel</b>. Chez <b>Loooper!</b>, nous <b>adaptons</b> chaque expérience pour
+                inclure les publics <b>de votre choix</b>.
               </p>
             </article>
           </div>
@@ -228,9 +234,9 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
     </div>
   </div>
 
-  <HistoireInteractive />
-  <MiniJeu />
-  <GeoCaching />
+  <JeuVideo />
+  <Quiz />
+  <JeuSociete />
 
   <script src="/js/modal.js" defer></script>
   <script src="/js/faq.js" defer></script>

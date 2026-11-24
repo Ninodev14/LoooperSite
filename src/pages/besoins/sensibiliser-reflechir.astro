@@ -1,40 +1,24 @@
 ---
 /**
- * pages/creer-interaction-sociale.astro — Créer de l'interaction sociale
+ * pages/sensibiliser-reflechir.astro — Sensibiliser et faire réfléchir
  */
-import BaseLayout from '../layouts/BaseLayout.astro';
-import JeuVideo from '../components/Modal/JeuVideo.astro';
-import Quiz from '../components/Modal/Quiz.astro';
-import JeuSociete from '../components/Modal/JeuSociete.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import JeuVideo from '../../components/Modal/JeuVideo.astro';
+import HistoireInteractive from '../../components/Modal/HistoireInteractive.astro';
+import JeuSociete from '../../components/Modal/JeuSociete.astro';
 ---
 
 <BaseLayout
-  title="Créer de l'interaction sociale"
-  description="Favorisez les échanges et brisez la glace entre participants grâce aux formats interactifs Loooper!."
-  ogUrl="https://loooper.fr/creer-interaction-sociale"
-  currentPage="creer-interaction-sociale">
-  <section class="mainPageTitle mainPageTitlePurple" data-reveal="down">
+  title="Sensibiliser et faire réfléchir"
+  description="Amenez vos équipes à prendre conscience de sujets importants grâce à des expériences immersives Loooper!."
+  ogUrl="https://loooper.fr/sensibiliser-reflechir"
+  currentPage="sensibiliser-reflechir">
+  <section class="mainPageTitle mainPageTitleOrange" data-reveal="down">
     <h1 class="h1 container-width white-border black">
-      Loooper! c’est <span> </span>
+      Loooper! c’est
       <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleBlue">créer </span><span class="paterneTitleContour"
-          >créer
-        </span>
-      </div>
-      <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleBlue">de </span><span class="paterneTitleContour"
-          >de
-        </span>
-      </div>
-      <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleBlue">l'interaction </span><span
-          class="paterneTitleContour"
-          >l'interaction
-        </span>
-      </div>
-      <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitleBlue">sociale</span><span class="paterneTitleContour"
-          >sociale</span
+        <span class="paterneTitle paterneTitlePurple">sensibiliser et faire réfléchir </span><span
+          class="paterneTitleContour">sensibiliser et faire réfléchir</span
         >
       </div>
     </h1>
@@ -42,12 +26,12 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
   <div class="container-width ariane-net h3" data-reveal="down">
     <a href="/">Accueil </a>
     <p class="h3">></p>
-    <a href="/besoins/">Vos besoins</a>
+    <a href="/besoins">Vos besoins</a>
     <p class="h3">></p><a
-      href="/creer-interaction-sociale/"
-      class="end-chield highlight-no-annim blue black-border-small">
-      Créer de l'interaction sociale
-    </a>
+      href="/sensibiliser-reflechir"
+      class="end-chield highlight-no-annim purple black-border-small"
+      >Sensibiliser et faire réfléchir</a
+    >
   </div>
 
   <div class="large-spacing"></div>
@@ -55,37 +39,33 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
   <section class="container-width text-basical-container" data-reveal="up" data-reveal-delay="100">
     <article class="text-basical-container-text-long">
       <div>
-        <h2 class="h2 black white-border">
-          Susciter des rencontres à travers une expérience conviviale ?
-        </h2>
+        <h2 class="h2 black white-border">Éveiller des consciences par l’interactif ?</h2>
         <div class="small-medium-spacing"></div>
         <p>
-          Chez <b>Loooper!</b>, nous concevons <b class="highlight orange"
-            >des expériences interactives</b
-          > qui facilitent <b>le contact</b>, brisent la glace et créent <b
-            >des moments inoubliables</b
-          >. Avec <b>le ludique</b>, chacun trouve <b class="highlight purple"
-            >un terrain de partage</b
-          > : <b>discussions, rires, défis et coopération</b>. Nos expériences créent <b
-            class="highlight blue">un moment idéal</b
-          > pour <b>découvrir autrui</b>, dépasser les bulles sociales et créer <b
-            >un moment convivial</b
-          >.
+          Chez <b>Loooper!</b>, nous pensons qu’il est possible <b class="highlight orange"
+            >d'éveiller les consciences</b
+          > à travers le jeu et <b class="highlight purple">d’inciter à une réflexion</b>. Nos <b
+            >expériences</b
+          > facilitent une connexion émotionnelle à un thème, favorisent <b>l'identification</b> aux problématiques
+          et permettent de mieux <b>appréhender</b>
+          des contextes parfois complexes ou délicats. Grâce à <b class="highlight blue"
+            >l’interactivité et à la ludification
+          </b>, les participants ne sont plus de simples témoins passifs.
         </p>
       </div>
     </article>
     <article class="text-basical-container-emojie">
       <div class="emojie-img-line-container-besoin-child">
         <div class="emojie-img-line-besoin-child star">
-          <img src="/svg/besoin/starYellowType2.svg" alt="" />
+          <img src="/svg/besoin/starBlueType2.svg" alt="" />
         </div>
         <img
           class="emojie-img-line-besoin-child"
-          src="/svg/besoin/connection.svg"
-          alt=""
+          src="/svg/besoin/annonce.svg"
+          alt="Image representant une Annonce"
         />
         <div class="emojie-img-line-besoin-child star2">
-          <img src="/svg/besoin/starYellowType1.svg" alt="" />
+          <img src="/svg/besoin/starBlueType1.svg" alt="" />
         </div>
       </div>
     </article>
@@ -95,36 +75,38 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
 
   <div class="backgroundBrushType1">
     <section class="container-width long-card-container" data-reveal="up" data-reveal-delay="100">
-      <h2 class="h2 black white-border">Les formats qui tissent des liens par le jeu</h2>
+      <h2 class="h2 black white-border">Les formats qui apportent une pédagogie ludique</h2>
       <div class="small-medium-spacing"></div>
       <div class="long-card-wrapper">
         <article class="long-card long-card-orange">
-          <img src="/img/long-card/cart-cartel.jpg" alt="Écran du quiz Cartes & Cartels" />
+          <img src="/img/long-card/game.jpg" alt="Écran du jeu vidéo Zemblanité" />
           <div class="long-card-text-content">
             <div>
               <h3
                 class="h2 black white-border highlight-no-annim orange"
                 id="book-page-part-1-container-title">
-                Quiz
+                Jeu vidéo
               </h3>
             </div>
             <p class="black">
-              Encouragez <b>la collaboration</b> ou <b>la compétition bienveillante</b>, engagez <b
-                >des discussions</b
-              > et créez <b>des moments de complicité</b> autour d’un sujet commun.
+              Plongez dans un univers où chaque action entraîne des <b>conséquences</b>. Comprenez
+              les <b>enjeux</b> d’un sujet en expérimentant <b>diverses situations</b>.
             </p>
             <button
-              data-modal="modal-quiz"
+              data-modal="modal-jeu-video"
               aria-haspopup="dialog"
               class="text-typo btn-project btn-modal btn-white-background"
-              aria-label="En savoir plus sur le quiz">
+              aria-label="En savoir plus sur les jeux video">
               <span>En savoir plus</span>
             </button>
           </div>
         </article>
 
         <article class="long-card long-card-purple">
-          <img src="/img/long-card/biker.jpg" alt="Personnes jouant au jeu de société Bikers au Grand Cœur" />
+          <img
+            src="/img/long-card/biker.jpg"
+            alt="Personnes jouant au jeu de société Bikers au Grand Cœur"
+          />
           <div class="long-card-text-content">
             <div>
               <h3
@@ -134,9 +116,8 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
               </h3>
             </div>
             <p class="black">
-              Utilisez <b>des mécaniques ludiques</b>, favorisez <b>les échanges</b> et engagez <b
-                >la discussion</b
-              > sur diverses thématiques.
+              Utilisez <b>des mécaniques ludiques</b> pour comprendre <b>des problématiques</b>,
+              favorisez <b>la réflexion</b>, et engagez la discussion sur<b>la thématique</b>.
             </p>
             <button
               data-modal="modal-jeu-societe"
@@ -149,24 +130,28 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
         </article>
 
         <article class="long-card long-card-blue">
-          <img src="/img/long-card/game.jpg" alt="Écran du jeu vidéo Zemblanité" />
+          <img
+            src="/img/long-card/story.jpg"
+            alt="Écran d'un choix dans une histoire interactive"
+          />
           <div class="long-card-text-content">
             <div>
               <h3
                 class="h2 black white-border highlight-no-annim blue"
                 id="book-page-part-1-container-title">
-                Jeu vidéo multijoueur
+                Histoire interactive
               </h3>
             </div>
             <p class="black">
-              Rassemblez-vous, à distance ou en présentiel, autour d’un objectif commun.
-              <b>Coopérez</b> ou <b>affrontez-vous</b> pour créer <b>un moment de partage</b>.
+              Entrez dans la peau d’un personnage, faites <b>des choix décisifs</b> et ressentez <b
+                >ses dilemmes</b
+              >.
             </p>
             <button
-              data-modal="modal-jeu-video"
+              data-modal="modal-histoire-interactive"
               aria-haspopup="dialog"
               class="text-typo btn-project btn-modal btn-white-background"
-              aria-label="En savoir plus sur les jeux video">
+              aria-label="En savoir plus sur les Histoire interactive">
               <span>En savoir plus</span>
             </button>
           </div>
@@ -184,9 +169,7 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
   <div class="zoom-container-center">
     <div class="zoom-container background-interogation background-interogation-purple">
       <section class="container-width">
-        <h2 class="h2 black">
-          Des questions sur les expériences de création d'interaction sociale ?
-        </h2>
+        <h2 class="h2 black">Des questions sur l’éducation immersive ?</h2>
         <div class="small-medium-spacing"></div>
         <div class="wrapper-faq-container-info">
           <div class="wrapper-faq-container-info-row">
@@ -199,13 +182,13 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
                   </div>
                 </div>
                 <h3 class="h3 black">
-                  Est-ce que le jeu fonctionne même avec des groupes qui ne se connaissent pas ?
+                  Le côté ludique ne réduit-il pas la gravité d’un sujet sérieux ?
                 </h3>
               </div>
               <p class="black">
-                Absolument ! Le jeu est<b> un facilitateur naturel de rencontres.</b> Il brise les barrières
-                sociales, encourage <b>les échanges</b> et crée <b>une dynamique conviviale</b>,
-                même entre parfaits inconnus.
+                Au contraire ! Un jeu bien pensé peut aborder <b>des sujets sensibles</b> avec respect,
+                tout en permettant au public de mieux comprendre <b>la complexité des enjeux</b>. Le
+                ludique ne minimise pas l’importance : il crée une nouvelle <b>porte d’entrée</b>.
               </p>
             </article>
           </div>
@@ -219,14 +202,14 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
                   </div>
                 </div>
                 <h3 class="h3 black">
-                  Le jeu permet-il de rassembler des personnes de cultures ou d’âges différents ?
+                  Quels sont les avantages par rapport à une conférence classique ?
                 </h3>
               </div>
               <p class="black">
-                Oui. Grâce à ses règles universelles et son côté accessible, le jeu est un langage
-                commun qui favorise le partage <b>intergénérationnel</b> et
-                <b>interculturel</b>. Chez <b>Loooper!</b>, nous <b>adaptons</b> chaque expérience pour
-                inclure les publics <b>de votre choix</b>.
+                L’interactivité <b>capte l’attention du public</b> plus longtemps. Là où une conférence
+                peut parfois rester abstraite, une expérience immersive crée <b
+                  >un souvenir mémorable</b
+                > et <b>une implication émotionnelle</b> qui favorise <b>la réflexion</b>.
               </p>
             </article>
           </div>
@@ -236,7 +219,7 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
   </div>
 
   <JeuVideo />
-  <Quiz />
+  <HistoireInteractive />
   <JeuSociete />
 
   <script src="/js/modal.js" defer></script>

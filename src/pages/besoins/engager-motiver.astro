@@ -1,24 +1,34 @@
 ---
 /**
- * pages/sensibiliser-reflechir.astro — Sensibiliser et faire réfléchir
+ * pages/engager-motiver.astro — Engager et motiver
  */
-import BaseLayout from '../layouts/BaseLayout.astro';
-import JeuVideo from '../components/Modal/JeuVideo.astro';
-import HistoireInteractive from '../components/Modal/HistoireInteractive.astro';
-import JeuSociete from '../components/Modal/JeuSociete.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HistoireInteractive from '../../components/Modal/HistoireInteractive.astro';
+import MiniJeu from '../../components/Modal/MiniJeu.astro';
+import GeoCaching from '../../components/Modal/Geocaching.astro';
 ---
 
 <BaseLayout
-  title="Sensibiliser et faire réfléchir"
-  description="Amenez vos équipes à prendre conscience de sujets importants grâce à des expériences immersives Loooper!."
-  ogUrl="https://loooper.fr/sensibiliser-reflechir"
-  currentPage="sensibiliser-reflechir">
-  <section class="mainPageTitle mainPageTitleOrange" data-reveal="down">
+  title="Engager et motiver"
+  description="Stimulez l'implication et la motivation de vos collaborateurs grâce à la ludification Loooper!."
+  ogUrl="https://loooper.fr/engager-motiver"
+  currentPage="engager-motiver">
+  <section class="mainPageTitle mainPageTitlePurple" data-reveal="down">
     <h1 class="h1 container-width white-border black">
       Loooper! c’est
       <div class="paterneTitleContainer">
-        <span class="paterneTitle paterneTitlePurple">sensibiliser et faire réfléchir </span><span
-          class="paterneTitleContour">sensibiliser et faire réfléchir</span
+        <span class="paterneTitle paterneTitleBlue">engager </span><span class="paterneTitleContour"
+          >engager
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitleBlue">et </span><span class="paterneTitleContour"
+          >et
+        </span>
+      </div>
+      <div class="paterneTitleContainer">
+        <span class="paterneTitle paterneTitleBlue">motiver</span><span class="paterneTitleContour"
+          >motiver</span
         >
       </div>
     </h1>
@@ -26,12 +36,12 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
   <div class="container-width ariane-net h3" data-reveal="down">
     <a href="/">Accueil </a>
     <p class="h3">></p>
-    <a href="/besoins">Vos besoins</a>
+    <a href="/besoins/">Vos besoins</a>
     <p class="h3">></p><a
-      href="/sensibiliser-reflechir"
-      class="end-chield highlight-no-annim purple black-border-small"
-      >Sensibiliser et faire réfléchir</a
-    >
+      href="/engager-motiver/"
+      class="end-chield highlight-no-annim blue black-border-small">
+      Engager et motiver
+    </a>
   </div>
 
   <div class="large-spacing"></div>
@@ -39,33 +49,31 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
   <section class="container-width text-basical-container" data-reveal="up" data-reveal-delay="100">
     <article class="text-basical-container-text-long">
       <div>
-        <h2 class="h2 black white-border">Éveiller des consciences par l’interactif ?</h2>
+        <h2 class="h2 black white-border">
+          Créer de l’engagement à travers une expérience mémorable interactive ?
+        </h2>
         <div class="small-medium-spacing"></div>
         <p>
-          Chez <b>Loooper!</b>, nous pensons qu’il est possible <b class="highlight orange"
-            >d'éveiller les consciences</b
-          > à travers le jeu et <b class="highlight purple">d’inciter à une réflexion</b>. Nos <b
-            >expériences</b
-          > facilitent une connexion émotionnelle à un thème, favorisent <b>l'identification</b> aux problématiques
-          et permettent de mieux <b>appréhender</b>
-          des contextes parfois complexes ou délicats. Grâce à <b class="highlight blue"
-            >l’interactivité et à la ludification
-          </b>, les participants ne sont plus de simples témoins passifs.
+          Chez <b>Loooper!</b>, nous croyons que le jeu est un outil efficace pour <b
+            class="highlight orange">motiver, engager et fidéliser</b
+          >. Nous convertissons vos contenus en <b class="highlight purple"
+            >une expérience mémorable</b
+          > qui <b>capte l'attention</b> et suscite l'envie d'en <b>découvrir davantage</b>.
+          <b>La ludification</b> offre à votre public la possibilité d'établir <b
+            class="highlight blue">une connexion avec vos produits, services ou communications,</b
+          > afin de <b>dynamiser</b> une communauté, mettre en <b>valeur un produit</b> ou orchestrer
+          <b>un événement</b>.
         </p>
       </div>
     </article>
     <article class="text-basical-container-emojie">
       <div class="emojie-img-line-container-besoin-child">
         <div class="emojie-img-line-besoin-child star">
-          <img src="/svg/besoin/starBlueType2.svg" alt="" />
+          <img src="/svg/besoin/starYellowType2.svg" alt="" />
         </div>
-        <img
-          class="emojie-img-line-besoin-child"
-          src="/svg/besoin/annonce.svg"
-          alt="Image representant une Annonce"
-        />
+        <img class="emojie-img-line-besoin-child" src="/svg/besoin/starPodium.svg" alt="" />
         <div class="emojie-img-line-besoin-child star2">
-          <img src="/svg/besoin/starBlueType1.svg" alt="" />
+          <img src="/svg/besoin/starYellowType1.svg" alt="" />
         </div>
       </div>
     </article>
@@ -75,77 +83,86 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
 
   <div class="backgroundBrushType1">
     <section class="container-width long-card-container" data-reveal="up" data-reveal-delay="100">
-      <h2 class="h2 black white-border">Les formats qui apportent une pédagogie ludique</h2>
+      <h2 class="h2 black white-border">Les formats qui motivent avec la ludification</h2>
       <div class="small-medium-spacing"></div>
       <div class="long-card-wrapper">
         <article class="long-card long-card-orange">
-          <img src="/img/long-card/game.jpg" alt="Écran du jeu vidéo Zemblanité" />
+          <img
+            src="/img/long-card/mini-jeu.jpg"
+            alt="Écran d'un mini-jeu web posant une question vrai ou faux"
+          />
           <div class="long-card-text-content">
             <div>
               <h3
                 class="h2 black white-border highlight-no-annim orange"
                 id="book-page-part-1-container-title">
-                Jeu vidéo
+                Mini-jeu
               </h3>
             </div>
             <p class="black">
-              Plongez dans un univers où chaque action entraîne des <b>conséquences</b>. Comprenez
-              les <b>enjeux</b> d’un sujet en expérimentant <b>diverses situations</b>.
+              Captez <b>l’attention</b>, divertissez et <b>dynamisez</b> un site internet, une application
+              ou un support de communication.
             </p>
             <button
-              data-modal="modal-jeu-video"
+              data-modal="modal-mini-jeu"
               aria-haspopup="dialog"
               class="text-typo btn-project btn-modal btn-white-background"
-              aria-label="En savoir plus sur les jeux video">
+              aria-label="En savoir plus sur les Mini-jeu">
               <span>En savoir plus</span>
             </button>
           </div>
         </article>
 
         <article class="long-card long-card-purple">
-          <img src="/img/long-card/biker.jpg" alt="Personnes jouant au jeu de société Bikers au Grand Cœur" />
+          <img
+            src="/img/long-card/story.jpg"
+            alt="Écran d'un choix dans une histoire interactive"
+          />
           <div class="long-card-text-content">
             <div>
               <h3
                 class="h2 black white-border highlight-no-annim purple"
                 id="book-page-part-1-container-title">
-                Jeu de société
-              </h3>
-            </div>
-            <p class="black">
-              Utilisez <b>des mécaniques ludiques</b> pour comprendre <b>des problématiques</b>,
-              favorisez <b>la réflexion</b>, et engagez la discussion sur<b>la thématique</b>.
-            </p>
-            <button
-              data-modal="modal-jeu-societe"
-              aria-haspopup="dialog"
-              class="text-typo btn-project btn-modal btn-white-background"
-              aria-label="En savoir plus sur les Jeu de société">
-              <span>En savoir plus</span>
-            </button>
-          </div>
-        </article>
-
-        <article class="long-card long-card-blue">
-          <img src="/img/long-card/story.jpg" alt="Écran d'un choix dans une histoire interactive" />
-          <div class="long-card-text-content">
-            <div>
-              <h3
-                class="h2 black white-border highlight-no-annim blue"
-                id="book-page-part-1-container-title">
                 Histoire interactive
               </h3>
             </div>
             <p class="black">
-              Entrez dans la peau d’un personnage, faites <b>des choix décisifs</b> et ressentez <b
-                >ses dilemmes</b
-              >.
+              Plongez dans <b>un univers narratif immersif</b> et créez <b
+                >une expérience mémorable</b
+              > à travers vos choix.
             </p>
             <button
               data-modal="modal-histoire-interactive"
               aria-haspopup="dialog"
               class="text-typo btn-project btn-modal btn-white-background"
               aria-label="En savoir plus sur les Histoire interactive">
+              <span>En savoir plus</span>
+            </button>
+          </div>
+        </article>
+
+        <article class="long-card long-card-blue">
+          <img
+            src="/img/long-card/geocaching.jpg"
+            alt="Écran d'une carte de Bordeaux avec plusieurs points de repère, illustrant un géocaching"
+          />
+          <div class="long-card-text-content">
+            <div>
+              <h3
+                class="h2 black white-border highlight-no-annim blue"
+                id="book-page-part-1-container-title">
+                Géocaching
+              </h3>
+            </div>
+            <p class="black">
+              Partez à <b>la découverte</b> d’un lieu, résolvez <b>des énigmes</b> sur le terrain et animez
+              <b>une communauté ou un événement</b>.
+            </p>
+            <button
+              data-modal="modal-geocaching"
+              aria-haspopup="dialog"
+              class="text-typo btn-project btn-modal btn-white-background"
+              aria-label="En savoir plus sur le Géocaching">
               <span>En savoir plus</span>
             </button>
           </div>
@@ -163,7 +180,7 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
   <div class="zoom-container-center">
     <div class="zoom-container background-interogation background-interogation-purple">
       <section class="container-width">
-        <h2 class="h2 black">Des questions sur l’éducation immersive ?</h2>
+        <h2 class="h2 black">Des questions sur l'engagement par le jeu ?</h2>
         <div class="small-medium-spacing"></div>
         <div class="wrapper-faq-container-info">
           <div class="wrapper-faq-container-info-row">
@@ -176,13 +193,14 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
                   </div>
                 </div>
                 <h3 class="h3 black">
-                  Le côté ludique ne réduit-il pas la gravité d’un sujet sérieux ?
+                  L’engagement par le jeu fonctionne-t-il uniquement sur le court terme ?
                 </h3>
               </div>
               <p class="black">
-                Au contraire ! Un jeu bien pensé peut aborder <b>des sujets sensibles</b> avec respect,
-                tout en permettant au public de mieux comprendre <b>la complexité des enjeux</b>. Le
-                ludique ne minimise pas l’importance : il crée une nouvelle <b>porte d’entrée</b>.
+                <b>Non</b>. Selon vos objectifs, une expérience peut être pensée pour <b
+                  >un événement ponctuel</b
+                > (lancement de produit, salon, campagne) ou pour <b>un engagement permanent</b> (plateforme
+                ludifiée, animation communautaire).
               </p>
             </article>
           </div>
@@ -196,14 +214,14 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
                   </div>
                 </div>
                 <h3 class="h3 black">
-                  Quels sont les avantages par rapport à une conférence classique ?
+                  Comment la ludification peut-elle créer de la fidélisation ?
                 </h3>
               </div>
               <p class="black">
-                L’interactivité <b>capte l’attention du public</b> plus longtemps. Là où une conférence
-                peut parfois rester abstraite, une expérience immersive crée <b
-                  >un souvenir mémorable</b
-                > et <b>une implication émotionnelle</b> qui favorise <b>la réflexion</b>.
+                En rendant l’expérience interactive et mémorable, vos publics ressentent <b
+                  >une affection positive</b
+                > envers votre projet. Cela favorise <b>l’attachement</b>
+                et encourage <b>la fidélité</b> sur le long terme.
               </p>
             </article>
           </div>
@@ -212,9 +230,9 @@ import JeuSociete from '../components/Modal/JeuSociete.astro';
     </div>
   </div>
 
-  <JeuVideo />
   <HistoireInteractive />
-  <JeuSociete />
+  <MiniJeu />
+  <GeoCaching />
 
   <script src="/js/modal.js" defer></script>
   <script src="/js/faq.js" defer></script>

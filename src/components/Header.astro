@@ -9,14 +9,17 @@ const besoinsPaths = [
   '/renforcer-cohesion/',
   '/engager-motiver/',
   '/former-efficacement/',
-  '/communiquer-autrement/',
+  '/marquer-les-esprits/',
+  '/accueillir-tous-publics/',
 ];
 
 const isHome = currentPath === '/';
 const isFormats = currentPath === '/formats/';
 const isBesoins = besoinsPaths.includes(currentPath);
+const isVotreSecteur = currentPath === '/votre-secteur/' || currentPath.startsWith('/secteur/');
 const isEquipe = currentPath === '/equipe/';
 const isProjets = currentPath === '/projets/';
+const isRessources = currentPath.startsWith('/ressources');
 
 const activeClassOrange = 'highlight orange black white-border-small';
 const activeClassPurple = 'highlight purple black white-border-small';
@@ -58,51 +61,112 @@ const activeClassBlue = 'highlight blue black white-border-small';
             <a
               class:list={[
                 'header-typo-pc',
-                currentPath === '/apprendre-ludique/' && 'link-underline',
+                currentPath === '/besoins/apprendre-ludique/' && 'link-underline',
               ]}
-              href="/apprendre-ludique/">Apprendre avec le ludique</a
+              href="/besoins/apprendre-ludique/">Rendre l'apprentissage ludique</a
             >
             <a
               class:list={[
                 'header-typo-pc',
-                currentPath === '/sensibiliser-reflechir/' && 'link-underline',
+                currentPath === '/besoins/sensibiliser-reflechir/' && 'link-underline',
               ]}
-              href="/sensibiliser-reflechir/">Sensibiliser et faire réfléchir</a
+              href="/besoins/sensibiliser-reflechir/">Sensibiliser et faire réfléchir</a
             >
             <a
               class:list={[
                 'header-typo-pc',
-                currentPath === '/creer-interaction-sociale/' && 'link-underline',
+                currentPath === '/besoins/creer-interaction-sociale/' && 'link-underline',
               ]}
-              href="/creer-interaction-sociale/">Créer de l'interaction sociale</a
+              href="/besoins/creer-interaction-sociale/">Créer de l'interaction sociale</a
             >
             <a
               class:list={[
                 'header-typo-pc',
-                currentPath === '/renforcer-cohesion/' && 'link-underline',
+                currentPath === '/besoins/renforcer-cohesion/' && 'link-underline',
               ]}
-              href="/renforcer-cohesion/">Renforcer la cohésion</a
+              href="/besoins/renforcer-cohesion/">Renforcer la cohésion</a
             >
             <a
               class:list={[
                 'header-typo-pc',
-                currentPath === '/engager-motiver/' && 'link-underline',
+                currentPath === '/besoins/engager-motiver/' && 'link-underline',
               ]}
-              href="/engager-motiver/">Engager et motiver</a
+              href="/besoins/engager-motiver/">Engager et motiver</a
             >
             <a
               class:list={[
                 'header-typo-pc',
-                currentPath === '/former-efficacement/' && 'link-underline',
+                currentPath === '/besoins/former-efficacement/' && 'link-underline',
               ]}
-              href="/former-efficacement/">Former efficacement</a
+              href="/besoins/former-efficacement/">Former efficacement</a
             >
             <a
               class:list={[
                 'header-typo-pc',
-                currentPath === '/communiquer-autrement/' && 'link-underline',
+                currentPath === '/besoins/marquer-les-esprits/' && 'link-underline',
               ]}
-              href="/communiquer-autrement/">Communiquer autrement</a
+              href="/besoins/marquer-les-esprits/">Marquer les esprits</a
+            >
+            <a
+              class:list={[
+                'header-typo-pc',
+                currentPath === '/besoins/accueillir-tous-publics/' && 'link-underline',
+              ]}
+              href="/besoins/accueillir-tous-publics/">Accueillir tous les publics</a
+            >
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <div class:list={['dropdown-text-arrow', isVotreSecteur && activeClassPurple]}>
+            <a
+              href="/votre-secteur/"
+              class:list={[
+                'header-typo-pc link-underline-fill',
+                isVotreSecteur && 'white-border-small black ',
+              ]}>
+              Votre secteur
+            </a>
+            <div class="dropdown-arrow">
+              <div class="line1"></div>
+              <div class="line2"></div>
+            </div>
+          </div>
+          <div class="dropdown-menu">
+            <a
+              class:list={[
+                'header-typo-pc',
+                currentPath === '/secteur/serious-game-musee/' && 'link-underline',
+              ]}
+              href="/secteur/serious-game-musee/">Musées et patrimoine</a
+            >
+            <a
+              class:list={[
+                'header-typo-pc',
+                currentPath === '/secteur/serious-game-ecole/' && 'link-underline',
+              ]}
+              href="/secteur/serious-game-ecole/">Écoles et éducation</a
+            >
+            <a
+              class:list={[
+                'header-typo-pc',
+                currentPath === '/secteur/jeu-entreprise-rse/' && 'link-underline',
+              ]}
+              href="/secteur/jeu-entreprise-rse/">Entreprises et RSE</a
+            >
+            <a
+              class:list={[
+                'header-typo-pc',
+                currentPath === '/secteur/jeu-interactif-tourisme/' && 'link-underline',
+              ]}
+              href="/secteur/jeu-interactif-tourisme/">Tourisme et territoires</a
+            >
+            <a
+              class:list={[
+                'header-typo-pc',
+                currentPath === '/secteur/jeu-interactif-zoo/' && 'link-underline',
+              ]}
+              href="/secteur/jeu-interactif-zoo/">Zoos et parcs animaliers</a
             >
           </div>
         </div>
@@ -290,6 +354,11 @@ const activeClassBlue = 'highlight blue black white-border-small';
           class:list={['header-typo-pc link-underline-fill', isProjets && activeClassBlue]}>
           Nos projets
         </a>
+        <a
+          href="/ressources/"
+          class:list={['header-typo-pc link-underline-fill', isRessources && activeClassOrange]}>
+          Ressources
+        </a>
         <a href="#contactForm" class="header-typo-pc btn-project">
           <span>J'ai un projet !</span>
           <div class="arrow-container">
@@ -342,6 +411,12 @@ const activeClassBlue = 'highlight blue black white-border-small';
           </button>
         </div>
         <a
+          href="/votre-secteur/"
+          class:list={['h3', isVotreSecteur && 'highlight purple black white-border-small']}>
+          <img class="img-logo" src="/svg/header/equipe.svg" alt="" />
+          Votre secteur
+        </a>
+        <a
           href="/equipe/"
           class:list={['h3', isEquipe && 'highlight purple black white-border-small']}>
           <img class="img-logo" src="/svg/header/equipe.svg" alt="" />
@@ -352,6 +427,12 @@ const activeClassBlue = 'highlight blue black white-border-small';
           class:list={['h3', isProjets && 'highlight blue black white-border-small']}>
           <img class="img-logo" src="/svg/header/projet.svg" alt="" />
           Nos projets
+        </a>
+        <a
+          href="/ressources/"
+          class:list={['h3', isRessources && 'highlight orange black white-border-small']}>
+          <img class="img-logo" src="/svg/header/projet.svg" alt="" />
+          Ressources
         </a>
         <a href="#contactForm" class="h3 btn-project" id="btn-close">
           <span>J'ai un projet !</span>
@@ -368,32 +449,45 @@ const activeClassBlue = 'highlight blue black white-border-small';
             <img src="/svg/arrowW.svg" alt="" />
           </button>
           <a
-            class:list={['h3', currentPath === '/apprendre-ludique/' && 'link-underline']}
-            href="/apprendre-ludique/">Apprendre avec le ludique</a
+            class:list={['h3', currentPath === '/besoins/apprendre-ludique/' && 'link-underline']}
+            href="/besoins/apprendre-ludique/">Rendre l'apprentissage ludique</a
           >
           <a
-            class:list={['h3', currentPath === '/sensibiliser-reflechir/' && 'link-underline']}
-            href="/sensibiliser-reflechir/">Sensibiliser et faire réfléchir</a
+            class:list={[
+              'h3',
+              currentPath === '/besoins/sensibiliser-reflechir/' && 'link-underline',
+            ]}
+            href="/besoins/sensibiliser-reflechir/">Sensibiliser et faire réfléchir</a
           >
           <a
-            class:list={['h3', currentPath === '/creer-interaction-sociale/' && 'link-underline']}
-            href="/creer-interaction-sociale/">Créer de l'interaction sociale</a
+            class:list={[
+              'h3',
+              currentPath === '/besoins/creer-interaction-sociale/' && 'link-underline',
+            ]}
+            href="/besoins/creer-interaction-sociale/">Créer de l'interaction sociale</a
           >
           <a
-            class:list={['h3', currentPath === '/renforcer-cohesion/' && 'link-underline']}
-            href="/renforcer-cohesion/">Renforcer la cohésion</a
+            class:list={['h3', currentPath === '/besoins/renforcer-cohesion/' && 'link-underline']}
+            href="/besoins/renforcer-cohesion/">Renforcer la cohésion</a
           >
           <a
-            class:list={['h3', currentPath === '/engager-motiver/' && 'link-underline']}
-            href="/engager-motiver/">Engager et motiver</a
+            class:list={['h3', currentPath === '/besoins/engager-motiver/' && 'link-underline']}
+            href="/besoins/engager-motiver/">Engager et motiver</a
           >
           <a
-            class:list={['h3', currentPath === '/former-efficacement/' && 'link-underline']}
-            href="/former-efficacement/">Former efficacement</a
+            class:list={['h3', currentPath === '/besoins/former-efficacement/' && 'link-underline']}
+            href="/besoins/former-efficacement/">Former efficacement</a
           >
           <a
-            class:list={['h3', currentPath === '/communiquer-autrement/' && 'link-underline']}
-            href="/communiquer-autrement/">Communiquer autrement</a
+            class:list={['h3', currentPath === '/besoins/marquer-les-esprits/' && 'link-underline']}
+            href="/besoins/marquer-les-esprits/">Marquer les esprits</a
+          >
+          <a
+            class:list={[
+              'h3',
+              currentPath === '/besoins/accueillir-tous-publics/' && 'link-underline',
+            ]}
+            href="/besoins/accueillir-tous-publics/">Accueillir tous les publics</a
           >
           <div class="null-object"></div>
           <div class="null-object"></div>

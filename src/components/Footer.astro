@@ -115,13 +115,29 @@ import { secteurs } from '../data/secteurs';
       </div>
       <div class="footer-nav-row">
         <a href="/besoins/" class="footerTitle link-underline">Vos besoins</a>
-        <a href="/apprendre-ludique/" class="text-typo">Apprendre avec le ludique</a>
-        <a href="/sensibiliser-reflechir/" class="text-typo">Sensibiliser et faire réfléchir</a>
-        <a href="/creer-interaction-sociale/" class="text-typo">Créer de l'interaction sociale</a>
-        <a href="/renforcer-cohesion/" class="text-typo">Renforcer la cohésion</a>
-        <a href="/engager-motiver/" class="text-typo">Engager et motiver</a>
-        <a href="/former-efficacement/" class="text-typo">Former efficacement</a>
-        <a href="/communiquer-autrement/" class="text-typo">Communiquer autrement</a>
+        <a href="/besoins/apprendre-ludique/" class="text-typo">Rendre l'apprentissage ludique</a>
+        <a href="/besoins/sensibiliser-reflechir/" class="text-typo"
+          >Sensibiliser et faire réfléchir</a
+        >
+        <a href="/besoins/creer-interaction-sociale/" class="text-typo"
+          >Créer de l'interaction sociale</a
+        >
+        <a href="/besoins/renforcer-cohesion/" class="text-typo">Renforcer la cohésion</a>
+        <a href="/besoins/engager-motiver/" class="text-typo">Engager et motiver</a>
+        <a href="/besoins/former-efficacement/" class="text-typo">Former efficacement</a>
+        <a href="/besoins/marquer-les-esprits/" class="text-typo">Marquer les esprits</a>
+        <a href="/besoins/accueillir-tous-publics/" class="text-typo">Accueillir tous les publics</a
+        >
+      </div>
+      <div class="footer-nav-row">
+        <a href="/votre-secteur/" class="footerTitle link-underline">Votre secteur</a>
+        {
+          secteurs.map((x) => (
+            <a href={`/secteur/${x.slug}/`} class="text-typo">
+              {x.nav}
+            </a>
+          ))
+        }
       </div>
       <div class="footer-nav-row">
         <a href="/equipe/" class="footerTitle link-underline">Notre équipe</a>
@@ -138,14 +154,7 @@ import { secteurs } from '../data/secteurs';
         <a href="/projets/#foot-prj2" class="text-typo">Parutions médias</a>
       </div>
       <div class="footer-nav-row">
-        <p class="footerTitle">Pour qui ?</p>
-        {
-          secteurs.map((x) => (
-            <a href={`/secteur/${x.slug}/`} class="text-typo">
-              {x.nav}
-            </a>
-          ))
-        }
+        <a href="/ressources/" class="footerTitle link-underline">Ressources</a>
       </div>
     </nav>
     <div class="medium-spacing"></div>

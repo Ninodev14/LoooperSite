@@ -2,10 +2,10 @@
 /**
  * pages/renforcer-cohesion.astro — Renforcer la cohésion
  */
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Quiz from '../components/Modal/Quiz.astro';
-import EscapeGame from '../components/Modal/EscapeGame.astro';
-import GeoCaching from '../components/Modal/Geocaching.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Quiz from '../../components/Modal/Quiz.astro';
+import EscapeGame from '../../components/Modal/EscapeGame.astro';
+import GeoCaching from '../../components/Modal/Geocaching.astro';
 ---
 
 <BaseLayout
@@ -92,7 +92,10 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
       <div class="small-medium-spacing"></div>
       <div class="long-card-wrapper">
         <article class="long-card long-card-orange">
-          <img src="/img/long-card/escape.jpg" alt="Écran d'un escape game numérique présentant une scène de crime" />
+          <img
+            src="/img/long-card/escape.jpg"
+            alt="Écran d'un escape game numérique présentant une scène de crime"
+          />
           <div class="long-card-text-content">
             <div>
               <h3
@@ -140,7 +143,10 @@ import GeoCaching from '../components/Modal/Geocaching.astro';
         </article>
 
         <article class="long-card long-card-blue">
-          <img src="/img/long-card/geocaching.jpg" alt="Écran d'une carte de Bordeaux avec plusieurs points de repère, illustrant un géocaching" />
+          <img
+            src="/img/long-card/geocaching.jpg"
+            alt="Écran d'une carte de Bordeaux avec plusieurs points de repère, illustrant un géocaching"
+          />
           <div class="long-card-text-content">
             <div>
               <h3
