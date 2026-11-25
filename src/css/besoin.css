@@ -68,6 +68,10 @@
   background-image: url('/svg/pictoMiniCard/contour/bullTalking.png');
 }
 
+.accueillir:after {
+  background-image: url('/svg/pictoMiniCard/contour/multipleGuy.png');
+}
+
 .mini-card-info-besoin-orange {
   box-shadow: 0 12px 0 0 #f6b254;
 }
