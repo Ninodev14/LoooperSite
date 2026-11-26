@@ -1,0 +1,27 @@
+
+
+.musee:after {
+  width: 5.4rem;
+  height: 5.4rem;
+  background-image: url('/svg/pictoMiniCard/contour/art.svg');
+}
+
+.ecole:after {
+      top: -4.0rem;
+  background-image: url('/svg/pictoMiniCard/contour/learn.svg');
+}
+
+.entreprise:after {
+      top: -3.6rem;
+  background-image: url('/svg/pictoMiniCard/contour/team.svg');
+}
+
+.tourisme:after {
+  background-image: url('/svg/pictoMiniCard/contour/map.svg');
+}
+
+.zoo:after {
+  width: 5.4rem;
+  height: 5.4rem;
+  background-image: url('/svg/pictoMiniCard/contour/animal.svg');
+}

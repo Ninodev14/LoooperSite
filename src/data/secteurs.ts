@@ -236,7 +236,7 @@ export const secteurs: Secteur[] = [
     intro:
       'Une collection est riche, mais pas toujours facile d’accès. Chez <b>Loooper!</b>, nous transformons <b>vos œuvres, vos récits et vos savoirs</b> en <b>jeux interactifs de médiation</b> qui donnent envie d’observer, de chercher et de comprendre. Le visiteur devient <b>acteur de sa visite</b>. Chaque expérience est pensée <b>accessible, inclusive et éco-conçue</b>.',
     cta: 'Parler de mon musée',
-    illustration: { img: '/svg/besoin/idea.svg', etoiles: 'Purple' },
+    illustration: { img: '/svg/neonVertion/art.svg', etoiles: 'Blue' },
     bandeau: 'Blue',
     besoins: [
       {
@@ -315,7 +315,7 @@ export const secteurs: Secteur[] = [
     intro:
       'Les élèves retiennent mieux quand ils jouent, et encore mieux quand ils créent. Nous animons <b>des ateliers serious game</b> où ils conçoivent leur propre jeu, et nous fabriquons <b>des outils pédagogiques ludiques</b> à partir de vos contenus pour <b>accompagner vos séquences</b>. Chaque expérience est pensée <b>accessible, inclusive et éco-conçue</b>.',
     cta: 'Parler de ma classe',
-    illustration: { img: '/svg/besoin/teach.svg', etoiles: 'Purple' },
+    illustration: { img: '/svg/neonVertion/learn.svg', etoiles: 'Purple' },
     bandeau: 'Purple',
     besoins: [
       {
@@ -407,7 +407,7 @@ export const secteurs: Secteur[] = [
     intro:
       'Un livret RSE se lit une fois. Un jeu se rejoue et se discute. Chez <b>Loooper!</b>, nous transformons <b>vos enjeux RSE</b> en <b>expériences collectives</b> qui font passer les messages et <b>créent du lien entre collaborateurs</b>. Chaque expérience est pensée <b>accessible, inclusive et éco-conçue</b>.',
     cta: 'Parler de mon entreprise',
-    illustration: { img: '/svg/besoin/annonce.svg', etoiles: 'Blue' },
+    illustration: { img: '/svg/neonVertion/team.svg', etoiles: 'Blue' },
     bandeau: 'Orange',
     besoins: [
       {
@@ -486,7 +486,7 @@ export const secteurs: Secteur[] = [
     intro:
       'Les visiteurs ne veulent plus seulement regarder : ils veulent participer. Pour un site de visite, un office de tourisme ou tout un territoire, nous créons des <b>jeux de piste, quiz et parcours interactifs</b> qui font découvrir <b>votre patrimoine, vos histoires et vos paysages</b> en jouant, <b>à leur rythme</b>. Chaque expérience est pensée <b>accessible, inclusive et éco-conçue</b>.',
     cta: 'Parler de mon site',
-    illustration: { img: '/svg/besoin/connection.svg', etoiles: 'Yellow' },
+    illustration: { img: '/svg/neonVertion/map.svg', etoiles: 'Yellow' },
     bandeau: 'Blue',
     besoins: [
       {
@@ -565,7 +565,7 @@ export const secteurs: Secteur[] = [
     intro:
       'Observer les animaux, c’est déjà beaucoup. Les comprendre, c’est encore mieux. Chez <b>Loooper!</b>, nous créons des <b>jeux de piste, quiz et histoires interactives</b> qui font découvrir <b>vos espèces, vos missions de conservation et leurs enjeux</b> à chaque visiteur, <b>en famille, en groupe scolaire ou entre amis</b>. Chaque expérience est pensée <b>accessible, inclusive et éco-conçue</b>.',
     cta: 'Parler de mon parc',
-    illustration: { img: '/svg/besoin/connection.svg', etoiles: 'Purple' },
+    illustration: { img: '/svg/neonVertion/animal.svg', etoiles: 'Yellow' },
     bandeau: 'Orange',
     besoins: [
       {

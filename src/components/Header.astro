@@ -41,7 +41,59 @@ const activeClassBlue = 'highlight blue black white-border-small';
           class:list={['header-typo-pc link-underline-fill', isFormats && activeClassBlue]}>
           Nos formats
         </a>
-
+        <div class="dropdown">
+          <div class:list={['dropdown-text-arrow', isVotreSecteur && activeClassPurple]}>
+            <a
+              href="/votre-secteur/"
+              class:list={[
+                'header-typo-pc link-underline-fill',
+                isVotreSecteur && 'white-border-small black ',
+              ]}>
+              Votre secteur
+            </a>
+            <div class="dropdown-arrow">
+              <div class="line1"></div>
+              <div class="line2"></div>
+            </div>
+          </div>
+          <div class="dropdown-menu">
+            <a
+              class:list={[
+                'header-typo-pc',
+                currentPath === '/secteur/serious-game-musee/' && 'link-underline',
+              ]}
+              href="/secteur/serious-game-musee/">Musées et patrimoine</a
+            >
+            <a
+              class:list={[
+                'header-typo-pc',
+                currentPath === '/secteur/serious-game-ecole/' && 'link-underline',
+              ]}
+              href="/secteur/serious-game-ecole/">Écoles et éducation</a
+            >
+            <a
+              class:list={[
+                'header-typo-pc',
+                currentPath === '/secteur/jeu-entreprise-rse/' && 'link-underline',
+              ]}
+              href="/secteur/jeu-entreprise-rse/">Entreprises et RSE</a
+            >
+            <a
+              class:list={[
+                'header-typo-pc',
+                currentPath === '/secteur/jeu-interactif-tourisme/' && 'link-underline',
+              ]}
+              href="/secteur/jeu-interactif-tourisme/">Tourisme et territoires</a
+            >
+            <a
+              class:list={[
+                'header-typo-pc',
+                currentPath === '/secteur/jeu-interactif-zoo/' && 'link-underline',
+              ]}
+              href="/secteur/jeu-interactif-zoo/">Zoos et parcs animaliers</a
+            >
+          </div>
+        </div>
         <div class="dropdown">
           <div class:list={['dropdown-text-arrow', isBesoins && activeClassOrange]}>
             <a
@@ -113,60 +165,6 @@ const activeClassBlue = 'highlight blue black white-border-small';
                 currentPath === '/besoins/accueillir-tous-publics/' && 'link-underline',
               ]}
               href="/besoins/accueillir-tous-publics/">Accueillir tous les publics</a
-            >
-          </div>
-        </div>
-
-        <div class="dropdown">
-          <div class:list={['dropdown-text-arrow', isVotreSecteur && activeClassPurple]}>
-            <a
-              href="/votre-secteur/"
-              class:list={[
-                'header-typo-pc link-underline-fill',
-                isVotreSecteur && 'white-border-small black ',
-              ]}>
-              Votre secteur
-            </a>
-            <div class="dropdown-arrow">
-              <div class="line1"></div>
-              <div class="line2"></div>
-            </div>
-          </div>
-          <div class="dropdown-menu">
-            <a
-              class:list={[
-                'header-typo-pc',
-                currentPath === '/secteur/serious-game-musee/' && 'link-underline',
-              ]}
-              href="/secteur/serious-game-musee/">Musées et patrimoine</a
-            >
-            <a
-              class:list={[
-                'header-typo-pc',
-                currentPath === '/secteur/serious-game-ecole/' && 'link-underline',
-              ]}
-              href="/secteur/serious-game-ecole/">Écoles et éducation</a
-            >
-            <a
-              class:list={[
-                'header-typo-pc',
-                currentPath === '/secteur/jeu-entreprise-rse/' && 'link-underline',
-              ]}
-              href="/secteur/jeu-entreprise-rse/">Entreprises et RSE</a
-            >
-            <a
-              class:list={[
-                'header-typo-pc',
-                currentPath === '/secteur/jeu-interactif-tourisme/' && 'link-underline',
-              ]}
-              href="/secteur/jeu-interactif-tourisme/">Tourisme et territoires</a
-            >
-            <a
-              class:list={[
-                'header-typo-pc',
-                currentPath === '/secteur/jeu-interactif-zoo/' && 'link-underline',
-              ]}
-              href="/secteur/jeu-interactif-zoo/">Zoos et parcs animaliers</a
             >
           </div>
         </div>
@@ -399,6 +397,19 @@ const activeClassBlue = 'highlight blue black white-border-small';
           <img class="img-logo" src="/svg/header/format.svg" alt="" />
           Nos formats
         </a>
+
+        <div class="btn-slide-container">
+          <a
+            href="/votre-secteur/"
+            class:list={['h3', isVotreSecteur && 'highlight purple black white-border-small']}>
+            <img class="img-logo" src="/svg/header/equipe.svg" alt="" />
+            Votre secteur
+          </a>
+          <button class="btn-slide" data-target="sub-secteur" aria-label="Ouvrir Votre secteur">
+            <img class="img-logo" src="/svg/arrowW.svg" alt="" />
+          </button>
+        </div>
+
         <div class="btn-slide-container">
           <a
             href="/besoins/"
@@ -406,16 +417,11 @@ const activeClassBlue = 'highlight blue black white-border-small';
             <img class="img-logo" src="/svg/header/besoin.svg" alt="" />
             Vos besoins
           </a>
-          <button id="btn-slide">
+          <button class="btn-slide" data-target="sub-besoins" aria-label="Ouvrir Vos besoins">
             <img class="img-logo" src="/svg/arrowW.svg" alt="" />
           </button>
         </div>
-        <a
-          href="/votre-secteur/"
-          class:list={['h3', isVotreSecteur && 'highlight purple black white-border-small']}>
-          <img class="img-logo" src="/svg/header/equipe.svg" alt="" />
-          Votre secteur
-        </a>
+
         <a
           href="/equipe/"
           class:list={['h3', isEquipe && 'highlight purple black white-border-small']}>
@@ -443,9 +449,44 @@ const activeClassBlue = 'highlight blue black white-border-small';
         <div class="null-object"></div>
       </div>
 
-      <div class="menu-tel-sub">
+      <!-- Sous-menu secteur -->
+      <div class="menu-tel-sub" id="sub-secteur">
         <div class="menu-tel-sub-container">
-          <button id="btn-back">
+          <button class="btn-back" aria-label="Retour">
+            <img src="/svg/arrowW.svg" alt="" />
+          </button>
+          <a
+            class:list={['h3', currentPath === '/secteur/serious-game-musee/' && 'link-underline']}
+            href="/secteur/serious-game-musee/">Musées et patrimoine</a
+          >
+          <a
+            class:list={['h3', currentPath === '/secteur/serious-game-ecole/' && 'link-underline']}
+            href="/secteur/serious-game-ecole/">Écoles et éducation</a
+          >
+          <a
+            class:list={['h3', currentPath === '/secteur/jeu-entreprise-rse/' && 'link-underline']}
+            href="/secteur/jeu-entreprise-rse/">Entreprises et RSE</a
+          >
+          <a
+            class:list={[
+              'h3',
+              currentPath === '/secteur/jeu-interactif-tourisme/' && 'link-underline',
+            ]}
+            href="/secteur/jeu-interactif-tourisme/">Tourisme et territoires</a
+          >
+          <a
+            class:list={['h3', currentPath === '/secteur/jeu-interactif-zoo/' && 'link-underline']}
+            href="/secteur/jeu-interactif-zoo/">Zoos et parcs animaliers</a
+          >
+          <div class="null-object"></div>
+          <div class="null-object"></div>
+        </div>
+      </div>
+
+      <!-- Sous-menu besoins -->
+      <div class="menu-tel-sub" id="sub-besoins">
+        <div class="menu-tel-sub-container">
+          <button class="btn-back" aria-label="Retour">
             <img src="/svg/arrowW.svg" alt="" />
           </button>
           <a

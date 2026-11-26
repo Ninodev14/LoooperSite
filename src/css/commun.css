@@ -1919,8 +1919,9 @@ input[type='checkbox']::after {
   gap: 3rem;
   justify-content: center;
   margin: 0 auto;
-  max-width: calc(4 * 14rem + 3 * 3rem);
+  max-width: calc(4 * 14rem + 4 * 3rem);
 }
+
 
 .mini-card-container a {
   transition: all 0.2s;

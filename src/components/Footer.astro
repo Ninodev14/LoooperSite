@@ -116,6 +116,17 @@ const latestRessources = (await getPublishedRessources()).slice(0, 4);
         <a href="/formats/#foot-form2" class="text-typo">Les atouts des formats</a>
         <a href="/formats/#foot-form3" class="text-typo">FAQ formats</a>
       </div>
+
+      <div class="footer-nav-row">
+        <a href="/votre-secteur/" class="footerTitle link-underline">Votre secteur</a>
+        {
+          secteurs.map((x) => (
+            <a href={`/secteur/${x.slug}/`} class="text-typo">
+              {x.nav}
+            </a>
+          ))
+        }
+      </div>
       <div class="footer-nav-row">
         <a href="/besoins/" class="footerTitle link-underline">Vos besoins</a>
         <a href="/besoins/apprendre-ludique/" class="text-typo">Rendre l'apprentissage ludique</a>
@@ -131,16 +142,6 @@ const latestRessources = (await getPublishedRessources()).slice(0, 4);
         <a href="/besoins/marquer-les-esprits/" class="text-typo">Marquer les esprits</a>
         <a href="/besoins/accueillir-tous-publics/" class="text-typo">Accueillir tous les publics</a
         >
-      </div>
-      <div class="footer-nav-row">
-        <a href="/votre-secteur/" class="footerTitle link-underline">Votre secteur</a>
-        {
-          secteurs.map((x) => (
-            <a href={`/secteur/${x.slug}/`} class="text-typo">
-              {x.nav}
-            </a>
-          ))
-        }
       </div>
       <div class="footer-nav-row">
         <a href="/equipe/" class="footerTitle link-underline">Notre équipe</a>

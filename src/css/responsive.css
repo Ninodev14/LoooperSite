@@ -15,7 +15,7 @@
   }
 
   .mini-card-container {
-    max-width: calc(4 * 18rem + 3 * 3rem);
+    max-width: calc(4 * 18rem + 4 * 3rem);
   }
 
   .mini-card,
