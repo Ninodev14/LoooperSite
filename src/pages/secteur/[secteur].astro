@@ -265,21 +265,22 @@ const schemaJson = [
         <section class="container-width" data-reveal="up" data-reveal-delay="100">
           <h2 class="h2 black white-border">Nos réalisations</h2>
           <div class="small-medium-spacing" />
-          <div class="realisations-grid">
+          <div class="card-info-wrap card-info-wrap-left">
             {projets.map((p, i) => {
               const couleur = COULEURS[i % COULEURS.length];
               return (
-                <article class={`realisation realisation-${couleur}`}>
-                  <div class="realisation-media">
-                    <img src={p.img} alt={p.alt} loading="lazy" />
-                  </div>
-                  <div class="realisation-body">
-                    <h3 class={`h3 highlight-no-annim white-border-small black ${couleur}`}>
-                      {p.titre}
-                    </h3>
-                    <p class="black realisation-type">{p.type}</p>
-                    <p class="black">{p.description}</p>
-                    <div class="realisation-actions">
+                <article
+                  class={`card-info-container card-info-container-${couleur} card-info-container-secteur`}>
+                  <img src={p.img} alt={p.alt} loading="lazy" />
+                  <div class="card-info-container-text">
+                    <div class="card-info-container-text-alignement">
+                      <h3 class={`h3 highlight-no-annim white-border-small black ${couleur}`}>
+                        {p.titre}
+                      </h3>
+                      <p class="black realisation-type">{p.type}</p>
+                      <p class="black">{p.description}</p>
+                    </div>
+                    <div class="card-info-container-text-center-btn">
                       <button
                         data-modal={p.modal}
                         aria-haspopup="dialog"
@@ -287,15 +288,16 @@ const schemaJson = [
                         aria-label={`En savoir plus sur ${p.titre}`}>
                         <span>En savoir plus</span>
                       </button>
-                      <a href="/projets/" class="text-typo btn-project btn-white-background">
-                        <span>Voir tous nos projets</span>
-                      </a>
                     </div>
                   </div>
                 </article>
               );
             })}
           </div>
+          <div class="small-medium-spacing" />
+          <a href="/projets/" class="text-typo btn-project btn-white-background">
+            <span>Voir tous nos projets</span>
+          </a>
         </section>
       </>
     )
@@ -412,147 +414,3 @@ const schemaJson = [
   <script src="/js/modal.js" defer></script>
   <script src="/js/faq.js" defer></script>
 </BaseLayout>
-
-<style>
-  .realisations-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 28rem));
-    gap: 4rem 3.5rem;
-    justify-content: start;
-  }
-
-  .realisation {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    border: 5px solid #000;
-    border-radius: 30px;
-    overflow: hidden;
-  }
-
-  .realisation-orange {
-    box-shadow: 12px 12px 0 0 #f6b254;
-  }
-
-  .realisation-purple {
-    box-shadow: 12px 12px 0 0 #bb6ef6;
-  }
-
-  .realisation-blue {
-    box-shadow: 12px 12px 0 0 #3c61f5;
-  }
-
-  .realisation-media {
-    position: relative;
-    aspect-ratio: 16 / 10;
-    border-bottom: 5px solid #000;
-    overflow: hidden;
-  }
-
-  .realisation-media img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .realisation-body {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    gap: 1.2rem;
-    padding: 1.5rem 1.5rem 2rem;
-  }
-
-  .realisation-body h3 {
-    width: fit-content;
-  }
-
-  .realisation-type {
-    margin: -0.6rem 0 0;
-    font-weight: 700;
-  }
-
-  .realisation-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.2rem 1rem;
-    margin-top: auto;
-    padding-top: 0.5rem;
-  }
-
-  .secteur-liens {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
-    gap: 3.5rem 3rem;
-  }
-
-  .secteur-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-    padding: 1.8rem 1.6rem 1.6rem;
-    background: #fff;
-    border: 5px solid #000;
-    border-radius: 30px;
-    text-decoration: none;
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-
-  .secteur-card-orange {
-    --card-color: #f6b254;
-  }
-
-  .secteur-card-purple {
-    --card-color: #bb6ef6;
-  }
-
-  .secteur-card-blue {
-    --card-color: #3c61f5;
-  }
-
-  .secteur-card {
-    box-shadow: 10px 10px 0 0 var(--card-color);
-  }
-
-  .secteur-card:hover {
-    transform: translate(-4px, -4px);
-  }
-
-  .secteur-card h3 {
-    width: fit-content;
-    margin: 0;
-  }
-
-  .secteur-card-texte {
-    margin: 0;
-  }
-
-  .secteur-card-cta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-top: auto;
-    padding-top: 1.2rem;
-    border-top: 2px solid var(--card-color);
-    font-weight: 700;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .secteur-card {
-      transition: none;
-    }
-
-    .secteur-card:hover,
-    .secteur-card:focus-visible {
-      transform: none;
-    }
-  }
-
-  .card-info-container-secteur {
-    width: 20rem;
-  }
-</style>
