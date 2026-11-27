@@ -1,8 +1,9 @@
 
 
 .musee:after {
-  width: 5.4rem;
-  height: 5.4rem;
+  width: 5.2rem;
+  height: 5.2rem;
+  top: -3.4rem;
   background-image: url('/svg/pictoMiniCard/contour/art.svg');
 }
 
@@ -21,7 +22,7 @@
 }
 
 .zoo:after {
-  width: 5.4rem;
-  height: 5.4rem;
+  width: 5.2rem;
+  height: 5.2rem;
   background-image: url('/svg/pictoMiniCard/contour/animal.svg');
 }
