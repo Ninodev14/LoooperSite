@@ -1,0 +1,70 @@
+<svg class="ico ico-book" width="137" height="160" viewBox="0 0 137 160" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="overflow:visible">
+<style>
+.ico-book * { transform-origin: 0 0; }
+
+/* Rayons : s'éloignent puis reviennent */
+@keyframes book-ray { 0%,100% { opacity: 1; transform: none; } 50% { opacity: .25; transform: translate(var(--tx), var(--ty)); } }
+/* Ampoule : légère pulsation */
+@keyframes book-bulb { 0%,100% { transform: none; } 50% { transform: scale(1.05); } }
+/* Filament : scintillement */
+@keyframes book-filament { 0%,100% { opacity: 1; } 30% { opacity: .2; } 60% { opacity: 1; } 80% { opacity: .4; } }
+/* Pages : petit battement */
+@keyframes book-page-l { 0%,100% { transform: none; } 50% { transform: translateY(-3px) rotate(-2deg); } }
+@keyframes book-page-r { 0%,100% { transform: none; } 50% { transform: translateY(-3px) rotate(2deg); } }
+/* Lignes de texte : se tracent une à une */
+@keyframes book-line { 0% { stroke-dashoffset: 1; } 35%,80% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
+
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-ray { animation: book-ray .9s ease-in-out infinite; }
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-ray2 { animation-delay: .1s; }
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-ray3 { animation-delay: .2s; }
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-ray4 { animation-delay: .3s; }
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-ray5 { animation-delay: .4s; }
+
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-bulb { transform-origin: 68px 45px; animation: book-bulb .9s ease-in-out infinite; }
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-filament { animation: book-filament 1.2s ease-in-out infinite; }
+
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-page-l { transform-origin: 18px 76.5px; animation: book-page-l 1.2s ease-in-out infinite; }
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-page-r { transform-origin: 118.5px 76.5px; animation: book-page-r 1.2s ease-in-out infinite; }
+
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-line { stroke-dasharray: 1; animation: book-line 2s ease-in-out infinite; }
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-line2 { animation-delay: .15s; }
+:is(.mini-card,.revers-mini-card):hover .ico-book .book-line3 { animation-delay: .3s; }
+
+@media (prefers-reduced-motion: reduce) { .ico-book * { animation: none !important; } }
+</style>
+
+<g stroke="#BB6EF6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+
+  <path d="M68.25 157V91.499"/>
+  <path d="M68.25 157C63 153 45.6 145 18 145V76.5"/>
+  <path d="M68.25 157C73.5 153 90.9 145 118.5 145V76.5"/>
+  <path d="M68.25 157H2.5V76.5H18"/>
+  <path d="M68.25 157H134V76.5H118.5"/>
+
+  <path class="book-page-l" d="M56.1058 70.5302C46.8881 67.3733 33.5613 65.1436 18 68.5V76.5"/>
+  <path class="book-page-r" d="M118.5 76.5V68.5C102.65 65.0814 89.1186 67.4578 79.8859 70.7066"/>
+
+  <g class="book-bulb">
+    <path d="M68.25 91.499C68.1675 91.4997 68.0842 91.5 68 91.5C59.5111 91.5 59.7381 88.1814 60.09 83.0359C60.1665 81.9171 60.2489 80.7116 60.2489 79.4353"/>
+    <path d="M68.25 91.499C76.4844 91.434 76.2584 88.1305 75.91 83.036C75.8335 81.9171 75.7511 80.7117 75.7511 79.4353"/>
+    <path d="M60.2489 79.4353H56.8348C55.1584 79.4353 55.4119 77.6582 55.7603 75.2148C55.9615 73.8041 56.1944 72.1713 56.1058 70.5302"/>
+    <path d="M60.2489 79.4353H63.3864H68.25H75.7511"/>
+    <path d="M75.7511 79.4353H79.1652C80.8416 79.4353 80.5881 77.6582 80.2397 75.2148C80.0457 73.8547 79.8223 72.2881 79.8859 70.7066C79.966 68.7176 80.5001 66.7052 82.118 65.0506C98.543 48.2529 91.0687 23.8451 68 23.8451C44.9313 23.8451 37.457 48.2529 53.882 65.0506C54.9967 66.1906 55.597 67.5005 55.8887 68.8556C56.0078 69.4091 56.0755 69.9701 56.1058 70.5302"/>
+    <path class="book-filament" d="M52.5214 45.3759C53.4441 38.7868 57.5 30.5 69.5 32.2471"/>
+  </g>
+
+  <path class="book-ray"        style="--tx:0px;--ty:-6px"  d="M68 13.3582V2.5"/>
+  <path class="book-ray book-ray2" style="--tx:5px;--ty:-5px"  d="M89.9614 23.8451L99.0043 15.1215"/>
+  <path class="book-ray book-ray3" style="--tx:6px;--ty:0px"   d="M99.0043 45.3759H111"/>
+  <path class="book-ray book-ray4" style="--tx:-5px;--ty:-5px" d="M46.0386 23.8451L36.9957 15.1215"/>
+  <path class="book-ray book-ray5" style="--tx:-6px;--ty:0px"  d="M36.9957 45.3759H25"/>
+
+  <path class="book-line"            pathLength="1" d="M29 92.4709C38.7243 91.861 47.2125 93.291 53.882 95.3128"/>
+  <path class="book-line book-line2" pathLength="1" d="M29 107.221C40.2235 106.517 49.8004 108.53 56.8348 111.035"/>
+  <path class="book-line book-line3" pathLength="1" d="M29 121.971C40.2235 121.267 49.8004 123.28 56.8348 125.785"/>
+
+  <path class="book-line"            pathLength="1" d="M82.618 95.3128C89.2875 93.291 97.7757 91.861 107.5 92.4709"/>
+  <path class="book-line book-line2" pathLength="1" d="M79.6652 111.035C86.6996 108.53 96.2765 106.517 107.5 107.221"/>
+  <path class="book-line book-line3" pathLength="1" d="M79.6652 125.785C86.6996 123.28 96.2765 121.267 107.5 121.971"/>
+</g>
+</svg>

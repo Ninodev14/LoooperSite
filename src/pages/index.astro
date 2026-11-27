@@ -19,14 +19,11 @@ import CoopCook from '../components/Modal/CoopCook.astro';
 import CartesCartels from '../components/Modal/CartesCartels.astro';
 import Zemblanite from '../components/Modal/Zemblanite.astro';
 
-import idea from '/svg/pictoMiniCard/idea.svg?raw';
-import annonce from '/svg/pictoMiniCard/annonce.svg?raw';
-import connection from '/svg/pictoMiniCard/connection.svg?raw';
-import teach from '/svg/pictoMiniCard/teach.svg?raw';
-import table from '/svg/pictoMiniCard/table.svg?raw';
-import starPodium from '/svg/pictoMiniCard/starPodium.svg?raw';
-import bullTalking from '/svg/pictoMiniCard/bullTalking.svg?raw';
-import multipleGuy from '/svg/pictoMiniCard/multipleGuy.svg?raw';
+import musee from '/svg/pictoMiniCard/art.svg?raw';
+import ecole from '/svg/pictoMiniCard/learn.svg?raw';
+import entreprise from '/svg/pictoMiniCard/team.svg?raw';
+import tourisme from '/svg/pictoMiniCard/map.svg?raw';
+import zoo from '/svg/pictoMiniCard/animal.svg?raw';
 ---
 
 <BaseLayout
@@ -76,7 +73,6 @@ import multipleGuy from '/svg/pictoMiniCard/multipleGuy.svg?raw';
 
   <div class="large-spacing"></div>
 
-  <!-- 1. LOOOPER!, c'est... (chiffres) -->
   <section id="foot-inx1" data-reveal="up" data-reveal-delay="100">
     <div class="zoom-container zoom-number">
       <h2 class="h2 black white-border container-width">LOOOPER!, c’est...</h2>
@@ -123,7 +119,6 @@ import multipleGuy from '/svg/pictoMiniCard/multipleGuy.svg?raw';
 
   <div class="large-spacing"></div>
 
-  <!-- 2. Notre savoir-faire en action (carrousel) -->
   <section
     id="foot-inx2"
     class="swiper"
@@ -261,7 +256,6 @@ import multipleGuy from '/svg/pictoMiniCard/multipleGuy.svg?raw';
 
   <div class="large-spacing"></div>
 
-  <!-- 3. Ils sont entrés dans le jeu (avis) -->
   <section id="foot-inx3" class="container-width backgroundBrushType3">
     <div data-reveal="up" data-reveal-delay="100">
       <h2 class="h2 black white-border">Ils sont entrés dans le jeu...</h2>
@@ -298,64 +292,42 @@ import multipleGuy from '/svg/pictoMiniCard/multipleGuy.svg?raw';
 
   <div class="large-spacing"></div>
 
-  <!-- 4. Des expériences qui répondent à vos besoins -->
   <section id="foot-inx4" class="container-width" data-reveal="up" data-reveal-delay="100">
-    <h2 class="h2 black white-border">Des expériences qui répondent à vos besoins :</h2>
+    <h2 class="h2 black white-border">Des expériences adaptées à votre secteur</h2>
     <div class="small-medium-spacing"></div>
     <nav class="mini-card-container">
-      <a href="/apprendre-ludique/">
+      <a href="/secteur/serious-game-musee/">
         <article class="revers-mini-card mini-card-orange">
-          <h3 class="h3 black">Rendre l'apprentissage ludique</h3>
-          <Fragment set:html={idea} />
+          <h3 class="h3 black">Musées et patrimoine</h3>
+          <Fragment set:html={musee} />
         </article>
       </a>
 
-      <a href="/besoins/sensibiliser-reflechir/">
+      <a href="/secteur/serious-game-ecole/">
         <article class="mini-card mini-card-purple">
-          <h3 class="h3 black">Sensibiliser et faire réfléchir</h3>
-          <Fragment set:html={annonce} />
+          <h3 class="h3 black">Écoles et éducation</h3>
+          <Fragment set:html={ecole} />
         </article>
       </a>
 
-      <a href="/besoins/creer-interaction-sociale/">
+      <a href="/secteur/jeu-entreprise-rse/">
         <article class="revers-mini-card mini-card-blue">
-          <h3 class="h3 black">Créer de l'interaction sociale</h3>
-          <Fragment set:html={connection} />
+          <h3 class="h3 black">Entreprises et RSE</h3>
+          <Fragment set:html={entreprise} />
         </article>
       </a>
 
-      <a href="/besoins/former-efficacement/">
+      <a href="/secteur/jeu-interactif-tourisme/">
         <article class="mini-card mini-card-orange">
-          <h3 class="h3 black">Former efficacement</h3>
-          <Fragment set:html={teach} />
+          <h3 class="h3 black">Tourisme et territoires</h3>
+          <Fragment set:html={tourisme} />
         </article>
       </a>
 
-      <a href="/besoins/renforcer-cohesion/">
-        <article class="mini-card mini-card-purple">
-          <h3 class="h3 black">Renforcer la cohésion</h3>
-          <Fragment set:html={table} />
-        </article>
-      </a>
-
-      <a href="/besoins/engager-motiver/">
-        <article class="revers-mini-card mini-card-blue">
-          <h3 class="h3 black">Engager et motiver</h3>
-          <Fragment set:html={starPodium} />
-        </article>
-      </a>
-
-      <a href="/besoins/marquer-les-esprits/">
-        <article class="mini-card mini-card-orange">
-          <h3 class="h3 black">Marquer les esprits</h3>
-          <Fragment set:html={bullTalking} />
-        </article>
-      </a>
-
-      <a href="/besoins/accueillir-tous-publics/">
-        <article class="mini-card mini-card-purple">
-          <h3 class="h3 black">Accueillir tous les publics</h3>
-          <Fragment set:html={multipleGuy} />
+      <a href="/secteur/jeu-interactif-zoo/">
+        <article class="revers-mini-card mini-card-purple">
+          <h3 class="h3 black">Zoos et parcs animaliers</h3>
+          <Fragment set:html={zoo} />
         </article>
       </a>
     </nav>
@@ -363,15 +335,14 @@ import multipleGuy from '/svg/pictoMiniCard/multipleGuy.svg?raw';
     <div class="small-medium-spacing"></div>
 
     <div class="aligne-btn-center">
-      <a href="/besoins/" class="text-typo btn-project btn-white-background">
-        <span>Explorer mes besoins</span>
+      <a href="/votre-secteur/" class="text-typo btn-project btn-white-background">
+        <span>Explorer mon secteur</span>
       </a>
     </div>
   </section>
 
   <div class="large-spacing"></div>
 
-  <!-- 5. L'équipe Loooper! -->
   <div id="foot-inx5" class="backgroundBrushType1">
     <section
       class="container-width text-basical-container"
@@ -419,7 +390,6 @@ import multipleGuy from '/svg/pictoMiniCard/multipleGuy.svg?raw';
 
   <div class="large-spacing"></div>
 
-  <!-- 6. Mais qu'est-ce qui rend Loooper! unique ? -->
   <section id="foot-inx6" class="zoom-container-center">
     <div class="zoom-container">
       <div class="container-width">

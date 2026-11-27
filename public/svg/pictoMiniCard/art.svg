@@ -1,0 +1,37 @@
+<svg class="ico ico-art" width="147" height="145" viewBox="0 0 147 145" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="overflow:visible">
+<style>
+@keyframes art-col { 0%,100% { transform: scaleY(1); } 30% { transform: scaleY(.12); } 65% { transform: scaleY(1); } }
+@keyframes art-curl-l { 0%,100% { transform: none; } 50% { transform: rotate(-7deg); } }
+@keyframes art-curl-r { 0%,100% { transform: none; } 50% { transform: rotate(7deg); } }
+@keyframes art-line { 0% { stroke-dashoffset: 1; } 35%,80% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
+
+:is(.mini-card,.revers-mini-card):hover .ico-art .art-col { transform-origin: 0 114.28px; vector-effect: non-scaling-stroke; animation: art-col 1.6s ease-in-out infinite; }
+:is(.mini-card,.revers-mini-card):hover .ico-art .art-col2 { animation-delay: .12s; }
+:is(.mini-card,.revers-mini-card):hover .ico-art .art-col3 { animation-delay: .24s; }
+:is(.mini-card,.revers-mini-card):hover .ico-art .art-col4 { animation-delay: .36s; }
+
+:is(.mini-card,.revers-mini-card):hover .ico-art .art-curl-l { transform-origin: 32.3px 25.15px; animation: art-curl-l 1.2s ease-in-out infinite; }
+:is(.mini-card,.revers-mini-card):hover .ico-art .art-curl-r { transform-origin: 114.7px 25.15px; animation: art-curl-r 1.2s ease-in-out infinite; }
+
+:is(.mini-card,.revers-mini-card):hover .ico-art .art-line { stroke-dasharray: 1; animation: art-line 2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) { .ico-art * { animation: none !important; } }
+</style>
+<g stroke="#F6B254" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+
+  <path d="M116.363 31.4655C121.316 39.1983 135.723 41.9015 141.722 31.4655C148.767 19.2109 141.722 2.5 128.374 2.5L18.6259 2.50001C5.27809 2.50001 -1.76656 19.2109 5.2781 31.4655C11.2773 41.9015 25.6839 39.1983 30.6374 31.4655C31.8242 29.6127 32.4684 27.4712 32.3242 25.1525"/>
+  <path d="M30.6374 31.4655L30.4981 126.903"/>
+  <path d="M116.363 31.4655L116.502 126.903"/>
+  <path d="M116.502 126.903L30.4981 126.903L21.9628 126.903L21.9628 142.5L125.037 142.5L125.037 126.903H116.502"/>
+
+  <path class="art-curl-l" d="M12.6935 25.1525C11.2104 18.0968 21.9628 10.3578 30.4905 19.5822C32.0076 21.2232 32.2136 23.3742 32.3242 25.1525"/>
+  <path class="art-curl-r" d="M116.363 31.4655C115.176 29.6127 114.532 27.4712 114.676 25.1525C114.786 23.3742 114.992 21.2232 116.509 19.5822C125.037 10.3578 135.79 18.0968 134.306 25.1525"/>
+
+  <path class="art-line" pathLength="1" d="M32.3242 25.1525L114.676 25.1525"/>
+
+  <path class="art-col"             d="M42.726 39.6353L54.9614 39.6353L54.9614 114.277L42.726 114.277L42.726 39.6353Z"/>
+  <path class="art-col art-col2"    d="M67.1969 39.6353L67.1969 114.277L79.8031 114.277L79.8031 39.6353L67.1969 39.6353Z"/>
+  <path class="art-col art-col3"    d="M92.0386 39.6353L104.274 39.6353V114.277L92.0386 114.277L92.0386 39.6353Z"/>
+
+</g>
+</svg>

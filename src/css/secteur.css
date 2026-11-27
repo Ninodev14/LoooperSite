@@ -1,28 +1,147 @@
+.ico-art   { width: 5.2rem; top: -3.4rem; }
+.ico-learn { width: 5rem;   top: -4rem; }
+.ico-team  { width: 5.3rem; top: -3.6rem; }
+.ico-map   { width: 5.4rem; top: -3.3rem; }
+.ico-lion  { width: 5.2rem; top: -3.4rem; }
 
+/* ----- art ----- */
+.art-frieze { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.art-curl-l { transform-origin: 39.8px 32.7px; }
+.art-curl-r { transform-origin: 122.2px 32.7px; }
 
-.musee:after {
-  width: 5.2rem;
-  height: 5.2rem;
-  top: -3.4rem;
-  background-image: url('/svg/pictoMiniCard/contour/art.svg');
+@keyframes art-col {
+  0%, 100% { transform: none; }
+  25% { transform: translateY(-7px); }
+  50% { transform: translateY(1px); }
+  70% { transform: none; }
+}
+@keyframes art-curl-l { 0%, 100% { transform: none; } 50% { transform: rotate(-8deg); } }
+@keyframes art-curl-r { 0%, 100% { transform: none; } 50% { transform: rotate(8deg); } }
+@keyframes art-frieze {
+  0% { stroke-dashoffset: 1; }
+  35%, 80% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1; }
 }
 
-.ecole:after {
-      top: -4.0rem;
-  background-image: url('/svg/pictoMiniCard/contour/learn.svg');
+/* ----- learn ----- */
+.learn-bulb   { transform-origin: 75.5px 82px; }
+.learn-page-l { transform-origin: 25.5px 79px; }
+.learn-page-r { transform-origin: 126px 79px; }
+.learn-line   { stroke-dasharray: 1; stroke-dashoffset: 0; }
+
+@keyframes learn-ray {
+  0%, 100% { opacity: 1; transform: none; }
+  50% { opacity: 0.25; transform: translate(var(--tx), var(--ty)); }
+}
+@keyframes learn-bulb { 0%, 100% { transform: none; } 50% { transform: scale(1.05); } }
+@keyframes learn-filament {
+  0%, 100% { opacity: 1; }
+  30% { opacity: 0.2; }
+  60% { opacity: 1; }
+  80% { opacity: 0.4; }
+}
+@keyframes learn-page-l { 0%, 100% { transform: none; } 50% { transform: rotate(-4deg); } }
+@keyframes learn-page-r { 0%, 100% { transform: none; } 50% { transform: rotate(4deg); } }
+@keyframes learn-line {
+  0% { stroke-dashoffset: 1; }
+  35%, 80% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1; }
 }
 
-.entreprise:after {
-      top: -3.6rem;
-  background-image: url('/svg/pictoMiniCard/contour/team.svg');
+/* ----- team ----- */
+.team-gear   { transform-origin: 80px 44.3px; }
+.team-head-l { transform-origin: 39.1px 126.4px; }
+.team-head-c { transform-origin: 80.2px 136.7px; }
+.team-head-r { transform-origin: 121.2px 126.4px; }
+.team-link   { stroke-dasharray: 1; stroke-dashoffset: 0; }
+
+@keyframes team-gear { to { transform: rotate(360deg); } }
+@keyframes team-head {
+  0%, 100% { transform: none; }
+  30% { transform: scale(1.14); }
+  55% { transform: scale(0.97); }
+  75% { transform: none; }
+}
+@keyframes team-link {
+  0% { stroke-dashoffset: 1; }
+  35%, 80% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 1; }
 }
 
-.tourisme:after {
-  background-image: url('/svg/pictoMiniCard/contour/map.svg');
+/* ----- map ----- */
+@keyframes map-drop {
+  0%, 44%, 100% { transform: none; }
+  14% { transform: translateY(-8px); }
+  28% { transform: translateY(0); }
+  36% { transform: translateY(-2px); }
+}
+@keyframes map-dash {
+  0%, 35%, 100% { opacity: 1; }
+  12% { opacity: 0.15; }
 }
 
-.zoo:after {
-  width: 5.2rem;
-  height: 5.2rem;
-  background-image: url('/svg/pictoMiniCard/contour/animal.svg');
+/* ----- lion ----- */
+.lion-ear-l { transform-origin: 45.5px 45.5px; }
+.lion-ear-r { transform-origin: 105.5px 45.5px; }
+
+@keyframes lion-roar {
+  0%, 55%, 100% { transform: none; }
+  18% { transform: translate(var(--tx), var(--ty)); }
+  32% { transform: translate(calc(var(--tx) * 0.4), calc(var(--ty) * 0.4)); }
+}
+@keyframes lion-jaw {
+  0%, 55%, 100% { transform: none; }
+  18%, 32% { transform: translateY(6px); }
+}
+@keyframes lion-ear-l { 0%, 55%, 100% { transform: none; } 15% { transform: rotate(-10deg); } 30% { transform: rotate(4deg); } }
+@keyframes lion-ear-r { 0%, 55%, 100% { transform: none; } 15% { transform: rotate(10deg); } 30% { transform: rotate(-4deg); } }
+
+.mini-card-info-besoin:has(.btn-project:is(:hover, :focus-visible)) {
+  /* art */
+  & .art-col { animation: art-col 1.4s ease-in-out infinite; }
+  & .art-col2 { animation-delay: 0.15s; }
+  & .art-col3 { animation-delay: 0.3s; }
+  & .art-curl-l { animation: art-curl-l 1.4s ease-in-out infinite; }
+  & .art-curl-r { animation: art-curl-r 1.4s ease-in-out infinite; }
+  & .art-frieze { animation: art-frieze 2s ease-in-out infinite; }
+
+  /* learn */
+  & .learn-ray { animation: learn-ray 0.9s ease-in-out infinite; }
+  & .learn-ray2 { animation-delay: 0.1s; }
+  & .learn-ray3 { animation-delay: 0.2s; }
+  & .learn-ray4 { animation-delay: 0.3s; }
+  & .learn-ray5 { animation-delay: 0.4s; }
+  & .learn-bulb { animation: learn-bulb 0.9s ease-in-out infinite; }
+  & .learn-filament { animation: learn-filament 1.2s ease-in-out infinite; }
+  & .learn-page-l { animation: learn-page-l 1.2s ease-in-out infinite; }
+  & .learn-page-r { animation: learn-page-r 1.2s ease-in-out infinite; }
+  & .learn-line { animation: learn-line 2s ease-in-out infinite; }
+  & .learn-line2 { animation-delay: 0.15s; }
+  & .learn-line3 { animation-delay: 0.3s; }
+
+  /* team */
+  & .team-gear { animation: team-gear 4s linear infinite; }
+  & .team-head { animation: team-head 1.3s ease-in-out infinite; }
+  & .team-head-c { animation-delay: 0.15s; }
+  & .team-head-r { animation-delay: 0.3s; }
+  & .team-link { animation: team-link 2s ease-in-out infinite; }
+  & .team-link2 { animation-delay: 0.15s; }
+  & .team-link3 { animation-delay: 0.3s; }
+
+  /* map */
+  & .map-pin { animation: map-drop 2.4s ease-in-out infinite; }
+  & .map-pin2 { animation-delay: 0.7s; }
+  & .map-pin3 { animation-delay: 1.4s; }
+  & .map-dash { animation: map-dash 2.4s ease-in-out infinite; animation-delay: 0.2s; }
+  & .map-dash2 { animation-delay: 0.35s; }
+  & .map-dash3 { animation-delay: 0.5s; }
+  & .map-dash4 { animation-delay: 0.9s; }
+  & .map-dash5 { animation-delay: 1.05s; }
+  & .map-dash6 { animation-delay: 1.2s; }
+
+  /* lion */
+  & .lion-m { animation: lion-roar 1.8s ease-in-out infinite; animation-delay: var(--d, 0s); }
+  & .lion-jaw { animation: lion-jaw 1.8s ease-in-out infinite; }
+  & .lion-ear-l { animation: lion-ear-l 1.8s ease-in-out infinite; }
+  & .lion-ear-r { animation: lion-ear-r 1.8s ease-in-out infinite; }
 }

@@ -1,0 +1,50 @@
+<svg class="ico ico-map" width="145" height="146" viewBox="0 0 145 146" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" style="overflow:visible">
+<style>
+@keyframes map-drop {
+  0%,44%,100% { transform: none; }
+  14% { transform: translateY(-8px); }
+  28% { transform: translateY(0); }
+  36% { transform: translateY(-2px); }
+}
+@keyframes map-dash { 0%,35%,100% { opacity: 1; } 12% { opacity: .15; } }
+
+:is(.mini-card,.revers-mini-card):hover .ico-map .map-pin  { animation: map-drop 2.4s ease-in-out infinite; }
+:is(.mini-card,.revers-mini-card):hover .ico-map .map-pin2 { animation-delay: .7s; }
+:is(.mini-card,.revers-mini-card):hover .ico-map .map-pin3 { animation-delay: 1.4s; }
+
+:is(.mini-card,.revers-mini-card):hover .ico-map .map-dash  { animation: map-dash 2.4s ease-in-out infinite; animation-delay: .2s; }
+:is(.mini-card,.revers-mini-card):hover .ico-map .map-dash2 { animation-delay: .35s; }
+:is(.mini-card,.revers-mini-card):hover .ico-map .map-dash3 { animation-delay: .5s; }
+:is(.mini-card,.revers-mini-card):hover .ico-map .map-dash4 { animation-delay: .9s; }
+:is(.mini-card,.revers-mini-card):hover .ico-map .map-dash5 { animation-delay: 1.05s; }
+:is(.mini-card,.revers-mini-card):hover .ico-map .map-dash6 { animation-delay: 1.2s; }
+
+@media (prefers-reduced-motion: reduce) { .ico-map * { animation: none !important; } }
+</style>
+<g stroke="#F6B254" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+
+  <g class="map-pin">
+    <path d="M34.3436 58.072C23.0568 48.0531 13.008 39.3914 13.0084 23.3539C13.0087 14.0233 20.3039 2.5 34.3436 2.5C48.3833 2.5 55.6788 14.0232 55.679 23.3538C55.6794 39.3913 45.6304 48.0531 34.3436 58.072Z"/>
+    <path d="M34.3436 13.3372C28.2689 13.3372 23.902 18.4068 23.902 24.3144C23.902 30.222 28.2689 35.2916 34.3436 35.2916C40.4183 35.2916 44.7851 30.222 44.7851 24.3144C44.7852 18.4068 40.4183 13.3372 34.3436 13.3372Z"/>
+  </g>
+
+  <path class="map-dash"             d="M47.9296 62.7345C49.5875 63.476 51.3035 64.2434 53.0642 65.0306"/>
+  <path class="map-dash map-dash2"   d="M68.0682 71.7346C69.5793 72.4094 71.0957 73.0863 72.6106 73.7625"/>
+  <path class="map-dash map-dash3"   d="M88.4405 80.8213C89.8918 81.4677 91.3165 82.102 92.7076 82.7211L88.4405 80.8213Z"/>
+
+  <g class="map-pin map-pin2">
+    <path d="M119.162 93.8512C106.815 82.8917 95.8232 73.4169 95.8236 55.8738C95.8239 45.6673 103.804 33.0622 119.162 33.0622C134.519 33.0622 142.5 45.6672 142.5 55.8737C142.5 73.4168 131.508 82.8917 119.162 93.8512Z"/>
+    <path d="M119.162 44.9168C112.517 44.9168 107.74 50.4623 107.74 56.9245C107.74 63.3866 112.517 68.9322 119.162 68.9322C125.807 68.9322 130.583 63.3866 130.583 56.9245C130.583 50.4623 125.807 44.9168 119.162 44.9168Z"/>
+  </g>
+
+  <path class="map-dash map-dash4"   d="M106.473 101.845C105.213 102.546 103.88 103.284 102.481 104.057"/>
+  <path class="map-dash map-dash5"   d="M87.4769 112.26C86.2185 112.941 84.9332 113.636 83.6227 114.342"/>
+  <path class="map-dash map-dash6"   d="M68.0682 122.65C66.6182 123.418 65.1494 124.193 63.6633 124.976"/>
+
+  <g class="map-pin map-pin3">
+    <path d="M27.1859 143.5C14.1265 131.908 2.49953 121.886 2.5 103.329C2.50027 92.5334 10.9412 79.2003 27.1859 79.2003C43.4306 79.2003 51.8718 92.5333 51.872 103.329C51.8725 121.885 40.2453 131.908 27.1859 143.5Z"/>
+    <path d="M27.1859 91.7395C20.1571 91.7395 15.1045 97.6053 15.1045 104.441C15.1045 111.276 20.1571 117.142 27.1859 117.142C34.2146 117.142 39.2673 111.276 39.2673 104.441C39.2673 97.6053 34.2146 91.7395 27.1859 91.7395Z"/>
+  </g>
+
+</g>
+</svg>
